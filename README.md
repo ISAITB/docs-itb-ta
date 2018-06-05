@@ -2,7 +2,7 @@
 
 The GITB software user guide is built using restructured text and Sphinx. The theme used is the RTD (Read The Docs theme).
 
-The current documentation refers to the perspective of an **Organisation User**.
+The current documentation refers to the perspective of an **Organisation Administrator**.
 
 ## Installation
 
@@ -36,3 +36,21 @@ This is then used as "sphinx_rtd_theme"
 
 To generate the HTML documentation issue (from the current folder): `make html`. The output is stored in folder "build"
 To fully cleanup the produced documentation: `make clean`.
+
+## Maintenance and updates
+
+Given that organisation administrators have access to a superset of the functionality available to organisation users, this
+repository has been setup using the organisation user repository as a seed. Specifically:
+
+```
+git clone -o seed_ou https://nsimatco@webgate.ec.europa.eu/CITnet/stash/scm/itb/docs-itb-ou.git oa
+git remote add origin https://nsimatco@webgate.ec.europa.eu/CITnet/stash/scm/itb/docs-itb-oa.git
+git push -u origin master
+```
+
+The result of the above commands is to add the organisation user repo as a "seed" for the current one. If changes occur in the 
+common documentation then these are made in the "ou" repository and then they can be synchronised to the current one. This
+synchronisation is best made on a branch off "oa"'s master in order to review all changes. Any customisations needed for the "oa"
+can be made in this temporary branch before it is merged onto "oa"'s master. Note that for sharing and building purposes the "oa"'s
+remote is named "origin" (the default). Use of the "seed" is optional and is provided only as a facility to avoid copying and pasting
+common documentation across repositories.
