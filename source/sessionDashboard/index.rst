@@ -11,7 +11,7 @@ Doing so presents you with a left side menu containing links to administrative f
 the **Session Dashboard** link. Note that this is screen is also the default selection once you click the 
 header's **ADMIN** link.
 
-.. figure:: ../screenshots/admin_session_dashboard.png
+.. figure:: ../screenshots/admin_session_dashboard.PNG
   :align: center
 
 The screen is split in three sections:
@@ -28,7 +28,7 @@ Active test sessions
 The currently active sessions are those that are pending completion. These could be sessions actively being used by the test bed's
 users or ones that due to technical issues have been blocked.
 
-.. figure:: ../screenshots/admin_session_dashboard_active.png
+.. figure:: ../screenshots/admin_session_dashboard_active.PNG
   :align: center
 
 Each session is presented on a separate table row, with the following information displayed per session:
