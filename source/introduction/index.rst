@@ -20,7 +20,7 @@ otherwise stated.
 What is the test bed?
 ---------------------
 
-The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Action`_ of DIGIT ISA²,
+The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Action`_ of DIGIT ISA,
 to support the interoperability and conformance testing of projects that enable the development of cross-border public
 services. Its purpose is to facilitate such projects by providing project leaders with the means to define their project's testing strategy 
 that will be used by their participating organisations. The test services offered in this way may either be presented as a tool to help

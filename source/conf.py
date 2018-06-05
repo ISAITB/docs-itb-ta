@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'GITB Software User Guide'
-copyright = '2018, European Commission, DIGIT ISA²'
-author = 'European Commission, DIGIT ISA²'
+copyright = '2018, European Commission, DIGIT ISA'
+author = 'European Commission, DIGIT ISA'
 
 # The short X.Y version
 version = 'GITB software version 1.3.0'
@@ -134,7 +134,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'GITBuserguide.tex', 'GITB Software User Guide',
-     'DIGIT ISA²', 'manual'),
+     'DIGIT ISA', 'manual'),
 ]
 
 
