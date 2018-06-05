@@ -159,7 +159,7 @@ Export conformance statement report
 The conformance statement report (in PDF format) provides the details on the conformance statement and also an overview of its relevant tests. To generate it
 click the **Download report** button from the overview section's header.
 
-.. figure:: ../screenshots/conformance_statement_details_overview_nonadmin.PNG
+.. figure:: ../screenshots/conformance_statement_details_overview_header_nonadmin.PNG
   :align: center
 
 Once the button is clicked you will be prompted for the level of detail you want to include in the report. Two options are available regarding 
@@ -199,7 +199,7 @@ and the results from each test step. The test case's title includes its referenc
 View selected system's information
 ----------------------------------
 
-Once a system is selected from the list of your organisation's systems (see :ref:`manage_your_systems`) you can manage its conformance statement and view its test history. 
+Once a system is selected from the list of your organisation's systems (see :ref:`manage_your_systems`) you can manage its conformance statements and view its test history. 
 At any given time you can review the information of your selected system by clicking the **System Information** entry from the left side menu.
 
 .. figure:: ../screenshots/conformance_statements_systeminfo.PNG
