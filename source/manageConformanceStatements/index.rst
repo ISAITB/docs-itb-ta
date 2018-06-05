@@ -3,12 +3,9 @@
 Manage your conformance statements
 ==================================
 
-Conformance statements serve to define your organisation's testing goals by linking one of your registered
+Conformance statements serve to define an organisation's testing goals by linking one of its registered
 systems with a specification's actor (see :ref:`introduction__glossary__conformance_statement`). It is a system's conformance statements that determine the test
-suites and test cases that will be presented to you to execute.
-
-As administrator for your organisation you are responsible for configuring its conformance statements. Note however that
-conformance statements may also be managed for you by your community administrator.
+suites and test cases that will be presented for execution.
 
 .. _manage_your_conformance_statements__view_your_conformance_statements:
 
@@ -131,8 +128,6 @@ before executing its tests.
 
 .. note::
     **Editing endpoint parameters:** Endpoint parameters apply for the specific system across all its conformance statements. 
-    Editing its configuration (i.e. its endpoint parameters) is a prerequisite that you, as organisation administrator, has to complete
-    as your basic users lack the privileges to do so.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__tests:
 

@@ -11,7 +11,7 @@ Before carrying out any action on the test bed you need to log in. The login scr
 .. figure:: ../screenshots/login.PNG
   :align: center
 
-Your account credentials are those provided to you by your administrator. Note that the email address  
+Your account credentials are those provided to you by the test bed administrator. Note that the email address  
 defined for the account is not necessarily an active address. It is rather a "functional" email address that
 is linked to the test bed. You are not expected to receive emails on this address.
 
@@ -27,17 +27,18 @@ Interface layout
 Once logged in, you are presented with the test bed's user interface. The first screen you see is called the 
 **landing page**.
 
-.. figure:: ../screenshots/welcome_nonadmin.PNG
+.. figure:: ../screenshots/welcome_admin.PNG
   :align: center
 
 The bar at the top of the interface is called the **header**. This is always visible on every screen
 and provides quick access to the following options:
 
-.. figure:: ../screenshots/header_nonadmin.PNG
+.. figure:: ../screenshots/header_admin.PNG
   :align: center
 
 * **HOME:** Return back to the landing page.
-* **TESTS:** Access your test management page.
+* **TESTS:** Access the test management page for the community's "Admin Organization". 
+* **ADMIN:** Access the test bed's administrator features.
 * **Profile controls:** Displays your name and can be hovered over for additional options such as
   editing your profile and logging out.
 

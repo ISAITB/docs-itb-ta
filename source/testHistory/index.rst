@@ -7,7 +7,7 @@ All tests you carry out on the test bed are linked to specific conformance state
 organisation's systems to a specification actor. The first step in viewing your test session history is to 
 select the **TESTS** button from the screen header.
 
-.. figure:: ../screenshots/header_nonadmin.PNG
+.. figure:: ../screenshots/header_admin.PNG
   :align: center
 
 You can then select the system you are interested in from the listing of your organisation's systems (see :ref:`manage_your_systems`).
@@ -79,7 +79,7 @@ Each row provides controls to export the relevant test case report and to view t
 .. note::
     **Obsolete test sessions:** One or more test sessions may be rendered obsolete in case of a significant change in the test setup
     (e.g. the relevant specification being deleted) or a test case update that requires relevant test sessions to be re-executed. Such
-    test sessions remain and can be consulted but are displayed greyed-out to indicate that they are no longer considered towards your
+    test sessions remain and can be consulted but are displayed greyed-out to indicate that they are no longer considered towards the
     overall conformance testing.
 
 .. _view_your_test_history__search__export:

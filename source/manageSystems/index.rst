@@ -4,12 +4,12 @@ Manage your systems
 ===================
 
 Before proceeding to test anything on the test bed you need to define one or more systems. Recall
-that systems represent your organisation's software components for which you make conformance
+that systems represent an organisation's software components for which your users make conformance
 statements to test for (see :ref:`introduction__glossary__system`).
 
-Systems are configured by you or by your community administrator. To view your systems click the **TESTS** button from the screen's header.
+To view your systems click the **TESTS** button from the screen's header.
 
-.. figure:: ../screenshots/header_nonadmin.PNG
+.. figure:: ../screenshots/header_admin.PNG
   :align: center
 
 The screen that follows displays your organisation's currently defined systems.

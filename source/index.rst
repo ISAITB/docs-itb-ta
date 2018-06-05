@@ -10,10 +10,11 @@ GITB Software User Guide
 
    introduction/index
    login/index
-   manageSystems/index
-   manageConformanceStatements/index
-   executeTests/index
-   testHistory/index
+   sessionDashboard/index
+   conformanceDashboard/index
+   domainDashboard/index
+   communityDashboard/index
+   validateTestSetup/index
    profile/index
    contactSupport/index
    logout/index
