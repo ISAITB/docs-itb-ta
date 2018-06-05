@@ -7,8 +7,12 @@ Before proceeding to test anything on the test bed you need to define one or mor
 that systems represent your organisation's software components for which you make conformance
 statements to test for (see :ref:`introduction__glossary__system`).
 
-Systems are configured for you by an administrator. In case your organisation has multiple systems defined
-these are presented to you on the first screen once you click the **TESTS** button from the screen's header.
+Systems are configured for you by an administrator. To view your systems click the **TESTS** button from the screen's header.
+
+.. figure:: ../screenshots/header_nonadmin.PNG
+  :align: center
+
+The screen that follows is displayed in case your organisation has multiple systems defined. 
 
 .. figure:: ../screenshots/systems_nonadmin.PNG
   :align: center
