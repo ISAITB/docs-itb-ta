@@ -94,7 +94,7 @@ Exporting a test case's report is made possible through the file icon control on
 
 Clicking this will generate and download the report (in PDF format) .
 
-.. figure:: ../screenshots/test_case_report.PNG
+.. figure:: ../screenshots/test_case_report.png
   :align: center
 
 The test case report contains a first **Overview** section that summarises the purpose and result of the test session. The information
@@ -107,7 +107,7 @@ included here is:
 
 The overview section is then followed by a section per test case step, each starting on a separate page.
 
-.. figure:: ../screenshots/test_case_report_step.PNG
+.. figure:: ../screenshots/test_case_report_step.png
   :align: center
 
 The information displayed for each step is:
