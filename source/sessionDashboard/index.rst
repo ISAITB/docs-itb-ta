@@ -4,7 +4,7 @@ Monitor test sessions
 To monitor all current and past test sessions for your community you access the **Session Dashboard** screen.
 To do this click on the **ADMIN** link from the screen's header.
 
-.. figure:: ../screenshots/header_admin.png
+.. figure:: ../screenshots/header_admin.PNG
   :align: center
 
 Doing so presents you with a left side menu containing links to administrative functions, of which you click 
@@ -40,7 +40,7 @@ Each session is presented on a separate table row, with the following informatio
 
 In addition, each session's row can be clicked to open a popup with additional information (the session's **domain**, **test suite** and **session ID**).
 
-.. figure:: ../screenshots/admin_session_dashboard_session_more.png
+.. figure:: ../screenshots/admin_session_dashboard_session_more.PNG
   :align: center
   :scale: 50%
 
@@ -61,7 +61,7 @@ Completed test sessions
 
 The history of all completed test sessions is presented in the **Completed test sessions** table.
 
-.. figure:: ../screenshots/admin_session_dashboard_completed.png
+.. figure:: ../screenshots/admin_session_dashboard_completed.PNG
   :align: center
 
 Each session is presented in a separate row that displays the following information:
@@ -88,13 +88,13 @@ Apply search filters
 
 The session dashboard offers a set of filters that can be used to find test sessions of interest. Filters apply both to the displayed active and completed test sessions.
 
-.. figure:: ../screenshots/admin_session_dashboard_filters_off.png
+.. figure:: ../screenshots/admin_session_dashboard_filters_off.PNG
   :align: center
 
 Filtering is by default switched off as indicated by the **CLEAR** button that is highlighted in blue as active. By clicking the **APPLY** button the filter controls are displayed
 and filtering is switched on.
 
-.. figure:: ../screenshots/admin_session_dashboard_filters_on.png
+.. figure:: ../screenshots/admin_session_dashboard_filters_on.PNG
   :align: center
 
 The controls that can be used for filtering are:
