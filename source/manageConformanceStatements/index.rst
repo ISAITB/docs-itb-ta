@@ -196,7 +196,7 @@ whether or not you want to include each test case's step results in the report.
 
 Selecting **Yes** includes the conformance statement details and test overview but also each test case's step results. Selecting **No** on the 
 other hand skips the test step results.
-.
+
 The following sample illustrates the information that is included in the report's overview section that is always included. Specifically:
 
  * The information on the **domain**, **specification** and **actor** for the selected system.

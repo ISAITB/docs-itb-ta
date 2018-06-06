@@ -92,7 +92,7 @@ Exporting a test case's report is made possible through the file icon control on
 .. figure:: ../screenshots/test_history_export_pdf.PNG
   :align: center
 
-Clicking this will generate and download the report (in PDF format) .
+Clicking this will generate and download the report (in PDF format).
 
 .. figure:: ../screenshots/test_case_report.png
   :align: center
