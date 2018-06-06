@@ -1,13 +1,15 @@
+.. _monitor_test_sessions:
+
 Monitor test sessions
 =====================
 
-To monitor all current and past test sessions for your community you access the **Session Dashboard** screen.
-To do this click on the **ADMIN** link from the screen's header.
+Monitoring all current and past test sessions for your community is possible through the **Session Dashboard** screen.
+To access this click on the **ADMIN** link from the screen's header.
 
 .. figure:: ../screenshots/header_admin.PNG
   :align: center
 
-Doing so presents you with a left side menu containing links to administrative functions, of which you click 
+Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
 the **Session Dashboard** link. Note that this is screen is also the default selection once you click the 
 header's **ADMIN** link.
 
