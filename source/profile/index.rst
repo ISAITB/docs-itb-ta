@@ -57,6 +57,8 @@ the information relevant to your organisation, split in two sections:
     **Editing your organization details:** The "Admin Organization" presented here is a special organisation linked to your
     community that is used for testing purposes. You cannot change this organisation's information.
 
+.. _manage_your_profile__change_password:
+
 Change your password
 --------------------
 

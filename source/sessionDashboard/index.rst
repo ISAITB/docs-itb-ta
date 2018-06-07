@@ -74,7 +74,7 @@ Each session is presented in a separate row that displays the following informat
 * The **organisation** and **system** this session was executed for.
 * Its **result**.
 
-Similar to the case of active sessions, a row from this table can be clicked to display further information on the test session (its **domain**, **test suite** and **session ID**).
+Similar to the active sessions' display, a row from this table can be clicked to display further information on the test session (its **domain**, **test suite** and **session ID**).
 
 In this case the display of sessions uses paging, providing controls to go to the **first**, **previous**, **next** and **last** page (as applicable) and the rows are by
 default sorted based on the session end time, in a descending manner (i.e. latest sessions appear first). Sorting can be adapted by clicking on each column's header to 

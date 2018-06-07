@@ -1,3 +1,5 @@
+.. _validate_test_setup:
+
 Validate your test setup
 ************************
 
