@@ -21,7 +21,7 @@ profile information, including your **name**, **email** and **role**. In the sid
 presented links to manage your profile (**Profile**, the current page), manage your organisation (**Organization**)
 and reset your password (**Password**).
 
-.. figure:: ../screenshots/settings_ca.PNG
+.. figure:: ../screenshots/settings_ta.PNG
   :align: center
 
 .. _manage_your_profile__edit:
@@ -32,7 +32,7 @@ Edit your profile
 To edit your profile click the **Edit Profile** button in the bottom of the screen. Doing so results in
 your name becoming editable.
 
-.. figure:: ../screenshots/edit_profile_ca.PNG
+.. figure:: ../screenshots/edit_profile_ta.PNG
   :align: center
 
 From here enter the value you want for your name and click **Save Changes** to complete. Alternatively
@@ -50,12 +50,12 @@ the information relevant to your organisation, split in two sections:
 * **Members:** Your organisation's list of members (i.e. users). This includes yourself as well as any other 
   users configured by your community administrator. For each user the **name**, **email** and **role** are presented.
 
-.. figure:: ../screenshots/organisation_manage_community_admin.PNG
+.. figure:: ../screenshots/organisation_manage_testbed_admin.PNG
   :align: center
 
 .. note::
-    **Editing your organization details:** The "Admin Organization" presented here is a special organisation linked to your
-    community that is used for testing purposes. You cannot change this organisation's information.
+    **Editing your organization details:** The "Admin Organization" presented here is a special organisation linked to the test bed's administrators
+    that is used for testing purposes. You cannot change this organisation's information.
 
 .. _manage_your_profile__change_password:
 
