@@ -13,7 +13,7 @@ Doing so presents you with a left side menu containing links to administrative f
 the **Session Dashboard** link. Note that this is screen is also the default selection once you click the 
 header's **ADMIN** link.
 
-.. figure:: ../screenshots/admin_session_dashboard_ta.PNG
+.. figure:: ../screenshots/admin_session_dashboard_ta.png
   :align: center
 
 The screen is split in three sections:
