@@ -3,7 +3,7 @@
 Monitor test sessions
 =====================
 
-Monitoring all current and past test sessions for your community is possible through the **Session Dashboard** screen.
+Monitoring all current and past test sessions for the test bed is possible through the **Session Dashboard** screen.
 To access this click on the **ADMIN** link from the screen's header.
 
 .. figure:: ../screenshots/header_admin.PNG
@@ -96,13 +96,13 @@ The session dashboard offers a set of filters that can be used to find test sess
 Filtering is by default switched off as indicated by the **CLEAR** button that is highlighted in blue as active. By clicking the **APPLY** button the filter controls are displayed
 and filtering is switched on.
 
-.. figure:: ../screenshots/admin_session_dashboard_filters_on.PNG
+.. figure:: ../screenshots/admin_session_dashboard_filters_on_ta.PNG
   :align: center
 
 The controls that can be used for filtering are:
 
-* The sessions' **specification**, **test suite** and **test case**.
-* The relevant **organisation** and **system**.
+* The sessions' **domain**, **specification**, **test suite** and **test case**.
+* The relevant **community**, **organisation** and **system**.
 * The **result**.
 * The **start** and **end time**.
 
