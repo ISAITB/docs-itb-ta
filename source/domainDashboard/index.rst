@@ -3,8 +3,8 @@
 Manage test configuration
 =========================
 
-As community administrator you are responsible with setting up the specifications that your organisations are expected to conform to
-as well as the test suites to verify this. Managing this information is possible through the **Domain Management** screen. To access 
+As test bed administrator you are able to work in parallel with community administrators in setting up the specifications that organisations
+are expected to conform to as well as the test suites to verify this. Managing this information is possible through the **Domain Management** screen. To access 
 this click on the **ADMIN** link from the screen's header.
 
 .. figure:: ../screenshots/header_admin.PNG
@@ -13,7 +13,7 @@ this click on the **ADMIN** link from the screen's header.
 Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
 the **Domain Management** link.
 
-.. figure:: ../screenshots/admin_domains.PNG
+.. figure:: ../screenshots/admin_domains_ta.PNG
   :align: center
 
 .. _domains__domain_view:
@@ -21,11 +21,10 @@ the **Domain Management** link.
 Domain list
 -----------
 
-The first screen you access is the display of the domains relevant to your community. These are configured for you by the test bed
-administrator at the time your community is created. Typically you would always have a single domain linked to your community over which
-you have full access.
+The first screen you access is the display of the domains defined in the test bed. These are managed by you as test bed administrator but also by
+community administrators, assuming that their community has been linked to a given domain.
 
-.. figure:: ../screenshots/admin_domains_domains.PNG
+.. figure:: ../screenshots/admin_domains_domains_ta.PNG
   :align: center
 
 The presented table includes one row per domain for which the following information is displayed:
@@ -34,12 +33,37 @@ The presented table includes one row per domain for which the following informat
 * The **full name** for the domain, used in detail displays and reports.
 * A **description** for the domain to provide context over what the domain relates to.
 
-To proceed within a domain's details click its relevant row from the table.
+To proceed within a domain's details click its relevant row from the table (see :ref:`domains__domain_details`). To create a new domain click the
+**Create domain** button (see :ref:``).
 
 .. note::
     **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 
-    and actor are important to provide context to your users. This information should summarise what they are testing for, whereas 
+    and actor are important to provide context to test bed users. This information should summarise what they are testing for, whereas 
     the name and description of test cases and test suites should summarise how they are supposed to test.
+
+.. _domains__domain_create:
+
+Create domain
+~~~~~~~~~~~~~
+
+To create a new domain click on the **Create domain** button from the domain list header.
+
+.. figure:: ../screenshots/admin_domains_domains_header_ta.PNG
+  :align: center
+
+Doing so presents you with an editable form in which you are expected to enter the information for the new domain.
+
+.. figure:: ../screenshots/admin_domains_domains_create.PNG
+  :align: center
+
+The information expected is the following:
+
+* The domain's **short name** (required), displayed in lists.
+* Its **full name** (required), displayed in detail screens and reports.
+* Its **description** (optional), displayed in details screens and reports.
+
+To complete the creation of the new domain, provide the required information and click on the **Save** button. Clicking on the **Cancel** button
+will discard pending changes and return you to the previous screen.
 
 .. _domains__domain_details:
 
@@ -72,8 +96,8 @@ domain list screen (see :ref:`domains__domain_view`).
 Specification list
 ~~~~~~~~~~~~~~~~~~
 
-The **Specifications** section presents a table with the domain's configured specifications. These represent the elements of your project's
-specifications that you want your organisations to conform to (see :ref:`introduction__glossary__specification`). 
+The **Specifications** section presents a table with the domain's configured specifications. These represent the elements of the actual specifications
+supported by the test bed that you want to have organisations conform to (see :ref:`introduction__glossary__specification`). 
 
 .. figure:: ../screenshots/admin_domains_domain_specifications.PNG
   :align: center
@@ -321,7 +345,7 @@ or update them if they already exist. For each such item the following informati
 
 .. note::
     **Automatic updates following test suite upload:** When uploading a test suite a series of automatic updates may take place (as described above).
-    If you manage your domain's entities manually through the test bed, uploading a test suite could overwrite your existing information. On the other
+    If you manage domain entities manually through the test bed, uploading a test suite could overwrite your existing information. On the other
     hand it could be helpful to use the automatic update process if you choose to define everything in test suites. Either way make sure you are aware
     of what may occur automatically. In addition, keep in mind that this automatic update process **never deletes information** (with the exception of 
     obsolete test cases). If you want to fully remove e.g. obsolete actors or endpoints you will need to do so through the test bed's interface.
