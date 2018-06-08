@@ -34,7 +34,7 @@ The presented table includes one row per domain for which the following informat
 * A **description** for the domain to provide context over what the domain relates to.
 
 To proceed within a domain's details click its relevant row from the table (see :ref:`domains__domain_details`). To create a new domain click the
-**Create domain** button (see :ref:``).
+**Create domain** button (see :ref:`domains__domain_create`).
 
 .. note::
     **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 
