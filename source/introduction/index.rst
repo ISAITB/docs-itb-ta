@@ -256,6 +256,37 @@ In this case the previously discussed test bed concepts could be mapped as follo
   take place on the exchanged messages and also over entire message conversations to ensure e.g. that responses are not only valid but that they also
   correctly reference the expected requests.
 
+.. _introduction__role:
+
+Your role
+---------
+
+Your test bed account is configured as an **organisation administrator**. This means that you are the administrator of an organisation that is using the test bed to execute 
+tests to measure conformance towards one or more specifications.
+
+Prerequisites
+~~~~~~~~~~~~~
+
+A community administrator must come before you to:
+
+* Create the required test configuration (domain, specifications, actors, test suites).
+* Create your organisation and your account.
+
+Expectations
+~~~~~~~~~~~~
+
+As an **organisation administrator** you are expected to carry out the following main activities:
+
+* Create one or more systems for your organisation that will be the focus of the tests (see :ref:`manage_your_systems`).
+* Manage your conformance statements to determine what you aim to conform to and what you need to test (see :ref:`manage_your_conformance_statements`).
+* Enter required configuration for your systems depending on test needs (see :ref:`execute_tests__provide_your_systems_configuration`).
+* Execute new tests and consult their results (see :ref:`execute_tests`).
+* Review your overall conformance status (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`) and test history (see :ref:`view_your_test_history`).
+* Create additional users for your organisation to assist in test execution and follow up (see :ref:`manage_your_profile__add_member`).
+
+.. note::
+    **Setup by community administrator:** Your community administrator may have already setup your conformance statements and test configuration on your behalf.
+    
 .. _introduction__system_requirements:
 
 System requirements
