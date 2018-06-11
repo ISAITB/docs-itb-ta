@@ -261,31 +261,27 @@ In this case the previously discussed test bed concepts could be mapped as follo
 Your role
 ---------
 
-Your test bed account is configured as an **organisation administrator**. This means that you are the administrator of an organisation that is using the test bed to execute 
-tests to measure conformance towards one or more specifications.
+Your test bed account is configured as a **community administrator**. This means that you are responsible for the configuration of your project's 
+test strategy and the management of your users' organisations in the test bed.
 
 Prerequisites
 ~~~~~~~~~~~~~
 
-A community administrator must come before you to:
+A test bed administrator must come before you to:
 
-* Create the required test configuration (domain, specifications, actors, test suites).
-* Create your organisation and your account.
+* Create and configure your community.
+* Create your account.
 
 Expectations
 ~~~~~~~~~~~~
 
-As an **organisation administrator** you are expected to carry out the following main activities:
+As a **community administrator** you are expected to carry out the following main activities:
 
-* Create one or more systems for your organisation that will be the focus of the tests (see :ref:`manage_your_systems`).
-* Manage your conformance statements to determine what you aim to conform to and what you need to test (see :ref:`manage_your_conformance_statements`).
-* Enter required configuration for your systems depending on test needs (see :ref:`execute_tests__provide_your_systems_configuration`).
-* Execute new tests and consult their results (see :ref:`execute_tests`).
-* Review your overall conformance status (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`) and test history (see :ref:`view_your_test_history`).
-* Create additional users for your organisation to assist in test execution and follow up (see :ref:`manage_your_profile__add_member`).
-
-.. note::
-    **Setup by community administrator:** Your community administrator may have already setup your conformance statements and test configuration on your behalf.
+* Manage your test configuration by defining the required test bed entities (see :ref:`domains`).
+* Develop your test cases and test services, and manage the test suites for each of your specifications (see :ref:`domains__specification__test_suite_upload`).
+* Validate your test setup by executing sample test sessions (see :ref:`validate_test_setup`).
+* Manage your user community by creating its organisations and user accounts, potentially also configuring on their behalf their test setup (see :ref:`community`).
+* Monitor your community organisations' conformance status (see :ref:`monitor_conformance_status`) and test history (see :ref:`monitor_test_sessions`).
     
 .. _introduction__system_requirements:
 
