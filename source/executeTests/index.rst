@@ -3,7 +3,7 @@
 Execute tests
 =============
 
-Executing conformance tests is the reason your community is using the test bed. Considering
+Executing conformance tests is the reason your users are using the test bed. Considering
 that test cases are linked to a system by means of conformance statements, the first step before
 executing a test is to visit a conformance statement's detail screen (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`).
 This screen is the place where you input required configuration and are provided with the controls to execute one or more tests.
