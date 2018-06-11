@@ -10,7 +10,7 @@ To access this click on the **ADMIN** link from the screen's header.
   :align: center
 
 Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Session Dashboard** link. Note that this is screen is also the default selection once you click the 
+the **Session Dashboard** link. Note that this screen is also the default selection once you click the 
 header's **ADMIN** link.
 
 .. figure:: ../screenshots/admin_session_dashboard.PNG
