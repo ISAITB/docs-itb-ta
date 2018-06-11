@@ -256,6 +256,32 @@ In this case the previously discussed test bed concepts could be mapped as follo
   take place on the exchanged messages and also over entire message conversations to ensure e.g. that responses are not only valid but that they also
   correctly reference the expected requests.
 
+.. _introduction__role:
+
+Your role
+---------
+
+Your test bed account is configured as an **organisation user**. This means that you are a member of an organisation that is using the test bed to execute 
+tests to measure conformance towards one or more specifications.
+
+Prerequisites
+~~~~~~~~~~~~~
+
+Apart from having your account created, an administrator must come before you to:
+
+* Create the entry for your system to be tested.
+* Create one or more conformance statements to define the tests you need to run.
+* Enter any required configuration parameters needed for your system before testing.
+
+Expectations
+~~~~~~~~~~~~
+
+As an **organisation user** you are expected to carry out the following main activities:
+
+* View the conformance statements and tests that have been configured for you by your administrator (see :ref:`manage_your_conformance_statements`).
+* Execute new tests and consult their results (see :ref:`execute_tests`).
+* Review your overall conformance status (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`) and test history (see :ref:`view_your_test_history`).
+
 .. _introduction__system_requirements:
 
 System requirements

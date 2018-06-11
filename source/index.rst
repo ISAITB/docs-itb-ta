@@ -17,3 +17,4 @@ GITB Software User Guide
    profile/index
    contactSupport/index
    logout/index
+   changeHistory/index
