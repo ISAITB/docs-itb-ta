@@ -261,28 +261,25 @@ In this case the previously discussed test bed concepts could be mapped as follo
 Your role
 ---------
 
-Your test bed account is configured as a **community administrator**. This means that you are responsible for the configuration of your project's 
-test strategy and the management of your users' organisations in the test bed.
-
-Prerequisites
-~~~~~~~~~~~~~
-
-A test bed administrator must come before you to:
-
-* Create and configure your community.
-* Create your account.
+Your test bed account is configured as a **test bed administrator**. This means that you are responsible for the configuration of user communities 
+and, where not managed by community administrators, the test strategy and the management of your users' organisations in the test bed.
 
 Expectations
 ~~~~~~~~~~~~
 
-As a **community administrator** you are expected to carry out the following main activities:
+As a **test bed administrator** you are expected to carry out the following main activities:
 
-* Manage your test configuration by defining the required test bed entities (see :ref:`domains`).
-* Develop your test cases and test services, and manage the test suites for each of your specifications (see :ref:`domains__specification__test_suite_upload`).
-* Validate your test setup by executing sample test sessions (see :ref:`validate_test_setup`).
-* Manage your user community by creating its organisations and user accounts, potentially also configuring on their behalf their test setup (see :ref:`community`).
-* Monitor your community organisations' conformance status (see :ref:`monitor_conformance_status`) and test history (see :ref:`monitor_test_sessions`).
-    
+* Create user communities for the different projects using the test bed (see :ref:`community`).
+* Manage test configuration by defining the specification domains (see :ref:`domains`).
+* Develop test cases and test services, and manage the test suites for each specification (see :ref:`domains__specification__test_suite_upload`).
+* Validate the overall test setup by executing sample test sessions (see :ref:`validate_test_setup`).
+* Monitor the test bed organisations' conformance status (see :ref:`monitor_conformance_status`) and test history (see :ref:`monitor_test_sessions`).
+* Manage test bed default elements such as landing pages and legal notices (see :ref:`community__defaults`).
+
+.. note::
+    **Community-managed test configuration:** Although you have access to all communities and test configurations, the detailed management of organisations, 
+    test entities and test suites within a community will typically be handled by its administrators.
+
 .. _introduction__system_requirements:
 
 System requirements

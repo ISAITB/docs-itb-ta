@@ -29,8 +29,8 @@ and closes the contact form popup.
 
 .. note::
     **Support email:** By default the destination of contact form submissions is the test bed team's functional mailbox (DIGIT-ITB@ec.europa.eu).
-    As community administrator you can override this for you and your community by setting a community-specific support email. See 
-    :ref:`community` for more information on when and how to configure this.
+    This can be overridden for individual communities by setting a community-specific support email. See :ref:`community` for more information on 
+    when and how to configure this.
     
 .. _contact_support__provide_detailed_feedback:
 
