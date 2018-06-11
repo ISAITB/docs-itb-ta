@@ -36,8 +36,7 @@ Create a conformance statement
 To create a new conformance statement for your selected system click the **Create conformance statement** button from the top right side of the
 conformance statement listing's header. This presents to you a three-step wizard to construct your conformance statement.
 
-The first step presented is to select the **domain** relevant to your conformance statement. Note that in most cases this will only be a single
-domain, the one relevant to your community.
+The first step presented is to select the **domain** relevant to your conformance statement.
 
 .. figure:: ../screenshots/conformance_statements_create_step1.PNG
   :align: center
