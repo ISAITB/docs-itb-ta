@@ -38,7 +38,7 @@ For each administrator the table displays his/her **name** and **email** address
 Create test bed administrator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To create a new test bed administrator click the **Create administrator** button from the Administrators section header.
+To create a new test bed administrator click the **Create administrator** button from the **Administrators** section header.
 
 .. figure:: ../screenshots/admin_community_test_bed_administrators_header.PNG
   :align: center
