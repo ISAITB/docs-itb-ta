@@ -46,15 +46,15 @@ View your organisation's details
 To view your organisation's information click the **Organization** link from the side menu. This shows you 
 the information relevant to your organisation, split in two sections:
 
-* **Organization:** The name (short and full) of your organisation.
+* **Organization:** The name (short and full) of your special-purpose organisation.
 * **Members:** Your organisation's list of members (i.e. users). This includes yourself as well as any other 
-  users configured by your community administrator. For each user the **name**, **email** and **role** are presented.
+  test bed administrators. For each user the **name**, **email** and **role** are presented.
 
 .. figure:: ../screenshots/organisation_manage_testbed_admin.PNG
   :align: center
 
 .. note::
-    **Editing your organization details:** The "Admin Organization" presented here is a special organisation linked to the test bed's administrators
+    **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation linked to the test bed's administrators
     that is used for testing purposes. You cannot change this organisation's information.
 
 .. _manage_your_profile__change_password:
