@@ -25,7 +25,7 @@ The screen is split in two sections:
 Manage test bed administrators
 ------------------------------
 
-The **Administrators** lists the test bed administrators in a table, with one row per administrator.
+The **Administrators** section lists the test bed administrators in a table, with one row per administrator.
 
 .. figure:: ../screenshots/admin_community_test_bed_administrators.PNG
   :align: center
