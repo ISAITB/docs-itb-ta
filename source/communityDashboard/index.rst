@@ -235,7 +235,7 @@ To complete the creation of the new administrator click on **Save**. Clicking **
 
 .. note::
     **Default community:** This section is not displayed in case you are viewing the details of the test bed's **Default community**.
-    See :ref:`community__defaults__landing_page` for more information.
+    See :ref:`community__defaults__community` for more information.
 
 .. _community__organisations:
 
@@ -276,7 +276,7 @@ In this screen you are expected to enter the following information for the organ
 Regarding the landing page and legal notice, these are presented as a choice of the ones defined for the community 
 (see :ref:`community__manage_landing_pages` and :ref:`community__manage_legal_notices` respectively). If no selection
 is made then the default landing page for the community is used, falling back to the test bed's overall default if none
-is defined (see :ref:`community__defaults`). Defining the landing page and legal notice at the level of the organisation makes it possible to present a
+is defined (see :ref:`community__defaults__landing_page`). Defining the landing page and legal notice at the level of the organisation makes it possible to present a
 customised message and notice per organisation.
 
 To complete the creation of the new organisation click **Save**. Clicking on **Cancel** discards pending changes and returns you to the previous screen.
@@ -563,7 +563,7 @@ These exceptions aside, management of the **Default community** uses the same sc
 for more information.
 
 .. note::
-    **When to define organisation in the Default community:** The **Default community** can include organisations as any other community. It is advised
+    **When to define organisations in the Default community:** The **Default community** can include organisations as any other community. It is advised
     however that organisations are added to this only in cases where testing activities are very limited or in case of proof-of-concepts. In most scenarios
     where a set of organisations need to execute tests that need to be followed up by administrators they would be better served by a dedicated 
     community. This allows you to delegate management, configuration and support tasks to the community's administrators and allow for easier use as
