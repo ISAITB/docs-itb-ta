@@ -145,7 +145,7 @@ Clicking the **Start** button begins the first selected test case's session. Wha
 in the presented diagram but can be summarised in the following types of feedback:
 
 * **Exchanges of messages** between actors (i.e. the displayed arrows) proceed. Messaging initiated by the test bed happens automatically, whereas for messages
-  originating from your system the test session blocks until you trigger them from your system.
+  originating from your system the test session blocks until you trigger them, e.g. through your software component's user interface.
 * **Popup dialogs** relative to interaction steps are presented to either inform you or request input.
 * **Validation or processing steps** take place automatically.
 

@@ -19,7 +19,7 @@ In this form you are asked to enter the following information:
 
 * A **contact email** in case your account's email address does not correspond to your preferred contact address. Your
   account's email is nonetheless pre-filled as the default address.
-* The **feedback type** to specify the nature of the message. You can choose from a **Technical issue**, **Question on usage**, 
+* The **feedback type** to specify the nature of the message. You can choose from a **technical issue**, **question on usage**, 
   **feature request** or **other**.
 * The **message** itself. This is provided as a rich text editor so that you can format it as you please.
 
