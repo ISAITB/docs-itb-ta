@@ -27,6 +27,11 @@ Clicking on the **Send feedback** button will send an email to the test bed's su
 on the contact form in case you want to submit a further message. Finally, clicking on **Close** discards any information you have entered
 and closes the contact form popup.
 
+.. note::
+    **Support email:** By default the destination of contact form submissions is the test bed team's functional mailbox (DIGIT-ITB@ec.europa.eu).
+    As community administrator you can override this for you and your community by setting a community-specific support email. See 
+    :ref:`community` for more information on when and how to configure this.
+    
 .. _contact_support__provide_detailed_feedback:
 
 Provide detailed feedback

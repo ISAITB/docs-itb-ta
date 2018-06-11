@@ -256,6 +256,33 @@ In this case the previously discussed test bed concepts could be mapped as follo
   take place on the exchanged messages and also over entire message conversations to ensure e.g. that responses are not only valid but that they also
   correctly reference the expected requests.
 
+.. _introduction__role:
+
+Your role
+---------
+
+Your test bed account is configured as a **community administrator**. This means that you are responsible for the configuration of your project's 
+test strategy and the management of your users' organisations in the test bed.
+
+Prerequisites
+~~~~~~~~~~~~~
+
+A test bed administrator must come before you to:
+
+* Create and configure your community.
+* Create your account.
+
+Expectations
+~~~~~~~~~~~~
+
+As a **community administrator** you are expected to carry out the following main activities:
+
+* Manage your test configuration by defining the required test bed entities (see :ref:`domains`).
+* Develop your test cases and test services, and manage the test suites for each of your specifications (see :ref:`domains__specification__test_suite_upload`).
+* Validate your test setup by executing sample test sessions (see :ref:`validate_test_setup`).
+* Manage your user community by creating its organisations and user accounts, potentially also configuring on their behalf their test setup (see :ref:`community`).
+* Monitor your community organisations' conformance status (see :ref:`monitor_conformance_status`) and test history (see :ref:`monitor_test_sessions`).
+    
 .. _introduction__system_requirements:
 
 System requirements
