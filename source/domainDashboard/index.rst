@@ -165,7 +165,7 @@ The information requested in this form is:
 * The **kind** of parameter it is, choosing from either "Simple" or "Hidden" (required).
 
 Depending on whether you select that this is a "Simple" or "Hidden" parameter the screen will be adapted to request its value.
-Selecting "Simple" means that this is a simple text value that can entered and displayed as-is. In this case the screen will 
+Selecting "Simple" means that this is a simple text value that can be entered and displayed as-is. In this case the screen will 
 adapt to request additionally the parameter's **value** (required)
 
 .. figure:: ../screenshots/admin_domains_domain_create_parameter_simple.PNG
