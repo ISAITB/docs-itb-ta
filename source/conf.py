@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'GITB Software User Guide'
+project = 'ITB User Guide'
 copyright = '2018, European Commission, DIGIT ISA'
 author = 'European Commission, DIGIT ISA'
 
 # The short X.Y version
-version = 'GITB software version 1.3.0'
+version = 'ITB version 1.3.0'
 # The full version, including alpha/beta/rc tags
-release = 'GITB software version 1.3.0'
+release = 'ITB version 1.3.0'
 
 html_show_sourcelink = False
 html_show_sphinx = False
@@ -34,7 +34,7 @@ numfig = True
 numfig_format = {'figure': 'Figure %s:'}
 html_theme = 'sphinx_rtd_theme'
 html_logo = '_static/logo.png'
-html_title = "GITB Software User Guide"
+html_title = "ITB User Guide"
 html_favicon = '_static/favicon.ico'
 html_domain_indices = True
 
@@ -133,7 +133,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'GITBuserguide.tex', 'GITB Software User Guide',
+    (master_doc, 'GITBuserguide.tex', 'ITB User Guide',
      'DIGIT ISA', 'manual'),
 ]
 
@@ -143,7 +143,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'GITB', 'GITB Software User Guide',
+    (master_doc, 'GITB', 'ITB User Guide',
      [author], 1)
 ]
 
@@ -154,7 +154,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'GITB', 'GITB Software User Guide',
-     author, 'GITB', 'The GITB Software User Guide',
+    (master_doc, 'ITB', 'ITB User Guide',
+     author, 'ITB', 'The ITB User Guide',
      'Miscellaneous'),
 ]

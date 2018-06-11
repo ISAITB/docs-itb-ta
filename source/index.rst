@@ -1,7 +1,7 @@
 .. _contents:
 
-GITB Software User Guide
-========================
+Interoperability Test Bed User Guide
+====================================
 
 .. toctree::
    :maxdepth: 3
