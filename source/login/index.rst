@@ -11,7 +11,7 @@ Before carrying out any action on the test bed you need to log in. The login scr
 .. figure:: ../screenshots/login.PNG
   :align: center
 
-Your account credentials are those provided to you by the test bed administrator. Note that the email address  
+Your account credentials are those configured during installation or provided to you by another test bed administrator. Note that the email address  
 defined for the account is not necessarily an active address. It is rather a "functional" email address that
 is linked to the test bed. You are not expected to receive emails on this address.
 
@@ -37,7 +37,7 @@ and provides quick access to the following options:
   :align: center
 
 * **HOME:** Return back to the landing page.
-* **TESTS:** Access the test management page for the community's "Admin Organization". 
+* **TESTS:** Access the test management page for the test bed's "Admin Organization". 
 * **ADMIN:** Access the test bed's administrator features.
 * **Profile controls:** Displays your name and can be hovered over for additional options such as
   editing your profile and logging out.
