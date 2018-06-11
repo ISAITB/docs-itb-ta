@@ -50,10 +50,10 @@ Doing so presents you with a screen to add the new administrator.
 
 In this form you are expected to enter the following information:
 
-* The administrator's **name**.
-* The **email** address. This is used to log into the test bed and is effectively a username formatted as an email. It does not have to be an active
+* The administrator's **name** (required).
+* The **email** address (require). This is used to log into the test bed and is effectively a username formatted as an email. It does not have to be an active
   address as no emails will be sent to it.
-* The **password** that also has to be **confirmed**. This can be modified by the new administrator upon login by accessing the profile management
+* The **password** that also has to be **confirmed** (required). This can be modified by the new administrator upon login by accessing the profile management
   screen (see :ref:`manage_your_profile__change_password`).
 
 To complete the creation of the new administrator click on **Save**. Clicking on **Cancel** will discard pending changes and return you to the previous 
