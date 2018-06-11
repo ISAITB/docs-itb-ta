@@ -349,7 +349,9 @@ button from the table's header (see :ref:`domains__specification__create_actor`)
 .. note::
     **Automatic vs manual actor creation:** Actors can also be created automatically during test suite upload as long as their complete
     information is provided. If you prefer to manually create actors through the test bed's interface you should opt to refer to these
-    using their ID rather than define then fully from within test suites.
+    using their ID rather than define them fully from within test suites (see the `GITB TDL documentation`_ for more details).
+
+.. _GITB TDL documentation: https://www.itb.ec.europa.eu/docs/tdl/latest/testsuite/index.html#deploying-a-test-suite-in-the-gitb-software
 
 .. _domains__specification__create_actor:
 
