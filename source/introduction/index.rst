@@ -20,7 +20,7 @@ otherwise stated.
 What is the test bed?
 ---------------------
 
-The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Action`_ of DIGIT ISA,
+The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Action`_ of DIGIT ISA²,
 to support the interoperability and conformance testing of projects that enable the development of cross-border public
 services. Its purpose is to facilitate such projects by providing project leaders with the means to define their project's testing strategy 
 that will be used by their participating organisations. The test services offered in this way may either be presented as a tool to help
@@ -134,11 +134,11 @@ Organisation
 ~~~~~~~~~~~~
 
 An **organisation** is the concept that maps to a member of the project who is using the test bed to test conformance. Each user belongs to
-an organisation and its via the organisation that a a user can execute tests, inspect results and extract reports. An organisation can have
+an organisation and its via the organisation that a user can execute tests, inspect results and extract reports. An organisation can have
 two types of users:
 
 * A **user**, who is able to execute tests and inspect results.
-* An **administrator**, who is also able to execute tests and inspect results, but is also able to manage configuration and the specifications
+* An **administrator**, who is able to execute tests and inspect results, but is also able to manage configuration and the specifications
   to conform to.
 
 .. _introduction__glossary__system:
@@ -147,7 +147,7 @@ System
 ~~~~~~
 
 A **system** is related to an organisation and represents the actual software component that will be tested. In simple cases an organisation 
-will have a single system and these can be conceptually interchangeable. It is often the case however that a single organisation defines 
+will have a single system and the terms "organisation" and "system" may be conceptually interchangeable. It is often the case however that a single organisation defines 
 multiple systems, each with its own specification conformance needs and testing history. The system in the test bed is actually the point 
 where configuration for your software component is introduced and it is the system that is selected when defining the specifications you aim 
 to test for.
@@ -219,7 +219,7 @@ Test result
 
 The **test result** is the outcome of a test session and can be one of the following:
 
-* **SUCCESS:** All the steps defined in the test case have completed successfully.
+* **SUCCESS:** All the steps defined in the test case have completed successfully (potentially with certain steps skipped due to conditional logic).
 * **FAILURE:** At least one step defined in the test case has failed.
 * **UNDEFINED:** The test case has either not been executed or was forcibly terminated before completing.
 
@@ -235,6 +235,9 @@ The purpose of the following example is to help you understand how some of the k
 named "EU message exchange" used within the EU whereby Member State endpoint systems exchange messages with a central EU portal. There are different
 message types ("Message1", "Message2" and "Message3") each with a specific syntax and content rules. Member States can optionally support each message type
 but if they do they need to ensure that they can successfully use them when interacting with the EU portal.
+
+.. figure:: example.png
+  :align: center
 
 In this case the previously discussed test bed concepts could be mapped as follows:
 

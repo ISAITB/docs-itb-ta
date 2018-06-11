@@ -67,7 +67,7 @@ the conformance statement header also displays a **Collapse all** button to coll
   :align: center
 
 .. note::
-    **Conformance DashBoard vs Session DashBoard:** A significant benefit of the Conformance DashBoard is that the focus is placed on the latest result 
+    **Conformance dashboard vs session dashboard:** A significant benefit of the conformance dashboard is that the focus is placed on the latest result 
     and also that even non-executed test cases are displayed. This allows you to get a clear picture of an organisation's testing progress without 
     needing to extrapolate information.
 

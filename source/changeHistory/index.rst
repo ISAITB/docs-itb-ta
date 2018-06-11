@@ -1,7 +1,7 @@
 Release history
 ===============
 
-The current section provides an overview of the changes introduced in each GITB software release up to the current one. For each release
+The current section provides an overview of the changes introduced in each test bed release (specifically each GITB software release) up to the current one. For each release
 the following information is provided:
 
 * The **release number** and **date**.
