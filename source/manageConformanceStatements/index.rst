@@ -82,7 +82,7 @@ The **Conformance Statement Details** section provides you the context of what y
 .. figure:: ../screenshots/conformance_statement_details_overview_admin.PNG
   :align: center
 
-The **domain** details are presented on the top as the high-level description of the project you are testing for. The 
+The **domain** details are presented on the top as the high-level description of the relevant specifications. The 
 **specification** information follows to define the specification you have chosen for your system to conform to
 (a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
 as part of this specification (a specification may have multiple actors). At the top of this section you can also click the 
