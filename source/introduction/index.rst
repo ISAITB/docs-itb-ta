@@ -3,7 +3,7 @@
 Introduction
 ============
 
-Welcome to the **Interoperability Test Bed** user guide. The purpose of this guide is to help you use the 
+Welcome to the **Interoperability Test Bed** (**ITB**) user guide. The purpose of this guide is to help you use the 
 Interoperability Test Bed to complete your conformance testing needs by documenting its interface, features 
 and underlying processes. In addition it provides you with the context you need to understand the concepts 
 it uses and get additional information if you choose to.
