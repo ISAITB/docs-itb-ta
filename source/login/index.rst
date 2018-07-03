@@ -53,6 +53,7 @@ At the bottom of the screen is where you find the screen's **footer**. This disp
 .. figure:: ../screenshots/footer.PNG
   :align: center
 
+* A link to the current **user guide**.
 * A link to **contact the support team** for problems, questions and feedback (see :ref:`contact_support`).
 * A link to view the **legal notice** linked the test bed's use. 
 * The test bed's **version** number.

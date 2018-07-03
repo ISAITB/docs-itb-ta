@@ -8,7 +8,36 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.3.0**.
+The latest test bed release is **1.4.0**.
+
+Release 1.4.0 - 03/07/2018
+--------------------------
+
+This is a minor release to correct bugs and also to improve the test bed's GDPR compliance.
+
+**Bug**
+
+* [ITB-219] - Cannot delete domain with domain parameters
+* [ITB-222] - Cannot delete community for which tests have been executed
+* [ITB-224] - Hide the special purpose Admin organisation from the test bed Default community
+* [ITB-231] - Legal Notice link not working without user login
+* [ITB-232] - Legal notice top-level headings appear grey
+* [ITB-235] - Icons may not appear when using IE 11
+* [ITB-242] - Active footer links are not visible
+
+**New Feature**
+
+* [ITB-49] - Link to online documentation
+* [ITB-221] - Link to role-specific documentation
+
+
+**Improvement**
+
+* [ITB-236] - Add cookie-related statement on login screen for GDPR compliance
+* [ITB-237] - Add consent message on community admin creation screen
+* [ITB-238] - Add consent message on test bed admin creation screen
+* [ITB-239] - Add consent message on organisation user creation screens
+* [ITB-240] - Add data use notification on contact form for GDPR compliance
 
 Release 1.3.0 - 25/05/2018
 --------------------------
