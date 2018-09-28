@@ -8,7 +8,25 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.4.0**.
+The latest test bed release is **1.4.1**.
+
+Release 1.4.1 - 28/09/2018
+--------------------------
+
+This is a bug fix release to address critical production bugs. Minor additional internal features are also added.
+
+**Bug**
+
+* [ITB-243] - Support the use of lists in validation services
+* [ITB-252] - Messaging sessions close unexpectedly
+* [ITB-253] - Incoming blocked connections are not cleaned
+* [ITB-254] - A mis-configured system address results in a server error
+* [ITB-255] - Error during test execution repeat indefinitely
+
+**Improvement**
+
+* [ITB-244] - Adapt HttpMessaging messaging handler to switch to HTTPS based on configuration
+* [ITB-245] - Support sending and receiving multipart form data in HttpMessaging
 
 Release 1.4.0 - 03/07/2018
 --------------------------
@@ -29,7 +47,6 @@ This is a minor release to correct bugs and also to improve the test bed's GDPR 
 
 * [ITB-49] - Link to online documentation
 * [ITB-221] - Link to role-specific documentation
-
 
 **Improvement**
 
