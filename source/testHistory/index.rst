@@ -33,7 +33,7 @@ The test session history screen is split into two main parts:
 * A set of **search filters** to help locating specific test results.
 * The display of the **performed tests**.
 
-.. figure:: ../screenshots/test_history.PNG
+.. figure:: ../screenshots/test_history_admin.PNG
   :align: center
 
 When you first visit this screen the filter controls are initially ignored, indicated by the button **CLEAR** being indicated in blue 
@@ -80,7 +80,7 @@ Each row provides controls to export the relevant test case report and to view t
     **Obsolete test sessions:** One or more test sessions may be rendered obsolete in case of a significant change in the test setup
     (e.g. the relevant specification being deleted) or a test case update that requires relevant test sessions to be re-executed. Such
     test sessions remain and can be consulted but are displayed greyed-out to indicate that they are no longer considered towards the
-    overall conformance testing.
+    overall conformance testing. Such sessions can be deleted at the level of the current system as described in :ref:`view_your_test_history__search__delete_obsolete`.
 
 .. _view_your_test_history__search__export:
 
@@ -135,6 +135,19 @@ CSV format. To do this click the **Export CSV** button in the right of the test 
 .. figure:: ../screenshots/test_history_export_csv.PNG
   :align: center
 
+.. _view_your_test_history__search__delete_obsolete:
+
+Delete obsolete test results
+----------------------------
+
+Obsolete test sessions can be deleted by clicking the **Delete obsolete results** button from the search results' panel.
+
+.. figure:: ../screenshots/test_history_admin_header.PNG
+  :align: center
+
+Doing so will first prompt you for confirmation and then, if confirmed, will proceed to delete the obsolete test results. Note that the results
+deleted are limited to those specific to the system that is currently selected.
+
 .. _view_your_test_history__test_steps:
 
 View a test session's steps
@@ -161,7 +174,7 @@ its details (see :ref:`view_your_test_history__test_steps__details`). The provid
 View test step details
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Clicking on a step's document icon triggers a popup that shows the step's different information elements that can be viewed inline or opened in
+Clicking on a step's document icon triggers a popup that shows the step's different information elements that can be viewed inline, downloaded or opened in
 a separate popup editor. In the case of validation steps, this is extended to also provide the detailed validation results as illustrated in the
 following example for a validation failure.
 
@@ -170,7 +183,7 @@ following example for a validation failure.
   :scale: 50%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
-can inspect the output information from the step, presented either inline (for short values) or through a further popup editor. In the latter case
+can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
 this is triggered by clicking the **Open in editor** link. Clicking to open this, displays its content which, in the case of validation steps, 
 is also highlighted for the recorded validation messages.
 
@@ -178,9 +191,16 @@ is also highlighted for the recorded validation messages.
   :align: center
   :scale: 50%
 
-The code popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
-**Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will 
+The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
+**Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will
 open the validated content and automatically focus on the selected error.
+
+An alternative to viewing the content in this way is to click the **Download as file** link which will download the content as a file. The test bed will determine
+the most appropriate type for the content and name the downloaded file accordingly (if possible).
+
+.. note::
+    **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
+    always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
 
 .. _view_your_test_history__test_steps__export:
 

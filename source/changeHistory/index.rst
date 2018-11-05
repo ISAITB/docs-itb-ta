@@ -8,7 +8,69 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.4.1**.
+The latest test bed release is **1.5.0**.
+
+Release 1.5.0 - 26/10/2018
+--------------------------
+
+This releases focuses on improving error handling and adding support for a customisable conformance certificate per user community.
+Numerous additional improvements are also made to facilitate the management of test suites and conformance testing configuration, as
+well as to improve support for the GITB Test Description Language (TDL).
+
+**Bug**
+
+* [ITB-171] - Referring to missing map key in interaction step swallows error
+* [ITB-181] - Stop step results in the interface not being signalled to show the test as finished
+* [ITB-216] - Endpoint description not displayed in first test execution wizard step
+* [ITB-265] - Messaging service call-backs produce errors when client not created using WSDL
+* [ITB-270] - Creating a duplicate conformance statement is possible and leads to an internal error
+* [ITB-272] - Opening the contact support form clears other rich text editors
+* [ITB-273] - Forms to create elements do not take advantage of full screen width
+
+**New Feature**
+
+* [ITB-79] - Create conformance certificate
+* [ITB-106] - Error message template per community
+* [ITB-225] - Allow community admin to copy an organisation's test setup to another
+* [ITB-226] - Allow organisation admins to copy the conformance test setup between systems
+* [ITB-247] - Create an embedded regular expression validator
+* [ITB-260] - Allow administrators to purge obsolete test results
+
+**Task**
+
+* [ITB-275] - Remove obsolete resources
+
+**Improvement**
+
+* [ITB-78] - Download test suites
+* [ITB-92] - Allow If steps without Else
+* [ITB-97] - Display errors produced through test execution
+* [ITB-110] - Improve overall handling of errors
+* [ITB-115] - Improve display of endpoint parameters for organisation users
+* [ITB-116] - Allow administrator to set (and update) a user's temporary password
+* [ITB-118] - Consider admin-set passwords as one-time passwords
+* [ITB-183] - Allow an exit step to signal a success or failure
+* [ITB-185] - Allow instruct element to show a file download when passed an object or binary type
+* [ITB-211] - Improve display of test cases within a test suite in the conformance statement details page
+* [ITB-212] - Consider renaming "Conformance Statement Report" to "Conformance Statement Test Report"
+* [ITB-213] - Support attachments in contact form
+* [ITB-218] - Sort display of domains, specifications and actors
+* [ITB-220] - Use English (UK) spelling consistently
+* [ITB-227] - Improve display of test case results in conformance statement report
+* [ITB-246] - Replace default report font to support Unicode characters
+* [ITB-248] - Switch XPathValidator to use the latest version of XPath internally
+* [ITB-249] - Allow XPathValidator to handle any type of input
+* [ITB-250] - Allow binary variable use in expressions
+* [ITB-257] - Allow StringValidator to support any input type
+* [ITB-259] - Remove duplicate login form and home button for unauthenticated users
+* [ITB-262] - Allow default actor for interaction
+* [ITB-263] - Set defaults for content type and type of interaction elements
+* [ITB-264] - Make it possible to download binary content from a test step's report
+* [ITB-266] - Consider the test suite ID as the default root path for test case imports
+* [ITB-267] - Allow the display order of test case actors to be configured in the test execution diagram
+* [ITB-268] - Set an actor as a specification's default
+* [ITB-271] - Improve visual consistency of buttons
+* [ITB-274] - Add filtering by actor on the conformance dashboard
 
 Release 1.4.1 - 28/09/2018
 --------------------------

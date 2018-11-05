@@ -16,8 +16,29 @@ defined for the account is not necessarily an active address. It is rather a "fu
 is linked to the test bed. You are not expected to receive emails on this address.
 
 On the login screen you also have the possibility to have the test bed keep your session open. To do this 
-simply check the **Remember Me** checkbox below the login form. Once you have entered your credentials click
+simply check the **Remember me** checkbox below the login form. Once you have entered your credentials click
 the **Login** button.
+
+.. _login__onetime_password:
+
+Replacing a one-time password
+-----------------------------
+
+If this is the first time you are logging into the test bed your password provided to you by your administrator is
+considered a "one-time password". This means that it is only valid for a single login in which as a first step you
+will need to change it. Note that you may also need to go through this step if you are already a test bed user but
+an administrator has reset your password.
+
+.. figure:: ../screenshots/login_change_onetime_password.PNG
+  :align: center
+  :scale: 50%
+
+In the form that appears you are requested to:
+
+* Provide your **current password**.
+* Provide a **new password** which you will also need to confirm.
+
+Once ready click on **Save** to change your password and access the test bed.
 
 .. _login__interface_layout:
 
