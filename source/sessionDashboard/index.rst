@@ -80,6 +80,10 @@ In this case the display of sessions uses paging, providing controls to go to th
 default sorted based on the session end time, in a descending manner (i.e. latest sessions appear first). Sorting can be adapted by clicking on each column's header to 
 sort by it in ascending manner. The currently active sort column and type are displayed using an arrow icon next to the relevant column's title.
 
+Certain test results may appear greyed out in case they are to be considered as obsolete. These are tests for which linked information has significantly changed since their
+execution (e.g. the related organisation having been deleted). Such obsolete results are maintained by default but can be purged at any time by clicking the 
+**Delete obsolete results** button.
+
 The presented completed sessions can be exported in CSV format by clicking the **Export CSV** button in the table header. In addition, the **detailed tests steps** for a
 session can be displayed by clicking the row's magnifying glass icon under the **Action** column (see :ref:`session_dashboard__steps`).
 
@@ -154,7 +158,7 @@ following example for a validation failure.
   :scale: 50%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
-can inspect the output information from the step, presented either inline (for short values) or through a further popup editor. In the latter case
+can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
 this is triggered by clicking the **Open in editor** link. Clicking to open this, displays its content which, in the case of validation steps, 
 is also highlighted for the recorded validation messages.
 
@@ -162,9 +166,16 @@ is also highlighted for the recorded validation messages.
   :align: center
   :scale: 50%
 
-The code popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
+The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will 
 open the validated content and automatically focus on the selected error.
+
+An alternative to viewing the content in this way is to click the **Download as file** link which will download the content as a file. The test bed will determine
+the most appropriate type for the content and name the downloaded file accordingly (if possible).
+
+.. note::
+    **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
+    always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
 
 .. _session_dashboard__steps_report:
 
