@@ -60,7 +60,7 @@ The information expected is the following:
 
 * The domain's **short name** (required), displayed in lists.
 * Its **full name** (required), displayed in detail screens and reports.
-* Its **description** (optional), displayed in details screens and reports.
+* Its **description** (optional), displayed in detail screens and reports.
 
 To complete the creation of the new domain, provide the required information and click on the **Save** button. Clicking on the **Cancel** button
 will discard pending changes and return you to the previous screen.
@@ -72,11 +72,11 @@ Manage domain details
 
 The domain detail screen is where you can edit a domain's properties. It is split in three sections:
 
-* The **Domain Details** section, to view and edit the domain's information.
+* The **Domain details** section, to view and edit the domain's information.
 * The **Specifications** section to manage the domain's specifications (see :ref:`domains__domain__specification_list`).
 * The **Parameters** section to manage configuration parameters used in test cases (see :ref:`domains__domain__parameter_list`).
 
-In the **Domain Details** section you are presented with a form to view and edit the domain's information.
+In the **Domain details** section you are presented with a form to view and edit the domain's information.
 
 .. figure:: ../screenshots/admin_domains_domain_details.PNG
   :align: center

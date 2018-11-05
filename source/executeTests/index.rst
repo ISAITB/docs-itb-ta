@@ -17,11 +17,11 @@ The testing configuration for your selected specification may require that you p
 configuration parameters before executing tests. If for example test cases require that the test bed 
 sends messages to your system, it is likely that you need to inform the test bed on how to do so.
 
-Providing and reviewing the configuration for your system is done through the **Endpoints** section of
+Providing and reviewing the configuration for your system is done through the **Configuration parameters** section of
 the conformance statement detail page (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`).
 
 Once you have entered all required configuration you can choose to execute one or more test cases 
-through the conformance statement detail's **Conformance Tests** section (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`). The test execution
+through the conformance statement detail's **Conformance tests** section (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`). The test execution
 process starts by clicking one of the available **Play** buttons. In short, you can either execute a
 specific test case or a complete test suite.
 
@@ -38,13 +38,12 @@ a screen marked with **Required configuration missing**.
   :align: center
 
 This screen presents on the top the **name** and **description** of the test cases to execute but puts
-the focus on your configuration parameters. Similar to the display of the endpoint information in the 
-conformance statement detail screen (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`), you see here:
+the focus on your configuration parameters. Similar to their display on the conformance statement detail screen (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`), 
+you see here:
 
-* The **name** of each parameter.
-* Its **usage** ("R" for required and "O" for optional).
-* Its **type** ("SIMPLE" for text, "BINARY" for files).
-* Whether or not it is **configured**.
+* Whether or not it is **set**.
+* The **parameter** name (marked with an asterisk if mandatory).
+* Its **description**.
 
 The only option provided to you is to return to the conformance statement detail screen by clicking the 
 **Back** button in the bottom left corner. Once your system has all required configuration parameters
@@ -69,7 +68,7 @@ system is expected to send messages to the test bed this step informs you what y
 .. figure:: ../screenshots/test_execution_simulated.PNG
   :align: center
 
-The configuration properties displayed here are in fact endpoint parameters (see :ref:`introduction__glossary__endpoint`) that are listed with their names
+The configuration properties displayed here are in fact parameters (see :ref:`introduction__glossary__endpoint`) that are listed with their names
 and values under the name of the specification actor that is being simulated. Continuing the example, if the test bed
 is going to simulate a specification actor named "EU portal" to which you are expected to send messages, the simulated
 actor name (in the example "EU portal") is presented before its configuration values.
@@ -87,7 +86,7 @@ test bed. In case you are executing a complete test suite (see :ref:`manage_your
 presented to you corresponds to the setup of the session for the first test case. Once this completes, it could be that this screen reappears if any new configuration 
 values have been added or if any previously communicated ones have changed.
 
-Finally, a **Back** button is also present in the bottom left corner that will cancel the execution and return to the conformance statement detail page.
+At this point you may also click the **Back** button from the bottom left corner to cancel the execution and return to the conformance statement detail page.
 
 .. note::
     **No simulated configuration:** This screen is presented to you only if preliminary steps are needed before starting
@@ -133,7 +132,7 @@ Starting the test session is achieved by clicking the provided **Start** button.
 test case overview header. Otherwise, if multiple test cases are to be executed, the **Start** button is presented in the display of the 
 specific test case.
 
-Finally, throughout the execution of all test cases a **Back** button is provided in the bottom left corner to cancel execution and return to 
+Finally, throughout the execution of all test cases you may click the **Back** button in the bottom left corner to cancel execution and return to 
 the conformance statement detail page.
 
 .. _execute_tests__step3__monitor_and_manage_test_progress:
@@ -208,7 +207,7 @@ following example for a validation failure.
   :scale: 50%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
-can inspect the output information from the step, presented either inline (for short values) or through a further popup editor. In the latter case
+can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
 this is triggered by clicking the **Open in editor** link. Clicking to open this, displays its content which, in the case of validation steps, 
 is also highlighted for the recorded validation messages.
 
@@ -216,9 +215,16 @@ is also highlighted for the recorded validation messages.
   :align: center
   :scale: 50%
 
-The code popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
+The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will  
 open the validated content and automatically focus on the selected error.
+
+An alternative to viewing the content in this way is to click the **Download as file** link which will download the content as a file. The test bed will determine
+the most appropriate type for the content and name the downloaded file accordingly (if possible).
+
+.. note::
+    **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
+    always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
 
 The results of the test step can also be exported as a test step report (in PDF format). This is made available through the **Export** button that triggers the 
 generation and download of the step report. 
@@ -240,3 +246,30 @@ This report includes:
 
 Finally, it is important to point out that the examination of a test session's result, both in terms of steps and message exchanges, as well as 
 detailed test step results, is possible at any time through your test session history (see :ref:`view_your_test_history`).
+
+.. _execute_tests__step3__view_log:
+
+View test session log
+~~~~~~~~~~~~~~~~~~~~~
+
+During any point in a test session's execution you may view its detailed log output. This is done by clicking the **View log** button in the 
+bottom left corner next to the **Back** button.
+
+.. figure:: ../screenshots/test_execution_view_log.PNG
+  :align: center
+
+Clicking this will open a popup window that includes the detailed log output (debug statements, warnings and errors) for your test session.
+
+.. figure:: ../screenshots/test_execution_view_log_popup.PNG
+  :align: center
+  :scale: 50%
+
+The detailed log output is typically very useful when you receive error messages but for which the description provided is not clear. The log
+output may be used in such a case to determine the cause of the problem or, for unexpected issues, provide input to the test bed support team
+(see :ref:`contact_support`).
+
+The test session log popup presents you with three options:
+
+* **Copy to clipboard**, to copy the entire log output to your clipboard (you may also of course selectively copy specific sections).
+* **Download**, to download the log output as a text file.
+* **Close**, to close the popup.

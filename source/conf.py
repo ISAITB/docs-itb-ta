@@ -24,9 +24,9 @@ copyright = '2018, European Commission, DIGIT ISA'
 author = 'European Commission, DIGIT ISA'
 
 # The short X.Y version
-version = 'ITB version 1.4.1'
+version = 'ITB version 1.5.0'
 # The full version, including alpha/beta/rc tags
-release = 'ITB version 1.4.1'
+release = 'ITB version 1.5.0'
 
 html_show_sourcelink = False
 html_show_sphinx = False

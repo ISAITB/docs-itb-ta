@@ -45,6 +45,8 @@ The information to enter in the presented form are:
 * The system's **full name** (required). This is included in reports that mention the system.
 * An optional **description** to provide more information about the system.
 * A **version** number (required). Although required this is not currently used in the test bed apart from display purposes.
+* An option to **copy the test setup** from another system. Selecting one will replicate the selected system's conformance statements for the new system. Note
+  that this option is not presented if no other systems are defined.
 
 Once you have entered the system's information click the **Save** button to record it. You can also click the **Cancel** button
 to close the popup without making any changes.
@@ -61,8 +63,11 @@ being displayed with the system's information, presented in editable input field
   :align: center
   :scale: 50%
 
-You can proceed to modify the **short name**, **full name**, **description** and **version** of the system and click on the
-**Save** button when finished. Here you may also click the **Delete** button which, following confirmation, will proceed to
+You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system. In addition you can select to **copy the test setup** 
+from another system which will reset the system's conformance statements to match the selected one (upon confirmation). Note that this option is hidden if no
+other systems are defined.
+
+Once ready click the **Save** button to finish. Here you may also click the **Delete** button which, following confirmation, will proceed to
 completely delete the system. In this case the tests realised for this system will still be searchable but will be presented
 as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Cancel** button to close this popup without
 making any changes.

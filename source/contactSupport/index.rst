@@ -22,6 +22,16 @@ In this form you are asked to enter the following information:
 * The **feedback type** to specify the nature of the message. You can choose from a **technical issue**, **question on usage**, 
   **feature request** or **other**.
 * The **message** itself. This is provided as a rich text editor so that you can format it as you please.
+* One or more **attachments** linked to your message. A maximum of five attachments is allowed that should not exceed a total of five megabytes.
+  Currently, accepted file types are images (GIF, PNG, JPEG), PDF files, text files and XML files.
+
+To add an attachment click the **Select file** button and select the file you want in the file browser that will appear. For selected attachments you 
+will see their file name displayed in the contact form as well as their size in bytes. Next to each attachment you also have a delete button you can 
+use to remove it.
+
+.. figure:: ../screenshots/contact_support_attachments.PNG
+  :align: center
+  :scale: 50%
 
 Clicking on the **Send feedback** button will send an email to the test bed's support team. Upon doing so you will also remain
 on the contact form in case you want to submit a further message. Finally, clicking on **Close** discards any information you have entered
