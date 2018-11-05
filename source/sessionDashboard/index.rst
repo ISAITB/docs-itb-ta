@@ -16,11 +16,12 @@ header's **ADMIN** link.
 .. figure:: ../screenshots/admin_session_dashboard_ta.png
   :align: center
 
-The screen is split in three sections:
+The screen is split in four sections:
 
 * A set of **search filters**, initially disabled, to help locate specific test sessions (see :ref:`session_dashboard__filters`).
 * The list of currently **active sessions** (see :ref:`session_dashboard__active`).
 * The list of **completed sessions** (see :ref:`session_dashboard__completed`).
+* The setting to **automatically terminate idle sessions** (see :ref:`session_dashboard__terminate`).
 
 .. _session_dashboard__active:
 
@@ -86,6 +87,11 @@ execution (e.g. the related organisation having been deleted). Such obsolete res
 
 The presented completed sessions can be exported in CSV format by clicking the **Export CSV** button in the table header. In addition, the **detailed tests steps** for a
 session can be displayed by clicking the row's magnifying glass icon under the **Action** column (see :ref:`session_dashboard__steps`).
+
+.. note::
+    **Deleting obsolete tests from the session dashboard:** As test bed administrator if you select to delete the obsolete tests you will be doing so for the entire test bed.
+    If you want to target a specific community you could login as a community administrator to do the purge. Alternatively, at the level of a system you can always use 
+    the relevant option from the test session history display (see :ref:`view_your_test_history`).
 
 .. _session_dashboard__filters:
 
@@ -199,3 +205,23 @@ This report includes:
     **Test step report size:** When exporting a test step report the context information is always included to provide the full information pertinent
     to its result. In case the context information returned by the step includes large file contents, these would be included resulting in a 
     potentially very large export.
+
+.. _session_dashboard__terminate:
+
+Automatically terminate idle sessions
+-------------------------------------
+
+In the bottom of the Session Dashboard you are presented with the control to terminate idle sessions. These are sessions that have started but for which
+no update has been made for a specific time threshold. Through this control the test bed will automatically scan the currently active sessions and forcibly
+terminate those that have exceeded the maximum. The purpose of this is to automate clean-up operations allowing the test bed and connected test services to 
+free up any resources that are being used by the sessions in question.
+
+.. figure:: ../screenshots/admin_session_dashboard_terminate.png
+  :align: center
+
+To enable this toggle the button to **ON** at which point you will need to provide the maximum allowed idle time (in seconds).
+
+.. figure:: ../screenshots/admin_session_dashboard_terminate_on.png
+  :align: center
+
+Enter the value in seconds and click on **Apply** to persist your change. Switching the setting to **OFF** removes the setting.

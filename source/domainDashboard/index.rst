@@ -285,7 +285,8 @@ For each test suite the following information is displayed:
 * Its **version**. This is metadata that is recorded but not presented to users.
 
 Each row includes a **delete** button, presented with a cross icon under the **operation** header. Clicking this will, following confirmation, delete the 
-test suite and its contained test cases.
+test suite and its contained test cases. In addition, you may also **download** the test suite ZIP archive by clicking on its relevant row. Doing so will prompt
+you for the location to save the test suite archive.
 
 .. _domains__specification__test_suite_upload:
 
@@ -366,6 +367,8 @@ For each actor the following information is displayed:
 * Its **name**, as the complete actor name to show in detail screens and reports. This is also the name presented to users during test
   execution, unless this is overridden at test case level.
 * Its **description**, displayed in details screens and reports to provide more information about the actor.
+* Whether or not the actor is the specification's **default**. The default actor is the one that will be preselected as the SUT when creating new 
+  conformance statements for the specification.
 
 Clicking on an actor's row will take you to its detail page (see :ref:`domains__actor`). To manually create a new actor click the **Create actor**
 button from the table's header (see :ref:`domains__specification__create_actor`).
@@ -397,6 +400,11 @@ The information to provide for the actor is:
 * The actor's **ID** (required), displayed in list views and used to reference the actor within test suites.
 * Its **name** (required), displayed in detail screens and reports, as well as in the test execution screen (unless overridden at test case level).
 * A **description** to provide more context on the actor's purpose (optional), displayed in detail screens and reports.
+* The actor's **display order** (optional), used to determine where the actor should be displayed in the test execution diagram (see :ref:`execute_tests`).
+  If provided this should be an integer that will be compared to the other specification actors' display order to determine the presentation order. An actor
+  with a configured value will be displayed before actors with a larger value or ones that have no value configured.
+* Whether or not the actor is the **specification default**. Only one default actor can be defined for a specification which will be preselected when creating
+  new conformance statements.
 
 To complete the creation of the actor click the **Save** button. To cancel and return to the specification's detail page (see :ref:`domains__specification`) 
 click the **Cancel** button.
@@ -427,6 +435,11 @@ The following information is presented in corresponding form controls:
 * The actor's **ID** (required), used for display purposes and to refer to the actor in test suites.
 * A **name** (required), displayed in detail screens and reports, as well as the test execution screen.
 * A **description** to provide more context on the actor's purpose (optional), displayed in detail screens and reports.
+* The actor's **display order** (optional), used to determine where the actor should be displayed in the test execution diagram (see :ref:`execute_tests`).
+  If provided this should be an integer that will be compared to the other specification actors' display order to determine the presentation order. An actor
+  with a configured value will be displayed before actors with a larger value or ones that have no value configured.
+* Whether or not the actor is the **specification default**. Only one default actor can be defined for a specification which will be preselected when creating
+  new conformance statements.
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the actor and all related information. The **Back** button does not make any changes but takes you back to the
