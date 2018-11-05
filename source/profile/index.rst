@@ -86,7 +86,7 @@ The information requested is:
 * The **user's name**.
 * The **email** address that the user will use to login. Recall that this address does not have to be a real one but is rather considered as a functional username.
   No emails will be sent to this address.
-* The user's **password**. This value can be changed by the user when he/she logs into the test bed for the first time.
+* The user's **password**. This is a "one-time password" meaning that the user will need to change it upon his/her first login.
 
 .. note::
     **Deleting users and managing roles:** Deleting your organisation's users as well as changing their assigned roles is currently not possible.
