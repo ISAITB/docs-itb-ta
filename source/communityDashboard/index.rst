@@ -196,7 +196,8 @@ return to the previous screen. The **Delete** button will, following confirmatio
 The **Edit conformance certificate settings** button is addressed in :ref:`community__conformance_certificate_settings`.
 
 .. note::
-**Default community:** The **Delete** button is hidden for the test bed's **Default community** as it cannot be deleted.
+
+    **Default community:** The **Delete** button is hidden for the test bed's **Default community** as it cannot be deleted.
     See :ref:`community__defaults__community` for more information.
 
 .. _community__administrators:
@@ -640,7 +641,7 @@ summary of an organisation's testing activities, providing proof of its results 
 The conformance certificate is a report that is constructed automatically by the test bed but that can be customised for the community. This is done by clicking
 the **Edit conformance certificate settings** button from the community details' panel:
 
-.. figure:: ../screenshots/admin_community_details.PNG
+.. figure:: ../screenshots/admin_community_details_ta.PNG
   :align: center
 
 Doing so presents you with a screen in which you can review and edit the current certificate settings. These are settings that are considered the defaults but
