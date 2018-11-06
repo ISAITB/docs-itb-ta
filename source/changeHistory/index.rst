@@ -10,7 +10,7 @@ the following information is provided:
 
 The latest test bed release is **1.5.0**.
 
-Release 1.5.0 - 26/10/2018
+Release 1.5.0 - 06/11/2018
 --------------------------
 
 This releases focuses on improving error handling and adding support for a customisable conformance certificate per user community.
