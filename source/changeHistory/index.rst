@@ -13,7 +13,7 @@ The latest test bed release is **1.5.0**.
 Release 1.5.0 - 06/11/2018
 --------------------------
 
-This releases focuses on improving error handling and adding support for a customisable conformance certificate per user community.
+This release focuses on improving error handling and adding support for a customisable conformance certificate per user community.
 Numerous additional improvements are also made to facilitate the management of test suites and conformance testing configuration, as
 well as to improve support for the GITB Test Description Language (TDL).
 
@@ -121,7 +121,7 @@ This is a minor release to correct bugs and also to improve the test bed's GDPR 
 Release 1.3.0 - 25/05/2018
 --------------------------
 
-This releases focuses on improving support for the GITB Test Description Language (TDL), improving the test execution process including automatic 
+This release focuses on improving support for the GITB Test Description Language (TDL), improving the test execution process including automatic
 test suite execution, and providing additional tools for administrators and users to monitor their conformance testing progress.
 
 **Bug**
