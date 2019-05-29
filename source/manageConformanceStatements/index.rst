@@ -33,34 +33,44 @@ Create a conformance statement
 ------------------------------
 
 To create a new conformance statement for your selected system click the **Create conformance statement** button from the top right side of the
-conformance statement listing's header. This presents to you a three-step wizard to construct your conformance statement.
+conformance statement listing's header. This presents to you a wizard to construct your conformance statement.
 
-The first step presented is to select the **domain** relevant to your conformance statement.
+The first step is to select the **domain** relevant to your conformance statement. Note that this screen may be skipped if your test bed defines
+only a single domain, considering the domain as selected by default.
 
 .. figure:: ../screenshots/conformance_statements_create_step1.PNG
   :align: center
   :scale: 50%
 
-To proceed select the domain you want by clicking its row and then the **Next** button from the bottom right corner. The next step presented
-is the list of **specifications** for the selected domain.
+If you do have the choice over multiple domains select the one you want by clicking its row. With the relevant row highlighted you can now click the **Next** button
+to proceed or the **Cancel** button to abort. The next step presented is the list of **specifications** for the selected domain.
 
 .. figure:: ../screenshots/conformance_statements_create_step2.PNG
   :align: center
   :scale: 50%
 
-Select the specification you want by clicking its row and then clicking again the **Next** button. The final step presented is the list of **actors**
-defined for the specification.
+Similarly if the selected domain defines only a single specification this will be considered as selected by default and this step will be skipped. If you have
+multiple specifications to choose from select the one you want by clicking its row. You can now click on the **Next** button to proceed (or, as previously, the
+**Cancel** button to abort). The final step presented is the list of **actors** defined for the specification.
 
 .. figure:: ../screenshots/conformance_statements_create_step3.PNG
   :align: center
   :scale: 50%
 
-To complete the creation of the conformance statement select the actor your system is expected to play by clicking its row and finish by clicking the **Finish** button.
-You will then be returned to the listing of your system's conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
+This step is skipped if your selected specification defines a single actor or if an administrator (you or a relevant community administrator) has flagged an actor as the specification's default.
+If this is not the case select the actor from the list by clicking its row and then on the **Next** button (or the **Cancel** button to abort). As a final step
+you will be presented with a confirmation screen in which the details of your conformance statement are presented (domain, specification and actor).
+
+.. figure:: ../screenshots/conformance_statements_create_confirmation.PNG
+  :align: center
+  :scale: 50%
+
+To complete the creation of the conformance statement click the **Confirm** button. Alternatively you can, as in the previous steps, abort by clicking the
+**Cancel** button. In either case you will be returned to the listing of your system's conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
 
 .. note::
-    **Default selection:** In case where you have a single domain, specification or actor to select it will be preselected by default (i.e. highlighted in blue). Moreover,
-    if you are testing as an actor that is defined as the specification's default, this will be preselected even if additional actors exist.
+    **Automatic conformance statement selection:** If your test bed defines a single domain with a single specification and a single actor,
+    clicking the **Create conformance statement** button will immediately present a confirmation screen without the need to make further selections.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details:
 
@@ -85,7 +95,7 @@ The **Conformance statement details** section provides you the context of what y
 .. figure:: ../screenshots/conformance_statement_details_overview_admin.PNG
   :align: center
 
-The **domain** details are presented on the top as the high-level description of the relevant specifications. The 
+The **domain** details are presented on the top as the high-level description of the relevant specifications. The
 **specification** information follows to define the specification you have chosen for your system to conform to
 (a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
 as part of this specification (a specification may have multiple actors). The **test status** presents an overview of the testing

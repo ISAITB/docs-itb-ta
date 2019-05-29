@@ -305,9 +305,37 @@ deployment`_.
 .. _GITB TDL: https://www.itb.ec.europa.eu/docs/tdl/latest/
 .. _test suite packaging and deployment: https://www.itb.ec.europa.eu/docs/tdl/latest/testsuite/index.html#deploying-a-test-suite-in-the-gitb-software
 
-Clicking on the **Deploy test suite** button opens a file browser (for ZIP archives) for you to retrieve the test suite to upload. Once this is selected,
-what takes place depends on whether or not the test suite already exists or not (i.e. its name matches, or not, that of a test suite already uploaded for 
-the specification). In case this test suite already exists you will be prompted with a choice on how to consider the upload.
+Clicking on the **Deploy test suite** button opens a file browser (for ZIP archives) for you to retrieve the test suite to upload. Once this is selected
+the test bed validates the uploaded archive to ensure that it is a valid test suite. This validation goes beyond simple syntax checking by verifying
+included expressions, variable references and correct use of all GITB TDL elements. In case your uploaded test suite has errors these will be presented to you
+in a validation result dialog displaying:
+
+* An error code and description of the validation finding.
+* The relevant test suite file as the location of the problem.
+
+.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_validation_errors.PNG
+  :align: center
+  :scale: 50%
+
+The presence of errors blocks the test suite upload as these are guaranteed to always result in test session errors. In this case your only option is to 
+review the validation report and click the **Cancel** button. In case only warnings have been raised, these are still presented to you but you are also
+given the option to ignore them.
+
+.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_validation_warnings.PNG
+  :align: center
+  :scale: 50%
+
+Such warnings will not necessarily lead to test session errors but should nonetheless be reviewed to ensure nothing has been neglected. Examples of 
+warnings are supporting resources that are not used in test cases or references to missing domain parameters (see :ref:`domains__domain_details`).
+You may now choose to abort the test suite upload by clicking the **Cancel** button or click the **Ignore warnings** button to proceed.
+
+.. note::
+    **Uploading valid test suites:** If an uploaded test suite is fully valid (i.e. its validation results in no errors or warnings) the validation
+    report step is completely skipped.
+
+For a fully valid test suite, or a test suite with warnings you have chosen to ignore, what takes place next depends on whether or not the test suite 
+already exists (i.e. its name matches that of a test suite already uploaded for the specification). In case this test suite already 
+exists you will be prompted with a choice on how to consider the upload.
 
 .. figure:: ../screenshots/admin_domains_specification_test_suites_upload_existing.PNG
   :align: center
