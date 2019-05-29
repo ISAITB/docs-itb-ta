@@ -8,7 +8,66 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.5.0**.
+The latest test bed release is **1.6.0**.
+
+Release 1.6.0 - 29/05/2019
+--------------------------
+
+From an end-user perspective the main highlights of this release are the validation of uploaded test suites and various improvements to
+streamline the user interface (e.g. simplified conformance statement creation). Internally this release brings critical
+updates to library versions, the execution environment and core security features. In addition, the GITB Test Description Language (TDL),
+and its support through the test bed, has been extended to simplify test case definition and bring new features such as new built-in
+processing and validation capabilities as well as extended user input options.
+
+**Bug**
+
+* [ITB-170] - Variables allow defining superfluous "source" and "lang" attributes
+* [ITB-217] - Systems link not presented to organisation basic users
+* [ITB-282] - New test cases for an existing test suite may not appear correctly ordered
+* [ITB-287] - Embedded XML validators (XSD, Schematron) may not show errors on the correct content line
+* [ITB-290] - Sorting by actor on session dashboard not working
+* [ITB-291] - Test cases included in conformance statement where actor is not the SUT
+* [ITB-297] - Failure to match existing session token results in empty screen
+* [ITB-304] - Ensure CSV exports can be made regardless of the exported text
+* [ITB-307] - Table editing control not displayed on WYSIWYG editors
+* [ITB-308] - Correct regular expressions for variable references
+* [ITB-310] - Actor name should be optional to allow external references
+* [ITB-315] - Correct configuration to allow test cases based on UDP
+* [ITB-322] - Automatic test suite execution continues to ping test bed after completion
+* [ITB-324] - In certain cases the previous test session view displays unexecuted steps as overlapping
+* [ITB-337] - Test step report requests can get broken by reverse proxies
+* [ITB-338] - If step without else with internal step reports causes overall report generation to fail
+* [ITB-372] - User logout may leave session state still on the server-side
+* [ITB-374] - Updating an already set keystore for the conformance certificate does not allow directly changing its passwords
+* [ITB-377] - Prevent errors during test session initiation from being re-triggered continuously
+* [ITB-378] - Unable to assign a list or map variable to another list or map
+* [ITB-380] - Allow signed numbers and floats for expressions defined as "NumberOrVariable"
+* [ITB-381] - Allow spaces for expressions defined as "StringOrVariable"
+* [ITB-384] - Processing step errors may not get logged
+
+**New Feature**
+
+* [ITB-311] - Embedded processing handler to create random text tokens
+* [ITB-382] - New embedded validator for matching XML content based on XMLUnit
+
+**Improvement**
+
+* [ITB-51] - Validate uploaded test suite
+* [ITB-241] - Ensure content is filtered based on a whitelist for HTML rendering
+* [ITB-269] - Automate creation of conformance statement
+* [ITB-279] - Support type conversions from list[TYPE] to and from list
+* [ITB-280] - Record test step overall result in context variable
+* [ITB-295] - Hide implementation details from test session log output
+* [ITB-298] - Don't use test suite name for folder naming 
+* [ITB-299] - Correct theme issues with header and footer
+* [ITB-309] - Relax metadata definition constraints
+* [ITB-316] - Relax non-important XSD constraints
+* [ITB-320] - Allow user interaction requests to display a drop down list based on provided values.
+* [ITB-321] - Upgrade to OpenJDK 11 as base platform
+* [ITB-345] - Improve security posture of core components
+* [ITB-376] - Consider variables defined as generic list to be list[string] by default
+* [ITB-379] - Allow user to clear form when processing a user interaction step
+* [ITB-383] - Make processing transactions optional
 
 Release 1.5.0 - 06/11/2018
 --------------------------

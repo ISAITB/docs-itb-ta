@@ -33,35 +33,44 @@ Create a conformance statement
 ------------------------------
 
 To create a new conformance statement for your selected system click the **Create conformance statement** button from the top right side of the
-conformance statement listing's header. This presents to you a three-step wizard to construct your conformance statement.
+conformance statement listing's header. This presents to you a wizard to construct your conformance statement.
 
-The first step presented is to select the **domain** relevant to your conformance statement. Note that in most cases this will only be a single
-domain, the one relevant to your community.
+The first step is to select the **domain** relevant to your conformance statement. Note that this screen will typically be skipped if you are associated to
+a community linked to a single domain, considering the domain as selected by default.
 
 .. figure:: ../screenshots/conformance_statements_create_step1.PNG
   :align: center
   :scale: 50%
 
-To proceed select the domain you want by clicking its row and then the **Next** button from the bottom right corner. The next step presented
-is the list of **specifications** for the selected domain.
+If you do have the choice over multiple domains select the one you want by clicking its row. With the relevant row highlighted you can now click the **Next** button
+to proceed or the **Cancel** button to abort. The next step presented is the list of **specifications** for the selected domain.
 
 .. figure:: ../screenshots/conformance_statements_create_step2.PNG
   :align: center
   :scale: 50%
 
-Select the specification you want by clicking its row and then clicking again the **Next** button. The final step presented is the list of **actors**
-defined for the specification.
+Similarly if the selected domain defines only a single specification this will be considered as selected by default and this step will be skipped. If you have
+multiple specifications to choose from select the one you want by clicking its row. You can now click on the **Next** button to proceed (or, as previously, the
+**Cancel** button to abort). The final step presented is the list of **actors** defined for the specification.
 
 .. figure:: ../screenshots/conformance_statements_create_step3.PNG
   :align: center
   :scale: 50%
 
-To complete the creation of the conformance statement select the actor your system is expected to play by clicking its row and finish by clicking the **Finish** button.
-You will then be returned to the listing of your system's conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
+This step is skipped if your selected specification defines a single actor or if you, as community administrator, have flagged an actor as the specification's default.
+If this is not the case select the actor from the list by clicking its row and then on the **Next** button (or the **Cancel** button to abort). As a final step
+you will be presented with a confirmation screen in which the details of your conformance statement are presented (domain, specification and actor).
+
+.. figure:: ../screenshots/conformance_statements_create_confirmation.PNG
+  :align: center
+  :scale: 50%
+
+To complete the creation of the conformance statement click the **Confirm** button. Alternatively you can, as in the previous steps, abort by clicking the
+**Cancel** button. In either case you will be returned to the listing of your system's conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
 
 .. note::
-    **Default selection:** In case where you have a single domain, specification or actor to select it will be preselected by default (i.e. highlighted in blue). Moreover,
-    if you are testing as an actor that is defined as the specification's default, this will be preselected even if additional actors exist.
+    **Automatic conformance statement selection:** Depending on your needs you may have configured for your community's domain, a single specification with a single actor. If this is the case,
+    clicking the **Create conformance statement** button will immediately present a confirmation screen without the need to make further selections.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details:
 
