@@ -8,7 +8,28 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.6.0**.
+The latest test bed release is **1.6.1**.
+
+Release 1.6.1 - 14/06/2019
+--------------------------
+
+This is a patch release to address bugs that were blocking for new test bed users, specifically linked to the processing
+of template files in test cases. In addition, given the opportunity of the patch, additional minor bugs are corrected
+and important improvements are introduced to facilitate reporting and increase the built-in possibilities to generate
+timestamps within test cases.
+
+**Bug**
+
+* [ITB-401] - Invalid test case imports may pass test suite validation
+* [ITB-407] - Unable to reference map or list variables from within template
+* [ITB-409] - Clearing search filters does not clear the "result" criterion
+
+**Improvement**
+
+* [ITB-390] - Remember search filters when returning from a detail page to a search page
+* [ITB-404] - Support diffs for TokenGenerator timestamps
+* [ITB-405] - Support any timezone for the TokenGenerator's timestamps
+* [ITB-406] - Allow the epoch milliseconds to be returned from the TokenGenerator
 
 Release 1.6.0 - 29/05/2019
 --------------------------
