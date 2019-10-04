@@ -182,6 +182,8 @@ As an administrator you can view and edit these properties, depending on their t
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 
   check **Update**. When providing a new value you can also toggle the display of the typed characters.
 
+Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
+
 .. note:: 
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when editing the organisation's
   information but as long as required properties are missing you will not be able to launch tests.

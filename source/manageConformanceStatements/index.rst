@@ -288,9 +288,8 @@ Clicking this will expand to also display the current system's additional inform
   :align: center
 
 The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
-administrator, will display a help tooltip to understand their meaning. Only administrators may update these properties
-but you can view their configured values or download their linked files. Required properties are marked with an asterisk
-and will need to be completed by an administrator before launching any tests for this system.
+administrator, will display a help tooltip to understand their meaning. Required properties are marked with an asterisk
+and will need to be completed before launching any tests for this system.
 
 .. note::
     **Editing a system's information:** The information displayed on this screen is read-only. Editing the system's information is possible through the screen
