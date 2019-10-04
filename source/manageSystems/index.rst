@@ -66,8 +66,8 @@ you will also see a **Show properties** checkbox. Checking this you can manage y
   :align: center
   :scale: 50%
 
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
-administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also 
+see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
 * For texts through an editable text field.
 * For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by 
@@ -115,8 +115,8 @@ will also see a **Show properties** checkbox. Checking this you can manage the s
   :align: center
   :scale: 50%
 
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
-administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also see 
+a help tooltip to understand their meaning. Such properties can be managed as follows:
 
 * For texts the current value is presented in an editable text field.
 * For files the **Upload** button is used to select a new file, whereas if one is already set you can download it

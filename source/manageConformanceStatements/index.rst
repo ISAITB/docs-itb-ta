@@ -35,8 +35,8 @@ Create a conformance statement
 To create a new conformance statement for your selected system click the **Create conformance statement** button from the top right side of the
 conformance statement listing's header. This presents to you a wizard to construct your conformance statement.
 
-The first step is to select the **domain** relevant to your conformance statement. Note that this screen will typically be skipped if you are associated to
-a community linked to a single domain, considering the domain as selected by default.
+The first step is to select the **domain** relevant to your conformance statement. Note that this screen will typically be skipped if your
+community is linked to a single domain, considering the domain as selected by default.
 
 .. figure:: ../screenshots/conformance_statements_create_step1.PNG
   :align: center
@@ -279,10 +279,9 @@ Clicking this will expand to also display the current system's additional inform
 .. figure:: ../screenshots/conformance_statements_systeminfo_properties.PNG
   :align: center
 
-The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
-administrator, will display a help tooltip to understand their meaning. Only administrators may update these properties
-but you can view their configured values or download their linked files. Required properties are marked with an asterisk
-and will need to be completed by an administrator before launching any tests for this system.
+The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by you, will display a help 
+tooltip to understand their meaning. You can view here the configured values or download linked files. Required properties are 
+marked with an asterisk and will need to be completed before launching any tests for this system.
 
 .. note::
     **Editing a system's information:** The information displayed on this screen is read-only. Editing the system's information is possible through the screen

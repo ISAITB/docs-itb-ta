@@ -9,9 +9,9 @@ To manage your profile locate in the screen's header the control displaying your
   :align: center
 
 Your profile management functions can be accessed through links that are displayed once you hover over your
-displayed user's name. These functions allow you to manage your own personal profile and also your organisation's
+displayed user's name. These functions allow you to manage your own personal profile and also your admin organisation's
 information. How you manage your personal profile depends largely on whether or not you are using EU Login to
-connect to the test bed, whereas the display and management of your organisation's information remains the same.
+connect to the test bed, whereas the display of your admin organisation's information remains the same.
 
 Use the following links depending on your case:
 
@@ -21,7 +21,7 @@ Use the following links depending on your case:
 
 .. note::
   When using EU Login you may have more than one user roles linked to your EU Login account. Each such role is related
-  to different organisations, possibly within different communities. The profile management section of the test bed offers
+  to different organisations and/or communities. The profile management section of the test bed offers
   the means of managing these roles but not your EU Login account.
 
   When not using EU Login you will have a distinct test bed user account per role that you use to log in with. In this case
@@ -50,9 +50,9 @@ The popup information displays your name, current role, and three links:
 To manage your profile select the **Settings** link. The screen that is displayed presents you your
 profile information, including your **name**, **email** and **role**. In the side menu you are also
 presented links to :ref:`manage your profile<manage_your_profile__edit__eulogin>` (**Profile**, the current page) and
-:ref:`manage your organisation<manage_your_profile__view_organisation_details>` (**Organisation**).
+:ref:`manage your admin organisation<manage_your_profile__view_organisation_details>` (**Organisation**).
 
-.. figure:: ../screenshots/settings_eulogin_oa.PNG
+.. figure:: ../screenshots/settings_eulogin_ca.PNG
   :align: center
 
 .. _manage_your_profile__edit__eulogin:
@@ -75,8 +75,6 @@ have here relate to the test bed roles linked to your account, specifically:
   Each of these actions will disconnect your current session before proceeding. You will be prompted to confirm this
   before proceeding.
 
-  **Updating your role:** Modification of your role is possible but this is reserved as an administrator-level feature.
-
 .. _manage_your_profile__noeulogin:
 
 Case: No EU Login
@@ -88,7 +86,7 @@ Case: No EU Login
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
 
-.. figure:: ../screenshots/profile_hover_nonadmin_oa.PNG
+.. figure:: ../screenshots/profile_hover_nonadmin_ca.PNG
   :align: center
 
 The popup information displays your name, current role, and two links:
@@ -118,10 +116,6 @@ necessarily the current one). If you click this you will be presented with a con
 transferred to the :ref:`organisation self-registration page<login__create_account>`. Note that this button may not
 be available if self-registration is disabled by your test bed's administrator.
 
-.. note::
-    **Updating your role:** From the profile management screen you only have access to modify your name.
-    Modification of your role is also possible but this is reserved to your community administrator.
-
 .. _manage_your_profile__change_your_password:
 
 Change your password
@@ -143,14 +137,14 @@ Manage your organisation's details
 
 .. note::
     **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation linked to your
-    community that is used for testing purposes. You cannot change this organisation's information.
+    community that is used for testing purposes.
 
 To manage your organisation's information click the **Organisation** link from the side menu. This shows you
 the information relevant to your organisation, split in two sections:
 
-* **Organisation details:** The name (short and full) of your organisation.
-* **Members:** Your organisation's list of members (i.e. users). This includes yourself as well as any other 
-  users configured by you or your community administrator. For each user the **name**, **email**, **role** and **status** are presented.
+* **Organisation details:** The name (short and full) of your admin organisation.
+* **Members:** Your community's administrators (including yourself). For each user the **name**, **email**, **role** 
+  and **status** are presented.
 
 .. figure:: ../screenshots/organisation_manage_community_admin.PNG
   :align: center
@@ -161,22 +155,24 @@ the information relevant to your organisation, split in two sections:
   a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
+  Your organisations members (i.e. community administrators) are managed as part of your :ref:`community management screen<community__administrators>`.
+
 .. _manage_your_profile__edit_organisation:
 
 Edit your organisation's details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Editing the details of your organisation is possible through the editable fields relevant to your organisation's
-**short** and **full names**. In addition, if your community administrator has defined additional properties for
-its organisations you will also see here a **Show properties** checkbox to toggle the display of your organisation's
+**short** and **full names**. In addition, if you have defined additional properties for your community's organisations
+you will also see here a **Show properties** checkbox to toggle the display of your organisation's
 additional information.
 
 .. figure:: ../screenshots/organisation_manage_admin_properties.PNG
   :align: center
 
 If this is checked you will see a list of these additional properties along with their currently configured values.
-Such properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
-administrator, will display a help tooltip to understand their meaning.
+Such properties can be simple texts, secret values (e.g. passwords) or files and, if you supplied by you, will display 
+a help tooltip to understand their meaning.
 
 As an administrator you can view and edit these properties, depending on their type:
 
@@ -191,59 +187,3 @@ As an administrator you can view and edit these properties, depending on their t
   information but as long as required properties are missing you will not be able to launch tests.
 
 Update any of the existing values and click on **Save changes** to persist your changes.
-
-.. _manage_your_profile__add_member:
-
-Add a member to your organisation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-As organisation administrator you can also add new non-administrator users to your organisation (see :ref:`introduction__glossary__organisation`).
-These users can start test sessions and view your organisation's testing history but cannot add other users or change
-your organisation's configuration.
-
-Adding a new member is done by clicking on the **Add member** button and completing the information in the displayed popup. The
-information you need to provide depends on whether your test bed uses EU Login for its authentication.
-
-Case: EU Login
-++++++++++++++
-
-In case EU Login is used the following popup is displayed.
-
-.. figure:: ../screenshots/organisation_manage_add_member_eulogin.PNG
-  :align: center
-  :scale: 50%
-
-You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to your organisation's
-members but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
-
-Case: no EU Login
-+++++++++++++++++
-
-In case EU Login is not used the following popup is displayed.
-
-.. figure:: ../screenshots/organisation_manage_add_member.PNG
-  :align: center
-  :scale: 50%
-
-The information requested is:
-
-* The **user's name**.
-* The **email** address that the user will use to login. Recall that this address does not have to be a real one but is rather considered as a functional username.
-  No emails will be sent to this address.
-* The user's **password**. This is a "one-time password" meaning that the user will need to change it upon his/her first login.
-
-.. _manage_your_profile__remove_member:
-
-Remove a member from your organisation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Removing an organisation member is possible through the **Members** table.
-
-.. figure:: ../screenshots/organisation_manage_members.PNG
-  :align: center
-  :scale: 50%
-
-Each displayed row except the one corresponding to yourself, displays a delete button under the **Operation** column.
-To delete a given member click this button and confirm the subsequent prompt.
