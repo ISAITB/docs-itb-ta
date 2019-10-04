@@ -45,8 +45,39 @@ The information to enter in the presented form are:
 * The system's **full name** (required). This is included in reports that mention the system.
 * An optional **description** to provide more information about the system.
 * A **version** number (required). Although required this is not currently used in the test bed apart from display purposes.
-* An option to **copy the test setup** from another system. Selecting one will replicate the selected system's conformance statements for the new system. Note
-  that this option is not presented if no other systems are defined.
+
+If your organisation includes other systems you are also presented here with an option to **copy the test setup** from 
+one of them as a source. Selecting one will replicate the selected system's conformance statements for the new system. 
+
+.. figure:: ../screenshots/systems_create_copy.PNG
+  :align: center
+  :scale: 70%
+
+Once another system is selected to copy from, you are also presented with additional options to include:
+
+* **System properties:** To also copy any additional system-level properties that the source system defines.
+* **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
+  conformance statements.
+
+If your community foresees additional system properties, and as long as you are not copying the properties from another system,
+you will also see a **Show properties** checkbox. Checking this you can manage your new system's properties.
+
+.. figure:: ../screenshots/systems_create_properties.PNG
+  :align: center
+  :scale: 50%
+
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
+
+* For texts through an editable text field.
+* For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by 
+  clicking **Remove**.
+* For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
+  **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
+
+.. note:: 
+  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
+  information but as long as required properties are missing you will not be able to launch tests.
 
 Once you have entered the system's information click the **Save** button to record it. You can also click the **Cancel** button
 to close the popup without making any changes.
@@ -63,9 +94,39 @@ being displayed with the system's information, presented in editable input field
   :align: center
   :scale: 50%
 
-You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system. In addition you can select to **copy the test setup** 
-from another system which will reset the system's conformance statements to match the selected one (upon confirmation). Note that this option is hidden if no
-other systems are defined.
+You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system. If your organisation defines
+other systems you can also select to **copy the test setup** from another system which will reset the system's conformance statements to 
+match the selected one (upon confirmation).
+
+.. figure:: ../screenshots/systems_create_copy.PNG
+  :align: center
+  :scale: 70%
+
+Once another system is selected to copy from, you are also presented with additional options to include:
+
+* **System properties:** To also copy any additional system-level properties that the source system defines.
+* **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
+  conformance statements.
+
+If your community foresees additional system properties, and as long as you are not copying the properties from another system, you 
+will also see a **Show properties** checkbox. Checking this you can manage the system's properties.
+
+.. figure:: ../screenshots/systems_update_properties.PNG
+  :align: center
+  :scale: 50%
+
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
+
+* For texts the current value is presented in an editable text field.
+* For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
+  by clicking on its link, or delete it by clicking **Remove**.
+* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 
+  check **Update**. When providing a new value you can also toggle the display of the typed characters.
+
+.. note:: 
+  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
+  information but as long as required properties are missing you will not be able to launch tests.
 
 Once ready click the **Save** button to finish. Here you may also click the **Delete** button which, following confirmation, will proceed to
 completely delete the system. In this case the tests realised for this system will still be searchable but will be presented

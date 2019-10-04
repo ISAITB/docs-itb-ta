@@ -20,7 +20,7 @@ sends messages to your system, it is likely that you need to inform the test bed
 Providing and reviewing the configuration for your system is done through the **Configuration parameters** section of
 the conformance statement detail page (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`).
 
-Once you have entered all required configuration you can choose to execute one or more test cases 
+Once all required configuration is provided you can choose to execute one or more test cases 
 through the conformance statement detail's **Conformance tests** section (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`). The test execution
 process starts by clicking one of the available **Play** buttons. In short, you can either execute a
 specific test case or a complete test suite.
@@ -31,27 +31,36 @@ Step 1 - Verification of your configuration
 -------------------------------------------
 
 The first step of executing one or more test cases is the verification on your provided configuration. If
-you are expected to enter required configuration parameters that are missing you will be presented with
-a screen marked with **Required configuration missing**.
+you are expected to enter required information that is missing you will be presented with
+a screen listing the **missing properties**.
 
 .. figure:: ../screenshots/test_execution_config.PNG
   :align: center
 
 This screen presents on the top the **name** and **description** of the test cases to execute but puts
-the focus on your configuration parameters. Similar to their display on the conformance statement detail screen (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`), 
-you see here:
+the focus on the missing information. This is presented to you in sections depending on the type of missing information:
 
-* Whether or not it is **set**.
-* The **parameter** name (marked with an asterisk if mandatory).
-* Its **description**.
+* **Missing organisation properties:** Properties at the level of the whole organisation.
+* **Missing system properties:** Properties at the level of the system being tested.
+* **Missing conformance statement parameters:** Configuration parameters linked to the specific conformance statement.
 
-The only option provided to you is to return to the conformance statement detail screen by clicking the 
-**Back** button in the bottom left corner. Once your system has all required configuration parameters
-correctly defined you can proceed to execute your test(s).
+In each case you are presented with the following information:
+
+* Whether or not the information is **set** (information that is set is also presented to provide a full overview).
+* The name of the **property** or **parameter** (marked with an asterisk if mandatory).
+* The information's **description**.
+
+From this point you have the following options:
+
+* Click the **Back** button in the bottom left corner to return to the 
+  :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
+* Click one of the **View** buttons on top right corners of the presented tables to access the configuration in question.
+
+Once all required information is correctly defined you can proceed to execute your test(s).
 
 .. note::
-    **Valid configuration:** If you are not required to provide any configuration parameters or all your
-    expected parameters are correctly provided this screen will be skipped. You will be taken directly to 
+    **Valid configuration:** If you are not required to provide any information or all required information
+    is correctly provided this screen will be skipped. You will be taken directly to 
     the display of the simulated actors' configuration (see :ref:`execute_tests__step2`).
 
 .. _execute_tests__step2:

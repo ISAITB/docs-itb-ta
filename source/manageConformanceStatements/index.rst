@@ -69,7 +69,7 @@ To complete the creation of the conformance statement click the **Confirm** butt
 **Cancel** button. In either case you will be returned to the listing of your system's conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
 
 .. note::
-    **Automatic conformance statement selection:** Depending on your needs you may have configured for your community's domain, a single specification with a single actor. If this is the case,
+    **Automatic conformance statement selection:** Depending on your needs you may have configured for your community's domain a single specification with a single actor. If this is the case,
     clicking the **Create conformance statement** button will immediately present a confirmation screen without the need to make further selections.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details:
@@ -109,8 +109,8 @@ Configuration parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The next section displayed is the information on the system's **Configuration parameters**, the information that you are expected to provide
-to the test bed for your system. These parameters are typically configured once per system and for this purpose they are by
-default displayed in collapsed form:
+to the test bed for your system pertinent to the current conformance statement. These parameters are typically configured once and for
+this purpose are displayed by default in collapsed form:
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_collapsed.PNG
   :align: center
@@ -149,16 +149,18 @@ In case of a parameter that is a file, the popup will be adapted to allow you to
   :align: center
   :scale: 50%
 
+A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide and confirm
+a new value.
+
+.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
+  :align: center
+  :scale: 50%
+
 To change the parameter's value click on **Save**. Clicking on **Delete** will clear the current value, whereas **Cancel** will close the popup without
 making changes.
 
 Finally, note that the complete **Configuration parameters** section may be missing in case your system is not expected to provide any information
 before executing its tests.
-
-.. note::
-    **Editing configuration parameters:** Configuration parameters apply for the specific system across all its conformance statements.
-    Editing them is a prerequisite that you, as organisation administrator, has to complete
-    as your basic users lack the privileges to do so.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__tests:
 
@@ -270,7 +272,17 @@ At any given time you can review the information of your selected system by clic
 .. figure:: ../screenshots/conformance_statements_systeminfo.PNG
   :align: center
 
-In this screen you can see the **short** and **full name** of the system, its **description** and its **version** number.
+In this screen you can see the **short** and **full name** of the system, its **description** and its **version** number. If your
+community administrator has foreseen additional properties for systems you will also see here the **Show properties** checkbox.
+Clicking this will expand to also display the current system's additional information.
+
+.. figure:: ../screenshots/conformance_statements_systeminfo_properties.PNG
+  :align: center
+
+The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
+administrator, will display a help tooltip to understand their meaning. Only administrators may update these properties
+but you can view their configured values or download their linked files. Required properties are marked with an asterisk
+and will need to be completed by an administrator before launching any tests for this system.
 
 .. note::
     **Editing a system's information:** The information displayed on this screen is read-only. Editing the system's information is possible through the screen

@@ -305,4 +305,4 @@ that blocks JavaScript execution. In addition, in terms of network connectivity,
 during the execution of test sessions. If you experience test sessions starting but appearing as frozen with no visual updates, it could be that you
 are behind a proxy or firewall that blocks the web socket protocol. In such a case please contact your network administrator for assistance.
 
-.. _web sockets: https://en.wikipedia.org/wiki/WebSocket 
+.. _web sockets: https://en.wikipedia.org/wiki/WebSocket
