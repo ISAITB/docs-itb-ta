@@ -23,7 +23,7 @@ The popup displays the options available to you:
 * **Switch role** allows you to switch to another one of your available test bed roles.
 * **Logout** terminates your current test bed session.
 
-.. figure:: ../screenshots/profile_hover_nonadmin_eulogin.PNG
+.. figure:: ../screenshots/profile_hover_nonadmin_eulogin_oa.PNG
   :align: center
 
 Both **Switch role** and **Logout** will complete your work with your currently active test bed role. The 
@@ -41,7 +41,7 @@ The popup displays the options available to you:
 * **Settings** takes you to your :ref:`profile management screen<manage_your_profile__edit>`.
 * **Logout** terminates your current test bed session.
 
-.. figure:: ../screenshots/profile_hover_nonadmin.PNG
+.. figure:: ../screenshots/profile_hover_nonadmin_oa.PNG
   :align: center
 
 Click on **Logout** to terminate your current session and return you to the test bed's :ref:`welcome page<login__welcome>`.

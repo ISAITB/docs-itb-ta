@@ -113,8 +113,8 @@ Configuration parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The next section displayed is the information on the system's **Configuration parameters**, the information that you are expected to provide
-to the test bed for your system. These parameters are typically configured once per system and for this purpose they are by
-default displayed in collapsed form:
+to the test bed for your system pertinent to the current conformance statement. These parameters are typically configured once and for 
+this purpose are displayed by default in collapsed form:
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_collapsed.PNG
   :align: center
@@ -150,6 +150,13 @@ To edit a configuration parameter click its **edit** icon on its relevant row. D
 In case of a parameter that is a file, the popup will be adapted to allow you to download the file and upload a replacement.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_binary.PNG
+  :align: center
+  :scale: 50%
+
+A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide and confirm 
+a new value.
+
+.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
   :align: center
   :scale: 50%
 

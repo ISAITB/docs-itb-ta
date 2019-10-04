@@ -38,7 +38,7 @@ Case: EU Login
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
 
-.. figure:: ../screenshots/profile_hover_nonadmin_eulogin.PNG
+.. figure:: ../screenshots/profile_hover_nonadmin_eulogin_oa.PNG
   :align: center
 
 The popup information displays your name, current role, and three links:
@@ -50,9 +50,9 @@ The popup information displays your name, current role, and three links:
 To manage your profile select the **Settings** link. The screen that is displayed presents you your
 profile information, including your **name**, **email** and **role**. In the side menu you are also
 presented links to :ref:`manage your profile<manage_your_profile__edit__eulogin>` (**Profile**, the current page) and
-:ref:`view your organisation<manage_your_profile__view_organisation_details>` (**Organisation**).
+:ref:`manage your organisation<manage_your_profile__view_organisation_details>` (**Organisation**).
 
-.. figure:: ../screenshots/settings_eulogin.PNG
+.. figure:: ../screenshots/settings_eulogin_oa.PNG
   :align: center
 
 .. _manage_your_profile__edit__eulogin:
@@ -88,7 +88,7 @@ Case: No EU Login
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
 
-.. figure:: ../screenshots/profile_hover_nonadmin.PNG
+.. figure:: ../screenshots/profile_hover_nonadmin_oa.PNG
   :align: center
 
 The popup information displays your name, current role, and two links:
@@ -99,7 +99,7 @@ The popup information displays your name, current role, and two links:
 To manage your profile select the **Settings** link. The screen that is displayed presents you your
 profile information, including your **name**, **email** and **role**. In the side menu you are also
 presented links to :ref:`manage your profile<manage_your_profile__edit>` (**Profile**, the current page),
-:ref:`view your organisation<manage_your_profile__view_organisation_details>` (**Organisation**) and
+:ref:`manage your organisation<manage_your_profile__view_organisation_details>` (**Organisation**) and
 :ref:`reset your password<manage_your_profile__change_your_password>` (**Password**).
 
 .. figure:: ../screenshots/settings_oa.PNG
@@ -138,18 +138,24 @@ When ready click on the **Save** button to complete your password update.
 
 .. _manage_your_profile__view_organisation_details:
 
-View your organisation's details
---------------------------------
+Manage your organisation's details
+----------------------------------
 
-To view your organisation's information click the **Organisation** link from the side menu. This shows you 
+To manage your organisation's information click the **Organisation** link from the side menu. This shows you 
 the information relevant to your organisation, split in two sections:
 
 * **Organisation details:** The name (short and full) of your organisation.
 * **Members:** Your organisation's list of members (i.e. users). This includes yourself as well as any other 
-  users configured by your community administrator. For each user the **name**, **email** and **role** are presented.
+  users configured by you or your community administrator. For each user the **name**, **email**, **role** and **status** are presented.
 
 .. figure:: ../screenshots/organisation_manage_admin.PNG
   :align: center
+
+.. note::
+  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
+  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be 
+  displayed as **Active**.
 
 .. _manage_your_profile__edit_organisation:
 
@@ -157,7 +163,30 @@ Edit your organisation's details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Editing the details of your organisation is possible through the editable fields relevant to your organisation's
-**short** and **full names**. Update any of the existing values and click on **Save changes** to persist your changes.
+**short** and **full names**. In addition, if your community administrator has defined additional properties for 
+its organisations you will also see here a **Show properties** checkbox to toggle the display of your organisation's 
+additional information.
+
+.. figure:: ../screenshots/organisation_manage_admin_properties.PNG
+  :align: center
+
+If this is checked you will see a list of these additional properties along with their currently configured values.
+Such properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
+administrator, will display a help tooltip to understand their meaning.
+
+As an administrator you can view and edit these properties, depending on their type:
+
+* For texts the current value is presented in an editable text field.
+* For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
+  by clicking on its link, or delete it by clicking **Remove**.
+* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 
+  check **Update**. When providing a new value you can also toggle the display of the typed characters.
+
+.. note:: 
+  Required properties are marked with an asterisk. It is is not mandatory to fill these in when editing the organisation's
+  information but as long as required properties are missing you will not be able to launch tests.
+
+Update any of the existing values and click on **Save changes** to persist your changes.
 
 .. _manage_your_profile__add_member:
 
@@ -168,8 +197,27 @@ As organisation administrator you can also add new non-administrator users to yo
 These users can start test sessions and view your organisation's testing history but cannot add other users or change
 your organisation's configuration.
 
-To add a new member click on the **Add member** button and complete the information for the new user in the popup that is
-displayed.
+Adding a new member is done by clicking on the **Add member** button and completing the information in the displayed popup. The 
+information you need to provide depends on whether your test bed uses EU Login for its authentication.
+
+Case: EU Login
+++++++++++++++
+
+In case EU Login is used the following popup is displayed.
+
+.. figure:: ../screenshots/organisation_manage_add_member_eulogin.PNG
+  :align: center
+  :scale: 50%
+
+You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
+her EU Login account. Once you have created the user you will see that a new entry is added to your organisation's 
+members but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
+updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. 
+
+Case: no EU Login
++++++++++++++++++
+
+In case EU Login is not used the following popup is displayed.
 
 .. figure:: ../screenshots/organisation_manage_add_member.PNG
   :align: center
@@ -182,18 +230,16 @@ The information requested is:
   No emails will be sent to this address.
 * The user's **password**. This is a "one-time password" meaning that the user will need to change it upon his/her first login.
 
-.. note::
-    **Deleting users and managing roles:** Deleting your organisation's users as well as changing their assigned roles is currently not possible.
-    This is a feature reserved to your community administrator.
+.. _manage_your_profile__remove_member:
 
-If your community administrator has defined additional properties for its organisations you will also see here a
-**Show properties** checkbox to toggle the display of your organisation's additional information.
+Remove a member from your organisation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: ../screenshots/organisation_manage_nonadmin_properties.PNG
+Removing an organisation member is possible through the **Members** table.
+
+.. figure:: ../screenshots/organisation_manage_members.PNG
   :align: center
+  :scale: 50%
 
-If this is checked you will see a list of these additional properties along with their currently configured values.
-Such properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
-administrator, will display a help tooltip to understand their meaning. Only administrators may update these properties
-but you can view their configured values or download their linked files. Required properties are marked with an asterisk
-and will need to be completed by an administrator before your organisation can engage in any tests.
+Each displayed row except the one corresponding to yourself, displays a delete button under the **Operation** column.
+To delete a given member click this button and confirm the subsequent prompt.
