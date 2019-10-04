@@ -8,7 +8,56 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.6.1**.
+The latest test bed release is **1.7.0**.
+
+Release 1.7.0 - 07/10/2019
+--------------------------
+
+This release allows integration with EU Login, the European Commission's central authentication service. In addition, the
+release introduces several important new features such as the ability to open communities for user self-registration 
+and the introduction of custom properties for organisations and systems. Such custom properties enable enhanced 
+data collection options and the scripting of automation processes, introducing at the same time new means of providing 
+input values and configuration to test sessions.
+
+**Bug**
+
+* [ITB-421] - Resolving the index of a GITB list when in double format fails
+* [ITB-423] - Dropdown menus not visible for loop and flow test step reports
+* [ITB-427] - Progress spinners can continue after test session is stopped
+* [ITB-430] - Test step progress indicators can remain in processing state
+* [ITB-443] - Can't delete a community that contains organisations with executed test sessions
+* [ITB-444] - Can't delete obsolete test results that are linked to conformance results
+* [ITB-448] - Test case definition doesn't reload if user refreshes browser
+* [ITB-449] - Specification details not included in conformance dashboard CSV export
+
+**New Feature**
+
+* [ITB-73] - ECAS integration
+* [ITB-196] - One account - multiple communities
+* [ITB-394] - Configuration parameters that are not editable by organisation users or that are not included in test sessions
+* [ITB-395] - Self-registration for specific communities
+* [ITB-396] - Configurable organisation properties
+* [ITB-397] - Optionally include organisation properties in organisation-related exports
+* [ITB-418] - Allow organisation admins to remove users
+* [ITB-420] - Allow organisation administrators to delete their organisation's members
+* [ITB-435] - Define an organisation as a template for self-registered organisations
+* [ITB-440] - Configurable system properties
+* [ITB-441] - Make available custom and standard organisation properties in test sessions
+* [ITB-442] - Make available custom and standard system properties in test sessions
+
+**Improvement**
+
+* [ITB-100] - Allow organisation to request addition to a community
+* [ITB-398] - Optionally copy configuration parameters when copying the testing setup to another system
+* [ITB-414] - Use Commission favicon
+* [ITB-419] - Align the look and feel for the settings' management
+* [ITB-437] - Support endpoint parameters with secret values (e.g. passwords)
+* [ITB-438] - Make more intuitive the display of endpoint parameters for administrators
+* [ITB-439] - Support files as domain configuration parameters
+* [ITB-445] - Increase size limit for uploaded files
+* [ITB-446] - Allow community and test bed admins to edit their own organisation's information
+* [ITB-447] - When test case configuration is missing allow user to directly navigate to provide it
+
 
 Release 1.6.1 - 14/06/2019
 --------------------------

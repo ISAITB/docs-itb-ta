@@ -38,14 +38,14 @@ Create a conformance statement
 To create a new conformance statement for your selected system click the **Create conformance statement** button from the top right side of the
 conformance statement listing's header. This presents to you a wizard to construct your conformance statement.
 
-The first step is to select the **domain** relevant to your conformance statement. Note that this screen will typically be skipped if you are associated to 
+The first step is to select the **domain** relevant to your conformance statement. Note that this screen will typically be skipped if you are associated to
 a community linked to a single domain, considering the domain as selected by default.
 
 .. figure:: ../screenshots/conformance_statements_create_step1.PNG
   :align: center
   :scale: 50%
 
-If you do have the choice over multiple domains select the one you want by clicking its row. With the relevant row highlighted you can now click the **Next** button 
+If you do have the choice over multiple domains select the one you want by clicking its row. With the relevant row highlighted you can now click the **Next** button
 to proceed or the **Cancel** button to abort. The next step presented is the list of **specifications** for the selected domain.
 
 .. figure:: ../screenshots/conformance_statements_create_step2.PNG
@@ -53,7 +53,7 @@ to proceed or the **Cancel** button to abort. The next step presented is the lis
   :scale: 50%
 
 Similarly if the selected domain defines only a single specification this will be considered as selected by default and this step will be skipped. If you have
-multiple specifications to choose from select the one you want by clicking its row. You can now click on the **Next** button to proceed (or, as previously, the 
+multiple specifications to choose from select the one you want by clicking its row. You can now click on the **Next** button to proceed (or, as previously, the
 **Cancel** button to abort). The final step presented is the list of **actors** defined for the specification.
 
 .. figure:: ../screenshots/conformance_statements_create_step3.PNG
@@ -68,12 +68,12 @@ you will be presented with a confirmation screen in which the details of your co
   :align: center
   :scale: 50%
 
-To complete the creation of the conformance statement click the **Confirm** button. Alternatively you can, as in the previous steps, abort by clicking the 
+To complete the creation of the conformance statement click the **Confirm** button. Alternatively you can, as in the previous steps, abort by clicking the
 **Cancel** button. In either case you will be returned to the listing of your system's conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
 
 .. note::
-    **Automatic conformance statement selection:** It is often the case that organisations are part of a community for which only a single domain, specification 
-    and actor are available for selection. If this is your case, clicking the **Create conformance statement** button will immediately present you with a 
+    **Automatic conformance statement selection:** It is often the case that organisations are part of a community for which only a single domain, specification
+    and actor are available for selection. If this is your case, clicking the **Create conformance statement** button will immediately present you with a
     confirmation screen without the need to make further selections.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details:
@@ -160,9 +160,8 @@ Finally, note that the complete **Configuration parameters** section may be miss
 before executing its tests.
 
 .. note::
-    **Editing configuration parameters:** Configuration parameters apply for the specific system across all its conformance statements.
-    Editing them is a prerequisite that you, as organisation administrator, has to complete
-    as your basic users lack the privileges to do so.
+    **Editing configuration parameters:** Editing a conformance statement's configuration parameters is a prerequisite that you, as organisation administrator,
+    has to complete as your basic users lack the privileges to do so.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__tests:
 
@@ -274,7 +273,17 @@ At any given time you can review the information of your selected system by clic
 .. figure:: ../screenshots/conformance_statements_systeminfo.PNG
   :align: center
 
-In this screen you can see the **short** and **full name** of the system, its **description** and its **version** number.
+In this screen you can see the **short** and **full name** of the system, its **description** and its **version** number. If your
+community administrator has foreseen additional properties for systems you will also see here the **Show properties** checkbox.
+Clicking this will expand to also display the current system's additional information.
+
+.. figure:: ../screenshots/conformance_statements_systeminfo_properties.PNG
+  :align: center
+
+The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
+administrator, will display a help tooltip to understand their meaning. Only administrators may update these properties
+but you can view their configured values or download their linked files. Required properties are marked with an asterisk
+and will need to be completed by an administrator before launching any tests for this system.
 
 .. note::
     **Editing a system's information:** The information displayed on this screen is read-only. Editing the system's information is possible through the screen
