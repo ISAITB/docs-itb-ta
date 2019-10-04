@@ -143,7 +143,7 @@ To manage your organisation's information click the **Organisation** link from t
 the information relevant to your organisation, split in two sections:
 
 * **Organisation details:** The name (short and full) of your admin organisation.
-* **Members:** Your community's administrators (including yourself). For each user the **name**, **email**, **role** 
+* **Members:** Your community's administrators (including yourself). For each user the **name**, **email**, **role**
   and **status** are presented.
 
 .. figure:: ../screenshots/organisation_manage_community_admin.PNG
@@ -171,7 +171,7 @@ additional information.
   :align: center
 
 If this is checked you will see a list of these additional properties along with their currently configured values.
-Such properties can be simple texts, secret values (e.g. passwords) or files and, if you supplied by you, will display 
+Such properties can be simple texts, secret values (e.g. passwords) or files and, if you supplied by you, will display
 a help tooltip to understand their meaning.
 
 As an administrator you can view and edit these properties, depending on their type:

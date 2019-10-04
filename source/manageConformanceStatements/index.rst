@@ -279,8 +279,8 @@ Clicking this will expand to also display the current system's additional inform
 .. figure:: ../screenshots/conformance_statements_systeminfo_properties.PNG
   :align: center
 
-The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by you, will display a help 
-tooltip to understand their meaning. You can view here the configured values or download linked files. Required properties are 
+The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by you, will display a help
+tooltip to understand their meaning. You can view here the configured values or download linked files. Required properties are
 marked with an asterisk and will need to be completed before launching any tests for this system.
 
 .. note::
