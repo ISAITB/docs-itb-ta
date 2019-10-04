@@ -75,8 +75,6 @@ see a help tooltip to understand their meaning. Such properties can be edited as
 * For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
   **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
 
-Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
-
 .. note:: 
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
   information but as long as required properties are missing you will not be able to launch tests.
@@ -125,8 +123,6 @@ a help tooltip to understand their meaning. Such properties can be managed as fo
   by clicking on its link, or delete it by clicking **Remove**.
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 
   check **Update**. When providing a new value you can also toggle the display of the typed characters.
-
-Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
 
 .. note:: 
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
