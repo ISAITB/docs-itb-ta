@@ -51,8 +51,8 @@ The information displayed in the table is sorted using the sessions' start time 
 can be adapted by clicking on each column's header to sort by it in ascending manner. The currently active sort column and type are displayed using
 an arrow icon next to the relevant column's title.
 
-The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header. Finally, each session's 
-row offers controls to:
+The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
+(see :ref:`monitor_test_sessions__export`). Finally, each session's row offers controls to:
 
 * Forcibly **terminate** it, by clicking the cross icon on the relevant session's row under the **Operation** column.
 * View its **test step details**, by clicking the row's magnifying glass icon under the **Action** column (see :ref:`session_dashboard__steps`).
@@ -85,12 +85,13 @@ Certain test results may appear greyed out in case they are to be considered as 
 execution (e.g. the related organisation having been deleted). Such obsolete results are maintained by default but can be purged at any time by clicking the 
 **Delete obsolete results** button.
 
-The presented completed sessions can be exported in CSV format by clicking the **Export CSV** button in the table header. In addition, the **detailed tests steps** for a
-session can be displayed by clicking the row's magnifying glass icon under the **Action** column (see :ref:`session_dashboard__steps`).
+The presented completed sessions can be exported in CSV format by clicking the **Export CSV** button in the table header (see :ref:`monitor_test_sessions__export`).
+In addition, the **detailed tests steps** for a session can be displayed by clicking the row's magnifying glass icon under
+the **Action** column (see :ref:`session_dashboard__steps`).
 
 .. note::
     **Deleting obsolete tests from the session dashboard:** As test bed administrator if you select to delete the obsolete tests you will be doing so for the entire test bed.
-    If you want to target a specific community you could login as a community administrator to do the purge. Alternatively, at the level of a system you can always use 
+    If you want to target a specific community you could login as a community administrator to do the purge. Alternatively, at the level of a system you can always use
     the relevant option from the test session history display (see :ref:`view_your_test_history`).
 
 .. _session_dashboard__filters:
@@ -206,6 +207,37 @@ This report includes:
     to its result. In case the context information returned by the step includes large file contents, these would be included resulting in a 
     potentially very large export.
 
+.. _monitor_test_sessions__export:
+
+Export all test sessions
+------------------------
+
+Both lists of active and completed test sessions can be exported in CSV format. This is done by clicking the **Export CSV** button
+from the respective table's header.
+
+.. figure:: ../screenshots/admin_session_dashboard_active.PNG
+  :align: center
+
+Doing so will generate a CSV file taking into account the currently applied filtering settings. Note that such exports can also
+include custom properties for communities applicable to organisations or systems (see :ref:`community__properties`) if these
+have been defined by you or community administrators. To include such custom properties:
+
+* A **single community** must be selected from the filtering criteria (otherwise custom properties are skipped).
+* Properties must be **Simple** text values (i.e. not a hidden value or a file).
+* Properties must be configured as **Included in exports**.
+
+All such properties are included in the export as columns following the "Organisation" or "System", depending on whether
+they are organisation of system level properties. Their columns are named using a prefix of "Organisation" or "System" followed
+by the property's key value included in parentheses.
+
+.. figure:: ../screenshots/admin_session_dashboard_export_CSV.PNG
+  :align: center
+
+.. note::
+  **Exporting custom properties from multiple communities:** It is not possible to produce a single export for multiple communities
+  including custom properties. The reasonm for this is that the resulting CSV file needs to have a single structure in terms of
+  columns. The best workaround is to make individual exports per community selecting one at a time from the filtering criteria.
+
 .. _session_dashboard__terminate:
 
 Automatically terminate idle sessions
@@ -213,7 +245,7 @@ Automatically terminate idle sessions
 
 In the bottom of the Session Dashboard you are presented with the control to terminate idle sessions. These are sessions that have started but for which
 no update has been made for a specific time threshold. Through this control the test bed will automatically scan the currently active sessions and forcibly
-terminate those that have exceeded the maximum. The purpose of this is to automate clean-up operations allowing the test bed and connected test services to 
+terminate those that have exceeded the maximum. The purpose of this is to automate clean-up operations allowing the test bed and connected test services to
 free up any resources that are being used by the sessions in question.
 
 .. figure:: ../screenshots/admin_session_dashboard_terminate.png
