@@ -50,8 +50,8 @@ The information displayed in the table is sorted using the sessions' start time 
 can be adapted by clicking on each column's header to sort by it in ascending manner. The currently active sort column and type are displayed using
 an arrow icon next to the relevant column's title.
 
-The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header. Finally, each session's 
-row offers controls to:
+The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
+(see :ref:`monitor_test_sessions__export`). Finally, each session's row offers controls to:
 
 * Forcibly **terminate** it, by clicking the cross icon on the relevant session's row under the **Operation** column.
 * View its **test step details**, by clicking the row's magnifying glass icon under the **Action** column (see :ref:`session_dashboard__steps`).
@@ -84,8 +84,9 @@ Certain test results may appear greyed out in case they are to be considered as 
 execution (e.g. the related organisation having been deleted). Such obsolete results are maintained by default but can be purged at any time by clicking the 
 **Delete obsolete results** button.
 
-The presented completed sessions can be exported in CSV format by clicking the **Export CSV** button in the table header. In addition, the **detailed tests steps** for a
-session can be displayed by clicking the row's magnifying glass icon under the **Action** column (see :ref:`session_dashboard__steps`).
+The presented completed sessions can be exported in CSV format by clicking the **Export CSV** button in the table header (see :ref:`monitor_test_sessions__export`). 
+In addition, the **detailed tests steps** for a session can be displayed by clicking the row's magnifying glass icon under 
+the **Action** column (see :ref:`session_dashboard__steps`).
 
 .. _session_dashboard__filters:
 
@@ -199,3 +200,28 @@ This report includes:
     **Test step report size:** When exporting a test step report the context information is always included to provide the full information pertinent
     to its result. In case the context information returned by the step includes large file contents, these would be included resulting in a 
     potentially very large export.
+
+.. _monitor_test_sessions__export:
+
+Export all test sessions
+------------------------
+
+Both lists of active and completed test sessions can be exported in CSV format. This is done by clicking the **Export CSV** button
+from the respective table's header.
+
+.. figure:: ../screenshots/admin_session_dashboard_active.PNG
+  :align: center
+
+Doing so will generate a CSV file taking into account the currently applied filtering settings. If you have defined custom 
+properties for the community applicable to organisations or systems (see :ref:`community__properties`) these may also be 
+included in these CSV exports. To include a custom property:
+
+* It must be a **Simple** text value (i.e. not a hidden value or a file).
+* It must be configured as **Included in exports**.
+
+All such properties are included in the export as columns following the "Organisation" or "System", depending on whether
+they are organisation of system level properties. Their columns are named using a prefix of "Organisation" or "System" followed
+by the property's key value included in parentheses.
+
+.. figure:: ../screenshots/admin_session_dashboard_export_CSV.PNG
+  :align: center

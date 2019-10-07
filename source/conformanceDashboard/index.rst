@@ -192,6 +192,18 @@ from the conformance statements' header.
   :align: center
 
 Note that the CSV export will include the conformance statement information as well as the information on the individual related test cases.
+If you have defined custom properties for the community applicable to organisations or systems (see :ref:`community__properties`)
+these may also be included in CSV exports. To include a custom property:
+
+* It must be a **Simple** text value (i.e. not a hidden value or a file).
+* It must be configured as **Included in exports**.
+
+All such properties are included in the export as columns following the "Organisation" or "System", depending on whether
+they are organisation of system level properties. Their columns are named using a prefix of "Organisation" or "System" followed
+by the property's key value included in parentheses.
+
+.. figure:: ../screenshots/admin_conformance_dashboard_export_csv.PNG
+  :align: center
 
 .. _monitor_conformance_status__filters:
 

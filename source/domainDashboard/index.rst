@@ -162,9 +162,9 @@ The information requested in this form is:
 
 * The **name** of the parameter (required), used to identify it and refer to it from test cases.
 * The **description** of the parameter (optional).
-* The **kind** of parameter it is, choosing from either "Simple" or "Hidden" (required).
+* The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Hidden" (required).
 
-Depending on whether you select that this is a "Simple" or "Hidden" parameter the screen will be adapted to request its value.
+Depending on whether you select that this is a "Simple", "Binary" or "Hidden" parameter the screen will be adapted to request its value.
 Selecting "Simple" means that this is a simple text value that can be entered and displayed as-is. In this case the screen will 
 adapt to request additionally the parameter's **value** (required)
 
@@ -172,7 +172,14 @@ adapt to request additionally the parameter's **value** (required)
   :align: center
   :scale: 50%
 
-If on the other hand you select that the parameter is "Hidden", the screen will adapt to request an obfuscated **value** (required), requesting
+If selected to be a "Binary" parameter, you are presented with an **Upload** button to provide the file in question. Once set, 
+the file is displayed as a link to download.
+
+.. figure:: ../screenshots/admin_domains_domain_create_parameter_binary.PNG
+  :align: center
+  :scale: 50%
+
+Finally, if you select that the parameter is "Hidden", the screen will adapt to request an obfuscated **value** (required), requesting
 you also to **repeat** it to ensure that you have entered it correctly. Hidden parameters are treated similar to passwords, in that they will
 never be presented on-screen.
 
@@ -202,8 +209,8 @@ The fields presented for the parameter are:
 
 * The **name** of the parameter (required), used to identify it and refer to it from test cases.
 * The **description** of the parameter (optional).
-* The **kind** of parameter it is, choosing from either "Simple" or "Hidden" (required).
-* The **value** of the parameter, presented either as a text input (if **kind** is "Simple"), or a repeated text input (if **kind** is "Hidden").
+* The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Hidden" (required).
+* The **value** of the parameter, presented either as a text input (if **kind** is "Simple"), a downloadable link (if **kind** is "Binary") or a repeated text input (if **kind** is "Hidden").
 
 Once you adapt the parameter's information click the **Save** button to record your changes or the **Cancel** button to discard them. Clicking the 
 **Delete** button removes, upon confirmation, the parameter.
@@ -538,11 +545,13 @@ For each parameter the following information is displayed:
 
 * Its **name**, used for display purposes and to refer to the parameter within test cases.
 * Its **description**, used to provide context to users on the parameter's purpose.
-* Its **usage**, either "O" for an optional parameter or "R" for a required one.
-* Its **type**, either "SIMPLE" for a simple text value or "BINARY" for an uploaded file.
+* Its **type**, either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts.
+* A **required** flag, determining whether the parameter needs to be provided before executing tests.
+* An **editable** flag, determining whether the parameter can be edited by users or is reserved to administrators.
+* A **included in tests** flag, determining whether or not the parameter is included as a variable within test sessions.
 
 Clicking on a parameter's row will open a popup to view and edit its information (see :ref:`domains__endpoint__edit_parameter`). To manually create 
-a new endpoint click the **Create parameter** button from the table's header (see :ref:`domains__endpoint__create_parameter`).
+a new parameter click the **Create parameter** button from the table's header (see :ref:`domains__endpoint__create_parameter`).
 
 .. note::
     **Automatic vs manual parameter creation:** Endpoint parameters can also be created automatically during test suite upload.
@@ -568,10 +577,23 @@ The information to provide for the parameter is:
 
 * Its **name** (required), used for display purposes and to refer to the parameter within test cases.
 * Its **description** (optional), used to provide context to users on the parameter's purpose.
-* Its **usage** (required), either "O" for an optional parameter or "R" for a required one.
-* Its **type** (required), either "SIMPLE" for a simple text value or "BINARY" for an uploaded file.
+* Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts.
+* Its **properties**, specifically whether is is required, editable by users and included in test sessions.
 
-To complete the creation of the parameter click the **Save parameter** button. To cancel and close the popup click the **Cancel** button.
+Whether or not parameters are set as editable and included in test sessions provides flexibility in collecting, setting and
+sharing configuration by and towards users. A parameter set as not editable could act as a quality control flag by administrators
+or as a way for administrators to provide to a user a given input that is needed during test execution (e.g. a generated
+certificate). Similarly, a parameter that is set as not included in tests can be used for data collection purposes for information
+that is linked to a specific conformance statement.
+
+.. note::
+  **Organisation and system properties:** Endpoint parameters can be seen as input and configuration properties that are 
+  relevant to a system's specific conformance statement. For information that is more high-level, you may also use
+  :ref:`system or organisation properties<community__properties>` when this is linked, respectively, to a system or a complete
+  organisation. Finally, parameters can also be :ref:`set at domain level<domains__domain__parameter_list>`, applying to a
+  complete domain or community.
+
+To complete the creation of the parameter click the **Save** button. To cancel and close the popup click the **Cancel** button.
 
 .. _domains__endpoint__edit_parameter:
 
@@ -593,8 +615,8 @@ The following information is presented for the parameter in corresponding form c
 
 * Its **name** (required), used for display purposes and to refer to the parameter within test cases.
 * Its **description** (optional), used to provide context to users on the parameter's purpose.
-* Its **usage** (required), either "O" for an optional parameter or "R" for a required one.
-* Its **type** (required), either "SIMPLE" for a simple text value or "BINARY" for an uploaded file.
+* Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts* Its **properties**, specifically whether is is required, editable by users and included in test sessions.
+* Its **properties**, specifically whether is is required, editable by users and included in test sessions.
 
 To edit the parameter's information, enter the new values you require and click the **Save** button. Clicking the **Delete** button will,
 following confirmation, delete the parameter. The **Cancel** button closes the popup without making any changes.
