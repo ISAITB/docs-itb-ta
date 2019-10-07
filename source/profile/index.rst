@@ -38,7 +38,7 @@ Case: EU Login
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
 
-.. figure:: ../screenshots/profile_hover_admin_eulogin_ca.PNG
+.. figure:: ../screenshots/profile_hover_admin_eulogin_ta.PNG
   :align: center
 
 The popup information displays your name, current role, and three links:
@@ -68,8 +68,8 @@ have here relate to the test bed roles linked to your account, specifically:
   Note that this can once again be added to your account by :ref:`confirming again its assignment to you<login__roles__confirm>`.
 * **Link another role to your account** will transfer you to the screen where you can :ref:`link additional roles to your EU Login account<login__roles>`.
 * **Register another organisation** will transfer you to the screen to :ref:`register another organisation<login__roles__register>`
-  in one of the test bed's communities (not necessarily the current one). Note that this button may not be available if
-  self-registration is disabled by your test bed's administrator.
+  in one of the test bed's communities. Note that this button may not be available if
+  self-registration is disabled for the test bed.
 
 .. note::
   Each of these actions will disconnect your current session before proceeding. You will be prompted to confirm this
@@ -86,7 +86,7 @@ Case: No EU Login
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
 
-.. figure:: ../screenshots/profile_hover_nonadmin_ta.PNG
+.. figure:: ../screenshots/profile_hover_admin.PNG
   :align: center
 
 The popup information displays your name, current role, and two links:
@@ -114,7 +114,7 @@ You are also presented here with the option to **Register another organisation**
 disconnect from your current session and register another organisation in one of the test bed's communities (also not
 necessarily the current one). If you click this you will be presented with a confirmation message and then
 transferred to the :ref:`organisation self-registration page<login__create_account>`. Note that this button may not
-be available if self-registration is disabled by your test bed's administrator.
+be available if self-registration is disabled for the test bed.
 
 .. _manage_your_profile__change_your_password:
 
@@ -136,17 +136,16 @@ Manage your organisation's details
 ----------------------------------
 
 .. note::
-    **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation linked to your
-    community that is used for testing purposes.
+    **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation used for testing purposes.
 
 To manage your organisation's information click the **Organisation** link from the side menu. This shows you
 the information relevant to your organisation, split in two sections:
 
 * **Organisation details:** The name (short and full) of your admin organisation.
-* **Members:** Your community's administrators (including yourself). For each user the **name**, **email**, **role**
+* **Members:** The test bed's administrators (including yourself). For each user the **name**, **email**, **role**
   and **status** are presented.
 
-.. figure:: ../screenshots/organisation_manage_community_admin.PNG
+.. figure:: ../screenshots/organisation_manage_testbed_admin.PNG
   :align: center
 
 .. note::
@@ -163,7 +162,7 @@ Edit your organisation's details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Editing the details of your organisation is possible through the editable fields relevant to your organisation's
-**short** and **full names**. In addition, if you have defined additional properties for your community's organisations
+**short** and **full names**. In addition, if you have defined additional organisation properties for the test bed's default community
 you will also see here a **Show properties** checkbox to toggle the display of your organisation's
 additional information.
 

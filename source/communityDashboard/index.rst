@@ -30,55 +30,72 @@ The **Administrators** section lists the test bed administrators in a table, wit
 .. figure:: ../screenshots/admin_community_test_bed_administrators.PNG
   :align: center
 
-For each administrator the table displays his/her **name** and **email** address. From this section you can create a new administrator
-(see :ref:`community_testbed_administrators__create`) or edit an existing one (see :ref:`community_testbed_administrators__edit`).
+Test bed administrators are listed in a table with one row per user displaying the user's **name**, **email** address and **status**.
 
-.. _community_testbed_administrators__create:
+.. note::
+  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
+  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  displayed as **Active**.
 
-Create test bed administrator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To create a new test bed administrator click on the **Create administrator** button from the table's header.
+Clicking on an existing row from the table allows you to edit the relevant user's information.
 
-To create a new test bed administrator click the **Create administrator** button from the **Administrators** section header.
+The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
+is integrated with EU Login.
 
-.. figure:: ../screenshots/admin_community_test_bed_administrators_header.PNG
+Case: EU Login
+~~~~~~~~~~~~~~
+
+When creating an administrator you will be presented with a form to enter the user's information.
+
+.. figure:: ../screenshots/admin_community_test_bed_administrators_create_eulogin.PNG
   :align: center
 
-Doing so presents you with a screen to add the new administrator.
+You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
+her EU Login account. Once you have created the user you will see that a new entry is added to the list of test bed administrators
+but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
+updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
+
+To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
+
+Editing an administrator's details displays her information as read-only.
+
+.. figure:: ../screenshots/admin_community_test_bed_administrators_edit_eulogin.PNG
+  :align: center
+
+The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user
+by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back**
+will return you to the previous screen.
+
+Case: No EU Login
+~~~~~~~~~~~~~~~~~
+
+When creating an administrator you will be presented with a form to enter the user's information.
 
 .. figure:: ../screenshots/admin_community_test_bed_administrators_create.PNG
   :align: center
 
-In this form you are expected to enter the following information:
+In this form you are expected to provide the following information:
 
-* The administrator's **name** (required).
-* The **email** address (require). This is used to log into the test bed and is effectively a username formatted as an email. It does not have to be an active
-  address as no emails will be sent to it.
-* The administrator's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the administrator upon his/her next login.
+* The administrator's **name** (required), used in feedback submissions to the test bed.
+* The **email** address (required), used to login. This is essentially a username formatted as an email address, and does not have to be a real functioning
+  address as no emails are ever sent to it.
+* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
 
-To complete the creation of the new administrator click on **Save**. Clicking on **Cancel** will discard pending changes and return you to the previous
-screen.
+To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
 
-.. _community_testbed_administrators__edit:
-
-Edit test bed administrator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To edit an existing administrator click on his/her corresponding row from the **Administrators** table.
-
-.. figure:: ../screenshots/admin_community_test_bed_administrators.PNG
-  :align: center
-
-Doing so will present you with the administrator's information in editable form fields.
+When editing a user you see a similar screen, this time prefilled with the user's information.
 
 .. figure:: ../screenshots/admin_community_test_bed_administrators_edit.PNG
   :align: center
 
-This form displays the administrator's **name**, **email** and **role**, of which only the name is editable. To update this enter the new value and
-click **Update**. You can also remove the administrator, upon confirmation, by clicking **Delete**, although this option will be disabled if this is
-the only test bed administrator. Finally, clicking **Back** will discard any pending changes and return to the previous screen.
+The information presented here is the user's **name**, **email**, **role**, and **status**, of which only the name is editable. To change the name
+edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
+for the test bed the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
 
-In this form you may also choose to reset the administrator's password. You can do this by checking the **Set one-time password** option which will display for you
-additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the administrator will be forced
+In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you
+additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
 to change it at his/her next login.
 
 .. _community_testbed_communities:
@@ -120,7 +137,9 @@ The information you are expected to provide is:
 * The **short name** for the community (required), used in list displays.
 * Its **full name** (required), used in detail screens and reports.
 * A **support email** address (optional), used to deliver feedback provided by the community's users (see :ref:`community_testbed_communities__manage` for
-  more information on this).
+  more information).
+* The preference on allowing **self-registration** for the community (see :ref:`community_testbed_communities__manage` for
+  more information).
 
 Once the information is entered you complete the community creation by clicking **Save**. Clicking **Cancel** discards pending changes and returns you to
 the previous screen.
@@ -251,7 +270,7 @@ The displayed screens and required information both when you edit or create a ne
 is integrated with EU Login.
 
 Case: EU Login
-~~~~~~~~~~~~~~
+++++++++++++++
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -275,7 +294,7 @@ by clicking on **Delete** unless she is the only administrator configured for th
 will return you to the previous screen.
 
 Case: No EU Login
-~~~~~~~~~~~~~~~~~
++++++++++++++++++
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -349,7 +368,7 @@ is made then the default settings for the community are used, falling back to th
 are defined for the community. Defining these at the level of the organisation allows you to present
 customised messages and content per organisation and is left fully at your discretion as administrator.
 
-If your community includes other organisations you are also presented here with an option to **copy the test setup** from
+If the community includes other organisations you are also presented here with an option to **copy the test setup** from
 one of them as a source. Selecting one will replicate the selected organisation's systems and conformance statements for the
 new organisation.
 
@@ -364,7 +383,7 @@ Once another organisation is selected to copy from, you are also presented with 
 * **Conformance statement configurations:** To also copy any of the source organisation's configuration parameters set on its
   systems' conformance statements.
 
-If your community foresees additional organisation properties, and as long as you are not copying the properties from another organisation,
+If additional organisation properties are foreseen, and as long as you are not copying the properties from another organisation,
 you will also see a **Show properties** checkbox. Checking this you can manage the organisation's properties.
 
 .. figure:: ../screenshots/admin_community_organisations_create_properties.PNG
@@ -416,7 +435,7 @@ self-registration as a **published template**.
 .. figure:: ../screenshots/admin_community_organisations_organisation_detail.PNG
   :align: center
 
-If your community includes other organisations you are also presented here with an option to **copy the test setup** from
+If the community includes other organisations you are also presented here with an option to **copy the test setup** from
 one of them as a source. Selecting one will replicate the selected organisation's systems and conformance statements for the
 new organisation. Note that in doing so the systems and conformance statements already defined will be removed.
 
@@ -431,7 +450,7 @@ Once another organisation is selected to copy from, you are also presented with 
 * **Conformance statement configurations:** To also copy any of the source organisation's configuration parameters set on its
   systems' conformance statements.
 
-If your community foresees additional organisation properties, and as long as you are not copying the properties from another organisation,
+If additional organisation properties are foreseen, and as long as you are not copying the properties from another organisation,
 you will also see a **Show properties** checkbox. Checking this you can manage the organisation's properties.
 
 .. figure:: ../screenshots/admin_community_organisations_update_properties.PNG
@@ -718,8 +737,8 @@ with the current legal notice's information. This can be useful if you want to c
 
 .. _community__manage_error_templates:
 
-Manage error templates
-----------------------
+Manage community-specific error templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An **error template** is a template that is used to format and stylise information displayed to users due to unexpected errors. They can be used to
 provide specific guidelines to users or support information.
@@ -741,7 +760,7 @@ Adding a new error template can be done in one of the following ways:
 * You can copy one of the community's existing templates while editing its details.
 
 Create error template
-~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++
 
 When creating a new error template you are presented with a form to enter its information.
 
@@ -774,7 +793,7 @@ new default for the community you will also be prompted for confirmation. Clicki
 the previous screen.
 
 Edit error template
-~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++
 
 To edit an existing error template click its corresponding row from the **Error templates** table.
 
@@ -798,7 +817,7 @@ with the current template's information. This can be useful if you want to creat
 .. _community__conformance_certificate_settings:
 
 Edit conformance certificate settings
--------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A **conformance certificate** is a report that can be created only by administrators on behalf of an organisation. Its purpose is to act as the official
 summary of an organisation's testing activities, providing proof of its results for a given conformance statement.
@@ -835,7 +854,7 @@ You are however free to customise this as you see fit for the community in quest
 .. _community__conformance_certificate_settings__message:
 
 Setting a custom message
-~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++
 
 If you select to add a message, the form will expand to allow you to define its content:
 
@@ -854,7 +873,7 @@ the certificate is generated. The supported placeholders are:
 .. _community__conformance_certificate_settings__signature:
 
 Adding digital signatures
-~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++
 
 If you select to include a digital signature to generated certificates, the form will expand for you to provide the additionally required information:
 
@@ -886,7 +905,7 @@ the provided passwords. You can do so by clicking the **test keystore configurat
 .. _community__properties:
 
 Edit custom member properties
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As part of a community's configuration you can also define a set of **custom properties** for its organisations and their
 systems. Such properties allow you to collect and record additional information for the organisations, extending the default, limited
@@ -944,7 +963,7 @@ organisation's or system's information. The reserved key values per case are:
   identical for system properties.
 
 Create a property
-~~~~~~~~~~~~~~~~~
++++++++++++++++++
 
 Creating a new property is done by clicking the **Create property** button from the relevant table header.
 
@@ -958,7 +977,7 @@ New properties are by default set to be **simple** (i.e. text values) and **edit
 To create the property complete the required information and click on **Save**. Clicking on **Cancel** will close the popup.
 
 Edit a property
-~~~~~~~~~~~~~~~
++++++++++++++++
 
 Editing an exiting property is done by clicking the property's row from its relevant table.
 

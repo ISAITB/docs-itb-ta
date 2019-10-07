@@ -23,7 +23,7 @@ The popup displays the options available to you:
 * **Switch role** allows you to switch to another one of your available test bed roles.
 * **Logout** terminates your current test bed session.
 
-.. figure:: ../screenshots/profile_hover_admin_eulogin_ca.PNG
+.. figure:: ../screenshots/profile_hover_admin_eulogin_ta.PNG
   :align: center
 
 Both **Switch role** and **Logout** will complete your work with your currently active test bed role. The
