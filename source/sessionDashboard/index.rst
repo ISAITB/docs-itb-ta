@@ -235,7 +235,7 @@ by the property's key value included in parentheses.
 
 .. note::
   **Exporting custom properties from multiple communities:** It is not possible to produce a single export for multiple communities
-  including custom properties. The reasonm for this is that the resulting CSV file needs to have a single structure in terms of
+  including custom properties. The reason for this is that the resulting CSV file needs to have a single structure in terms of
   columns. The best workaround is to make individual exports per community selecting one at a time from the filtering criteria.
 
 .. _session_dashboard__terminate:

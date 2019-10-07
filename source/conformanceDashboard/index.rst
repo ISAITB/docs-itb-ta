@@ -193,10 +193,12 @@ from the conformance statements' header.
 .. figure:: ../screenshots/admin_conformance_dashboard_header_expanded.PNG
   :align: center
 
-Note that the CSV export will include the conformance statement information as well as the information on the individual related test cases.
-If you have defined custom properties for the community applicable to organisations or systems (see :ref:`community__properties`)
-these may also be included in CSV exports. To include a custom property:
+Doing so will generate a CSV file taking into account the currently applied filtering settings and include the conformance 
+statement information as well as the information on the individual related test cases. Note that such exports can also
+include custom properties for communities applicable to organisations or systems (see :ref:`community__properties`) if these
+have been defined by you or community administrators. To include such custom properties:
 
+* A **single community** must be selected from the filtering criteria (otherwise custom properties are skipped).
 * It must be a **Simple** text value (i.e. not a hidden value or a file).
 * It must be configured as **Included in exports**.
 
@@ -206,6 +208,11 @@ by the property's key value included in parentheses.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_export_csv.PNG
   :align: center
+
+.. note::
+  **Exporting custom properties from multiple communities:** It is not possible to produce a single export for multiple communities
+  including custom properties. The reason for this is that the resulting CSV file needs to have a single structure in terms of
+  columns. The best workaround is to make individual exports per community selecting one at a time from the filtering criteria.
 
 .. _monitor_conformance_status__filters:
 

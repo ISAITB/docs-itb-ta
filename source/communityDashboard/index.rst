@@ -984,8 +984,6 @@ Editing an exiting property is done by clicking the property's row from its rele
 .. figure:: ../screenshots/admin_community_properties_edit.PNG
   :align: center
 
-.. _community__defaults:
-
 In the resulting popup you can view the property's current configuration and edit it according to your needs. All information is required
 except the property **description**. If the property is set as being  **binary** or **hidden** it will not be able to be included
 in exports.
@@ -993,6 +991,8 @@ in exports.
 To update the property's definition complete the required information and click on **Save**. Alternatively, clicking on **Delete**
 will, upon confirmation delete the property as well as any existing values provided by the community's members. Finally, clicking
 on **Cancel** will close the popup without any action.
+
+.. _community__defaults:
 
 Manage test bed defaults
 ------------------------

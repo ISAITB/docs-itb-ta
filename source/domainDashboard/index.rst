@@ -639,7 +639,7 @@ The following information is presented for the parameter in corresponding form c
 
 * Its **name** (required), used for display purposes and to refer to the parameter within test cases.
 * Its **description** (optional), used to provide context to users on the parameter's purpose.
-* Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts* Its **properties**, specifically whether is is required, editable by users and included in test sessions.
+* Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts.
 * Its **properties**, specifically whether is is required, editable by users and included in test sessions.
 
 To edit the parameter's information, enter the new values you require and click the **Save** button. Clicking the **Delete** button will,
