@@ -66,7 +66,7 @@ you will also see a **Show properties** checkbox. Checking this you can manage y
   :align: center
   :scale: 50%
 
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also 
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also
 see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
 * For texts through an editable text field.
@@ -75,7 +75,7 @@ see a help tooltip to understand their meaning. Such properties can be edited as
 * For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
   **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
 
-.. note:: 
+.. note::
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
   information but as long as required properties are missing you will not be able to launch tests.
 
@@ -115,7 +115,7 @@ will also see a **Show properties** checkbox. Checking this you can manage the s
   :align: center
   :scale: 50%
 
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also see 
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also see
 a help tooltip to understand their meaning. Such properties can be managed as follows:
 
 * For texts the current value is presented in an editable text field.

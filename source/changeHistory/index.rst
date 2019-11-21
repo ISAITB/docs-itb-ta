@@ -8,7 +8,24 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.7.0**.
+The latest test bed release is **1.7.1**.
+
+Release 1.7.1 - 21/11/2019
+--------------------------
+
+This is a patch release to address issues linked primarily with the handling of test session variables and improved error
+reporting during test sessions.
+
+**Bug**
+
+* [ITB-424] - All list types returned by external services are considered to be list[string]
+* [ITB-458] - Processing steps with no transaction cannot use variable references to determine handler
+* [ITB-459] - Inputs defined by remote services with type list cannot be provided
+* [ITB-460] - Dockerised gitb-ui may fail to startup due to running process being detected
+* [ITB-465] - Error if encoding not provided for imports that are not binary
+* [ITB-495] - System and organisation names not added to test session if no custom properties are defined
+* [ITB-496] - Invalid input names for messaging and processing handlers may not report problem details
+* [ITB-497] - Remote messaging services not returning a session ID result in blank error
 
 Release 1.7.0 - 07/10/2019
 --------------------------
