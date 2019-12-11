@@ -8,7 +8,27 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.7.1**.
+The latest test bed release is **1.7.2**.
+
+Release 1.7.2 - 11/12/2019
+--------------------------
+
+This is a patch release to address issues with the core test engine and specifically on type conversions between
+test session variables. This patch also extended the templating possibilities in test cases by allowing any expressions
+to be treated as templates.
+
+**Bug**
+
+* [ITB-422] - Conversions between GITB types using pure variable expressions should also work through the source attribute
+* [ITB-464] - Cannot convert string to nodelist in assign step
+* [ITB-473] - TDL Inputs with both source and value set ignore the value
+* [ITB-476] - A string variable used as a source of an XPath expression always returns itself
+* [ITB-503] - If a test bed instance has a demo account configured prevent this from being linked to a user
+* [ITB-509] - Cannot directly assign non-binary variables to binary ones
+
+**Improvement**
+
+* [ITB-505] - Allow any variable to be used as a template (not only imports)
 
 Release 1.7.1 - 21/11/2019
 --------------------------
@@ -74,7 +94,6 @@ input values and configuration to test sessions.
 * [ITB-445] - Increase size limit for uploaded files
 * [ITB-446] - Allow community and test bed admins to edit their own organisation's information
 * [ITB-447] - When test case configuration is missing allow user to directly navigate to provide it
-
 
 Release 1.6.1 - 14/06/2019
 --------------------------
