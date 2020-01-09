@@ -157,7 +157,7 @@ you are expected to:
 * Provide the details for your new organisation.
 * Provide the details for the new organisation's initial administrator.
 
-.. figure:: ../screenshots/self_registration__non_eu_login.png
+.. figure:: ../screenshots/self_registration__non_eu_login.PNG
   :align: center
 
 To complete the registration form provide the following information:
