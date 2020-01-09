@@ -41,7 +41,7 @@ The popup displays the options available to you:
 * **Settings** takes you to your :ref:`profile management screen<manage_your_profile__edit>`.
 * **Logout** terminates your current test bed session.
 
-.. figure:: ../screenshots/profile_hover_admin.png
+.. figure:: ../screenshots/profile_hover_admin.PNG
   :align: center
 
 Click on **Logout** to terminate your current session and return you to the test bed's :ref:`welcome page<login__welcome>`.
