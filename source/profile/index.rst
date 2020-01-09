@@ -86,7 +86,7 @@ Case: No EU Login
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
 
-.. figure:: ../screenshots/profile_hover_admin.png
+.. figure:: ../screenshots/profile_hover_admin.PNG
   :align: center
 
 The popup information displays your name, current role, and two links:
