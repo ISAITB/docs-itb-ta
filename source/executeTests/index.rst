@@ -163,7 +163,8 @@ During the execution of the test case colours are used to inform on each step's 
   blue cog to show active processing.
 * **Grey** is used for all elements that haven't started yet or that have been skipped (e.g. due to conditional logic).
 * **Green** is used for steps that have successfully completed.
-* **Red** is used for steps that have failed.
+* **Red** is used for steps that have failed with a severity level of "error".
+* **Orange** is used for steps that have failed with a severity level of "warning".
 
 .. figure:: ../screenshots/test_execution_execute_multiple_in_progress.PNG
   :align: center
@@ -171,8 +172,9 @@ During the execution of the test case colours are used to inform on each step's 
 The colour-based feedback is also repeated at the level of the test case overview in the **status** cog icons. The icon's colour serves to highlight the currently 
 active test case, versus future ones or completed ones (in case of multiple test cases being up for execution). Once completed the status icon for the 
 test case is replaced by a green tick or red cross to indicate the session's overall result as a success or failure respectively. Note that a test session 
-is considered as failed if it contains at least one failed test step. Test execution does not stop however following a test step failure as it could be still 
-interesting to continue (e.g. if multiple different validation steps take place).
+is considered as failed if it contains at least one error; warnings are displayed but don't affect the overall test outcome (i.e. in the presence of warnings and no errors
+the overall test result will be successful). Regardless of the outcome of individual steps, test execution always continues as even in the presence of errors 
+it could be still interesting to proceed (e.g. if multiple different validation steps take place).
 
 In case multiple test cases are up for execution, testing proceeds automatically, only pausing in case user interaction is needed. Such user interaction can 
 either be a step within a test case or part of the setup for the next test session. In the latter case, automatic test execution is paused and can be restarted
@@ -186,6 +188,34 @@ Stopping the test(s) execution is achieved through controls that replace the **S
   **Stop all** button displayed in the test case overview header.
 
 Once all test cases are complete the test case overview displays a **Reset** button. This serves as shortcut to re-run the same test case(s).
+
+.. _execute_tests__step3__view_test_step_documentation:
+
+View test step documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Test steps are presented in the test execution diagram with a limited description label. Test steps can however be defined to also include additional
+detailed context, documentation, or instructions. Test steps defining such additional documentation are presented with a **circled question mark** next
+to their label that can be clicked.
+
+.. figure:: ../screenshots/test_execution_execute_documentation.png
+  :align: center
+  :scale: 80%
+
+Clicking the presented icon results in a "Step information" popup that displays the further documentation linked to the step. This can range from 
+being a simple text to rich text documentation, including styled content, tables, lists, links and images. 
+
+.. figure:: ../screenshots/test_execution_execute_documentation_popup.png
+  :align: center
+
+Clicking the **Close** button or anywhere outside the popup will dismiss it and refocus the test execution diagram.
+
+.. note::
+
+    **Test documentation and instructions:** Providing extended documentation for key steps is a good way of enriching the feedback provided to
+    users. This documentation can be used to provide detailed instructions or references to the specifications being tested, complementing the
+    limited information presented through test step labels, or test case and test suite descriptions. Such documentation is added in the test
+    cases' `GITB TDL content`_ by means of the test steps' ``documentation`` element.
 
 .. _execute_tests__step3__view_test_step_results:
 
@@ -282,3 +312,5 @@ The test session log popup presents you with three options:
 * **Copy to clipboard**, to copy the entire log output to your clipboard (you may also of course selectively copy specific sections).
 * **Download**, to download the log output as a text file.
 * **Close**, to close the popup.
+
+.. _GITB TDL content: https://www.itb.ec.europa.eu/docs/tdl/latest/constructs/index.html#rich-documentation-per-step

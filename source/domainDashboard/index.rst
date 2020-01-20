@@ -380,6 +380,7 @@ For each actor the following information is displayed:
 * Its **description**, displayed in details screens and reports to provide more information about the actor.
 * Whether or not the actor is the specification's **default**. The default actor is the one that will be preselected as the SUT when creating new 
   conformance statements for the specification.
+* Whether or not the actor is set as **hidden**. Hidden actors are not presented to users during the creation of conformance statements.
 
 Clicking on an actor's row will take you to its detail page (see :ref:`domains__actor`). To manually create a new actor click the **Create actor**
 button from the table's header (see :ref:`domains__specification__create_actor`).
@@ -416,6 +417,8 @@ The information to provide for the actor is:
   with a configured value will be displayed before actors with a larger value or ones that have no value configured.
 * Whether or not the actor is the **specification default**. Only one default actor can be defined for a specification which will be preselected when creating
   new conformance statements.
+* Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
+  statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
 
 To complete the creation of the actor click the **Save** button. To cancel and return to the specification's detail page (see :ref:`domains__specification`) 
 click the **Cancel** button.
@@ -451,6 +454,8 @@ The following information is presented in corresponding form controls:
   with a configured value will be displayed before actors with a larger value or ones that have no value configured.
 * Whether or not the actor is the **specification default**. Only one default actor can be defined for a specification which will be preselected when creating
   new conformance statements.
+* Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
+  statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the actor and all related information. The **Back** button does not make any changes but takes you back to the
