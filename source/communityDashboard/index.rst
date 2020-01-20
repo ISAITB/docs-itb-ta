@@ -996,7 +996,7 @@ on **Cancel** will close the popup without any action.
 .. _community__labels:
 
 Edit labels
------------
+~~~~~~~~~~~
 
 A key step in designing a conformance testing strategy using the test bed is to make a mapping between its
 :ref:`key concepts<introduction__glossary>` and the ones specific to a given community. Although the test bed's
@@ -1010,7 +1010,7 @@ for community members and administrators.
 To define custom labels for a given community you start by clicking the **Edit labels** button from the community details
 panel.
 
-.. figure:: ../screenshots/admin_community_details.PNG
+.. figure:: ../screenshots/admin_community_details_ta.PNG
   :align: center
 
 Doing so transfers you to the label management screen where you can review the labels currently considered, both default
