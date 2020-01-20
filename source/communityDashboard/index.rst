@@ -235,6 +235,7 @@ In terms of additional features available here:
 
 * The **Edit conformance certificate settings** button is addressed in section :ref:`community__conformance_certificate_settings`.
 * The **Edit custom member properties** button is addressed in section :ref:`community__properties`.
+* The **Edit labels** button is addressed in section :ref:`community__labels`.
 
 .. note::
 
@@ -991,6 +992,45 @@ in exports.
 To update the property's definition complete the required information and click on **Save**. Alternatively, clicking on **Delete**
 will, upon confirmation delete the property as well as any existing values provided by the community's members. Finally, clicking
 on **Cancel** will close the popup without any action.
+
+.. _community__labels:
+
+Edit labels
+-----------
+
+A key step in designing a conformance testing strategy using the test bed is to make a mapping between its
+:ref:`key concepts<introduction__glossary>` and the ones specific to a given community. Although the test bed's
+concepts are flexible enough to address most needs the resulting mapping could result in terms being presented to
+users that may not be intuitive.
+
+As a means to further customise the test bed for a given community, community and test bed administrators are able to define
+replacement labels for each concept. These replacements are displayed in all screens, reports and exports, both
+for community members and administrators.
+
+To define custom labels for a given community you start by clicking the **Edit labels** button from the community details
+panel.
+
+.. figure:: ../screenshots/admin_community_details.PNG
+  :align: center
+
+Doing so transfers you to the label management screen where you can review the labels currently considered, both default
+and custom ones.
+
+.. figure:: ../screenshots/admin_community_labels.png
+  :align: center
+
+The concepts that can have custom labels defined are :ref:`domains<introduction__glossary__domain>`, :ref:`specifications<introduction__glossary__specification>`,
+:ref:`actors<introduction__glossary__actor>`, :ref:`endpoints<introduction__glossary__endpoint>`, :ref:`organisations<introduction__glossary__organisation>`
+and :ref:`systems<introduction__glossary__system>`. For each concept the following controls are provided:
+
+* **Override:** Whether or not the given label should be set with a custom value. If not, the default values apply.
+* **Singular form:** The label applied when referring to a single concept element. The default value, if not replaced, is displayed as readonly.
+* **Plural form:** The label applied when referring to multiple concept elements. The default value, if not replaced, is displayed as readonly.
+* **Fixed casing:** Whether the casing provided should be kept unchanged in all references. If not checked, labels will be lowercased when in
+  the middle of sentences.
+
+To provide a custom label check the **Override** checkbox and supply the desired labels. Once finished editing the labels, click on **Save**
+to persist your changes or **Back** to discard them and return to the community details' page.
 
 .. _community__defaults:
 

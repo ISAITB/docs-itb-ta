@@ -8,7 +8,34 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.7.2**.
+The latest test bed release is **1.8.0**.
+
+Release 1.8.0 - 20/01/2020
+--------------------------
+
+This release focuses on providing additional community customisation possibilities through features such as the definition of 
+specific labels for test bed concepts and the optional display of actors. GITB TDL is also enhanced with support for warning-level 
+validation steps and the possibility to display for test steps additional documentation or instructions as rich text.
+
+**Bug**
+
+* [ITB-512] - Deleting conformance statement text parameter values does not immediately refresh the display
+* [ITB-513] - Test suite upload can fail if endpoint names vary in case
+* [ITB-516] - Unable to delete domain that contains specification with actors
+* [ITB-518] - Binary actor parameters interpreted as strings in test sessions
+* [ITB-520] - Test execution diagrams with multiple actors can break diagram display
+
+**New Feature**
+
+* [ITB-432] - Support warning-level failures for verify steps
+* [ITB-433] - Support more extensive descriptions as metadata for test steps
+* [ITB-434] - Display additional documentation for test steps as instructions to users
+* [ITB-489] - Allow a community administrator to customise the labels used for Test Bed concepts
+* [ITB-511] - Allow actors to be set as hidden (deprecated)
+
+**Improvement**
+
+* [ITB-461] - Remove noise from gitb-ui logs
 
 Release 1.7.2 - 11/12/2019
 --------------------------
