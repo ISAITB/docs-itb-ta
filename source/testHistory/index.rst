@@ -15,29 +15,86 @@ You can then select the system you are interested in from the listing of your or
 .. figure:: ../screenshots/systems_admin.PNG
   :align: center
 
-Selecting a system from the list brings you to its list of conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`). 
-From this point you will be able to click the **Performed Tests** link from the left side menu.
+Selecting a system from the list brings you to its list of conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
+From this point you will be able to click the **Test Sessions** link from the left side menu.
 
 .. figure:: ../screenshots/conformance_statements_admin.PNG
   :align: center
 
-Clicking this link presents you with the test session history screen (see :ref:`view_your_test_history__search`).
-
-.. _view_your_test_history__search:
-
-Search test history
--------------------
-
-The test session history screen is split into two main parts:
+Clicking this link presents you with the test session history screen. This screen is split into three main parts:
 
 * A set of **search filters** to help locating specific test results.
-* The display of the **performed tests**.
+* The list of **active test sessions**.
+* The list of **completed test sessions**.
 
 .. figure:: ../screenshots/test_history_admin.PNG
   :align: center
 
-When you first visit this screen the filter controls are initially ignored, indicated by the button **CLEAR** being indicated in blue 
-as active. Clicking on the **APPLY** button opens up the filtering criteria that you can use to limit the displayed test sessions. 
+.. _view_your_test_history__active:
+
+Active test sessions
+--------------------
+
+The currently active sessions are those that are pending completion. These could be sessions that are :ref:`running in the background<execute_tests_background>`
+or sessions that are :ref:`interactively being executed<execute_tests_interactive>` by other users.
+
+.. figure:: ../screenshots/test_history__active.PNG
+  :align: center
+
+Each session is presented on a separate table row, with the following information displayed per session:
+
+* The **specification** and **actor** (defined as the test case’s SUT).
+* The relevant **test case**.
+* The session **start time**.
+
+The information displayed in the table is sorted using the sessions’ **start time** in ascending manner (i.e. the oldest sessions are presented first).
+Sorting can be adapted by clicking on each column’s header to sort by it in ascending manner. The currently active sort column and type are displayed
+using an arrow icon next to the relevant column’s title.
+
+The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
+(see :ref:`view_your_test_history__search__export_csv`). Finally, each session’s row offers controls to:
+
+* Forcibly **terminate** it, by clicking the cross icon on the relevant session’s row under the **Operation** column.
+* View its **test step details**, by clicking on the row itself (see :ref:`view_your_test_history__test_steps`).
+
+.. _view_your_test_history__completed:
+
+Completed test sessions
+-----------------------
+
+The history of all your completed test sessions is presented in the **Completed test sessions** table.
+
+.. figure:: ../screenshots/test_history__completed.PNG
+  :align: center
+
+Tests are presented in a paged table, offering controls to go to the **first**, **previous**, **next** and **last** pages as applicable, and are sorted based on their
+**start time** in a descending order (i.e. showing the latest tests at the top). Custom sorting can also be made by clicking the title of each column;
+clicking a column header for the first time will sort by it in ascending manner and clicking it again will switch to descending. The active sort
+column and type are indicated using an arrow next to the relevant column header.
+
+Test sessions are displayed one per table row, with each row including the following information:
+
+* The **specification** and **actor** of the test session.
+* The relevant **test case**.
+* The session's **start** and **end time**.
+* The test **result**.
+
+Each row provides controls to **export** the relevant test case report and to view the test's steps. In addition, you can use the
+overall **Export CSV** button to extract a CSV export of the currently displayed sessions (see :ref:`view_your_test_history__search__export_csv`).
+
+.. note::
+    **Obsolete test sessions:** One or more test sessions may be rendered obsolete in case of a significant change in the test setup
+    (e.g. the relevant specification being deleted) or a test case update that requires relevant test sessions to be re-executed. Such
+    test sessions remain and can be consulted but are displayed greyed-out to indicate that they are no longer considered towards your
+    overall conformance testing.
+
+.. _view_your_test_history__filters:
+
+Apply search filters
+--------------------
+
+When you first visit this screen the filter controls are initially ignored, indicated by the relevant toggle button being indicated
+as **Disabled**. Clicking on this sets it to **Enabled** and displays the filtering criteria that you can use to filter the test sessions.
 
 .. figure:: ../screenshots/test_history_filters.PNG
   :align: center
@@ -60,34 +117,16 @@ controls are applied as follows:
 Note additionally that selecting dependent values serves to limit the filter options that are presented. For example if a given specification
 is selected, the test suites and test cases available for filtering will be limited to that specification to already exclude impossible combinations.
 
-The presented tests are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the 
-**CLEAR** button. Note that displaying the performed tests with no filtering is also the default when you first visit the screen. Tests are presented
-in a paged table, offering controls to go to the **first**, **previous**, **next** and **last** pages as applicable, and are sorted based on their 
-**start time** in a descending order (i.e. showing the latest tests at the top). Custom sorting can also be made by clicking the title of each column; 
-clicking a column header for the first time will sort by it in ascending manner and clicking it again will switch to descending. The active sort 
-column and type are indicated using an arrow next to the relevant column header.
-
-Test sessions are displayed one per table row, with each row including the following information:
-
-* The **specification** and **actor** of the test session.
-* The relevant **test case**.
-* The session's **start** and **end time**.
-* The test **result**.
-
-Each row provides controls to export the relevant test case report and to view the test's steps.
-
-.. note::
-    **Obsolete test sessions:** One or more test sessions may be rendered obsolete in case of a significant change in the test setup
-    (e.g. the relevant specification being deleted) or a test case update that requires relevant test sessions to be re-executed. Such
-    test sessions remain and can be consulted but are displayed greyed-out to indicate that they are no longer considered towards your
-    overall conformance testing. Such sessions can be deleted as described in :ref:`view_your_test_history__search__delete_obsolete`.
+The presented tests are automatically updated whenever your filter options are modified, or when the filters are removed altogether by setting the
+filter toggle button to **Disabled**. Note that displaying the performed tests with no filtering is also the default when you first visit the screen.
+Finally, you may also choose to keep the current filtering but refresh the search results by clicking the **Refresh** button.
 
 .. _view_your_test_history__search__export:
 
 Export a test case report
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
-Exporting a test case's report is made possible through the file icon control on the far right side of each test's row.
+Exporting a test case's report is possible for completed test sessions, through the file icon control on the far right side of each test's row.
 
 .. figure:: ../screenshots/test_history_export_pdf.PNG
   :align: center
@@ -126,11 +165,11 @@ The information displayed for each step is:
 
 .. _view_your_test_history__search__export_csv:
 
-Export all test sessions
-~~~~~~~~~~~~~~~~~~~~~~~~
+Export test sessions
+--------------------
 
 Apart from exporting an individual test case report you can also export the information for the currently displayed test sessions in
-CSV format. To do this click the **Export CSV** button in the right of the test session table header.
+CSV format. To do this click the **Export CSV** button in the right of the active or completed test session table header.
 
 .. figure:: ../screenshots/test_history_export_csv.PNG
   :align: center
@@ -153,7 +192,7 @@ deleted are limited to those specific to the system that is currently selected.
 View a test session's steps
 ---------------------------
 
-Each row from the list of presented test sessions may also be clicked to view its detailed steps. Doing so presents
+Each row from the list of presented test sessions, both active and completed, may also be clicked to view its detailed steps. Doing so presents
 a view over the test session's steps that is similar to the live test execution diagram displayed while the test session is
 active (see :ref:`execute_tests__step3`).
 
@@ -163,7 +202,8 @@ active (see :ref:`execute_tests__step3`).
 In this screen each test case step is displayed using the same colour coding applied during test execution: 
 
 * **Green** indicates successfully completed steps.
-* **Red** indicates failed steps.
+* **Orange** indicates failed warning-level steps.
+* **Red** indicates failed error-level steps.
 * **Grey** indicates steps that were skipped.
 
 In terms of provided controls, a document icon is presented on steps that produced a report that can be clicked to review
@@ -175,7 +215,7 @@ View test step details
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Clicking on a step's document icon triggers a popup that shows the step's different information elements that can be viewed inline, downloaded or opened in
-a separate popup editor. In the case of validation steps, this is extended to also provide the detailed validation results as illustrated in the
+a separate popup editor. In the case of validation steps, this is extended to also provide the detailed results and report counters as illustrated in the
 following example for a validation failure.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG

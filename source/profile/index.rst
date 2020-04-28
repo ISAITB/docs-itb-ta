@@ -63,17 +63,35 @@ Edit your profile
 The information you see here is taken from your EU Login account and cannot be edited within the test bed. The options you
 have here relate to the test bed roles linked to your account, specifically:
 
-* **Remove current role from your account** will remove the current role from your EU Login account. Upon doing so you will
-  be transferred to the :ref:`listing of your available roles<login__roles>` where you will no longer see the one you just removed.
-  Note that this can once again be added to your account by :ref:`confirming again its assignment to you<login__roles__confirm>`.
+* **Remove role from your account** is used to remove one or more roles from your EU Login account.
 * **Link another role to your account** will transfer you to the screen where you can :ref:`link additional roles to your EU Login account<login__roles>`.
 * **Register another organisation** will transfer you to the screen to :ref:`register another organisation<login__roles__register>`
   in one of the test bed's communities (not necessarily the current one). Note that this button may not be available if
   self-registration is disabled by your test bed's administrator.
 
+Clicking **Remove role from your account** will present you with a popup in which you are prompted to select the role(s) to remove.
+
+.. figure:: ../screenshots/profile__remove_roles.png
+  :align: center
+  :scale: 50%
+
+You have three options from which to choose from, each with increasing weight:
+
+  * **Deactivate current role:** This will disconnect your EU Login account from the current role and effectively deactivate it. You
+    will be transferred to the :ref:`listing of your available roles<login__roles>` where you will no longer see the one you just removed.
+    Note that this can once again be added to your account by :ref:`confirming again its assignment to you<login__roles__confirm>`.
+  * **Delete current role:** This deactivates the current role (see above) but also deletes the inactive role. Only an administrator can
+    redefine this role for you.
+  * **Delete all roles:** This deletes not only your current role (see above) but also all other roles you may have linked to your EU Login
+    account (in other organisations or communities). This effectively wipes all your information from the test bed.
+
+The delete options, either for the current role or all roles, provide you the ability to fully manage your own information in the test bed.
+Removing your information, specifically the email, user ID and name associated to your EU Login account can thus be driven by you without
+needing to involve other parties. Importantly, deactivating or deleting user roles never impacts the test session history or conformance status
+of your organisation.
+
 .. note::
-  Each of these actions will disconnect your current session before proceeding. You will be prompted to confirm this
-  before proceeding.
+  Each of these actions will also disconnect your current session. You will be prompted to confirm this before proceeding.
 
   **Updating your role:** Modification of your role is possible but this is reserved as an administrator-level feature.
 
@@ -141,7 +159,7 @@ When ready click on the **Save** button to complete your password update.
 Manage your organisation's details
 ----------------------------------
 
-To manage your organisation's information click the **Organisation** link from the side menu. This shows you 
+To manage your organisation's information click the **Organisation** link from the side menu. This shows you
 the information relevant to your organisation, split in two sections:
 
 * **Organisation details:** The name (short and full) of your organisation.
@@ -154,7 +172,7 @@ the information relevant to your organisation, split in two sections:
 .. note::
   **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be 
+  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
 .. _manage_your_profile__edit_organisation:
@@ -163,8 +181,8 @@ Edit your organisation's details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Editing the details of your organisation is possible through the editable fields relevant to your organisation's
-**short** and **full names**. In addition, if your community administrator has defined additional properties for 
-its organisations you will also see here a **Show properties** checkbox to toggle the display of your organisation's 
+**short** and **full names**. In addition, if your community administrator has defined additional properties for
+its organisations you will also see here a **Show properties** checkbox to toggle the display of your organisation's
 additional information.
 
 .. figure:: ../screenshots/organisation_manage_admin_properties.PNG
@@ -179,12 +197,12 @@ As an administrator you can view and edit these properties, depending on their t
 * For texts the current value is presented in an editable text field.
 * For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
   by clicking on its link, or delete it by clicking **Remove**.
-* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 
+* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
   check **Update**. When providing a new value you can also toggle the display of the typed characters.
 
 Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
 
-.. note:: 
+.. note::
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when editing the organisation's
   information but as long as required properties are missing you will not be able to launch tests.
 
@@ -199,7 +217,7 @@ As organisation administrator you can also add new non-administrator users to yo
 These users can start test sessions and view your organisation's testing history but cannot add other users or change
 your organisation's configuration.
 
-Adding a new member is done by clicking on the **Add member** button and completing the information in the displayed popup. The 
+Adding a new member is done by clicking on the **Add member** button and completing the information in the displayed popup. The
 information you need to provide depends on whether your test bed uses EU Login for its authentication.
 
 Case: EU Login
@@ -212,9 +230,9 @@ In case EU Login is used the following popup is displayed.
   :scale: 50%
 
 You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to your organisation's 
+her EU Login account. Once you have created the user you will see that a new entry is added to your organisation's
 members but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. 
+updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
 
 Case: no EU Login
 +++++++++++++++++
