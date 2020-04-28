@@ -63,17 +63,35 @@ Edit your profile
 The information you see here is taken from your EU Login account and cannot be edited within the test bed. The options you
 have here relate to the test bed roles linked to your account, specifically:
 
-* **Remove current role from your account** will remove the current role from your EU Login account. Upon doing so you will 
-  be transferred to the :ref:`listing of your available roles<login__roles>` where you will no longer see the one you just removed.
-  Note that this can once again be added to your account by :ref:`confirming again its assignment to you<login__roles__confirm>`.
+* **Remove role from your account** is used to remove one or more roles from your EU Login account.
 * **Link another role to your account** will transfer you to the screen where you can :ref:`link additional roles to your EU Login account<login__roles>`.
 * **Register another organisation** will transfer you to the screen to :ref:`register another organisation<login__roles__register>` 
   in one of the test bed's communities (not necessarily the current one). Note that this button may not be available if 
   self-registration is disabled by your test bed's administrator.
 
+Clicking **Remove role from your account** will present you with a popup in which you are prompted to select the role(s) to remove.
+
+.. figure:: ../screenshots/profile__remove_roles.png
+  :align: center
+  :scale: 50%
+
+You have three options from which to choose from, each with increasing weight:
+
+  * **Deactivate current role:** This will disconnect your EU Login account from the current role and effectively deactivate it. You 
+    will be transferred to the :ref:`listing of your available roles<login__roles>` where you will no longer see the one you just removed.
+    Note that this can once again be added to your account by :ref:`confirming again its assignment to you<login__roles__confirm>`.
+  * **Delete current role:** This deactivates the current role (see above) but also deletes the inactive role. Only an administrator can
+    redefine this role for you. 
+  * **Delete all roles:** This deletes not only your current role (see above) but also all other roles you may have linked to your EU Login
+    account (in other organisations or communities). This effectively wipes all your information from the test bed.
+
+The delete options, either for the current role or all roles, provide you the ability to fully manage your own information in the test bed.
+Removing your information, specifically the email, user ID and name associated to your EU Login account can thus be driven by you without
+needing to involve other parties. Importantly, deactivating or deleting user roles never impacts the test session history or conformance status
+of your organisation.
+
 .. note::
-  Each of these actions will disconnect your current session before proceeding. You will be prompted to confirm this
-  before proceeding.
+  Each of these actions will also disconnect your current session. You will be prompted to confirm this before proceeding.
 
   **Updating your role:** Modification of your role is possible but this is reserved as an administrator-level feature.
 
