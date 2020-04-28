@@ -115,7 +115,7 @@ this purpose are displayed by default in collapsed form:
 .. figure:: ../screenshots/conformance_statement_details_endpoints_collapsed.PNG
   :align: center
 
-Clicking on the **plus** icon on the right-hand side will expand the panel to display the details for all properties:
+Clicking on the **Hidden** toggle button on the right-hand side will set it to **Visible** and in doing so, expand the panel to display the details for all properties:
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_admin.PNG
   :align: center
@@ -208,6 +208,40 @@ levels:
 
 * **For each test suite:** To automatically and sequentially execute all the test suite's test cases.
 * **For each test case:** To execute the specific test case.
+
+In all previous examples you may have noticed a **Interactive execution** toggle button displayed in the **Conformance tests** header. This toggle defines
+the manner in which you will execute the tests, defaulting to sequential interactive sessions. This means that each of the tests will execute in sequence and
+synchronously, with the current progress displayed to you and any steps requiring your input prompting you as needed. The alternative option, enabled if you
+click the toggle button, is **Background execution** that will launch the tests sessions in parallel and run them in the background.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
+  :align: center
+
+Opting for background execution allows you to launch a potentially large number of test sessions without needing to oversee their progress. Care however needs
+to be taken here to ensure that all relevant test cases can be carried out without user interaction. If a test session running in the background defines user
+interaction steps, these are managed as follows:
+
+* **Instructions** are simply skipped, assuming that these are purely of informational value.
+* **Input requests** are completed automatically without input. Doing so will most likely cause a test session to fail (e.g. if a user is expected to provide
+  the content of a message to send) but could still result in a successful completion if the test case has been designed to treat user input as optional.
+
+The status of test sessions launched in the background can be monitored by means of the :ref:`Test Sessions<view_your_test_history>` screen.
+
+A further point to mention regarding the selection of test cases to execute is the possibility to view their **extended documentation**. Test cases and
+test suites are typically defined to include a brief description that provides context and high-level instructions. This is the description displayed
+in the test case listing discussed up to this point. The authors of the test cases may have provided in addition to this description, extended documentation
+that provides further information such as diagrams and reference links. Such documentation may exist at test suite and/or test case level, in which case you
+will see an additional **information button** displayed where available.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation.PNG
+  :align: center
+
+Clicking this button will result in a popup window containing the extended documentation.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
+  :align: center
+
+Note that the documentation on test cases is also available to consult during their :ref:`execution<execute_tests__step3>` (in case of interactive execution).
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__export:
 

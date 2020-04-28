@@ -22,7 +22,7 @@ displays:
 
 * A welcome message.
 * The main **Click to log in** button to log you in.
-* The **Create an account** shortcut allowing to self-register for one of the test bed's communities (see :ref:`login__create_account`).
+* The **Register in a public community** shortcut allowing to self-register for one of the test bed's communities (see :ref:`login__create_account`).
 * A privacy note with a link to view the test bed's legal notice.
 
 A more complete example can be found in the `ISA² test bed instance`_ where additional information and shortcuts are displayed:
@@ -126,14 +126,14 @@ Once ready click on **Save** to change your password and access the test bed.
 
 .. _login__create_account:
 
-Create an account
------------------
+Register for a public community
+-------------------------------
 
-From the test bed's welcome page you have the option of creating a new account. This new account will be linked to a new
-organisation that will be registered in one of the test bed's available communities. This process is also referred to as
-"self-registration".
+From the test bed's welcome page you have the option of registering for one of its public communities. Selecting to do this will prompt
+you to create an account linked to a new organisation that will be registered in one of the test bed's available communities.
+This process is also referred to as "self-registration".
 
-To create an account start by clicking the **Create an account** shortcut from the test bed's welcome page.
+To carry out the registration start by clicking the **Register in a public community** shortcut from the test bed's welcome page.
 
 .. figure:: ../screenshots/welcome__create_account.png
   :align: center
@@ -151,13 +151,19 @@ you are expected to:
 * Provide the details for your new organisation.
 * Provide the details for the new organisation's initial administrator.
 
+As a first step you are presented with the publicly available communities, displaying their name and description.
+
+.. figure:: ../screenshots/self_registration__select_community.png
+  :align: center
+
+Select one of the available communities by clicking on its relevant row. Doing so will present you the registration form linked to this community.
+
 .. figure:: ../screenshots/self_registration__non_eu_login.PNG
   :align: center
 
-To complete the registration form provide the following information:
+The information needed to complete this form is as follows:
 
-* **Community:** The community you want to register for.
-* **Token:** A token value you are expected to provide to register for the community. The value for this token
+* **Registration token:** A token value you are expected to provide to register for the community. The value for this token
   will be provided to you by the community's administrator. If a token is not required this input will not be displayed.
 * **Short name:** The name of your organisation in short form.
 * **Full name:** The name of your organisation in full form.
@@ -168,6 +174,11 @@ To complete the registration form provide the following information:
 * **Email:** A username for the account formatted as an email. This is not necessarily an active address but rather a
   "functional" email address that is linked to the test bed.
 * **Password:** The password for the new administrator account that needs to also be confirmed.
+
+The **Organisation details** section may also include one or more additional properties that the community's administrator requires
+for completion during registration. These properties may be simple text values, secret values or files for you to upload, and may be
+optional or required. Note that properties highlighted as required will not prevent you from completing the registration if you don't
+supply them. These will need to be provided however before you can execute any tests.
 
 Once the information is provided click on **Register** to create your organisation and proceed to your landing page. Clicking
 on **Cancel** will return you back to the welcome page.
@@ -251,8 +262,8 @@ close the dialog.
 
 .. _login__roles__register:
 
-Register new organisation
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Register a new organisation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can register yourself a new organisation in one of the test bed's available communities. To do so select the relevant option
 from the popup dialog.
@@ -260,22 +271,31 @@ from the popup dialog.
 .. figure:: ../screenshots/roles__popup__register_option.PNG
   :align: center
 
-Doing so presents a registration form that displays the available communities and requests you to complete your organisation's
-information.
+As a first step you are presented with the publicly available communities, displaying their name and description.
+
+.. figure:: ../screenshots/roles__popup__register_communities.PNG
+  :align: center
+
+Select one of the available communities by clicking on its relevant row. Doing so will present you the registration form linked to this community.
 
 .. figure:: ../screenshots/roles__popup__register_form.PNG
   :align: center
 
 To complete the registration form provide the following information:
 
-* **Community:** The community you want to register for.
-* **Token:** A token value you are expected to provide to register for the community. The value for this token
+* **Registration token:** A token value you are expected to provide to register for the community. The value for this token
   will be provided to you by the community's administrator. If a token is not required this input will not be displayed.
 * **Short name:** The name of your organisation in short form.
 * **Full name:** The name of your organisation in full form.
 * **Configuration:** A list of configuration templates for your organisation, defined by the community's administrator,
   that will predefine your organisation's systems and conformance statements. This will not be displayed if no such
   templates are available.
+
+Once the information is provided click on **Complete** to finish the registration. Doing so will close the dialog and
+The **Organisation details** section may also include one or more additional properties that the community's administrator requires
+for completion during registration. These properties may be simple text values, secret values or files for you to upload, and may be
+optional or required. Note that properties highlighted as required will not prevent you from completing the registration if you don't
+supply them. These will need to be provided however before you can execute any tests.
 
 Once the information is provided click on **Complete** to finish the registration. Doing so will close the dialog and
 display the relevant role in your available connection options. Note that you can also click on **Cancel** to abort the process and
@@ -351,7 +371,7 @@ At the bottom of the screen is where you find the screen's **footer**. This disp
 .. figure:: ../screenshots/footer.PNG
   :align: center
 
-* A link to the current **user guide**.
+* A link to the current **user guide**. The section of the user guide displayed depends on the screen you are currently accessing.
 * A link to **contact the support team** for problems, questions and feedback (see :ref:`contact_support`).
 * A link to view the test bed's **legal notice**.
 * The test bed's **version** number.
