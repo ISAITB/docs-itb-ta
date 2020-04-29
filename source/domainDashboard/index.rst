@@ -13,33 +13,13 @@ this click on the **ADMIN** link from the screen's header.
 Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
 the **Domain Management** link.
 
-.. figure:: ../screenshots/admin_domains.PNG
+.. figure:: ../screenshots/admin_domains_ca.PNG
   :align: center
-
-.. _domains__domain_view:
-
-Domain list
------------
-
-The first screen you access is the display of the domains relevant to your community. These are configured for you by the test bed
-administrator at the time your community is created. Typically you would always have a single domain linked to your community over which
-you have full access.
-
-.. figure:: ../screenshots/admin_domains_domains.PNG
-  :align: center
-
-The presented table includes one row per domain for which the following information is displayed:
-
-* The **short name** for the domain, used when the domain is mentioned in list displays.
-* The **full name** for the domain, used in detail displays and reports.
-* A **description** for the domain to provide context over what the domain relates to.
-
-To proceed within a domain's details click its relevant row from the table.
 
 .. note::
-    **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 
-    and actor are important to provide context to your users. This information should summarise what they are testing for, whereas 
-    the name and description of test cases and test suites should summarise how they are supposed to test.
+    **Community with no domain:** The link between your community and a domain is set by a test bed administrator. If no
+    specific domain has been linked to your community your organisations may create conformance statements for any domain,
+    however you cannot edit any of their linked information. In this case the **Domain Management** link is not available.
 
 .. _domains__domain_details:
 
@@ -54,7 +34,7 @@ The domain detail screen is where you can edit a domain's properties. It is spli
 
 In the **Domain Details** section you are presented with a form to view and edit the domain's information.
 
-.. figure:: ../screenshots/admin_domains_domain_details.PNG
+.. figure:: ../screenshots/admin_domains_domain_details_ca.PNG
   :align: center
 
 The following information is presented in corresponding form controls:
@@ -63,9 +43,12 @@ The following information is presented in corresponding form controls:
 * Its **full name** (required), displayed in detail screens and reports.
 * Its **description** (optional), displayed in details screens and reports.
 
-To edit the domain's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
-following confirmation, delete the domain and all related information. The **Back** button does not make any changes but takes you back to the
-domain list screen (see :ref:`domains__domain_view`).
+To edit the domain's information, enter the new values you require and click the **Save changes** button.
+
+.. note::
+    **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 
+    and actor are important to provide context to your users. This information should summarise what they are testing for, whereas 
+    the name and description of test cases and test suites should summarise how they are supposed to test.
 
 .. _domains__domain__specification_list:
 
@@ -83,6 +66,7 @@ Each specification is presented in a separate row, in which the following inform
 * The specification's **short name**, used in list displays.
 * Its **full name**, used in detail screens and reports.
 * Its **description**, used in detail screens and reports.
+* Whether or not the specification is **hidden** from organisation users.
 
 Clicking on a specification's row will take you to its detail page (see :ref:`domains__specification`). To create a new specification click the **Create specification**
 button from the table's header (see :ref:`domains__domain_create_specification`).
@@ -106,17 +90,17 @@ The information to provide for the specification is:
 
 * The specification's **short name** (required), displayed in list views.
 * Its **full name** (required), displayed in detail screens and reports.
-* A set of comma-separated **related URLs** that are pertinent to the specification (optional).
-* A URL to a **diagram** describing the specification (optional).
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
-* The **specification type** as a choice between "Integration Profile" and "Content Specification" (optional).
+* Whether or not the specification is to be considered as **hidden** (by default set to false).
+
+Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
+deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
+however any existing conformance statements or performed tests that refer to it remain unaffected. A good example of such
+a scenario is when you want to support versioning in specifications and, upon release of a new version, you want to ensure
+new conformance statements are made for this latest version.
 
 To complete the creation of the specification click the **Save** button. To cancel and return to the domain detail page (see :ref:`domains__domain_details`) 
 click the **Cancel** button.
-
-.. note::
-    **Specification metadata:** From the information you are requested to provide only the specification's **short name**, **full name** and **description**
-    are currently used. The additional information is recorded as metadata but not currently displayed.
 
 .. _domains__domain__parameter_list:
 
@@ -241,10 +225,14 @@ The following information is presented in corresponding form controls:
 
 * The specification's **short name** (required), displayed in list views.
 * Its **full name** (required), displayed in detail screens and reports.
-* A set of comma-separated **related URLs** that are pertinent to the specification (optional).
-* A URL to a **diagram** describing the specification (optional).
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
-* The **specification type** as a choice between "Integration Profile" and "Content Specification" (optional).
+* Whether or not the specification is to be considered as **hidden** (by default set to false).
+
+Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
+deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
+however any existing conformance statements or performed tests that refer to it remain unaffected. A good example of such
+a scenario is when you want to support versioning in specifications and, upon release of a new version, you want to ensure
+new conformance statements are made for this latest version.
 
 To edit the specification's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the specification and all related information. The **Back** button does not make any changes but takes you back to the
