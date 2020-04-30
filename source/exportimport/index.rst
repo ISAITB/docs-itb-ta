@@ -3,7 +3,7 @@
 Export and import your data
 ===========================
 
-A key part of your administration tasks is the configuration of your :ref:`domain<domains>` and :ref:`user community<community>` to 
+A key part of your administration tasks is the configuration of :ref:`domains<domains>` and :ref:`user communities<community>` to 
 define your conformance testing setup and customise the experience of your users. This configuration involves significant data entry
 and upload of files (most importantly test suites) that can be time-consuming if needed to be replicated. Replicating this setup is 
 nonetheless something that often needs to be done, typically as part of the following scenarios:
@@ -55,29 +55,27 @@ the **Data Export** link.
 
 The first choice you need to make is the type of data you will be exporting. This is defined by the **Data to export** choices and can be:
 
-* **Domain configuration:** Select this to export only the information linked to your domain (e.g. specifications, test suites).
-* **Community configuration:** Select this to export the full information linked to your community (e.g. custom properties, organisations) as well as its linked domain.
+* **Domain configuration:** Select this to export only the information linked to a domain (e.g. specifications, test suites).
+* **Community configuration:** Select this to export the full information linked to a community (e.g. custom properties, organisations) as well as its linked domain.
 
 The second option can be viewed as a superset of the first one in that the community data can also include all information on the domain. It is important however to 
-provide the distinction given that you may want to only export your testing configuration without any information linked to your community.
+provide the distinction given that you may want to only export your testing configuration without any information linked to a community.
 
-.. note::
-    **Community with no domain:** If your community is not linked to a domain the **Data to export** choice is not available. In this case you are assumed to be making
-    a community export.
-
-Selecting **Domain configuration** expands the form to provide information on the exported data. Doing so displays the name of the domain linked to your community
+Selecting **Domain configuration** expands the form to provide information on the exported data. Doing so displays the list of available domains
 that will be exported as well as additional configuration options.
 
 .. figure:: ../screenshots/admin_export_domain_ca.png
   :align: center
 
-If you select **Community configuration** the form is similarly expanded to display the name of your community and the export options. 
+If you select **Community configuration** the form is similarly expanded to display the list of available communities and the export options. Note that the 
+test bed's :ref:`default community<community__defaults__community>` is not included in this list as it cannot be exported.
 
 .. figure:: ../screenshots/admin_export_community_ca.png
   :align: center
 
 Regardless of your choice, the information you need to provide is as follows:
 
+* The **domain** or **community** (depending on the export type) that you want to export.
 * An **export password** that will be used to encrypt the export archive as well as any sensitive information that the archive would internally include. This password
   will need to be provided when you :ref:`import the archive<exportimport__import_step1>` or if you manually open it.
 * The information to **include** in the archive presented as a table of available choices.
@@ -160,15 +158,14 @@ of import you want to carry out. You have two choices:
 
 Choosing the type of import to carry out is important given that the data archive you want to import from may include additional information
 you would want to skip. A good example is when you have an archive containing a full community export but you want to import
-only the data linked to its domain. Note that if your community is not linked to a specific domain this choice is skipped and you are assumed to 
-be making a community import.
+only the data linked to its domain.
 
 Selecting one of these options expands the screen to present additional information and settings.
 
 .. figure:: ../screenshots/admin_import_community_ca.png
   :align: center
 
-Depending on whether you chose to import a domain or a community, you see your own domain or community presented as the **target**.
+Depending on the type of data you chose to import, you see the available **domains** or **communities** presented as the **target** for the import.
 Following this you are prompted to provide the **data archive** to use as well as the **password** that was set during the export to
 encrypt it. Finally you are presented with a set of **default import actions** that will determine how data is to be processed.
 These options are specifically:
@@ -182,7 +179,7 @@ These options are specifically:
 These options assume a matching between data that exists within the archive and the target test bed instance. This matching is based on
 information such as names (e.g. a specification's short name) which should be sufficient to identify it although not always guaranteed
 to be unique. For example, a specification's actors always have a unique identifier, whereas there can be no guarantee on the name of an
-organisation. Although duplicate information is not typical, community administrators are advised to always :ref:`review<exportimport__import_step2>` 
+organisation. Although duplicate information is not typical, administrators are advised to always :ref:`review<exportimport__import_step2>` 
 the processing actions that will result from an import.
 
 Finally, it is important to highlight that the options set as **default import actions** only affect how data is flagged to be processed.

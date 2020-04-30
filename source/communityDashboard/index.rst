@@ -136,17 +136,13 @@ The information you are expected to provide is:
 
 * The **short name** for the community (required), used in list displays.
 * Its **full name** (required), used in detail screens and reports.
-* A **support email** address (optional), used to deliver feedback provided by the community's users (see :ref:`community_testbed_communities__manage` for
-  more information).
-* The preference on allowing **self-registration** for the community (see :ref:`community_testbed_communities__manage` for
-  more information).
+* The **domain** it will be linked with (optional) defining the conformance statements its members can create.
+* A **support email** address (optional), used to deliver feedback provided by the community's users.
+* The preference on allowing **self-registration** for the community.
 
+More information on the domain, support email and self-registration settings is provided in the :ref:`community details section<community_testbed_communities__manage>`.
 Once the information is entered you complete the community creation by clicking **Save**. Clicking **Cancel** discards pending changes and returns you to
 the previous screen.
-
-.. note::
-    **Setting a domain for the community:** Setting the community's domain is important as this provides full access to the domain's management (including
-    its test cases) to the community's administrator(s). This can be done in the community details screen (see :ref:`community_testbed_communities__manage`).
 
 .. _community_testbed_communities__manage:
 
@@ -185,6 +181,11 @@ for their configuration and test suite development. In addition, linking the com
 community administrators and also the community's users when defining conformance statements (see :ref:`manage_your_conformance_statements__create`).
 It effectively presents to the community a view over the test bed that is dedicated to their own testing needs. If no domain is linked to the community,
 its administrators and users are presented with all available domains and specifications.
+
+.. note::
+    **Changing a community's domain:** Once a community has been linked to a domain its members can create conformance statements and execute relevant tests.
+    After this point, if you change the domain linked to the community, the conformance testing history of its members will be rendered obsolete. Note that
+    changing a community's domain after creation is possible to facilitate initial setup but is almost never needed once the initial setup is compete.
 
 Regarding the **support email**, this is the address, typically a functional mailbox, where community users' feedback is sent via
 the test bed's contact form (see :ref:`contact_support`). If this email address is configured, it will be used as the recipient of

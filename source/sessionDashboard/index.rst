@@ -252,9 +252,9 @@ free up any resources that are being used by the sessions in question.
 .. figure:: ../screenshots/admin_session_dashboard_terminate.png
   :align: center
 
-To enable this toggle the button to **ON** at which point you will need to provide the maximum allowed idle time (in seconds).
+To enable this click the **Disabled** toggle button to switch it to **Enabled**. Doing so you will need to provide the maximum allowed idle time (in seconds).
 
 .. figure:: ../screenshots/admin_session_dashboard_terminate_on.png
   :align: center
 
-Enter the value in seconds and click on **Apply** to persist your change. Switching the setting to **OFF** removes the setting.
+Enter the value in seconds and click on **Apply** to persist your change. Switching the toggle button to **Disabled** removes the setting.
