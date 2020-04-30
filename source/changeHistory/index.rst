@@ -8,7 +8,84 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.8.0**.
+The latest test bed release is **1.9.0**.
+
+Release 1.9.0 - 30/04/2020
+--------------------------
+
+This release introduces numerous new features and improvements, the most important ones being the support for parallel and 
+background test session execution, and the ability to transfer via export a community's complete configuration across different
+test bed instances. Apart from these key features, numerous improvements are made also to the self-registration process enabling 
+configuration options such as user restrictions and notifications, and the use of test cases that now support extended documentation
+and improved result display. FInally, a wide range of enhancements have been made to the test bed's user centricity, including 
+ubiquitous help tooltips, visual feedback for all actions, a context-specific user guide and the possibility to fully manage a user's 
+own information.
+
+**Bug**
+
+* [ITB-457] - Invalid map variable references not detected by TDL validator
+* [ITB-475] - Unable to pass a BASE64 encoded string to a binary input variable
+* [ITB-483] - TDL If steps with no visible internal steps appear in test session history display
+* [ITB-527] - Previously executed test diagrams don't display correctly with nested decision blocks
+* [ITB-531] - Test step report items appear clickable even when it is not possible to view them in-context
+* [ITB-532] - Active test session display in session dashboard has mis-aligned buttons
+* [ITB-538] - Changing a community's domain should invalidate all test sessions made under the previous domain
+* [ITB-542] - Problem in confirmation message to delete a system
+* [ITB-543] - Delete button appears for unset conformance statement parameter
+* [ITB-544] - Feedback submission does not include organisation and community of logged in user
+* [ITB-548] - Custom labels fail to display during self-registration when only one public community is defined
+* [ITB-554] - Test Bed administrator unable to provide custom system properties when managing tests for an organisation and creating a new system
+* [ITB-558] - Community administrators should not be allowed to delete their domain
+* [ITB-561] - Binary and secret domain parameters should have a disabled save button when name is missing
+
+**New Feature**
+
+* [ITB-189] - Allow test suite test cases to be executed in parallel
+* [ITB-288] - Allow an administrator to export and then import a community or domain setup
+* [ITB-481] - Allow test sessions to continue running in the background
+* [ITB-486] - Allow custom organisation properties to display in self-registration page
+* [ITB-501] - Email community support mailbox upon self-registration of new organisation
+* [ITB-515] - Allow community administrators to restrict self-registration based on the user
+* [ITB-528] - Allow specifications to be defined as hidden
+* [ITB-529] - Support extended documentation for test cases and test suites
+* [ITB-533] - Provide button to refresh the display of active and completed test sessions
+* [ITB-537] - Provide visual feedback after every successful action
+* [ITB-539] - Headless (background) test session execution
+* [ITB-541] - Allow organisation users to monitor and manage their active sessions
+* [ITB-549] - Allow user to fully delete a role assignment
+* [ITB-550] - Allow user to fully remove all role assignments (clear all personal data)
+* [ITB-555] - New processing handler to handle base64 encoding and decoding
+* [ITB-562] - Support sandbox instance creation by automating the import of data from a provided data archive
+
+**Improvement**
+
+* [ITB-223] - Set a community's domain upon creation
+* [ITB-388] - Show report item counts resulting from a verify step (validation)
+* [ITB-389] - Have the user guide link in the UI's footer navigate you to the corresponding section in the user guide
+* [ITB-402] - Allow variable expressions to be defined in placeholders used in test case template files
+* [ITB-410] - Display location description in verify step's report items if not possible to show in editor
+* [ITB-431] - Make skipped test steps more obvious
+* [ITB-456] - Allow assign steps to create variables
+* [ITB-466] - Automatically focus first element in displayed forms
+* [ITB-467] - Allow all forms to be submitted with enter
+* [ITB-471] - Skip the single domain selection for community administrators when managing the domain
+* [ITB-472] - Add help tooltips to all form fields
+* [ITB-477] - Improve display of loop iteration in test session output
+* [ITB-487] - Apply HTTP secure headers
+* [ITB-488] - Enable forward secrecy for Test Bed reverse proxy
+* [ITB-490] - When starting a test session and configuration is missing display only the missing properties
+* [ITB-492] - Restrict the values that can be provided in user inputs
+* [ITB-493] - Clarify the use of the create account link from the welcome page
+* [ITB-526] - Allow Test Bed instances to use SSL and STARTTLS connections for SMTP server access
+* [ITB-536] - Confirm test suite replacement that drops test history
+* [ITB-546] - Animate panels that expand and collapse to better highlight UI changes
+* [ITB-547] - Improve display of toggle button
+* [ITB-551] - Allow a community administrator to remove other community administrators from her community
+* [ITB-552] - Better highlighting for information items in test step reports
+* [ITB-553] - Disable support for TLS 1.0 and TLS 1.1 in Test Bed reverse proxy
+* [ITB-557] - Show community description for communities available for self-registration
+* [ITB-559] - Hide domain management link for admins of communities with no domain
+* [ITB-560] - Hide unused information on specifications
 
 Release 1.8.0 - 20/01/2020
 --------------------------

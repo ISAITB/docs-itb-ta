@@ -14,6 +14,7 @@ Interoperability Test Bed User Guide
    conformanceDashboard/index
    domainDashboard/index
    communityDashboard/index
+   exportimport/index
    validateTestSetup/index
    profile/index
    contactSupport/index

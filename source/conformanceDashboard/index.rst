@@ -224,8 +224,8 @@ The Conformance Dashboard offers a set of filters that can be used to limit the 
 .. figure:: ../screenshots/admin_conformance_dashboard_filters_off.PNG
   :align: center
 
-Filtering is by default switched off as indicated by the **CLEAR** button that is highlighted in blue as active. By clicking the **APPLY** button 
-the filter controls are displayed and filtering is switched on.
+Filtering is by default switched off as indicated by the toggle button that is indicated as **Disabled**. Clicking this sets
+the button to **Enabled**, displaying the filter controls and switching on filtering.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_filters_on_ta.PNG
   :align: center
@@ -243,5 +243,5 @@ All filter controls are multiple selection choices. Multiple selected values acr
 Note additionally that selecting dependent values serves to limit the filter options that are presented. For example if a given organisation
 is selected, the systems available for filtering will be limited to that organisation to already exclude impossible combinations.
 
-The presented conformance statements are automatically updated whenever your filter options are modified, or when the filters are removed altogether
-by clicking the **CLEAR** button. Note that applying no filtering is also the default case when you first visit this screen.
+The presented conformance statements are automatically updated whenever your filter options are modified, or when the filters are disabled. 
+Note that applying no filtering is also the default case when you first visit this screen.

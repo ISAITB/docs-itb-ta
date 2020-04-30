@@ -225,6 +225,22 @@ The possible values for this are as follows:
   :align: center
   :scale: 70%
 
+Selecting any value other than **Not supported** will expand the community details' form to provide further configuration options. These
+are:
+
+* **Self-registration token:** This is displayed if the third option is selected that requires a token being provided to complete the self-registration.
+  The value you provide here is the "community password" that self-registration users will need to provide. Note that if you have provided a **support email**
+  this will also be displayed in the self-registration form as a contact point for this token value.
+* **Description:** This is a descriptive text for the community that will accompany its display in the self-registration form as one of the available
+  communities. The purpose of this is to provide a short summary of what this community offers to potential users. If the community is linked to a **domain**
+  you have the option of replicating the description from the domain by checking the **Same as domain** checkbox. You may alternatively provide a different
+  description if this is more suitable.
+* **Self-registration notifications:** This option is available if the test bed supports email notifications and if the community defines a **support email**.
+  Checking this will send a notification email to the configured support mailbox whenever there is a new registration.
+* **Self-registration restrictions:** This allows you to select a means of restricting self-registration to ensure people and/or organisations enroll only once.
+  The restrictions you can set are to not allow multiple registrations from the same user (based on her email address) or from the same email domain. Note
+  that such restrictions are only supported if the test bed is integrated with EU Login that allows the test bed to be aware of users' actual email addresses.
+
 .. note::
   **Organisation templates:** If you choose to enable self-registration for the community you may also find interesting the
   possibility to :ref:`define preconfigured templates for organisations<community__create_organisation>`.
@@ -952,6 +968,10 @@ Regardless of the type of property, the information recorded and displayed is th
   and is accessed through the **ORGANISATION** or **SYSTEM** map depending on the case (see the `GITB TDL documentation`_ for more details).
 * **In exports:** Whether the property will be included in the CSV exports generated from administration dashboards (the
   :ref:`session dashboard<monitor_test_sessions>` and :ref:`conformance dashboard<monitor_conformance_status>`).
+
+In the case of organisation-level properties there is an additional option **Requested in self-registration** available. By checking this the property
+will also appear as part of the self-registration form for the community. You would do this for key information you want to have users provide as early
+as possible, and ideally as part of their initial organisation data.
 
 Regarding a property's key, there are certain predefined values that cannot be used as these correspond to the default
 organisation's or system's information. The reserved key values per case are:

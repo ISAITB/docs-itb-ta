@@ -23,12 +23,85 @@ the conformance statement detail page (see :ref:`manage_your_conformance_stateme
 Once all required configuration is provided you can choose to execute one or more test cases 
 through the conformance statement detail's **Conformance tests** section (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`). The test execution
 process starts by clicking one of the available **Play** buttons. In short, you can either execute a
-specific test case or a complete test suite.
+specific test case or a complete test suite and choose whether the test sessions will be launched
+in the background or in interactive mode (the default).
+
+.. _execute_tests_background:
+
+Background execution
+--------------------
+
+Launching tests in the background is done by toggling the execution mode button to **Background execution**.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
+  :align: center
+
+With this set you click the **Play** button to launch a test suite or a specific test case. Before doing so the test bed
+will verify that all required configuration properties are defined, and will display a popup notification for those
+that are missing.
+
+.. figure:: ../screenshots/test_execution_config_background.PNG
+  :align: center
+
+The missing information is presented to you in sections depending on its type:
+
+* **Organisation properties:** Properties at the level of the whole organisation.
+* **System properties:** Properties at the level of the system being tested.
+* **Conformance statement parameters:** Configuration parameters linked to the specific conformance statement.
+
+In each case you are presented with the following information:
+
+* The name of the **property** or **parameter** (marked with an asterisk if mandatory).
+* The information's **description**.
+
+From this point you have the following options:
+
+* Click the **Close** button in the bottom right corner to return to the 
+  :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
+* Click one of the **View** buttons on top right corners of the presented tables to access the configuration in question.
+
+Once all required information is correctly defined you can proceed to execute your test(s). Doing so will launch the test
+sessions in the background where they will proceed to run in parallel. A visual confirmation of the launched test session will
+briefly appear in the top right area of the screen informing you of this.
+
+.. figure:: ../screenshots/test_execution_background.PNG
+  :align: center
+
+The status of test sessions launched in the background can be monitored by means of the :ref:`Test Sessions<view_your_test_history>` screen.
+
+.. _execute_tests_interactive:
+
+Interactive execution
+---------------------
+
+Launching tests interactively is the default option and is enabled by having the execution mode toggle button set to **Interactive execution**.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_interactive.PNG
+  :align: center
+
+Proceeding to execute tests will result in a three-step process:
+
+  1. Verification of the configuration you provide to the test bed.
+  2. Communication of any configuration provided by the test bed to you.
+  3. Test execution.
+
+Throughout these steps you are presented on top with the list of test cases to execute. Each test case is displayed with its **name** and 
+**description** as well as an **information button** in case the test case in question defines further extended documentation.
+
+.. figure:: ../screenshots/test_execution_execute_test_cases.png
+  :align: center
+
+The currently active test case is always highlighted in **blue**, whereas the **status** column indicates the pending test case as well as 
+the overall result of the ones previously executed. Regarding the  **information button**, if present, clicking it will open a popup displaying 
+the test case's extended documentation.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
+  :align: center
 
 .. _execute_tests__step1:
 
 Step 1 - Verification of your configuration
--------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first step of executing one or more test cases is the verification on your provided configuration. If
 you are expected to enter required information that is missing you will be presented with
@@ -37,8 +110,8 @@ a screen listing the **missing properties**.
 .. figure:: ../screenshots/test_execution_config.PNG
   :align: center
 
-This screen presents on the top the **name** and **description** of the test cases to execute but puts
-the focus on the missing information. This is presented to you in sections depending on the type of missing information:
+This screen presents on the top the test cases to execute but puts
+the focus on the missing information. This is presented to you in sections depending on its type:
 
 * **Missing organisation properties:** Properties at the level of the whole organisation.
 * **Missing system properties:** Properties at the level of the system being tested.
@@ -46,7 +119,6 @@ the focus on the missing information. This is presented to you in sections depen
 
 In each case you are presented with the following information:
 
-* Whether or not the information is **set** (information that is set is also presented to provide a full overview).
 * The name of the **property** or **parameter** (marked with an asterisk if mandatory).
 * The information's **description**.
 
@@ -66,10 +138,10 @@ Once all required information is correctly defined you can proceed to execute yo
 .. _execute_tests__step2:
 
 Step 2 - Simulated actor configuration 
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The second step when executing your test(s) is the **Preliminary phase** screen where you again see the **name** and
-**description** of the test case(s) to execute but also see the configuration information generated for you by the test bed. 
+The second step when executing your test(s) is the **Preliminary phase** screen where you again see the test case(s) to execute 
+but also see the configuration information generated for you by the test bed. 
 The nature of this configuration depends on the tests you are executing but in all cases refers to information that the
 test bed is communicating to you that you may likely need to configure in your system before starting. If for example your 
 system is expected to send messages to the test bed this step informs you what you need to configure as the test bed's address.
@@ -105,10 +177,10 @@ At this point you may also click the **Back** button from the bottom left corner
 .. _execute_tests__step3:
 
 Step 3 - Test execution
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
-The third step when executing your test(s) is the **Execution** screen. This continues the display of the test case(s) **name**
-and **description** but now also shows you the test steps from the first test case to execute. In addition, a greyed-out 
+The third step when executing your test(s) is the **Execution** screen. This continues the display the test case(s)
+on top but now also shows you the test steps from the first test case to execute. In addition, a greyed-out 
 cog icon is now presented under the its **status** indicating that this test case is ready for execution but has not started yet.
 
 .. figure:: ../screenshots/test_execution_execute_single.PNG
@@ -141,13 +213,14 @@ Starting the test session is achieved by clicking the provided **Start** button.
 test case overview header. Otherwise, if multiple test cases are to be executed, the **Start** button is presented in the display of the 
 specific test case.
 
-Finally, throughout the execution of all test cases you may click the **Back** button in the bottom left corner to cancel execution and return to 
-the conformance statement detail page.
+Finally, throughout the execution of all test cases you may click the **Back** button in the bottom left corner to leave the interactive test execution
+and return to the conformance statement detail page. Doing so will continue to execute the ongoing and pending test cases in the background that you 
+can now follow from the :ref:`Test Sessions<view_your_test_history>` screen.
 
 .. _execute_tests__step3__monitor_and_manage_test_progress:
 
 Monitor and manage test progress
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++
 
 Clicking the **Start** button begins the first selected test case's session. What follows depends on the definition of the test case as illustrated
 in the presented diagram but can be summarised in the following types of feedback:
@@ -161,7 +234,8 @@ During the execution of the test case colours are used to inform on each step's 
 
 * **Blue** is used to highlight the currently active or pending step. This could be a blue arrow showing that a message is expected or a spinning
   blue cog to show active processing.
-* **Grey** is used for all elements that haven't started yet or that have been skipped (e.g. due to conditional logic).
+* **Grey** is used for all elements that haven't started yet or that have been skipped (e.g. due to conditional logic). Skipped steps are also displayed
+  with a strike-through to enhance the fact they have been skipped.
 * **Green** is used for steps that have successfully completed.
 * **Red** is used for steps that have failed with a severity level of "error".
 * **Orange** is used for steps that have failed with a severity level of "warning".
@@ -192,7 +266,7 @@ Once all test cases are complete the test case overview displays a **Reset** but
 .. _execute_tests__step3__view_test_step_documentation:
 
 View test step documentation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++
 
 Test steps are presented in the test execution diagram with a limited description label. Test steps can however be defined to also include additional
 detailed context, documentation, or instructions. Test steps defining such additional documentation are presented with a **circled question mark** next
@@ -220,7 +294,7 @@ Clicking the **Close** button or anywhere outside the popup will dismiss it and 
 .. _execute_tests__step3__view_test_step_results:
 
 View test step results
-~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++
 
 During test case execution, additional controls are made available to allow you to inspect the ongoing test(s) results.
 
@@ -238,8 +312,8 @@ a green tick or red cross (for success or failure respectively). This applies bo
 
 Apart from serving as an additional indication on the success or failure of the test step, these controls provide further details on the step's
 results. In case of messaging steps, this triggers a popup that shows the different information elements that can be viewed inline or opened in
-a separate popup editor. In the case of validation steps, this is extended to also provide the detailed validation results as illustrated in the
-following example for a validation failure.
+a separate popup editor. In the case of validation steps, this is extended to also provide the detailed validation results and an overview
+of the error, warning and information message counts, as illustrated in the following example.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG
   :align: center
@@ -289,7 +363,7 @@ detailed test step results, is possible at any time through your test session hi
 .. _execute_tests__step3__view_log:
 
 View test session log
-~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++
 
 During any point in a test session's execution you may view its detailed log output. This is done by clicking the **View log** button in the 
 bottom left corner next to the **Back** button.
