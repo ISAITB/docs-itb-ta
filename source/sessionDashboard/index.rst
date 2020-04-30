@@ -98,8 +98,8 @@ The session dashboard offers a set of filters that can be used to find test sess
 .. figure:: ../screenshots/admin_session_dashboard_filters_off.PNG
   :align: center
 
-Filtering is by default switched off as indicated by the **CLEAR** button that is highlighted in blue as active. By clicking the **APPLY** button the filter controls are displayed
-and filtering is switched on.
+Filtering is by default switched off as indicated by the toggle button that is set as **Disabled**. Clicking this switches it to **Enabled** resulting in the filter controls being displayed
+and filtering being switched on.
 
 .. figure:: ../screenshots/admin_session_dashboard_filters_on.PNG
   :align: center
@@ -122,7 +122,8 @@ Note additionally that selecting dependent values serves to limit the filter opt
 is selected, the test suites and test cases available for filtering will be limited to that specification to already exclude impossible combinations.
 
 The presented sessions are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the 
-**CLEAR** button. Note that applying no filtering is also the default case when you first visit this screen.
+**Enabled** toggle button. You may also click the **Refresh** button to refresh the display of results based on the current filtering. Note that applying 
+no filtering is also the default case when you first visit this screen.
 
 .. _session_dashboard__steps:
 
