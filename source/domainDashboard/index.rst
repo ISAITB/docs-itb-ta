@@ -34,7 +34,7 @@ The domain detail screen is where you can edit a domain's properties. It is spli
 
 In the **Domain Details** section you are presented with a form to view and edit the domain's information.
 
-.. figure:: ../screenshots/admin_domains_domain_details_ca.PNG
+.. figure:: ../screenshots/admin_domains_domain_details_ca.png
   :align: center
 
 The following information is presented in corresponding form controls:
