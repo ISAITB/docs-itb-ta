@@ -191,6 +191,10 @@ You will always have the possibility to review this as well as override any spec
 
 Once you have provided all requested information for the import you can proceed to the next step by clicking the **Import** button.
 
+.. note::
+    **Data archive versions:** If you import a data archive that was made for an earlier Test Bed version this will automatically be
+    migrated to the latest version.
+
 .. _exportimport__import_step2:
 
 Step 2: Review and complete the import
