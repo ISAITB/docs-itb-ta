@@ -230,8 +230,9 @@ Selecting any value other than **Not supported** will expand the community detai
 are:
 
 * **Self-registration token:** This is displayed if the third option is selected that requires a token being provided to complete the self-registration.
-  The value you provide here is the "community password" that self-registration users will need to provide. Note that if you have provided a **support email**
-  this will also be displayed in the self-registration form as a contact point for this token value.
+  The value you provide here is the "community password" that self-registration users will need to provide.
+* **Token help text:** In case token-based self-registration is selected you can also use this to specify a short help text that will be displayed to users next
+  to the token input. This can include simple formatting and hyperlinks to allow you to reference an email address or link to an online resource.
 * **Description:** This is a descriptive text for the community that will accompany its display in the self-registration form as one of the available
   communities. The purpose of this is to provide a short summary of what this community offers to potential users. If the community is linked to a **domain**
   you have the option of replicating the description from the domain by checking the **Same as domain** checkbox. You may alternatively provide a different

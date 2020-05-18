@@ -8,7 +8,31 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.9.0**.
+The latest test bed release is **1.9.1**.
+
+Release 1.9.1 - 18/05/2020
+--------------------------
+
+This is a patch release to address issues linked to errors in data imports and failure handling in interactive test sessions.
+In terms of new features this release extends the customisation options linked to community self-registration by extending the
+help text linked to community tokens.
+
+**Bug**
+
+* [ITB-608] - Interactive test session may on unexpected error display message for continuing execution
+* [ITB-610] - Unable to import community when no domain data are included in the data archive
+* [ITB-612] - Empty file input through user interaction during a test session stops the test session
+
+**New Feature**
+
+* [ITB-595] - Automatic migration of older version data archives to target Test Bed version
+* [ITB-609] - Allow customised message for self-registration help text
+
+**Improvement**
+
+* [ITB-600] - Hide the description of endpoint parameter inputs when there is no description
+* [ITB-603] - Add progress indicator for CSV export buttons
+* [ITB-611] - Remove option to retry after unexpected failure during test execution
 
 Release 1.9.0 - 30/04/2020
 --------------------------
