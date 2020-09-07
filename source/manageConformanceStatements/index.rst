@@ -35,6 +35,10 @@ You can return to the listing of conformance statements at any time by clicking 
 Create a conformance statement
 ------------------------------
 
+.. note::
+  **Missing create option:** The create conformance statement option may be missing if your community administrator has disabled the management of
+  conformance statements by organisation users.
+
 To create a new conformance statement for your selected system click the **Create conformance statement** button from the top right side of the
 conformance statement listing's header. This presents to you a wizard to construct your conformance statement.
 
@@ -157,6 +161,13 @@ A third scenario is that of a parameter being a secret value (e.g. a password). 
 a new value.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
+  :align: center
+  :scale: 50%
+
+Finally, an additional scenario is when preset values are defined for the parameter. In this case you are presented with a dropdown selection
+list that includes the available options.
+
+.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_dropdown.PNG
   :align: center
   :scale: 50%
 
@@ -318,7 +329,9 @@ Delete conformance statement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Deleting the conformance statement may be desired if you created it by mistake or if your system is no longer expected to conform to the
-given specification. Deleting the conformance statement is possible through the **Delete statement** button from the overview panel.
+given specification. Deleting the conformance statement is possible through the **Delete statement** button from the overview panel. If
+this button in missing this means that your community administrator has disabled the management of conformance statements for organisation
+users.
 
 Clicking this will request confirmation and, if confirmed, will remove the conformance statement. Note that your testing history relevant
 to this conformance statement still remains and can be consulted through your test history (see :ref:`view_your_test_history`). In addition,

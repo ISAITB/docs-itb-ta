@@ -32,6 +32,10 @@ the appropriate row from the table. Once clicked you will change to view the con
 Create a new system
 -------------------
 
+.. note::
+  **Create option missing:** The create system option may be missing if your community administrator has disabled the management of
+  systems by organisation users.
+
 To create a new system click on the **Create system** button displayed in the top right side of the system list header.
 Doing so presents you with a popup form to input the new system's information.
 
@@ -69,7 +73,7 @@ you will also see a **Show properties** checkbox. Checking this you can manage y
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
-* For texts through an editable text field.
+* For texts through an editable text field or by selecting a preset value from a dropdown list.
 * For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by 
   clicking **Remove**.
 * For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
@@ -118,7 +122,7 @@ will also see a **Show properties** checkbox. Checking this you can manage the s
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
 
-* For texts the current value is presented in an editable text field.
+* For texts the current value is presented in an editable text field or dropdown menu (if the property has preset values).
 * For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
   by clicking on its link, or delete it by clicking **Remove**.
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 
@@ -134,3 +138,7 @@ Once ready click the **Save** button to finish. Here you may also click the **De
 completely delete the system. In this case the tests realised for this system will still be searchable but will be presented
 as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Cancel** button to close this popup without
 making any changes.
+
+.. note::
+  **Missing delete option:** The delete system option may be missing if your community administrator has disabled the management of
+  systems by organisation users.
