@@ -176,9 +176,9 @@ The information needed to complete this form is as follows:
 * **Password:** The password for the new administrator account that needs to also be confirmed.
 
 The **Organisation details** section may also include one or more additional properties that the community's administrator requires
-for completion during registration. These properties may be simple text values, secret values or files for you to upload, and may be
-optional or required. Note that properties highlighted as required will not prevent you from completing the registration if you don't
-supply them. These will need to be provided however before you can execute any tests.
+for completion during registration. These properties may be simple text values, values to select from preset lists, secret values or files for you to upload, and may be
+optional or required. Properties marked as required must be provided before you can start executing tests, but depending on the
+community's configuration, you may still be allowed to proceed with your registration without completing them.
 
 Once the information is provided click on **Register** to create your organisation and proceed to your landing page. Clicking
 on **Cancel** will return you back to the welcome page.
