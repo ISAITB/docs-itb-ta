@@ -261,7 +261,7 @@ Finally, the **user permissions** section allows you to customise the permission
 
 .. note::
   **When to set user permissions:** You would restrict user permissions in the community if you want to make sure that only you and community administrators can manage systems and conformance statements.
-  This also works well when you have enabled self-registration are require the selection of a :ref:`configuration template<community__create_organisation>`. This way you ensure
+  This also works well when you have enabled self-registration and require the selection of a :ref:`configuration template<community__create_organisation>`. This way you ensure
   only predefined and non-editable conformance testing setups for your users.
 
 To persist any changes you have made in the community detail form click the **Save changes** button. Clicking the **Back** button will discard any pending changes and
