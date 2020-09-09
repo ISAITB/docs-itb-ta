@@ -69,7 +69,7 @@ you will also see a **Show properties** checkbox. Checking this you can manage y
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also
 see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
-* For texts through an editable text field.
+* For texts through an editable text field or by selecting a preset value from a dropdown list.
 * For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by 
   clicking **Remove**.
 * For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
@@ -118,7 +118,7 @@ will also see a **Show properties** checkbox. Checking this you can manage the s
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also see
 a help tooltip to understand their meaning. Such properties can be managed as follows:
 
-* For texts the current value is presented in an editable text field.
+* For texts the current value is presented in an editable text field or dropdown menu (if the property has preset values).
 * For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
   by clicking on its link, or delete it by clicking **Remove**.
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 

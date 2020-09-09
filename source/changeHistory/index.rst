@@ -8,7 +8,67 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.9.1**.
+The latest test bed release is **1.10.0**.
+
+Release 1.10.0 - 07/09/2020
+---------------------------
+
+This releases provides community administrators with further flexibility on community customisation and its
+tailoring for their conformance testing strategy. This is achieved by means of new features on custom property management,
+advanced automation options through triggers, and the fine-tuning of self-registration requirements and user
+permissions. The management of test suites is also enhanced by enabling enhanced and bulk test suite uploads, and allowing
+administrators to edit online the documentation and metadata of test suites and test cases. These changes are 
+complemented by the latest improvements in the GITB Test Description Language, allowing flexibility in the loading of
+documentation and artefact resources, customisation of display labels, and a new logging step to add details to 
+test sessions' output.
+
+**Bug**
+
+* [ITB-519] - Multiple session invalid messages when session is invalidated
+* [ITB-599] - Sessions have a maximum global timeout of 1 hour regardless of activity
+* [ITB-655] - Interaction step requests fail if defined as empty (but not self-closed) elements
+* [ITB-656] - Test case descriptions in test execution page spanning multiple lines display with extra spacing.
+* [ITB-677] - Invalid test suite resource imports may succeed test suite validation
+* [ITB-681] - Warning message when copying a system's test configuration is not correct
+
+**New Feature**
+
+* [ITB-474] - Add logging element to GITB TDL
+* [ITB-591] - Replicate a test suite to other specifications
+* [ITB-592] - Allow online editing of a test suite's metadata
+* [ITB-593] - Choose whether a test suite upload should replace existing domain information
+* [ITB-594] - Allow documentation content in TDL steps to be imported from another resource in the test suite archive
+* [ITB-606] - Add support for the Expect-CT header
+* [ITB-648] - Support triggers for events within a community
+* [ITB-652] - Allow a community administrator to customise organisation administrator privileges
+* [ITB-653] - Allow organisation, system and conformance statement parameters to be set as hidden
+* [ITB-654] - Allow download of conformance certificate by organisation managers
+* [ITB-672] - Allow online editing of a test case's metadata
+* [ITB-675] - Upload test suite to multiple specifications
+* [ITB-679] - Support the definition of organisation and system properties to be passed to triggers
+* [ITB-685] - Preview custom property completion forms
+* [ITB-686] - Support variable references when importing artifacts in test cases
+* [ITB-687] - Support custom display titles for TDL steps
+* [ITB-691] - Support dependencies between conformance statements parameters
+* [ITB-692] - Support predefined values for conformance statement properties
+
+**Improvement**
+
+* [ITB-400] - Use an uploaded test suite's ID instead of its name to match existing test suites
+* [ITB-451] - Allow administrators to specify ordering for custom community properties
+* [ITB-596] - Allow a community administrator to set custom organisation properties used in self-registration as being mandatory and blocking
+* [ITB-598] - Allow a community administrator to require template selection during self-registration as a mandatory
+* [ITB-601] - Support predefined values for custom member properties
+* [ITB-602] - Support dependencies between custom member properties
+* [ITB-644] - Remove fields from the display of the test suite upload confirmation popup when empty
+* [ITB-647] - Make parameter definition through getModuleDefinition optional
+* [ITB-657] - Upgrade dependencies
+* [ITB-660] - Make default input sanitisation case insensitive
+* [ITB-663] - Allow customised configuration for the internal GITB DB user
+* [ITB-676] - Restrict data archive import file selection to ZIP archives
+* [ITB-678] - Complete security configuration of session cookies
+* [ITB-689] - Hide endpoint display in conformance statement details if there is only one endpoint
+* [ITB-690] - Hide endpoint description if empty
 
 Release 1.9.1 - 18/05/2020
 --------------------------

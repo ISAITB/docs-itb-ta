@@ -37,7 +37,7 @@ To proceed within a domain's details click its relevant row from the table (see 
 **Create domain** button (see :ref:`domains__domain_create`).
 
 .. note::
-    **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 
+    **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification
     and actor are important to provide context to test bed users. This information should summarise what they are testing for, whereas
     the name and description of test cases and test suites should summarise how they are supposed to test.
 
@@ -91,6 +91,11 @@ To edit the domain's information, enter the new values you require and click the
 following confirmation, delete the domain and all related information. The **Back** button does not make any changes but takes you back to the
 domain list screen (see :ref:`domains__domain_view`).
 
+.. note::
+    **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 
+    and actor are important to provide context to your users. This information should summarise what they are testing for, whereas 
+    the name, description and documentation of test cases and test suites should summarise how they are supposed to test.
+
 .. _domains__domain__specification_list:
 
 Specification list
@@ -143,12 +148,26 @@ new conformance statements are made for this latest version.
 To complete the creation of the specification click the **Save** button. To cancel and return to the domain detail page (see :ref:`domains__domain_details`) 
 click the **Cancel** button.
 
+.. _domains__domain_deploy_test_suite:
+
+Deploy test suite to multiple specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In case you have more than one specifications defined for the domain you will also see in the specifications' table header the
+option to **Upload test suite**.
+
+.. figure:: ../screenshots/admin_domains_domain_upload_test_suite.PNG
+  :align: center
+
+Clicking this allows you to upload a test suite to multiple specifications at once, without needing to make individual uploads. For details
+on the process to upload a test suite see :ref:`domains__specification__test_suite_upload`.
+
 .. _domains__domain__parameter_list:
 
 Parameter list
 ~~~~~~~~~~~~~~
 
-The **Parameters** section presents the configuration parameters defined at domain level. These are configuration values that are expected to be defined
+The **Parameters** section presents the configuration parameters defined at domain level. These are configuration values that are expected to be used
 within the `GITB TDL test cases`_ that you upload to the test bed. They typically relate to information you don't want to include in test cases either
 because they would hinder portability (e.g. service URLs), they are sensitive (e.g. service authentication credentials), or they are settings that apply
 to all test cases that are subject to change. 
@@ -181,36 +200,32 @@ Doing so presents you a screen in which you need to provide the information for 
 
 .. figure:: ../screenshots/admin_domains_domain_create_parameter.PNG
   :align: center
-  :scale: 50%
 
 The information requested in this form is:
 
 * The **name** of the parameter (required), used to identify it and refer to it from test cases.
 * The **description** of the parameter (optional).
-* The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Hidden" (required).
+* The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Secret" (required).
 
-Depending on whether you select that this is a "Simple", "Binary" or "Hidden" parameter the screen will be adapted to request its value.
+Depending on whether you select that this is a "Simple", "Binary" or "Secret" parameter the screen will be adapted to request its value.
 Selecting "Simple" means that this is a simple text value that can be entered and displayed as-is. In this case the screen will 
 adapt to request additionally the parameter's **value** (required)
 
 .. figure:: ../screenshots/admin_domains_domain_create_parameter_simple.PNG
   :align: center
-  :scale: 50%
 
 If selected to be a "Binary" parameter, you are presented with an **Upload** button to provide the file in question. Once set, 
 the file is displayed as a link to download.
 
 .. figure:: ../screenshots/admin_domains_domain_create_parameter_binary.PNG
   :align: center
-  :scale: 50%
 
-Finally, if you select that the parameter is "Hidden", the screen will adapt to request an obfuscated **value** (required), requesting
+Finally, if you select that the parameter is "Secret", the screen will adapt to request an obfuscated **value** (required), requesting
 you also to **repeat** it to ensure that you have entered it correctly. Hidden parameters are treated similar to passwords, in that they will
 never be presented on-screen.
 
 .. figure:: ../screenshots/admin_domains_domain_create_parameter_hidden.PNG
   :align: center
-  :scale: 50%
 
 To complete the creation of the parameter click the **Save** button. Clicking the **Cancel** button closes the popup without making changes.
 
@@ -228,14 +243,13 @@ Doing so will open a popup screen presenting you the parameter's current informa
 
 .. figure:: ../screenshots/admin_domains_domain_update_parameter.PNG
   :align: center
-  :scale: 50%
 
 The fields presented for the parameter are:
 
 * The **name** of the parameter (required), used to identify it and refer to it from test cases.
 * The **description** of the parameter (optional).
-* The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Hidden" (required).
-* The **value** of the parameter, presented either as a text input (if **kind** is "Simple"), a downloadable link (if **kind** is "Binary") or a repeated text input (if **kind** is "Hidden").
+* The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Secret" (required).
+* The **value** of the parameter, presented either as a text input (if **kind** is "Simple"), a downloadable link (if **kind** is "Binary") or a repeated text input (if **kind** is "Secret").
 
 Once you adapt the parameter's information click the **Save** button to record your changes or the **Cancel** button to discard them. Clicking the 
 **Delete** button removes, upon confirmation, the parameter.
@@ -292,20 +306,20 @@ test suite.
 
 For each test suite the following information is displayed:
 
-* The **name** of the test suite. This is presented to users as a short identifier for the test suite.
-* Its **description**. This typically would include information on the purpose of the test suite and potentially instructions relevant to all its test cases.
+* The **ID** of the test suite. This is an internal identifier used to reference the test suite and match it when uploading updates.
+* The **name** of the test suite. This is presented to users as a short name for the test suite.
+* Its **description**. This typically would include information on the purpose of the test suite and limited instructions relevant to all its test cases.
 * Its **version**. This is metadata that is recorded but not presented to users.
 
-Each row includes a **delete** button, presented with a cross icon under the **operation** header. Clicking this will, following confirmation, delete the 
-test suite and its contained test cases. In addition, you may also **download** the test suite ZIP archive by clicking on its relevant row. Doing so will prompt
-you for the location to save the test suite archive.
+From the table you may either :ref:`upload a new test suite<domains__specification__test_suite_upload>` by clicking the **Upload test suite** button or
+:ref:`view its details<domains__test_suite_details>` by clicking its row.
 
 .. _domains__specification__test_suite_upload:
 
 Upload test suite
 ~~~~~~~~~~~~~~~~~
 
-To add a new test suite for a specification you need to upload it using the **Deploy test suite** button from the test suite section's header. 
+To add or update a test suite for a specification you need to upload it using the **Upload test suite** button from the test suite section's header.
 
 .. figure:: ../screenshots/admin_domains_specification_test_suites_header.PNG
   :align: center
@@ -317,60 +331,60 @@ deployment`_.
 .. _GITB TDL: https://www.itb.ec.europa.eu/docs/tdl/latest/
 .. _test suite packaging and deployment: https://www.itb.ec.europa.eu/docs/tdl/latest/testsuite/index.html#deploying-a-test-suite-in-the-gitb-software
 
-Clicking on the **Deploy test suite** button opens a file browser (for ZIP archives) for you to retrieve the test suite to upload. Once this is selected
-the test bed validates the uploaded archive to ensure that it is a valid test suite. This validation goes beyond simple syntax checking by verifying
-included expressions, variable references and correct use of all GITB TDL elements. In case your uploaded test suite has errors these will be presented to you
-in a validation result dialog displaying:
+Clicking on the **Upload test suite** button opens a dialog that displays the current **Target specification** as readonly and a file upload control to
+select the test suite archive.
+
+.. figure:: ../screenshots/admin_domains_specification_test_suite_upload_single.PNG
+  :align: center
+
+Note that in case you are :ref:`uploading a test suite for multiple specifications<domains__domain_deploy_test_suite>` from the :ref:`domain details page<domains__domain_details>`,
+this screen presents the domain's specifications as a multiple selection list (use Control and left-click to select entries).
+
+.. figure:: ../screenshots/admin_domains_specification_test_suite_upload_multiple.PNG
+  :align: center
+
+Once the archive is selected you can click on **Proceed** to proceed with the upload. Upon doing so the test bed will validate the archive to ensure it is a
+valid test suite. In case your uploaded test suite has errors or warnings these will be presented to you including for each:
 
 * An error code and description of the validation finding.
 * The relevant test suite file as the location of the problem.
 
-.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_validation_errors.PNG
+.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_validation.PNG
   :align: center
-  :scale: 50%
 
-The presence of errors blocks the test suite upload as these are guaranteed to always result in test session errors. In this case your only option is to 
-review the validation report and click the **Cancel** button. In case only warnings have been raised, these are still presented to you but you are also
-given the option to ignore them.
-
-.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_validation_warnings.PNG
-  :align: center
-  :scale: 50%
-
-Such warnings will not necessarily lead to test session errors but should nonetheless be reviewed to ensure nothing has been neglected. Examples of 
-warnings are supporting resources that are not used in test cases or references to missing domain parameters (see :ref:`domains__domain_details`).
-You may now choose to abort the test suite upload by clicking the **Cancel** button or click the **Ignore warnings** button to proceed.
+If the test suite is found to have errors you are not allowed to proceed further. If only warnings are found you can click the **Proceed** button to ignore them
+and continue to the next step. Validation warnings will not necessarily lead to test session errors but should nonetheless be reviewed to ensure nothing has been neglected.
+Examples of warnings are supporting resources that are not used in test cases or references to missing :ref:`domain parameters<domains__domain_details>`.
 
 .. note::
     **Uploading valid test suites:** If an uploaded test suite is fully valid (i.e. its validation results in no errors or warnings) the validation
     report step is completely skipped.
 
-For a fully valid test suite, or a test suite with warnings you have chosen to ignore, what takes place next depends on whether or not the test suite 
-already exists (i.e. its name matches that of a test suite already uploaded for the specification). In case this test suite already 
-exists you will be prompted with a choice on how to consider the upload.
+For a valid test suite, or a test suite with warnings you have chosen to ignore, what takes place next depends on whether or not the test suite or the
+data it refers to already exist. If this is the case you will next be prompted with a choice per target specification on how the upload should proceed.
 
-.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_existing.PNG
+.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_choices.PNG
   :align: center
-  :scale: 50%
 
-You can make one of three choices:
+For each specification you have one or two sets of choices depending on its existing data:
 
-* Click the **Keep history** button to replace the test suite without further consequences on already existing conformance tests. Select this
-  if you are adding new test cases or if any changes you have made are minor and don't require retesting.
-* Click the **Drop history** button to replace the test suite but also render obsolete any existing conformance test results. Select this if
-  you are introducing significant changes that require all tests to be repeated.
-* Click the **Cancel** button to stop the update and prevent any changes.
+* **Test history:** This choice appears when the uploaded test suite identifier matches an existing one and refers to the existing test suite's conformance testing history.
+  You may choose to **keep** the existing test results (the default choice) if you are adding new test cases or if any changes you have made are minor and don't require retesting.
+  Alternatively you can **drop**, upon confirmation, the existing test results, rendering them obsolete, in case changes are significant and require all tests to be repeated.
+* **Specification data:** This choice appears if the test suite defines specification data that already exists. Such data can be actors, endpoints and parameters, as well
+  as metadata for the test suite and its test cases (essentially anything you could have updated through the user interface). You may choose to **keep** existing values unchanged
+  (the default choice) or **replace** them with the data coming from the archive.
 
-If the test suite upload proceeds, either because you choose to do so or because the test suite is a new one, you will be presented with an upload
-outcome popup. This details what was added, modified, or left unchanged as a result of the upload.
+When reviewing the choices for matching data you may also choose to replicate one set of choices to all specifications through the **Apply to all** button. In addition, you can
+click the **Skip** button to avoid making any changes to the specification in question. Doing so will grey out the specification's entry and display a **Process** button in case
+you finally choose to proceed with the changes. Once you are satisfied with your choices you can click the **Proceed** button to complete the upload.
+
+Once the upload is completed you are presented with a summary of all changes that were made, organised by target specification.
 
 .. figure:: ../screenshots/admin_domains_specification_test_suites_upload_result.PNG
   :align: center
-  :scale: 50%
 
-The reason this information is presented is because a number of things happen under the hood once you upload a test suite. It does not only add the 
-test suite in question and its test cases but it will also proceed to automatically create the actors, endpoints and endpoint parameters defined within
-or update them if they already exist. For each such item the following information is presented:
+The information presented shows you all the resources that were affected as part of the test suite upload. Specifically:
 
 * The **test suite** that was affected. This will either be marked as "added" or "updated" depending on whether or not the test suite already existed.
 * The **test cases** that were handled. Test cases present in the uploaded test suite that did not previously exist are presented as "added", others
@@ -385,11 +399,11 @@ or update them if they already exist. For each such item the following informati
   already existed but were not defined in the test suite.
 
 .. note::
-    **Automatic updates following test suite upload:** When uploading a test suite a series of automatic updates may take place (as described above).
-    If you manage domain entities manually through the test bed, uploading a test suite could overwrite your existing information. On the other
-    hand it could be helpful to use the automatic update process if you choose to define everything in test suites. Either way make sure you are aware
-    of what may occur automatically. In addition, keep in mind that this automatic update process **never deletes information** (with the exception of 
-    obsolete test cases). If you want to fully remove e.g. obsolete actors or endpoints you will need to do so through the test bed's interface.
+    **Deleting specification data:** Specification data that is not matched through the test suite upload can only be created or updated. Data that exists
+    but that is not matched in the test suite remains unaffected.
+
+At any point during the test suite upload wizard you can stop the operation by clicking the **Cancel** button. Only once the upload is fully completed
+is this replaced by a **Close** button given that changes have already been applied. Clicking either of these button closes the popup.
 
 .. _domains__specification__actor_list:
 
@@ -451,6 +465,121 @@ The information to provide for the actor is:
 
 To complete the creation of the actor click the **Save** button. To cancel and return to the specification's detail page (see :ref:`domains__specification`) 
 click the **Cancel** button.
+
+.. _domains__test_suite_details:
+
+Manage test suite details
+-------------------------
+
+To view a test suite and edit its metadata click its row from the specification's test suite listing.
+
+.. figure:: ../screenshots/admin_domains_specification_test_suites.PNG
+  :align: center
+
+Doing so presents you with the test suite's details in an editable form followed by a listing of its included test cases.
+
+.. figure:: ../screenshots/admin_domains_test_suites_details.PNG
+  :align: center
+
+Using the provided form you can edit the test suite's metadata, specifically:
+
+* Its **ID**, a non-editable identifier set via test suite upload that is used to reference and match the test suite in subsequent uploads.
+* Its **name** (required), a short text presented to users to identify the test suite.
+* Its **description** (optional), a text providing context on the test suite and a brief overview of its purpose and contained test cases.
+
+You may also view and edit here the test suite's **documentation**. This is displayed to users as part of the
+:ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
+being to add extended rich documentation that describes the steps to follow and reference external resources. To display the existing
+documentation check the **Show documentation** option, which opens up a rich text editor.
+
+.. figure:: ../screenshots/admin_domains_test_suites_details_documentation.PNG
+  :align: center
+
+If you choose to provide such documentation you may also click the **Preview documentation** to ensure it matches your expectations. Doing so
+presents a popup with the documentation, displaying it exactly as when viewed by your users.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup_test_suite.PNG
+  :align: center
+
+If you make changes to the test suite's metadata you can apply them by clicking the **Save changes** button. From here you can also click the
+**Download** button to download the test suite's ZIP archive. Clicking **Delete** will delete, upon confirmation, the test suite rendering linked
+test results as obsolete, whereas clicking on **Back** will discard any pending changes and return you to the :ref:`specification detail page<domains__specification>`.
+
+.. note::
+  **Update via test suite upload:** A test suite's name, description and documentation can also be updated via
+  :ref:`test suite upload<domains__specification__test_suite_upload>`. When uploading a new version for a test suite you can choose whether
+  the values you have been editing through the user interface are to be kept or replaced. Note that the content and execution order of
+  the test suite's test cases can only be changed via upload.
+
+.. _domains__test_suite_test_case_list:
+
+Test case list
+~~~~~~~~~~~~~~
+
+The **Test cases** section presents the test cases included in the test suite. They are presented in a table with one row per test case.
+
+.. figure:: ../screenshots/admin_domains_test_cases.PNG
+  :align: center
+
+For each test case the following information is displayed:
+
+* Its **ID**, an internal identifier for the test case used to reference it from its test suite and to match it during test suite uploads.
+* Its **name**, displayed to users as a short name for the test case.
+* Its **description**, displayed to users to provide context on the purpose of the test case and a brief summary of its steps.
+
+Clicking on an test case's row will take you to its :ref:`detail page<domains__test_case__details>`.
+
+.. note::
+  **Creating a test case:** Creating a new test case is only possible through :ref:`test suite upload<domains__specification__test_suite_upload>`.
+
+.. _domains__test_case__details:
+
+Manage test case details
+------------------------
+
+To view a test case's details and update its metadata you need to click on the test case's row, displayed in the **Test cases** table
+of the :ref:`test suite details page<domains__test_suite_test_case_list>`.
+
+.. figure:: ../screenshots/admin_domains_test_cases.PNG
+  :align: center
+
+Doing so will present you with the test case details screen where you can view and edit the test case's information.
+
+.. figure:: ../screenshots/admin_domains_test_case_details.PNG
+  :align: center
+
+An editable form is presented here that displays the metadata for the test case, specifically:
+
+* Its **ID**, used for internal reference by its test suite and to match the test case during uploads. This is a readonly value that is set
+  during initial test suite upload.
+* Its **name** (required), that you can edit to provide a user-friendly short identifier for the test case. This is presented to users in the
+  :ref:`conformance statement details page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>` and during
+  :ref:`test execution<execute_tests__step3>`.
+* Its **description** (optional), displayed alongside the test case's name in the :ref:`conformance statement details page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`
+  and during :ref:`test execution<execute_tests__step3>`. The purpose of this description is to summarise its purpose and steps.
+
+You may also view and edit here the test case's **documentation**. This is displayed to users as part of the
+:ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
+being to add extended rich documentation that describes the steps to follow and reference external resources. To display the existing
+documentation check the **Show documentation** option, which opens up a rich text editor.
+
+.. figure:: ../screenshots/admin_domains_test_suites_details_documentation.PNG
+  :align: center
+
+If you choose to provide such documentation you may also click the **Preview documentation** to ensure it matches your expectations. Doing so
+presents a popup with the documentation, displaying it exactly as when viewed by your users.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
+  :align: center
+
+.. note::
+  **Update via test suite upload:** A test case's name, description and documentation can also be updated via
+  :ref:`test suite upload<domains__specification__test_suite_upload>`. When uploading a new version for a test suite you can choose whether
+  the values you have been editing through the user interface are to be kept or replaced. The test case's content (i.e. its steps) on the
+  other hand can only be changed via upload.
+
+To persist your changes click on the **Save changes** button. Clicking on **Back** will discard any changes and return you to the
+:ref:`test suite details page<domains__test_suite_details>`.
 
 .. _domains__actor:
 
@@ -565,30 +694,36 @@ To edit the endpoint's information, enter the new values you require and click t
 following confirmation, delete the endpoint and its parameters. The **Back** button does not make any changes but takes you back to the
 actor's detail screen (see :ref:`domains__actor`).
 
+.. note::
+  **Endpoint display for users:** In most cases each actor will define at most one endpoint for its configuration. If this is the case the endpoint
+  is hidden from users in the :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`
+  which instead displays directly the endpoint's configuration parameters.
+
 .. _domains__endpoint__parameter_list:
 
 Endpoint parameter list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The **Parameters** section presents the endpoint's parameters. They are presented in a table with one row per parameter.
+The **Parameters** section presents the endpoint's parameters. They are displayed in a table with one row per parameter.
 
 .. figure:: ../screenshots/admin_domains_endpoint_parameters.PNG
   :align: center
 
 For each parameter the following information is displayed:
 
-* Its **name**, used for display purposes and to refer to the parameter within test cases.
+* Its **name**, used for display purposes and as an identifier when referring to the parameter (e.g. within test cases).
 * Its **description**, used to provide context to users on the parameter's purpose.
-* Its **type**, either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts.
+* Its **type**, either "Simple" for a simple text value, "Binary" for files or "Secret" for secret texts.
 * A **required** flag, determining whether the parameter needs to be provided before executing tests.
 * An **editable** flag, determining whether the parameter can be edited by users or is reserved to administrators.
-* A **included in tests** flag, determining whether or not the parameter is included as a variable within test sessions.
+* An **included in tests** flag, determining whether or not the parameter is included as a variable within test sessions.
+* A **hidden** flag, determining whether or not a non-editable parameter is is also to be hidden from organisation users.
 
 Clicking on a parameter's row will open a popup to view and edit its information (see :ref:`domains__endpoint__edit_parameter`). To manually create 
 a new parameter click the **Create parameter** button from the table's header (see :ref:`domains__endpoint__create_parameter`).
 
 .. note::
-    **Automatic vs manual parameter creation:** Endpoint parameters can also be created automatically during test suite upload.
+    **Automatic vs manual parameter creation:** Endpoint parameters can also be created automatically during :ref:`test suite upload<domains__specification__test_suite_upload>`.
 
 .. _domains__endpoint__create_parameter:
 
@@ -605,20 +740,21 @@ Doing so opens a popup screen in which you need to provide the information for t
 
 .. figure:: ../screenshots/admin_domains_endpoint_parameters_create.PNG
   :align: center
-  :scale: 50%
 
 The information to provide for the parameter is:
 
 * Its **name** (required), used for display purposes and to refer to the parameter within test cases.
 * Its **description** (optional), used to provide context to users on the parameter's purpose.
-* Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts.
-* Its **properties**, specifically whether is is required, editable by users and included in test sessions.
+* Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Secret" for secret texts.
+* Its **properties**, specifically whether is is required, editable by users, included in test sessions and hidden.
 
 Whether or not parameters are set as editable and included in test sessions provides flexibility in collecting, setting and
-sharing configuration by and towards users. A parameter set as not editable could act as a quality control flag by administrators
-or as a way for administrators to provide to a user a given input that is needed during test execution (e.g. a generated
-certificate). Similarly, a parameter that is set as not included in tests can be used for data collection purposes for information
-that is linked to a specific conformance statement.
+sharing configuration by and towards users. A parameter set as not editable could be used by administrators as
+a way to provide a user with a given input that is needed during test execution (e.g. a generated
+certificate). Furthermore, non-editable parameters set as hidden are never presented to organisation users and as such are ideal as control
+flags. Such flags could set manually by administrators when :ref:`managing the tests of an organisation<community__manage_organisation__tests>`
+and viewing a :ref:`conformance detail page<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>` or
+automatically via a conformance statement :ref:`trigger<community__manage_triggers>`.
 
 .. note::
   **Organisation and system properties:** Endpoint parameters can be seen as input and configuration properties that are 
@@ -626,6 +762,24 @@ that is linked to a specific conformance statement.
   :ref:`system or organisation properties<community__properties>` when this is linked, respectively, to a system or a complete
   organisation. Finally, parameters can also be :ref:`set at domain level<domains__domain__parameter_list>`, applying to a
   complete domain or community.
+
+  All configuration parameters can be edited manually but also automatically through :ref:`triggers<community__manage_triggers>`.
+
+The **Preset values** apply to simple parameters (i.e. text) and allow you to define a preset list of values for the parameter that
+will appear as a dropdown selection list. For each such value you can define a user-friendly **label** and the property's actual **value**,
+using the provided controls to **add** new values, **remove** existing ones or change their **display order**.
+
+.. figure:: ../screenshots/admin_community_properties_presets.PNG
+  :align: center
+
+The **Depends on** field is optional and allows you to define a prerequisite condition for this parameter. To set such a prerequisite you need to select another parameter
+from the provided list and specify to its left in the provided text field (or dropdown selection if the parameter has preset values) the value that it needs to have for the
+current parameter to be enabled. A parameter that misses any of its prerequisite conditions (i.e. its direct prerequisite or a prerequisite's prerequisite) will
+be considered inactive, even if set as required, and will be excluded from input forms and test sessions. Using such dependencies is a powerful mechanism to define conditional
+inputs based on other parameters or external processing (e.g. via :ref:`triggers<community__manage_triggers>`).
+
+.. note::
+  Properties of **binary** or **secret** type cannot be used as prerequisites.
 
 To complete the creation of the parameter click the **Save** button. To cancel and close the popup click the **Cancel** button.
 
@@ -643,14 +797,21 @@ Doing so opens a popup screen presenting the details of the parameter in editabl
 
 .. figure:: ../screenshots/admin_domains_endpoint_parameters_edit.PNG
   :align: center
-  :scale: 50%
 
-The following information is presented for the parameter in corresponding form controls:
-
-* Its **name** (required), used for display purposes and to refer to the parameter within test cases.
-* Its **description** (optional), used to provide context to users on the parameter's purpose.
-* Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Hidden" for secret texts.
-* Its **properties**, specifically whether is is required, editable by users and included in test sessions.
-
+The purpose of all fields and usage of available controls is identical to the :ref:`create parameter<domains__endpoint__create_parameter>` case.
 To edit the parameter's information, enter the new values you require and click the **Save** button. Clicking the **Delete** button will,
 following confirmation, delete the parameter. The **Cancel** button closes the popup without making any changes.
+
+.. _domains__endpoint__order_parameters:
+
+Change parameter ordering
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default parameters are ordered alphabetically based on their name. You may override this default ordering by reordering the parameters as needed and saving their
+relative positions. This is done through the table listing the parameters by clicking the **up** and **down** arrows at each row's right end.
+
+.. figure:: ../screenshots/admin_domains_endpoint_parameters.PNG
+  :align: center
+
+At each click the relevant row will be moved accordingly by one. Once you have reordered parameters in this way you will notice that the **Save parameter order** button
+becomes enabled. You will need to click this to confirm and persist the displayed ordering.

@@ -99,9 +99,11 @@ The **domain** details are presented on the top as the high-level description of
 **specification** information follows to define the specification you have chosen for your system to conform to
 (a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
 as part of this specification (a specification may have multiple actors). The **test status** presents an overview of the testing
-progress for the conformance statement's test cases. Below this section you can also click the
-**Download report** button to export your system's conformance statement report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`)
-or the **Delete statement** button to delete the conformance statement (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__delete`).
+progress for the conformance statement's test cases. Below this section you are presented with buttons for further actions as follows:
+
+* The **Download conformance certificate** button to generate a conformance certificate for your system (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate`).
+* The **Download report** button to export your system's current conformance statement report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`).
+* The **Delete statement** button to delete the conformance statement (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__delete`).
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__endpoints:
 
@@ -120,9 +122,7 @@ Clicking on the **Hidden** toggle button on the right-hand side will set it to *
 .. figure:: ../screenshots/conformance_statement_details_endpoints_admin.PNG
   :align: center
 
-The panel presented includes an **endpoint** name and its **description**. Configuration properties are always grouped under an **endpoint**
-which basically acts as a named set of properties (see the :ref:`introduction__glossary__endpoint` glossary information for details). Configuration
-properties are presented in rows where for each one the following information is presented:
+Configuration properties are presented in rows where for each one the following information is presented:
 
 * Whether or not it is **set**.
 * Its **parameter name**, serving as its identifier. This is prefixed with an asterisk if the parameter is mandatory.
@@ -153,6 +153,13 @@ A third scenario is that of a parameter being a secret value (e.g. a password). 
 a new value.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
+  :align: center
+  :scale: 50%
+
+Finally, an additional scenario is when preset values are defined for the parameter. In this case you are presented with a dropdown selection
+list that includes the available options.
+
+.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_dropdown.PNG
   :align: center
   :scale: 50%
 
@@ -282,6 +289,23 @@ and the results from each test step. The test case's title includes its referenc
     **Detailed report size:**  The detailed conformance statement report presents each test session and individual step in 
     a separate page. If your conformance statement contains numerous test cases, each with multiple test steps, the resulting detailed report 
     could be quite long.
+
+.. _manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate:
+
+Export conformance certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The conformance certificate is a report (in PDF format) that attests to the fact that your current system has successfully passed its expected test cases. The option
+to generate this is only visible if your system has succeeded in all configured tests.
+
+Assuming the option is available for you, clicking the button will generate the certificate and prompt you for its download. The certificate will typically resemble the
+following sample:
+
+.. figure:: ../screenshots/conformance_statement_certificate_sample.png
+  :align: center
+
+The contents of the certificate are defined by your administrator and are a customisation of the :ref:`conformance statement report<manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
+The certificate may omit certain sections, include a message for you, and potentially be digitally signed.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__delete:
 
