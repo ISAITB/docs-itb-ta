@@ -64,13 +64,13 @@ provide the distinction given that you may want to only export your testing conf
 Selecting **Domain configuration** expands the form to provide information on the exported data. Doing so displays the list of available domains
 that will be exported as well as additional configuration options.
 
-.. figure:: ../screenshots/admin_export_domain_ca.png
+.. figure:: ../screenshots/admin_export_domain_ta.png
   :align: center
 
 If you select **Community configuration** the form is similarly expanded to display the list of available communities and the export options. Note that the 
 test bed's :ref:`default community<community__defaults__community>` is not included in this list as it cannot be exported.
 
-.. figure:: ../screenshots/admin_export_community_ca.png
+.. figure:: ../screenshots/admin_export_community_ta.png
   :align: center
 
 Regardless of your choice, the information you need to provide is as follows:
@@ -163,7 +163,7 @@ only the data linked to its domain.
 
 Selecting one of these options expands the screen to present additional information and settings.
 
-.. figure:: ../screenshots/admin_import_community_ca.png
+.. figure:: ../screenshots/admin_import_community_ta.png
   :align: center
 
 Depending on the type of data you chose to import, you see the available **domains** or **communities** presented as the **target** for the import.
