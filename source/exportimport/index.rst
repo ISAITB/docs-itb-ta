@@ -92,13 +92,14 @@ to include the information you need. The available types of information are pres
 * Each actor's :ref:`endpoints<domains__endpoint>` (including the :ref:`parameters<domains__endpoint__parameter_list>` they define).
 
 A community export includes in addition to **domain data** the **community data** and **organisation data**. By default it includes its basic information (**short name**,
-**full name**, **notification options** and **self-registration settings**) but can similarly be extended. From the **Community data** row you may include the 
+**full name**, **notification options**, **self-registration settings** and **user permissions**) but can similarly be extended. From the **Community data** row you may include the 
 following types of information that form part of the configuration of the community itself:
 
 * The :ref:`administrator accounts<community__administrators>` (only if the test bed instance is not integrated with EU Login).
 * The community's :ref:`landing pages<community__manage_landing_pages>`, :ref:`legal notices<community__manage_legal_notices>` and :ref:`error templates<community__manage_error_templates>`.
 * The community's :ref:`certificate settings<community__conformance_certificate_settings>`.
 * The :ref:`custom labels<community__labels>` and :ref:`custom properties<community__properties>` defined for the community members.
+* The :ref:`triggers<community__manage_triggers>` used to drive automated tasks when important events occur.
 
 Using the options from the **Organisation data** row you may also include data linked to the community's members:
 

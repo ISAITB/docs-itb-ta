@@ -32,10 +32,6 @@ the appropriate row from the table. Once clicked you will change to view the con
 Create a new system
 -------------------
 
-.. note::
-  **Create option missing:** The create system option may be missing if your community administrator has disabled the management of
-  systems by organisation users.
-
 To create a new system click on the **Create system** button displayed in the top right side of the system list header.
 Doing so presents you with a popup form to input the new system's information.
 
@@ -136,7 +132,3 @@ Once ready click the **Save** button to finish. Here you may also click the **De
 completely delete the system. In this case the tests realised for this system will still be searchable but will be presented
 as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Cancel** button to close this popup without
 making any changes.
-
-.. note::
-  **Missing delete option:** The delete system option may be missing if your community administrator has disabled the management of
-  systems by organisation users.

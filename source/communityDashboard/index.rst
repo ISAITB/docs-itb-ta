@@ -15,7 +15,7 @@ the **Community Management** link.
 .. figure:: ../screenshots/admin_community.PNG
   :align: center
 
-The screen is split in five sections:
+The screen is split in six sections:
 
 * The **Community details** section presenting to you the information for your community.
 * The **Community administrators** section allowing you to view and manage your administrators.
@@ -23,6 +23,7 @@ The screen is split in five sections:
 * The **Landing pages** section listing the landing pages you can use for your organisations.
 * The **Legal notices** section listing the legal notices you can display for your organisations.
 * The **Error templates** section listing the error message templates used to display unexpected errors to your organisations.
+* The **Triggers** section listing the triggers used to automate processes upon specific events.
 
 The **Community details** section allows you to view and edit your community's basic information.
 
@@ -34,6 +35,7 @@ The information you can edit in this form is:
 * Your community's **short** and **full name** (required). These are visible to the test bed administrator and in certain user reports.
 * Your community's **support email** address (optional) to receive contact form submissions.
 * Your preference on allowing **self-registration** for your community.
+* The **user permissions** you foresee for the community's members.
 
 Regarding the **support email**, this is the address, typically a functional mailbox, where your community users' feedback is sent via 
 the test bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of 
@@ -74,7 +76,7 @@ The possible values for this are as follows:
   :align: center
   :scale: 70%
 
-Selecting any value other than **Not supported** will expand the community details' form to provide further configuration options. These
+Selecting any value other than **Not supported** will expand the community details' form to provide further configuration options under section **Self-registration settings**. These
 are:
 
 * **Self-registration token:** This is displayed if the third option is selected that requires a token being provided to complete the self-registration.
@@ -90,10 +92,24 @@ are:
 * **Self-registration restrictions:** This allows you to select a means of restricting self-registration to ensure people and/or organisations enroll only once.
   The restrictions you can set are to not allow multiple registrations from the same user (based on her email address) or from the same email domain. Note
   that such restrictions are only supported if the test bed is integrated with EU Login that allows the test bed to be aware of users' actual email addresses.
+* **Require from users:** These are requirements that you want to enforce to users completing the self-registration process. You have two options here, the first
+  one being to force the selection of a :ref:`configuration template<community__create_organisation>` and the second one to require the completion of 
+  :ref:`custom properties<community__properties>` marked as required (which are otherwise displayed as required but are not blocking).
 
 .. note::
   **Organisation templates:** If you choose to enable self-registration for your community you may also find interesting the 
   possibility to :ref:`define preconfigured templates for organisations<community__create_organisation>`.
+
+Finally, the **user permissions** section allows you to customise the permissions available to the community's members. Through the provided options you can allow user to:
+
+* **Download conformance certificates**. If not allowed, only community administrators may generate such certificates from the :ref:`conformance dashboard<monitor_conformance_status__statements__export_statement>` or a :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
+* **Create or delete systems**. Note that editing a system and its custom properties (if defined) is always possible for organisation administrators.
+* **Create or delete conformance statements**.
+
+.. note::
+  **When to set user permissions:** You would restrict user permissions in your community if you want to make sure that only you can manage systems and conformance statements.
+  This also works well when you have enabled self-registration are require the selection of a :ref:`configuration template<community__create_organisation>`. This way you ensure
+  only predefined and non-editable conformance testing setups for your users.
 
 To persist any changes you have made in the community detail form click the **Save changes** button. Navigating away from this page will discard any pending changes.
 In terms of additional features available here:
@@ -245,12 +261,11 @@ you will also see a **Show properties** checkbox. Checking this you can manage t
 
 .. figure:: ../screenshots/admin_community_organisations_create_properties.PNG
   :align: center
-  :scale: 70%
 
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also 
 see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
-* For texts through an editable text field.
+* For texts through an editable text field or dropdown select (for preset values).
 * For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by 
   clicking **Remove**.
 * For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
@@ -312,12 +327,11 @@ you will also see a **Show properties** checkbox. Checking this you can manage t
 
 .. figure:: ../screenshots/admin_community_organisations_update_properties.PNG
   :align: center
-  :scale: 70%
 
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also see 
 a help tooltip to understand their meaning. Such properties can be managed as follows:
 
-* For texts the current value is presented in an editable text field.
+* For texts the current value is presented in an editable text field or dropdown select (in case of preset values).
 * For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
   by clicking on its link, or delete it by clicking **Remove**.
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you 
@@ -663,6 +677,199 @@ to persist your changes or discard them clicking on the **Back** button. The **D
 remove the template. Finally, the **Copy** button allows you to make a copy of this error template, by taking you to the creation screen prefilled
 with the current template's information. This can be useful if you want to create minor variations of a default template for certain organisations.
 
+.. _community__manage_triggers:
+
+Manage triggers
+---------------
+
+A **trigger** is a means of carrying out automated processing when a given event occurs. Triggers can receive various types of inputs depending
+on their configured event, and can be used both to receive notifications and to modify the current test setup. They represent a powerful means of
+extending the Test Bed's processing in a decoupled way and can be used to complete advanced tasks that the test bed alone cannot handle 
+(e.g. preparing configuration packages for new community members).
+
+Trigger execution is always an asynchronous step, and a failed trigger call will never cause its root event to fail itself. Numerous triggers
+may be configured for the same event types which, assuming they are set as active, will all be processed. There is however no guarantee on the
+execution order or chaining of triggers, so you need to take this into account in your trigger design. Finally, note that triggers are not 
+fired when bulk :ref:`import operations<exportimport__import>` take place (e.g. creating organisations through an import). 
+
+Configured triggers are displayed in the **Triggers** section. These are presented as a table with one row per trigger, displaying for each its
+**name**, **description**, **event type**, **active** status and latest **result**.
+
+.. figure:: ../screenshots/admin_community_triggers.PNG
+  :align: center
+
+Adding a new trigger is done by clicking the **Create trigger** button.
+
+.. _community__manage_triggers__create:
+
+Create trigger
+~~~~~~~~~~~~~~
+
+When creating a new trigger you are presented with a form to enter its information.
+
+.. figure:: ../screenshots/admin_community_triggers_create.PNG
+  :align: center
+
+The information requested from you in this form for the new trigger is:
+
+* Its **name** (required), used for display purposes in the list of triggers.
+* Its **description** (optional), presented to community administrators to provide additional context on the purpose of the trigger.
+* The **event type** (required) for the occurrences of which the trigger will be fired.
+* The **active** flag (optional) that determines whether this trigger is currently enabled (default is false).
+
+The event types that are available for configuration are listed in the following table:
+
+.. csv-table::
+    :header: "Event type", "Description"
+    :delim: | 
+
+    Organisation created | Creation of an organisation, either by a community administrator or via self-registration.
+    Organisation updated | Update of an organisation's information (including :ref:`custom organisation properties<community__properties>`).
+    System created | Creation of a system, either manually or via self-registration based on a :ref:`configuration template<community__create_organisation>`.
+    System updated | Update of a system's information (including :ref:`custom system properties<community__properties>`).
+    Conformance statement created | Creation of a conformance statement, either manually or via self-registration based on a :ref:`configuration template<community__create_organisation>`.
+    Conformance statement updated | Update of a conformance statement's configuration (:ref:`endpoint parameter values<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`).
+
+The separate **Web service details** section includes the inputs concerning the trigger's web service. Consider that the trigger itself is a set of metadata
+that determines what fires and with what data, however the actual processing linked to the trigger is handled by the configured web service. This service
+needs to be accessible by the test bed and implement the `GITB processing service API`_, a simple SOAP API that expects an arbitrary set of inputs and can
+provide any number of outputs. The information required to configure this web service are:
+
+* Its **endpoint URL** (required), the full URL to reach the service's WSDL file. Note that this URL needs to be provided as it should be used by
+  test bed, meaning that it could also be an internal address.
+* An **operation** (optional), to signal an operation name to the processing service (see the `GITB processing service API`_ for details).
+* The **input data** (optional) to provide as part of service's payload when the trigger fires.
+
+The configured **input data** provide context to the trigger's web service to complete its processing. The type of inputs depend on the trigger's **event type**
+as follows:
+
+.. csv-table::
+    :header: "Input data", "Event types", "Details"
+    :delim: | 
+
+    Community | All | The ID, short and full name of the community.
+    Organisation | All | The ID, short and full name of the organisation linked to the event.
+    System | System/statement created/updated | The ID, short and full name of the system linked to the event
+    Specification | Statement created/updated | The ID, short and full name of the specification linked to the event
+    Actor | Statement created/updated | The ID, short and full name of the actor linked to the event
+    Organisation properties | All | The name and value of one or more custom organisation properties. 
+    System properties | System/statement created/updated | The name and value of one or more custom system properties.
+
+To include one or more types of data in the service's calls check the relevant checkboxes. In the case of organisation and system properties, once the relevant
+option is checked, you will be presented with a table listing the properties defined for the community.
+
+.. figure:: ../screenshots/admin_community_triggers_org_properties.PNG
+  :align: center
+
+Each row in this table corresponds to a property, displaying for each its **name**, **type** and **identifier**. The identifier will be used as the input's name,
+whereas the value to be passed will be determined by the property's type. Simple and secret values are provided as text, whereas binary values are provided as serialised Base64 strings.
+To add a property to the inputs click its row (clicking it again will remove it).
+
+.. note::
+  **Including secret properties:** Secret properties, if included as input, will be passed in the clear. Make sure that you are aware of this and only choose to include
+  such values knowingly.
+
+Once you have selected the input required by the service you can click the **Preview service call** button. This will use the information provided to display the sample 
+payload that will be sent in the input SOAP envelope.
+
+.. figure:: ../screenshots/admin_community_triggers_preview.PNG
+  :align: center
+
+From this preview popup you can click **Copy to clipboard** to copy all text or **Close** to hide the preview. In addition you may also test the provided **endpoint URL**
+by clicking the **Test** button situated to its right. This will result in calling the service's `getModuleDefinition operation`_ and, if successful, will open a popup to 
+present the call's output.
+
+.. figure:: ../screenshots/admin_community_triggers_test_url.PNG
+  :align: center
+
+If the test fails the popup will display the collected error messages from the call attempt. If multiple nested errors are raised you are presented with the errors in sequence.
+
+.. figure:: ../screenshots/admin_community_triggers_test_url_complex.PNG
+  :align: center
+
+Once you have provided the required information you can complete the trigger's creation by clicking the **Save** button. Clicking on the **Cancel** button will discard pending
+changes and return to the previous screen.
+
+.. _community__manage_triggers__edit:
+
+Edit trigger
+~~~~~~~~~~~~
+
+To edit an existing trigger click its corresponding row from the **Triggers** table.
+
+.. figure:: ../screenshots/admin_community_triggers.PNG
+  :align: center
+
+Doing so will take you to a screen where the trigger's information is displayed in editable form fields.
+
+.. figure:: ../screenshots/admin_community_triggers_edit.PNG
+  :align: center
+
+In this screen you can change the trigger's information, web service details and included data. For a detailed description of each property and the available options check the
+:ref:`trigger creation<community__manage_triggers__create>` documentation. In this screen you can in addition see a section named **Trigger status** which
+indicates the result from the trigger's last execution. This status can be one of the following:
+
+* **None:** Highlighted in blue, this displays if the trigger has actually never fired up to now.
+* **Success:** Highlighted in green, this indicates the trigger succeeded in its last execution.
+* **Error:** Highlighted in red, this indicates the trigger failed in its last execution.
+
+.. figure:: ../screenshots/admin_community_triggers_edit_status.PNG
+  :align: center
+
+For triggers having executed and resulting either in a success or failure, you are presented with a **Clear** button. You may click this to clear the latest status, resetting it to **None**,
+in case you want to ensure a subsequently displayed status corresponds to changes you have just introduced. In the case of a failed last call you also have the option to **View errors**. Clicking this
+will display the collected error messages returned from the last trigger's execution that you can **Copy to clipboard** or **Close**.
+
+.. figure:: ../screenshots/admin_community_triggers_status_error.PNG
+  :align: center
+
+To persist any changes you have made in the trigger's definition click on **Save**. Clicking on **Delete** deletes, upon confirmation, the trigger, whereas clicking **Back** will cancel
+pending changes and return to the :ref:`community details page<community>`.
+
+.. _community__manage_triggers__output:
+
+Returning output from triggers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+One of the powerful features of triggers is that they can also adapt the configuration in the test bed. A trigger can achieve this by having its web service return an output as per the 
+`GITB processing service API`_ specification that can modify, depending on the trigger's event type, the values for **organisation properties**, **system properties** or **conformance statement parameters**.
+Each such type of output is grouped in a map which defines output items as key-value pairs, the key being the property's key or identifier and the value being the value to set (provided as 
+Base64 in the case of binary properties). Each value map is named as follows:
+
+* **organisationProperties** for organisation properties to set (applicable and handled in all cases).
+* **systemProperties** for system properties to set (applicable and handled in events linked to systems and conformance statements).
+* **statementProperties** for the properties of conformance statements (applicable and handled in events linked to conformance statements).
+
+Note that returned properties that don't apply (e.g. system properties when creating an organisation) are ignored. This is also the case for properties that cannot be matched with existing ones.
+In addition, any unexpected errors that may occur when applying such properties have no effect on the origin event of the trigger.
+
+The following sample output illustrates a case where a trigger linked to the creation of a new conformance statement is returning values to set:
+ 
+ * For the organisation, setting its "identifier" property.
+ * For two conformance statement properties named "client.flag" and "client.number".
+
+.. code-block:: xml
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <ps:ProcessResponse xmlns:core="http://www.gitb.com/core/v1/" xmlns:ps="http://www.gitb.com/ps/v1/">
+      <output name="organisationProperties">
+          <core:item name="identifier">
+              <core:value>123</core:value>
+          </core:item>
+      </output>
+      <output name="statementProperties">
+          <core:item name="client.flag">
+              <core:value>true</core:value>
+          </core:item>
+          <core:item name="client.number">
+              <core:value>ABC</core:value>
+          </core:item>
+      </output>
+  </ps:ProcessResponse>
+
+A use case for such a trigger could be to prepare the organisation's configuration linked to the new conformance statement so that it can begin testing. This trigger processing could
+also be defined as a mandatory prerequisite through the use of a hidden but required property that is used as a control flag and set through the trigger's output.
+
 .. _community__conformance_certificate_settings:
 
 Edit conformance certificate settings
@@ -770,7 +977,7 @@ The additional properties that you define can be used in numerous ways:
 * As additional **quality control** by restricting certain properties as being editable only by community administrators. Such properties
   can be considered as flags that you need to set before an organisation can engage in testing.
 * For **data sharing**, allowing you to configure for your users certain information that they will subsequently be able to access.
-* To enable **external scripting**, by allowing the management of certain properties by external processes that could be used to 
+* To **facilitate automation** via :ref:`triggers<community__manage_triggers>` or external scripting, by allowing the management of certain properties by external processes that could be used to 
   drive automation tasks linked to your conformance testing (e.g. automatically generate certificates for new organisations).
 
 To manage your community's custom properties you start by clicking the **Edit custom member properties** button from your community 
@@ -792,18 +999,20 @@ Regardless of the type of property, the information recorded and displayed is th
 
 * **Label:** A text to be displayed to users as the label for the property.
 * **Key:** A unique value for the property that will also be used as its variable name in test cases.
-* **Description:** A description for the property that will be displayed to users as a help tooltip.
-* **Type:** The type of the property. This can be **Simple** for text values, **Binary** for files or **Hidden** for secret values.
+* **Type:** The type of the property. This can be **Simple** for text values, **Binary** for files or **Secret** for secret values.
 * **Required:** Whether the property must be defined before executing test cases.
 * **Editable:** Whether the property can be edited by organisation users. Otherwise this will be reserved to administrators.
 * **In tests:** Whether the property is included as a variable in test sessions. If so the name of this variable is determined by the **key** value 
   and is accessed through the **ORGANISATION** or **SYSTEM** map depending on the case (see the `GITB TDL documentation`_ for more details).
 * **In exports:** Whether the property will be included in the CSV exports generated from administration dashboards (the 
   :ref:`session dashboard<monitor_test_sessions>` and :ref:`conformance dashboard<monitor_conformance_status>`).
+* **Hidden:** Whether the property apart from being editable only by administrators is also hidden from organisation users. Such properties could be very
+  useful as control flags that are set by administrators, :ref:`triggers<community__manage_triggers>` or external scripts before testing starts.
 
-In the case of organisation-level properties there is an additional option **Requested in self-registration** available. By checking this the property
+In the case of organisation-level properties there is an additional option **In registration** available. By checking this, the property
 will also appear as part of the self-registration form for the community. You would do this for key information you want to have users provide as early
-as possible, and ideally as part of their initial organisation data.
+as possible, and ideally as part of their initial organisation data. Through the community's **user permissions** you may also specify that such properties when
+defined additionally as required are to be blocking if not provided.
 
 Regarding a property's key, there are certain predefined values that cannot be used as these correspond to the default 
 organisation's or system's information. The reserved key values per case are:
@@ -815,6 +1024,8 @@ organisation's or system's information. The reserved key values per case are:
   The screenshots that follow illustrate the management of organisation properties. The process and information is nonetheless
   identical for system properties.
 
+.. _community__properties__create:
+
 Create a property
 ~~~~~~~~~~~~~~~~~
 
@@ -823,11 +1034,29 @@ Creating a new property is done by clicking the **Create property** button from 
 .. figure:: ../screenshots/admin_community_properties_create.PNG
   :align: center
 
-In the resulting popup you are prompted to provide the property's definition. All information is required except the property **description**.
-New properties are by default set to be **simple** (i.e. text values) and **editable by users**. If the property is set as being 
-**binary** or **hidden** it will not be able to be included in exports.
+In the resulting popup you are prompted to provide the property's definition. The **description** of the property is an optional text that serves as a tooltip to assist 
+users in the property's completion. The **Preset values** apply to simple properties (i.e. text) and allow you to define a preset list of values for this property that 
+will appear as a dropdown selection list. For each such value you can define a user-friendly **label** and the property's actual **value**, using the provided controls
+to **add** new values, **remove** existing ones or change their **display order**.
+
+.. figure:: ../screenshots/admin_community_properties_presets.PNG
+  :align: center
+
+The **Depends on** field is optional and allows you to define a prerequisite condition for this property. To set such a prerequisite you need to select another property
+from the provided list and specify to its left in the provided text field (or dropdown selection if the property has preset values) the value that it needs to have for the
+current property to be enabled. A property that misses any of its prerequisite conditions (i.e. its direct prerequisite or a prerequisite's prerequisite) will
+be considered inactive, even if set as required, and will be excluded from input forms and test sessions. Using such dependencies is a powerful mechanism to define conditional
+inputs based on other properties or external processing (e.g. via :ref:`triggers<community__manage_triggers>`).
+
+.. note::
+  Parameters of **binary** or **secret** type cannot be used as prerequisites.
+
+In terms of their configuration, new properties are by default set to be **simple** (i.e. text values) and **editable by users**. If the property is set as being 
+**binary** or **secret** it will not be able to be included in exports. In addition, a property can only be defined as **hidden** if it is set at non-editable by users.
 
 To create the property complete the required information and click on **Save**. Clicking on **Cancel** will close the popup.
+
+.. _community__properties__edit:
 
 Edit a property
 ~~~~~~~~~~~~~~~
@@ -837,13 +1066,46 @@ Editing an exiting property is done by clicking the property's row from its rele
 .. figure:: ../screenshots/admin_community_properties_edit.PNG
   :align: center
 
-In the resulting popup you can view the property's current configuration and edit it according to your needs. All information is required
-except the property **description**. If the property is set as being  **binary** or **hidden** it will not be able to be included 
-in exports.
+In the resulting popup you can view the property's current configuration and edit it according to your needs. Details on the meaning of properties, preset values and
+property dependencies are provided in the :ref:`create property<community__properties__create>` documentation.
 
 To update the property's definition complete the required information and click on **Save**. Alternatively, clicking on **Delete** 
 will, upon confirmation delete the property as well as any existing values provided by your community members. Finally, clicking 
 on **Cancel** will close the popup without any action.
+
+.. _community__properties__ordering:
+
+Change property ordering
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default properties are ordered alphabetically based on their label. You may override this default ordering by reordering the properties as needed and saving their
+relative positions. This is done through the table listing the properties per type by clicking the **up** and **down** arrows at each row's right end.
+
+.. figure:: ../screenshots/admin_community_properties_ordering.PNG
+  :align: center
+
+At each click the relevant row will be moved accordingly by one. Once you have reordered properties in this way you will notice that the **Save property order** button
+becomes enabled. You will need to click this to confirm and persist the displayed ordering.
+
+.. _community__properties__preview:
+
+Preview property forms
+~~~~~~~~~~~~~~~~~~~~~~
+
+Given the multiple options available to define custom properties (e.g. preset values, ordering, prerequisites, hidden properties) it is useful to double-check that your
+setup matches your expectations. To help with this you may click the **Preview** button on each table's header to open up a sample form based on your current configuration.
+
+.. figure:: ../screenshots/admin_community_properties_preview.PNG
+  :align: center
+
+The displayed dialog offers a **Preview mode** selection with which you can adapt the preview based on the various available situations:
+
+* **Organisation user:** Presents the form visible by organisation administrators once they are logged into the test bed.
+* **Self-registration screen:** Presents the form that is displayed as part of the self-registration process (if enabled).
+* **Community administrator:** Presents the form visible to community and test bed administrators.
+
+In case the current configuration results in an empty form (e.g. all properties are set as hidden and the preview mode is set to "Organisation user") a relevant message
+is displayed.
 
 .. _community__labels:
 
@@ -885,3 +1147,5 @@ To provide a custom label check the **Override** checkbox and supply the desired
 to persist your changes or **Back** to discard them and return to the community details' page.
 
 .. _GITB TDL documentation: https://www.itb.ec.europa.eu/docs/tdl/latest/expressions/index.html#referring-to-configuration-parameters
+.. _GITB processing service API: https://www.itb.ec.europa.eu/docs/services/latest/processing/
+.. _getModuleDefinition operation: https://www.itb.ec.europa.eu/docs/services/latest/processing/index.html#getmoduledefinition
