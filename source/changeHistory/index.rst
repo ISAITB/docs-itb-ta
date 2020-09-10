@@ -13,7 +13,7 @@ The latest test bed release is **1.10.0**.
 Release 1.10.0 - 07/09/2020
 ---------------------------
 
-This releases provides community administrators with further flexibility on community customisation and its
+This release provides community administrators with further flexibility on community customisation and its
 tailoring for their conformance testing strategy. This is achieved by means of new features on custom property management,
 advanced automation options through triggers, and the fine-tuning of self-registration requirements and user
 permissions. The management of test suites is also enhanced by enabling enhanced and bulk test suite uploads, and allowing
