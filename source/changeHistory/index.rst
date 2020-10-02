@@ -8,7 +8,24 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.10.0**.
+The latest test bed release is **1.10.1**.
+
+Release 1.10.1 - 02/10/2020
+---------------------------
+
+This is a minor maintenance release to address issues reported by users, notably on the handling of documentation content
+in test suites.
+
+**Bug**
+
+* [ITB-721] - Large test step documentation content prevents test sessions from starting
+* [ITB-722] - Documentation links ignore link target attribute
+
+**Improvement**
+
+* [ITB-708] - Hide empty "Test" entry from PDF validation report
+* [ITB-723] - Ensure all documentation links open in a separate window
+* [ITB-724] - Ensure the test case and test suite documentation preview matches exactly the actual display
 
 Release 1.10.0 - 07/09/2020
 ---------------------------
