@@ -202,7 +202,8 @@ Manage organisations
 --------------------
 
 The **Organisations** section presents to you the organisations that are defined as members of your community. These are displayed in a table with one
-row per organisation, displaying for each organisation its **short** and **full name**.
+row per organisation, displaying for each organisation its **short** and **full name**. For each organisation you also see whether or not this is defined as configuration
+template for self-registration in which case the name of the template is presented.
 
 .. figure:: ../screenshots/admin_community_organisations.PNG
   :align: center
@@ -752,16 +753,17 @@ as follows:
     System | System/statement created/updated | The ID, short and full name of the system linked to the event
     Specification | Statement created/updated | The ID, short and full name of the specification linked to the event
     Actor | Statement created/updated | The ID, short and full name of the actor linked to the event
-    Organisation properties | All | The name and value of one or more custom organisation properties. 
+    Domain properties | All | The identifier and value of one or more custom domain properties.
+    Organisation properties | All | The name and value of one or more custom organisation properties.
     System properties | System/statement created/updated | The name and value of one or more custom system properties.
 
-To include one or more types of data in the service's calls check the relevant checkboxes. In the case of organisation and system properties, once the relevant
+To include one or more types of data in the service's calls check the relevant checkboxes. In the case of domain, organisation and system properties, once the relevant
 option is checked, you will be presented with a table listing the properties defined for the community.
 
 .. figure:: ../screenshots/admin_community_triggers_org_properties.PNG
   :align: center
 
-Each row in this table corresponds to a property, displaying for each its **name**, **type** and **identifier**. The identifier will be used as the input's name,
+Each row in this table corresponds to a property, displaying for each its **name** (for organisation and system properties), **type** and **identifier**. The identifier will be used as the input's name,
 whereas the value to be passed will be determined by the property's type. Simple and secret values are provided as text, whereas binary values are provided as serialised Base64 strings.
 To add a property to the inputs click its row (clicking it again will remove it).
 

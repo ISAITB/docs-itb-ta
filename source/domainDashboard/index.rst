@@ -136,6 +136,12 @@ The domain's parameters are presented in a table with one parameter per row. The
 * Its **name**, used to identify the parameter and also refer to it through test cases.
 * Its **description** to provide context on the purpose of the parameter.
 * Its **value**, which in the case of sensitive parameters is hidden.
+* Whether or not the parameter is included **in tests**.
+
+.. note::
+    **Parameters not in tests:** Typically domain parameters are meant to be used as global configuration values that are used in test cases.
+    A parameter that is not meant to be used in tests could be used as a means of recording arbitrary data within the test bed or as
+    :ref:`input to a trigger<community__manage_triggers>`.
 
 To create a new parameter click the **Create parameter** button (see :ref:`domains__domain_create_parameter`). To edit an existing one click its 
 corresponding table row (see :ref:`domains__specification`).
@@ -160,6 +166,7 @@ The information requested in this form is:
 * The **name** of the parameter (required), used to identify it and refer to it from test cases.
 * The **description** of the parameter (optional).
 * The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Secret" (required).
+* Whether or not the parameter is to be **included in tests** (by default yes).
 
 Depending on whether you select that this is a "Simple", "Binary" or "Secret" parameter the screen will be adapted to request its value.
 Selecting "Simple" means that this is a simple text value that can be entered and displayed as-is. In this case the screen will 
@@ -203,6 +210,7 @@ The fields presented for the parameter are:
 * The **name** of the parameter (required), used to identify it and refer to it from test cases.
 * The **description** of the parameter (optional).
 * The **kind** of parameter it is, choosing from either "Simple", "Binary" or "Secret" (required).
+* Whether or not the parameter is **included in tests**.
 * The **value** of the parameter, presented either as a text input (if **kind** is "Simple"), a downloadable link (if **kind** is "Binary") or a repeated text input (if **kind** is "Secret").
 
 Once you adapt the parameter's information click the **Save** button to record your changes or the **Cancel** button to discard them. Clicking the 
