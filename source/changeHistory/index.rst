@@ -8,7 +8,27 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.10.1**.
+The latest test bed release is **1.10.2**.
+
+Release 1.10.2 - 12/10/2020
+---------------------------
+
+This is a minor maintenance release that extends the usage of domain parameters and corrects issues reported by users,
+notably on the handling of custom properties in self-registration.
+
+**Bug**
+
+* [ITB-694] - Updating landing pages, error templates and legal notices should remain on the detail page
+* [ITB-732] - Self-registration organisation properties may not get recorded in an SSO-enabled environment
+* [ITB-733] - Required organisation properties in self-registration with unfulfilled prerequisites should not be required
+
+**Improvement**
+
+* [ITB-696] - Allow domain parameters to be provided as input to community triggers
+* [ITB-697] - Support domain parameters that are not included in tests
+* [ITB-727] - During self-registration and given a single and required configuration template, pre-select it as mandatory
+* [ITB-729] - Display which organisations are templates in the community details screen
+* [ITB-734] - Hide parameters as trigger data items if none are defined
 
 Release 1.10.1 - 02/10/2020
 ---------------------------
