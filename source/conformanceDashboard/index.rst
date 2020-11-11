@@ -36,8 +36,9 @@ The information displayed for each conformance statement is:
 * The **domain** of the specification.
 * The **specification** that the system is selected to conform to.
 * The **actor** of the specification the system is expected to act as.
-* The testing **status** in terms of successfully passed tests versus the total, including for the ones not passed their current
+* The statement's **test results** in terms of successfully passed tests versus the total, including for the ones not passed their current
   status ("undefined" or "failed").
+* The statement's overall **status** (success, failure or undefined).
 
 Each row also provides on the right side an **export** function that can be triggered clicking on the provided document icon.
 Clicking this button produces the conformance statement report for the given statement (see :ref:`monitor_conformance_status__statements__export_statement`).
@@ -56,7 +57,10 @@ its latest test result, executed by the organisation in question. Each row inclu
 
 * The relevant **test suite**.
 * The **test case**.
-* The latest test **result**.
+* The latest test **result**. Note that if the relevant test session resulted in a specific **output message**, the result icon can be clicked to display it.
+
+.. figure:: ../screenshots/admin_conformance_dashboard_expanded_output_message.PNG
+  :align: center
 
 Each row also presents an **export** file icon that can be clicked to generate the test case report for the presented, latest test session 
 (see :ref:`monitor_conformance_status__statements__export__test_case`).
@@ -193,7 +197,7 @@ from the conformance statements' header.
 .. figure:: ../screenshots/admin_conformance_dashboard_header_expanded.PNG
   :align: center
 
-Doing so will generate a CSV file taking into account the currently applied filtering settings and include the conformance 
+Doing so will generate a CSV file taking into account the currently applied filtering settings and include the conformance
 statement information as well as the information on the individual related test cases. Note that such exports can also
 include custom properties for communities applicable to organisations or systems (see :ref:`community__properties`) if these
 have been defined by you or community administrators. To include such custom properties:
@@ -233,9 +237,10 @@ the button to **Enabled**, displaying the filter controls and switching on filte
 The controls that can be used for filtering are:
 
 * The relevant **community**, **organisation** and **system**.
-* The **domain**, **specification** and **actor**.
+* The relevant **domain**, **specification** and **actor**.
+* Custom **organisation and system properties** defined for a given community.
 
-All filter controls are multiple selection choices. Multiple selected values across these controls are applied as follows:
+Most filter controls are defined as selection choices. Multiple selected values across these controls are applied as follows:
 
 * Within a specific filter control using "OR" logic (e.g. selecting multiple specifications).
 * Across filter controls using "AND" logic (e.g. selecting a specification and an organisation).
@@ -243,5 +248,15 @@ All filter controls are multiple selection choices. Multiple selected values acr
 Note additionally that selecting dependent values serves to limit the filter options that are presented. For example if a given organisation
 is selected, the systems available for filtering will be limited to that organisation to already exclude impossible combinations.
 
-The presented conformance statements are automatically updated whenever your filter options are modified, or when the filters are disabled. 
-Note that applying no filtering is also the default case when you first visit this screen.
+Regarding organisation and system properties, these can be selected once a specific community has been selected for filtering.
+Once enabled, each property type presents an **Add** button that, once clicked, will display a list of the available properties,
+a field or selection list to provide the filter value, and controls to confirm or cancel the filter. Multiple property filters can be added with the
+following semantics:
+
+* Values provided for the same property are applied using "OR" logic.
+* Values provided for different properties are applied using "AND" logic.
+
+The presented conformance statements are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the
+**Enabled** toggle button. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters.
+The **Refresh** button is used to refresh the display of results based on the current filtering. Finally, note that applying no filtering is the default
+case when you first visit this screen.

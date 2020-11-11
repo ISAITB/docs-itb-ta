@@ -256,13 +256,20 @@ are:
 Finally, the **user permissions** section allows you to customise the permissions available to the community's members. Through the provided options you can allow user to:
 
 * **Download conformance certificates**. If not allowed, only community administrators may generate such certificates from the :ref:`conformance dashboard<monitor_conformance_status__statements__export_statement>` or a :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
-* **Create or delete systems**. Note that editing a system and its custom properties (if defined) is always possible for organisation administrators.
+* **Create or delete systems**. Note that if this is not allowed, editing a system and its custom properties (if defined) will remain possible for organisation administrators.
 * **Create or delete conformance statements**.
+* **Update organisation data after testing**. If not allowed, an organisation that has performed at least one test session will not be allowed to edit its organisation information or its custom properties (if defined).
+* **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
+* **Update conformance statement after testing.** If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
+
+In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
+the permissions for the entire community a better approach is to :ref:`delete the specific test sessions<session_dashboard__completed>` that should be ignored. This is possible for community
+and test bed administrators through the :ref:`session dashboard<monitor_test_sessions>`.
 
 .. note::
-  **When to set user permissions:** You would restrict user permissions in the community if you want to make sure that only you and community administrators can manage systems and conformance statements.
-  This also works well when you have enabled self-registration and require the selection of a :ref:`configuration template<community__create_organisation>`. This way you ensure
-  only predefined and non-editable conformance testing setups for your users.
+  **When to set user permissions:** You would restrict user permissions in the community if you want to make sure that only you and community administrators can manage systems and conformance statements
+  or if you want to ensure that once testing starts no data is changed. This also works well when self-registration is enabled and requires the selection of a :ref:`configuration template<community__create_organisation>`.
+  This way you ensure only predefined and non-editable conformance testing setups for your users.
 
 To persist any changes you have made in the community detail form click the **Save changes** button. Clicking the **Back** button will discard any pending changes and
 return to the previous screen. The **Delete** button will, following confirmation, delete the complete community and all its dependent information.
@@ -901,6 +908,9 @@ The event types that are available for configuration are listed in the following
     System updated | Update of a system's information (including :ref:`custom system properties<community__properties>`).
     Conformance statement created | Creation of a conformance statement, either manually or via self-registration based on a :ref:`configuration template<community__create_organisation>`.
     Conformance statement updated | Update of a conformance statement's configuration (:ref:`endpoint parameter values<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`).
+    Conformance statement succeeded | Successful completion of a test session that leads to a conformance statement being considered as successfully passed.
+    Test session succeeded | Completion of a test session that resulted in a "successful" result.
+    Test session failed | Completion of a test session that resulted in a "failed" result.
 
 The separate **Web service details** section includes the inputs concerning the trigger's web service. Consider that the trigger itself is a set of metadata
 that determines what fires and with what data, however the actual processing linked to the trigger is handled by the configured web service. This service
@@ -955,7 +965,7 @@ present the call's output.
 .. figure:: ../screenshots/admin_community_triggers_test_url.PNG
   :align: center
 
-If the test fails the popup will display the collected error messages from the call attempt. If multiple nested errors are raised you are presented with the errors in sequence.
+If the test fails, the popup will display the collected error messages from the call attempt. If multiple nested errors are raised you are presented with the errors in sequence.
 
 .. figure:: ../screenshots/admin_community_triggers_test_url_complex.PNG
   :align: center
