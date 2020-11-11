@@ -83,7 +83,7 @@ Certain test results may appear greyed out in case they are to be considered as 
 execution (e.g. the related organisation having been deleted). Such obsolete results are maintained by default but can be purged at any time by clicking the 
 **Delete obsolete results** button.
 
-Specific test session can also be selectively deleted by means of the **Delete sessions...** button. Clicking this will disable other buttons and display a checkbox
+Specific test sessions can also be selectively deleted by means of the **Delete sessions...** button. Clicking this will disable other buttons and display a checkbox
 on each row in the table. To delete one or more test sessions you need to check their checkbox and click on the **Confirm** button. Once in selection mode you may also
 click on **Cancel** to abort the deletion and restore the normal table display.
 
