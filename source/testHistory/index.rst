@@ -172,7 +172,7 @@ Export test sessions
 Apart from exporting an individual test case report you can also export the information for the currently displayed test sessions in
 CSV format. To do this click the **Export CSV** button in the right of the active or completed test session table header.
 
-.. figure:: ../screenshots/test_history_export_csv.PNG
+.. figure:: ../screenshots/test_history_admin_header.PNG
   :align: center
 
 .. _view_your_test_history__search__delete_obsolete:
@@ -180,7 +180,7 @@ CSV format. To do this click the **Export CSV** button in the right of the activ
 Delete obsolete test results
 ----------------------------
 
-Obsolete test sessions can be deleted by clicking the **Delete obsolete results** button from the search results' panel.
+Obsolete test sessions can be deleted by clicking the **Delete obsolete sessions** button from the search results' panel.
 
 .. figure:: ../screenshots/test_history_admin_header.PNG
   :align: center
