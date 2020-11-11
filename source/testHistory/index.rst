@@ -102,13 +102,14 @@ as **Disabled**. Clicking on this sets it to **Enabled** and displays the filter
 
 The available filters are:
 
-* The **domain** and **specification** of the sessions' corresponding conformance statements.
+* The **domain**, **specification** and **actor** of the sessions' corresponding conformance statements.
 * The sessions' **test suite** and **test case**.
 * The sessions' **result**.
 * The sessions' **start** and **end time**.
+* A specific **session ID**.
 
-All filter controls with the exception of the start and end time are multiple selection choices. The start and end time controls are
-date pickers that allow selection of ranges of dates for both the start and end of the sessions. Selecting multiple values across these
+All filter controls with the exception of the start time, end time and session ID are multiple selection choices. The start and end time controls are
+date pickers that allow selection of ranges of dates for both the start and end of the sessions. The session ID is a text field. Selecting multiple values across these
 controls are applied as follows:
 
 * Within a specific filter control using "OR" logic (e.g. selecting multiple specifications).
@@ -118,7 +119,7 @@ Note additionally that selecting dependent values serves to limit the filter opt
 is selected, the test suites and test cases available for filtering will be limited to that specification to already exclude impossible combinations.
 
 The presented tests are automatically updated whenever your filter options are modified, or when the filters are removed altogether by setting the
-filter toggle button to **Disabled**. Note that displaying the performed tests with no filtering is also the default when you first visit the screen.
+filter toggle button to **Disabled**. It is also possible to collapse the filters without disabling them by clicking on the filter row. Note that displaying the performed tests with no filtering is the default when you first visit the screen.
 Finally, you may also choose to keep the current filtering but refresh the search results by clicking the **Refresh** button.
 
 .. _view_your_test_history__search__export:
@@ -171,7 +172,7 @@ Export test sessions
 Apart from exporting an individual test case report you can also export the information for the currently displayed test sessions in
 CSV format. To do this click the **Export CSV** button in the right of the active or completed test session table header.
 
-.. figure:: ../screenshots/test_history_export_csv.PNG
+.. figure:: ../screenshots/test_history_admin_header.PNG
   :align: center
 
 .. _view_your_test_history__search__delete_obsolete:
@@ -179,7 +180,7 @@ CSV format. To do this click the **Export CSV** button in the right of the activ
 Delete obsolete test results
 ----------------------------
 
-Obsolete test sessions can be deleted by clicking the **Delete obsolete results** button from the search results' panel.
+Obsolete test sessions can be deleted by clicking the **Delete obsolete sessions** button from the search results' panel.
 
 .. figure:: ../screenshots/test_history_admin_header.PNG
   :align: center
@@ -192,22 +193,17 @@ deleted are limited to those specific to the system that is currently selected.
 View a test session's steps
 ---------------------------
 
-Each row from the list of presented test sessions, both active and completed, may also be clicked to view its detailed steps. Doing so presents
-a view over the test session's steps that is similar to the live test execution diagram displayed while the test session is
+Each row from the list of presented test sessions, both active and completed, may also be clicked to view its detailed steps. Doing so expands the
+row to present the test session's steps in a manner similar to the live test execution diagram displayed while the test session is
 active (see :ref:`execute_tests__step3`).
 
 .. figure:: ../screenshots/test_history_test_result.PNG
   :align: center
 
-In this screen each test case step is displayed using the same colour coding applied during test execution: 
-
-* **Green** indicates successfully completed steps.
-* **Orange** indicates failed warning-level steps.
-* **Red** indicates failed error-level steps.
-* **Grey** indicates steps that were skipped.
-
 In terms of provided controls, a document icon is presented on steps that produced a report that can be clicked to review
-its details (see :ref:`view_your_test_history__test_steps__details`). The provided **Back** button serves to return you to the previous search screen.
+its details (see :ref:`view_your_test_history__test_steps__details`). In addition, the diagram's header presents the session's **test suite**,
+**test case** and **session** identifier. Clicking on the session row will once again collapse the display. Note that once one or more session
+details are expanded the table's header will display a **Collapse all** button that can be clicked to collapse all details.
 
 .. _view_your_test_history__test_steps__details:
 

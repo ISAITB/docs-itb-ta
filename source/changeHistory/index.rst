@@ -8,7 +8,70 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.10.2**.
+The latest test bed release is **1.11.0**.
+
+Release 1.11.0 - 13/11/2020
+---------------------------
+
+This release brings a range of improvements for all test bed users. Community administrators benefit from further customisation options 
+through additional trigger events to react to test results, as well as fine-grained permissions to prevent modifications once testing has
+started. In addition, all users benefit from extended search capabilities on test sessions and conformance statements based on custom
+properties, session IDs and specification actors; and a redesigned test session display that clarifies output and extends presented information.
+These updates are further complemented by interface improvements such as progress indicators and status messages. Finally, this release also
+extends the GITB Test Description Language with new features such as customised output messages, termination of tests on errors and persistent
+validator outputs.
+
+**Bug**
+
+* [ITB-508] - Test sessions that are pending but not started are not automatically terminated after the idle period
+* [ITB-735] - Community export with triggers and no linked data may cause imports to fail validation
+* [ITB-765] - Embedded XSDValidator fails to resolve XSDs with complex import hierarchies
+* [ITB-772] - User interaction steps should allow scrolling for long non-breaking text
+* [ITB-783] - Call step initialises prematurely and fails for missing input variables
+
+**New Feature**
+
+* [ITB-428] - Test session variable recording the current overall test result status
+* [ITB-693] - Add loading indication on UI when waiting to load data
+* [ITB-698] - Extend GITB TDL to support a custom output message for the test session
+* [ITB-699] - Display test session output message in test session history display
+* [ITB-700] - Display test session output message in conformance statement detail page (per test case)
+* [ITB-701] - Display test session output message in conformance dashboard (per test case)
+* [ITB-702] - Display test session output message in conformance statement report (per test case)
+* [ITB-703] - Display test session output message in conformance certificate (per test case)
+* [ITB-712] - Add a user permission to prevent organisation data changes once tests are recorded
+* [ITB-713] - Add a user permission to prevent system data changes once tests are recorded
+* [ITB-714] - Add a user permission to prevent conformance statement changes once tests are recorded
+* [ITB-715] - Create trigger event for a completed test session
+* [ITB-716] - Create trigger event for a completed conformance statement
+* [ITB-736] - Allow community administrators to selectively delete test sessions
+* [ITB-737] - Create trigger event for a failed test session
+* [ITB-745] - Allow search of test sessions by session ID for administrators and users
+* [ITB-746] - Display test session ID to organisation users to facilitate support requests
+* [ITB-747] - Add "no data" row to all tables when they have finished loading and have no data to show
+* [ITB-749] - Allow the output returned from a validation service to be recorded in the test session context
+* [ITB-751] - Support search by specification actor in test session history screens
+* [ITB-767] - Configure a specific step failure to be fatal (i.e. immediately stop the test session)
+* [ITB-768] - Configure a test case to immediately fail upon any error
+* [ITB-769] - Configure a sequence of steps to immediately fail upon any error
+* [ITB-770] - Display test session output message in test case report
+
+**Improvement**
+
+* [ITB-534] - Replace completed test session display with sequence diagram presentation
+* [ITB-604] - Allow custom member properties to be optionally used for filtering
+* [ITB-738] - Display test session ID to organisation users in test history screen
+* [ITB-739] - Allow community administrators to download a test session report from the session dashboard
+* [ITB-740] - Show pending status for actions triggered via table row controls (e.g. test session export)
+* [ITB-741] - Improve display of test session status in session and conformance listings
+* [ITB-742] - Display test sessions' test suite to organisation users in test history screen
+* [ITB-744] - Display a conformance statement's overall status
+* [ITB-759] - Allow search filters to be minimised while still being enabled
+* [ITB-766] - Disable export buttons when no results are available
+* [ITB-771] - Include color coding for status displays in PDF reports
+* [ITB-773] - Support custom title for server interaction popups during test case execution
+* [ITB-775] - Always display test engine lifeline last in test session diagram
+* [ITB-778] - When a test session terminates at an intermediate step display remaining steps as skipped
 
 Release 1.10.2 - 12/10/2020
 ---------------------------

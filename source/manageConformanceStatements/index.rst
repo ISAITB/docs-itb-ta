@@ -21,8 +21,9 @@ configured for your organisation (see :ref:`manage_your_systems`).
 This table presents for the selected system its list of conformance statements in terms
 of their **domain**, **specification** and **actor**. Simply put this set of information serves to uniquely 
 identify the specification role that your system aims to play, thus determining the test cases that it should
-execute. The presented **results** also provide you an overview of the latest test results, showing you 
+execute. The presented **test results** also provide you an overview of the latest test results, showing you
 how many configured tests your system has successfully passed up to this point and, for the ones not passed, their current status ("undefined" or "failed").
+Finally, the overall conformance **status** is also displayed per statement indicating its current result as undefined, failed or successful.
 
 From this table you can click any row to proceed to the conformance statement's details (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`).
 You can return to the listing of conformance statements at any time by clicking the **Conformance Statement** entry in the left side menu.
@@ -98,8 +99,9 @@ The **Conformance statement details** section provides you the context of what y
 The **domain** details are presented on the top as the high-level description of the project you are testing for. The 
 **specification** information follows to define the specification you have chosen for your system to conform to
 (a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
-as part of this specification (a specification may have multiple actors). The **test status** presents an overview of the testing
-progress for the conformance statement's test cases. Below this section you are presented with buttons for further actions as follows:
+as part of this specification (a specification may have multiple actors). The **test results** present an overview of the testing
+progress for the conformance statement's test cases, whereas the **status** represents the statement's current progress. Below this section
+you are presented with buttons for further actions as follows:
 
 * The **Download conformance certificate** button to generate a conformance certificate for your system (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate`).
 * The **Download report** button to export your system's current conformance statement report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`).
@@ -184,7 +186,7 @@ information displayed for each test case is:
 
 * Its **name**, a short text to identify and refer to the test case.
 * Its **description**, providing the context you need to understand the purpose of the test case and plan for its execution.
-* Its latest **result** which can be either "SUCCESS", "FAILURE" or "UNDEFINED" in case the test case has never been executed.
+* Its latest **result** which can be either a success (green tick), failure (red cross) or undefined (grey bar) in case the test case has never been executed.
 * A **Play** button to start a new test session for this test case (see :ref:`execute_tests`).
 
 Note that the screenshot above indicates a simple conformance statement that contains a single test suite containing in turn a single test case. In
@@ -215,6 +217,12 @@ levels:
 
 * **For each test suite:** To automatically and sequentially execute all the test suite's test cases.
 * **For each test case:** To execute the specific test case.
+
+When test sessions are completed for the statement's different test cases, the result display will be adapted to display them as successful or failed.
+Moreover, in case a test session also produced a detailed output message, this can be viewed by clicking on the success or failure icon.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_output_message.PNG
+  :align: center
 
 In all previous examples you may have noticed a **Interactive execution** toggle button displayed in the **Conformance tests** header. This toggle defines
 the manner in which you will execute the tests, defaulting to sequential interactive sessions. This means that each of the tests will execute in sequence and
