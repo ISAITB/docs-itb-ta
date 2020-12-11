@@ -8,7 +8,26 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.11.0**.
+The latest test bed release is **1.11.1**.
+
+Release 1.11.1 - 11/12/2020
+---------------------------
+
+This is a minor maintenance release that corrects issues with test session error handling and the display of active test sessions, and adds support in the
+GITB Test Description Language for managing undefined variables.
+
+**Bug**
+
+* [ITB-829] - A completed test session's diagram does not display steps as skipped when the session was stopped by the user
+* [ITB-830] - Internal flow steps are not displayed as skipped when stopping a test session
+* [ITB-831] - Boundary of flow step box in test execution diagram is too narrow
+* [ITB-832] - Test sessions using embedded messaging handlers leave open connection ports on unexpected connection closures
+* [ITB-833] - Test session diagram may fail to display step updates
+* [ITB-834] - Pending messaging steps from a flow step's threads that are skipped result in a test session failure
+
+**Improvement**
+
+* [ITB-819] - Expressions with references to non-existent variables should return an empty value rather than fail
 
 Release 1.11.0 - 13/11/2020
 ---------------------------
