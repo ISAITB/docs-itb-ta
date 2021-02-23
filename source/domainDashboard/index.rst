@@ -493,6 +493,7 @@ Using the provided form you can edit the test suite's metadata, specifically:
 
 * Its **ID**, a non-editable identifier set via test suite upload that is used to reference and match the test suite in subsequent uploads.
 * Its **name** (required), a short text presented to users to identify the test suite.
+* Its **version** (required), a version identifier for the test suite presented only to administrators.
 * Its **description** (optional), a text providing context on the test suite and a brief overview of its purpose and contained test cases.
 
 You may also view and edit here the test suite's **documentation**. This is displayed to users as part of the
