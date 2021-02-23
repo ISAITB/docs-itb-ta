@@ -8,7 +8,63 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.11.1**.
+The latest test bed release is **1.12.0**.
+
+Release 1.12.0 - 01/03/2021
+---------------------------
+
+This releases focuses on the test bed's test execution engine and the GITB Test Description Language to facilitate the development
+of complex test suites. The test case scriptlet concept has been significantly extended, allowing reusable blocks of test steps
+to be shared across test cases but also across test suites. Moreover, reusing common resources is now also possible for any kind
+of artefact, template or documentation content that may be imported by test cases, and is further facilitated by allowing
+a test suite to not include test cases itself but rather act as a resource holder for other test suites. Aside from such
+features focusing on sharing and reuse, this release also simplifies test suite validation and extends the test engine's
+embedded processing capabilities with new options of working with timestamps, regular expressions and collection structures.
+
+**Bug**
+
+* [ITB-172] - Scriptlet parameter errors lead to inconsistent results
+* [ITB-173] - Scriptlet requires parameters and variables
+* [ITB-174] - Scriptlet outputs must match variables
+* [ITB-788] - Test suite upload with invalid ZIP archive may not report validation error
+* [ITB-820] - Unexpected error when validating a test suite with multiple test suite XML files
+* [ITB-837] - Unable to update a system's version number
+* [ITB-842] - Iteration steps cannot be reviewed in completed session display
+* [ITB-843] - Prevent user from attaching to contact form more files than allowed maximum
+* [ITB-861] - Error when user exports own conformance certificate
+* [ITB-867] - Call step passing wrong number of inputs to scriptlet is not blocked at test suite validation time
+* [ITB-872] - Legal notice headings styled differently when viewed from the welcome page or internally
+* [ITB-873] - Standalone XML file defining scriptlet cannot be validated against the GITB TDL XSD
+* [ITB-875] - Test diagram display may overlap output message for minimal test cases
+* [ITB-876] - Imports defined in scriptlets are not processed
+* [ITB-882] - The display of nested loop steps is not correctly updated during test execution
+
+**New Feature**
+
+* [ITB-780] - Archive test sessions after a specific time period has elapsed
+* [ITB-782] - Allow scriptlets to be shared across multiple test cases
+* [ITB-818] - Allow resources to be shared between test suite archives
+* [ITB-840] - Support utility functions for maps and lists
+* [ITB-869] - Support the import of test suites without test cases (i.e. shared resource packages)
+* [ITB-894] - Allow test cases to make custom regular expression manipulations
+
+**Improvement**
+
+* [ITB-175] - Allow scriptlets to not have outputs
+* [ITB-463] - Allow timestamp generation based on received dates and times
+* [ITB-668] - Updated embedded SchematronHandler to use latest validation libraries
+* [ITB-711] - Make the session identifier optional for GITB services
+* [ITB-781] - Upgrade core component dependencies
+* [ITB-800] - Return output from call step even upon failure
+* [ITB-807] - Mark default users following new installation as requiring a password change
+* [ITB-823] - When validating a test suite display information messages for the use of custom configuration properties (not warnings)
+* [ITB-825] - Reduce the number of warnings from TDL test suite validations
+* [ITB-836] - Allow editing a test suite's version number through the UI
+* [ITB-866] - Disable browser autocomplete for input fields
+* [ITB-887] - Order uploaded test suite validation reports based on severity
+* [ITB-888] - Allow imports with the same name from different scriptlets
+* [ITB-889] - Check for unique variable, parameter, import, input and output declarations in test cases
+* [ITB-893] - Allow the embedded SchematronValidator to be informed of the Schematron type to consider (pure or XSLT)
 
 Release 1.11.1 - 11/12/2020
 ---------------------------
