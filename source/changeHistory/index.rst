@@ -10,7 +10,7 @@ the following information is provided:
 
 The latest test bed release is **1.12.0**.
 
-Release 1.12.0 - 01/03/2021
+Release 1.12.0 - 03/03/2021
 ---------------------------
 
 This releases focuses on the test bed's test execution engine and the GITB Test Description Language to facilitate the development
