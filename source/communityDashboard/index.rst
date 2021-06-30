@@ -30,7 +30,7 @@ The **Administrators** section lists the test bed administrators in a table, wit
 .. figure:: ../screenshots/admin_community_test_bed_administrators.PNG
   :align: center
 
-Test bed administrators are listed in a table with one row per user displaying the user's **name**, **email** address and **status**.
+Test bed administrators are listed in a table with one row per user displaying the user's **name**, **email** address (or **username** if integrated with EU Login) and **status**.
 
 .. note::
   **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
@@ -79,8 +79,7 @@ When creating an administrator you will be presented with a form to enter the us
 In this form you are expected to provide the following information:
 
 * The administrator's **name** (required), used in feedback submissions to the test bed.
-* The **email** address (required), used to login. This is essentially a username formatted as an email address, and does not have to be a real functioning
-  address as no emails are ever sent to it.
+* The **username** (required), used to login.
 * The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
 
 To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
@@ -90,7 +89,7 @@ When editing a user you see a similar screen, this time prefilled with the user'
 .. figure:: ../screenshots/admin_community_test_bed_administrators_edit.PNG
   :align: center
 
-The information presented here is the user's **name**, **email**, **role**, and **status**, of which only the name is editable. To change the name
+The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
 edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
 for the test bed the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
 
