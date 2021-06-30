@@ -8,7 +8,66 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.12.0**.
+The latest test bed release is **1.13.0**.
+
+Release 1.13.0 - 01/07/2021
+---------------------------
+
+This release brings important internal updates to the test bed by upgrading its components to use the latest middleware
+and framework versions. In addition, it resolves several reported bugs and makes improvements both with respect to test
+execution but also the operation of on-premise test bed instances. Regarding the GITB Test Description Language, this
+release brings several new features and improvements that facilitate the development of multi-step test cases. Apart from
+simplifying their execution, the test cases' presentation is also enriched, allowing test developers to define test step
+grouping, display style and visibility, for a better structured and simplified presentation to users.
+
+**Bug**
+
+* [ITB-482] - Test case group tests executed but not displayed
+* [ITB-671] - Styling of WYSIWYG editors does not match exactly the final display
+* [ITB-900] - Tables displaying test sessions cannot be sorted
+* [ITB-901] - Unable to download test session report for archived sessions
+* [ITB-902] - Selected specifications not cleared when disabling search filters
+* [ITB-926] - When editing a trigger the already selected organisation and system do not appear as such
+* [ITB-929] - Importing a domain archive may not correctly match existing test suites
+* [ITB-938] - Test sessions fail to start when configuration is missing and actors have no configuration endpoints
+* [ITB-942] - Test session history filters for organisation users may contain duplicate test suites
+* [ITB-943] - Test history displays end time as default sort column for completed tests
+* [ITB-946] - Downloading a conformance statement parameter file fails if attempted immediately after uploading it
+* [ITB-947] - Conformance statement parameter editing allows empty values
+* [ITB-950] - Flow step description and documentation not displayed
+* [ITB-952] - Pending loop iteration steps do not appear as skipped when session stops
+* [ITB-956] - Test sessions may complete before notifying of final updates
+* [ITB-959] - Data import does not correctly update matching domain parameters of type "secret"
+* [ITB-965] - Prevent large custom titles for steps with sub-steps from breaking the display
+
+**New Feature**
+
+* [ITB-704] - Extend all group step types to define if they are presented as collapsed by default
+* [ITB-805] - Allow a test bed master encryption password to be replaced
+* [ITB-814] - Allow test steps to be set as hidden
+* [ITB-966] - Allow test step groups to be collapsed and expanded by the user
+* [ITB-969] - Include a "Find out more" link in the footer links
+
+**Improvement**
+
+* [ITB-64] - Optionally make a processing service a visible test step
+* [ITB-155] - Concatenate and minify web assets
+* [ITB-300] - Minify web libraries
+* [ITB-619] - Update Angular dependency
+* [ITB-777] - Make test session log output more user friendly
+* [ITB-806] - Add restrictions to passwords set using the password replace feature
+* [ITB-871] - For non-SSO Test Bed instances enforce password restrictions
+* [ITB-898] - Migrate SSO security configuration to latest version
+* [ITB-899] - Correct namespace mapping log message when triggering new test sessions
+* [ITB-906] - Display loop step iterations' overall status in iteration selection dropdown of test diagram
+* [ITB-908] - Add pending indicators for all button actions
+* [ITB-915] - Upgrade MySQL to version 8
+* [ITB-927] - Allow community administrators to delete all organisation administrators
+* [ITB-960] - Ensure custom parameter values (domain, organisation, system, statement) of type "secret" are encrypted at rest
+* [ITB-961] - Make test step descriptions optional
+* [ITB-964] - For a non-SSO Test Bed instance request and represent the user email addresses as usernames
+* [ITB-967] - Remove email formatting requirements from usernames for non-SSO Test Bed instances
+* [ITB-968] - Make version number a link to the release notes
 
 Release 1.12.0 - 03/03/2021
 ---------------------------

@@ -96,15 +96,13 @@ Logging in without EU Login
 In case EU Login is not enabled for your test bed you will be using username and password based accounts. The login screen
 in this case requires you to provide:
 
-* Your account's **email address**.
+* Your account's **username**.
 * Your account's **password**.
 
 .. figure:: ../screenshots/login.PNG
   :align: center
 
-Your account credentials are those configured during installation or provided to you by another test bed administrator. Note that the email address
-defined for the account is not necessarily an active address. It is rather a "functional" email address that
-is linked to the test bed. You are not expected to receive emails on this address.
+Your account credentials are those configured during installation or provided to you by another test bed administrator.
 
 On the login screen you also have the possibility to have the test bed keep your session open. To do this 
 simply check the **Remember me** checkbox below the login form. Once you have entered your credentials click
@@ -127,6 +125,11 @@ In the form that appears you are requested to:
 
 * Provide your **current password**.
 * Provide a **new password** which you will also need to confirm.
+
+The new password you provide must meet minimum expected complexity requirements. Specifically:
+
+* It must include at least one lowercase letter, uppercase letter, digit and symbol.
+* It must be at least 8 characters long.
 
 Once ready click on **Save** to change your password and access the test bed.
 
@@ -177,9 +180,13 @@ The information needed to complete this form is as follows:
   that will predefine your organisation's systems and conformance statements. This will not be displayed if no such
   templates are available.
 * **Name:** The name for your new organisation's initial administrator account.
-* **Email:** A username for the account formatted as an email. This is not necessarily an active address but rather a
-  "functional" email address that is linked to the test bed.
+* **Username:** A username for the account.
 * **Password:** The password for the new administrator account that needs to also be confirmed.
+
+The password you provide must meet minimum expected complexity requirements. Specifically:
+
+* It must include at least one lowercase letter, uppercase letter, digit and symbol.
+* It must be at least 8 characters long.
 
 The **Organisation details** section may also include one or more additional properties that the community's administrator requires
 for completion during registration. These properties may be simple text values, values to select from preset lists, secret values or files for you to upload, and may be
@@ -328,7 +335,7 @@ Doing so will present you with a form to provide your legacy account's credentia
 
 Complete this form by providing:
 
-* **Username:** The (email-formatted) username you have been using to log in.
+* **Username:** The username you have been using to log in.
 * **Password:** The password for your legacy account.
 
 Once you have provided this information click on **Complete** to validate your legacy credentials. If the validation succeeds
@@ -377,10 +384,11 @@ At the bottom of the screen is where you find the screen's **footer**. This disp
 .. figure:: ../screenshots/footer.PNG
   :align: center
 
-* A link to the current **user guide**. The section of the user guide displayed depends on the screen you are currently accessing.
+* A link to the **user guide**. The section of the user guide displayed depends on the screen you are currently accessing.
 * A link to **contact the support team** for problems, questions and feedback (see :ref:`contact_support`).
 * A link to view the test bed's **legal notice**.
-* The test bed's **version** number.
+* A link to **find out more** information on the test bed.
+* The test bed's **version** number which can also be clicked to view its release notes.
 
 .. _ISA² test bed instance: https://www.itb.ec.europa.eu/itb
 .. _EU Login user guide: https://www.itb.ec.europa.eu/docs/guides/latest/usingEULogin/

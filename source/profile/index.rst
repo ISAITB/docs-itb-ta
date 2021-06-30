@@ -80,11 +80,11 @@ You have three options from which to choose from, each with increasing weight:
   * **Deactivate current role:** This will disconnect your EU Login account from the current role and effectively deactivate it. You
     will be transferred to the :ref:`listing of your available roles<login__roles>` where you will no longer see the one you just removed.
     Note that this can once again be added to your account by :ref:`confirming again its assignment to you<login__roles__confirm>`.
-  * **Delete all other roles:** This deactivates but also deletes all roles other than your current test bed administrator role that are linked to 
+  * **Delete all other roles:** This deactivates but also deletes all roles other than your current test bed administrator role that are linked to
     your EU Login account (in all organisations or communities). You test bed administrator account cannot be deleted as this is irreversible.
 
 The delete option provides you the ability to better manage your own information in the test bed.
-Removing your information, specifically the email, user ID and name associated to your EU Login account can be achieved through the test bed's user interface. 
+Removing your information, specifically the email, user ID and name associated to your EU Login account can be achieved through the test bed's user interface.
 Importantly, deactivating or deleting user roles never impacts a user's test session history.
 
 .. note::
@@ -110,9 +110,9 @@ The popup information displays your name, current role, and two links:
 * **Logout:** To :ref:`log out from the test bed<logout__noeulogin>`.
 
 To manage your profile select the **Settings** link. The screen that is displayed presents you your
-profile information, including your **name**, **email** and **role**. In the side menu you are also
+profile information, including your **name**, **username** and **role**. In the side menu you are also
 presented links to :ref:`manage your profile<manage_your_profile__edit>` (**Profile**, the current page),
-:ref:`manage your organisation<manage_your_profile__view_organisation_details>` (**Organisation**) and
+:ref:`view your organisation<manage_your_profile__view_organisation_details>` (**Organisation**) and
 :ref:`reset your password<manage_your_profile__change_your_password>` (**Password**).
 
 .. figure:: ../screenshots/settings_ta.PNG
@@ -143,6 +143,11 @@ it twice (in the **New password** and **Confirm password** fields).
 .. figure:: ../screenshots/password.PNG
   :align: center
 
+The password you provide must meet minimum expected complexity requirements. Specifically:
+
+* It must include at least one lowercase letter, uppercase letter, digit and symbol.
+* It must be at least 8 characters long.
+
 When ready click on the **Save** button to complete your password update.
 
 .. _manage_your_profile__view_organisation_details:
@@ -157,7 +162,7 @@ To manage your organisation's information click the **Organisation** link from t
 the information relevant to your organisation, split in two sections:
 
 * **Organisation details:** The name (short and full) of your admin organisation.
-* **Members:** The test bed's administrators (including yourself). For each user the **name**, **email**, **role**
+* **Members:** The test bed's administrators (including yourself). For each user the **name**, **username** (or **email** if using EU Login), **role**
   and **status** are presented.
 
 .. figure:: ../screenshots/organisation_manage_testbed_admin.PNG

@@ -298,7 +298,8 @@ The **Community administrators** section displays the users that are capable of 
 .. figure:: ../screenshots/admin_community_administrators.PNG
   :align: center
 
-Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address and **status**.
+Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
+(or **username** if not integrated with EU Login) and **status**.
 
 .. note::
   **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
@@ -347,8 +348,7 @@ When creating an administrator you will be presented with a form to enter the us
 In this form you are expected to provide the following information:
 
 * The administrator's **name** (required), used in feedback submissions to the test bed.
-* The **email** address (required), used to login. This is essentially a username formatted as an email address, and does not have to be a real functioning
-  address as no emails are ever sent to it.
+* The **username** (required), used to login.
 * The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
 
 To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
@@ -358,7 +358,7 @@ When editing a user you see a similar screen, this time prefilled with the user'
 .. figure:: ../screenshots/admin_community_administrators_edit.PNG
   :align: center
 
-The information presented here is the user's **name**, **email**, **role**, and **status**, of which only the name is editable. To change the name
+The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
 edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
 for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
 
@@ -562,7 +562,7 @@ Management of the organisation's users is done through the **Users** section of 
 .. figure:: ../screenshots/admin_community_organisations_organisation_users.PNG
   :align: center
 
-This section lists the currently defined users in a table, with one row per user, displaying for each one his/her **name**, **email**, **role** and **status**.
+This section lists the currently defined users in a table, with one row per user, displaying for each one his/her **name**, **email** (or **username** if not integrated with EU Login), **role** and **status**.
 
 .. note::
   **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
@@ -614,8 +614,7 @@ When creating a user you will be presented with a form to enter the user's infor
 The resulting screen provides you with a form to enter the following information for the new user:
 
 * The user's **name** (required), used when contacting the support team.
-* The **email** address (required), used by the user to login. Note that this should be considered as a username formatted as an email, and does not
-  need to be a functioning address as no messages will be sent to it.
+* The **username** (required), used by the user to login.
 * The user's **role** (required), either "Administrator" or "User". Recall that the "User" role can execute and follow up on tests, whereas the "Administrator"
   role can additionally manage the organisation's test configuration (e.g. systems and conformance statements) and add other users.
 * The user's **password** and the password **confirmation**. The entered password is considered a "one-time" password that the user will need to change upon his/her next login.
@@ -627,7 +626,7 @@ When editing a user you see a similar screen, this time prefilled with the user'
 .. figure:: ../screenshots/admin_community_organisations_organisation_users_edit.PNG
   :align: center
 
-The information displayed is the user's **name**, **email**, **role**, **status** and **organisation**, of which only the **name** and **role** can
+The information displayed is the user's **name**, **email**, **username**, **status** and **organisation**, of which only the **name** and **role** can
 be edited. You may also check the **Set one-time password** option to provide a new password for your user (to be changed on his/her next login). Clicking 
 on **Update** saves your changes whereas clicking on **Back** discards them and returns you to the previous screen. The **Delete** 
 button will, following confirmation, delete the current user.
