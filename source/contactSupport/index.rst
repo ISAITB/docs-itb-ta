@@ -17,8 +17,8 @@ Clicking this link results in a popup where you can provide your message and con
 
 In this form you are asked to enter the following information:
 
-* A **contact email** in case your account's email address does not correspond to your preferred contact address. Your
-  account's email is nonetheless pre-filled as the default address.
+* A **contact email** as the address used to receive a response. If the test bed is integrated with EU Login this is pre-filled but you can
+  still change it to another preferred address.
 * The **feedback type** to specify the nature of the message. You can choose from a **technical issue**, **question on usage**, 
   **feature request** or **other**.
 * The **message** itself. This is provided as a rich text editor so that you can format it as you please.

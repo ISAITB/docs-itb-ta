@@ -115,7 +115,7 @@ The popup information displays your name, current role, and two links:
 * **Logout:** To :ref:`log out from the test bed<logout__noeulogin>`.
 
 To manage your profile select the **Settings** link. The screen that is displayed presents you your 
-profile information, including your **name**, **email** and **role**. In the side menu you are also
+profile information, including your **name**, **username** and **role**. In the side menu you are also
 presented links to :ref:`manage your profile<manage_your_profile__edit>` (**Profile**, the current page), 
 :ref:`view your organisation<manage_your_profile__view_organisation_details>` (**Organisation**) and 
 :ref:`reset your password<manage_your_profile__change_your_password>` (**Password**).
@@ -152,6 +152,11 @@ it twice (in the **New password** and **Confirm password** fields).
 .. figure:: ../screenshots/password.PNG
   :align: center
 
+The password you provide must meet minimum expected complexity requirements. Specifically:
+
+* It must include at least one lowercase letter, uppercase letter, digit and symbol.
+* It must be at least 8 characters long.
+
 When ready click on the **Save** button to complete your password update.
 
 .. _manage_your_profile__view_organisation_details:
@@ -164,7 +169,7 @@ the information relevant to your organisation, split in two sections:
 
 * **Organisation details:** The name (short and full) of your organisation.
 * **Members:** Your organisation's list of members (i.e. users). This includes yourself as well as any other 
-  users configured by administrators. For each user the **name**, **email** and **role** are presented.
+  users configured by administrators. For each user the **name**, **username** (or **email** if using EU Login) and **role** are presented.
 
 .. figure:: ../screenshots/organisation_manage_nonadmin.PNG
   :align: center
