@@ -8,7 +8,35 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.13.0**.
+The latest test bed release is **1.14.0**.
+
+Release 1.14.0 - 17/08/2021
+---------------------------
+
+This is a limited release that adds better support for handling user interactions as part of test sessions. Inputs can
+now be provided using various controls, whereas data displayed to users can also be downloaded or displayed in
+syntax-sensitive editors. In addition, this release resolves several user-reported bugs.
+
+**Bug**
+
+* [ITB-986] - Test case presentation may not present separator line between a flow step's threads
+* [ITB-987] - Custom select-based organisation property does not trigger checks for dependencies when updated
+* [ITB-988] - When EU Login is in use community administrators cannot add new organisation users
+* [ITB-989] - User interaction test session steps with dropdown inputs may not record selected values
+* [ITB-991] - Organisation admins in communities with organisation update restrictions should always be able to manage their organisation's users
+* [ITB-992] - Popup to remove a user's role (when EU Login is used) does not display tooltips
+* [ITB-993] - Unable to access the profile options on very low resolutions
+
+**New Feature**
+
+* [ITB-614] - Allow content editors presented to report on test execution to display content-specific highlighting
+
+**Improvement**
+
+* [ITB-645] - Support different types of text input fields in user interaction steps
+* [ITB-985] - Interact step instructions that are too large should be opened in an editor or downloaded
+* [ITB-990] - Enforce TLS 1.2 when connecting to a remote SMTP service over SSL
+
 
 Release 1.13.0 - 01/07/2021
 ---------------------------
