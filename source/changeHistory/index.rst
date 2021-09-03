@@ -8,7 +8,25 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.14.0**.
+The latest test bed release is **1.14.1**.
+
+Release 1.14.1 - 06/09/2021
+---------------------------
+
+This is a minor maintenance release that corrects bugs, most notable of which is a problem that prevented the reuse of imported
+template files in GITB TDL test cases. In addition, minor improvements are made to the display of validation step
+reporting output.
+
+**Bug**
+
+* [ITB-1000] - Provide error feedback when attempting to open binary content in an editor
+* [ITB-1001] - Imported template files cannot be reused with different placeholder values
+
+**Improvement**
+
+* [ITB-890] - Allow a verify step's details to be minimised upon display
+* [ITB-891] - Allow a test suite validation report's details, displayed upon upload, to be minimised
+* [ITB-1002] - Use buttons instead of links when viewing a step report's items
 
 Release 1.14.0 - 17/08/2021
 ---------------------------
