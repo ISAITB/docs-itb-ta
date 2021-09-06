@@ -320,9 +320,10 @@ of the error, warning and information message counts, as illustrated in the foll
   :scale: 50%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
-can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
-this is triggered by clicking the **Open in editor** link. Clicking to open this, displays its content which, in the case of validation steps, 
-is also highlighted for the recorded validation messages.
+can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor.
+These two latter options are available by clicking the **download** or **view** icons respectively at the right of each section. In case you choose to
+view the content in an editor, a popup is presented that displays the content which, in the case of validation steps, is also highlighted for the
+recorded validation messages.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure_code.PNG
   :align: center
@@ -332,12 +333,16 @@ The editor popup allows you to copy a specific part of the content or, by means 
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will  
 open the validated content and automatically focus on the selected error.
 
-An alternative to viewing the content in this way is to click the **Download as file** link which will download the content as a file. The test bed will determine
+An alternative to viewing the content in this way is to click the **download** button which will download the content as a file. The test bed will determine
 the most appropriate type for the content and name the downloaded file accordingly (if possible).
 
 .. note::
     **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
     always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
+
+The errors, warnings and information messages displayed are contained in a **details** section that also shows the overall counts per violation
+severity level. This summary title is also clickable, to allow the listed details to be collapsed or expanded if already collapsed. Collapsing the
+displayed details could be useful in case they are numerous, providing as such easier access to the popup's additional controls.
 
 The results of the test step can also be exported as a test step report (in PDF format). This is made available through the **Export** button that triggers the 
 generation and download of the step report. 
