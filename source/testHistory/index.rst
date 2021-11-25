@@ -210,7 +210,7 @@ These additional controls are provided as buttons as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
 * **View organisation** takes you to view the :ref:`details of the organisation<manage_your_profile__view_organisation_details>` linked to the test session (i.e. your own organisation).
-* **View system** takes you to view the :ref:`details of the system<manage_your_conformance_statements__view_system_information>` this test session relates to.
+* **View system** takes you to view the :ref:`details of the system<manage_your_systems__edit>` this test session relates to.
 * **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
 
 Clicking on the session row will once again collapse the display. Note that once one or more session
