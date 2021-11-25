@@ -25,7 +25,7 @@ displays:
 * The **Register in a public community** shortcut allowing to self-register for one of the test bed's communities (see :ref:`login__create_account`).
 * A privacy note with a link to view the test bed's legal notice.
 
-A more complete example can be found in the `ISA² test bed instance`_ where additional information and shortcuts are displayed:
+A more complete example can be found in the `DIGIT test bed instance`_ where additional information and shortcuts are displayed:
 
 .. figure:: ../screenshots/welcome_complete.PNG
   :align: center

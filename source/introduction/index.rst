@@ -20,7 +20,7 @@ otherwise stated.
 What is the test bed?
 ---------------------
 
-The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Action`_ of DIGIT ISA²,
+The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT D.2,
 to support the interoperability and conformance testing of projects that enable the development of cross-border public
 services. Its purpose is to facilitate such projects by providing project leaders with the means to define their project's testing strategy 
 that will be used by their participating organisations. The test services offered in this way may either be presented as a tool to help
@@ -36,7 +36,7 @@ At the core of the test bed is the **GITB test bed software**. This is a product
 the European Commission’s DG GROW to define the specifications and software needed to support a generic interoperability test bed service.
 
 .. _GITB project: http://www.cen.eu/work/areas/ict/ebusiness/pages/ws-gitb.aspx
-.. _Interoperability Test Bed Action: https://joinup.ec.europa.eu/solution/interoperability-test-bed/about
+.. _Interoperability Test Bed Team: https://joinup.ec.europa.eu/solution/interoperability-test-bed/about
 
 .. _introduction__how_is_it_maintained:
 
@@ -44,10 +44,10 @@ How is it maintained?
 ~~~~~~~~~~~~~~~~~~~~~
 
 Following the initial work from the CEN GITB workgroup, the maintenance and evolution of the GITB software and specifications has been taken over 
-by the European Commission, specifically the `Interoperability Test Bed Action`_ of DIGIT ISA². The Action foresees the 
+by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT D.2. DIGIT D.2 foresees the 
 evolutive maintenance of the GITB software and specifications based on the needs of the testing community and publishes regular releases.
 
-.. _Interoperability Test Bed Action: https://joinup.ec.europa.eu/solution/interoperability-test-bed/about
+.. _Interoperability Test Bed Team: https://joinup.ec.europa.eu/solution/interoperability-test-bed/about
 
 .. _introduction__glossary:
 

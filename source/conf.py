@@ -24,9 +24,9 @@ copyright = '2021, European Commission, DIGIT'
 author = 'European Commission, DIGIT'
 
 # The short X.Y version
-version = 'ITB version 1.14.1'
+version = 'ITB version 1.15.0'
 # The full version, including alpha/beta/rc tags
-release = 'ITB version 1.14.1'
+release = 'ITB version 1.15.0'
 
 html_show_sourcelink = False
 html_show_sphinx = False
@@ -134,7 +134,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'GITBuserguide.tex', 'ITB User Guide',
-     'DIGIT ISA', 'manual'),
+     'DIGIT D.2', 'manual'),
 ]
 
 

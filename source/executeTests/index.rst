@@ -165,7 +165,11 @@ defined within each test case.
 It may be interesting to note that when being presented with this screen, a test session has already been started in the 
 test bed. In case you are executing a complete test suite (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`), the information 
 presented to you corresponds to the setup of the session for the first test case. Once this completes, it could be that this screen reappears if any new configuration 
-values have been added or if any previously communicated ones have changed.
+values have been added or if any previously communicated ones have changed. For the currently active (or selected) test case, you are presented with:
+
+* The **test case name**.
+* The test **session identifier**. Hovering over this highlights it, at which point you can click to copy it to the clipboard. Doing so could be useful in case you 
+  would like to communicate the identifier or use it for subsequent :ref:`test session filtering<view_your_test_history>`.
 
 At this point you may also click the **Back** button from the bottom left corner to cancel the execution and return to the conformance statement detail page.
 
@@ -186,7 +190,8 @@ cog icon is now presented under the its **status** indicating that this test cas
 .. figure:: ../screenshots/test_execution_execute_single.PNG
   :align: center
 
-The **Execution** section displays the upcoming test case's steps in a way similar to a `sequence diagram`_. The elements included
+The **Execution** section includes the active test case's name and the session identifier, the latter allowing to be clicked to be copied to the clipboard.
+In addition, this section now also displays the upcoming test case's steps in a way similar to a `sequence diagram`_. The elements included
 in this diagram are:
 
 * A **lifeline per actor** defined in the test case. One of these will be marked as the "SUT" (the System Under Test), whereas the other

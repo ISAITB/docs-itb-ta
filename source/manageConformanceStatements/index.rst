@@ -27,8 +27,8 @@ conformance statements.
 This table presents for the selected system its list of conformance statements in terms
 of their **domain**, **specification** and **actor**. Simply put this set of information serves to uniquely 
 identify the specification role that your system aims to play, thus determining the test cases that it should
-execute. The presented **test results** also provide you an overview of the latest test results, showing you 
-how many configured tests your system has successfully passed up to this point and, for the ones not passed, their current status ("undefined" or "failed"). 
+execute. The **updated** timestamp shows the last time the status of the conformance statement was updated, whereas the presented **test results** provide an overview 
+of the latest results, showing how many configured tests your system has successfully passed up to this point and, for the ones not passed, their current status ("undefined" or "failed"). 
 Finally, the overall conformance **status** is also displayed per statement indicating its current result as undefined, failed or successful.
 
 From this table you can click any row to proceed to the conformance statement's details (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`).
@@ -66,9 +66,9 @@ The **Conformance statement details** section provides you the context of what y
 The **domain** details are presented on the top as the high-level description of the project you are testing for. The 
 **specification** information follows to define the specification you have chosen for your system to conform to
 (a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
-as part of this specification (a specification may have multiple actors). The **test results** present an overview of the testing
-progress for the conformance statement's test cases, whereas the **status** represents the statement's current progress. Below this section 
-you are presented with buttons for further actions as follows:
+as part of this specification (a specification may have multiple actors). The **updated** timestamp highlights the last time the 
+conformance statement's status was updated. The **test results** present an overview of the testing progress for the conformance statement's test cases, 
+whereas the **status** represents the statement's current progress. Below this section you are presented with buttons for further actions as follows:
 
 * The **Download conformance certificate** button to generate a conformance certificate for your system (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate`).
 * The **Download report** button to export your system's current conformance statement report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`).
@@ -124,6 +124,8 @@ information displayed for each test case is:
 
 * Its **name**, a short text to identify and refer to the test case.
 * Its **description**, providing the context you need to understand the purpose of the test case and plan for its execution.
+* The date and time when the test case status was last **updated** (i.e. when a test session was last executed).
+* The latest **session** that was executed for this test case. This is a button that will display the relevant session in the :ref:`test session history<view_your_test_history__test_steps>`.
 * Its latest **result** which can be either a success (green tick), failure (red cross) or undefined (grey bar) in case the test case has never been executed.
 * A **Play** button to start a new test session for this test case (see :ref:`execute_tests`).
 
