@@ -52,7 +52,8 @@ Sorting can be adapted by clicking on each column’s header to sort by it in as
 using an arrow icon next to the relevant column’s title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
-(see :ref:`view_your_test_history__search__export_csv`). Finally, each session’s row offers controls to:
+(see :ref:`view_your_test_history__search__export_csv`). The **Terminate all** button on the other hand allows you to terminate, upon confirmation, all active test
+sessions for the organisation. Finally, each session’s row offers controls to:
 
 * Forcibly **terminate** it, by clicking the cross icon on the relevant session’s row under the **Operation** column.
 * View its **test step details**, by clicking on the row itself (see :ref:`view_your_test_history__test_steps`).
