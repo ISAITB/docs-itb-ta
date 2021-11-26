@@ -199,7 +199,7 @@ Once another organisation is selected to copy from, you are also presented with 
   systems' conformance statements.
 
 If your community foresees additional organisation properties, and as long as you are not copying the properties from another organisation,
-you will also see a **Show properties** checkbox. Checking this you can manage the organisation's properties.
+you will also see an **Additional properties** section. Clicking this will expand it to allow you to manage the organisation's properties.
 
 .. figure:: ../screenshots/admin_community_organisations_create_properties.PNG
   :align: center
@@ -265,9 +265,9 @@ Once another organisation is selected to copy from, you are also presented with 
   systems' conformance statements.
 
 If your community foresees additional organisation properties, and as long as you are not copying the properties from another organisation,
-you will also see a **Show properties** checkbox. Checking this you can manage the organisation's properties.
+you will also see an **Additional properties** section. Clicking this expands the section allowing you to manage the organisation's properties.
 
-.. figure:: ../screenshots/admin_community_organisations_update_properties.PNG
+.. figure:: ../screenshots/admin_community_organisations_create_properties.PNG
   :align: center
 
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you, you will also see 
@@ -341,7 +341,7 @@ This section lists the currently defined users in a table, with one row per user
   a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
-To create a new user for the organisation click on the **Create user** button from the table's header.
+To create a new user for the organisation click on the **Create user** button from the section's header.
 Clicking on an existing row from the table allows you to edit the relevant user's information.
 
 The displayed screens and required information both when you edit or create a new user depends on whether or not the test bed
@@ -421,7 +421,7 @@ Community administrators are listed in a table with one row per user displaying 
   a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
-To create a new community administrator click on the **Create community administrator** button from the table's header.
+To create a new community administrator click on the **Create community administrator** button from the section's header.
 Clicking on an existing row from the table allows you to edit the relevant user's information.
 
 The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
