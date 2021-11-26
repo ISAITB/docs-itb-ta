@@ -60,7 +60,7 @@ Once another system is selected to copy from, you are also presented with additi
   conformance statements.
 
 If additional system properties are foreseen, and as long as you are not copying the properties from another system,
-you will also see a **Show properties** checkbox. Checking this you can manage your new system's properties.
+you will also see an **Additional properties** section. Clicking this expands the section so that you can manage the system's properties.
 
 .. figure:: ../screenshots/systems_create_properties.PNG
   :align: center
@@ -108,8 +108,8 @@ Once another system is selected to copy from, you are also presented with additi
 * **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
   conformance statements.
 
-If additional system properties are foreseen, and as long as you are not copying the properties from another system, you 
-will also see a **Show properties** checkbox. Checking this you can manage the system's properties.
+If additional system properties are foreseen, and as long as you are not copying the properties from another system, you
+will also see an **Additional properties** section. You can click this to expand and manage the system's properties.
 
 .. figure:: ../screenshots/systems_update_properties.PNG
   :align: center

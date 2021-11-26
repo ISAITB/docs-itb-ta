@@ -8,7 +8,91 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.14.1**.
+The latest test bed release is **1.15.0**.
+
+Release 1.15.0 - 29/11/2021
+---------------------------
+
+This release introduces multiple changes both to the test bed's user interface as well as the internal test engine. In the user
+interface several screens have been streamlined to better present information and provide shortcuts to consult test sessions,
+involved parties, conformance statements and detailed test log outputs. These updates are complemented by improvements allowing test 
+information to be extracted more easily, and further filtering options for conformance statements and organisations. In addition,
+important improvements have been made to test execution, enabling more efficient handling of multiple concurrent sessions and large 
+test data. With respect to the GITB Test Description Language, several new features have been added to make it simpler to define 
+frequently used steps and to further automated type conversions. In addition, new features such as test session logging and stylised
+messaging presentations allow for further customisation and management of test session output.
+
+**Bug**
+
+* [ITB-1009] - Date-based search filtering should ignore specific times
+* [ITB-1011] - Unable to bulk import a test suite where the test suite name does not match its identifier
+* [ITB-1013] - Changing an organisation, system or statement parameter type should remove existing values
+* [ITB-1026] - Test step PDF report generation fails when context is not defined
+* [ITB-1032] - Test diagram for TDL flow element may not correctly wrap child steps
+* [ITB-1033] - Use of embedded processing handlers may fail test suite validation
+* [ITB-1043] - Output message for test sessions completed with warnings displays as an error
+* [ITB-1044] - Test case imports using a variable defined during test execution fail validation
+* [ITB-1048] - Verify step fails for remote validators that don't define their expected inputs
+* [ITB-1051] - Call step input parameters should be passed by value, not by reference
+* [ITB-1052] - Log step fails when printing list or map variables
+* [ITB-1057] - TDL test suite validation does not report the offending steps for invalid expressions
+* [ITB-1059] - Past test session execution diagrams display actor names using their IDs
+
+**New Feature**
+
+* [ITB-756] - Support paging and filtering in the listing of a community's organisations
+* [ITB-760] - Allow search filtering for organisations in community details page
+* [ITB-761] - Provide shortcuts to detail pages from conformance dashboard entries
+* [ITB-776] - Display test session log output in session dashboard and test history screens
+* [ITB-785] - Allow filtering on the conformance dashboard based on the overall conformance result
+* [ITB-822] - Preview a test case's steps from test suite management screens
+* [ITB-918] - Simplified usage of process and call steps by optional use of attributes versus elements
+* [ITB-948] - Provide shortcuts to detail pages from session dashboard and test history entries
+* [ITB-951] - Allow test bed, community and organisation administrators to terminate all active sessions
+* [ITB-979] - Allow return values from test services to be forDisplay, forContext or both (default)
+* [ITB-1004] - Provide shortcut to view the latest session details for the test cases shown in the conformance dashboard
+* [ITB-1005] - Provide shortcut to view the latest session details for the test cases shown in the conformance details page
+* [ITB-1006] - Show the last conformance status update time per test case in the conformance dashboard
+* [ITB-1007] - Support sorting results on the conformance dashboard
+* [ITB-1008] - Allow filtering on the conformance dashboard based on the last updated time
+* [ITB-1029] - Allow a processing or call step to return its (single) output as a specific variable
+* [ITB-1034] - Support "copy to clipboard" functionality for displayed texts in test session step reports
+* [ITB-1036] - Support "copy to clipboard" functionality for test session information
+* [ITB-1045] - Allow a test case to define the level of its log output
+* [ITB-1047] - Support severity levels for the TDL log step
+* [ITB-1050] - Support different messaging arrow display styles in test execution diagram
+
+**Improvement**
+
+* [ITB-450] - Make binary configuration property handling more lightweight
+* [ITB-755] - Support paging in the presentation of the conformance dashboard
+* [ITB-757] - Simplify presentation of a community's details
+* [ITB-870] - For non-SSO Test Bed instances replace user email with username
+* [ITB-907] - Define all file uploads as multipart form submissions
+* [ITB-949] - Remove session log output from gitb-srv server log
+* [ITB-957] - In conformance overview screens show the date linked to the last overall conformance update
+* [ITB-974] - Reduce test suite validation warnings for missing domain parameters
+* [ITB-999] - Allow "select all" and "clear all" options for multiple selection search filters (per filter)
+* [ITB-1003] - Aggregate test cases in test suites for the conformance dashboard screen
+* [ITB-1012] - Use temporary test session storage to record large binary and text data
+* [ITB-1021] - Download data from test step reports only if requested
+* [ITB-1022] - Remove context data from test step PDF reports
+* [ITB-1023] - Make all button toolbars' alignment consistent
+* [ITB-1024] - Use tabs to display all child lists in detail pages
+* [ITB-1027] - Show table pagination controls only when multiple result pages exist
+* [ITB-1031] - Use test session ID for state management in messaging and processing services if no session ID is returned by the service
+* [ITB-1035] - Test diagram grouping display should not extend to unrelated actors
+* [ITB-1037] - In test execution diagram display test step description over actor lifeline
+* [ITB-1038] - Cache landing page upon login
+* [ITB-1039] - Mention relevant handler name in error messages produced by test suite validation
+* [ITB-1041] - Allow advanced styling for rich content (documentation, landing pages, error templates, legal notices)
+* [ITB-1042] - Allow the verify step's severity level to be dynamically defined
+* [ITB-1049] - Allow conversion from all variable types to single element lists
+* [ITB-1058] - Allow embedded XSD and Schematron validators to work with string and binary schema and Schematron inputs
+* [ITB-1064] - Queue updates in gitb-ui to test session status to favour scalability
+* [ITB-1066] - Do not produce warnings for missing variables referenced in a test case's output section
+* [ITB-1070] - Make the session identifier optional when processing services respond to beginTransaction calls
+* [ITB-1072] - Allow conversion from list and map variable types to strings
 
 Release 1.14.1 - 06/09/2021
 ---------------------------

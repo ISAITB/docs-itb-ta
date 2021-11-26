@@ -165,7 +165,11 @@ defined within each test case.
 It may be interesting to note that when being presented with this screen, a test session has already been started in the 
 test bed. In case you are executing a complete test suite (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`), the information 
 presented to you corresponds to the setup of the session for the first test case. Once this completes, it could be that this screen reappears if any new configuration 
-values have been added or if any previously communicated ones have changed.
+values have been added or if any previously communicated ones have changed. For the currently active (or selected) test case, you are presented with:
+
+* The **test case name**.
+* The test **session identifier**. Hovering over this highlights it, at which point you can click to copy it to the clipboard. Doing so could be useful in case you 
+  would like to communicate the identifier or use it for subsequent :ref:`test session filtering<view_your_test_history>`.
 
 At this point you may also click the **Back** button from the bottom left corner to cancel the execution and return to the conformance statement detail page.
 
@@ -186,7 +190,8 @@ cog icon is now presented under the its **status** indicating that this test cas
 .. figure:: ../screenshots/test_execution_execute_single.PNG
   :align: center
 
-The **Execution** section displays the upcoming test case's steps in a way similar to a `sequence diagram`_. The elements included
+The **Execution** section includes the active test case's name and the session identifier, the latter allowing to be clicked to be copied to the clipboard.
+In addition, this section now also displays the upcoming test case's steps in a way similar to a `sequence diagram`_. The elements included
 in this diagram are:
 
 * A **lifeline per actor** defined in the test case. One of these will be marked as the "SUT" (the System Under Test), whereas the other
@@ -333,8 +338,12 @@ The editor popup allows you to copy a specific part of the content or, by means 
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will  
 open the validated content and automatically focus on the selected error.
 
-An alternative to viewing the content in this way is to click the **download** button which will download the content as a file. The test bed will determine
-the most appropriate type for the content and name the downloaded file accordingly (if possible).
+An alternative to viewing the content in this way is to click the **Download** button which will download the content as a file. The test bed will determine
+the most appropriate type for the content and name the downloaded file accordingly (if possible). In the case of simple texts that are presented inline, you
+are not presented with the download and view buttons, but rather with a **Copy to clipboard** button that allows you to copy the presented value.
+
+.. figure:: ../screenshots/test_execution_execute_step_clipboard.PNG
+  :align: center
 
 .. note::
     **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless

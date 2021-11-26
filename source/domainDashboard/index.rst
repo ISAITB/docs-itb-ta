@@ -70,11 +70,11 @@ will discard pending changes and return you to the previous screen.
 Manage domain details
 ---------------------
 
-The domain detail screen is where you can edit a domain's properties. It is split in three sections:
+The domain detail screen is where you can edit a domain's properties. It is split in two sections:
 
 * The **Domain details** section, to view and edit the domain's information.
-* The **Specifications** section to manage the domain's specifications (see :ref:`domains__domain__specification_list`).
-* The **Parameters** section to manage configuration parameters used in test cases (see :ref:`domains__domain__parameter_list`).
+* Tabs for the information linked to the domain, notably the **Specifications** tab to :ref:`view manage the its specifications<domains__domain__specification_list>` and
+  the **Parameters** tab to :ref:`manage configuration parameters<domains__domain__parameter_list>` used in test cases.
 
 In the **Domain details** section you are presented with a form to view and edit the domain's information.
 
@@ -101,7 +101,7 @@ domain list screen (see :ref:`domains__domain_view`).
 Specification list
 ~~~~~~~~~~~~~~~~~~
 
-The **Specifications** section presents a table with the domain's configured specifications. These represent the elements of the actual specifications
+The **Specifications** tab presents a table with the domain's configured specifications. These represent the elements of the actual specifications
 supported by the test bed that you want to have organisations conform to (see :ref:`introduction__glossary__specification`).
 
 .. figure:: ../screenshots/admin_domains_domain_specifications.PNG
@@ -115,7 +115,8 @@ Each specification is presented in a separate row, in which the following inform
 * Whether or not the specification is **hidden** from organisation users.
 
 Clicking on a specification's row will take you to its detail page (see :ref:`domains__specification`). To create a new specification click the **Create specification**
-button from the table's header (see :ref:`domains__domain_create_specification`).
+button from the table's header (see :ref:`domains__domain_create_specification`). Clicking the **Upload test suite** button allows you to upload a new test suite for
+one or more specifications (see :ref:`domains__domain_deploy_test_suite`).
 
 .. _domains__domain_create_specification:
 
@@ -153,7 +154,7 @@ click the **Cancel** button.
 Deploy test suite to multiple specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case you have more than one specifications defined for the domain you will also see in the specifications' table header the
+In case you have more than one specifications defined for the domain you will also see in the specifications' tab the
 option to **Upload test suite**.
 
 .. figure:: ../screenshots/admin_domains_domain_upload_test_suite.PNG
@@ -499,7 +500,7 @@ Using the provided form you can edit the test suite's metadata, specifically:
 You may also view and edit here the test suite's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
 being to add extended rich documentation that describes the steps to follow and reference external resources. To display the existing
-documentation check the **Show documentation** option, which opens up a rich text editor.
+documentation check the **Documentation** header, which will expand to display a rich text editor.
 
 .. figure:: ../screenshots/admin_domains_test_suites_details_documentation.PNG
   :align: center
@@ -570,7 +571,7 @@ An editable form is presented here that displays the metadata for the test case,
 You may also view and edit here the test case's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
 being to add extended rich documentation that describes the steps to follow and reference external resources. To display the existing
-documentation check the **Show documentation** option, which opens up a rich text editor.
+documentation click **Documentation**, which will expand to display a rich text editor.
 
 .. figure:: ../screenshots/admin_domains_test_suites_details_documentation.PNG
   :align: center
@@ -579,6 +580,12 @@ If you choose to provide such documentation you may also click the **Preview doc
 presents a popup with the documentation, displaying it exactly as when viewed by your users.
 
 .. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
+  :align: center
+
+Beneath the test case details' form you are presented also with an additional panel to **preview the test case**. This displays the test execution
+diagram for the test case, as it will be presented to users, allowing you to visualise its steps.
+
+.. figure:: ../screenshots/admin_domains_test_suites_details_preview.PNG
   :align: center
 
 .. note::
