@@ -15,11 +15,15 @@ the **Community Management** link.
 .. figure:: ../screenshots/admin_community.PNG
   :align: center
 
-The screen is split in six sections:
+The screen is split in two sections:
 
 * The **Community details** section presenting to you the information for your community.
-* The **Community administrators** section allowing you to view and manage your administrators.
+* Tabs listing additional data linked to the community.
+
+The information grouped in the provided tabs include:
+
 * The **Organisations** section in which you can view and manage your organisations.
+* The **Administrators** section allowing you to view and manage your community administrators.
 * The **Landing pages** section listing the landing pages you can use for your organisations.
 * The **Legal notices** section listing the legal notices you can display for your organisations.
 * The **Error templates** section listing the error message templates used to display unexpected errors to your organisations.
@@ -35,7 +39,7 @@ The information you can edit in this form is:
 * Your community's **short** and **full name** (required). These are visible to the test bed administrator and in certain user reports.
 * Your community's **support email** address (optional) to receive contact form submissions.
 * Your preference on allowing **self-registration** for your community.
-* The **user permissions** you foresee for the community's members.
+* The **user permissions** you foresee for the community's members (initially collapsed).
 
 Regarding the **support email**, this is the address, typically a functional mailbox, where your community users' feedback is sent via 
 the test bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of 
@@ -100,7 +104,13 @@ are:
   **Organisation templates:** If you choose to enable self-registration for your community you may also find interesting the 
   possibility to :ref:`define preconfigured templates for organisations<community__create_organisation>`.
 
-Finally, the **user permissions** section allows you to customise the permissions available to the community's members. Through the provided options you can allow user to:
+Finally, the **user permissions** section allows you to customise the permissions available to the community's members. To display (or collapse) this section click
+on the section's header. Doing so will present the available permission options
+
+.. figure:: ../screenshots/admin_community_details_permissions.PNG
+  :align: center
+
+The available permission options are as follows:
 
 * **Download conformance certificates**. If not allowed, only community administrators may generate such certificates from the :ref:`conformance dashboard<monitor_conformance_status__statements__export_statement>` or a :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
 * **Create or delete systems**. Note that if this is not allowed, editing a system and its custom properties (if defined) will remain possible for organisation administrators.
@@ -125,98 +135,22 @@ In terms of additional features available here:
 * The **Edit custom member properties** button is addressed in section :ref:`community__properties`.
 * The **Edit labels** button is addressed in section :ref:`community__labels`.
 
-.. _community__administrators:
-
-Manage administrators
----------------------
-
-The **Community administrators** section displays the users, including yourself, that are capable of managing your community. 
-
-.. figure:: ../screenshots/admin_community_administrators.PNG
-  :align: center
-
-Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
-(or **username** if not integrated with EU Login) and **status**.
-
-.. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
-  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
-  displayed as **Active**.
-
-To create a new community administrator click on the **Create community administrator** button from the table's header.
-Clicking on an existing row from the table allows you to edit the relevant user's information.
-
-The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
-is integrated with EU Login.
-
-Case: EU Login
-~~~~~~~~~~~~~~
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_create_eulogin.PNG
-  :align: center
-
-You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to the list of community administrators 
-but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. 
-
-To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
-
-Editing an administrator's details displays her information as read-only.
-
-.. figure:: ../screenshots/admin_community_administrators_edit_eulogin.PNG
-  :align: center
-
-The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user 
-by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back** 
-will return you to the previous screen.
-
-Case: No EU Login
-~~~~~~~~~~~~~~~~~
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_create.PNG
-  :align: center
-
-In this form you are expected to provide the following information:
-
-* The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
-* The **username** (required), used to login.
-* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
-
-To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
-
-When editing a user you see a similar screen, this time prefilled with the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_edit.PNG
-  :align: center
-
-The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
-edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
-for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
-
-In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you 
-additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
-to change it at his/her next login.
-
 .. _community__organisations:
 
 Manage organisations
 --------------------
 
-The **Organisations** section presents to you the organisations that are defined as members of your community. These are displayed in a table with one
-row per organisation, displaying for each organisation its **short** and **full name**. For each organisation you also see whether or not this is defined as configuration
-template for self-registration in which case the name of the template is presented.
+The **Organisations** tab presents to you the organisations that are defined as members of your community. These are displayed in a table with one
+row per organisation, displaying for each organisation its **short** and **full name**. The table is paged and sorted by default based on the organisation's 
+short name, however the sorting can be adapted by clicking on the desired column's header for an ascending or descending sort. For each organisation you also
+see whether or not this is defined as **configuration template** for self-registration in which case the name of the template is presented.
 
 .. figure:: ../screenshots/admin_community_organisations.PNG
   :align: center
 
-Clicking on **Create organisation** allows you to add a new organisation (see :ref:`community__create_organisation`), whereas clicking on the row of an
-existing organisation allows you to edit its details (see :ref:`community__manage_organisation`).
+The displayed organisations can be filtered using the **search control** provided above the table. To apply filtering click the control, enter a text and then click
+on the search icon. This filtering will be applied in a case-insensitive manner on the organisation's details. Clicking on **Create organisation** allows you to add a
+new organisation (see :ref:`community__create_organisation`), whereas clicking on the row of an existing organisation allows you to edit its details (see :ref:`community__manage_organisation`).
 
 .. _community__create_organisation:
 
@@ -467,6 +401,84 @@ The information displayed is the user's **name**, **username**, **role**, **stat
 be edited. You may also check the **Set one-time password** option to provide a new password for your user (to be changed on his/her next login). Clicking 
 on **Update** saves your changes whereas clicking on **Back** discards them and returns you to the previous screen. The **Delete** 
 button will, following confirmation, delete the current user.
+
+.. _community__administrators:
+
+Manage administrators
+---------------------
+
+The **Community administrators** section displays the users, including yourself, that are capable of managing your community. 
+
+.. figure:: ../screenshots/admin_community_administrators.PNG
+  :align: center
+
+Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
+(or **username** if not integrated with EU Login) and **status**.
+
+.. note::
+  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
+  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  displayed as **Active**.
+
+To create a new community administrator click on the **Create community administrator** button from the table's header.
+Clicking on an existing row from the table allows you to edit the relevant user's information.
+
+The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
+is integrated with EU Login.
+
+Case: EU Login
+~~~~~~~~~~~~~~
+
+When creating an administrator you will be presented with a form to enter the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_create_eulogin.PNG
+  :align: center
+
+You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
+her EU Login account. Once you have created the user you will see that a new entry is added to the list of community administrators 
+but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
+updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. 
+
+To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
+
+Editing an administrator's details displays her information as read-only.
+
+.. figure:: ../screenshots/admin_community_administrators_edit_eulogin.PNG
+  :align: center
+
+The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user 
+by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back** 
+will return you to the previous screen.
+
+Case: No EU Login
+~~~~~~~~~~~~~~~~~
+
+When creating an administrator you will be presented with a form to enter the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_create.PNG
+  :align: center
+
+In this form you are expected to provide the following information:
+
+* The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
+* The **username** (required), used to login.
+* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
+
+To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
+
+When editing a user you see a similar screen, this time prefilled with the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_edit.PNG
+  :align: center
+
+The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
+edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
+for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
+
+In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you 
+additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
+to change it at his/her next login.
 
 .. _community__manage_landing_pages:
 
