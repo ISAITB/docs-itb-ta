@@ -70,6 +70,15 @@ of the panels is a table listing the test suite's test cases, displaying for eac
 Each row also presents an **export** file icon that can be clicked to generate the test case report for the presented, latest test session 
 (see :ref:`monitor_conformance_status__statements__export__test_case`).
 
+As part of the display of the conformance statement's details you are also provided with shortcuts to navigate to the statement's relevant data.
+These are provided as buttons at the bottom of the statement's display as follows:
+
+* **View organisation** takes you to the :ref:`details of the relevant organisation<community__manage_organisation>`.
+* **View system** takes you to the :ref:`details of the relevant system<manage_your_systems__edit>`.
+* **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` in question.
+* **View specification** takes you to the :ref:`specification<domains__specification>`.
+* **View actor** takes you to the specification's :ref:`actor<domains__actor>`.
+
 Expanded tables can be collapsed by clicking again on the expanded conformance statement's row. In addition, once one or more rows are expanded
 the conformance statement header also displays a **Collapse all** button to collapse all rows with a single click.
 
