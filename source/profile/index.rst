@@ -187,13 +187,13 @@ Edit your organisation's details
 
 Editing the details of your organisation is possible through the editable fields relevant to your organisation's
 **short** and **full names**. In addition, if your community administrator has defined additional properties for
-its organisations you will also see here a **Show properties** checkbox to toggle the display of your organisation's
+its organisations you will also see here an **Additional properties** section to toggle the display of your organisation's
 additional information.
 
 .. figure:: ../screenshots/organisation_manage_admin_properties.PNG
   :align: center
 
-If this is checked you will see a list of these additional properties along with their currently configured values.
+If this is expanded you will see a list of these additional properties along with their currently configured values.
 Such properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community
 administrator, will display a help tooltip to understand their meaning.
 

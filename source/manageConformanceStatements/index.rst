@@ -359,7 +359,7 @@ At any given time you can review the information of your selected system by clic
   :align: center
 
 In this screen you can see the **short** and **full name** of the system, its **description** and its **version** number. If your
-community administrator has foreseen additional properties for systems you will also see here the **Show properties** checkbox.
+community administrator has foreseen additional properties for systems you will also see here the **Additional properties** section.
 Clicking this will expand to also display the current system's additional information.
 
 .. figure:: ../screenshots/conformance_statements_systeminfo_properties.PNG
