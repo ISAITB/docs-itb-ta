@@ -25,7 +25,7 @@ displays:
 * The **Register in a public community** shortcut allowing to self-register for one of the test bed's communities (see :ref:`login__create_account`).
 * A privacy note with a link to view the test bed's legal notice.
 
-A more complete example can be found in the `ISA² test bed instance`_ where additional information and shortcuts are displayed:
+A more complete example can be found in the `DIGIT test bed instance`_ where additional information and shortcuts are displayed:
 
 .. figure:: ../screenshots/welcome_complete.PNG
   :align: center
@@ -384,6 +384,6 @@ At the bottom of the screen is where you find the screen's **footer**. This disp
 * A link to **find out more** information on the test bed.
 * The test bed's **version** number which can also be clicked to view its release notes.
 
-.. _ISA² test bed instance: https://www.itb.ec.europa.eu/itb
+.. _DIGIT test bed instance: https://www.itb.ec.europa.eu/itb
 .. _EU Login user guide: https://www.itb.ec.europa.eu/docs/guides/latest/usingEULogin/
 .. _step-by-step guide: https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin/
