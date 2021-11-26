@@ -21,7 +21,7 @@ The screen is split in two sections:
 * A set of **search filters**, initially disabled, to help you focus on specific organisations and specifications.
 * The list of **conformance statements** defined for your community's organisations.
 
-The currently defined conformance statements are presented in a table with one conformance statement per row. Recall that
+The currently defined conformance statements are presented in a paged table with one conformance statement per row. Recall that
 a conformance statement represents the link between an organisation's system and a specification's actor and defines 
 what the organisation needs to test for (see :ref:`introduction__glossary__conformance_statement`).
 
@@ -34,11 +34,14 @@ The information displayed for each conformance statement is:
 * The **system** that is the focus of the testing activities.
 * The **specification** that the system is selected to conform to.
 * The **actor** of the specification the system is expected to act as.
+* The date and time when the conformance statement's status was last  **updated**.
 * The statement's **test results** in terms of successfully passed tests versus the total, including for the ones not passed their current 
   status ("undefined" or "failed").
 * The statement's overall **status** (success, failure or undefined).
 
-Each row also provides on the right side an **export** function that can be triggered clicking on the provided document icon.
+The presented results are by default sorted based on the organisation's name, but clicking on each header label allows you to apply different sorting,
+based on the selected column, in either descending or ascending manner. The currently active sorting is indicated by an arrow next to the relevant
+header's label. Each row also provides on the right side an **export** function that can be triggered clicking on the provided document icon.
 Clicking this button produces the conformance statement report for the given statement (see :ref:`monitor_conformance_status__statements__export_statement`).
 
 View a statement's test results
@@ -50,11 +53,13 @@ row.
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded.PNG
   :align: center
 
-Clicking on the row expands to present a nested table with the relevant test cases for this statement. Each row corresponds to a test case and presents 
-its latest test result, executed by the organisation in question. Each row includes the following information:
+Clicking on the row expands to present a nested table with the relevant test suites and test cases for this statement. Each test suite is presented in a
+separate panel that indicates the overall result for its contained test cases. These test suite panel can also be clicked to collapse or expand. The content
+of the panels is a table listing the test suite's test cases, displaying for each the latest recorded test result. Each test case row includes the following:
 
-* The relevant **test suite**.
-* The **test case**.
+* The **test case name**.
+* The time when the status was last **updated**, in other words the time when a test session for this test case was last executed.
+* A view button to view the relevant **session** details. Clicking this will open up the test session in the :ref:`session dashboard<session_dashboard__completed>`.
 * The latest test **result**. Note that if the relevant test session resulted in a specific **output message**, the result icon can be clicked to display it.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded_output_message.PNG
@@ -230,6 +235,8 @@ The controls that can be used for filtering are:
 * The relevant **organisation** and **system**.
 * The relevant **domain** (only in case your community is not linked to a specific domain).
 * The relevant **specification** and **actor**.
+* The conformance **status**.
+* The **last update time** for the conformance statement's status.
 * Custom **organisation and system properties** defined for the community.
 
 Most filter controls are defined as selection choices. Multiple selected values across these controls are applied as follows:

@@ -45,7 +45,8 @@ can be adapted by clicking on each column's header to sort by it in ascending ma
 an arrow icon next to the relevant column's title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
-(see :ref:`monitor_test_sessions__export`). Finally, each session's row offers controls to:
+(see :ref:`monitor_test_sessions__export`). In addition, the **Terminate all** button can be used to terminate, upon confirmation, all currently active test 
+sessions in the community. Finally, each session's row offers controls to:
 
 * View its **test step details**, by clicking on the session's row (see :ref:`session_dashboard__steps`).
 * Forcibly **terminate**, it by clicking the cross icon on the relevant session's row under the **Operation** column.
@@ -151,8 +152,16 @@ a diagram that is identical to the one presented during the live test execution 
 Once one or more test session rows have been expanded the relevant table's header will also include a **Collapse all** button that can be clicked
 to collapse all expanded rows. 
 
-The diagram's header includes additional information on the test session, and specifically its **test suite**, **test case** and **session identifier**.
-In terms of provided controls within the diagram, a document icon is presented on steps that produced a report that can be clicked to review its details (see :ref:`view_your_test_history__test_steps__details`).
+The diagram's header includes additional information on the test session, and specifically its **test suite**, **test case** and **session identifier**, the latter 
+of which can be clicked to **copy it to the clipboard**. In addition, the diagram's header can be clicked to collapse or expand it, providing easier access to the controls 
+linked to this test session, specifically:
+
+* **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
+* **View organisation** takes you to view the :ref:`details of the organisation<community__manage_organisation>` linked to the test session.
+* **View system** takes you to view the :ref:`details of the system<manage_your_systems__edit>` this test session relates to.
+* **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
+
+In terms of provided controls within the diagram, a document icon is presented on steps that produced a report that can be clicked to review its details (see :ref:`view_your_test_history__test_steps__details`). 
 
 .. _session_dashboard__steps_details:
 
@@ -169,7 +178,7 @@ following example for a validation failure.
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
 can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
-this is triggered by clicking the **Open in editor** link. Clicking to open this, displays its content which, in the case of validation steps, 
+this is triggered by clicking the **View** button. Clicking to open this, displays its content which, in the case of validation steps, 
 is also highlighted for the recorded validation messages.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure_code.PNG
@@ -180,8 +189,12 @@ The editor popup allows you to copy a specific part of the content or, by means 
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will 
 open the validated content and automatically focus on the selected error.
 
-An alternative to viewing the content in this way is to click the **Download as file** link which will download the content as a file. The test bed will determine
-the most appropriate type for the content and name the downloaded file accordingly (if possible).
+An alternative to viewing the content in this way is to click the **Download** button which will download the content as a file. The test bed will determine
+the most appropriate type for the content and name the downloaded file accordingly (if possible). In the case of simple texts that are presented inline, you
+are not presented with the download and view buttons, but rather with a **Copy to clipboard** button that allows you to copy the presented value.
+
+.. figure:: ../screenshots/test_execution_execute_step_clipboard.PNG
+  :align: center
 
 .. note::
     **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
