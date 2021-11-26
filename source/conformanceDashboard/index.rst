@@ -41,7 +41,7 @@ The information displayed for each conformance statement is:
   status ("undefined" or "failed").
 * The statement's overall **status** (success, failure or undefined).
 
-The presented results are by default sorted based on the organisation's name, but clicking on each header label allows you to apply different sorting,
+The presented results are by default sorted based on the community's name, but clicking on each header label allows you to apply different sorting,
 based on the selected column, in either descending or ascending manner. The currently active sorting is indicated by an arrow next to the relevant
 header's label. Each row also provides on the right side an **export** function that can be triggered clicking on the provided document icon.
 Clicking this button produces the conformance statement report for the given statement (see :ref:`monitor_conformance_status__statements__export_statement`).
