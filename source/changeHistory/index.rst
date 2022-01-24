@@ -8,7 +8,25 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.15.0**.
+The latest test bed release is **1.15.1**.
+
+Release 1.15.1 - 24/01/2022
+---------------------------
+
+This is a minor maintenance release that corrects user-reported bugs, notably issues in the test engine due to test
+session concurrency, and handling of XML data. In addition, minor problems linked to the test bed's user interface
+were also addressed.
+
+**Bug**
+
+* [ITB-1085] - STEP_SUCCESS map may not be updated before consulted from next step
+* [ITB-1086] - Lookup of XML (object) variables from test session context may fail
+* [ITB-1087] - Test execution diagram displays titles of messages sent to the same lifeline with inconsistent justification
+* [ITB-1090] - Contact form submission during login process sends notification but returns to home page
+
+**Task**
+
+[ITB-1101] - Automate GitHub release process
 
 Release 1.15.0 - 29/11/2021
 ---------------------------
