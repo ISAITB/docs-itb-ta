@@ -518,9 +518,9 @@ An editable form is presented here that displays the metadata for the test case,
   during initial test suite upload.
 * Its **name** (required), that you can edit to provide a user-friendly short identifier for the test case. This is presented to users in the 
   :ref:`conformance statement details page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>` and during 
-  :ref:`test execution<execute_tests__step3>`.
+  :ref:`test execution<execute_tests_interactive>`.
 * Its **description** (optional), displayed alongside the test case's name in the :ref:`conformance statement details page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>` 
-  and during :ref:`test execution<execute_tests__step3>`. The purpose of this description is to summarise its purpose and steps.
+  and during :ref:`test execution<execute_tests_interactive>`. The purpose of this description is to summarise its purpose and steps.
 
 You may also view and edit here the test case's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose

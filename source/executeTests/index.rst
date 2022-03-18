@@ -586,9 +586,9 @@ You may use the reported session identifiers to check the sessions' :ref:`status
 start - request schema
 ++++++++++++++++++++++
 
-The payload of the **start** operation's request is defined by the following :download:`JSON Schema<resources/start_request.schema.json>`:
+The payload of the **start** operation's request is defined by the following :download:`JSON Schema<../executeTests/resources/start_request.schema.json>`:
 
-.. literalinclude:: resources/start_request.schema.json
+.. literalinclude:: ../executeTests/resources/start_request.schema.json
    :language: json
 
 .. _execute_tests_rest__start__response:
@@ -596,9 +596,9 @@ The payload of the **start** operation's request is defined by the following :do
 start - response schema
 +++++++++++++++++++++++
 
-The payload of the **start** operation's response is defined by the following :download:`JSON Schema<resources/start_response.schema.json>`:
+The payload of the **start** operation's response is defined by the following :download:`JSON Schema<../executeTests/resources/start_response.schema.json>`:
 
-.. literalinclude:: resources/start_response.schema.json
+.. literalinclude:: ../executeTests/resources/start_response.schema.json
    :language: json
 
 .. _execute_tests_rest__status:
@@ -684,9 +684,9 @@ The following example illustrates the status information returned for a single c
 status - request schema
 +++++++++++++++++++++++
 
-The payload of the **status** operation's request is defined by the following :download:`JSON Schema<resources/status_request.schema.json>`:
+The payload of the **status** operation's request is defined by the following :download:`JSON Schema<../executeTests/resources/status_request.schema.json>`:
 
-.. literalinclude:: resources/status_request.schema.json
+.. literalinclude:: ../executeTests/resources/status_request.schema.json
    :language: json
 
 .. _execute_tests_rest__status__response:
@@ -694,9 +694,9 @@ The payload of the **status** operation's request is defined by the following :d
 status - response schema
 ++++++++++++++++++++++++
 
-The payload of the **status** operation's response is defined by the following :download:`JSON Schema<resources/status_response.schema.json>`:
+The payload of the **status** operation's response is defined by the following :download:`JSON Schema<../executeTests/resources/status_response.schema.json>`:
 
-.. literalinclude:: resources/status_response.schema.json
+.. literalinclude:: ../executeTests/resources/status_response.schema.json
    :language: json
 
 .. _execute_tests_rest__stop:
@@ -729,9 +729,9 @@ empty body and is returned with a ``200`` (ok) status code.
 stop - request schema
 +++++++++++++++++++++
 
-The payload of the **stop** operation's request is defined by the following :download:`JSON Schema<resources/stop_request.schema.json>`:
+The payload of the **stop** operation's request is defined by the following :download:`JSON Schema<../executeTests/resources/stop_request.schema.json>`:
 
-.. literalinclude:: resources/stop_request.schema.json
+.. literalinclude:: ../executeTests/resources/stop_request.schema.json
    :language: json
 
 .. _DIGIT instance: https://www.itb.ec.europa.eu/itb/

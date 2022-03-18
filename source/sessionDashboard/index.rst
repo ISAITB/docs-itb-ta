@@ -144,7 +144,7 @@ View a test session's steps
 ---------------------------
 
 Each row from the lists of presented test sessions may also be clicked to view its detailed steps. Doing so expands the row to present
-a diagram that is identical to the one presented during the live test execution (see :ref:`execute_tests__step3`).
+a diagram that is identical to the one presented during the live test execution (see :ref:`execute_tests_interactive`).
 
 .. figure:: ../screenshots/test_history_test_result.PNG
   :align: center

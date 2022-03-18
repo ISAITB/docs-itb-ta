@@ -118,6 +118,8 @@ The available permission options are as follows:
 * **Update organisation data after testing**. If not allowed, an organisation that has performed at least one test session will not be allowed to edit its organisation information or its custom properties (if defined).
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
 * **Update conformance statement after testing.** If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
+* **Manage test sessions via REST API.** If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<execute_tests_rest>`.
+  This is option will be listed only if the test bed's administrator has enabled use of its REST API.
 
 In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
 the permissions for the entire community a better approach is to :ref:`delete the specific test sessions<session_dashboard__completed>` that should be ignored. This is possible for community
@@ -149,8 +151,13 @@ see whether or not this is defined as **configuration template** for self-regist
   :align: center
 
 The displayed organisations can be filtered using the **search control** provided above the table. To apply filtering click the control, enter a text and then click
-on the search icon. This filtering will be applied in a case-insensitive manner on the organisation's details. Clicking on **Create organisation** allows you to add a
-new organisation (see :ref:`community__create_organisation`), whereas clicking on the row of an existing organisation allows you to edit its details (see :ref:`community__manage_organisation`).
+on the search icon. This filtering will be applied in a case-insensitive manner on the organisation's details. To the right of this you have a dropdown list that 
+allows you to **sort based on creation order**. Such sorting is by default not applied, but you can choose to sort the organisations in an **earliest created first** 
+or **latest created first** manner to refresh the display. Note that while sorting by creation order, you will not be able to sort by clicking on the table's
+headers. To enable this again you will need to first disable creation order sorting.
+
+On the right side you are provided with the **Create organisation** button, allowing you to :ref:`add a new organisation<community__create_organisation>` to the community.
+Finally, each organisation's row can be clicked to proceed to :ref:`view and edit its details<community__manage_organisation>`.
 
 .. _community__create_organisation:
 
@@ -237,10 +244,12 @@ To manage an organisation's details click its corresponding row from the **Organ
 .. figure:: ../screenshots/admin_community_organisations.PNG
   :align: center
 
-Doing so presents you with the organisation details page that is split in two sections:
+Doing so presents you with the organisation details page that is split in the following sections:
 
 * The **Organisation details** section, displaying the organisation's information and allowing it to be edited.
-* The **Users** section, displaying the list of users for the organisation (see :ref:`community__manage_organisation__users`).
+* The **Users** tab, displaying the list of users for the organisation (see :ref:`community__manage_organisation__users`).
+* The **REST API keys** tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your test bed's administrator, allowing you to view and manage the
+  organisation's API keys (see :ref:`community__manage_organisation__api_keys`).
 
 The **Organisation details** section displays the organisation's information in an editable form in which you can modify its **short name**, **full name**,
 **landing page**, **legal notice** and **error template**. You can also adapt whether or not this organisation will be listed during
@@ -401,6 +410,45 @@ The information displayed is the user's **name**, **username**, **role**, **stat
 be edited. You may also check the **Set one-time password** option to provide a new password for your user (to be changed on his/her next login). Clicking 
 on **Update** saves your changes whereas clicking on **Back** discards them and returns you to the previous screen. The **Delete** 
 button will, following confirmation, delete the current user.
+
+.. _community__manage_organisation__api_keys:
+
+Manage the organisation's REST API keys
++++++++++++++++++++++++++++++++++++++++
+
+Management of the organisation's REST API keys is done through the **REST API keys** section of the organisation's detail screen. This is visible if your
+test bed's administrator has enabled the :ref:`test bed's REST API<execute_tests_rest>`.
+
+.. figure:: ../screenshots/admin_community_organisations_organisation_api_keys.png
+  :align: center
+
+From this table you can view, manage and copy the keys needed to identify the organisation, the system to be tested and the target conformance statement and
+tests. These API keys are listed in a table presenting per case the key to consider. For each key you may click the provided **copy** control to copy it to your
+clipboard.
+
+The keys listed include the following:
+
+* **Organisation:** The key to identify the organisation. The readonly name of the organisation is displayed alongside the key. You are also presented here
+  with **reset** and **delete** controls to replace or remove the key.
+* **System:** The key to identify a specific system. If the organisation defines multiple systems these are presented in a dropdown list and selecting one
+  will display its API key. The displayed key also provides **reset** and **delete** controls to replace or remove it.
+* **Specification:** The target specification does not itself define an API key but you need to select one to view the API keys of its related information
+  (actors, test suites and test cases). If the organisation has conformance statements for only a single specification this appears as preselected and readonly.
+* **Actor:** The key to identify the target specification's actor. The actor, along with a given system essentially constitute a specific
+  :ref:`conformance statement<manage_your_conformance_statements>`. The selected specification's actors are listed in a dropdown list unless there is a single one which would appear as a readonly preset selection.
+  Selecting an actor from the list displays its related API key.
+* **Test suite:** The key to identify a specific test suite. Selecting a given test suite displays its relevant API key.
+* **Test case:** The key to identify a specific test case within the selected test suite. Selecting a given test case displays its relevant API key.
+
+When removing or replacing the API key of the organisation or one of its systems, you will be prompted to confirm your action. If you
+proceed to do so any existing automation setups referring to the organisation would need to be updated accordingly given that the previous
+keys will no longer be valid.
+
+Details on how these REST API keys are used to launch and manage test sessions are provided in :ref:`execute_tests_rest`.
+
+.. note::
+
+  The displayed specifications, actors, test suites and test cases are limited to those linked to the organisation's :ref:`conformance statements<manage_your_conformance_statements>`.
 
 .. _community__administrators:
 
