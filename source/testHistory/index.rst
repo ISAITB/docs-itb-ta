@@ -15,7 +15,7 @@ You can then select the system you are interested in from the listing of your or
 .. figure:: ../screenshots/systems_admin.PNG
   :align: center
 
-Selecting a system from the list brings you to its list of conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
+Selecting a system from the list brings you to its :ref:`list of conformance statements<manage_your_conformance_statements__view_your_conformance_statements>`.
 From this point you will be able to click the **Test Sessions** link from the left side menu.
 
 .. figure:: ../screenshots/conformance_statements_admin.PNG
@@ -53,7 +53,7 @@ using an arrow icon next to the relevant column’s title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
 (see :ref:`view_your_test_history__search__export_csv`). The **Terminate all** button on the other hand allows you to terminate, upon confirmation, all active test
-sessions for the organisation. Finally, each session’s row offers controls to:
+sessions for the organisation. Clicking on the header itself, allows you to **collapse** or **expand** its display. Finally, each session’s row offers controls to:
 
 * Forcibly **terminate** it, by clicking the cross icon on the relevant session’s row under the **Operation** column.
 * View its **test step details**, by clicking on the row itself (see :ref:`view_your_test_history__test_steps`).
@@ -69,7 +69,7 @@ The history of all your completed test sessions is presented in the **Completed 
   :align: center
 
 Tests are presented in a paged table, offering controls to go to the **first**, **previous**, **next** and **last** pages as applicable, and are sorted based on their
-**start time** in a descending order (i.e. showing the latest tests at the top). Custom sorting can also be made by clicking the title of each column;
+**end time** in a descending order (i.e. showing the latest tests at the top). Custom sorting can also be made by clicking the title of each column;
 clicking a column header for the first time will sort by it in ascending manner and clicking it again will switch to descending. The active sort
 column and type are indicated using an arrow next to the relevant column header.
 
@@ -81,7 +81,8 @@ Test sessions are displayed one per table row, with each row including the follo
 * The test **result**.
 
 Each row provides controls to **export** the relevant test case report and to view the test's steps. In addition, you can use the
-overall **Export CSV** button to extract a CSV export of the currently displayed sessions (see :ref:`view_your_test_history__search__export_csv`).
+overall **Export CSV** button from the table's header to extract a CSV export of the currently displayed sessions (see :ref:`view_your_test_history__search__export_csv`).
+In addition, the header itself can also be clicked to **collapse** or **expand** its display.
 
 .. note::
     **Obsolete test sessions:** One or more test sessions may be rendered obsolete in case of a significant change in the test setup
@@ -99,7 +100,6 @@ as **Disabled**. Clicking on this sets it to **Enabled** and displays the filter
 
 .. figure:: ../screenshots/test_history_filters.PNG
   :align: center
-  :scale: 50%
 
 The available filters are:
 
@@ -196,7 +196,7 @@ View a test session's steps
 
 Each row from the list of presented test sessions, both active and completed, may also be clicked to view its detailed steps. Doing so expands the
 row to present the test session's steps in a manner similar to the live test execution diagram displayed while the test session is
-active (see :ref:`execute_tests__step3`).
+active (see :ref:`execute_tests_interactive_execution`).
 
 .. figure:: ../screenshots/test_history_test_result.PNG
   :align: center
@@ -205,14 +205,19 @@ In terms of provided controls, a document icon is presented on steps that produc
 its details (see :ref:`view_your_test_history__test_steps__details`). In addition, the diagram's header presents the session's **test suite**,
 **test case** and **session identifier**. The session identifier may also be clicked to copy it to the clipboard, which could be useful if you would
 want to communicate it to others or to use it for search filtering. Furthermore, clicking elsewhere on the header of the diagram display will
-collapse (or expand) the diagram, which could be useful if you want to access further controls linked to the session.
+collapse (or expand) the diagram, which could be useful if you want to quickly view other information on the screen.
 
-These additional controls are provided as buttons as follows:
+Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
 * **View organisation** takes you to view the :ref:`details of the organisation<community__manage_organisation>` linked to the test session.
 * **View system** takes you to view the :ref:`details of the system<manage_your_systems__edit>` this test session relates to.
 * **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
+
+In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
+specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant
+test session and reflect changes on its diagram. Note that it is possible that upon refresh, the test session has in the meanwhile completed,
+in which case a relevant information popup will inform you accordingly.
 
 Clicking on the session row will once again collapse the display. Note that once one or more session
 details are expanded the table's header will display a **Collapse all** button that can be clicked to collapse all details.

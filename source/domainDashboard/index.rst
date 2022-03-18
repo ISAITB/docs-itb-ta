@@ -564,9 +564,9 @@ An editable form is presented here that displays the metadata for the test case,
   during initial test suite upload.
 * Its **name** (required), that you can edit to provide a user-friendly short identifier for the test case. This is presented to users in the
   :ref:`conformance statement details page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>` and during
-  :ref:`test execution<execute_tests__step3>`.
+  :ref:`test execution<execute_tests_interactive>`.
 * Its **description** (optional), displayed alongside the test case's name in the :ref:`conformance statement details page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`
-  and during :ref:`test execution<execute_tests__step3>`. The purpose of this description is to summarise its purpose and steps.
+  and during :ref:`test execution<execute_tests_interactive>`. The purpose of this description is to summarise its purpose and steps.
 
 You may also view and edit here the test case's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
@@ -630,6 +630,8 @@ The following information is presented in corresponding form controls:
   new conformance statements.
 * Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
+* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<execute_tests_rest>` (if the REST API is enabled).
+  The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the actor and all related information. The **Back** button does not make any changes but takes you back to the

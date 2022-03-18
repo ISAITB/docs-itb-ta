@@ -1,0 +1,40 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/start_request",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the tests' start operation request payload",
+  "type": "object",
+  "properties": {
+    "system": { "type": "string" },
+    "actor": { "type": "string" },
+    "forceSequentialExecution": { "type": "boolean" },
+    "testSuite": { "type": "array", "items": { "type": "string" } },
+    "testCase": { "type": "array", "items": { "type": "string" } },
+    "inputMapping": { "type": "array", "items": { "$ref": "#/definitions/input" } }
+  },
+  "required": [ "system", "actor" ],
+  "additionalProperties": false,
+  "definitions": {
+    "input": {
+      "type": "object",
+      "properties": {
+        "testSuite": { "type": "array", "items": { "type": "string" } },
+        "testCase": { "type": "array", "items": { "type": "string" } },
+        "input": { "$ref": "#/definitions/anyContent" }
+      },
+      "required": [ "input" ],
+      "additionalProperties": false
+    },
+    "anyContent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "embeddingMethod": { "type": "string", "enum": ["STRING", "BASE64", "URI"] },
+        "value": { "type": "string" },
+        "type": { "type": "string", "enum": ["string", "number", "boolean", "binary", "object", "schema", "map", "list"] },
+        "encoding": { "type": "string" },
+        "item": { "type": "array", "items": { "$ref": "#/definitions/anyContent" } }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -159,11 +159,13 @@ Manage your organisation's details
     **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation used for testing purposes.
 
 To manage your organisation's information click the **Organisation** link from the side menu. This shows you
-the information relevant to your organisation, split in two sections:
+the information relevant to your organisation, split in the following sections:
 
 * **Organisation details:** The name (short and full) of your admin organisation.
-* **Members:** The test bed's administrators (including yourself). For each user the **name**, **username** (or **email** if using EU Login), **role**
+* **Members:** A tab listing the test bed's administrators (including yourself). For each user the **name**, **username** (or **email** if using EU Login), **role**
   and **status** are presented.
+* **REST API keys:** A tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your test bed's administrator, allowing you to view and manage the
+  keys you need to use it.
 
 .. figure:: ../screenshots/organisation_manage_testbed_admin.PNG
   :align: center
@@ -206,3 +208,42 @@ As an administrator you can view and edit these properties, depending on their t
   information but as long as required properties are missing you will not be able to launch tests.
 
 Update any of the existing values and click on **Save changes** to persist your changes.
+
+.. _manage_your_profile__view_organisation_details__rest:
+
+Manage your organisation's REST API keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Selecting the **REST API keys** tab (if available) presents you the API keys to :ref:`launch and manage test sessions via REST API<execute_tests_rest>`. This tab
+may be missing if the test bed's REST API is not enabled.
+
+.. figure:: ../screenshots/organisation_manage__rest_admin.PNG
+  :align: center
+
+From this table you can view, manage and copy the keys you need to identify your organisation, the system to be tested and the target conformance statement and
+tests. These API keys are listed in a table presenting per case the key to consider. For each key you may click the provided **copy** control to copy it to your
+clipboard.
+
+The keys listed include the following:
+
+* **Organisation:** The key to identify your organisation. The readonly name of the organisation is displayed alongside the key. You are also presented here
+  with **reset** and **delete** controls to replace or remove the key.
+* **System:** The key to identify a specific system. If your organisation defines multiple systems these are presented in a dropdown list. Selecting one
+  will display its API key. The displayed key also provides **reset** and **delete** controls to replace or remove it.
+* **Specification:** The target specification does not itself define an API key but you need to select one to view the API keys of its related information
+  (actors, test suites and test cases). If you have conformance statements for only a single specification this appears as preselected and readonly.
+* **Actor:** The key to identify the target specification's actor. The actor, along with your selected system essentially constitute your target
+  :ref:`conformance statement<manage_your_conformance_statements>`. The selected specification's actors are listed in a dropdown list unless there is a single one which would appear as a readonly preset selection.
+  Selecting an actor from the list displays its related API key.
+* **Test suite:** The key to identify a specific test suite. Selecting a given test suite displays its relevant API key.
+* **Test case:** The key to identify a specific test case within the selected test suite. Selecting a given test case displays its relevant API key.
+
+When removing or replacing the API key of your organisation or one of its systems, you will be prompted to confirm it. If you
+proceed to do so any existing automation setups you may have would need to be updated accordingly given that the previous
+keys will no longer be valid.
+
+Details on how these REST API keys are used to launch and manage test sessions are provided in :ref:`execute_tests_rest`.
+
+.. note::
+
+  The displayed specifications, actors, test suites and test cases are limited to those linked to your already configured :ref:`conformance statements<manage_your_conformance_statements>`.
