@@ -153,15 +153,23 @@ Once one or more test session rows have been expanded the relevant table's heade
 to collapse all expanded rows. 
 
 The diagram's header includes additional information on the test session, and specifically its **test suite**, **test case** and **session identifier**, the latter 
-of which can be clicked to **copy it to the clipboard**. In addition, the diagram's header can be clicked to collapse or expand it, providing easier access to the controls 
-linked to this test session, specifically:
+of which can be clicked to **copy it to the clipboard**. Furthermore, clicking elsewhere on the header of the diagram display will
+collapse (or expand) the diagram, which could be useful if you want to quickly view other information on the screen.
+
+Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
 * **View organisation** takes you to view the :ref:`details of the organisation<community__manage_organisation>` linked to the test session.
 * **View system** takes you to view the :ref:`details of the system<manage_your_systems__edit>` this test session relates to.
 * **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
 
-In terms of provided controls within the diagram, a document icon is presented on steps that produced a report that can be clicked to review its details (see :ref:`view_your_test_history__test_steps__details`). 
+In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
+specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant
+test session and reflect changes on its diagram. Note that it is possible that upon refresh, the test session has in the meanwhile completed,
+in which case a relevant information popup will inform you accordingly.
+
+Clicking on the session row will once again collapse the display. Note that once one or more session
+details are expanded the table's header will display a **Collapse all** button that can be clicked to collapse all details.
 
 .. _session_dashboard__steps_details:
 
