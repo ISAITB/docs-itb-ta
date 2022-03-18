@@ -1,0 +1,26 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/status_response",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the tests' status operation response payload",
+  "type": "object",
+  "properties": {
+    "sessions": { "type": "array", "items": { "$ref": "#/definitions/sessionStatus" } }
+  },
+  "required": [ "sessions" ],
+  "additionalProperties": false,
+  "definitions": {
+    "sessionStatus": {
+      "type": "object",
+      "properties": {
+        "session": { "type": "string" }, 
+        "result": { "type": "string", "enum": [ "SUCCESS", "FAILURE", "UNDEFINED" ] },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "message": { "type": "string" },
+        "logs": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": [ "session", "result", "startTime" ],
+      "additionalProperties": false
+    }
+  }
+}

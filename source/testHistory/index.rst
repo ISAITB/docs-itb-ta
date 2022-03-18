@@ -16,8 +16,8 @@ You can then select the system you are interested in from the listing of your or
   :align: center
 
 Note that this screen is skipped in case your organisation defines only a single system. The resulting screen, depending on whether the system defines
-one or more conformance statements, may be the conformance statement detail screen (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`) 
-or the conformance statement list (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`). Regardless of this, once a system 
+one or more conformance statements, may be the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>` 
+or the :ref:`conformance statement list<manage_your_conformance_statements__view_your_conformance_statements>`. Regardless of this, once a system 
 is selected you will be able to click the **Test Sessions** link from the left side menu.
 
 .. figure:: ../screenshots/conformance_statements_nonadmin.PNG
@@ -54,7 +54,8 @@ Sorting can be adapted by clicking on each column’s header to sort by it in as
 using an arrow icon next to the relevant column’s title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header 
-(see :ref:`view_your_test_history__search__export_csv`). Finally, each session’s row offers controls to:
+(see :ref:`view_your_test_history__search__export_csv`). In addition, the header itself can also be clicked to **collapse** or **expand** its display. Finally, each session’s row 
+offers controls to:
 
 * Forcibly **terminate** it, by clicking the cross icon on the relevant session’s row under the **Operation** column.
 * View its **test step details**, by clicking on the row itself (see :ref:`view_your_test_history__test_steps`).
@@ -82,7 +83,8 @@ Test sessions are displayed one per table row, with each row including the follo
 * The test **result**.
 
 Each row provides controls to **export** the relevant test case report and to view the test's steps. In addition, you can use the 
-overall **Export CSV** button to extract a CSV export of the currently displayed sessions (see :ref:`view_your_test_history__search__export_csv`).
+overall **Export CSV** button from the table's header to extract a CSV export of the currently displayed sessions (see :ref:`view_your_test_history__search__export_csv`).
+In addition, the header itself can also be clicked to **collapse** or **expand** its display.
 
 .. note::
     **Obsolete test sessions:** One or more test sessions may be rendered obsolete in case of a significant change in the test setup
@@ -100,7 +102,6 @@ as **Disabled**. Clicking on this sets it to **Enabled** and displays the filter
 
 .. figure:: ../screenshots/test_history_filters.PNG
   :align: center
-  :scale: 50%
 
 The available filters are:
 
@@ -184,7 +185,7 @@ View a test session's steps
 
 Each row from the list of presented test sessions, both active and completed, may also be clicked to view its detailed steps. Doing so expands the
 row to present the test session's steps in a manner similar to the live test execution diagram displayed while the test session is
-active (see :ref:`execute_tests__step3`).
+active (see :ref:`execute_tests_interactive_execution`).
 
 .. figure:: ../screenshots/test_history_test_result.PNG
   :align: center
@@ -193,9 +194,9 @@ In terms of provided controls, a document icon is presented on steps that produc
 its details (see :ref:`view_your_test_history__test_steps__details`). In addition, the diagram's header presents the session's **test suite**,
 **test case** and **session identifier**. The session identifier may also be clicked to copy it to the clipboard, which could be useful if you would
 want to communicate it to others or to use it for search filtering. Furthermore, clicking elsewhere on the header of the diagram display will
-collapse (or expand) the diagram, which could be useful if you want to access further controls linked to the session.
+collapse (or expand) the diagram, which could be useful if you want to quickly view other information on the screen.
 
-These additional controls are provided as buttons as follows:
+Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
 * **View organisation** takes you to view the :ref:`details of the organisation<manage_your_profile__view_organisation_details>` linked to the test session (i.e. your own organisation).
