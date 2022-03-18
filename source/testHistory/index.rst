@@ -69,7 +69,7 @@ The history of all your completed test sessions is presented in the **Completed 
   :align: center
 
 Tests are presented in a paged table, offering controls to go to the **first**, **previous**, **next** and **last** pages as applicable, and are sorted based on their
-**start time** in a descending order (i.e. showing the latest tests at the top). Custom sorting can also be made by clicking the title of each column;
+**end time** in a descending order (i.e. showing the latest tests at the top). Custom sorting can also be made by clicking the title of each column;
 clicking a column header for the first time will sort by it in ascending manner and clicking it again will switch to descending. The active sort
 column and type are indicated using an arrow next to the relevant column header.
 
