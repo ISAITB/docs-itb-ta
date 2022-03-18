@@ -165,11 +165,13 @@ Manage your organisation's details
 ----------------------------------
 
 To manage your organisation's information click the **Organisation** link from the side menu. This shows you
-the information relevant to your organisation, split in two sections:
+the information relevant to your organisation, split in the following sections:
 
 * **Organisation details:** The name (short and full) of your organisation.
-* **Members:** Your organisation's list of members (i.e. users). This includes yourself as well as any other 
+* **Members:** A tab listing your organisation's members (i.e. users). This includes yourself as well as any other
   users configured by you or your community administrator. For each user the **name**, **username** (or **email** if using EU Login), **role** and **status** are presented.
+* **REST API keys:** A tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your administrator, allowing you to view and manage the
+  keys you need to use it.
 
 .. figure:: ../screenshots/organisation_manage_admin.PNG
   :align: center
@@ -213,57 +215,39 @@ Certain properties may actually be non-editable. Such properties can only be man
 
 Update any of the existing values and click on **Save changes** to persist your changes.
 
-.. _manage_your_profile__add_member:
+.. _manage_your_profile__view_organisation_details__rest:
 
-Add a member to your organisation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Manage your organisation's REST API keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As organisation administrator you can also add new non-administrator users to your organisation (see :ref:`introduction__glossary__organisation`).
-These users can start test sessions and view your organisation's testing history but cannot add other users or change
-your organisation's configuration.
+Selecting the **REST API keys** tab (if available) presents you the API keys to :ref:`launch and manage test sessions via REST API<execute_tests_rest>`. This tab
+may be missing if use of this REST API is not enabled by your administrator.
 
-Adding a new member is done by clicking on the **Add member** button and completing the information in the displayed popup. The
-information you need to provide depends on whether your test bed uses EU Login for its authentication.
-
-Case: EU Login
-++++++++++++++
-
-In case EU Login is used the following popup is displayed.
-
-.. figure:: ../screenshots/organisation_manage_add_member_eulogin.PNG
+.. figure:: ../screenshots/organisation_manage__rest_admin.PNG
   :align: center
-  :scale: 50%
 
-You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to your organisation's
-members but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
+From this table you can view, manage and copy the keys you need to identify your organisation, the system to be tested and the target conformance statement and
+tests. These API keys are listed in a table presenting per case the key to consider. For each key you may click the provided **copy** control to copy it to your
+clipboard. The keys listed include the following:
 
-Case: no EU Login
-+++++++++++++++++
+* **Organisation:** The key to identify your organisation. The readonly name of the organisation is displayed alongside the key. You are also presented here
+  with **reset** and **delete** controls to replace or remove the it.
+* **System:** The key to identify a specific system. If your organisation defines multiple systems these are presented in a dropdown list. Selecting one
+  will display its API key. The displayed key also provides **reset** and **delete** controls to replace or remove it.
+* **Specification:** The target specification does not itself define an API key but you need to select one to view the API keys of its related information
+  (actors, test suites and test cases). If you have conformance statements for only a single specification this appears as preselected and readonly.
+* **Actor:** The key to identify the target specification's actor. The actor, along with your selected system essentially constitute your target
+  :ref:`conformance statement<manage_your_conformance_statements>`. The selected specification's actors are listed in a dropdown list unless there is a single one which would appear as a readonly preset selection.
+  Selecting an actor from the list displays its related API key.
+* **Test suite:** The key to identify a specific test suite. Selecting a given test suite displays its relevant API key.
+* **Test case:** The key to identify a specific test case within the selected test suite. Selecting a given test case displays its relevant API key.
 
-In case EU Login is not used the following popup is displayed.
+When removing or replacing the API key of your organisation or one of its systems, you will be prompted to confirm it. If you
+proceed to do so any existing automation setups you may have would need to be updated accordingly given that the previous
+keys will no longer be valid.
 
-.. figure:: ../screenshots/organisation_manage_add_member.PNG
-  :align: center
-  :scale: 50%
+Details on how these REST API keys are used to launch and manage test sessions are provided in :ref:`execute_tests_rest`.
 
-The information requested is:
+.. note::
 
-* The user's **name**.
-* The **username** that the user will use to login.
-* The user's **password**. This is a "one-time password" meaning that the user will need to change it upon his/her first login.
-
-.. _manage_your_profile__remove_member:
-
-Remove a member from your organisation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Removing an organisation member is possible through the **Members** table.
-
-.. figure:: ../screenshots/organisation_manage_members.PNG
-  :align: center
-  :scale: 50%
-
-Each displayed row except the one corresponding to yourself, displays a delete button under the **Operation** column.
-To delete a given member click this button and confirm the subsequent prompt.
+  The displayed specifications, actors, test suites and test cases are limited to those linked to your already configured :ref:`conformance statements<manage_your_conformance_statements>`.

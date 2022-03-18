@@ -1,0 +1,12 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/status_request",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the tests' status operation request payload",
+  "type": "object",
+  "properties": {
+    "session": { "type": "array", "items": { "type": "string" } },
+    "withLogs": { "type": "boolean" }
+  },
+  "required": [ "session" ],
+  "additionalProperties": false
+}
