@@ -8,7 +8,89 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.15.1**.
+The latest test bed release is **1.16.0**.
+
+Release 1.16.0 - 18/03/2022
+---------------------------
+
+This release introduces numerous changes for the test bed's user interface as well as the internal test engine. The key feature of this
+release is the test bed's new machine-to-machine API that allows test sessions to be launched and managed via REST calls. The execution approach 
+of test sessions is also extended to allow parallel or sequential test execution, as well as a redesigned test execution display that offers 
+execution options and simplified monitoring when running large numbers of tests. Monitoring of active test sessions is also extended to allow easier 
+following of updates and an enhanced session log experience by automatically updating log entries, allowing log tailing, filtering of log levels, highlighting
+of entries based on severity, as well as indications for received log updates. Viewing the details of conformance statements is also improved by allowing
+users to search for specific tests and filter based on status, while improving the display of statements and their status overview.
+
+Several new features and improvements have also been made to the test engine and the GITB Test Description Language. Key extensions include the support for
+custom test services to contribute to test session logs, and the ability to declare how test cases support parallel execution. These features are complemented
+by numerous minor extensions such as the support for namespace declarations to simplify XML processing, new means of checking test steps' status, and the
+improvement of step progress logging. Finally, this release introduces bug fixes for reported issues and internal performance enhancements to increase test session
+throughput.
+
+**Bug**
+
+* [ITB-1110] - Remote messaging handlers signalled twice to finalize session
+* [ITB-1111] - A scriptlet should inherit the caller's stopOnError approach if it does not define it itself
+* [ITB-1115] - Container steps where internal arrows between actors go from right to left may not be correctly contained
+* [ITB-1116] - Test execution page limits unnecessarily compacts the display of test case names
+* [ITB-1119] - Using links in test suite and test case documentation may be blocked
+* [ITB-1122] - Test cases with multiple SUT actors pass test suite validation
+* [ITB-1140] - Session history page clips test case filter dropdown
+* [ITB-1153] - Test cases with actors having a set display order but that are not used break the test diagram display
+* [ITB-1162] - A test step with an explicit stopOnError approach should override the approach defined by its caller
+* [ITB-1166] - Long, non-breakable texts break table displays
+
+**New Feature**
+
+* [ITB-387] - Allow execution of test cases via machine-to-machine API
+* [ITB-883] - Allow a test case definition to define whether it must run sequentially or can be parallelised
+* [ITB-884] - Extend the test engine to support batch test sessions executed in parallel or sequentially
+* [ITB-1068] - Allow custom GITB services to contribute session log output
+* [ITB-1069] - Allow the user to filter the test session log output based on severity levels
+* [ITB-1081] - Allow sorting of a community's organisations based on their registration sequence
+* [ITB-1094] - Filtering options for test cases in conformance statement details page
+* [ITB-1112] - Record the specific result (pending, success, failure, undefined, skipped) for each test step
+* [ITB-1120] - Allow users to choose whether test sessions launched in background batches should run in parallel or sequentially
+* [ITB-1121] - Allow users to refresh the status display of an active test session to monitor its progress
+* [ITB-1148] - Display badge for new log messages on test execution's log display button
+* [ITB-1158] - Allow the definition of namespaces for use in XPath expressions in test cases
+
+**Improvement**
+
+* [ITB-50] - Display message to user for an interactive session that is externally terminated
+* [ITB-1040] - Add tooltips to all buttons that are displayed as icons
+* [ITB-1061] - Limit proposed multi-select search filter options if too many in number
+* [ITB-1078] - Visually highlight log entries of different levels when viewing a test session log
+* [ITB-1083] - Remove blocking call within the Test Bed engine when initiating a test session
+* [ITB-1089] - Include step description (if defined in the test case) in the log output of a test session
+* [ITB-1092] - Automatically display self-registration settings when enabling self-registration for a community
+* [ITB-1093] - In the conformance statement details page display test cases and configuration parameters as tabs
+* [ITB-1096] - Allow justification of images in rich text content (e.g. landing pages and documentation)
+* [ITB-1097] - Move dashboard navigation shortcuts to the top of the display
+* [ITB-1126] - Provide more meaningful information when a test session fails because a test service could not be reached
+* [ITB-1128] - Allow administrators to view session logs for active test sessions
+* [ITB-1132] - Simplify the presentation of the conformance statement detail page
+* [ITB-1133] - Test sessions moved to the background after having started interactively should be ran sequentially
+* [ITB-1134] - Text search filters should be automatically applied when unfocused
+* [ITB-1135] - Make the conformance statement details panel collapsible
+* [ITB-1136] - Group together previous and upcoming test cases when executing several test cases in interactive mode
+* [ITB-1137] - Support display of missing information for actors with multiple configuration endpoints
+* [ITB-1138] - When executing multiple tests allow the user to hide/show completed and pending tests
+* [ITB-1139] - When executing multiple tests allow the user to choose whether they should continue automatically or manually
+* [ITB-1141] - Display loading indicator when filtering a community's organisations
+* [ITB-1144] - Pass test session ID to validation service calls
+* [ITB-1145] - Pass test session ID to processing service calls as the default session identifier
+* [ITB-1146] - Consider actor entries in test cases as simulated by default
+* [ITB-1147] - Automatically refresh the contents of the test session log display (if open) for newly received log messages
+* [ITB-1149] - Display and record a report of the inputs provided through user interaction steps
+* [ITB-1150] - Display interaction steps as being between the tester and the test engine, not the SUT actor itself
+* [ITB-1151] - Display the interaction step tester actor after SUT and SIMULATED actors
+* [ITB-1152] - Hide individual requests and instructions when displaying interaction steps
+* [ITB-1160] - Merge table columns containing buttons and hide the column title
+* [ITB-1161] - Allow sections of test case definitions to be defined in any order
+* [ITB-1163] - While search results are being refreshed prevent interactions with the displayed results
+* [ITB-1164] - In test session dashboard displays allow collapsing the active and completed sections
+* [ITB-1165] - Display condensed test results for conformance statements using icons and counts
 
 Release 1.15.1 - 24/01/2022
 ---------------------------

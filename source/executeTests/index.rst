@@ -17,28 +17,29 @@ The testing configuration for your selected specification may require that you p
 configuration parameters before executing tests. If for example test cases require that the test bed 
 sends messages to your system, it is likely that you need to inform the test bed on how to do so.
 
-Providing and reviewing the configuration for your system is done through the **Configuration parameters** section of
+Providing and reviewing the configuration for your system is done through the **Configuration parameters** tab of
 the conformance statement detail page (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`).
 
 Once all required configuration is provided you can choose to execute one or more test cases 
-through the conformance statement detail's **Conformance tests** section (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`). The test execution
+through the conformance statement details' **Conformance tests** tab (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`). The test execution
 process starts by clicking one of the available **Play** buttons. In short, you can either execute a
 specific test case or a complete test suite and choose whether the test sessions will be launched
-in the background or in interactive mode (the default).
+in the background or in interactive mode (the default). Furthermore, for background test sessions you may choose whether these will be executed
+in parallel or sequentially.
 
 .. _execute_tests_background:
 
 Background execution
 --------------------
 
-Launching tests in the background is done by toggling the execution mode button to **Background execution**.
+Launching tests in the background is done by selecting one of the **background execution options** from the **Conformance tests** tab ("parallel" or
+"sequential").
 
-.. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
+.. figure:: ../screenshots/conformance_statement_details_tests_background.png
   :align: center
 
-With this set you click the **Play** button to launch a test suite or a specific test case. Before doing so the test bed
-will verify that all required configuration properties are defined, and will display a popup notification for those
-that are missing.
+With this set you click the **Play** button to launch a full test suite, a specific test case, or a currently filtered set of test cases. Before doing
+so the test bed will verify that all required configuration properties are defined, and will display a popup notification for those that are missing.
 
 .. figure:: ../screenshots/test_execution_config_background.PNG
   :align: center
@@ -61,8 +62,7 @@ From this point you have the following options:
 * Click one of the **View** buttons on top right corners of the presented tables to access the configuration in question.
 
 Once all required information is correctly defined you can proceed to execute your test(s). Doing so will launch the test
-sessions in the background where they will proceed to run in parallel. A visual confirmation of the launched test session will
-briefly appear in the top right area of the screen informing you of this.
+sessions in the background presenting a brief visual confirmation in the top right area of the screen.
 
 .. figure:: ../screenshots/test_execution_background.PNG
   :align: center
@@ -74,44 +74,18 @@ The status of test sessions launched in the background can be monitored by means
 Interactive execution
 ---------------------
 
-Launching tests interactively is the default option and is enabled by having the execution mode toggle button set to **Interactive execution**.
+Launching tests interactively is the default option and is enabled by setting the execution mode dropdown menu to **Interactive execution**.
 
-.. figure:: ../screenshots/conformance_statement_details_tests_interactive.PNG
+.. figure:: ../screenshots/conformance_statement_details_tests_background.png
   :align: center
 
-Proceeding to execute tests will result in a three-step process:
-
-  1. Verification of the configuration you provide to the test bed.
-  2. Communication of any configuration provided by the test bed to you.
-  3. Test execution.
-
-Throughout these steps you are presented on top with the list of test cases to execute. Each test case is displayed with its **name** and 
-**description** as well as an **information button** in case the test case in question defines further extended documentation.
-
-.. figure:: ../screenshots/test_execution_execute_test_cases.png
-  :align: center
-
-The currently active test case is always highlighted in **blue**, whereas the **status** column indicates the pending test case as well as 
-the overall result of the ones previously executed. Regarding the  **information button**, if present, clicking it will open a popup displaying 
-the test case's extended documentation.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
-  :align: center
-
-.. _execute_tests__step1:
-
-Step 1 - Verification of your configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The first step of executing one or more test cases is the verification on your provided configuration. If
-you are expected to enter required information that is missing you will be presented with
-a screen listing the **missing properties**.
+The first step when launching one or more test sessions is to verify the completeness of :ref:`your configuration<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
+If you are expected to enter required information that is missing you will be presented with a screen listing the **missing properties**.
 
 .. figure:: ../screenshots/test_execution_config.PNG
   :align: center
 
-This screen presents on the top the test cases to execute but puts
-the focus on the missing information. This is presented to you in sections depending on its type:
+This screen includes separate sections for the different types of configuration you are missing. Specifically:
 
 * **Missing organisation properties:** Properties at the level of the whole organisation.
 * **Missing system properties:** Properties at the level of the system being tested.
@@ -120,79 +94,82 @@ the focus on the missing information. This is presented to you in sections depen
 In each case you are presented with the following information:
 
 * The name of the **property** or **parameter** (marked with an asterisk if mandatory).
-* The information's **description**.
+* The property's **description**.
 
 From this point you have the following options:
 
-* Click the **Back** button in the bottom left corner to return to the 
-  :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
-* Click one of the **View** buttons on top right corners of the presented tables to access the configuration in question.
+* Click the **Back** button to return to the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
+* Click one of the **View** buttons on the top right corners of the presented tables to review the configuration in question.
 
-Once all required information is correctly defined you can proceed to execute your test(s).
+Once all required information is correctly defined you can proceed to execute your test(s). In this case, or in case no configuration was missing to
+begin with, the display presents the list of test cases you have selected for execution:
+
+.. figure:: ../screenshots/test_execution_test_cases.png
+  :align: center
+
+The presented display includes on top a set of **controls** to manage your tests and control their execution. Specifically:
+
+* The **Back** button allows you to return at any time to the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
+  In case you click this when test sessions have already started executing they will continue to run in the background.
+* You can adapt the way **test sessions are displayed**. By default completed tests are hidden and pending tests are displayed to have the active
+  session always on top. You can however adapt these settings to e.g. :ref:`view an already executed test<execute_tests__step3__view_test_step_results>` or hide upcoming ones.
+* You can select **how execution continues** once a test session completes. By default the next test session will start automatically but you can
+  choose to have execution pause whenever a test completes.
 
 .. note::
-    **Valid configuration:** If you are not required to provide any information or all required information
-    is correctly provided this screen will be skipped. You will be taken directly to 
-    the display of the simulated actors' configuration (see :ref:`execute_tests__step2`).
 
-.. _execute_tests__step2:
+  **Executing a single test case:** In case you have chosen to execute only a single test case the options managing the display of test sessions
+  and the execution of further test cases are not presented.
 
-Step 2 - Simulated actor configuration 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Beneath these controls, you can see the list of test cases to execute. For each test case you can see its **name**, **description** as well as its
+current **status** (ready, ongoing, failed or succeeded). In case the test case has extended documentation, an additional **information button** is
+presented that can be clicked to present it in a popup:
 
-The second step when executing your test(s) is the **Preliminary phase** screen where you again see the test case(s) to execute 
-but also see the configuration information generated for you by the test bed. 
-The nature of this configuration depends on the tests you are executing but in all cases refers to information that the
-test bed is communicating to you that you may likely need to configure in your system before starting. If for example your 
-system is expected to send messages to the test bed this step informs you what you need to configure as the test bed's address.
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
+  :align: center
+
+For the currently active test case you see an additional panel that presents to you the **test diagram**, the **test counter** (if executing multiple
+test cases) and the **test session identifier** (which can be clicked to copy). The **View log** button on the right can be used to view and follow
+the test session's log (see :ref:`execute_tests__step3__view_log`).
+
+.. figure:: ../screenshots/test_execution_execute_diagram.PNG
+  :align: center
+
+Before starting a test session, the test bed checks to see whether it needs to present you any configuration that you need to take into account. This
+step is the counterpart of the verification that was previously discussed, where the test bed checked the configuration that you provided. In this case
+the test bed will present to you its own configuration to take into account when preparing your system. If such configuration properties indeed exist and
+need to be displayed, they will be presented to you in a popup:
 
 .. figure:: ../screenshots/test_execution_simulated.PNG
   :align: center
 
-The configuration properties displayed here are in fact parameters (see :ref:`introduction__glossary__endpoint`) that are listed with their names
-and values under the name of the specification actor that is being simulated. Continuing the example, if the test bed
-is going to simulate a specification actor named "EU portal" to which you are expected to send messages, the simulated
-actor name (in the example "EU portal") is presented before its configuration values.
+The configuration properties displayed here correspond to a specification actor that is being simulated. These :ref:`properties<introduction__glossary__endpoint>`
+are listed with their names and values, and are grouped by simulated actor (there may be multiple).
 
 Apart from the display of such configuration parameters, it could also be the case that this step presents you with additional notification popups 
-to provide you with further information or instructions. The existence or not of such a popup as well as its contents are
-defined within each test case.
+to provide you with further information or instructions. The existence or not of such a popup as well as its contents are defined within each test case.
 
 .. figure:: ../screenshots/test_execution_simulated_instruction.PNG
   :align: center
-  :scale: 50%
 
-It may be interesting to note that when being presented with this screen, a test session has already been started in the 
-test bed. In case you are executing a complete test suite (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`), the information 
-presented to you corresponds to the setup of the session for the first test case. Once this completes, it could be that this screen reappears if any new configuration 
-values have been added or if any previously communicated ones have changed. For the currently active (or selected) test case, you are presented with:
+Once all configuration has been verified and the current test case's definition has been loaded you will be able to proceed with the
+:ref:`test execution<execute_tests_interactive_execution>`. You can do this by clicking the **Start** button from the test execution controls.
 
-* The **test case name**.
-* The test **session identifier**. Hovering over this highlights it, at which point you can click to copy it to the clipboard. Doing so could be useful in case you 
-  would like to communicate the identifier or use it for subsequent :ref:`test session filtering<view_your_test_history>`.
-
-At this point you may also click the **Back** button from the bottom left corner to cancel the execution and return to the conformance statement detail page.
-
-.. note::
-    **No simulated configuration:** This screen is presented to you only if preliminary steps are needed before starting
-    a test session. If the test bed has no configuration to report to you and there are no specific instructions to 
-    communicate, this screen will be skipped. You will be taken directly to the test execution screen (see :ref:`execute_tests__step3`).
-
-.. _execute_tests__step3:
-
-Step 3 - Test execution
-~~~~~~~~~~~~~~~~~~~~~~~
-
-The third step when executing your test(s) is the **Execution** screen. This continues the display the test case(s)
-on top but now also shows you the test steps from the first test case to execute. In addition, a greyed-out 
-cog icon is now presented under the its **status** indicating that this test case is ready for execution but has not started yet.
-
-.. figure:: ../screenshots/test_execution_execute_single.PNG
+.. figure:: ../screenshots/test_execution_execute_start.PNG
   :align: center
 
-The **Execution** section includes the active test case's name and the session identifier, the latter allowing to be clicked to be copied to the clipboard.
-In addition, this section now also displays the upcoming test case's steps in a way similar to a `sequence diagram`_. The elements included
-in this diagram are:
+.. _execute_tests_interactive_execution:
+
+Test execution
+~~~~~~~~~~~~~~
+
+To start executing your selected tests click the **Start** button from the test execution controls.
+
+.. figure:: ../screenshots/test_execution_test_cases.png
+  :align: center
+
+Test execution goes through the steps defined in the test case's definition which are presented in a way similar to a `sequence diagram`_. The
+elements included in this diagram are:
 
 * A **lifeline per actor** defined in the test case. One of these will be marked as the "SUT" (the System Under Test), whereas the other
   actor lifelines will be labelled as "SIMULATED". An additional **operator lifeline** may also be present in case user interaction is defined 
@@ -205,23 +182,6 @@ in this diagram are:
 
 .. _sequence diagram: https://en.wikipedia.org/wiki/Sequence_diagram
 
-If multiple test cases are being executed (i.e. a complete test suite is selected for execution) the display remains similar but the test case 
-overview section now shows the full list of upcoming tests.
-
-.. figure:: ../screenshots/test_execution_execute_multiple.PNG
-  :align: center
-
-In this case the displayed diagram refers to the test case that is up next for execution, indicated also as such by highlighting in blue the 
-relevant row from the test case overview table.
-
-Starting the test session is achieved by clicking the provided **Start** button. In case you are executing a single test case this is present in the 
-test case overview header. Otherwise, if multiple test cases are to be executed, the **Start** button is presented in the display of the 
-specific test case.
-
-Finally, throughout the execution of all test cases you may click the **Back** button in the bottom left corner to leave the interactive test execution
-and return to the conformance statement detail page. Doing so will continue to execute the ongoing and pending test cases in the background that you 
-can now follow from the :ref:`Test Sessions<view_your_test_history>` screen.
-
 .. _execute_tests__step3__monitor_and_manage_test_progress:
 
 Monitor and manage test progress
@@ -231,11 +191,11 @@ Clicking the **Start** button begins the first selected test case's session. Wha
 in the presented diagram but can be summarised in the following types of feedback:
 
 * **Exchanges of messages** between actors (i.e. the displayed arrows) proceed. Messaging initiated by the test bed happens automatically, whereas for messages
-  originating from your system the test session blocks until you trigger them, e.g. through your software component's user interface.
+  originating from your system the test session blocks until you trigger them, e.g. through your system's user interface.
 * **Popup dialogs** relative to interaction steps are presented to either inform you or request input.
 * **Validation or processing steps** take place automatically.
 
-During the execution of the test case colours are used to inform on each step's status:
+During the execution of the test case, colours are used to inform you of each step's status:
 
 * **Blue** is used to highlight the currently active or pending step. This could be a blue arrow showing that a message is expected or a spinning
   blue cog to show active processing.
@@ -249,24 +209,20 @@ During the execution of the test case colours are used to inform on each step's 
   :align: center
 
 The colour-based feedback is also repeated at the level of the test case overview in the **status** cog icons. The icon's colour serves to highlight the currently 
-active test case, versus future ones or completed ones (in case of multiple test cases being up for execution). Once completed the status icon for the 
-test case is replaced by a green tick or red cross to indicate the session's overall result as a success or failure respectively. Note that a test session 
-is considered as failed if it contains at least one error; warnings are displayed but don't affect the overall test outcome (i.e. in the presence of warnings and no errors
-the overall test result will be successful). Regardless of the outcome of individual steps, test execution always continues as even in the presence of errors 
-it could be still interesting to proceed (e.g. if multiple different validation steps take place).
+active test case, versus future ones or completed ones (in case these are displayed). Once completed, the status icon for the test case is replaced by
+a green tick or red cross to indicate the session's overall result as a success or failure respectively. Note that a test session is considered as
+failed if it contains at least one error; warnings are displayed but don't affect the overall test outcome (i.e. in the presence of warnings and no
+errors the overall test result will be successful).
 
-In case multiple test cases are up for execution, testing proceeds automatically, only pausing in case user interaction is needed. Such user interaction can 
-either be a step within a test case or part of the setup for the next test session. In the latter case, automatic test execution is paused and can be restarted
-by clicking again the test case's **Start** button.
+In case multiple test cases are up for execution, testing proceeds automatically unless you have chosen to continue manually. In such a case you will
+need to click againt the **Start** button to proceed. Stopping the test(s) execution is achieved by clicking the **Stop** button from the test
+execution controls. In case you are executing multiple test cases this offers two options, stopping only the current test or all test cases.
 
-Stopping the test(s) execution is achieved through controls that replace the **Start** button. Specifically:
+.. figure:: ../screenshots/test_execution_execute_stop_options.PNG
+  :align: center
 
-* In case of a single test case a **Stop** button is displayed in the test case overview header. Clicking this immediately stops the test session.
-* In case of multiple test cases being executed, The **Stop** button is presented at the level of the currently active test case and results in 
-  stopping the specific test session but proceeding with the subsequent test cases. Stopping the entire test suite execution is achieved through the 
-  **Stop all** button displayed in the test case overview header.
-
-Once all test cases are complete the test case overview displays a **Reset** button. This serves as shortcut to re-run the same test case(s).
+Once all test cases are complete (or have been stopped) the test execution controls include a **Reset** button. This serves as shortcut to re-run the
+same test case(s).
 
 .. _execute_tests__step3__view_test_step_documentation:
 
@@ -303,20 +259,21 @@ View test step results
 
 During test case execution, additional controls are made available to allow you to inspect the ongoing test(s) results.
 
-First of all, if multiple test cases are selected for execution, completed test case sessions can be inspected by clicking their respective row 
-from the test case overview table. Doing so will replace the currently displayed test session diagram with the one relevant to the clicked test
-case. Note that if there is a currently running test session that results in a test step update, the displayed diagram will be automatically
-replaced with the one for the active test session.
+First of all, if multiple test cases are selected for execution, completed test case sessions can be inspected by selecting to **show completed tests**
+and clicking their relevant row. Doing so will expand the clicked row to display the relevant test execution diagram.
+
+.. figure:: ../screenshots/test_execution_execute_multiple_view_completed.PNG
+  :align: center
 
 Regarding the test steps within a given test session, each completed step displays a clickable control in the form of a document with 
-a green tick or red cross (for success or failure respectively). This applies both for validation steps and messaging steps.
+a green tick or red cross (for success or failure respectively). This applies for validation, messaging, processing and interaction steps.
 
 .. figure:: ../screenshots/test_execution_execute_step_result_controls.PNG
   :align: center
   :scale: 50%
 
 Apart from serving as an additional indication on the success or failure of the test step, these controls provide further details on the step's
-results. In case of messaging steps, this triggers a popup that shows the different information elements that can be viewed inline or opened in
+results. Clicking them triggers a popup that shows the different information elements that can be viewed inline or opened in
 a separate popup editor. In the case of validation steps, this is extended to also provide the detailed validation results and an overview
 of the error, warning and information message counts, as illustrated in the following example.
 
@@ -346,8 +303,8 @@ are not presented with the download and view buttons, but rather with a **Copy t
   :align: center
 
 .. note::
-    **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
-    always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
+    **Viewing binary output:** Downloading a file is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
+    always present an option to open the file in an editor but given that the content is then assumed to be text, this will likely not be useful.
 
 The errors, warnings and information messages displayed are contained in a **details** section that also shows the overall counts per violation
 severity level. This summary title is also clickable, to allow the listed details to be collapsed or expanded if already collapsed. Collapsing the
@@ -379,26 +336,403 @@ detailed test step results, is possible at any time through your test session hi
 View test session log
 +++++++++++++++++++++
 
-During any point in a test session's execution you may view its detailed log output. This is done by clicking the **View log** button in the 
-bottom left corner next to the **Back** button.
+During any point in a test session's execution, be it an active or completed test session, you may view its detailed log output. This is done by
+clicking the **View log** button in the top right corner of the test execution diagram. This button displays also a **status indicator** as a circle
+in case the log includes new messages since the last time it was viewed.
 
-.. figure:: ../screenshots/test_execution_view_log.PNG
+.. figure:: ../screenshots/test_execution_execute_diagram.PNG
   :align: center
 
-Clicking this will open a popup window that includes the detailed log output (debug statements, warnings and errors) for your test session.
+Clicking this button will open a popup window that includes the detailed log output (debug statements, information messages, warnings and errors)
+for your test session.
 
 .. figure:: ../screenshots/test_execution_view_log_popup.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 The detailed log output is typically very useful when you receive error messages but for which the description provided is not clear. The log
 output may be used in such a case to determine the cause of the problem or, for unexpected issues, provide input to the test bed support team
-(see :ref:`contact_support`).
+(see :ref:`contact_support`). Note that once opened, the log display is automatically updated for newly received messages.
 
-The test session log popup presents you with three options:
+The displayed log messages are highlighted with different colours depending on their severity:
 
-* **Copy to clipboard**, to copy the entire log output to your clipboard (you may also of course selectively copy specific sections).
-* **Download**, to download the log output as a text file.
-* **Close**, to close the popup.
+* Light grey for **debug** messages.
+* Black for **information** messages.
+* Orange for **warnings**.
+* Red for **errors**.
 
+Finally, the popup's header presents controls to manage the log display. Specifically you may:
+
+* Choose to automatically **scroll to the latest message** (i.e. tail) or maintain your scroll position (the default).
+* Select the **minimum severity** to display (by default all messages are displayed).
+* **Copy** the log to your clipboard.
+* **Download** the log as a text file.
+* **Close** the popup.
+
+.. _execute_tests_rest:
+
+Execution via REST API
+----------------------
+
+Apart from launching tests through its user interface, the test bed also provides a **REST API** allowing you to launch and manage test sessions
+via REST calls. The test bed's REST API is primarily used to integrate the test bed with automation solutions, enabling use cases such as **automated testing**
+and **continuous integration**. A typical scenario would be to use this as part of a development or quality assurance workflow that would involve the following steps:
+
+1. Upon changes to your system, or at given intervals, deploy and initialise the latest version of your system.
+2. Once your system is ready, use the test bed's REST API to launch a series of test sessions for your system.
+3. Have your system proceed, via scripting or responding to test bed requests, to complete the launched test sessions.
+4. Monitor the progress of the launched test sessions by periodically polling the test bed for updates.
+5. Once all test sessions are complete, compile an overview report and shut down your system.
+
+.. note::
+
+  Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you.
+
+All operations provided by the test bed's REST API make use of API keys to determine the information relevant to a specific call. These
+API keys are :ref:`managed as part of the organisation's details<manage_your_profile__view_organisation_details__rest>` and include:
+
+* **Organisation:** The key to identify the specific organisation for which test sessions will be launched or managed.
+* **System:** The key to determine the system for which new test sessions are to be launched.
+* **Actor:** The key to determine the target specification actor for which to test conformance. Recall that the combination of system and actor
+  essentially define a :ref:`conformance statement<manage_your_conformance_statements>`.
+* **Test suite:** The key to determine a specific test suite.
+* **Test case:** The key to determine a specific test case.
+
+The test bed's REST API includes three operations that allow you to launch, monitor and manage test sessions:
+
+* :ref:`start<execute_tests_rest__start>`: Launch one or more test sessions relevant to a given conformance statement.
+* :ref:`status<execute_tests_rest__status>`: Query the status of one or more test sessions.
+* :ref:`stop<execute_tests_rest__stop>`: Stop one or more test sessions.
+
+All these operations are HTTP calls that include the following:
+
+* A HTTP header named ``ITB_API_KEY`` set with the **organisation API key**. This header is required to authenticate the request.
+* A **JSON payload** provided as the body of the request to determine the parameters of the requested action.
+
+Details on each operation, including sample requests and responses, are provided in the following sections.
+
+.. _execute_tests_rest__start:
+
+start
+~~~~~
+
+The **start** operation is used to launch one or more test sessions. You may use the operation's parameters to specify exactly which test cases
+to execute, allowing for targetted choices or batch execution of complete sets of tests. You may also define how the selected test cases are
+launched, by specifying whether they should be parallelised or executed in sequence. In addition, you may provide inputs for the tests to execute
+that could serve to replace values that would be otherwise provided interactively (e.g. user inputs or uploaded files).
+
+To call the **start** operation make an HTTP ``POST`` to path ``/api/rest/tests/start``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/tests/start``.
+
+As with all test bed REST operations you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+
+In the request's payload you will need to define at least the following properties:
+
+* The ``system``, referring to the API key of the system to be tested.
+* The ``actor``, referring to the API key for the target actor.
+
+In addition to the above, you can include properties ``testSuite`` and ``testCase``, both arrays including the API keys for specific test suites
+and test cases, which in combination with the ``actor`` define which test cases shall be executed.
+For example the following request defines only the ``actor``, thus launching all test cases defined in the actor's
+:ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`:
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7"
+  }
+
+Including in addition the ``testSuite`` property will instruct the test bed to launch the test cases defined in that specific test suite(s):
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "testSuite": [ "TS1" ]
+  }
+
+If you want to launch only one or more specific test cases you can use the ``testCase`` property:
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "testCase": [ "TS1_TC1", "TS1_TC2" ]
+  }
+
+Apart from selecting the test cases to launch, you may also specify property ``forceSequentialExecution`` to inform the test bed how the
+test sessions should be launched. Setting this to ``true`` will force the test bed to launch all tests sequentially. By default, this is
+considered as ``false``, meaning that the test bed will launch all test sessions in parallel, unless certain of the selected test cases
+require sequential execution.
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "forceSequentialExecution": true
+  }
+
+As a complement to the information on which tests are to be launched, you may also provide one or more **inputs** for the selected test cases.
+These inputs will be added to the test session context before executing each test, overriding any variables defined with default values.
+Providing inputs can be very useful allowing you to execute tests that would otherwise require user interactions (which in this case will be skipped).
+
+The inputs provided can be done so in a flexible manner, defining each input (e.g. a text or even a file) once and mapping it to the test cases
+for which it should be considered. To do this you use the ``inputMapping`` property, an array with one item per input, complemented by the
+information on the test cases to apply it to. Regarding this test case mapping, you may specify property ``testSuite`` to map it to the tests
+of certain test suites, property ``testCase`` to map it to certain test cases, or skip these altogether to apply it to all tests.
+
+For example, the following request defines an input named "countryCode" that applies to all test cases, and a second input named "partyId" that
+only applies to two specific ones:
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "inputMapping": [
+      {
+        "input": {
+          "name": "countryCode",
+          "value": "BE"
+        }
+      },
+      {
+        "testCase": ["TS1_TC1", "TS1_TC2"],
+        "input": {
+          "name": "partyId",
+          "value": "ID12345"
+        }
+      }
+    ]
+  }
+
+The definition of each ``input`` property is quite flexible, allowing you to define complete files as well as complex structures such as maps.
+To define a file you would including its content as a Base64-encoded string, setting appropriately the ``embeddingMethod`` and ``type`` properties
+on its relevant input:
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "inputMapping": [
+      {
+        "testCase": ["TS1_TC1"],
+        "input": {
+          "name": "aFile",
+          "embeddingMethod": "BASE64",
+          "type": "binary",
+          "value": "ZGY6TEtNZmRzYSdrZ2ptZmdobDthZyBcb2VrZ2hhc......"
+        }
+      }
+    ]
+  }
+
+When providing a map as an input you do so by including its entries within the top-level map input, in its ``item`` property:
+
+
+.. code-block:: json
+
+ {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "inputMapping": [
+      {
+        "testCase": ["TS1_TC1"],
+        "input": {
+          "name": "countryInfo",
+          "type": "map",
+          "item": [
+            { "name": "countryCode", "value": "BE" },
+            { "name": "countryName", "value": "Belgium" }
+          ]
+        }
+      }
+    ]
+  }
+
+For the full specification of the **start** operation's request payload you may check its :ref:`JSON schema definition<execute_tests_rest__start__request>`.
+
+The response you receive from the **start** operation, includes a confirmation of the test sessions that have been started or planned for execution
+(if execution was requested to be sequential). The information for each scheduled session is returned in the ``createdSessions`` array, of which
+each item corresponds to one session. For each session you are informed of its relevant ``testSuite`` and ``testCase``, as well as its assigned
+``session`` identifier with which you can follow its progress.
+
+.. code-block:: json
+
+  {
+    "createdSessions": [
+      {
+        "testSuite": "TS1",
+        "testCase": "TS1_TC1",
+        "session": "63b76ce6-5ade-431f-8620-8dadb13d2f42"
+      },
+      {
+        "testSuite": "TS1",
+        "testCase": "TS1_TC2",
+        "session": "a866297c-ccb0-4133-9ae9-2c3af7aba0bd"
+      }
+    ]
+  }
+
+You may use the reported session identifiers to check the sessions' :ref:`status<execute_tests_rest__status>` and, if needed, forcibly :ref:`stop<execute_tests_rest__stop>` them.
+
+.. _execute_tests_rest__start__request:
+
+start - request schema
+++++++++++++++++++++++
+
+The payload of the **start** operation's request is defined by the following :download:`JSON Schema<resources/start_request.schema.json>`:
+
+.. literalinclude:: resources/start_request.schema.json
+   :language: json
+
+.. _execute_tests_rest__start__response:
+
+start - response schema
++++++++++++++++++++++++
+
+The payload of the **start** operation's response is defined by the following :download:`JSON Schema<resources/start_response.schema.json>`:
+
+.. literalinclude:: resources/start_response.schema.json
+   :language: json
+
+.. _execute_tests_rest__status:
+
+status
+~~~~~~
+
+The **status** operation is used to check the progress of one or more specific test sessions. It can be used with any test session, not only
+sessions launched via the test bed's REST API, as long as you are authorised to view them.
+
+To call the **status** operation make an HTTP ``GET`` to path ``/api/rest/tests/status``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/tests/status``.
+
+As with all test bed REST operations you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+
+In the request's payload you may provide two properties to define your query:
+
+* The ``session`` array, including one or more session identifiers to look up.
+* The ``withLogs`` boolean flag to specify whether you want to view the detailed log trace for each returned session. By default log traces
+  are not returned, but you can set this to ``true`` to include them.
+
+The following example call makes a query for one test session, choosing to also return its detailed log:
+
+.. code-block:: json
+
+  {
+    "session": ["08e49917-d560-4ffb-bbf5-280bf1084148"],
+    "withLogs": true
+  }
+
+As a response for the **status** operation, the test bed returns the latest information for the requested sessions in an array named ``sessions``.
+This includes one item per reported session which includes in turn the following properties:
+
+* ``session``, for the session's identifier.
+* ``result``, one of "SUCCESS", "FAILURE" or "UNDEFINED" for the overall test status.
+* ``startTime``, containing a timestamp for the session's launch time.
+
+The above properties are included for all test sessions, active or completed. If a session is completed this information additionally includes the
+following properties:
+
+* ``endTime``, containing a timestamp of the session's completion time.
+* ``message``, optionally included if an overall output message was produced by the test session.
+
+Finally, in case detailed log traces were requested (i.e. property ``withLogs`` was included and set to ``true``), each test session will
+also include a property named ``logs``. This is a string array containing one item per reported log message.
+
+The following example illustrates the status information returned for a single completed test session with logs included:
+
+.. code-block:: json
+
+  {
+    "sessions": [
+      {
+        "session": "08e49917-d560-4ffb-bbf5-280bf1084148",
+        "result": "FAILURE",
+        "startTime": "2022-03-17T13:28:16Z",
+        "endTime": "2022-03-17T13:28:38Z",
+        "message": "Your query did not have the expected type.",
+        "logs": [
+          "[2022-03-17 14:28:15] DEBUG - Configuring session [08e49917-d560-4ffb-bbf5-280bf1084148]",
+          "[2022-03-17 14:28:15] INFO  - Starting session",
+          "[2022-03-17 14:28:15] DEBUG - Status update - step [Query system] - ID [1]: PROCESSING",
+          "[2022-03-17 14:28:15] DEBUG - Status update - step [Query system] - ID [1]: WAITING",
+          "[2022-03-17 14:28:15] WARN  - Received 'receive' call from Test Bed",
+          "[2022-03-17 14:28:37] DEBUG - Received notification",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Query system] - ID [1]: COMPLETED",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Response] - ID [2]: PROCESSING",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Response] - ID [2]: COMPLETED",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Sequence] - ID [3]: PROCESSING",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Verify the query type] - ID [3.1]: PROCESSING",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Verify the query type] - ID [3.1]: ERROR",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Sequence] - ID [3]: ERROR",
+          "[2022-03-17 14:28:37] DEBUG - Status update - step [Call] - ID [3]: ERROR",
+          "[2022-03-17 14:28:37] DEBUG - Preparing to stop",
+          "[2022-03-17 14:28:38] INFO  - Session finished with result [ERROR]"
+        ]
+      }
+    ]
+  }
+
+.. _execute_tests_rest__status__request:
+
+status - request schema
++++++++++++++++++++++++
+
+The payload of the **status** operation's request is defined by the following :download:`JSON Schema<resources/status_request.schema.json>`:
+
+.. literalinclude:: resources/status_request.schema.json
+   :language: json
+
+.. _execute_tests_rest__status__response:
+
+status - response schema
+++++++++++++++++++++++++
+
+The payload of the **status** operation's response is defined by the following :download:`JSON Schema<resources/status_response.schema.json>`:
+
+.. literalinclude:: resources/status_response.schema.json
+   :language: json
+
+.. _execute_tests_rest__stop:
+
+stop
+~~~~
+
+The **stop** operation is used to forcibly terminate one or more specific test sessions.  It can be used with any test session, not only
+sessions launched via the test bed's REST API, as long as you are authorised to view them.
+
+To call the **stop** operation make an HTTP ``POST`` to path ``/api/rest/tests/stop``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/tests/stop``.
+
+As with all test bed REST operations you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+
+In the request's payload you are expected to provide an array named ``session``, including the session identifiers for one or more test sessions
+you want to stop. In the following example, a request is being made to terminate two test sessions:
+
+.. code-block:: json
+
+  {
+    "session": ["08e49917-d560-4ffb-bbf5-280bf1084148", "a866297c-ccb0-4133-9ae9-2c3af7aba0bd"]
+  }
+
+Once this call is made, the test bed will immediately terminate the requested test sessions. The response to the **stop** operation has an
+empty body and is returned with a ``200`` (ok) status code.
+
+.. _execute_tests_rest__stop__request:
+
+stop - request schema
++++++++++++++++++++++
+
+The payload of the **stop** operation's request is defined by the following :download:`JSON Schema<resources/stop_request.schema.json>`:
+
+.. literalinclude:: resources/stop_request.schema.json
+   :language: json
+
+.. _DIGIT instance: https://www.itb.ec.europa.eu/itb/
 .. _GITB TDL content: https://www.itb.ec.europa.eu/docs/tdl/latest/constructs/index.html#rich-documentation-per-step

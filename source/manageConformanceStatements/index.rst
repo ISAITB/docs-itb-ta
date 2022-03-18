@@ -21,9 +21,9 @@ configured for your organisation (see :ref:`manage_your_systems`).
 This table presents for the selected system its list of conformance statements in terms
 of their **domain**, **specification** and **actor**. Simply put this set of information serves to uniquely 
 identify the specification role that your system aims to play, thus determining the test cases that it should
-execute. The **updated** timestamp shows the last time the status of the conformance statement was updated, whereas the presented **test results** provide an overview
-of the latest results, showing how many configured tests your system has successfully passed up to this point and, for the ones not passed, their current status ("undefined" or "failed").
-Finally, the overall conformance **status** is also displayed per statement indicating its current result as undefined, failed or successful.
+execute. The **last update** timestamp shows the last time the status of the conformance statement was updated, whereas the presented **test results** provide an overview
+of the latest results, showing how many configured tests your system has succeeded, failed, or has not yet completed. This can also be hovered over to view a text summary
+of the displayed counts. Finally, the overall conformance **status** is also displayed per statement indicating its current result as incomplete, failed or successful.
 
 From this table you can click any row to proceed to the conformance statement's details (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`).
 You can return to the listing of conformance statements at any time by clicking the **Conformance Statement** entry in the left side menu.
@@ -99,7 +99,7 @@ The **Conformance statement details** section provides you the context of what y
 The **domain** details are presented on the top as the high-level description of the project you are testing for. The 
 **specification** information follows to define the specification you have chosen for your system to conform to
 (a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
-as part of this specification (a specification may have multiple actors). The **updated** timestamp highlights the last time the
+as part of this specification (a specification may have multiple actors). The **last update** timestamp highlights the last time the
 conformance statement's status was updated. The **test results** present an overview of the testing progress for the conformance statement's test cases,
 whereas the **status** represents the statement's current progress. Below this section you are presented with buttons for further actions as follows:
 
@@ -107,36 +107,115 @@ whereas the **status** represents the statement's current progress. Below this s
 * The **Download report** button to export your system's current conformance statement report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`).
 * The **Delete statement** button to delete the conformance statement (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__delete`).
 
+The overall detail panel can also be **collapsed** and **expanded** by clicking its header. Collapsing its display could be useful if you would want to focus on the tests to
+execute rather than the statement's details.
+
+Beneath the statement details' panel you are presented with two tabs that allow you to interact and manage the conformance statement:
+
+* The **Conformance tests** tab to view and launch the statement's tests (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`).
+* The **Configuration parameters** tab to view and edit the statement's configuration parameters if needed (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`).
+
+.. _manage_your_conformance_statements__view_a_conformance_statements_details__tests:
+
+Conformance tests
+~~~~~~~~~~~~~~~~~
+
+The **Conformance tests** tab lists the tests linked to the conformance statement. These are the tests that you need to successfully complete to be considered
+as conformant. The display includes two parts:
+
+* A set of **controls** to filter the displayed test cases and configure test execution.
+* The list of **test cases** included in the conformance statement.
+
+.. figure:: ../screenshots/conformance_statement_details_tests.png
+  :align: center
+
+The statement's test cases are grouped by their test suite, of which the **name** is presented in bold, alongside its **description**. This test suite header can be clicked
+to expand or collapse the displayed test cases, which could be interesting if there are multiple test suites. Note that if only a single test suite is defined it
+appears as expanded by default.
+
+Each test suite includes a table listing its test cases. The information displayed for each test case includes:
+
+* Its **name**, a short text to identify and refer to the test case.
+* Its **description**, providing the context you need to understand the purpose of the test case and plan for its execution.
+* The date and time of the test case's **last run** (i.e. when a test session was last executed).
+* The **status** of the latest test session executed for the test cases (displayed on the right).
+
+This information is complemented by the test case controls which depending on the status of the test case include:
+
+* A shortcut to **view** the latest test session executed for this test case in the :ref:`test session history<view_your_test_history__test_steps>` (if such a session exists).
+* An **information** button to view the test case's extended documentation (if defined).
+* A **play** button to start a new test session for this test case (see :ref:`execute_tests`).
+
+At the level of the test suite you can also view the aggregated **status** of the test suite's test cases, as well as additional controls:
+
+* An **information** button to view the test suite's extended documentation (if defined).
+* A **play** button to launch test sessions for all listed test cases.
+
+When test sessions are completed for the statement's different test cases, the displayed status will be adapted to present them as successful or failed.
+Moreover, in case a test session also produced a detailed output message, this can be viewed by clicking on the success or failure icon.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_output_message.PNG
+  :align: center
+
+Above the display of test suites the **Conformance tests** tab also includes controls relevant to the displayed test cases.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_controls.png
+  :align: center
+
+On the left side you are presented with controls to **search test cases**. You may use the provided **search box** to look for a specific test case, with the text
+you provide being used to match, in a case-insensitive way, test cases based on their name or description. Next to this you are provided with a **dropdown menu** that
+defines which tests are displayed based on their **status**. You may choose to show all tests (the default), or show only successful tests, failed tests or incomplete tests.
+Any change to this will update the display to list the matched test cases. It is important to note that when selecting to run test cases at the level of the displayed
+test suite, the test cases to be executed will be those currently displayed.
+
+To the right side you may find a further **dropdown menu** that determines how test cases will be **executed**. The options presented here are the following:
+
+* **Interactive execution**, to launch tests in an interactive manner, presenting their test execution diagram and interacting with you for inputs.
+* **Parallel background execution**, to launch tests in the background executing them in parallel. Note that test cases that don't support parallel execution
+  will be ran sequentially.
+* **Sequential background execution**, to launch tests in the background executing them one by one in sequence.
+
+Opting for background execution allows you to launch a potentially large number of test sessions without needing to oversee their progress. Care however needs
+to be taken here to ensure that all relevant test cases can be carried out without user interaction. If a test session running in the background defines user
+interaction steps, these are managed as follows:
+
+* **Instructions** are simply skipped, assuming that these are purely of informational value.
+* **Input requests** are completed automatically without input. Doing so will most likely cause a test session to fail (e.g. if a user is expected to provide
+  the content of a message to send) but could still result in a successful completion if the test case has been designed to treat user input as optional.
+
+The status of test sessions launched in the background can be monitored by means of the :ref:`Test Sessions<view_your_test_history>` screen.
+
+Finally, recall that the listed test suites and test cases may include an **information** button in case they define extended documentation. This documentation
+complements the displayed description with further information such as diagrams and reference links.
+
+.. figure:: ../screenshots/conformance_statement_details_tests.png
+  :align: center
+
+Clicking this button results in a popup window containing the extended documentation.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
+  :align: center
+
+Note that the documentation on test cases is also available to consult during their :ref:`execution<execute_tests_interactive_execution>` (in case of interactive execution).
+
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__endpoints:
 
 Configuration parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next section displayed is the information on the system's **Configuration parameters**, the information that you are expected to provide
-to the test bed for your system pertinent to the current conformance statement. These parameters are typically configured once and for
-this purpose are displayed by default in collapsed form:
-
-.. figure:: ../screenshots/conformance_statement_details_endpoints_collapsed.PNG
-  :align: center
-
-Clicking on the **Hidden** toggle button on the right-hand side will set it to **Visible** and in doing so, expand the panel to display the details for all properties:
+Alongside the **Conformance tests** tab you are presented with the **Configuration parameters** tab. This includes any necessary configuration at the level of the
+specific conformance statement that you are expected to provide.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_admin.PNG
   :align: center
 
-Configuration properties are presented in rows where for each one the following information is presented:
+Configuration properties are displayed in rows where for each one the following information is presented:
 
 * Whether or not it is **set**.
 * Its **parameter name**, serving as its identifier. This is prefixed with an asterisk if the parameter is mandatory.
-* Its **configured value**.
-* Its **description** including helpful text to understand its meaning.
+* Its **configured value**, which in case it is a file will be presented as a download link.
+* Its **description** to help understand the parameter's purpose.
 * An **edit** icon to change or remove its value.
-
-In case of parameters that are binary files, these are presented with a link to download them. The following example shows such a parameter,
-along with additional text values.
-
-.. figure:: ../screenshots/conformance_statement_details_endpoints_multiple_admin.PNG
-  :align: center
 
 To edit a configuration parameter click its **edit** icon on its relevant row. Doing so will open a prompt that presents the parameter's
 **name**, **description** and current **value** that is editable.
@@ -167,98 +246,6 @@ list that includes the available options.
 
 To change the parameter's value click on **Save**. Clicking on **Delete** will clear the current value, whereas **Cancel** will close the popup without
 making changes.
-
-Finally, note that the complete **Configuration parameters** section may be missing in case your system is not expected to provide any information
-before executing its tests.
-
-.. _manage_your_conformance_statements__view_a_conformance_statements_details__tests:
-
-Tests
-~~~~~
-
-At the bottom of the page you can find the **Conformance tests** section.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_one.PNG
-  :align: center
-
-This is a table displaying the tests you are expected to execute for the given conformance statement as well as the latest test results. The 
-information displayed for each test case is:
-
-* Its **name**, a short text to identify and refer to the test case.
-* Its **description**, providing the context you need to understand the purpose of the test case and plan for its execution.
-* The date and time when the test case status was last **updated** (i.e. when a test session was last executed).
-* The latest **session** that was executed for this test case. This is a button that will display the relevant session in the :ref:`test session history<view_your_test_history__test_steps>`.
-* Its latest **result** which can be either a success (green tick), failure (red cross) or undefined (grey bar) in case the test case has never been executed.
-* A **Play** button to start a new test session for this test case (see :ref:`execute_tests`).
-
-Note that the screenshot above indicates a simple conformance statement that contains a single test suite containing in turn a single test case. In
-this case the test suite is hidden for simplicity. A more elaborate conformance statement would typically include multiple test cases, each 
-addressing a different scenario to be tested. The following screenshot is from a conformance statement for which a single test suite is defined
-but that contains multiple test cases.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_multiple.PNG
-  :align: center
-
-Notice in this case that apart from the individual button to execute each test case, you also have a similar button in the section's header.
-Clicking this will proceed to automatically and sequentially execute all listed test cases.
-
-Finally, a further complex conformance statement could define multiple test cases organised in multiple test suites. In this case each test suite
-becomes important and is presented in the list of tests.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_test_suites_closed.PNG
-  :align: center
-
-The table in this case displays at a first level the list of test suites, using a grey backdrop to differentiate them from test cases.
-Similar to test cases, each test suite displays its **name**, **description** and overall **result**, and can be clicked to expand and display its test cases.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_test_suites_opened.PNG
-  :align: center
-
-Clicking on an expanded test suite collapses it again. Notice in addition that the **Play** button to execute test cases now displays at two 
-levels:
-
-* **For each test suite:** To automatically and sequentially execute all the test suite's test cases.
-* **For each test case:** To execute the specific test case.
-
-When test sessions are completed for the statement's different test cases, the result display will be adapted to display them as successful or failed.
-Moreover, in case a test session also produced a detailed output message, this can be viewed by clicking on the success or failure icon.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_output_message.PNG
-  :align: center
-
-In all previous examples you may have noticed a **Interactive execution** toggle button displayed in the **Conformance tests** header. This toggle defines
-the manner in which you will execute the tests, defaulting to sequential interactive sessions. This means that each of the tests will execute in sequence and
-synchronously, with the current progress displayed to you and any steps requiring your input prompting you as needed. The alternative option, enabled if you
-click the toggle button, is **Background execution** that will launch the tests sessions in parallel and run them in the background.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
-  :align: center
-
-Opting for background execution allows you to launch a potentially large number of test sessions without needing to oversee their progress. Care however needs
-to be taken here to ensure that all relevant test cases can be carried out without user interaction. If a test session running in the background defines user
-interaction steps, these are managed as follows:
-
-* **Instructions** are simply skipped, assuming that these are purely of informational value.
-* **Input requests** are completed automatically without input. Doing so will most likely cause a test session to fail (e.g. if a user is expected to provide
-  the content of a message to send) but could still result in a successful completion if the test case has been designed to treat user input as optional.
-
-The status of test sessions launched in the background can be monitored by means of the :ref:`Test Sessions<view_your_test_history>` screen.
-
-A further point to mention regarding the selection of test cases to execute is the possibility to view their **extended documentation**. Test cases and
-test suites are typically defined to include a brief description that provides context and high-level instructions. This is the description displayed
-in the test case listing discussed up to this point. The authors of the test cases may have provided in addition to this description, extended documentation
-that provides further information such as diagrams and reference links. Such documentation may exist at test suite and/or test case level, in which case you
-will see an additional **information button** displayed where available.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_documentation.PNG
-  :align: center
-
-Clicking this button will result in a popup window containing the extended documentation.
-
-.. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
-  :align: center
-
-Note that the documentation on test cases is also available to consult during their :ref:`execution<execute_tests__step3>` (in case of interactive execution).
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__export:
 
