@@ -35,7 +35,7 @@ Background execution
 Launching tests in the background is done by selecting one of the **background execution options** from the **Conformance tests** tab ("parallel" or
 "sequential").
 
-.. figure:: ../screenshots/conformance_statement_details_tests_background.png
+.. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
   :align: center
 
 With this set you click the **Play** button to launch a full test suite, a specific test case, or a currently filtered set of test cases. Before doing
@@ -76,7 +76,7 @@ Interactive execution
 
 Launching tests interactively is the default option and is enabled by setting the execution mode dropdown menu to **Interactive execution**.
 
-.. figure:: ../screenshots/conformance_statement_details_tests_background.png
+.. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
   :align: center
 
 The first step when launching one or more test sessions is to verify the completeness of :ref:`your configuration<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
