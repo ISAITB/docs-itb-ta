@@ -386,7 +386,7 @@ and **continuous integration**. A typical scenario would be to use this as part 
 
 .. note::
 
-  Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you.
+  Using the test bed's REST API is an advanced feature that needs to first be enabled as part of the test bed's configuration.
 
 All operations provided by the test bed's REST API make use of API keys to determine the information relevant to a specific call. These
 API keys are :ref:`managed as part of the organisation's details<manage_your_profile__view_organisation_details__rest>` and include:

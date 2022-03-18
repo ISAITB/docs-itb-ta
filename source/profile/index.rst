@@ -164,7 +164,7 @@ the information relevant to your organisation, split in the following sections:
 * **Organisation details:** The name (short and full) of your admin organisation.
 * **Members:** A tab listing the test bed's administrators (including yourself). For each user the **name**, **username** (or **email** if using EU Login), **role**
   and **status** are presented.
-* **REST API keys:** A tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your test bed's administrator, allowing you to view and manage the
+* **REST API keys:** A tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled, allowing you to view and manage the
   keys you need to use it.
 
 .. figure:: ../screenshots/organisation_manage_testbed_admin.PNG

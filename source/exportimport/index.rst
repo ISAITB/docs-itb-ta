@@ -10,7 +10,7 @@ nonetheless something that often needs to be done, typically as part of the foll
 
 * **Development workflow:** You are implementing your test cases in a local test bed instance that you use for development. Once ready you will
   want to replicate your configuration to the test bed instance your users will actually be using. 
-* **Setup of new test bed instance:** You may need at some point to set up a new test bed instance that matches your community's configuration.
+* **Setup of new test bed instance:** You may need at some point to set up a new test bed instance that matches a given community's configuration.
   This could be the case when defining a separate environment (e.g. "TEST" and "ACCEPTANCE" environments) or when a new test developer joins
   the team and needs her own development instance.
 * **Troubleshooting:** If a specific organisation is facing issues with a test suite you may want to replicate its specific configuration in 

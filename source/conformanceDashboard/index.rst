@@ -145,7 +145,7 @@ of defaults that are configured as part of the community details' management (se
 
 To generate these reports for a given statement you start by clicking the export file icon on the right side of the statement's row.
 
-.. figure:: ../screenshots/admin_conformance_dashboard_collapsed.PNG
+.. figure:: ../screenshots/admin_conformance_dashboard_collapsed_ta.PNG
   :align: center
 
 Once the button is clicked you will be prompted for the type of report you want to generate:

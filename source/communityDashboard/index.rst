@@ -214,7 +214,7 @@ Assuming a support email is defined, the contact form submission messages are fo
 Received messages include the following information: 
 
 * The user's **name**, **identifier** and **preferred contact address**.
-* The related organisation's **identifier** and **name**, as well as your community's **identifier** and **name**.
+* The related organisation's **identifier** and **name**, as well as its community's **identifier** and **name**.
 * The **type** of the message and the **message** itself.
 * Any **attachments** that the user has included.
 
@@ -271,7 +271,7 @@ The available permission options are as follows:
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
 * **Update conformance statement after testing.** If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
 * **Manage test sessions via REST API.** If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<execute_tests_rest>`.
-  This is option will be listed only if the test bed's administrator has enabled use of its REST API.
+  This is option will be listed only if the test bed's REST API is enabled.
 
 In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
 the permissions for the entire community a better approach is to :ref:`delete the specific test sessions<session_dashboard__completed>` that should be ignored. This is possible for community
@@ -339,7 +339,7 @@ In this screen you are expected to enter the following information for the organ
 * Its **landing page** (optional), presented to its users upon login.
 * Its **legal notice** (optional), presented to its users when they click the **Legal notice** link from the screen footer.
 * Its **error template** (optional), used to format unexpected errors presented to its users.
-* Whether it should be **published as a template** (optional), as an option during self-registration if enabled for your community.
+* Whether it should be **published as a template** (optional), as an option during self-registration if enabled for the community.
   Checking this will also prompt you for a **template name** to display to users.
 
 Regarding the landing page, legal notice and error template, these are presented as a choice of the ones defined for the community
@@ -406,7 +406,7 @@ Doing so presents you with the organisation details page that is split in the fo
 
 * The **Organisation details** section, displaying the organisation's information and allowing it to be edited.
 * The **Users** tab, displaying the list of users for the organisation (see :ref:`community__manage_organisation__users`).
-* The **REST API keys** tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your test bed's administrator, allowing you to view and manage the
+* The **REST API keys** tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled, allowing you to view and manage the
   organisation's API keys (see :ref:`community__manage_organisation__api_keys`).
 
 The **Organisation details** section displays the organisation's information in an editable form in which you can modify its **short name**, **full name**,
@@ -574,8 +574,8 @@ button will, following confirmation, delete the current user.
 Manage the organisation's REST API keys
 +++++++++++++++++++++++++++++++++++++++
 
-Management of the organisation's REST API keys is done through the **REST API keys** section of the organisation's detail screen. This is visible if your
-test bed's administrator has enabled the :ref:`test bed's REST API<execute_tests_rest>`.
+Management of the organisation's REST API keys is done through the **REST API keys** section of the organisation's detail screen. This is visible if the
+:ref:`test bed's REST API<execute_tests_rest>` is enabled.
 
 .. figure:: ../screenshots/admin_community_organisations_organisation_api_keys.png
   :align: center
@@ -617,7 +617,7 @@ Manage community administrators
     **Default community:** This section is not displayed in case you are viewing the details of the test bed's **Default community**.
     See :ref:`community__defaults__community` for more information.
 
-The **Community administrators** section displays the users, including yourself, that are capable of managing your community.
+The **Community administrators** section displays the users that are capable of managing the community.
 
 .. figure:: ../screenshots/admin_community_administrators.PNG
   :align: center
