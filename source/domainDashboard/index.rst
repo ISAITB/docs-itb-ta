@@ -584,6 +584,8 @@ The following information is presented in corresponding form controls:
   new conformance statements.
 * Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
+* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<execute_tests_rest>` (if enabled by the test bed administrator).
+  The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the actor and all related information. The **Back** button does not make any changes but takes you back to the

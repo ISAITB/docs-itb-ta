@@ -40,13 +40,13 @@ Each session is presented on a separate table row, with the following informatio
 * The session **start time**.
 * The **organisation** and **system** this session is executed for.
 
-The information displayed in the table is sorted using the sessions' start time in ascending manner (i.e. the oldest sessions are presented first). Sorting
-can be adapted by clicking on each column's header to sort by it in ascending manner. The currently active sort column and type are displayed using
-an arrow icon next to the relevant column's title.
+The information displayed in the table is sorted using the sessions’ **start time** in ascending manner (i.e. the oldest sessions are presented first).
+Sorting can be adapted by clicking on each column’s header to sort by it in ascending manner. The currently active sort column and type are displayed
+using an arrow icon next to the relevant column’s title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
 (see :ref:`monitor_test_sessions__export`). In addition, the **Terminate all** button can be used to terminate, upon confirmation, all currently active test 
-sessions in the community. Finally, each session's row offers controls to:
+sessions in the community. Clicking on the header itself, allows you to **collapse** or **expand** its display. Finally, each session's row offers controls to:
 
 * View its **test step details**, by clicking on the session's row (see :ref:`session_dashboard__steps`).
 * Forcibly **terminate**, it by clicking the cross icon on the relevant session's row under the **Operation** column.
@@ -70,7 +70,7 @@ Each session is presented in a separate row that displays the following informat
 * Its **result**.
 
 In this case the display of sessions uses paging, providing controls to go to the **first**, **previous**, **next** and **last** page (as applicable) and the rows are by
-default sorted based on the session end time, in a descending manner (i.e. latest sessions appear first). Sorting can be adapted by clicking on each column's header to 
+default sorted based on the session **end time**, in a descending manner (i.e. latest sessions appear first). Sorting can be adapted by clicking on each column's header to 
 sort by it in ascending manner. The currently active sort column and type are displayed using an arrow icon next to the relevant column's title.
 
 Viewing a test session's further details and steps is done by clicking on the session's row, similar to the case of the :ref:`active test sessions<session_dashboard__active>`. See :ref:`session_dashboard__steps` for further

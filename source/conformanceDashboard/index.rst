@@ -34,10 +34,10 @@ The information displayed for each conformance statement is:
 * The **system** that is the focus of the testing activities.
 * The **specification** that the system is selected to conform to.
 * The **actor** of the specification the system is expected to act as.
-* The date and time when the conformance statement's status was last  **updated**.
-* The statement's **test results** in terms of successfully passed tests versus the total, including for the ones not passed their current 
-  status ("undefined" or "failed").
-* The statement's overall **status** (success, failure or undefined).
+* The date and time when the conformance statement's status was  **last updated**.
+* The statement's **test results** showing how many configured tests are successful, failed, or incomplete. This can also be hovered over to view a text summary
+  of the displayed counts.
+* The statement's overall **status** (success, failure or incomplete).
 
 The presented results are by default sorted based on the organisation's name, but clicking on each header label allows you to apply different sorting,
 based on the selected column, in either descending or ascending manner. The currently active sorting is indicated by an arrow next to the relevant
@@ -58,18 +58,16 @@ separate panel that indicates the overall result for its contained test cases. T
 of the panels is a table listing the test suite's test cases, displaying for each the latest recorded test result. Each test case row includes the following:
 
 * The **test case name**.
-* The time when the status was last **updated**, in other words the time when a test session for this test case was last executed.
-* A view button to view the relevant **session** details. Clicking this will open up the test session in the :ref:`session dashboard<session_dashboard__completed>`.
+* The time of the test case's **last run**.
+* A **view** button to view the relevant session's details. Clicking this will open up the test session in the :ref:`session dashboard<session_dashboard__completed>`.
+* An **export** button to generate the test case report for the presented, latest test session (see :ref:`monitor_conformance_status__statements__export__test_case`).
 * The latest test **result**. Note that if the relevant test session resulted in a specific **output message**, the result icon can be clicked to display it.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded_output_message.PNG
   :align: center
 
-Each row also presents an **export** file icon that can be clicked to generate the test case report for the presented, latest test session 
-(see :ref:`monitor_conformance_status__statements__export__test_case`).
-
 As part of the display of the conformance statement's details you are also provided with shortcuts to navigate to the statement's relevant data.
-These are provided as buttons at the bottom of the statement's display as follows:
+These are provided as buttons at the top of the statement's display as follows:
 
 * **View organisation** takes you to the :ref:`details of the relevant organisation<community__manage_organisation>`.
 * **View system** takes you to the :ref:`details of the relevant system<manage_your_systems__edit>`.
@@ -93,7 +91,7 @@ the conformance statement header also displays a **Collapse all** button to coll
 Export a test case report
 -------------------------
 
-Exporting a test case's report is made possible through the file icon control on the far right side of each test's row.
+Exporting a test case's report is made possible through the file icon control included in the controls of each test's row.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_export_test_case.PNG
   :align: center
@@ -145,7 +143,7 @@ of defaults that are configured as part of the community details' management (se
 
 To generate these reports for a given statement you start by clicking the export file icon on the right side of the statement's row.
 
-.. figure:: ../screenshots/admin_conformance_dashboard_export.PNG
+.. figure:: ../screenshots/admin_conformance_dashboard_collapsed.PNG
   :align: center
 
 Once the button is clicked you will be prompted for the type of report you want to generate:
