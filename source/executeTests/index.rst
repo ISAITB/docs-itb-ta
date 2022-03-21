@@ -386,7 +386,8 @@ and **continuous integration**. A typical scenario would be to use this as part 
 
 .. note::
 
-  Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you.
+  Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
+  your own test bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true.
 
 All operations provided by the test bed's REST API make use of API keys to determine the information relevant to a specific call. These
 API keys are :ref:`managed as part of the organisation's details<manage_your_profile__view_organisation_details__rest>` and include:
@@ -736,3 +737,6 @@ The payload of the **stop** operation's request is defined by the following :dow
 
 .. _DIGIT instance: https://www.itb.ec.europa.eu/itb/
 .. _GITB TDL content: https://www.itb.ec.europa.eu/docs/tdl/latest/constructs/index.html#rich-documentation-per-step
+.. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
+.. _production: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/
+.. _development: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/
