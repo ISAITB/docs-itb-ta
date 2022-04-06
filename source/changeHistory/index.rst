@@ -8,7 +8,24 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.16.0**.
+The latest test bed release is **1.16.1**.
+
+Release 1.16.1 - 06/04/2022
+---------------------------
+
+This is a minor maintenance release to upgrade third party libraries, and to correct minor bugs related to the display
+of tooltips and the test bed's test execution REST API.
+
+**Bug**
+
+* [ITB-1178] - Long help tooltips are not correctly wrapped after activating conformance dashboard status tooltips
+* [ITB-1184] - REST API inputs cannot replace user input map variables
+
+**Improvement**
+
+* [ITB-1182] - Upgrade to Java 11.0.14
+* [ITB-1183] - Upgrade 3rd party libraries to address reported CVEs
+
 
 Release 1.16.0 - 18/03/2022
 ---------------------------
