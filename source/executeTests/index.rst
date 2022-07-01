@@ -610,8 +610,13 @@ status
 The **status** operation is used to check the progress of one or more specific test sessions. It can be used with any test session, not only
 sessions launched via the test bed's REST API, as long as you are authorised to view them.
 
-To call the **status** operation make an HTTP ``GET`` to path ``/api/rest/tests/status``. As an example, for the `DIGIT instance`_,
+To call the **status** operation make an HTTP ``POST`` to path ``/api/rest/tests/status``. As an example, for the `DIGIT instance`_,
 the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/tests/status``.
+
+.. note::
+  **Using GET:** Prior to release 1.17.0 the **status** operation was available through HTTP ``GET``. This remains possible as an alternative
+  to ``POST`` but is not part of the API's :ref:`OpenAPI documentation<execute_tests_rest__openapi>` as ``GET`` requests are not supposed to
+  have body content.
 
 As with all test bed REST operations you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
 
@@ -734,6 +739,33 @@ The payload of the **stop** operation's request is defined by the following :dow
 
 .. literalinclude:: ../executeTests/resources/stop_request.schema.json
    :language: json
+
+.. _execute_tests_rest__openapi:
+
+OpenAPI documentation
+~~~~~~~~~~~~~~~~~~~~~
+
+The test bed's REST API is also documented using the standard `OpenAPI specification <https://swagger.io/specification/>`_. You may
+download this from :download:`here <resources/openapi.json>`, or access it live from the test bed from path ``/api/rest``. On a typical
+`developer instance <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/>`_ this would be available at ``http://localhost:9000/api/rest``.
+
+The API's documentation does not only provide a standardised representation of its operations. It also allows it to be imported into
+tools that can process it to generate **code**, **documentation** and even **call the live services**.
+
+An example of a popular and free and open-source tool for this purpose is the `Swagger UI <https://swagger.io/tools/swagger-ui/>`_
+which provides a full user interface to explore and use an API. This can either be downloaded or used directly from the cloud.
+If you use `Docker <https://www.docker.com/>`_ and have it installed on your workstation you can get it up and running by issuing:
+
+.. code-block:: none
+
+  docker pull swaggerapi/swagger-ui
+  docker run -p 80:8080 swaggerapi/swagger-ui
+
+Executing the above two commands will download and launch Swagger UI, making it available at ``http://localhost``. Accessing this
+you may now view and use the test bed's REST API:
+
+.. figure:: ../screenshots/swagger-ui.png
+  :align: center
 
 .. _DIGIT instance: https://www.itb.ec.europa.eu/itb/
 .. _GITB TDL content: https://www.itb.ec.europa.eu/docs/tdl/latest/constructs/index.html#rich-documentation-per-step

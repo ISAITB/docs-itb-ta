@@ -8,7 +8,53 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.16.1**.
+The latest test bed release is **1.17.0**.
+
+Release 1.17.0 - 18/07/2022
+---------------------------
+
+This release focuses primarily on the GITB Test Description Language (TDL) and the capabilities of the test bed's
+test execution engine. The GITB TDL is extended with several new processing and messaging capabilities that simplify
+common operations and working with data transformations and templates. In addition, scriptlets, the GITB TDL 
+construct for reusing test steps across test cases and test suites, are now made more flexible by allowing texts
+and actors to be dynamically set according to their usage context. Finally, the expression language used by GITB TDL
+steps for simple processing is now upgraded to the latest XPath version leading to expression simplifications and multiple
+new use cases becoming available.
+
+Apart from the new GITB TDL features, changes in the test bed software include performance improvements, more
+extensive test suite validation, and most importantly new REST API operations to deploy and undeploy test suites.
+The new test suite management operations complement the previously available test session operations to further
+facilitate using the test bed in continuous integration processes for test development.
+
+**Bug**
+
+* [ITB-1200] - Assign step set to append for a map variable should create (and append) to a list
+
+**New Feature**
+
+* [ITB-91] - Switch TDL expression language from XPath 1.0 to XPath 3.0
+* [ITB-484] - Embedded processing handler to display to the user provided inputs
+* [ITB-970] - Embedded processing handler for XSLT-based XML transformations
+* [ITB-1028] - Embedded processing handler to process a template with specific placeholder inputs
+* [ITB-1053] - Embedded processing handler to use FreeMarker templates for template processing
+* [ITB-1060] - Allow messaging steps' actors to be set dynamically within scriptlets
+* [ITB-1194] - Allow test suites to be uploaded and removed via the Test Bed's REST API (to support CI/CD processes)
+* [ITB-1198] - Embedded messaging handler for simulated exchanges between actors
+* [ITB-1202] - Allow test step descriptions to be set dynamically within scriptlets
+* [ITB-1205] - Allow the titles of test steps that have child steps to be set dynamically within scriptlets
+* [ITB-1206] - Allow the title of the popup of user interaction steps to be set dynamically
+* [ITB-1207] - Allow interaction step actors to be set dynamically within scriptlets
+
+**Improvement**
+
+* [ITB-885] - Make messaging transactions optional
+* [ITB-1186] - Provide Open API documentation for the Test Bed's REST API
+* [ITB-1201] - Support collapsing and expanding of data presented in test step reports
+* [ITB-1203] - Handle all messaging for embedded messaging handlers with non-blocking IO
+* [ITB-1208] - Prevent during test suite validation scriptlets that call themselves (directly or indirectly)
+* [ITB-1209] - During test suite validation check that scriptlets called by test cases have correct actor references
+* [ITB-1213] - Allow connection properties to be defined for non-transactional process steps
+* [ITB-1232] - Support POST requests for querying test session status via the REST API
 
 Release 1.16.1 - 06/04/2022
 ---------------------------
