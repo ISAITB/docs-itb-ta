@@ -10,7 +10,7 @@ the following information is provided:
 
 The latest test bed release is **1.17.0**.
 
-Release 1.17.0 - 18/07/2022
+Release 1.17.0 - 20/07/2022
 ---------------------------
 
 This release focuses primarily on the GITB Test Description Language (TDL) and the capabilities of the test bed's
