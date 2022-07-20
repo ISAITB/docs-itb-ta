@@ -245,6 +245,8 @@ The following information is presented in corresponding form controls:
 * Its **full name** (required), displayed in detail screens and reports.
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
 * Whether or not the specification is to be considered as **hidden** (by default set to false).
+* The specification's **REST API key** that is used to identify the specification when managing test suites via the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled by the test bed administrator).
+  The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 
 Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
 deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
@@ -367,6 +369,52 @@ The information presented shows you all the resources that were affected as part
 
 At any point during the test suite upload wizard you can stop the operation by clicking the **Cancel** button. Only once the upload is fully completed
 is this replaced by a **Close** button given that changes have already been applied. Clicking either of these button closes the popup.
+
+.. _domains__specification__test_suite_rest:
+
+Manage test suites via REST API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Apart from managing test suites through its user interface, the test bed also provides a **REST API** allowing you to deploy and undeploy test suites
+via REST calls. Managing test suites in this way is primarily used during **test suite development**, to allow the deployment of test suites via
+automation processes.
+
+.. note::
+
+  Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
+  your own test bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true.
+
+The operations provided by the test bed's REST API for test suite management make use of API keys to determine the information relevant to a specific call.
+These keys are:
+
+* The key to identify a **specification**, displayed in the :ref:`specification detail page<domains__specification>`.
+* The identifier of a **test suite**, displayed in the :ref:`test suite detail page<domains__test_suite_details>`.
+
+The test bed's REST API includes two operations that allow you to manage test suites:
+
+* :ref:`deploy<domains__specification__test_suite_rest__deploy>`: Deploy a test suite to a specification.
+* :ref:`undeploy<domains__specification__test_suite_rest__undeploy>`: Remove a test suite from a specification.
+
+Both these operations are HTTP calls that include the following:
+
+* A HTTP header named ``ITB_API_KEY`` set with the **community API key**. This header is required to authenticate the request.
+* A **JSON payload** provided as the body of the request to determine the parameters of the requested action.
+
+Details on each operation, including sample requests and responses, are provided in the following sections.
+
+.. _domains__specification__test_suite_rest__deploy:
+
+deploy
+++++++
+
+TODO CONTINUE
+
+.. _domains__specification__test_suite_rest__undeploy:
+
+undeploy
+++++++++
+
+TODO CONTINUE
 
 .. _domains__specification__actor_list:
 
@@ -787,3 +835,7 @@ relative positions. This is done through the table listing the parameters by cli
 
 At each click the relevant row will be moved accordingly by one. Once you have reordered parameters in this way you will notice that the **Save parameter order** button
 becomes enabled. You will need to click this to confirm and persist the displayed ordering.
+
+.. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
+.. _production: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/
+.. _development: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/

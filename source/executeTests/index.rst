@@ -389,7 +389,7 @@ and **continuous integration**. A typical scenario would be to use this as part 
   Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
   your own test bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true.
 
-All operations provided by the test bed's REST API make use of API keys to determine the information relevant to a specific call. These
+All operations provided by the test bed's REST API for test session management make use of API keys to determine the information relevant to a specific call. These
 API keys are :ref:`managed as part of the organisation's details<manage_your_profile__view_organisation_details__rest>` and include:
 
 * **Organisation:** The key to identify the specific organisation for which test sessions will be launched or managed.
@@ -746,7 +746,7 @@ OpenAPI documentation
 ~~~~~~~~~~~~~~~~~~~~~
 
 The test bed's REST API is also documented using the standard `OpenAPI specification <https://swagger.io/specification/>`_. You may
-download this from :download:`here <resources/openapi.json>`, or access it live from the test bed from path ``/api/rest``. On a typical
+download this from :download:`here <../executeTests/resources/openapi.json>`, or access it live from the test bed from path ``/api/rest``. On a typical
 `developer instance <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/>`_ this would be available at ``http://localhost:9000/api/rest``.
 
 The API's documentation does not only provide a standardised representation of its operations. It also allows it to be imported into

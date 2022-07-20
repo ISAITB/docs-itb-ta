@@ -41,6 +41,10 @@ The information you can edit in this form is:
 * Your preference on allowing **self-registration** for your community.
 * The **user permissions** you foresee for the community's members (initially collapsed).
 
+Here you can also view the community's **REST API key** that is used to identify the community when managing test suites via 
+the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled by the test bed administrator). This is an
+automatically generated key that can be copied to your clipboard using the provided **copy** control.
+
 Regarding the **support email**, this is the address, typically a functional mailbox, where your community users' feedback is sent via 
 the test bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of 
 submissions, with the test bed team's functional mailbox (DIGIT-ITB@ec.europa.eu) added in CC. If not configured, submissions will only 
