@@ -291,6 +291,8 @@ The following information is presented in corresponding form controls:
 * Its **full name** (required), displayed in detail screens and reports.
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
 * Whether or not the specification is to be considered as **hidden** (by default set to false).
+* The specification's **REST API key** that is used to identify the specification when managing test suites via the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled by the test bed administrator).
+  The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 
 Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
 deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
@@ -413,6 +415,25 @@ The information presented shows you all the resources that were affected as part
 
 At any point during the test suite upload wizard you can stop the operation by clicking the **Cancel** button. Only once the upload is fully completed
 is this replaced by a **Close** button given that changes have already been applied. Clicking either of these button closes the popup.
+
+.. _domains__specification__test_suite_rest:
+
+Manage test suites via REST API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Apart from managing test suites through its user interface, the test bed also provides a **REST API** allowing you to deploy and undeploy test suites
+via REST calls. Managing test suites in this way is primarily used during **test suite development**, to allow the deployment of test suites via
+automation processes. Specifically you may use the API to:
+
+* **Deploy** test suites.
+* **Undeploy** test suites.
+
+Details on each operation, including sample requests and responses, are provided in the :ref:`REST API documentation<api__test_suites>`.
+
+.. note::
+
+  Using the test bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done by setting the
+  `AUTOMATION_API_ENABLED`_ property to true in the test bed's configuration.
 
 .. _domains__specification__actor_list:
 
@@ -630,7 +651,7 @@ The following information is presented in corresponding form controls:
   new conformance statements.
 * Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
-* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<execute_tests_rest>` (if the REST API is enabled).
+* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<api>` (if the REST API is enabled).
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
@@ -833,3 +854,5 @@ relative positions. This is done through the table listing the parameters by cli
 
 At each click the relevant row will be moved accordingly by one. Once you have reordered parameters in this way you will notice that the **Save parameter order** button
 becomes enabled. You will need to click this to confirm and persist the displayed ordering.
+
+.. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties

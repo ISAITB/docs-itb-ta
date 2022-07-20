@@ -19,4 +19,5 @@ Interoperability Test Bed User Guide
    profile/index
    contactSupport/index
    logout/index
+   api/index
    changeHistory/index
