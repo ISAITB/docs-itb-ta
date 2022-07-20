@@ -377,44 +377,17 @@ Manage test suites via REST API
 
 Apart from managing test suites through its user interface, the test bed also provides a **REST API** allowing you to deploy and undeploy test suites
 via REST calls. Managing test suites in this way is primarily used during **test suite development**, to allow the deployment of test suites via
-automation processes.
+automation processes. Specifically you may use the API to:
+
+* **Deploy** test suites.
+* **Undeploy** test suites.
+
+Details on each operation, including sample requests and responses, are provided in the :ref:`REST API documentation<api__test_suites>`.
 
 .. note::
 
   Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
   your own test bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true.
-
-The operations provided by the test bed's REST API for test suite management make use of API keys to determine the information relevant to a specific call.
-These keys are:
-
-* The key to identify a **specification**, displayed in the :ref:`specification detail page<domains__specification>`.
-* The identifier of a **test suite**, displayed in the :ref:`test suite detail page<domains__test_suite_details>`.
-
-The test bed's REST API includes two operations that allow you to manage test suites:
-
-* :ref:`deploy<domains__specification__test_suite_rest__deploy>`: Deploy a test suite to a specification.
-* :ref:`undeploy<domains__specification__test_suite_rest__undeploy>`: Remove a test suite from a specification.
-
-Both these operations are HTTP calls that include the following:
-
-* A HTTP header named ``ITB_API_KEY`` set with the **community API key**. This header is required to authenticate the request.
-* A **JSON payload** provided as the body of the request to determine the parameters of the requested action.
-
-Details on each operation, including sample requests and responses, are provided in the following sections.
-
-.. _domains__specification__test_suite_rest__deploy:
-
-deploy
-++++++
-
-TODO CONTINUE
-
-.. _domains__specification__test_suite_rest__undeploy:
-
-undeploy
-++++++++
-
-TODO CONTINUE
 
 .. _domains__specification__actor_list:
 
@@ -632,7 +605,7 @@ The following information is presented in corresponding form controls:
   new conformance statements.
 * Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
-* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<execute_tests_rest>` (if enabled by the test bed administrator).
+* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<api>` (if enabled by the test bed administrator).
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,

@@ -122,7 +122,7 @@ The available permission options are as follows:
 * **Update organisation data after testing**. If not allowed, an organisation that has performed at least one test session will not be allowed to edit its organisation information or its custom properties (if defined).
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
 * **Update conformance statement after testing.** If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
-* **Manage test sessions via REST API.** If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<execute_tests_rest>`.
+* **Manage test sessions via REST API.** If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<api>`.
   This is option will be listed only if the test bed's administrator has enabled use of its REST API.
 
 In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
@@ -252,7 +252,7 @@ Doing so presents you with the organisation details page that is split in the fo
 
 * The **Organisation details** section, displaying the organisation's information and allowing it to be edited.
 * The **Users** tab, displaying the list of users for the organisation (see :ref:`community__manage_organisation__users`).
-* The **REST API keys** tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your test bed's administrator, allowing you to view and manage the
+* The **REST API keys** tab, visible if the test bed's :ref:`REST API<api>` is enabled by your test bed's administrator, allowing you to view and manage the
   organisation's API keys (see :ref:`community__manage_organisation__api_keys`).
 
 The **Organisation details** section displays the organisation's information in an editable form in which you can modify its **short name**, **full name**,
@@ -421,7 +421,7 @@ Manage the organisation's REST API keys
 +++++++++++++++++++++++++++++++++++++++
 
 Management of the organisation's REST API keys is done through the **REST API keys** section of the organisation's detail screen. This is visible if your
-test bed's administrator has enabled the :ref:`test bed's REST API<execute_tests_rest>`.
+test bed's administrator has enabled the :ref:`test bed's REST API<api>`.
 
 .. figure:: ../screenshots/admin_community_organisations_organisation_api_keys.png
   :align: center
@@ -448,7 +448,7 @@ When removing or replacing the API key of the organisation or one of its systems
 proceed to do so any existing automation setups referring to the organisation would need to be updated accordingly given that the previous
 keys will no longer be valid.
 
-Details on how these REST API keys are used to launch and manage test sessions are provided in :ref:`execute_tests_rest`.
+Details on how these REST API keys are used to launch and manage test sessions are provided in the :ref:`REST API documentation<api>`.
 
 .. note::
 

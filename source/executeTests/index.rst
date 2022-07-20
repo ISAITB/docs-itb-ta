@@ -386,3 +386,5 @@ Details on each operation, including sample requests and responses, are provided
 .. note::
 
   The test bed's REST API is an advanced feature that needs to first be enabled by your administrator before it can be used.
+
+.. _GITB TDL content: https://www.itb.ec.europa.eu/docs/tdl/latest/constructs/index.html#rich-documentation-per-step
