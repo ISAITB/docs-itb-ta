@@ -19,8 +19,8 @@ These sets of operations are documented in the sections that follow.
 
 .. note::
 
-  Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
-  your own test bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true.
+  Using the test bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done
+  by setting the `AUTOMATION_API_ENABLED`_ property to true in the test bed's configuration.
 
 .. _api__test_sessions:
 
@@ -577,6 +577,4 @@ you may now view and use the test bed's REST API:
   :align: center
 
 .. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
-.. _production: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/
-.. _development: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/
 .. _DIGIT instance: https://www.itb.ec.europa.eu/itb/
