@@ -29,6 +29,7 @@ facilitate using the test bed in continuous integration processes for test devel
 **Bug**
 
 * [ITB-1200] - Assign step set to append for a map variable should create (and append) to a list
+* [ITB-1241] - Map variables cannot be directly assigned to other maps or steps' map inputs
 
 **New Feature**
 

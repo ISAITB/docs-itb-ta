@@ -1,0 +1,15 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/deploy_request",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the test suites' deploy operation request payload",
+  "type": "object",
+  "properties": {
+    "specification": { "type": "string" },
+    "testSuite": { "type": "string", "format": "base64" },
+    "ignoreWarnings": { "type": "boolean", "default": false },
+    "replaceTestHistory": { "type": "boolean", "default": false },
+    "updateSpecification": { "type": "boolean", "default": false }
+  },
+  "required": [ "specification", "testSuite" ],
+  "additionalProperties": false
+}
