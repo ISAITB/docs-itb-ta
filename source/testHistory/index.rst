@@ -128,17 +128,37 @@ Finally, you may also choose to keep the current filtering but refresh the searc
 Export a test case report
 -------------------------
 
-Exporting a test case's report is possible for completed test sessions, through the file icon control on the far right side of each test's row.
+Exporting a test case's report is possible for completed test sessions, through the one of the two file icon controls on the far right side of each test's row.
 
 .. figure:: ../screenshots/test_history_export_pdf.PNG
   :align: center
 
-Clicking this will generate and download the report (in PDF format).
+The file icon on the left corresponds to the test case's **XML report**. The format of this report is defined by the 
+`GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_,
+and allows simpler machine-based processing. The following XML content is a sample of such a report:
+
+.. literalinclude:: ../testHistory/resources/test_case_report.xml
+   :language: xml
+
+The report includes the following information:
+
+* The **identifier**, **name** and **description** of the test case.
+* The **start** and **end time**.
+* The overall **result** as well as the **output message** that may have been produced.
+* The list of **step reports** that include each step's **identifier**, **description**, **timestamp**, **result** and **findings** (if validations were carried out).
+
+The file icon on the right of the test session row represents the test case's **PDF report**.
+
+.. figure:: ../screenshots/test_history_export_pdf.PNG
+  :align: center
+
+The PDF report includes similar information to its XML counterpart with certain additional context data. The following sample report
+illustrates the information included:
 
 .. figure:: ../screenshots/test_case_report.png
   :align: center
 
-The test case report contains a first **Overview** section that summarises the purpose and result of the test session. The information
+The report contains a first **Overview** section that summarises the purpose and result of the test session. The information
 included here is:
 
 * The name of the **system** that was tested and the name of its related **organisation**.
@@ -161,9 +181,7 @@ The information displayed for each step is:
 * For validation steps, a **Details** section listing the details of each validation finding.
 
 .. note::
-    **Step context values:** The information included in the test case report for each step does not include the context
-    information relevant to the step's output results. This is omitted as the report would in most cases end up being 
-    very large.
+    The XML report for a given test session can also be obtained through the test bed's :ref:`REST API<api>` (if enabled for your test bed instance).
 
 .. _view_your_test_history__search__export_csv:
 
@@ -264,20 +282,21 @@ are not presented with the download and view buttons, but rather with a **Copy t
 Export test step report
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The results of the test step can also be exported as a test step report (in PDF format). This is made available through the **Export** button that triggers the 
-generation and download of the step report. 
+The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Export as PDF** and **Export as XML** button that trigger the 
+generation and download of the step report in the requested format. The following example represents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG
   :align: center
 
-This report includes:
+This PDF report includes:
 
 * The **test step result overview**, including the **result**, **date** and, in case of a validation step, the total number of validation findings
   (classified as **errors**, **warnings** and **messages**).
 * The **report details**, included in case of a validation step to list the details of the validation report's findings.
-* The step's **context** information, to list its output values and returned content.
 
-.. note::
-    **Test step report size:** When exporting a test step report the context information is always included to provide the full information pertinent
-    to its result. In case the context information returned by the step includes large file contents, these would be included resulting in a 
-    potentially very large export.
+When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing. 
+The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_, 
+with the following being a simple sample:
+
+.. literalinclude:: ../executeTests/resources/test_step_report.xml
+   :language: xml

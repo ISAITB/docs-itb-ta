@@ -5,7 +5,8 @@
   "type": "object",
   "properties": {
     "session": { "type": "array", "items": { "type": "string" } },
-    "withLogs": { "type": "boolean" }
+    "withLogs": { "type": "boolean" },
+    "withReports": { "type": "boolean" }
   },
   "required": [ "session" ],
   "additionalProperties": false

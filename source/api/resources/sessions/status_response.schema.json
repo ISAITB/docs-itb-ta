@@ -17,7 +17,8 @@
         "startTime": { "type": "string" },
         "endTime": { "type": "string" },
         "message": { "type": "string" },
-        "logs": { "type": "array", "items": { "type": "string" } }
+        "logs": { "type": "array", "items": { "type": "string" } },
+        "report": { "type": "string" }
       },
       "required": [ "session", "result", "startTime" ],
       "additionalProperties": false
