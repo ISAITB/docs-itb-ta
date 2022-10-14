@@ -8,7 +8,85 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.17.0**.
+The latest test bed release is **1.18.0**.
+
+Release 1.18.0 - 17/10/2022
+---------------------------
+
+This release focuses primarily on test engine and GITB TDL extensions to increase the test bed's testing capabilities.
+It extends significantly the customisation of scriptlets, allowing steps, information and behaviours to be
+adapted dynamically depending on the needs of the calling test cases. The most important of these changes are the new
+possibilities to manage the visibility of all scriptlet elements, the conditional inclusion of blocks of steps, and the
+support for default input values. Apart from scriptlet extensions, the test bed's built-in service handlers received 
+several updates, focused primarily on adding further XML validation features, and the customisation of generated identifiers
+and simulated message exchanges.
+
+Aside GITB TDL extensions, several updates were made to the test bed's software. New automation options were made available
+through triggers, including new trigger events, input data, support for REST services and JSON, as well as the possibility to
+fully test triggers directly from the user interface. Reporting options were also extended, by supporting XML reports of test
+sessions and individual test steps for machine processing, as well as a new operation on the test bed's REST API to 
+retrieve complete test session reports. These new features were complemented by further minor improvements, such as support for default
+custom property values, and various bug fixes. Finally, the test bed software's build tooling was extended to allow
+containerised builds, allowing rapid prototyping and experimentation directly from the test bed's source.
+
+**Bug**
+
+* [ITB-1245] - The TokenGenerator's string operation may crash for badly formatted regular expressions
+* [ITB-1254] - Updating an organisation user on a Test Bed instance not connected to EU Login produces an error
+* [ITB-1268] - Test suite validation blocks scriptlets from using variables from parent contexts (test case or other scriptlets)
+* [ITB-1272] - SchematronValidator reports Schematron warnings as information messages
+* [ITB-1278] - Test execution diagram includes blank actor column when the Test Engine actor is not displayed
+* [ITB-1287] - Messaging steps without transactions pass test suite validation for invalid step inputs of handlers
+* [ITB-1308] - Imports used to clone domains and communities within the same Test Bed instance fail to complete
+
+**New Feature**
+
+* [ITB-791] - Allow the complete test of a trigger from its detail page
+* [ITB-812] - New trigger event on test session start
+* [ITB-1025] - Allow triggers to be defined as REST HTTP POST calls with JSON payload
+* [ITB-1168] - Define an XmlValidator embedded validation handler to allow validation of XML against XSD and/or Schematron
+* [ITB-1228] - Allow the exporting of test session reports in XML format via the user interface
+* [ITB-1229] - Allow the exporting of test step reports in XML via the user interface
+* [ITB-1230] - Allow the exporting of test session reports via REST API
+* [ITB-1231] - Optionally include the XML test session report in the data of the trigger for test session completion
+* [ITB-1246] - Include session identifier, test suite ID and test case ID, as optional data in all trigger calls that refer to specific test sessions
+* [ITB-1249] - Include conformance statement properties as optional data in all trigger calls relevant to conformance statements
+* [ITB-1261] - Allow scriptlet steps' hidden attribute to be set dynamically as long as it can be calculated at test case load
+* [ITB-1262] - Allow messaging steps' reply attribute to be set dynamically within scriptlets as long as it can be calculated at test case load
+* [ITB-1263] - Allow a call step to be set as hidden, hiding by default all child steps
+* [ITB-1265] - New ExpressionValidator embedded validation handler for validation based on custom expressions
+* [ITB-1266] - Allow a flow step's thread blocks to be individually hidden
+* [ITB-1267] - Allow the hiding of if step containers but with visible child steps (if only a then block is defined)
+* [ITB-1273] - Support default values for scriptlet parameters
+* [ITB-1274] - Support static if step evaluation for conditional inclusion of steps in scriptlets (without if container boundaries)
+* [ITB-1276] - Include the test session ID in all external messaging, processing and validation service calls
+* [ITB-1277] - Include the test case ID in all external messaging, processing and validation service calls
+* [ITB-1283] - Include the test step ID in all external messaging, processing and validation service calls
+* [ITB-1296] - Support default values for organisation, system and statement properties
+* [ITB-1299] - Include the test engine version information in all external messaging, processing and validation service calls
+* [ITB-1300] - New predefined SESSION map in the test session context including test session metadata for use in test cases
+
+**Improvement**
+
+* [ITB-1243] - Fail test suite validation when multi-operation embedded processing handlers are used without specifying the operation to use
+* [ITB-1244] - Extend the TokenGenerator's uuid operation to support optional prefix and postfix inputs
+* [ITB-1247] - Use icons for trigger status display
+* [ITB-1248] - Add visual grouping for trigger event types
+* [ITB-1251] - Check formatting restrictions on domain parameter and statement parameter names
+* [ITB-1252] - Add a user friendly name for conformance statement (endpoint) parameters
+* [ITB-1253] - Consider a TAR report's context as a "map" by default
+* [ITB-1257] - If using simplified process steps consider the input's type when resolving its corresponding parameter
+* [ITB-1258] - Allow the assign step to create multiple levels of maps if they don't already exist
+* [ITB-1259] - When using simulated embedded handlers (DisplayProcessor, SimulatedMessaging) allow mime types to be set for the display of provided parameters
+* [ITB-1260] - In the session log button badge for unread output highlight whether these include warnings or errors
+* [ITB-1269] - Optionally include the Schematron assertion test information in the SchematronValidator's report
+* [ITB-1270] - Optionally sort XSDValidator and SchematronValidator findings based on severity
+* [ITB-1271] - Optionally include validation artefacts in XSDValidator and SchematronValidator reports
+* [ITB-1279] - Support containerised build via Docker Compose
+* [ITB-1285] - Allow on-the-fly replacement of existing map entries as the result of assign steps
+* [ITB-1286] - Show test suite validation warning for a process step without an operation referring to a handler that supports multiple operations
+* [ITB-1288] - Reorganise and relabel test execution screen buttons
+* [ITB-1292] - Include the build timestamp in the release information displayed for nightly builds
 
 Release 1.17.0 - 20/07/2022
 ---------------------------

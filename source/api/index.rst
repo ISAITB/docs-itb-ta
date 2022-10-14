@@ -272,6 +272,8 @@ In the request's payload you may provide two properties to define your query:
 * The ``session`` array, including one or more session identifiers to look up.
 * The ``withLogs`` boolean flag to specify whether you want to view the detailed log trace for each returned session. By default log traces
   are not returned, but you can set this to ``true`` to include them.
+* The ``withReports`` boolean flag to specify whether you want to also include the sessions' XML report expressed in the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_.
+  By default reports are not included.
 
 The following example call makes a query for one test session, choosing to also return its detailed log:
 
@@ -295,10 +297,13 @@ following properties:
 * ``endTime``, containing a timestamp of the session's completion time.
 * ``message``, optionally included if an overall output message was produced by the test session.
 
-Finally, in case detailed log traces were requested (i.e. property ``withLogs`` was included and set to ``true``), each test session will 
-also include a property named ``logs``. This is a string array containing one item per reported log message.
+In case detailed log traces were requested (i.e. property ``withLogs`` was included and set to ``true``), each test session will 
+also include a property named ``logs``. This is a string array containing one item per reported log message. Similarly, if
+test session reports were requested (i.e. property ``withReports`` was included and set to ``true``), a further property named
+``report`` will be included. This is a string value that includes the complete XML content of the report as a JSON-escaped string
+(click :download:`here<../testHistory/resources/test_case_report.xml>` for a complete XML report sample).
 
-The following example illustrates the status information returned for a single completed test session with logs included:
+The following example illustrates the status information returned for a single completed test session with logs and reports included:
 
 .. code-block:: json
 
@@ -327,7 +332,8 @@ The following example illustrates the status information returned for a single c
           "[2022-03-17 14:28:37] DEBUG - Status update - step [Call] - ID [3]: ERROR",
           "[2022-03-17 14:28:37] DEBUG - Preparing to stop",
           "[2022-03-17 14:28:38] INFO  - Session finished with result [ERROR]"
-        ]
+        ],
+        "report": "<?xml version=\"1.0\"><TestCaseOverviewReport>...</TestCaseOverviewReport>"
       }
     ]
   }
@@ -357,7 +363,7 @@ The payload of the **status** operation's response is defined by the following :
 stop
 ~~~~
 
-The **stop** operation is used to forcibly terminate one or more specific test sessions.  It can be used with any test session, not only
+The **stop** operation is used to forcibly terminate one or more specific test sessions. It can be used with any test session, not only
 sessions launched via the test bed's REST API, as long as you are authorised to view them.
 
 To call the **stop** operation make an HTTP ``POST`` to path ``/api/rest/tests/stop``. As an example, for the `DIGIT instance`_,
@@ -386,6 +392,25 @@ The payload of the **stop** operation's request is defined by the following :dow
 
 .. literalinclude:: resources/sessions/stop_request.schema.json
    :language: json
+
+.. _api__test_sessions__report:
+
+report
+~~~~~~
+
+The **report** operation is used to retrieve a test session's XML report expressed in the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_.
+It can be used with any test session, not only sessions launched via the test bed's REST API, as long as you are authorised to view them.
+
+To call the **report** operation make an HTTP ``GET`` to path ``/api/rest/tests/report/{sessionId}``, where ``sessionId`` is replaced by the session's identifier.
+As an example, for the `DIGIT instance`_, the path for a session with an identifier of "ABC123" would be ``https://www.itb.ec.europa.eu/itb/api/rest/tests/report/ABC123``.
+
+As with all test bed REST operations for session management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+
+Once this call is made, the test bed will return a response with a ``200`` (ok) status code, whose payload is the report's XML content. The following sample is a complete 
+example of such a report:
+
+.. literalinclude:: ../testHistory/resources/test_case_report.xml
+   :language: xml
 
 .. _api__test_suites:
 
