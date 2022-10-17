@@ -109,11 +109,11 @@ begin with, the display presents the list of test cases you have selected for ex
 
 The presented display includes on top a set of **controls** to manage your tests and control their execution. Specifically:
 
-* The **Back** button allows you to return at any time to the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
+* The **Go to conformance statement** button allows you to return at any time to the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
   In case you click this when test sessions have already started executing they will continue to run in the background.
-* You can adapt the way **test sessions are displayed**. By default completed tests are hidden and pending tests are displayed to have the active
+* Through the **Options** button you can adapt the way **test sessions are displayed**. By default completed tests are hidden and pending tests are displayed to have the active
   session always on top. You can however adapt these settings to e.g. :ref:`view an already executed test<execute_tests__step3__view_test_step_results>` or hide upcoming ones.
-* You can select **how execution continues** once a test session completes. By default the next test session will start automatically but you can
+* Similarly through the **Options** button you can select **how execution continues** once a test session completes. By default the next test session will start automatically but you can
   choose to have execution pause whenever a test completes.
 
 .. note::
@@ -221,8 +221,8 @@ execution controls. In case you are executing multiple test cases this offers tw
 .. figure:: ../screenshots/test_execution_execute_stop_options.PNG
   :align: center
 
-Once all test cases are complete (or have been stopped) the test execution controls include a **Reset** button. This serves as shortcut to re-run the
-same test case(s).
+During test case execution (or when tests are no longer running) the **Reset** button will also be enabled. This serves as shortcut to stop any ongoing
+tests and re-run them.
 
 .. _execute_tests__step3__view_test_step_documentation:
 
@@ -259,7 +259,7 @@ View test step results
 
 During test case execution, additional controls are made available to allow you to inspect the ongoing test(s) results.
 
-First of all, if multiple test cases are selected for execution, completed test case sessions can be inspected by selecting to **show completed tests**
+First of all, if multiple test cases are selected for execution, completed test case sessions can be inspected by clicking **Options**, selecting to **show completed tests**
 and clicking their relevant row. Doing so will expand the clicked row to display the relevant test execution diagram.
 
 .. figure:: ../screenshots/test_execution_execute_multiple_view_completed.PNG
@@ -310,23 +310,24 @@ The errors, warnings and information messages displayed are contained in a **det
 severity level. This summary title is also clickable, to allow the listed details to be collapsed or expanded if already collapsed. Collapsing the
 displayed details could be useful in case they are numerous, providing as such easier access to the popup's additional controls.
 
-The results of the test step can also be exported as a test step report (in PDF format). This is made available through the **Export** button that triggers the 
-generation and download of the step report. 
+The results of the test step can also be exported as a **test step report** (in PDF and XML format). This is made available through the **Export as PDF** and **Export as XML** buttons that trigger the
+generation and download of the step report in the desired format. The following example represents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG
   :align: center
 
-This report includes:
+The PDF report includes:
 
 * The **test step result overview**, including the **result**, **date** and, in case of a validation step, the total number of validation findings
   (classified as **errors**, **warnings** and **messages**).
 * The **report details**, included in case of a validation step to list the details of the validation report's findings.
-* The step's **context** information, to list its output values and returned content.
 
-.. note::
-    **Test step report size:** When exporting a test step report the context information is always included to provide the full information pertinent
-    to its result. In case the context information returned by the step includes large file contents, these would be included resulting in a 
-    potentially very large export.
+When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing.
+The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_,
+with the following being a simple sample:
+
+.. literalinclude:: ../executeTests/resources/test_step_report.xml
+   :language: xml
 
 Finally, it is important to point out that the examination of a test session's result, both in terms of steps and message exchanges, as well as 
 detailed test step results, is possible at any time through your test session history (see :ref:`view_your_test_history`).
@@ -338,7 +339,8 @@ View test session log
 
 During any point in a test session's execution, be it an active or completed test session, you may view its detailed log output. This is done by
 clicking the **View log** button in the top right corner of the test execution diagram. This button displays also a **status indicator** as a circle
-in case the log includes new messages since the last time it was viewed.
+in case the log includes new messages since the last time it was viewed. Furthermore, this indicator will be orange or red in case the log includes
+respectively warnings or errors.
 
 .. figure:: ../screenshots/test_execution_execute_diagram.PNG
   :align: center
@@ -348,7 +350,6 @@ for your test session.
 
 .. figure:: ../screenshots/test_execution_view_log_popup.PNG
   :align: center
-  :scale: 70%
 
 The detailed log output is typically very useful when you receive error messages but for which the description provided is not clear. The log
 output may be used in such a case to determine the cause of the problem or, for unexpected issues, provide input to the test bed support team

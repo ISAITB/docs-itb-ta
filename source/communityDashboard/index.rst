@@ -971,58 +971,36 @@ The event types that are available for configuration are listed in the following
     Conformance statement created | Creation of a conformance statement, either manually or via self-registration based on a :ref:`configuration template<community__create_organisation>`.
     Conformance statement updated | Update of a conformance statement's configuration (:ref:`endpoint parameter values<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`).
     Conformance statement succeeded | Successful completion of a test session that leads to a conformance statement being considered as successfully passed.
+    Test session started | Launch of a test session.
     Test session succeeded | Completion of a test session that resulted in a "successful" result.
     Test session failed | Completion of a test session that resulted in a "failed" result.
 
 The separate **Web service details** section includes the inputs concerning the trigger's web service. Consider that the trigger itself is a set of metadata
 that determines what fires and with what data, however the actual processing linked to the trigger is handled by the configured web service. This service
-needs to be accessible by the test bed and implement the `GITB processing service API`_, a simple SOAP API that expects an arbitrary set of inputs and can
-provide any number of outputs. The information required to configure this web service are:
+needs to be accessible by the test bed and must be either:
 
-* Its **endpoint URL** (required), the full URL to reach the service's WSDL file. Note that this URL needs to be provided as it should be used by
-  test bed, meaning that it could also be an internal address.
-* An **operation** (optional), to signal an operation name to the processing service (see the `GITB processing service API`_ for details).
+* A **SOAP service** implementing the `GITB processing service API`_, a simple API that expects an arbitrary set of inputs and can
+  provide any number of outputs.
+* An **HTTP service** listening for ``POST`` requests, receiving inputs and producing outputs in JSON.
+
+The information required to configure this web service are:
+
+* Its **endpoint URL** (required). In case of a GITB processing service this is expected to be the full URL to reach the service's WSDL file.
+  If a JSON HTTP service is used instead, this is the URL at which the service is listening. In any case this URL needs to be provided
+  as it should be used by the test bed, meaning that it could also be an internal address.
+* An **operation** (optional), to signal an operation name to the service. Such operations are foreseen by the `GITB processing service API`_, although this can also be used for HTTP services as
+  extra metadata to distinguish calls.
 * The **input data** (optional) to provide as part of service's payload when the trigger fires.
 
-The configured **input data** provide context to the trigger's web service to complete its processing. The type of inputs depend on the trigger's **event type**
-as follows:
+The provided **endpoint URL** can be tested to ensure it is responding as expected. To do this click the **Test** button at the right end of the URL's text field.
+If your service is set as a GITB processing service this will call the service's `getModuleDefinition operation`_, otherwise in case of an HTTP service, it will make an HTTP ``POST``
+with an empty JSON payload (``{}``).
 
-.. csv-table::
-    :header: "Input data", "Event types", "Details"
-    :delim: |
-
-    Community | All | The ID, short and full name of the community.
-    Organisation | All | The ID, short and full name of the organisation linked to the event.
-    System | System/statement created/updated | The ID, short and full name of the system linked to the event
-    Specification | Statement created/updated | The ID, short and full name of the specification linked to the event
-    Actor | Statement created/updated | The ID, short and full name of the actor linked to the event
-    Domain properties | All | The identifier and value of one or more custom domain properties.
-    Organisation properties | All | The name and value of one or more custom organisation properties.
-    System properties | System/statement created/updated | The name and value of one or more custom system properties.
-
-To include one or more types of data in the service's calls check the relevant checkboxes. In the case of domain, organisation and system properties, once the relevant
-option is checked, you will be presented with a table listing the properties defined for the community.
-
-.. figure:: ../screenshots/admin_community_triggers_org_properties.PNG
+.. figure:: ../screenshots/admin_community_triggers_endpoint_test.png
   :align: center
 
-Each row in this table corresponds to a property, displaying for each its **name** (for organisation and system properties), **type** and **identifier**. The identifier will be used as the input's name,
-whereas the value to be passed will be determined by the property's type. Simple and secret values are provided as text, whereas binary values are provided as serialised Base64 strings.
-To add a property to the inputs click its row (clicking it again will remove it).
-
-.. note::
-  **Including secret properties:** Secret properties, if included as input, will be passed in the clear. Make sure that you are aware of this and only choose to include
-  such values knowingly.
-
-Once you have selected the input required by the service you can click the **Preview service call** button. This will use the information provided to display the sample
-payload that will be sent in the input SOAP envelope.
-
-.. figure:: ../screenshots/admin_community_triggers_preview.PNG
-  :align: center
-
-From this preview popup you can click **Copy to clipboard** to copy all text or **Close** to hide the preview. In addition you may also test the provided **endpoint URL**
-by clicking the **Test** button situated to its right. This will result in calling the service's `getModuleDefinition operation`_ and, if successful, will open a popup to
-present the call's output.
+Once the call is made a popup will be displayed to present you the results. For example, a correctly working GITB processing service would result
+in its response displayed as follows:
 
 .. figure:: ../screenshots/admin_community_triggers_test_url.PNG
   :align: center
@@ -1032,7 +1010,74 @@ If the test fails, the popup will display the collected error messages from the 
 .. figure:: ../screenshots/admin_community_triggers_test_url_complex.PNG
   :align: center
 
-Once you have provided the required information you can complete the trigger's creation by clicking the **Save** button. Clicking on the **Cancel** button will discard pending
+Regarding the trigger's **input data**, this represents the context needed by the trigger's web service to complete
+its processing. The available inputs depend on the trigger's **event type** as follows:
+
+.. csv-table::
+    :header: "Input data", "Event types", "Details"
+    :delim: |
+
+    Community | All | The ID, short and full name of the community.
+    Organisation | All | The ID, short and full name of the organisation linked to the event.
+    System | System/statement created/updated/completed | The ID, short and full name of the system linked to the event
+    Specification | Statement created/updated/completed | The ID, short and full name of the specification linked to the event
+    Actor | Statement created/updated/completed | The ID, short and full name of the actor linked to the event
+    Test session | Test session started/succeeded/failed | The ID of the test session, and its related test case and test suite.
+    Test report | Test session succeeded/failed | The XML report of the test session expressed in the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_.
+    Domain properties | All | The identifier and value of one or more custom domain properties.
+    Organisation properties | All | The name and value of one or more custom organisation properties.
+    System properties | System/statement created/updated/completed | The name and value of one or more custom system properties.
+    Conformance statement properties | Statement created/updated/completed | The name and value of one or more custom system properties.
+
+To include one or more types of data in the service's calls check the relevant checkboxes. In the case of domain, organisation, system and statement properties, once the relevant
+option is checked, you will be presented with a table listing the properties defined for the community.
+
+.. figure:: ../screenshots/admin_community_triggers_org_properties.PNG
+  :align: center
+
+Each row in this table corresponds to a property, displaying for each its **name** (for organisation, system and statement properties), **type** and **identifier**. The identifier will be used as the input's name,
+whereas the value to be passed will be determined by the property's type. Simple and secret values are provided as text, whereas binary values are provided as serialised Base64 strings.
+To add a property to the inputs click its row (clicking it again will remove it).
+
+.. note::
+  **Including secret properties:** Secret properties, if included as input, will be passed in the clear. Make sure that you are aware of this and only choose to include
+  such values knowingly.
+
+Once you have selected the inputs required by the service you can click the **Preview and test service call** button.
+
+.. figure:: ../screenshots/admin_community_triggers_buttons.png
+  :align: center
+  :scale: 70%
+
+This will use the information provided to display the sample payload that will be sent to the service. In case this is configured to
+be a **GITB processing service** this will be the input SOAP envelope.
+
+.. figure:: ../screenshots/admin_community_triggers_preview.PNG
+  :align: center
+
+Alternatively, if the service is set as an **HTTP service**, the payload will be presented in JSON format.
+
+.. figure:: ../screenshots/admin_community_triggers_preview_json.png
+  :align: center
+
+From this preview popup you can click **Copy to clipboard** to copy all text or **Close** to hide the preview. Clicking on **Call service** will call the trigger's service
+using the presented payload, allowing you to test it directly from the trigger definition screen. Before making such a call you can also edit the payload to test different
+input values and potentially refer to actual information from your community.
+
+Once the service has been called you will see its result displayed in the popup or a detailed error trace. The
+below example is a sample result after successfully calling a GITB processing service.
+
+.. figure:: ../screenshots/admin_community_triggers_preview_result.png
+  :align: center
+
+It is important to note that such test calls will never result in updating data on the side of the test bed.
+Normal trigger calls support :ref:`updating data based on returned outputs<community__manage_triggers__output>`
+but this does not apply when testing. You do however have the opportunity to inspect returned outputs that would
+normally be used for updates, to ensure that everything is working as you expect. If you would like to make
+additional test calls you can click here the **Back** button to return to the previous preview screen
+(maintaining any editing that you may have introduced manually).
+
+Once you have provided the required information and completed your tests, you can create the trigger by clicking the **Save** button. Clicking on the **Cancel** button will discard pending
 changes and return to the previous screen.
 
 .. _community__manage_triggers__edit:
@@ -1076,9 +1121,11 @@ pending changes and return to the :ref:`community details page<community>`.
 Returning output from triggers
 ++++++++++++++++++++++++++++++
 
-One of the powerful features of triggers is that they can also adapt the configuration in the test bed. A trigger can achieve this by having its web service return an output as per the
+OOne of the powerful features of triggers is that they can also adapt the configuration in the test bed. A trigger can achieve this by having its web service return an output as per the
 `GITB processing service API`_ specification that can modify, depending on the trigger's event type, the values for **organisation properties**, **system properties** or **conformance statement parameters**.
-Each such type of output is grouped in a map which defines output items as key-value pairs, the key being the property's key or identifier and the value being the value to set (provided as
+In case of a JSON HTTP service, the same possibility exists by returning JSON output using the same names and structures as the `GITB processing service API`_.
+
+Each type of output is grouped in a map (or JSON object for HTTP services) which defines output items as key-value pairs, the key being the property's key or identifier and the value being the value to set (provided as
 Base64 in the case of binary properties). Each value map is named as follows:
 
 * **organisationProperties** for organisation properties to set (applicable and handled in all cases).
@@ -1086,7 +1133,8 @@ Base64 in the case of binary properties). Each value map is named as follows:
 * **statementProperties** for the properties of conformance statements (applicable and handled in events linked to conformance statements).
 
 Note that returned properties that don't apply (e.g. system properties when creating an organisation) are ignored. This is also the case for properties that cannot be matched with existing ones.
-In addition, any unexpected errors that may occur when applying such properties have no effect on the origin event of the trigger.
+In addition, any unexpected errors that may occur when calling triggers or processing their responses have no effect on the origin event of the trigger. For example
+a trigger fired for a newly created organisation that fails, will never prevent or affect the organisation's creation.
 
 The following sample output illustrates a case where a trigger linked to the creation of a new conformance statement is returning values to set:
 
@@ -1296,10 +1344,14 @@ inputs based on other properties or external processing (e.g. via :ref:`triggers
 .. note::
   Parameters of **binary** or **secret** type cannot be used as prerequisites.
 
+The **Default value** input is available for simple text properties and represents the property's default value for
+new organisations or systems. It will be presented as pre-entered (or pre-selected) when creating a new organisation or system,
+and will apply automatically if the user does not explicitly override it.
+
 In terms of their configuration, new properties are by default set to be **simple** (i.e. text values) and **editable by users**. If the property is set as being
 **binary** or **secret** it will not be able to be included in exports. In addition, a property can only be defined as **hidden** if it is set at non-editable by users.
 
-To create the property complete the required information and click on **Save**. Clicking on **Cancel** will close the popup.
+To create the property, complete the required information and click on **Save**. Clicking on **Cancel** will close the popup.
 
 .. _community__properties__edit:
 
@@ -1311,7 +1363,7 @@ Editing an exiting property is done by clicking the property's row from its rele
 .. figure:: ../screenshots/admin_community_properties_edit.PNG
   :align: center
 
-In the resulting popup you can view the property's current configuration and edit it according to your needs. Details on the meaning of properties, preset values and
+In the resulting popup you can view the property's current configuration and edit it according to your needs. Details on the meaning of properties, preset values, default values and
 property dependencies are provided in the :ref:`create property<community__properties__create>` documentation.
 
 To update the property's definition complete the required information and click on **Save**. Alternatively, clicking on **Delete**
