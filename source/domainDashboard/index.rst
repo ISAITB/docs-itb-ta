@@ -736,7 +736,8 @@ Doing so opens a popup screen in which you need to provide the information for t
   
 The information to provide for the parameter is:
 
-* Its **name** (required), used for display purposes and to refer to the parameter within test cases.
+* Its **name** (required), used for display purposes.
+* The **key** (required), used to refer to the parameter within test cases.
 * Its **description** (optional), used to provide context to users on the parameter's purpose.
 * Its **value type** (required), either "Simple" for a simple text value, "Binary" for files or "Secret" for secret texts.
 * Its **properties**, specifically whether is is required, editable by users, included in test sessions and hidden.
@@ -774,7 +775,10 @@ inputs based on other parameters or external processing (e.g. via :ref:`triggers
 .. note::
   Properties of **binary** or **secret** type cannot be used as prerequisites.
 
-To complete the creation of the parameter click the **Save** button. To cancel and close the popup click the **Cancel** button.
+The **Default value** input is available for simple text properties and represents the parameter's default value for
+new conformance statements. Users may override this value when :ref:`editing their conformance statement's configuration<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
+
+To complete the creation of the parameter, click the **Save** button. To cancel and close the popup click the **Cancel** button.
 
 .. _domains__endpoint__edit_parameter:
 

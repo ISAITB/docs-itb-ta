@@ -74,7 +74,14 @@ default sorted based on the session **end time**, in a descending manner (i.e. l
 sort by it in ascending manner. The currently active sort column and type are displayed using an arrow icon next to the relevant column's title.
 
 Viewing a test session's further details and steps is done by clicking on the session's row, similar to the case of the :ref:`active test sessions<session_dashboard__active>`. See :ref:`session_dashboard__steps` for further
-information on the details displayed. Moreover, each row provides an **export** button that allows you to download the session's **test case report**.
+information on the details displayed. Moreover, each row provides two **export** buttons that allows you to download the session's **test case report** in XML and PDF format.
+
+The following is an example of such a report in **XML format**, the XML content being defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_:
+
+.. literalinclude:: ../testHistory/resources/test_case_report.xml
+   :language: xml
+
+Selecting the second export option produces the report in **PDF format**:
 
 .. figure:: ../screenshots/test_case_report.png
   :align: center
@@ -213,23 +220,24 @@ are not presented with the download and view buttons, but rather with a **Copy t
 Export test step report
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The results of the test step can also be exported as a test step report (in PDF format). This is made available through the **Export** button that triggers the 
-generation and download of the step report. 
+The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Export as PDF** and **Export as XML** button that trigger the 
+generation and download of the step report in the requested format. The following example represents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG
   :align: center
 
-This report includes:
+This PDF report includes:
 
 * The **test step result overview**, including the **result**, **date** and, in case of a validation step, the total number of validation findings
   (classified as **errors**, **warnings** and **messages**).
 * The **report details**, included in case of a validation step to list the details of the validation report's findings.
-* The step's **context** information, to list its output values and returned content.
 
-.. note::
-    **Test step report size:** When exporting a test step report the context information is always included to provide the full information pertinent
-    to its result. In case the context information returned by the step includes large file contents, these would be included resulting in a 
-    potentially very large export.
+When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing. 
+The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_, 
+with the following being a simple sample:
+
+.. literalinclude:: ../executeTests/resources/test_step_report.xml
+   :language: xml
 
 .. _monitor_test_sessions__export:
 

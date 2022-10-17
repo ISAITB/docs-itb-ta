@@ -60,7 +60,7 @@ of the panels is a table listing the test suite's test cases, displaying for eac
 * The **test case name**.
 * The time of the test case's **last run**.
 * A **view** button to view the relevant session's details. Clicking this will open up the test session in the :ref:`session dashboard<session_dashboard__completed>`.
-* An **export** button to generate the test case report for the presented, latest test session (see :ref:`monitor_conformance_status__statements__export__test_case`).
+* Two **export** buttons, to generate the test case report for the presented, latest test session in XML or PDF format (see :ref:`monitor_conformance_status__statements__export__test_case`).
 * The latest test **result**. Note that if the relevant test session resulted in a specific **output message**, the result icon can be clicked to display it.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded_output_message.PNG
@@ -91,17 +91,28 @@ the conformance statement header also displays a **Collapse all** button to coll
 Export a test case report
 -------------------------
 
-Exporting a test case's report is made possible through the file icon control included in the controls of each test's row.
+Exporting a test case's report is made possible through the file icon controls included in each test's row. The two **export** buttons provided
+allow you to download the session's **test case report** in XML and PDF format.
 
-.. figure:: ../screenshots/admin_conformance_dashboard_export_test_case.PNG
-  :align: center
+The following is an example of such a report in **XML format**, the XML content being defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_:
 
-Clicking this will generate and download the report (in PDF format).
+.. literalinclude:: ../testHistory/resources/test_case_report.xml
+   :language: xml
+
+The report includes the following information:
+
+* The **identifier**, **name** and **description** of the test case.
+* The **start** and **end time**.
+* The overall **result** as well as the **output message** that may have been produced.
+* The list of **step reports** that include each step's **identifier**, **description**, **timestamp**, **result** and **findings** (if validations were carried out).
+
+Selecting the second export option produces the report in **PDF format** which includes similar information to its XML counterpart with
+certain additional context data. The following sample report illustrates the information included:
 
 .. figure:: ../screenshots/test_case_report.png
   :align: center
 
-The test case report contains a first **Overview** section that summarises the purpose and result of the test session. The information
+The report contains a first **Overview** section that summarises the purpose and result of the test session. The information
 included here is:
 
 * The name of the **system** that was tested and the name of its related **organisation**.
@@ -124,9 +135,7 @@ The information displayed for each step is:
 * For validation steps, a **Details** section listing the details of each validation finding.
 
 .. note::
-    **Step context values:** The information included in the test case report for each step does not include the context
-    information relevant to the step's output results. This is omitted as the report would in most cases end up being 
-    very large.
+    The XML report for a given test session can also be obtained through the test bed's :ref:`REST API<api>` (if enabled for your test bed instance).
 
 .. _monitor_conformance_status__statements__export_statement:
 
