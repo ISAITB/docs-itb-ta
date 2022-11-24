@@ -8,7 +8,23 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.18.0**.
+The latest test bed release is **1.18.1**.
+
+Release 1.18.1 - 24/11/2022
+---------------------------
+
+This is a minor maintenance release to upgrade third party libraries and the test bed's database, as well as correct an
+issue reported by test bed users when viewing the test session history.
+
+**Bug**
+
+* [ITB-1331] - Viewing the test session history may produce an "Out of sort memory" error
+
+**Improvement**
+
+* [ITB-1329] - Upgrade MySQL to version 8.0.31
+* [ITB-1330] - Upgrade Commons Text to resolve CVE-2022-42889 (Text4Shell)
+* [ITB-1332] - Colour-code result text displayed in test step report modals
 
 Release 1.18.0 - 17/10/2022
 ---------------------------
@@ -150,7 +166,6 @@ of tooltips and the test bed's test execution REST API.
 
 * [ITB-1182] - Upgrade to Java 11.0.14
 * [ITB-1183] - Upgrade 3rd party libraries to address reported CVEs
-
 
 Release 1.16.0 - 18/03/2022
 ---------------------------
