@@ -40,46 +40,33 @@ Create a conformance statement
   **Missing create option:** The create conformance statement option may be missing if your community administrator has disabled the management of
   conformance statements by organisation users.
 
-To create a new conformance statement for your selected system click the **Create conformance statement** button from the top right side of the
-conformance statement listing's header. This presents to you a wizard to construct your conformance statement.
+To create a new conformance statement for your selected system click the **Create conformance statements** button from the top right side of the
+conformance statement listing's header. This presents to you the available conformance statements that you may create.
 
-The first step is to select the **domain** relevant to your conformance statement. Note that this screen will typically be skipped if you are associated to
-a community linked to a single domain, considering the domain as selected by default.
-
-.. figure:: ../screenshots/conformance_statements_create_step1.PNG
+.. figure:: ../screenshots/conformance_statement_create.png
   :align: center
-  :scale: 50%
 
-If you do have the choice over multiple domains select the one you want by clicking its row. With the relevant row highlighted you can now click the **Next** button
-to proceed or the **Cancel** button to abort. The next step presented is the list of **specifications** for the selected domain.
+The available domains (if multiple), specifications, their groups (if applicable), and actors are organised as available conformance statements
+in expandable options. You may click each statement to collapse or expand it, revealing the available statements that you may select.
 
-.. figure:: ../screenshots/conformance_statements_create_step2.PNG
+.. figure:: ../screenshots/conformance_statement_create_options.png
   :align: center
-  :scale: 50%
 
-Similarly if the selected domain defines only a single specification this will be considered as selected by default and this step will be skipped. If you have
-multiple specifications to choose from select the one you want by clicking its row. You can now click on the **Next** button to proceed (or, as previously, the
-**Cancel** button to abort). The final step presented is the list of **actors** defined for the specification.
+Above the available conformance statements you are also presented with controls to facilitate your selection.
 
-.. figure:: ../screenshots/conformance_statements_create_step3.PNG
+.. figure:: ../screenshots/conformance_statement_create_controls.png
+  :scale: 80%
   :align: center
-  :scale: 50%
 
-This step is skipped if your selected specification defines a single actor or if your community administrator has flagged an actor as the specification's default.
-If this is not the case select the actor from the list by clicking its row and then on the **Next** button (or the **Cancel** button to abort). As a final step
-you will be presented with a confirmation screen in which the details of your conformance statement are presented (domain, specification and actor).
+Using these controls you may:
 
-.. figure:: ../screenshots/conformance_statements_create_confirmation.PNG
-  :align: center
-  :scale: 50%
+* **Search** for an available statement (the search text is looked up in names and descriptions in a case-insensitive manner). Note that if
+  statements are already selected these will always remain visible regardless of the search results.
+* **Select**, or unselect the statements currently displayed.
+* **View** all details by collapsing or expanding all statements.
 
-To complete the creation of the conformance statement click the **Confirm** button. Alternatively you can, as in the previous steps, abort by clicking the
-**Cancel** button. In either case you will be returned to the listing of your system's conformance statements (see :ref:`manage_your_conformance_statements__view_your_conformance_statements`).
-
-.. note::
-    **Automatic conformance statement selection:** It is often the case that organisations are part of a community for which only a single domain, specification
-    and actor are available for selection. If this is your case, clicking the **Create conformance statement** button will immediately present you with a
-    confirmation screen without the need to make further selections.
+Once you have selected one or more statements you may click on **Confirm** to proceed with their creation. Clicking on **Cancel** will return you back
+to the listing of your existing conformance statements.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details:
 

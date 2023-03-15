@@ -48,7 +48,7 @@ The information to enter in the presented form are:
 * The system's **short name** (required). This is used when the system is displayed in lists.
 * The system's **full name** (required). This is included in reports that mention the system.
 * An optional **description** to provide more information about the system.
-* A **version** number (required). Although required this is not currently used in the test bed apart from display purposes.
+* A **version** number. Although requested this is not currently used in the test bed apart from display purposes.
 
 If your organisation includes other systems you are also presented here with an option to **copy the test setup** from 
 one of them as a source. Selecting one will replicate the selected system's conformance statements for the new system. 
