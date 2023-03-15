@@ -25,7 +25,7 @@ conformance statements.
   :align: center
 
 This table presents for the selected system its list of conformance statements in terms
-of their **domain**, **specification** and **actor**. Simply put this set of information serves to uniquely 
+of their **domain** (in case different domains are available), **specification** and **actor**. Simply put this set of information serves to uniquely 
 identify the specification role that your system aims to play, thus determining the test cases that it should
 execute. The **last update** timestamp shows the last time the status of the conformance statement was updated, whereas the presented **test results** provide an overview 
 of the latest results, showing how many configured tests your system has succeeded, failed, or has not yet completed. This can also be hovered over to view a text summary
