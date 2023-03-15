@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ITB User Guide'
-copyright = '2022, European Commission, DIGIT'
+copyright = '2023, European Commission, DIGIT'
 author = 'European Commission, DIGIT'
 
 # The short X.Y version
-version = 'ITB version 1.18.1'
+version = 'ITB version 1.19.0'
 # The full version, including alpha/beta/rc tags
-release = 'ITB version 1.18.1'
+release = 'ITB version 1.19.0'
 
 html_show_sourcelink = False
 html_show_sphinx = False
