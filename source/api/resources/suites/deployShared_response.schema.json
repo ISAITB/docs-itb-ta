@@ -1,7 +1,7 @@
 {
-  "$id": "https://www.itb.ec.europa.eu/api/deploy_response",
+  "$id": "https://www.itb.ec.europa.eu/api/deployShared_response",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "JSON schema for the test suites' deploy operation response payload",
+  "description": "JSON schema for the test suites' deployShared operation response payload",
   "type": "object",
   "properties": {
     "completed": { "type": "boolean" },

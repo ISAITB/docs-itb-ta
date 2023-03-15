@@ -8,7 +8,67 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.18.1**.
+The latest test bed release is **1.19.0**.
+
+Release 1.19.0 - 19/03/2023
+---------------------------
+
+This release focuses on providing further flexibility in managing a community's overall testing setup and the versioning of 
+test cases. Notable changes include the possibility to define additional levels of specifications, and test suites that are
+shared across specifications whose test sessions count towards all relevant conformance statements. These extensions are
+complemented by a new streamlined process of creating new conformance statements. In terms of version management, test suite
+uploads now afford fine-grained control over the testing history and metadata of individual test cases. In addition, the metadata
+linked to executed test sessions becomes a snapshot representing their context at execution time. Finally, it is now also possible
+to upload community-specific resources such as images, that may be referenced in the community's documentation and landing pages.
+
+Alongside these changes, minor improvements were also made to the GITB Test Description Language, focusing on additional means
+of working with data collections. In addition, new variants of the "gitb-types" library were published catering for different API
+versions making it simpler to maintain and evolve test extension services.
+
+**Bug**
+
+* [ITB-1302] - Self messaging steps (same to and from actors) are displayed with a squashed arrow
+* [ITB-1333] - When selecting to delete test sessions, expanded test sessions are not displayed at full width
+* [ITB-1341] - The self-registration page when not using SSO breaks the heading text's alignment
+* [ITB-1348] - Tooltips displayed for table headers and wrongly aligned
+* [ITB-1349] - Authorisation errors in REST API calls don't get reported correctly
+* [ITB-1350] - Test suite management REST API calls are blocked if test session API calls are not allowed for organisations
+* [ITB-1354] - A step's status report should allow collapsing only for non-root values
+* [ITB-1362] - Test session step status maps allow overriding entries when scriptlet child steps have the same IDs
+* [ITB-1363] - Test case and test suite documentation preview produces an error for empty content
+* [ITB-1364] - Contact form attachments not named correctly
+* [ITB-1366] - Steps within groups and loops not included in test session reports
+* [ITB-1367] - Assign steps directly assigning values to maps within maps is reported as a test suite validation error
+* [ITB-1368] - Skipped loop steps within other loop steps are not displayed correctly
+* [ITB-1374] - Tests including flow steps and set to stopOnError may result in a wrong overall result
+
+**New Feature**
+
+* [ITB-1010] - Allow multiple conformance statements to be defined at the same time
+* [ITB-1233] - Introduce optional specification groups to allow additional organisation over specifications
+* [ITB-1297] - When uploading a test suite to reset its conformance testing status allow selecting the test cases for which this should happen
+* [ITB-1303] - Allow community administrators to upload static resources for use in rich text content such as documentation and landing pages
+* [ITB-1318] - Allow test suites to be defined at domain level and be shared across specifications
+* [ITB-1352] - Extend CollectionUtils embedded processor to select a random entry from a list
+* [ITB-1357] - Extend CollectionUtils processor with operation to see if a collection contains a value
+* [ITB-1376] - Adapt GITB types library to support usage in both Java EE and Jakarta EE contexts
+* [ITB-1380] - Allow filtering of available conformance statements when creating a new one
+* [ITB-1383] - Extend CollectionUtils processor with operation to remove an item from a list or map
+
+**Improvement**
+
+* [ITB-1309] - In the conformance statement list for organisations don't display the domain if one is linked to the relevant community
+* [ITB-1323] - Record completed test session information as a snapshot of the metadata applicable when the session was executed
+* [ITB-1334] - Improve Content Security Policy
+* [ITB-1337] - Simplify reverse proxy setup via environment variables configured directly in the Test Bed
+* [ITB-1360] - Improve the error message when using a non-string variable as a template placeholder value
+* [ITB-1361] - Record steps' scriptlet identifiers in the STEP_STATUS and STEP_SUCCESS status maps
+* [ITB-1365] - Remove warnings from DB migration scripts when initialising a new Test Bed instance
+* [ITB-1375] - Allow test suite and test case identifiers to be copied to the clipboard
+* [ITB-1379] - Only propose available conformance statements when creating a new one
+* [ITB-1381] - Treat a system's version information as optional
+* [ITB-1382] - Display tooltips for status icons
+* [ITB-1385] - Display icons for all UI constructs that are expandable or collapsible
 
 Release 1.18.1 - 24/11/2022
 ---------------------------

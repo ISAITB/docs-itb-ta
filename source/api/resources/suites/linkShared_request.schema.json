@@ -1,0 +1,23 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/linkShared_request",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the test suites' linkShared operation request payload",
+  "type": "object",
+  "properties": {
+    "testSuite": { "type": "string" },
+    "specifications": { "type": "array", "items": { "$ref": "#/definitions/targetSpecification" } }
+  },
+  "required": [ "testSuite", "specifications" ],
+  "additionalProperties": false,
+  "definitions": {
+    "targetSpecification": {
+      "type": "object",
+      "properties": {
+        "specification": { "type": "string" },
+        "update": { "type": "boolean" }
+      },
+      "required": [ "specification" ],
+      "additionalProperties": false
+    }
+  }
+}

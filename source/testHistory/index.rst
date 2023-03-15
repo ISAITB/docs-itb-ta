@@ -103,7 +103,7 @@ as **Disabled**. Clicking on this sets it to **Enabled** and displays the filter
 
 The available filters are:
 
-* The **domain**, **specification** and **actor** of the sessions' corresponding conformance statements.
+* The **domain** (if applicable), **specification group**, **specification** and **actor** of the sessions' corresponding conformance statements.
 * The sessions' **test suite** and **test case**.
 * The sessions' **result**.
 * The sessions' **start** and **end time**.
