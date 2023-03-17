@@ -117,7 +117,7 @@ and filtering being switched on.
 
 The controls that can be used for filtering are:
 
-* The sessions' **specification**, **actor**, **test suite** and **test case**.
+* The sessions' **domain** (if multiple), **specification group**, **specification**, **actor**, **test suite** and **test case**.
 * The relevant **organisation** and **system**.
 * The **result**.
 * The **start** and **end time**.

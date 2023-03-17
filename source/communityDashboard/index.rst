@@ -28,6 +28,7 @@ The information grouped in the provided tabs include:
 * The **Legal notices** section listing the legal notices you can display for your organisations.
 * The **Error templates** section listing the error message templates used to display unexpected errors to your organisations.
 * The **Triggers** section listing the triggers used to automate processes upon specific events.
+* The **Resources** section listing the resources referenced in documentation and other rich content.
 
 The **Community details** section allows you to view and edit your community's basic information.
 
@@ -82,7 +83,6 @@ The possible values for this are as follows:
 
 .. figure:: ../screenshots/admin_community_details_token.PNG
   :align: center
-  :scale: 70%
 
 Selecting any value other than **Not supported** will expand the community details' form to provide further configuration options under section **Self-registration settings**. These
 are:
@@ -993,6 +993,51 @@ The following sample output illustrates a case where a trigger linked to the cre
 A use case for such a trigger could be to prepare the organisation's configuration linked to the new conformance statement so that it can begin testing. This trigger processing could
 also be defined as a mandatory prerequisite through the use of a hidden but required property that is used as a control flag and set through the trigger's output.
 
+.. _community__manage_resources:
+
+Manage resources
+----------------
+
+In several cases the test bed supports the definition of rich content as documentation or as a means of customising the experience of a community's members.
+Specifically, rich content is available as:
+
+* Community :ref:`landing pages<community__manage_landing_pages>`, :ref:`legal notices<community__manage_legal_notices>` and :ref:`error templates<community__manage_error_templates>`.
+* Documentation for :ref:`test suites<domains__test_suite_details>` and :ref:`test cases<domains__test_case__details>`.
+
+Within such rich content it is possible to include additional **resources**, either as displayed images or download links. Typical examples are a community's logo
+displayed on its landing page, UML sequence diagrams to illustrate a test case's steps, and links to download test data. When referring to such resources, you may
+either point to external sources (e.g. a public documentation site for your project) or to resources defined internally within the test bed. The configuration and 
+use of such internal resources is addressed in the current section.
+
+Configured resources are displayed in the **Resources** section. Each resource is presented as a row displaying its file **name**, its **reference to use** when 
+including it in rich content, and its **description**. For each resource you are provided with controls to **copy** the resource's reference to the clipboard, **delete**
+the resource, and **download** it.
+
+.. figure:: ../screenshots/admin_community_resources.png
+  :align: center
+
+Above the listing of resources you have a **search filter** to search against resources' names and descriptions in a case-insensitive manner. From here you may also
+select the  **Delete resources...** button to delete one or more resources, or the **Download all** button to download all resources in a ZIP archive. Adding new
+resources is achieved through the **Upload resource** button that opens a popup in which you are asked to select the resource file and provide an optional description.
+
+.. figure:: ../screenshots/admin_community_resources_upload.png
+  :align: center
+
+Alternatively, you may also click the options of the **Upload resource** button to perform a **Bulk upload**. Doing so will display a popup in which you can 
+select a ZIP archive including all resources you would want to upload in one go. You may also select whether resources with the same name are to be replaced or
+kept.
+
+.. figure:: ../screenshots/admin_community_resources_upload_bulk.png
+  :align: center
+
+Whenever you upload a resource with a name matching an existing one (regardless of case), the new resource will be added with an index postfix. The same applies when uploading in bulk 
+and having chosen to keep matching resources. This is done because names of resources need to be unique within a community to allow you to unambiguously refer to them
+where needed.
+
+To use a community resource in rich content you simply need to provide the resource reference as the source of an image or link. This can be done both when editing
+rich content through the test bed's user interface, but also when preparing documentation included in test suite archives. It is important to note that resources are
+**not publicly available**, but rather require you to have access to the community in question.
+
 .. _community__conformance_certificate_settings:
 
 Edit conformance certificate settings
@@ -1045,6 +1090,8 @@ the certificate is generated. The supported placeholders are:
 
 * **$DOMAIN:** The full name of the domain.
 * **$SPECIFICATION:** The full name of the specification.
+* **$SPECIFICATION_GROUP:** The full name of the specification group.
+* **$SPECIFICATION_GROUP_OPTION:** The full name of the option (a specification within a group).
 * **$ACTOR:** The full name of the actor linked to the conformance statement.
 * **$ORGANISATION:** The full name of the organisation to be granted the certificate.
 * **$SYSTEM:** The full name of the organisation's system that was used in the tests.

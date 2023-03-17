@@ -250,7 +250,7 @@ The controls that can be used for filtering are:
 
 * The relevant **organisation** and **system**.
 * The relevant **domain** (only in case your community is not linked to a specific domain).
-* The relevant **specification** and **actor**.
+* The relevant **specification group**, **specification** and **actor**.
 * The conformance **status**.
 * The **last update time** for the conformance statement's status.
 * Custom **organisation and system properties** defined for the community.
