@@ -427,8 +427,12 @@ Test suite management operations make use of API keys to determine the informati
 
 The API includes two operations that allow you to manage test suites:
 
-* :ref:`deploy<api__test_suites__deploy>`: Deploy a test suite to a specification.
-* :ref:`undeploy<api__test_suites__undeploy>`: Remove a test suite from a specification.
+* :ref:`deploy<api__test_suites__deploy>`: Deploy a (non-shared) test suite to a specification.
+* :ref:`undeploy<api__test_suites__undeploy>`: Remove a (non-shared) test suite from a specification.
+* :ref:`deployShared<api__test_suites__deployShared>`: Deploy a shared test suite to a community's domain.
+* :ref:`undeployShared<api__test_suites__undeployShared>`: Remove a shared test suite from a community's domain.
+* :ref:`linkShared<api__test_suites__linkShared>`: Link a shared test suite to one or more specifications.
+* :ref:`unlinkShared<api__test_suites__unlinkShared>`: Unlink a shared test suite from one or more specifications.
 
 Details on each operation, including sample requests and responses, are provided in the following sections.
 
@@ -457,13 +461,23 @@ Apart from these properties, you may optionally specify additional properties as
 * Set ``updateSpecification`` to ``true`` to update existing specification metadata to values provided in the test suite archive. By default existing information will not
   be updated.
 
-The deploy operation actually comes with two variants to allow you to provide the test suite archive in the way that best fits your needs. The selected
+In addition to the above properties, you may also specify an array named ``testCases`` that provides fine-grained instructions on how to handle the test suite's
+test cases if these are found to already exist. For test cases not specified in this way, or if the ``testCases`` array is altogether missing, the values provided
+in ``replaceTestHistory`` and ``updateSpecification`` are treated as the defaults. The items of the ``testCases`` array define the following properties:
+
+* ``identifier``, referring to the identifier of the test case.
+* ``updateSpecification``, which can be set to ``true`` to update the test case's metadata (name and description).
+* ``replaceTestHistory``, which can be set to ``true`` to reset the testing history for the test case.
+
+The **deploy** operation actually comes with two variants to allow you to provide the test suite archive in the way that best fits your needs. The selected
 approach is determined by you by setting the request's ``Content-Type`` header to match the type of submission you are making. Specifically:
 
 * Setting ``Content-Type`` to ``application/json`` will consider that the request's body is JSON that includes the test suite archive as a **BASE64 encoded string**.
   The request's inputs in this case are added as JSON properties with the BASE64 encoded string added as property ``testSuite``.
 * Setting ``Content-Type`` to ``multipart/form-data`` will consider the request as a **multipart form submission**. The request's inputs in this case will be 
-  request parameters with the test suite archive named ``testSuite`` (the request's file part).
+  request parameters with the test suite archive named ``testSuite`` (the request's file part). In addition, the ``testCases`` array is replaced in this case
+  by four repeatable parameters named ``testCaseWithSpecificationUpdate``, ``testCaseWithoutSpecificationUpdate``, ``testCaseWithTestHistoryReplacement``
+  and ``testCaseWithoutTestHistoryReplacement``, each set with the relevant test case identifier.
 
 The approach to follow depends on the client tool you want to use to make the calls. When submitting as JSON you will need to always calculate the BASE64 string of the test suite archive before
 including it in the payload. In contrast, if you make a multipart form submission, your tool should be able to correctly construct a multipart request with the relevant part
@@ -494,7 +508,7 @@ As discussed earlier you may also include additional flags to determine how the 
 
 For the full specification of the **deploy** operation's request payload, when this is provided as JSON, you may check its :ref:`JSON schema definition<api__test_suites__deploy__request>`.
 
-Once the deploy **operation** has completed you receive a JSON response to notify you of the deployment's result. This response will always include 
+Once the **deploy** operation has completed you receive a JSON response to notify you of the deployment's result. This response will always include 
 a boolean ``completed`` flag to inform you whether the deployment was actually carried out. Alongside this you may optionally receive report items
 produced by the test suite's validation in three arrays named ``errors``, ``warnings`` and ``messages``. Each item of these arrays includes the finding's ``description``
 and ``location``, the latter being the path of the test suite's resource (e.g. a test case file) that resulted in it being reported. A test suite's
@@ -572,6 +586,262 @@ undeploy - request schema
 The payload of the **undeploy** operation's request is defined by the following :download:`JSON Schema<resources/suites/undeploy_request.schema.json>`:
 
 .. literalinclude:: resources/suites/undeploy_request.schema.json
+   :language: json
+
+.. _api__test_suites__deployShared:
+
+deployShared
+~~~~~~~~~~~~
+
+The **deployShared** operation is used to add a new or updated test suite to a domain to be shared across multiple specifications. Apart from providing the test suite itself, the operation's
+parameters allow you to specify how to handle validation issues and existing conformance tests.
+
+To call the **deployShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/deployShared``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/testsuite/deployShared``. To authorise the operation and identify the specification domain
+to be updated, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+
+In the request's payload you will need to define at least the ``testSuite``, including the data of the test suite archive being deployed. 
+Apart from this, you may optionally specify additional properties as boolean flags to determine archive handling options. Specifically:
+
+* Set ``ignoreWarnings`` to ``true`` to allow the test suite's deployment even in case of validation warnings. By default validation warnings will prevent the deployment
+  from completing.
+* Set ``replaceTestHistory`` to ``true`` to clear any existing conformance testing history relevant to the test suite. By default existing tests are maintained.
+* Set ``updateSpecification`` to ``true`` to update existing test suite metadata to values provided in the test suite archive. By default existing information will not
+  be updated.
+
+In addition to the above properties, you may also specify an array named ``testCases`` that provides fine-grained instructions on how to handle the test suite's
+test cases if these are found to already exist. For test cases not specified in this way, or if the ``testCases`` array is altogether missing, the values provided
+in ``replaceTestHistory`` and ``updateSpecification`` are treated as the defaults. The items of the ``testCases`` array define the following properties:
+
+* ``identifier``, referring to the identifier of the test case.
+* ``updateSpecification``, which can be set to ``true`` to update the test case's metadata (name and description).
+* ``replaceTestHistory``, which can be set to ``true`` to reset the testing history for the test case.
+
+The **deployShared** operation actually comes with two variants to allow you to provide the test suite archive in the way that best fits your needs. The selected
+approach is determined by you by setting the request's ``Content-Type`` header to match the type of submission you are making. Specifically:
+
+* Setting ``Content-Type`` to ``application/json`` will consider that the request's body is JSON that includes the test suite archive as a **BASE64 encoded string**.
+  The request's inputs in this case are added as JSON properties with the BASE64 encoded string added as property ``testSuite``.
+* Setting ``Content-Type`` to ``multipart/form-data`` will consider the request as a **multipart form submission**. The request's inputs in this case will be 
+  request parameters with the test suite archive named ``testSuite`` (the request's file part). In addition, the ``testCases`` array is replaced in this case
+  by four repeatable parameters named ``testCaseWithSpecificationUpdate``, ``testCaseWithoutSpecificationUpdate``, ``testCaseWithTestHistoryReplacement``
+  and ``testCaseWithoutTestHistoryReplacement``, each set with the relevant test case identifier.
+
+The approach to follow depends on the client tool you want to use to make the calls. When submitting as JSON you will need to always calculate the BASE64 string of the test suite archive before
+including it in the payload. In contrast, if you make a multipart form submission, your tool should be able to correctly construct a multipart request with the relevant part
+boundaries. If you use a tool such as ``curl`` that handles this, the multipart form approach is likely simpler as you can simply point to the archive's file to submit without
+using additional tools to generate BASE64 strings.
+
+The following sample is a JSON request to deploy a shared test suite (the test suite's BASE64 encoded string is truncated for brevity).
+
+.. code-block:: json
+
+  {
+    "testSuite": "UEsDBBQAAAAIAIWIr...wNAAAAAA=="
+  }
+
+As discussed earlier you may also include additional flags to determine how the upload should be handled. The following example includes the
+``ignoreWarnings``, ``replaceTestHistory`` and ``updateSpecification`` flags to override the default behaviours.
+
+.. code-block:: json
+
+  {
+    "ignoreWarnings": true,
+    "replaceTestHistory": true,
+    "updateSpecification": true,
+    "testSuite": "UEsDBBQAAAAIAIWIr...wNAAAAAA=="
+  }
+
+For the full specification of the **deployShared** operation's request payload, when this is provided as JSON, you may check its :ref:`JSON schema definition<api__test_suites__deployShared__request>`.
+
+Once the **deployShared** operation has completed you receive a JSON response to notify you of the deployment's result. This response will always include 
+a boolean ``completed`` flag to inform you whether the deployment was actually carried out. Alongside this you may optionally receive report items
+produced by the test suite's validation in three arrays named ``errors``, ``warnings`` and ``messages``. Each item of these arrays includes the finding's ``description``
+and ``location``, the latter being the path of the test suite's resource (e.g. a test case file) that resulted in it being reported. A test suite's
+deployment may not be completed in case it's validation produced errors or warnings (that were not set to be ignored via the request's ``ignoreWarnings`` flag).
+
+The following example presents a response that produced a validation warning but was nonetheless completed:
+
+.. code-block:: json
+
+  {
+    "completed": true,
+    "warnings": [
+      {
+        "description": "[TDL-015] Actor [Actor4] is not referenced in any test cases."
+      }
+    ]
+  }
+
+For the full specification of the **deployShared** operation's response payload you may check its :ref:`JSON schema definition<api__test_suites__deployShared__response>`.
+
+.. _api__test_suites__deployShared__request:
+
+deployShared - request schema (JSON case)
++++++++++++++++++++++++++++++++++++++++++
+
+The payload of the **deployShared** operation's request (in the case it submitted as JSON content) is defined by the following :download:`JSON Schema<resources/suites/deployShared_request.schema.json>`:
+
+.. literalinclude:: resources/suites/deployShared_request.schema.json
+   :language: json
+
+.. _api__test_suites__deployShared__response:
+
+deployShared - response schema
+++++++++++++++++++++++++++++++
+
+The payload of the **deployShared** operation's response is defined by the following :download:`JSON Schema<resources/suites/deployShared_response.schema.json>`:
+
+.. literalinclude:: resources/suites/deployShared_response.schema.json
+   :language: json
+
+.. _api__test_suites__undeployShared:
+
+undeployShared
+~~~~~~~~~~~~~~
+
+The **undeployShared** operation is used to remove a shared test suite from a domain. Removing a test suite will result in the relevant conformance testing
+history being cleared.
+
+To call the **undeployShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/undeployShared``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/testsuite/undeployShared``. To authorise the operation and identify the domain
+from which the test suite will be removed, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+
+In the request's payload you will need to define the ``testSuite`` property, referring to the identifier of the test suite to be removed. 
+The following sample is a request to remove a test suite from a specification.
+
+.. code-block:: json
+
+  {
+    "testSuite": "test_suite_1"
+  }
+
+Once this call is made, the test bed will remove the specified test suite and clear any related conformance tests. The response to the **undeployShared** operation has an
+empty body and is returned with a ``200`` (ok) status code.
+
+.. _api__test_suites__undeployShared__request:
+
+undeployShared - request schema
++++++++++++++++++++++++++++++++
+
+The payload of the **undeployShared** operation's request is defined by the following :download:`JSON Schema<resources/suites/undeployShared_request.schema.json>`:
+
+.. literalinclude:: resources/suites/undeployShared_request.schema.json
+   :language: json
+
+.. _api__test_suites__linkShared:
+
+linkShared
+~~~~~~~~~~
+
+The **linkShared** operation is used to link a shared test suite to one or more specifications.
+
+To call the **linkShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/linkShared``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/testsuite/linkShared``. To authorise the operation and identify the specification domain
+to be updated, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+
+In the request's payload you will need to define:
+
+* The ``testSuite`` to link, referring to the test suite's identifier.
+* The ``specifications`` array defining the specifications to link the test suite with.
+
+Each entry of the ``specifications`` has two properties:
+
+* The ``specification`` (required), referring to the API key of the specification.
+* The ``update`` flag (optional), defining whether the metadata of the targeted specification (actor names, identifiers and descriptions)
+  should be updated to match the information from the test suite (default is "false").
+
+The following sample is a JSON request to link a shared test suite to a specification (the test suite's BASE64 encoded string is truncated for brevity).
+
+.. code-block:: json
+
+  {
+    "testSuite": "UEsDBBQAAAAIAIWIr...wNAAAAAA==",
+    "specifications": [
+      {
+        "specification": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+      }
+    ]
+  }
+
+For the full specification of the **linkShared** operation's request payload, you may check its :ref:`JSON schema definition<api__test_suites__linkShared__request>`.
+
+Once the **linkShared** operation has completed you receive a JSON response to inform you of the result of the link. This response is an
+array with one item per targetted specification that includes the following properties:
+
+* ``specification``, with the API key of the relevant specification.
+* ``linked``, a boolean flag that is "true" if the operation link was carried out.
+* ``message``, that in case of a failed link includes an explanatory message.
+
+The following example presents a response for a successful link:
+
+.. code-block:: json
+
+  [
+    {
+      "specification": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+      "linked": true
+    }
+  ]
+
+For the full specification of the **linkShared** operation's response payload you may check its :ref:`JSON schema definition<api__test_suites__linkShared__response>`.
+
+.. _api__test_suites__linkShared__request:
+
+linkShared - request schema
++++++++++++++++++++++++++++
+
+The payload of the **linkShared** operation's request is defined by the following :download:`JSON Schema<resources/suites/linkShared_request.schema.json>`:
+
+.. literalinclude:: resources/suites/linkShared_request.schema.json
+   :language: json
+
+.. _api__test_suites__linkShared__response:
+
+linkShared - response schema
+++++++++++++++++++++++++++++
+
+The payload of the **linkShared** operation's response is defined by the following :download:`JSON Schema<resources/suites/linkShared_response.schema.json>`:
+
+.. literalinclude:: resources/suites/linkShared_response.schema.json
+   :language: json
+
+.. _api__test_suites__unlinkShared:
+
+unlinkShared
+~~~~~~~~~~~~
+
+The **unlinkShared** operation is used to remove the link between a shared test suite and one or more specifications. Note that removing such a link has no effect
+on existing test sessions but will remove the test suite from relevant conformance statements.
+
+To call the **unlinkShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/unlinkShared``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/testsuite/unlinkShared``. To authorise the operation and identify the domain that
+contains the test suite and specifications, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+
+In the request's payload you will need to define the following two properties:
+
+* The ``testSuite``, referring to the identifier of the test suite to be removed.
+* The ``specifications`` array, including as string values the API keys of the target specifications.
+
+The following sample is a request to unlink a test suite from a specification.
+
+.. code-block:: json
+
+  {
+    "testSuite": "test_suite_1"
+    "specifications": [ "B277E210X2FB4X4BD7X88B6X951504F45F8F" ]
+  }
+
+Once this call is made, the test bed will unlink the specified test suite from the specification(s). The response has an empty body and is returned with a ``200`` (ok) status code.
+
+.. _api__test_suites__unlinkShared__request:
+
+unlinkShared - request schema
++++++++++++++++++++++++++++++
+
+The payload of the **unlinkShared** operation's request is defined by the following :download:`JSON Schema<resources/suites/unlinkShared_request.schema.json>`:
+
+.. literalinclude:: resources/suites/unlinkShared_request.schema.json
    :language: json
 
 .. _api__openapi:

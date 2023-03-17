@@ -1,0 +1,11 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/undeployShared_request",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the test suites' undeployShared operation request payload",
+  "type": "object",
+  "properties": {
+    "testSuite": { "type": "string" }
+  },
+  "required": [ "testSuite" ],
+  "additionalProperties": false
+}

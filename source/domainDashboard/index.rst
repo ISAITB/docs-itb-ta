@@ -73,8 +73,8 @@ Manage domain details
 The domain detail screen is where you can edit a domain's properties. It is split in two sections:
 
 * The **Domain details** section, to view and edit the domain's information.
-* Tabs for the information linked to the domain, notably the **Specifications** tab to :ref:`view manage the its specifications<domains__domain__specification_list>` and
-  the **Parameters** tab to :ref:`manage configuration parameters<domains__domain__parameter_list>` used in test cases.
+* Tabs for the information linked to the domain, notably the **Specifications** tab to :ref:`manage its specifications<domains__domain__specification_list>`,
+  the **Shared test suites** tab to manage the domain's :ref:`shared test suites<domains__domain__shared_test_suites>`, and the **Parameters** tab to :ref:`manage configuration parameters<domains__domain__parameter_list>` used in test cases.
 
 In the **Domain details** section you are presented with a form to view and edit the domain's information.
 
@@ -98,32 +98,31 @@ domain list screen (see :ref:`domains__domain_view`).
 
 .. _domains__domain__specification_list:
 
-Specification list
-~~~~~~~~~~~~~~~~~~
+Specifications
+~~~~~~~~~~~~~~
 
-The **Specifications** tab presents a table with the domain's configured specifications. These represent the elements of the actual specifications
-supported by the test bed that you want to have organisations conform to (see :ref:`introduction__glossary__specification`).
+The **Specifications** tab presents a table with the domain's configured specifications. These represent the elements of your project's
+:ref:`specifications<introduction__glossary__specification>` that you want to have organisations conform to.
 
 .. figure:: ../screenshots/admin_domains_domain_specifications.PNG
   :align: center
 
 Each specification is presented in a separate row, in which the following information is provided:
 
-* The specification's **short name**, used in list displays.
-* Its **full name**, used in detail screens and reports.
+* The **specification** name.
 * Its **description**, used in detail screens and reports.
-* Whether or not the specification is **hidden** from organisation users.
+* Whether or not the specification is **hidden** from organisation users (represented as a "hidden" icon).
 
-Clicking on a specification's row will take you to its detail page (see :ref:`domains__specification`). To create a new specification click the **Create specification**
-button from the table's header (see :ref:`domains__domain_create_specification`). Clicking the **Upload test suite** button allows you to upload a new test suite for
-one or more specifications (see :ref:`domains__domain_deploy_test_suite`).
+Clicking on a specification's row will take you to its :ref:`detail page<domains__specification>`. To :ref:`create a new specification<domains__domain_create_specification>` click the **Create specification**
+button above the table. Clicking the **Upload test suite** button allows you to :ref:`upload a new test suite<domains__domain_deploy_test_suite>` for
+one or more specifications.
 
 .. _domains__domain_create_specification:
 
 Create specification
-~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++
 
-Creating a new specification is done by clicking the **Create specification** button from the **Specifications** list header.
+Creating a new specification is done by clicking the **Create specification** button from above the specifications' table.
 
 .. figure:: ../screenshots/admin_domains_domain_specifications_header.PNG
   :align: center
@@ -139,34 +138,183 @@ The information to provide for the specification is:
 * Its **full name** (required), displayed in detail screens and reports.
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
 * Whether or not the specification is to be considered as **hidden** (by default set to false).
+* In case :ref:`specification groups<domains__domain_specification_groups>` are defined in the domain, these will also be presented
+  as a dropdown selection at the top. In case the specification is being created as an option to add to a group, the group in question
+  will be preselected.
+
+.. figure:: ../screenshots/admin_domains_specification_group_dropdown.png
+  :align: center
 
 Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
 deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
 however any existing conformance statements or performed tests that refer to it remain unaffected. A good example of such
 a scenario is when you want to support versioning in specifications and, upon release of a new version, you want to ensure
-new conformance statements are made for this latest version.
+new conformance statements are only made for this latest version.
 
-To complete the creation of the specification click the **Save** button. To cancel and return to the domain detail page (see :ref:`domains__domain_details`) 
+To complete the creation of the specification click the **Save** button. To cancel and return to the :ref:`domain detail page<domains__domain_details>`
 click the **Cancel** button.
+
+.. _domains__domain_specification_groups:
+
+Specification groups
+++++++++++++++++++++
+
+In case you need to add more depth to the specifications in your domain, you may create one or more **specification groups**. A specification
+group represents a set of related specifications that you may choose to define to facilitate searching and the definition of conformance statements.
+A typical example of using groups would be to define your project's specifications as groups, within which you define specific versions. From the
+perspective of conformance statements, specifications map to the versions, but the extra grouping makes working with them more intuitive.
+
+.. figure:: ../screenshots/admin_domains_domain_specification_groups.png
+  :align: center
+
+Specification groups are displayed separately from their contained specifications (termed by default as "options" when grouped) in search filters and
+when :ref:`creating new conformance statements<manage_your_conformance_statements__create>`. Most reports and listings in screens don't
+present these as separate concepts, showing rather as a specification the concatenation between group and option (separated by a hyphen).
+
+To define a specification group expand the **Create specification** options and select **Create specification group**.
+
+.. figure:: ../screenshots/admin_domains_domain_specifications_header.PNG
+  :align: center
+
+Doing so will present you with the form to provide the group's information, notably its **short name**, **full name** and
+**description** (optional).
+
+.. figure:: ../screenshots/admin_domains_domain_specification_groups_create.png
+  :align: center
+
+Once your domain defines at least one specification group, the listing of specifications changes. The table of specifications lists now
+the groups you have defined as well as any specifications that are not contained in groups. This is an interesting point as you don't
+need to define a group for all specifications; you can use groups where meaningful and simple specifications where no grouping is useful.
+
+Specification groups are presented as expandable rows that when clicked will show their contained (specification) options. Clicking a
+group's option or a non-grouped specification will take you to its :ref:`detail screen<domains__specification>`. Each specification group
+row presents options to **edit** it and :ref:`add within it a new option<domains__domain_create_specification>`. Each specification within
+a group (a group option), as well as non-grouped specifications presents controls to **ungroup** it (for options), **copy** it to a group,
+and **move** it to a group. Specifically regarding copying to a group, this is meant to simplify the definition of similar options by cloning
+the selected option's :ref:`details<domains__specification>`, :ref:`actors<domains__specification__actor_list>`,
+:ref:`endpoints<domains__actor__endpoint_list>` and :ref:`parameters<domains__endpoint__parameter_list>`. Test suites however are **not copied**.
+
+Selecting to **edit** a specification group takes you to its detail page where you are presented with its information.
+
+.. figure:: ../screenshots/admin_domains_domain_specification_groups_edit.png
+  :align: center
+
+From this page you may select to **Save changes** or go **Back**, but you can also **Delete** the group altogether. When deleting you have
+the option of either deleting also the group's options or only deleting the group itself. In the latter case, any specifications contained as
+options within the group will be set as being non-grouped.
+
+.. note::
+
+  **Specification groups and conformance statements:** Test suites, conformance statements and executed tests are linked to specifications
+  and options (specifications within groups). Specification groups have no direct link to these, and can be removed, replaced or switched without
+  impacting users' testing history.
 
 .. _domains__domain_deploy_test_suite:
 
 Deploy test suite to multiple specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++
 
 In case you have more than one specifications defined for the domain you will also see in the specifications' tab the
-option to **Upload test suite**.
+option termed **Upload test suite**.
 
-.. figure:: ../screenshots/admin_domains_domain_upload_test_suite.PNG
+.. figure:: ../screenshots/admin_domains_domain_specifications_header.PNG
   :align: center
 
 Clicking this allows you to upload a test suite to multiple specifications at once, without needing to make individual uploads. For details
 on the process to upload a test suite see :ref:`domains__specification__test_suite_upload`.
 
+.. note::
+
+  Deploying a test suite in this way is not the same as linking a :ref:`shared test suite<domains__domain__shared_test_suites>` with
+  multiple specifications. In this case the test suite will be separately deployed to each specification and subsequent tests will only
+  count towards each test suite's respective specification. The alternative of linking a shared test suite to multiple specifications will result in
+  executed tests counting towards **all** linked specifications.
+
+.. _domains__domain__shared_test_suites:
+
+Shared test suites
+~~~~~~~~~~~~~~~~~~
+
+The **Shared test suites** section presents the test suites that have been configured at the level of the domain. These are test suites that
+are meant to be shared across multiple specifications, for which executed tests will count commonly across specifications. This contrasts
+:ref:`test suites defined at specification level<domains__specification__test_suite_list>` whose tests are linked only to the specification
+in question. They are presented in a table with one row per shared test suite.
+
+.. figure:: ../screenshots/admin_domains_specification_shared_test_suites.png
+  :align: center
+
+For each test suite the following information is displayed:
+
+* The **ID** of the test suite. This is an internal identifier used to reference the test suite and match it when uploading updates.
+* The **name** of the test suite. This is presented to users as a short name for the test suite.
+* Its **description**. This typically would include information on the purpose of the test suite and limited instructions relevant to all its test cases.
+* Its **version**. This is metadata that is recorded but not presented to users.
+
+From here you may either :ref:`upload a new test suite<domains__domain__shared_test_suite_upload>` by clicking the **Upload shared test suite** button or
+:ref:`view its details<domains__test_suite_details>` by clicking its row.
+
+.. _domains__domain__shared_test_suite_upload:
+
+Upload shared test suite
+++++++++++++++++++++++++
+
+To add or update a shared test suite for a domain you need to upload it using the **Upload shared test suite** button from the shared test suite section's header.
+
+.. figure:: ../screenshots/admin_domains_shared_test_suites_header.png
+  :align: center
+
+Clicking this button opens a dialog prompting you to select the test suite archive to upload.
+
+.. figure:: ../screenshots/admin_domains_specification_shared_test_suite_upload.png
+  :align: center
+
+Once the archive is selected you can click on **Proceed** to proceed with the upload. Upon doing so the test bed will validate the archive to ensure it is a
+valid test suite. In case your uploaded test suite has errors or warnings these will be presented to you including for each:
+
+* An error code and description of the validation finding.
+* The relevant test suite file as the location of the problem.
+
+.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_validation.PNG
+  :align: center
+
+If the test suite is found to have errors you are not allowed to proceed further. If only warnings are found you can click the **Proceed** button to ignore them
+and continue to the next step. Validation warnings will not necessarily lead to test session errors but should nonetheless be reviewed to ensure nothing has been neglected.
+Examples of warnings are supporting resources that are not used in test cases or references to missing :ref:`domain parameters<domains__domain_details>`.
+
+.. note::
+    **Uploading valid test suites:** If an uploaded test suite is fully valid (i.e. its validation results in no errors or warnings) the validation
+    report step is completely skipped.
+
+For a valid test suite, or a test suite with warnings you have chosen to ignore, what takes place next depends on whether or not the test suite already exists.
+If this is the case you will be prompted with choices on how to proceed.
+
+.. figure:: ../screenshots/admin_domains_shared_test_suites_upload_choices.png
+  :align: center
+
+With respect to the test suite's metadata (its name, description, version and documentation) you are presented with the option to keep
+existing values unchanged or to update them to match the data from the archive. Below this choice you are presented with three tables
+regarding the test suite's test cases (displayed as applicable):
+
+* The **existing test cases**, matched from the archive, that will be updated.
+* The **new test cases**, present only in the archive, that will be created.
+* The **missing test cases**, not present in the archive, that will be deleted.
+
+From these three tables the one showing matched existing test cases presents further choices per test case. For each such test case you can choose:
+
+* To **update its metadata**, setting its name, description, version and documentation to match the archive's definition.
+* To **reset its test history**, that if selected will consider related test sessions as obsolete and reset accordingly linked conformance statements.
+
+To proceed, review and complete the presented choices and click on **Proceed**. Clicking on **Cancel** will close the dialog without further actions.
+
+.. note::
+
+  If any test case option to reset testing history is selected you will be prompted for a confirmation before proceeding. Resetting the testing
+  history is **not reversible**.
+
 .. _domains__domain__parameter_list:
 
-Parameter list
-~~~~~~~~~~~~~~
+Parameters
+~~~~~~~~~~
 
 The **Parameters** section presents the configuration parameters defined at domain level. These are configuration values that are expected to be used
 within the `GITB TDL test cases`_ that you upload to the test bed. They typically relate to information you don't want to include in test cases either
@@ -191,12 +339,12 @@ The domain's parameters are presented in a table with one parameter per row. The
     :ref:`input to a trigger<community__manage_triggers>`.
 
 To create a new parameter click the **Create parameter** button (see :ref:`domains__domain_create_parameter`). To edit an existing one click its 
-corresponding table row (see :ref:`domains__specification`).
+corresponding table row (see :ref:`domains__domain_edit_parameter`).
 
 .. _domains__domain_create_parameter:
 
 Create parameter
-~~~~~~~~~~~~~~~~
+++++++++++++++++
 
 Creating a new domain parameter is done by clicking the **Create parameter** button from the **Parameters** list header.
 
@@ -240,7 +388,7 @@ To complete the creation of the parameter click the **Save** button. Clicking th
 .. _domains__domain_edit_parameter:
 
 Edit parameter
-~~~~~~~~~~~~~~
+++++++++++++++
 
 To edit a domain parameter click its corresponding row from the **Parameters** table.
 
@@ -293,6 +441,11 @@ The following information is presented in corresponding form controls:
 * Whether or not the specification is to be considered as **hidden** (by default set to false).
 * The specification's **REST API key** that is used to identify the specification when managing test suites via the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled by the test bed administrator).
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
+* In case :ref:`specification groups<domains__domain_specification_groups>` are defined in the domain, these will also be presented
+  as a dropdown selection at the top, with the specification's group (if defined) being preselected.
+
+.. figure:: ../screenshots/admin_domains_specification_group_dropdown.png
+  :align: center
 
 Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
 deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
@@ -302,15 +455,16 @@ new conformance statements are made for this latest version.
 
 To edit the specification's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the specification and all related information. The **Back** button does not make any changes but takes you back to the
-specification domain's detail screen (see :ref:`domains__domain_details`).
+specification :ref:`domain's detail screen<domains__domain_details>`.
 
 .. _domains__specification__test_suite_list:
 
-Test suite list
-~~~~~~~~~~~~~~~
+Test suites
+~~~~~~~~~~~
 
-The **Test suites** section presents the test suites that have been configured for the specification. They are presented in a table with one row per
-test suite.
+The **Test suites** section presents the test suites that have been configured for the specification. These include test suites specific to
+the current specification, or :ref:`shared test suites<domains__domain__shared_test_suites>` that apply to multiple linked specifications.
+All test suites are presented in a table with one row per test suite.
 
 .. figure:: ../screenshots/admin_domains_specification_test_suites.PNG
   :align: center
@@ -321,14 +475,30 @@ For each test suite the following information is displayed:
 * The **name** of the test suite. This is presented to users as a short name for the test suite.
 * Its **description**. This typically would include information on the purpose of the test suite and limited instructions relevant to all its test cases.
 * Its **version**. This is metadata that is recorded but not presented to users.
+* An indication of whether this test suite is (or could be) **shared** with other specifications.
 
-From the table you may either :ref:`upload a new test suite<domains__specification__test_suite_upload>` by clicking the **Upload test suite** button or
-:ref:`view its details<domains__test_suite_details>` by clicking its row.
+From the table you may proceed to :ref:`upload a new test suite<domains__specification__test_suite_upload>` by clicking the **Upload test suite** button or
+:ref:`view its details<domains__test_suite_details>` by clicking its row. In case the domain defines
+:ref:`shared test suites<domains__domain__shared_test_suites>` you may also:
+
+* **Link** a shared test suite to the specification.
+* **Unlink** one of the already shared test suites from the specification.
+
+Clicking on either of these options opens up a list to select the test suite to link or unlink. In case linking a shared test suite
+requires a confirmation you will be presented with a relevant dialog. This will either inform you that linking the test suite is not possible
+(in case another test suite has the same identifier), or will prompt you to choose whether matching actor, endpoint and endpoint parameter
+data should be maintained or replaced.
+
+.. figure:: ../screenshots/admin_domains_specification_test_suites_link_choice.png
+  :align: center
+
+To proceed with the link, review and complete the presented choice and click on **Proceed**. Clicking on **Cancel** will close the dialog
+without taking further actions.
 
 .. _domains__specification__test_suite_upload:
 
 Upload test suite
-~~~~~~~~~~~~~~~~~
++++++++++++++++++
 
 To add or update a test suite for a specification you need to upload it using the **Upload test suite** button from the test suite section's header.
 
@@ -377,56 +547,53 @@ data it refers to already exist. If this is the case you will next be prompted w
 .. figure:: ../screenshots/admin_domains_specification_test_suites_upload_choices.PNG
   :align: center
 
-For each specification you have one or two sets of choices depending on its existing data:
+For each specification you have two possible choices regarding the specification's data:
 
-* **Test history:** This choice appears when the uploaded test suite identifier matches an existing one and refers to the existing test suite's conformance testing history.
-  You may choose to **keep** the existing test results (the default choice) if you are adding new test cases or if any changes you have made are minor and don't require retesting.
-  Alternatively you can **drop**, upon confirmation, the existing test results, rendering them obsolete, in case changes are significant and require all tests to be repeated.
-* **Specification data:** This choice appears if the test suite defines specification data that already exists. Such data can be actors, endpoints and parameters, as well
-  as metadata for the test suite and its test cases (essentially anything you could have updated through the user interface). You may choose to **keep** existing values unchanged
-  (the default choice) or **replace** them with the data coming from the archive.
+* **Update the actor definitions**, displayed in case actors with the same identifiers as those in the test suite are found. Select this option
+  to update the definitions of actors, endpoints and parameters to match the definitions from the archive.
+* **Update test suite metadata**, displayed in case the test suite already exists. Select this option to update the test suite's metadata (name,
+  description, documentation, version) to match the archive.
+
+In case an existing test suite is found you are also presented with tables concerning the test suite's test cases (displayed as applicable):
+
+* The **existing test cases**, matched from the archive, that will be updated.
+* The **new test cases**, present only in the archive, that will be created.
+* The **missing test cases**, not present in the archive, that will be deleted.
+
+From these three tables the one showing matched existing test cases presents further choices per test case. For each such test case you can choose:
+
+* To **update its metadata**, setting its name, description, version and documentation to match the archive's definition.
+* To **reset its test history**, that if selected will consider related test sessions as obsolete and reset accordingly linked conformance statements.
+
+.. note::
+
+  If any test case option to reset testing history is selected you will be prompted for a confirmation before proceeding. Resetting the testing
+  history is **not reversible**.
 
 When reviewing the choices for matching data you may also choose to replicate one set of choices to all specifications through the **Apply to all** button. In addition, you can
 click the **Skip** button to avoid making any changes to the specification in question. Doing so will grey out the specification's entry and display a **Process** button in case
 you finally choose to proceed with the changes. Once you are satisfied with your choices you can click the **Proceed** button to complete the upload.
 
-Once the upload is completed you are presented with a summary of all changes that were made, organised by target specification.
-
-.. figure:: ../screenshots/admin_domains_specification_test_suites_upload_result.PNG
-  :align: center
-
-The information presented shows you all the resources that were affected as part of the test suite upload. Specifically:
-
-* The **test suite** that was affected. This will either be marked as "added" or "updated" depending on whether or not the test suite already existed.
-* The **test cases** that were handled. Test cases present in the uploaded test suite that did not previously exist are presented as "added", others
-  that matched existing ones are presented as "updated", whereas test cases that existed previously but are removed from the latest test suite are
-  reported as "deleted".
-* The **actors** that were referenced. These will either be reported as "added" for those defined in the test suite that did not previously exist,
-  "updated" for those defined in the test suite and already present in the specification, or "unchanged" for those that were defined in the test suite
-  as references, without their complete information.
-* The **endpoints** that were managed. These will either be "added" for new ones, "updated" for already existing ones, or "unchanged" for those that
-  already existed but were not defined in the test suite.
-* The **parameters** that were managed. These will either be "added" for new ones, "updated" for already existing ones, or "unchanged" for those that
-  already existed but were not defined in the test suite.
+Once the upload is completed the dialog will close and the listed test suites will be refreshed. At any point during the test suite upload wizard you can stop the operation by
+clicking the **Cancel** button that closes the popup without making any updates.
 
 .. note::
     **Deleting specification data:** Specification data that is not matched through the test suite upload can only be created or updated. Data that exists
     but that is not matched in the test suite remains unaffected.
 
-At any point during the test suite upload wizard you can stop the operation by clicking the **Cancel** button. Only once the upload is fully completed
-is this replaced by a **Close** button given that changes have already been applied. Clicking either of these button closes the popup.
-
 .. _domains__specification__test_suite_rest:
 
 Manage test suites via REST API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++
 
 Apart from managing test suites through its user interface, the test bed also provides a **REST API** allowing you to deploy and undeploy test suites
 via REST calls. Managing test suites in this way is primarily used during **test suite development**, to allow the deployment of test suites via
 automation processes. Specifically you may use the API to:
 
-* **Deploy** test suites.
-* **Undeploy** test suites.
+* **Deploy** test suites (shared and specification-specific).
+* **Undeploy** test suites (shared and specification-specific).
+* **Link** shared test suites to specifications.
+* **Unlink** shared test suites from specifications.
 
 Details on each operation, including sample requests and responses, are provided in the :ref:`REST API documentation<api__test_suites>`.
 
@@ -437,8 +604,8 @@ Details on each operation, including sample requests and responses, are provided
 
 .. _domains__specification__actor_list:
 
-Actor list
-~~~~~~~~~~
+Actors
+~~~~~~
 
 The **Actors** section presents the actors configured for the specification. They are presented in a table with one row per actor.
 
@@ -453,10 +620,10 @@ For each actor the following information is displayed:
 * Its **description**, displayed in details screens and reports to provide more information about the actor.
 * Whether or not the actor is the specification's **default**. The default actor is the one that will be preselected as the SUT when creating new 
   conformance statements for the specification.
-* Whether or not the actor is set as **hidden**. Hidden actors are not presented to users during the creation of conformance statements.
+* Whether or not the actor is set as **hidden** (presented as a "hidden" icon). Hidden actors are not presented to users during the creation of conformance statements.
 
-Clicking on an actor's row will take you to its detail page (see :ref:`domains__actor`). To manually create a new actor click the **Create actor**
-button from the table's header (see :ref:`domains__specification__create_actor`).
+Clicking on an actor's row will take you to its :ref:`detail page<domains__actor>`. To manually :ref:`create a new actor<domains__specification__create_actor>` click the **Create actor**
+button from the table's header.
 
 .. note::
     **Automatic vs manual actor creation:** Actors can also be created automatically during test suite upload as long as their complete
@@ -468,7 +635,7 @@ button from the table's header (see :ref:`domains__specification__create_actor`)
 .. _domains__specification__create_actor:
 
 Create actor
-~~~~~~~~~~~~
+++++++++++++
 
 To create a new actor manually (as opposed to automatically via test suite upload) click  the **Create actor** button from the **Actors** list header.
 
@@ -493,7 +660,7 @@ The information to provide for the actor is:
 * Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
 
-To complete the creation of the actor click the **Save** button. To cancel and return to the specification's detail page (see :ref:`domains__specification`) 
+To complete the creation of the actor click the **Save** button. To cancel and return to the :ref:`specification's detail page<domains__specification>`
 click the **Cancel** button.
 
 .. _domains__test_suite_details:
@@ -506,7 +673,19 @@ To view a test suite and edit its metadata click its row from the specification'
 .. figure:: ../screenshots/admin_domains_specification_test_suites.PNG
   :align: center
 
-Doing so presents you with the test suite's details in an editable form followed by a listing of its included test cases.
+In case of a :ref:`shared test suite<domains__domain__shared_test_suites>`, the entry point to its details would be to click the test suite's
+row from the domain's listing of shared test suites.
+
+.. figure:: ../screenshots/admin_domains_specification_shared_test_suites.png
+  :align: center
+
+For both shared and specification-specific test suites, details are presented in an editable form followed by:
+
+* A listing of its included :ref:`test cases<domains__test_suite_test_case_list>`.
+* A listing of its :ref:`linked specifications<domains__test_suite_linked_specifications_list>` (for a shared test suite).
+
+In case this is a shared test suite you are also presented with a message highlighting that any changes made would apply to all linked
+specifications.
 
 .. figure:: ../screenshots/admin_domains_test_suites_details.PNG
   :align: center
@@ -534,7 +713,8 @@ presents a popup with the documentation, displaying it exactly as when viewed by
 
 If you make changes to the test suite's metadata you can apply them by clicking the **Save changes** button. From here you can also click the
 **Download** button to download the test suite's ZIP archive. Clicking **Delete** will delete, upon confirmation, the test suite rendering linked
-test results as obsolete, whereas clicking on **Back** will discard any pending changes and return you to the :ref:`specification detail page<domains__specification>`.
+test results as obsolete, whereas clicking on **Back** will discard any pending changes and return you to the :ref:`specification detail page<domains__specification>`
+(for a specification's test suite) or the :ref:`domain detail page<domains__domain__shared_test_suites>` (for a shared test suite).
 
 .. note::
   **Update via test suite upload:** A test suite's name, description and documentation can also be updated via
@@ -544,8 +724,8 @@ test results as obsolete, whereas clicking on **Back** will discard any pending 
 
 .. _domains__test_suite_test_case_list:
 
-Test case list
-~~~~~~~~~~~~~~
+Test cases
+~~~~~~~~~~
 
 The **Test cases** section presents the test cases included in the test suite. They are presented in a table with one row per test case.
 
@@ -562,6 +742,47 @@ Clicking on an test case's row will take you to its :ref:`detail page<domains__t
 
 .. note::
   **Creating a test case:** Creating a new test case is only possible through :ref:`test suite upload<domains__specification__test_suite_upload>`.
+
+.. _domains__test_suite_linked_specifications_list:
+
+Linked specifications
+~~~~~~~~~~~~~~~~~~~~~
+
+For a :ref:`shared test suite<domains__domain__shared_test_suites>`, the **Linked specifications** tab presents the specifications with which
+the test suite is currently linked. Each specification is presented in a row showing the specification's name and description, allowing also
+to be clicked to :ref:`view its details<domains__specification>`.
+
+.. figure:: ../screenshots/admin_domains_test_suites_linked_specs.png
+  :align: center
+
+To link the test suite with another specification you may click the **Link to specifications** button. Doing so will present a dialog with
+the specifications available to link the test suite with.
+
+.. figure:: ../screenshots/admin_domains_test_suites_linked_specs_link.png
+  :align: center
+
+To proceed select the desired specification(s) and click on **Proceed**. At this point you may be presented with an
+additional confirmation screen in case matching information is found in any of the selected specifications. Specifically:
+
+* In case a specification defines a different test suite with the same identifier you will see this highlighted and the linking marked as
+  skipped.
+* In case a specification already defines actors, endpoints and endpoint parameters matching the test suite's data, you will be prompted to
+  choose whether these will remain unchanged or will be updated to match the test suite archive.
+
+.. figure:: ../screenshots/admin_domains_test_suites_linked_specs_link_choices.png
+  :align: center
+
+Once you have reviewed and completed these choices you may click on **Proceed** to complete the link. Clicking on **Cancel** at any time will
+close the dialog without any actions.
+
+To unlink a test suite from one or more specifications you may click the **Unlink from specifications...** button. Doing so will present
+checkboxes alongside each specification allowing you to unlink multiple specifications in one go.
+
+.. figure:: ../screenshots/admin_domains_test_suites_linked_specs_unlink.png
+  :align: center
+
+To proceed, select one or more specifications and click on **Confirm**. Note that unlinking a test suite from a specification does not
+delete the test suite itself nor does it affect its recorded tests.
 
 .. _domains__test_case__details:
 
@@ -624,7 +845,7 @@ Manage actor details
 --------------------
 
 To view an actor's details and edit its information you need to click on the actor's row, displayed in the **Actors** table
-of the specification details page (see :ref:`domains__specification`).
+of the :ref:`specification details page<domains__specification>`.
 
 .. figure:: ../screenshots/admin_domains_specification_actors.PNG
   :align: center
@@ -632,7 +853,7 @@ of the specification details page (see :ref:`domains__specification`).
 Doing so will take you to the actor details screen. This is split in two sections:
 
 * The **Actor details** section, presenting the actor's information.
-* The **Endpoints** section, listing the endpoints configured for this actor (see :ref:`domains__actor__endpoint_list`).
+* The **Endpoints** section, listing the :ref:`endpoints configured for this actor<domains__actor__endpoint_list>`.
 
 In the **Actor details** section you are presented with a form to view and edit the actor's information.
 
@@ -656,12 +877,12 @@ The following information is presented in corresponding form controls:
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the actor and all related information. The **Back** button does not make any changes but takes you back to the
-specification's detail screen (see :ref:`domains__specification`).
+:ref:`specification's detail screen<domains__specification>`.
 
 .. _domains__actor__endpoint_list:
 
-Endpoint list
-~~~~~~~~~~~~~
+Endpoints
+~~~~~~~~~
 
 The **Endpoints** section presents the endpoints defined for the actor. They are presented in a table with one row per endpoint.
 
@@ -674,8 +895,8 @@ For each endpoint the following information is displayed:
 * Its **description**, used to provide context to users on the endpoint's purpose.
 * A comma-separated list of its defined **parameters**.
 
-Clicking on an endpoint's row will take you to its detail page (see :ref:`domains__endpoint`). To manually create a new endpoint click the **Create endpoint**
-button from the table's header (see :ref:`domains__actor__create_endpoint`).
+Clicking on an endpoint's row will take you to its :ref:`detail page<domains__endpoint>`. To manually :ref:`create a new endpoint<domains__actor__create_endpoint>` click the **Create endpoint**
+button from the table's header.
 
 .. note::
     **Automatic vs manual endpoint creation:** Endpoints can also be created automatically during test suite upload.
@@ -683,7 +904,7 @@ button from the table's header (see :ref:`domains__actor__create_endpoint`).
 .. _domains__actor__create_endpoint:
 
 Create endpoint
-~~~~~~~~~~~~~~~
++++++++++++++++
 
 To create a new endpoint manually (as opposed to automatically via test suite upload) click  the **Create endpoint** button from the **Endpoints** list header.
 
@@ -700,7 +921,7 @@ The information to provide for the endpoint is:
 * Its **name** (required), displayed in detail screens and used to refer to it from test cases.
 * Its **description** to provide more context on the endpoint's purpose (optional).
 
-To complete the creation of the endpoint click the **Save** button. To cancel and return to the actor's detail page (see :ref:`domains__actor`) 
+To complete the creation of the endpoint click the **Save** button. To cancel and return to the :ref:`actor's detail page<domains__actor>`
 click the **Cancel** button.
 
 .. _domains__endpoint:
@@ -709,7 +930,7 @@ Manage endpoint details
 -----------------------
 
 To view an endpoint's details and edit its information you need to click on the endpoint's row, displayed in the **Endpoints** table
-of the actor details page (see :ref:`domains__actor`).
+of the :ref:`actor details page<domains__actor>`.
 
 .. figure:: ../screenshots/admin_domains_actor_endpoints.PNG
   :align: center
@@ -717,7 +938,7 @@ of the actor details page (see :ref:`domains__actor`).
 Doing so will take you to the endpoint details screen. This is split in two sections:
 
 * The **Endpoint details** section, presenting the endpoint's information.
-* The **Parameters** section, listing the endpoint's parameters (see :ref:`domains__endpoint__parameter_list`).
+* The **Parameters** section, listing the :ref:`endpoint's parameters<domains__endpoint__parameter_list>`.
 
 In the **Endpoint details** section you are presented with a form to view and edit the endpoint's information.
 
@@ -731,7 +952,7 @@ The following information is presented in corresponding form controls:
 
 To edit the endpoint's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the endpoint and its parameters. The **Back** button does not make any changes but takes you back to the
-actor's detail screen (see :ref:`domains__actor`).
+:ref:`actor's detail screen<domains__actor>`.
 
 .. note::
   **Endpoint display for users:** In most cases each actor will define at most one endpoint for its configuration. If this is the case the endpoint
@@ -740,8 +961,8 @@ actor's detail screen (see :ref:`domains__actor`).
 
 .. _domains__endpoint__parameter_list:
 
-Endpoint parameter list
-~~~~~~~~~~~~~~~~~~~~~~~
+Endpoint parameters
+~~~~~~~~~~~~~~~~~~~
 
 The **Parameters** section presents the endpoint's parameters. They are displayed in a table with one row per parameter.
 
@@ -758,8 +979,8 @@ For each parameter the following information is displayed:
 * An **included in tests** flag, determining whether or not the parameter is included as a variable within test sessions.
 * A **hidden** flag, determining whether or not a non-editable parameter is is also to be hidden from organisation users.
 
-Clicking on a parameter's row will open a popup to view and edit its information (see :ref:`domains__endpoint__edit_parameter`). To manually create 
-a new parameter click the **Create parameter** button from the table's header (see :ref:`domains__endpoint__create_parameter`).
+Clicking on a parameter's row will open a popup to :ref:`view and edit its information<domains__endpoint__edit_parameter>`. To manually
+:ref:`create a new parameter<domains__endpoint__create_parameter>` click the **Create parameter** button from the table's header.
 
 .. note::
     **Automatic vs manual parameter creation:** Endpoint parameters can also be created automatically during :ref:`test suite upload<domains__specification__test_suite_upload>`.
@@ -767,7 +988,7 @@ a new parameter click the **Create parameter** button from the table's header (s
 .. _domains__endpoint__create_parameter:
 
 Create endpoint parameter
-~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++
 
 To create a new endpoint parameter manually (as opposed to automatically via test suite upload) click  the **Create parameter** button from the 
 **Parameters** list header.
@@ -829,7 +1050,7 @@ To complete the creation of the parameter, click the **Save** button. To cancel 
 .. _domains__endpoint__edit_parameter:
 
 Edit endpoint parameter
-~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++
 
 To edit an endpoint parameter click its corresponding row from the **Parameters** table.
 
@@ -848,7 +1069,7 @@ following confirmation, delete the parameter. The **Cancel** button closes the p
 .. _domains__endpoint__order_parameters:
 
 Change parameter ordering
-~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++
 
 By default parameters are ordered alphabetically based on their name. You may override this default ordering by reordering the parameters as needed and saving their
 relative positions. This is done through the table listing the parameters by clicking the **up** and **down** arrows at each row's right end.

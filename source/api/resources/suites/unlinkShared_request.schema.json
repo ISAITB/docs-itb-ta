@@ -1,0 +1,12 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/unlinkShared_request",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the test suites' unlinkShared operation request payload",
+  "type": "object",
+  "properties": {
+    "testSuite": { "type": "string" },
+    "specifications": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": [ "testSuite", "specifications" ],
+  "additionalProperties": false
+}

@@ -1,5 +1,5 @@
 {
-  "$id": "https://www.itb.ec.europa.eu/api/start_response",
+  "$id": "https://www.itb.ec.europa.eu/api/deploy_response",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "JSON schema for the test suites' deploy operation response payload",
   "type": "object",
