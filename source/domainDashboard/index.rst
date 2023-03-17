@@ -18,8 +18,8 @@ the **Domain Management** link.
 
 .. _domains__domain_view:
 
-Domain list
------------
+Domains
+-------
 
 The first screen you access is the display of the domains defined in the test bed. These are managed by you as test bed administrator but also by
 community administrators, assuming that their community has been linked to a given domain.
@@ -33,8 +33,8 @@ The presented table includes one row per domain for which the following informat
 * The **full name** for the domain, used in detail displays and reports.
 * A **description** for the domain to provide context over what the domain relates to.
 
-To proceed within a domain's details click its relevant row from the table (see :ref:`domains__domain_details`). To create a new domain click the
-**Create domain** button (see :ref:`domains__domain_create`).
+To proceed within a :ref:`domain's details<domains__domain_details>` click its relevant row from the table. To :ref:`create a new domain<domains__domain_create>` click the
+**Create domain** button.
 
 .. note::
     **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification
@@ -89,7 +89,7 @@ The following information is presented in corresponding form controls:
 
 To edit the domain's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the domain and all related information. The **Back** button does not make any changes but takes you back to the
-domain list screen (see :ref:`domains__domain_view`).
+:ref:`domain list screen<domains__domain_view>`.
 
 .. note::
     **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 

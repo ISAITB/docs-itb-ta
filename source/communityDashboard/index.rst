@@ -108,8 +108,8 @@ community.
 .. figure:: ../screenshots/admin_community_communities.PNG
   :align: center
 
-For each community the **short name** and **full name** is presented. From this section you can add a new community (see :ref:`community_testbed_communities__create`)
-or edit an existing one (see :ref:`community_testbed_communities__manage`).
+For each community the **short name** and **full name** is presented. From this section you can :ref:`add a new community<community_testbed_communities__create>`
+or :ref:`edit an existing one<community_testbed_communities__manage>`.
 
 .. note::
     **The default community:** The list of communities always includes the **Default community** which is a special-purpose community corresponding to
@@ -298,6 +298,88 @@ In terms of additional features available here:
 
     **Default community:** The **Delete** button is hidden for the test bed's **Default community** as it cannot be deleted.
     See :ref:`community__defaults__community` for more information.
+
+.. _community__administrators:
+
+Manage community administrators
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    **Default community:** This section is not displayed in case you are viewing the details of the test bed's **Default community**.
+    See :ref:`community__defaults__community` for more information.
+
+The **Community administrators** section displays the users that are capable of managing the community.
+
+.. figure:: ../screenshots/admin_community_administrators.PNG
+  :align: center
+
+Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
+(or **username** if not integrated with EU Login) and **status**.
+
+.. note::
+  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
+  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  displayed as **Active**.
+
+To create a new community administrator click on the **Create community administrator** button from the table's header.
+Clicking on an existing row from the table allows you to edit the relevant user's information.
+
+The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
+is integrated with EU Login.
+
+Case: EU Login
+++++++++++++++
+
+When creating an administrator you will be presented with a form to enter the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_create_eulogin.PNG
+  :align: center
+
+You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
+her EU Login account. Once you have created the user you will see that a new entry is added to the list of community administrators
+but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
+updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
+
+To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
+
+Editing an administrator's details displays her information as read-only.
+
+.. figure:: ../screenshots/admin_community_administrators_edit_eulogin.PNG
+  :align: center
+
+The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user
+by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back**
+will return you to the previous screen.
+
+Case: No EU Login
++++++++++++++++++
+
+When creating an administrator you will be presented with a form to enter the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_create.PNG
+  :align: center
+
+In this form you are expected to provide the following information:
+
+* The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
+* The **username** (required), used to login.
+* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
+
+To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
+
+When editing a user you see a similar screen, this time prefilled with the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_edit.PNG
+  :align: center
+
+The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
+edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
+for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
+
+In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you
+additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
+to change it at his/her next login.
 
 .. _community__organisations:
 
@@ -612,92 +694,10 @@ Details on how these REST API keys are used to launch and manage test sessions a
 
   The displayed specifications, actors, test suites and test cases are limited to those linked to the organisation's :ref:`conformance statements<manage_your_conformance_statements>`.
 
-.. _community__administrators:
-
-Manage community administrators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-    **Default community:** This section is not displayed in case you are viewing the details of the test bed's **Default community**.
-    See :ref:`community__defaults__community` for more information.
-
-The **Community administrators** section displays the users that are capable of managing the community.
-
-.. figure:: ../screenshots/admin_community_administrators.PNG
-  :align: center
-
-Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
-(or **username** if not integrated with EU Login) and **status**.
-
-.. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
-  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
-  displayed as **Active**.
-
-To create a new community administrator click on the **Create community administrator** button from the table's header.
-Clicking on an existing row from the table allows you to edit the relevant user's information.
-
-The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
-is integrated with EU Login.
-
-Case: EU Login
-~~~~~~~~~~~~~~
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_create_eulogin.PNG
-  :align: center
-
-You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to the list of community administrators
-but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
-
-To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
-
-Editing an administrator's details displays her information as read-only.
-
-.. figure:: ../screenshots/admin_community_administrators_edit_eulogin.PNG
-  :align: center
-
-The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user
-by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back**
-will return you to the previous screen.
-
-Case: No EU Login
-~~~~~~~~~~~~~~~~~
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_create.PNG
-  :align: center
-
-In this form you are expected to provide the following information:
-
-* The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
-* The **username** (required), used to login.
-* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
-
-To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
-
-When editing a user you see a similar screen, this time prefilled with the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_edit.PNG
-  :align: center
-
-The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
-edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
-for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
-
-In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you
-additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
-to change it at his/her next login.
-
 .. _community__manage_landing_pages:
 
-Manage community-specific landing pages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Manage landing pages
+~~~~~~~~~~~~~~~~~~~~
 
 A **landing page** is the home page displayed to the community's users when they log into the test bed. Its purpose is to welcome users providing them context
 on the use of the test bed and potentially including a customised message. Moreover, this customised message can even be set at the level of specific organisations
@@ -767,8 +767,8 @@ with the current landing page's information. This can be useful if you want to c
 
 .. _community__manage_legal_notices:
 
-Manage community-specific legal notices
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Manage legal notices
+~~~~~~~~~~~~~~~~~~~~
 
 A **legal notice** is an arbitrary text that can be presented to the community's users when they click on the **Legal notice** link from the screen footer.
 The purpose of this is to define terms and conditions, notices and disclaimers that you want to make known to the community.
@@ -841,8 +841,8 @@ with the current legal notice's information. This can be useful if you want to c
 
 .. _community__manage_error_templates:
 
-Manage community-specific error templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Manage error templates
+~~~~~~~~~~~~~~~~~~~~~~
 
 An **error template** is a template that is used to format and stylise information displayed to users due to unexpected errors. They can be used to
 provide specific guidelines to users or support information.
@@ -1166,7 +1166,7 @@ also be defined as a mandatory prerequisite through the use of a hidden but requ
 .. _community__manage_resources:
 
 Manage resources
-----------------
+~~~~~~~~~~~~~~~~
 
 In several cases the test bed supports the definition of rich content as documentation or as a means of customising the experience of a community's members.
 Specifically, rich content is available as:
