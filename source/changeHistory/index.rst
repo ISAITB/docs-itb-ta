@@ -10,7 +10,7 @@ the following information is provided:
 
 The latest test bed release is **1.19.0**.
 
-Release 1.19.0 - 19/03/2023
+Release 1.19.0 - 17/03/2023
 ---------------------------
 
 This release focuses on providing further flexibility in managing a community's overall testing setup and the versioning of 
