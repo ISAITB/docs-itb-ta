@@ -88,8 +88,8 @@ The **domain** details are presented on the top as the high-level description of
 **specification** information follows to define the specification you have chosen for your system to conform to
 (a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
 as part of this specification (a specification may have multiple actors). The **last update** timestamp highlights the last time the
-conformance statement's status was updated. The **test results** present an overview of the testing progress for the conformance statement's test cases,
-whereas the **status** represents the statement's current progress. Below this section you are presented with buttons for further actions as follows:
+conformance statement's status was updated. The **test results** present an overview of the testing progress for the conformance statement's test cases
+as totals and percentages, whereas the **status** represents the statement's current progress. Below this section you are presented with buttons for further actions as follows:
 
 * The **Download conformance certificate** button to generate a conformance certificate for your system (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate`).
 * The **Download report** button to export your system's current conformance statement report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`).
@@ -257,15 +257,17 @@ The following sample illustrates the information that is included in the report'
 
  * The information on the **domain**, **specification** and **actor** for the selected system.
  * The name of the system's **organisation** and the **system** itself.
- * The **date** the report was produced and the number of **successfully passed test cases** versus the total.
- * A table with the conformance statement's test cases, displaying a row per test case with its **reference number**, the name of the 
-   the **test suite** and **test case**, the test case **description** and its test **result**.
+ * The **date** the report was produced.
+ * The overall **conformance status**, the number of **successfully passed test cases** versus the total as well as **result percentage ratios**.
+ * A listing of the statement's **test suites**, each including its **test cases** and their **result**. Test cases are prefixed by a **link** to
+   take you directly to the relevant result (if test steps were selected to be included).
 
 .. figure:: ../screenshots/conformance_statement_report_sample.png
   :align: center
 
-In case the option to add each test case's step results is selected, the report includes a section per test case displaying its summary
-and the results from each test step. The test case's title includes its reference number listed in the report's overview section.
+In case the option to add each test case's step results is selected, the report includes a page per test case displaying its summary
+and the result of each test step. The test case's title includes its reference number listed in the report's overview section, and
+provides also a link to return to the listing of test cases.
 
 .. figure:: ../screenshots/conformance_statement_report_sample_test_case.png
   :align: center
