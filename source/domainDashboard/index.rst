@@ -163,6 +163,39 @@ options within the group will be set as being non-grouped.
   and options (specifications within groups). Specification groups have no direct link to these, and can be removed, replaced or switched without
   impacting users' testing history.
 
+.. _domains__domain_specification_ordering:
+
+Custom specification ordering
++++++++++++++++++++++++++++++
+
+By default specifications are presented with alphabetic ordering to users based on their name. It is possible to override this 
+by applying a specific presentation order that will be used in the following cases:
+
+* When reviewing available options while :ref:`creating new conformance statements<manage_your_conformance_statements__create>`.
+* When :ref:`viewing existing conformance statements<manage_your_conformance_statements__view_your_conformance_statements>`.
+
+Changing the specifications' ordering is achieved using the **move up** and **move down** buttons displayed in the end of each specification's row.
+These buttons are presented as soon as you have more than one specification in your domain.
+
+.. figure:: ../screenshots/admin_domains_domain_specification_order_specs.png
+  :align: center
+
+Once you have used these buttons to achieve the desired ordering you need to click the **Save specification order** button to save it.
+Clicking on the secondary options of this button you see the **Reset specification order** option that when clicked will remove all custom
+ordering and revert to an alphabetic sorting.
+
+Adapting the order of specifications is naturally also possible when you are using :ref:`specification groups<domains__domain_specification_groups>`.
+In this case you can manage the order both at the level of the groups, and within each group's options. It is also possible to set a specific
+ordering when you have a mix of grouped and ungrouped specifications.
+
+.. figure:: ../screenshots/admin_domains_domain_specification_order_groups.png
+  :align: center
+
+.. note::
+
+  When specifications (grouped or not) are presented in table listings alongside other concepts such as organisations and test cases, the 
+  ordering applied is always alphabetic.
+
 .. _domains__domain_deploy_test_suite:
 
 Deploy test suite to multiple specifications
@@ -665,6 +698,10 @@ presents a popup with the documentation, displaying it exactly as when viewed by
 .. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup_test_suite.PNG
   :align: center
 
+Once you have introduced documentation for the test suite you may also click the **Copy to clipboard** button that will copy the documentation's 
+HTML source. You can use this to inspect the documentation in an editor or to store it within your test suite archive (in case you refer to
+the documentation from the test suite definition file).
+
 If you make changes to the test suite's metadata you can apply them by clicking the **Save changes** button. From here you can also click the
 **Download** button to download the test suite's ZIP archive. Clicking **Delete** will delete, upon confirmation, the test suite rendering linked
 test results as obsolete, whereas clicking on **Back** will discard any pending changes and return you to the :ref:`specification detail page<domains__specification>`
@@ -767,9 +804,9 @@ An editable form is presented here that displays the metadata for the test case,
 You may also view and edit here the test case's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
 being to add extended rich documentation that describes the steps to follow and reference external resources. To display the existing 
-documentation click **Documentation** option, which opens up a rich text editor.
+documentation click the **Documentation** section, to reveal a rich text editor.
 
-.. figure:: ../screenshots/admin_domains_test_suites_details_documentation.PNG
+.. figure:: ../screenshots/admin_domains_test_cases_details_documentation.PNG
   :align: center
 
 If you choose to provide such documentation you may also click the **Preview documentation** to ensure it matches your expectations. Doing so
@@ -777,6 +814,23 @@ presents a popup with the documentation, displaying it exactly as when viewed by
 
 .. figure:: ../screenshots/conformance_statement_details_tests_documentation_popup.PNG
   :align: center
+
+The **Preview documentation** button offers also a secondary option termed **Preview documentation in PDF report**. This allows you to preview
+how the documentation will display in PDF exports, given that :ref:`test case reports<view_your_test_history__search__export>` include their
+documentation as an annex. Selecting the option will generate a PDF report that you can inspect to ensure everything appears as expected.
+
+.. figure:: ../screenshots/conformance_statement_details_tests_documentation_pdf.png
+  :align: center
+
+.. note::
+
+  **Image display problems in PDF reports:** If you notice that PDF reports fail to render defined images you may 
+  need to adapt slightly your HTML content. This may occur for an image whose size is specified as a percentage and that is included in a table.
+  If this is the case either specify a fixed pixel width for the image, or move it outside the table.
+
+Once you have introduced documentation for the test case you may also click the **Copy to clipboard** button that will copy the documentation's 
+HTML source. You can use this to inspect the documentation in an editor or to store it within your test suite archive (in case you refer to
+the documentation from the test case definition file).
 
 Beneath the test case details' form you are presented also with an additional panel to **preview the test case**. This displays the test execution
 diagram for the test case, as it will be presented to users, allowing you to visualise its steps.
