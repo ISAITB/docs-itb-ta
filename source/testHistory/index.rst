@@ -130,7 +130,7 @@ Finally, you may also choose to keep the current filtering but refresh the searc
 Export a test case report
 -------------------------
 
-Exporting a test case's report is possible for completed test sessions, through the one of the two file icon controls on the far right side of each test's row.
+Exporting a test case's report is possible for completed test sessions, through one of the two file icon controls on the far right side of each test's row.
 
 .. figure:: ../screenshots/test_history_export_pdf.PNG
   :align: center
@@ -160,27 +160,49 @@ illustrates the information included:
 .. figure:: ../screenshots/test_case_report.png
   :align: center
 
-The report contains a first **Overview** section that summarises the purpose and result of the test session. The information
+The report contains a first **overview** section that summarises the purpose and result of the test session. The information
 included here is:
 
 * The name of the **system** that was tested and the name of its related **organisation**.
 * The names of the **domain**, **specification** and **actor** of the relevant conformance statement.
 * The **test case's name** and **description**.
 * The session's **result**, **start** and **end time**.
+* The session's **output message** if one was produced.
 
-The overview section is then followed by a section per test case step, each starting on a separate page.
+Below the overview information follow the test case's **references** where, as available, you are provided with links to additional
+information included as annexes in the report. These may be:
+
+* The **extended documentation** of the test case.
+* The **test session log**.
+
+This first page is followed by the section on the test case's **step reports**. All steps are initially presented as an overview
+including per step, its **description** and **result**. The detailed step reports follow this overview, with individual reports being
+directly accessible by clicking each step's sequence identifier that prefixes its description.
 
 .. figure:: ../screenshots/test_case_report_step.png
   :align: center
 
-The information displayed for each step is:
+Each detailed **step report** includes the following information for its step:
 
-* Its **sequence number**.
-* Its **name**.
-* Its **result**.
-* Its completion **time**.
-* For validation steps, the number of validation report findings classified as **errors**, **warnings** and **messages**.
-* For validation steps, a **Details** section listing the details of each validation finding.
+* Its **sequence number** and **description** in its header, that also includes a link to return to the steps' overview section.
+* Its **result** and completion **time**.
+* The number of validation report findings classified as **errors**, **warnings** and **messages** (if applicable).
+* A **report details** section listing the details of each validation finding (if applicable).
+* A **report data** section listing the step's input and output. Note that only text values are presented here and are truncated if too long.
+
+.. figure:: ../screenshots/test_case_report_step_details.png
+  :align: center
+
+At the end of the test case report follow the report's annexes, specifically the **test case's documentation** and the produced **log output**.
+
+.. figure:: ../screenshots/test_case_report_documentation.png
+  :align: center
+
+Regarding the **log output**, this is limited to messages reported at **information** level thus excluding debugging output that could be quite
+long for elaborate test cases.
+
+.. figure:: ../screenshots/test_case_report_log.png
+  :align: center
 
 .. note::
     The XML report for a given test session can also be obtained through the test bed's :ref:`REST API<api>` (if enabled for your test bed instance).

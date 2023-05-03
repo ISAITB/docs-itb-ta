@@ -272,7 +272,6 @@ of the error, warning and information message counts, as illustrated in the foll
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG
   :align: center
-  :scale: 50%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
 can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor.
@@ -282,7 +281,6 @@ recorded validation messages.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure_code.PNG
   :align: center
-  :scale: 50%
 
 The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will  
@@ -314,6 +312,7 @@ The PDF report includes:
 * The **test step result overview**, including the **result**, **date** and, in case of a validation step, the total number of validation findings
   (classified as **errors**, **warnings** and **messages**).
 * The **report details**, included in case of a validation step to list the details of the validation report's findings.
+* The **report data** matching the step's input and output data. Note that only text values are presented in full and are truncated if too long.
 
 When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing. 
 The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_, 

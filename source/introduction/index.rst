@@ -68,6 +68,17 @@ perspective of the test bed, this would typically either be a content specificat
 or a messaging specification, focusing on the rules and message exchange steps that it needs to follow when interacting with one or 
 more other components.
 
+.. _introduction__glossary__specification_group:
+
+Specification group
+~~~~~~~~~~~~~~~~~~~
+
+A **specification group** is a set of :ref:`specifications<introduction__glossary__specification>` (termed "options" in this case) that 
+share certain common traits, or that serve to specialise a base specification with different variants. Groups are used as a means of 
+organising available specifications in a more structured and intuitive manner to facilitate testing and the monitoring of conformance. 
+A typical example is versioning support where a core specification is defined as a group, with its included specifications mapping to 
+its various releases.
+
 .. _introduction__glossary__conformance:
 
 Conformance
