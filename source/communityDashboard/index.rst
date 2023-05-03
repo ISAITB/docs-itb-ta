@@ -885,6 +885,8 @@ When completing the content of the template you are also provided with two place
 * **$ERROR_DESCRIPTION:** The error message text (a text value - may be empty).
 * **$ERROR_ID:** The error identifier (used to trace error in logs).
 
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
+
 While editing the template's content you can see a preview of what it would look like when used. To do so click the **Preview** button that will open an
 error popup using a sample error and your current template:
 
@@ -1265,6 +1267,8 @@ the certificate is generated. The supported placeholders are:
 * **$ACTOR:** The full name of the actor linked to the conformance statement.
 * **$ORGANISATION:** The full name of the organisation to be granted the certificate.
 * **$SYSTEM:** The full name of the organisation's system that was used in the tests.
+
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
 
 .. _community__conformance_certificate_settings__signature:
 

@@ -8,7 +8,51 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.19.0**.
+The latest test bed release is **1.20.0**.
+
+.. note::
+    
+    **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
+    its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
+    `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.20.0 - 05/05/2023
+---------------------------
+
+This release focuses fully on the test bed's user interface and specifically enhancing its reporting capabilities. The PDF reports produced by the 
+test bed have been fully redesigned making them more intuitive, and enriching them with supporting information such as extended documentation,
+test session log output, test coverage ratios and step result overviews. In addition, new options were introduced for community administrators to 
+customise reports, and to facilitate the management and maintenance of test suite documentation. Finally, this release provided an opportunity to 
+resolve reported bugs and to apply precautionary security patches to the test bed's underlying third party software libraries.
+
+**Bug**
+
+* [ITB-522] - Test case report pages may have misplaced headings for complex test cases
+* [ITB-1399] - Test suite validation does not catch duplicate test case references
+* [ITB-1400] - When a test suite upload fails due to an unexpected reason there is an additional error about a missing parameter
+* [ITB-1408] - Error previewing conformance certificate PDF report
+* [ITB-1412] - Error importing export archive in community without assigned domain
+* [ITB-1416] - When selecting to check all available conformance statements it is possible to create invalid statements
+
+**New Feature**
+
+* [ITB-1394] - Include the test session log in test case reports
+* [ITB-1395] - Include extended test case documentation in test session reports
+* [ITB-1396] - Support custom ordering for specifications and conformance statements
+* [ITB-1411] - Display test result percentage ratios when viewing conformance statements
+* [ITB-1413] - Allow copying to the clipboard the HTML source for test suite and test case documentation
+* [ITB-1414] - Allow previewing a test case's documentation in PDF reports
+
+**Improvement**
+
+* [ITB-1397] - Show only unique options in search filters
+* [ITB-1398] - Expand the height of the selection box for specifications in the test suite upload dialogs
+* [ITB-1403] - Include overview of step results in test case PDF report
+* [ITB-1405] - Extend the rich text support in custom messages for conformance PDF reports
+* [ITB-1406] - Improve PDF report styling and organisation
+* [ITB-1407] - Normalize whitespace included in test suite and test case descriptions for PDF reports
+* [ITB-1409] - Simplify the usage of placeholders in rich text editors
+* [ITB-1410] - Include test result percentages in conformance statement reports and certificates
 
 Release 1.19.0 - 17/03/2023
 ---------------------------

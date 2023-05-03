@@ -77,6 +77,8 @@ These are provided as buttons at the top of the statement's display as follows:
 * **View specification** takes you to the :ref:`specification<domains__specification>`.
 * **View actor** takes you to the specification's :ref:`actor<domains__actor>`.
 
+At the right of these controls you are also presented with the overall **test result percentages** as a horizontal bar chart, showing the ratio of successes, failures and incomplete tests.
+
 Expanded tables can be collapsed by clicking again on the expanded conformance statement's row. In addition, once one or more rows are expanded
 the conformance statement header also displays a **Collapse all** button to collapse all rows with a single click.
 
@@ -183,15 +185,17 @@ The following sample illustrates the information that is included in the conform
 
  * The information on the **domain**, **specification** and **actor** for the selected system.
  * The name of the system's **organisation** and the **system** itself.
- * The **date** the report was produced and the number of **successfully passed test cases** versus the total.
- * A table with the conformance statement's test cases, displaying a row per test case with its **reference number**, the name of the 
-   the **test suite** and **test case**, the test case **description** and its test **result**.
+ * The **date** the report was produced, the number of **successfully passed test cases** versus the total, and the **percentage of results** (successes, failures and incomplete tests).
+ * The list of **test suites** displaying per test suite its **name**, **description** and **status**.
+ * For each test suite, the list of **test cases**, displaying similarly each test case's **name**, **description** and **result**. The
+   test case name is also prefixed with the test's overall sequence that, in case test case steps are included, is a **link** to jump to its detailed report.
 
 .. figure:: ../screenshots/conformance_statement_report_sample.png
   :align: center
 
-In case the option to add each test case's step results is selected, the report includes a section per test case displaying its summary
-and the results from each test step. The test case's title includes its reference number listed in the report's overview section.
+In case the option to add each test case's step results is selected, the report includes a page per test case displaying its summary
+and the result of each test step. The test case's title includes its reference number listed in the report's overview section, and
+provides also a link to return to the listing of test cases.
 
 .. figure:: ../screenshots/conformance_statement_report_sample_test_case.png
   :align: center
@@ -204,7 +208,7 @@ and the results from each test step. The test case's title includes its referenc
 Finally, the following example provides a sample of a conformance certificate. It can significantly resemble the conformance statement report
 but in this case includes a custom message for the recipient organisation.
 
-.. figure:: ../screenshots/admin_community_certificate_preview.PNG
+.. figure:: ../screenshots/conformance_statement_certificate_sample.PNG
   :align: center
 
 .. _monitor_conformance_status__statements__export_all:
