@@ -8,13 +8,27 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.20.0**.
+The latest test bed release is **1.20.1**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.20.1 - 23/06/2023
+---------------------------
+
+This release corrects an issue reported by users concerning the test bed's user interface. It also adds a variant of the gitb-types
+library to extend its support for older Java platforms.
+
+**Bug**
+
+* [ITB-1440] - Error while retrieving a system's conformance statements
+
+**Improvement**
+
+* [ITB-1432] - Extend support of gitb-types library to include Java 8 as a minimum
 
 Release 1.20.0 - 05/05/2023
 ---------------------------
