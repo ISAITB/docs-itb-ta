@@ -366,7 +366,7 @@ bundle and provide it to your users.
 On the side of the user the **installation process** is very simple:
 
 1. The user extracts the installation package you provided in a target folder.
-2. From within the target folder the user installs the test bed by issuing ``docker-compose up -d``.
+2. From within the target folder the user installs the test bed by issuing ``docker compose up -d``.
 3. Once the installation completes the user can connect to the test bed using the account(s) you have defined
    and start executing tests.
 
@@ -404,7 +404,7 @@ will be requested for the setup.
 From the user's point of view the **installation process** involves the following step:
 
 1. The user copies the installation script you provided in a target folder.
-2. From within the target folder the user installs the test bed by issuing ``docker-compose up -d``.
+2. From within the target folder the user installs the test bed by issuing ``docker compose up -d``.
 3. Upon first connection the user is automatically prompted to supply the data archive she received as well as its password.
 
 .. figure:: ../screenshots/admin_sandbox_setup.png
