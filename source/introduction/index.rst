@@ -291,12 +291,12 @@ Expectations
 
 As an **organisation administrator** you are expected to carry out the following main activities:
 
-* Create one or more systems for your organisation that will be the focus of the tests (see :ref:`manage_your_systems`).
+* Create one or more systems for your organisation that will be the focus of the tests (see :ref:`manage_organisation__systems`).
 * Manage your conformance statements to determine what you aim to conform to and what you need to test (see :ref:`manage_your_conformance_statements`).
 * Enter required configuration for your systems depending on test needs (see :ref:`execute_tests__provide_your_systems_configuration`).
 * Execute new tests and consult their results (see :ref:`execute_tests`).
 * Review your overall conformance status (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`) and test history (see :ref:`view_your_test_history`).
-* Create additional users for your organisation to assist in test execution and follow up (see :ref:`manage_your_profile__add_member`).
+* Create additional users for your organisation to assist in test execution and follow up (see :ref:`manage_organisation__users`).
 
 .. note::
     **Setup by community administrator:** Your community administrator may have already setup your conformance statements and test configuration on your behalf.

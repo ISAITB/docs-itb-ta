@@ -10,23 +10,17 @@ are presented with shows you the information relevant to your organisation, spli
 * **Systems**: A tab listing the systems defined for your organisation. Each listed system displays its **name** (short and full),
   **description** and **version**.
 * **Users:** A tab listing your organisation's users. This includes yourself as well as any other configured users.
-  For each user the **name**, **username** (or **email** if using EU Login), **role** and **status** are presented are presented.
+  For each user the **name**, **username** (or **email** if using EU Login), **role** and **status** are presented.
 * **REST API keys:** A tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your administrator, allowing you to view and manage the
   keys you need to use it.
 
-.. figure:: ../screenshots/organisation_manage_nonadmin.PNG
+.. figure:: ../screenshots/organisation_manage_admin.PNG
   :align: center
-
-.. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
-  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
-  displayed as **Active**.
 
 If your community administrator has defined additional properties for its organisations you will also see here an
 **Additional properties** section that you can click to display your organisation's additional information. 
 
-.. figure:: ../screenshots/organisation_manage_nonadmin_properties.PNG
+.. figure:: ../screenshots/organisation_manage_admin_properties.PNG
   :align: center
 
 If this is expanded you will see a list of these additional properties along with their currently configured values.
@@ -47,7 +41,7 @@ Certain properties may actually be non-editable. Such properties can only be man
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when editing the organisation's
   information but as long as required properties are missing you will not be able to launch tests.
 
-Update any of the existing values and click on **Save changes** to persist your changes. From here you can also review your
+Update any of the existing values and click on **Update** to persist your changes. From here you can also review your
 organisation's :ref:`systems <manage_organisation__systems>`, :ref:`users <manage_organisation__users>`
 and :ref:`REST API keys <manage_organisation__rest>` by clicking on their respective tabs. You may also click the **Manage tests** 
 button to view your organisation's :ref:`conformance statements <manage_your_conformance_statements>`.
@@ -87,7 +81,6 @@ To create a new system click on the **Create system** button displayed above the
 
 .. figure:: ../screenshots/systems_create.PNG
   :align: center
-  :scale: 50%
 
 Doing so you will be presented with a screen to provide the new system's information. The inputs presented in the form are:
 
@@ -114,7 +107,6 @@ you will also see a **Additional properties** section. Clicking this expands the
 
 .. figure:: ../screenshots/systems_create_properties.PNG
   :align: center
-  :scale: 50%
 
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
@@ -142,7 +134,6 @@ displaying the system's information, presented in editable input fields.
 
 .. figure:: ../screenshots/systems_update.PNG
   :align: center
-  :scale: 50%
 
 You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system. If your organisation defines
 other systems you can also select to **copy the test setup** from another system which will reset the system's conformance statements to
@@ -163,7 +154,6 @@ will also see an **Additional properties** section. You can click this to expand
 
 .. figure:: ../screenshots/systems_update_properties.PNG
   :align: center
-  :scale: 50%
 
 Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
@@ -180,8 +170,8 @@ Certain properties may actually be non-editable. Such properties can only be man
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
   information but as long as required properties are missing you will not be able to launch tests.
 
-Once ready click the **Save** button to finish. You may alo click here the **Manage tests** button to view the system's :ref:`conformance statements <manage_your_conformance_statements>`,
-of the **Delete** button which, following confirmation, will proceed to
+Once ready click the **Update** button to finish. You may also click here the **Manage tests** button to view the system's :ref:`conformance statements <manage_your_conformance_statements>`,
+or the **Delete** button which, following confirmation, will proceed to
 completely delete the system. In case you choose to delete the system, the tests realised for it will still be searchable but will be presented
 as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Back** button to return to the previous screen
 without making any changes.
@@ -201,10 +191,16 @@ users defined by administrators.
 .. figure:: ../screenshots/organisation_users.png
   :align: center
 
-Each user is displayed in a row presenting her **name**, **email** and **role**. Your entry in the table is
+Each user is displayed in a row presenting her **name**, **email**, **role** and **status**. Your entry in the table is
 highlighted with a "(You)" displayed at the end of your name. From here you can click on the **Create user** button
 to :ref:`create a new user <manage_organisation__users_create>`, or click on an existing user's row to
 :ref:`edit the user <manage_organisation__users_edit>`.
+
+.. note::
+  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
+  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  displayed as **Active**.
 
 .. _manage_organisation__users_create:
 
@@ -225,9 +221,8 @@ Case: EU Login
 
 In case EU Login is used the following screen is displayed.
 
-.. figure:: ../screenshots/organisation_manage_add_member_eulogin.PNG
+.. figure:: ../screenshots/organisation_manage_add_member_eulogin.png
   :align: center
-  :scale: 50%
 
 You are required to provide the **email** address and **role** of the user. The email address needs to be the one that the user has
 linked to her EU Login account. The role can either be "Administrator" or "User". Recall that the "User" role can execute and follow
@@ -246,7 +241,6 @@ In case EU Login is not used the following screen is displayed.
 
 .. figure:: ../screenshots/organisation_manage_add_member.PNG
   :align: center
-  :scale: 50%
 
 The information requested for the new user are as follows:
 
@@ -269,7 +263,7 @@ this depends on whether or not your test bed uses EU Login for its authenticatio
 Case: EU Login
 ++++++++++++++
 
-Editing a user's details displays her information as read-only.
+Editing a user's details opens a screen to display her current information.
 
 .. figure:: ../screenshots/organisation_manage_edit_member_eu_login.png
   :align: center

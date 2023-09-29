@@ -24,9 +24,6 @@ presents you with a screen listing each statement and its status.
 Conformance statements are made at the level of a system and as such, the first step is to select a system from the presented dropdown.
 If you have only a single system this appears preselected and its conformance statements are automatically loaded.
 
-.. note::
-    Conformance statements need to be created by an administrator before you can review them and execute their tests.
-
 Assuming you have conformance statements defined these will be presented in expandable panels, split and grouped based on their
 relevant specifications, specification groups and options (if applicable). If you do indeed have such groupings, related statements
 can be expanded and collapsed by clicking on their relevant titles.
@@ -69,8 +66,12 @@ Create a conformance statement
   **Missing create option:** The create conformance statement option may be missing if your community administrator has disabled the management of
   conformance statements by organisation users.
 
-To create a new conformance statement for your selected system click the **Create conformance statements** button from the top right side of the
-conformance statement listing's header. This presents to you the available conformance statements that you may create.
+To create a new conformance statement for your selected system click the **Create statements** button from the panels controls.
+
+.. figure:: ../screenshots/conformance_statement_create_button.png
+  :align: center
+
+Doing so presents to you the available conformance statements that are available for your system.
 
 .. figure:: ../screenshots/conformance_statement_create.png
   :align: center
@@ -149,7 +150,7 @@ At the bottom of the details' panel you are presented with buttons for further a
   if your administrator had configured such badges.
 * The **Go to ...** button to navigate to related information, notably the **organisation** and **system** details.
 * The **Back** button to return to the :ref:`conformance statement list <manage_your_conformance_statements__view_your_conformance_statements>`.
-* The **Delete statement** button to delete the conformance statement (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__delete`).
+* The **Delete statement** button to :ref:`delete the conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details__delete>`.
 
 In addition, the overall detail panel can also be **collapsed** and **expanded** by clicking its header. Collapsing its display could be useful if you would want to focus on the tests to
 execute rather than the statement's details.
@@ -306,27 +307,27 @@ To edit a configuration parameter click its **edit** icon on its relevant row. D
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_simple.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 In case of a parameter that is a file, the popup will be adapted to allow you to download the file and upload a replacement.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_binary.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
-A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide and confirm
-a new value.
+A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide the
+value in the secret value input.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 Finally, an additional scenario is when preset values are defined for the parameter. In this case you are presented with a dropdown selection
 list that includes the available options.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_dropdown.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 To change the parameter's value click on **Save**. Clicking on **Delete** will clear the current value, whereas **Cancel** will close the popup without
 making changes.
@@ -346,7 +347,7 @@ Export conformance statement report
 The conformance statement report (in PDF format) provides the details on the conformance statement and also an overview of its relevant tests. To generate it
 click the **Download report** button from the overview section's panel.
 
-.. figure:: ../screenshots/conformance_statement_details_overview_nonadmin.PNG
+.. figure:: ../screenshots/conformance_statement_details_overview_admin.PNG
   :align: center
 
 Once the button is clicked you will be prompted for the level of detail you want to include in the report. Two options are available regarding 
@@ -418,5 +419,5 @@ this button in missing this means that your community administrator has disabled
 users.
 
 Clicking this will request confirmation and, if confirmed, will remove the conformance statement. Note that your testing history relevant
-to this conformance statement still remains and can be consulted through your test history (see :ref:`view_your_test_history`). In addition,
+to this conformance statement still remains and can be consulted through your :ref:`test history <view_your_test_history>`. In addition,
 if you create the same conformance statement again, your previous tests will be once again counted towards your conformance testing status.
