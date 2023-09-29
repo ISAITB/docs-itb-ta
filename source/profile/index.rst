@@ -16,7 +16,6 @@ Use the following links depending on your case:
 
 * :ref:`Profile management when using EU Login<manage_your_profile__eulogin>`.
 * :ref:`Profile management when not using EU Login<manage_your_profile__noeulogin>`.
-* :ref:`Organisation details<manage_your_profile__view_organisation_details>`.
 
 .. note::
   When using EU Login you may have more than one user roles linked to your EU Login account. Each such role is related
