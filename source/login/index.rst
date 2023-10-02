@@ -202,7 +202,7 @@ If the test bed foresees a set of demo scenarios these can be accessed through t
   :align: center
 
 Doing so will connect you to the test bed using a special demo account with predefined test scenarios you can execute. From the
-:ref:`landing page<navigate__landing_page>` for this account you can then click the **TESTS** link to view the
+:ref:`landing page<navigate__landing_page>` for this account you can then click the **My conformance statements** link from the menu to view the
 available :ref:`demo conformance statements<manage_your_conformance_statements__view_your_conformance_statements>` and proceed
 to execute their test cases.
 

@@ -9,9 +9,7 @@ will expand it to reveal information about your profile and the actions you may 
 .. figure:: ../screenshots/profile_hover.png
   :align: center
 
-How you manage your personal profile depends largely on whether or not you are using EU Login to connect to the test bed,
-whereas the display and management of your admin organisation's information remains the same.
-
+How you manage your personal profile depends largely on whether or not you are using EU Login to connect to the test bed.
 Use the following links depending on your case:
 
 * :ref:`Profile management when using EU Login<manage_your_profile__eulogin>`.
