@@ -3,6 +3,10 @@
 Manage your organisation
 ========================
 
+.. note::
+    **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation linked to your
+    community that is used for testing purposes.
+
 To view your organisation's information click the **My organisation** link from the side menu. The screen you 
 are presented with shows you the information relevant to your organisation, split in the following sections:
 
@@ -192,9 +196,7 @@ users defined by administrators.
   :align: center
 
 Each user is displayed in a row presenting her **name**, **email**, **role** and **status**. Your entry in the table is
-highlighted with a "(You)" displayed at the end of your name. From here you can click on the **Create user** button
-to :ref:`create a new user <manage_organisation__users_create>`, or click on an existing user's row to
-:ref:`edit the user <manage_organisation__users_edit>`.
+highlighted with a "(You)" displayed at the end of your name.
 
 .. note::
   **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
@@ -202,91 +204,7 @@ to :ref:`create a new user <manage_organisation__users_create>`, or click on an 
   a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
-.. _manage_organisation__users_create:
-
-Create a new user
-~~~~~~~~~~~~~~~~~
-
-As organisation administrator you can add new users to your organisation. Adding a new user is done by clicking on
-the **Create user** button presented above the listing of existing users.
-
-.. figure:: ../screenshots/organisation_manage_create_user_button.png
-  :align: center
-
-Doing so will present a screen to input the new user's information, the content of which depends on whether or not your test bed
-uses EU Login for its authentication.
-
-Case: EU Login
-++++++++++++++
-
-In case EU Login is used the following screen is displayed.
-
-.. figure:: ../screenshots/organisation_manage_add_member_eulogin.png
-  :align: center
-
-You are required to provide the **email** address and **role** of the user. The email address needs to be the one that the user has
-linked to her EU Login account. The role can either be "Administrator" or "User". Recall that the "User" role can execute and follow
-up on tests, whereas the "Administrator" role can additionally manage the organisation's configuration (e.g. properties, systems and
-conformance statements) and add other users.
-
-Once you have created the user you will see that a new entry is added to the list of users
-but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. To finish creating the user click **Save**,
-otherwise click **Cancel** to return to the previous screen.
-
-Case: no EU Login
-+++++++++++++++++
-
-In case EU Login is not used the following screen is displayed.
-
-.. figure:: ../screenshots/organisation_manage_add_member.PNG
-  :align: center
-
-The information requested for the new user are as follows:
-
-* The user's **name** (required), used when contacting the support team.
-* The **username** (required), used by the user to login.
-* The user's **role** (required), either "Administrator" or "User". Recall that the "User" role can execute and follow up on tests, whereas the "Administrator"
-  role can additionally manage the organisation's test configuration (e.g. systems and conformance statements) and add other users.
-* The user's **password** and the password **confirmation**. The entered password is considered a "one-time" password that the user will need to change upon his/her next login.
-
-To complete the creation of the user click the **Save** button. Clicking on **Cancel** will discard pending changes and return to the previous screen.
-
-.. _manage_organisation__users_edit:
-
-Edit an existing user
-~~~~~~~~~~~~~~~~~~~~~
-
-To edit an existing user of your organisation click on her corresponding row from the listing of existing users. The screen you see following
-this depends on whether or not your test bed uses EU Login for its authentication.
-
-Case: EU Login
-++++++++++++++
-
-Editing a user's details opens a screen to display her current information.
-
-.. figure:: ../screenshots/organisation_manage_edit_member_eu_login.png
-  :align: center
-
-The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can change
-the user's role and click on **Update** to save your change. Alternatively you can delete, upon confirmation, the user by clicking
-on **Delete** or click **Back** to cancel and return to the previous screen.
-
-Case: no EU Login
-+++++++++++++++++
-
-Editing a user's details displays presents her information in the following screen.
-
-.. figure:: ../screenshots/organisation_manage_edit_member.png
-  :align: center
-
-The information displayed is the user's **name**, **username**, **role**, and **status**, of which only the **name** and **role** can
-be edited. You may also check the **Set one-time password** option to provide a new password for your user (to be changed on his/her next login). Clicking
-on **Update** saves your changes whereas clicking on **Back** discards them and returns you to the previous screen. The **Delete**
-button will, following confirmation, delete the current user.
-
-.. note::
-  Selecting to edit your own user will take you to your :ref:`profile management screen <manage_your_profile>`.
+  Your organisations users (i.e. community administrators) are managed as part of your :ref:`community management screen<community__administrators>`.
 
 .. _manage_organisation__rest:
 

@@ -11,7 +11,7 @@ In order to test your overall setup, you are provided with a special organisatio
 You can use this organisation as any other organisation used within your community to engage in testing
 activities. Through this organisation you can:
 
-* **Manage its systems**, as the organisation's components for which testing is made (see :ref:`manage_your_systems`).
+* **Manage its systems**, as the organisation's components for which testing is made (see :ref:`manage_organisation__systems`).
 * **Manage its conformance statements**, defining the specifications to be tested for (see :ref:`manage_your_conformance_statements`).
 * **Execute tests**, to try out actual test sessions ensuring that your test cases are correctly setup (see :ref:`execute_tests`).
 * **View your test history**, to view the tests carried out using your test organisation (see :ref:`view_your_test_history`).

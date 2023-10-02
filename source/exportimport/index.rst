@@ -106,7 +106,7 @@ Using the options from the **Organisation data** row you may also include data l
 * The :ref:`organisations<community__organisations>`, including those that are defined as self-registration templates.
 * Each :ref:`organisation's users<community__manage_organisation__users>` (only if the test bed instance is not integrated with EU Login).
 * The values provided by each organisation for the community's :ref:`custom organisation properties<community__properties>`.
-* The :ref:`systems<manage_your_systems>` defined by each organisation.
+* The :ref:`systems<community__manage_organisation__systems>` defined by each organisation.
 * The values provided for each organisation's systems relevant to the community's :ref:`custom system properties<community__properties>`.
 * Each system's :ref:`conformance statements<manage_your_conformance_statements>` and :ref:`statement configuration values<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
 

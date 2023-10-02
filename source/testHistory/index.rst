@@ -238,7 +238,7 @@ Above the diagram display you are presented with additional buttons linked to th
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
 * **Go to ...** allows you to navigate to any information linked to the specific test session, specifically the relevant
   :ref:`conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details>`,
-  :ref:`organisation <community__manage_organisation>` and :ref:`system <TODO>`.
+  :ref:`organisation <community__manage_organisation>` and :ref:`system <community__manage_organisation__systems>`.
 
 In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
 specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant

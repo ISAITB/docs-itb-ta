@@ -167,7 +167,7 @@ Above the diagram display you are presented with additional buttons linked to th
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
 * **View organisation** takes you to view the :ref:`details of the organisation<community__manage_organisation>` linked to the test session.
-* **View system** takes you to view the :ref:`details of the system<manage_your_systems__edit>` this test session relates to.
+* **View system** takes you to view the :ref:`details of the system<community__manage_organisation__systems_edit>` this test session relates to.
 * **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
 
 In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a

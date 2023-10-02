@@ -307,7 +307,7 @@ Manage the organisation's tests
 +++++++++++++++++++++++++++++++
 
 An interesting option available from the organisation's detail screen is the **Manage tests** button. This allows you to configure the organisation's test setup, 
-including its systems (see :ref:`manage_your_systems`) and conformance statements (see :ref:`manage_your_conformance_statements`). You can even proceed to 
+including its systems (see :ref:`community__manage_organisation__systems`) and conformance statements (see :ref:`manage_your_conformance_statements`). You can even proceed to 
 complete a system's configuration parameters used in test cases (see :ref:`execute_tests__provide_your_systems_configuration`) and also execute tests on behalf of 
 the organisation (see :ref:`execute_tests`). When you click the **Manage tests** button you will be directly taken to the organisation's system management screen.
 
@@ -335,6 +335,132 @@ your organisation's setup in further screens you can always return where you wer
     needs, it could be beneficial to define only non-administrator users for your organisations and configure on their behalf their system(s) and conformance 
     statement(s). Simple cases with only a single system and conformance statement per organisation would allow users to login, click on **TESTS** from the 
     screen header and immediately start testing.
+
+.. _community__manage_organisation__systems:
+
+Manage an organisation's systems
+++++++++++++++++++++++++++++++++
+
+Selecting the **Systems** tab presents the :ref:`systems <introduction__glossary__system>` defined for the organisation.
+Systems are an important concept in the test bed as they represent the software components being tested. Before
+proceeding to test anything, an organisation will need to have one or more systems for which conformance statements will be defined.
+
+.. figure:: ../screenshots/organisation_systems.png
+  :align: center
+
+The organisation's systems are presented in a table that displays for each system:
+
+* Its **short name**, a brief name used to display in search results.
+* Its **full name**, the complete system name presented in reports and detail screens.
+* A **description**, providing additional context on the specific system.
+* A **version** number.
+
+To :ref:`view the details of a specific system <manage_organisation__systems_edit>` you can click its row in the table. Clicking on
+the **Create system** button allows you to :ref:`create a new system <manage_organisation__systems_create>`.
+
+.. _community__manage_organisation__systems_create:
+
+Create a new system
+###################
+
+To create a new system click on the **Create system** button displayed above the listing of existing systems.
+
+.. figure:: ../screenshots/systems_create.PNG
+  :align: center
+
+Doing so you will be presented with a screen to provide the new system's information. The inputs presented in the form are:
+
+* The system's **short name** (required). This is used when the system is displayed in lists.
+* The system's **full name** (required). This is included in reports that mention the system.
+* An optional **description** to provide more information about the system.
+* A **version** number. Although requested this is not currently used in the test bed apart from display purposes.
+
+If the organisation includes other systems you are also presented here with an option to **copy the test setup** from
+one of them as a source. Selecting one will replicate the selected system's conformance statements for the new system.
+
+.. figure:: ../screenshots/systems_create_copy.PNG
+  :align: center
+  :scale: 70%
+
+Once another system is selected to copy from, you are also presented with additional options to include:
+
+* **System properties:** To also copy any additional system-level properties that the source system defines.
+* **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
+  conformance statements.
+
+If the community foresees additional system properties, and as long as you are not copying the properties from another system,
+you will also see an **Additional properties** section. Clicking this expands the section so that you can manage the new system's properties.
+
+.. figure:: ../screenshots/systems_create_properties.PNG
+  :align: center
+
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
+
+* For texts through an editable text field or by selecting a preset value from a dropdown list.
+* For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by
+  clicking **Remove**.
+* For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
+  **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
+
+.. note::
+  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
+  information but as long as required properties are missing you will not be able to launch tests.
+
+Once you have entered the system's information click the **Save** button to record it. You can also click the **Cancel** button
+to return to the previous screen without making any changes.
+
+.. _community__manage_organisation__systems_edit:
+
+Edit an existing system
+#######################
+
+To edit an existing system click its row from the listing of existing systems. Doing so results in a screen
+displaying the system's information, presented in editable input fields.
+
+.. figure:: ../screenshots/systems_update.PNG
+  :align: center
+
+You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system. If the organisation defines
+other systems you can also select to **copy the test setup** from another system which will reset the system's conformance statements to
+match the selected one (upon confirmation).
+
+.. figure:: ../screenshots/systems_create_copy.PNG
+  :align: center
+  :scale: 70%
+
+Once another system is selected to copy from, you are also presented with additional options to include:
+
+* **System properties:** To also copy any additional system-level properties that the source system defines.
+* **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
+  conformance statements.
+
+If the community foresees additional system properties, and as long as you are not copying the properties from another system, you
+will also see an **Additional properties** section. You can click this to expand and manage the system's properties.
+
+.. figure:: ../screenshots/systems_update_properties.PNG
+  :align: center
+
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
+
+* For texts the current value is presented in an editable text field or dropdown menu (if the property has preset values).
+* For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
+  by clicking on its link, or delete it by clicking **Remove**.
+* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
+  check **Update**. When providing a new value you can also toggle the display of the typed characters.
+
+Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
+
+.. note::
+  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
+  information but as long as required properties are missing you will not be able to launch tests.
+
+Once ready click the **Update** button to finish. You may also click here the **Manage tests** button to view the system's :ref:`conformance statements <manage_your_conformance_statements>`,
+or the **Delete** button which, following confirmation, will proceed to
+completely delete the system. In case you choose to delete the system, the tests realised for it will still be searchable but will be presented
+as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Back** button to return to the previous screen
+without making any changes.
 
 .. _community__manage_organisation__users:
 
@@ -607,7 +733,7 @@ Manage legal notices
 A **legal notice** is an arbitrary text that you can present to your users when they click on the **Legal notice** link from the screen footer.
 The purpose of this is to define terms and conditions, notices and disclaimers that you want to make known to your community.
 
-.. figure:: ../screenshots/footer.PNG
+.. figure:: ../screenshots/navigate_footer.png
   :align: center
 
 You may define a default legal notice that applies to your entire community or even specific legal notices for one or more organisations.

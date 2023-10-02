@@ -70,7 +70,7 @@ As part of the display of the conformance statement's details you are also provi
 These are provided as buttons at the top of the statement's display as follows:
 
 * **View organisation** takes you to the :ref:`details of the relevant organisation<community__manage_organisation>`.
-* **View system** takes you to the :ref:`details of the relevant system<manage_your_systems__edit>`.
+* **View system** takes you to the :ref:`details of the relevant system<community__manage_organisation__systems_edit>`.
 * **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` in question.
 * **View specification** takes you to the :ref:`specification<domains__specification>`.
 * **View actor** takes you to the specification's :ref:`actor<domains__actor>`.
