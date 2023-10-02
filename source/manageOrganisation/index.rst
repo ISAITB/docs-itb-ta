@@ -72,10 +72,6 @@ Your organisation's systems are presented in a table that displays for each syst
 To :ref:`view the details of a specific system <manage_organisation__systems_edit>` you can click its row in the table. Clicking on
 the **Create system** button allows you to :ref:`create a new system <manage_organisation__systems_create>`.
 
-.. note::
-  **Create option missing:** The create system option may be missing if your community administrator has disabled the management of
-  systems by organisation users.
-
 .. _manage_organisation__systems_create:
 
 Create a new system
@@ -179,10 +175,6 @@ or the **Delete** button which, following confirmation, will proceed to
 completely delete the system. In case you choose to delete the system, the tests realised for it will still be searchable but will be presented
 as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Back** button to return to the previous screen
 without making any changes.
-
-.. note::
-  **Missing delete option:** The delete system option may be missing if your community administrator has disabled the management of
-  systems by organisation users.
 
 .. _manage_organisation__users:
 
