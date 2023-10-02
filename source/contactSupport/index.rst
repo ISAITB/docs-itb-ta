@@ -6,7 +6,7 @@ Contact support
 You can easily contact the support team at any time through the **Contact support** link in the 
 screen's footer.
 
-.. figure:: ../screenshots/footer.PNG
+.. figure:: ../screenshots/navigate_footer.png
   :align: center
 
 Clicking this link results in a popup where you can provide your message and contact information.
@@ -31,7 +31,7 @@ use to remove it.
 
 .. figure:: ../screenshots/contact_support_attachments.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 Clicking on the **Send feedback** button will send an email to the test bed's support team. Upon doing so you will also remain
 on the contact form in case you want to submit a further message. Finally, clicking on **Close** discards any information you have entered

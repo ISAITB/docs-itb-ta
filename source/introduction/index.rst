@@ -20,7 +20,7 @@ otherwise stated.
 What is the test bed?
 ---------------------
 
-The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT D.2,
+The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT B.2,
 to support the interoperability and conformance testing of projects that enable the development of cross-border public
 services. Its purpose is to facilitate such projects by providing project leaders with the means to define their project's testing strategy 
 that will be used by their participating organisations. The test services offered in this way may either be presented as a tool to help
@@ -275,7 +275,7 @@ In this case the previously discussed test bed concepts could be mapped as follo
 Your role
 ---------
 
-Your test bed account is configured as a **community administrator**. This means that you are responsible for the configuration of your project's 
+Your test bed account is configured as a **community administrator**. This means that you are responsible for the configuration of your project's
 test strategy and the management of your users' organisations in the test bed.
 
 Prerequisites
@@ -307,7 +307,6 @@ The test bed is a web application with minimal prerequisites for its use. The fo
 * Apple Safari.
 * Google Chrome.
 * Microsoft Edge.
-* Microsoft Internet Explorer (minimum version 11).
 * Mozilla Firefox.
 * Opera.
 

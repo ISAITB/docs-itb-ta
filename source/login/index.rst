@@ -79,7 +79,7 @@ a link on the welcome page.
 
 Once you have authenticated you will be transferred back to the test bed as follows:
 
-* If you have a single role assigned to you you will be automatically transferred to your :ref:`organisation's landing page<login__interface_layout>`.
+* If you have a single role assigned to you you will be automatically transferred to your :ref:`organisation's landing page<navigate__landing_page>`.
 * If you don't have an assigned role or have multiple roles you will be transferred to a screen to select the one to proceed with. See :ref:`login__roles` for details.
 
 .. _login__login__legacy:
@@ -87,7 +87,7 @@ Once you have authenticated you will be transferred back to the test bed as foll
 Logging in without EU Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case EU Login is not enabled for your test bed you will be using username and password based accounts. The login screen
+In case EU Login is not enabled for your test bed you will be using username and password based accounts. The login screen 
 in this case requires you to provide:
 
 * Your account's **username**.
@@ -133,7 +133,7 @@ Register for a public community
 -------------------------------
 
 From the test bed's welcome page you have the option of registering for one of its public communities. Selecting to do this will prompt
-you to create an account linked to a new organisation that will be registered in one of the test bed's available communities.
+you to create an account linked to a new organisation that will be registered in one of the test bed's available communities. 
 This process is also referred to as "self-registration".
 
 To carry out the registration start by clicking the **Register in a public community** shortcut from the test bed's welcome page.
@@ -147,7 +147,7 @@ To carry out the registration start by clicking the **Register in a public commu
 
   The information that follows in this section covers the case of a test bed where EU Login is **not enabled**.
 
-If you are using a test bed that is not integrated with EU Login you will be presented with a registration form in which
+If you are using a test bed that is not integrated with EU Login you will be presented with a registration form in which 
 you are expected to:
 
 * Select the community you want to register for.
@@ -171,7 +171,7 @@ The information needed to complete this form is as follows:
 * **Short name:** The name of your organisation in short form.
 * **Full name:** The name of your organisation in full form.
 * **Configuration:** A list of configuration templates for your organisation, defined by the community's administrator,
-  that will predefine your organisation's systems and conformance statements. This will not be displayed if no such
+  that will predefine your organisation's systems and conformance statements. This will not be displayed if no such 
   templates are available.
 * **Name:** The name for your new organisation's initial administrator account.
 * **Username:** A username for the account.
@@ -183,8 +183,8 @@ The password you provide must meet minimum expected complexity requirements. Spe
 * It must be at least 8 characters long.
 
 The **Organisation details** section may also include one or more additional properties that the community's administrator requires
-for completion during registration. These properties may be simple text values, values to select from preset lists, secret values or files for you to upload, and may be
-optional or required. Properties marked as required must be provided before you can start executing tests, but depending on the
+for completion during registration. These properties may be simple text values, values to select from preset lists, secret values or files for you to upload, and may be 
+optional or required. Properties marked as required must be provided before you can start executing tests, but depending on the 
 community's configuration, you may still be allowed to proceed with your registration without completing them.
 
 Once the information is provided click on **Register** to create your organisation and proceed to your landing page. Clicking
@@ -202,7 +202,7 @@ If the test bed foresees a set of demo scenarios these can be accessed through t
   :align: center
 
 Doing so will connect you to the test bed using a special demo account with predefined test scenarios you can execute. From the
-:ref:`landing page<login__interface_layout>` for this account you can then click the **TESTS** link to view the
+:ref:`landing page<navigate__landing_page>` for this account you can then click the **TESTS** link to view the
 available :ref:`demo conformance statements<manage_your_conformance_statements__view_your_conformance_statements>` and proceed
 to execute their test cases.
 
@@ -229,7 +229,7 @@ This screen presents to you the list of roles currently linked to your account. 
 * The name of your organisation.
 * The name of your organisation's community.
 
-Clicking on one of the listed roles will select it and transfer you to the relevant :ref:`organisation's landing page<login__interface_layout>`.
+Clicking on one of the listed roles will select it and transfer you to the relevant :ref:`organisation's landing page<navigate__landing_page>`.
 Alternatively from here you can click the **Link another role to your account** button to select additional roles. Doing so
 displays a popup with your available options:
 
@@ -298,7 +298,6 @@ To complete the registration form provide the following information:
   that will predefine your organisation's systems and conformance statements. This will not be displayed if no such
   templates are available.
 
-Once the information is provided click on **Complete** to finish the registration. Doing so will close the dialog and
 The **Organisation details** section may also include one or more additional properties that the community's administrator requires
 for completion during registration. These properties may be simple text values, secret values or files for you to upload, and may be
 optional or required. Note that properties highlighted as required will not prevent you from completing the registration if you don't
@@ -341,48 +340,8 @@ the process and close the dialog.
 
   The test bed offers also a step-by-step migration guide to inform and guide you through the
   process of migrating your legacy account.
-
+  
   This is available at https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin.
-
-.. _login__interface_layout:
-
-Interface layout
-----------------
-
-Once logged in, you are presented with the test bed's user interface. The first screen you see is called the 
-**landing page**.
-
-.. figure:: ../screenshots/welcome_admin.PNG
-  :align: center
-
-The bar at the top of the interface is called the **header**. This is always visible on every screen
-and provides quick access to the following options:
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-* **HOME:** Return back to the landing page.
-* **TESTS:** Access the test management page for the community's "Admin Organization".
-* **ADMIN:** Access the test bed's administrator features.
-* **Profile controls:** Displays your name and can be hovered over for additional options such as
-  editing your profile and logging out.
-
-Beneath the header you find the screen's main **banner**. This displays a title relevant to the
-screen you are on to give you context on where you are.
-
-.. figure:: ../screenshots/banner.PNG
-  :align: center
-
-At the bottom of the screen is where you find the screen's **footer**. This displays the following information:
-
-.. figure:: ../screenshots/footer.PNG
-  :align: center
-
-* A link to the **user guide**. The section of the user guide displayed depends on the screen you are currently accessing.
-* A link to **contact the support team** for problems, questions and feedback (see :ref:`contact_support`).
-* A link to view the test bed's **legal notice**.
-* A link to **find out more** information on the test bed.
-* The test bed's **version** number which can also be clicked to view its release notes.
 
 .. _DIGIT test bed instance: https://www.itb.ec.europa.eu/itb
 .. _EU Login user guide: https://www.itb.ec.europa.eu/docs/guides/latest/usingEULogin/

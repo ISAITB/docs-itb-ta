@@ -4,8 +4,8 @@ Execute tests
 =============
 
 Executing conformance tests is the reason your community is using the test bed. Considering
-that test cases are linked to a system by means of conformance statements, the first step before
-executing a test is to visit a conformance statement's detail screen (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`).
+that test cases are linked to your system by means of conformance statements, the first step before
+executing a test is to visit a :ref:`conformance statement's detail screen <manage_your_conformance_statements__view_a_conformance_statements_details>`.
 This screen is the place where you input required configuration and are provided with the controls to execute one or more tests.
 
 .. _execute_tests__provide_your_systems_configuration:
@@ -18,13 +18,15 @@ configuration parameters before executing tests. If for example test cases requi
 sends messages to your system, it is likely that you need to inform the test bed on how to do so.
 
 Providing and reviewing the configuration for your system is done through the **Configuration parameters** tab of
-the conformance statement detail page (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`).
+the :ref:`conformance statement detail page <manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
+In addition, you may need to provide inputs for mandatory :ref:`organisation-level <manage_organisation>` and
+:ref:`system-level <manage_organisation__systems>` properties that apply to your organisation.
 
 Once all required configuration is provided you can choose to execute one or more test cases 
-through the conformance statement details' **Conformance tests** tab (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`). The test execution
-process starts by clicking one of the available **Play** buttons. In short, you can either execute a
+through the conformance statement details' :ref:`Conformance tests tab <manage_your_conformance_statements__view_a_conformance_statements_details__tests>`.
+The test execution process starts by clicking one of the available **Play** buttons. In short, you can either execute a
 specific test case or a complete test suite and choose whether the test sessions will be launched
-in the background or in interactive mode (the default). Furthermore, for background test sessions you may choose whether these will be executed
+in the background or in interactive mode (the default). Furthermore, for background test sessions you may choose whether these will be executed 
 in parallel or sequentially.
 
 .. _execute_tests_background:
@@ -32,7 +34,7 @@ in parallel or sequentially.
 Background execution
 --------------------
 
-Launching tests in the background is done by selecting one of the **background execution options** from the **Conformance tests** tab ("parallel" or
+Launching tests in the background is done by selecting one of the **background execution options** from the **Conformance tests** tab ("parallel" or 
 "sequential").
 
 .. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
@@ -118,7 +120,7 @@ The presented display includes on top a set of **controls** to manage your tests
 
 .. note::
 
-  **Executing a single test case:** In case you have chosen to execute only a single test case the options managing the display of test sessions
+  **Executing a single test case:** In case you have chosen to execute only a single test case the options managing the display of test sessions 
   and the execution of further test cases are not presented.
 
 Beneath these controls, you can see the list of test cases to execute. For each test case you can see its **name**, **description** as well as its
@@ -129,13 +131,13 @@ presented that can be clicked to present it in a popup:
   :align: center
 
 For the currently active test case you see an additional panel that presents to you the **test diagram**, the **test counter** (if executing multiple
-test cases) and the **test session identifier** (which can be clicked to copy). The **View log** button on the right can be used to view and follow
+test cases) and the **test session identifier** (which can be clicked to copy). The **View log** button on the right can be used to view and follow 
 the test session's log (see :ref:`execute_tests__step3__view_log`).
 
 .. figure:: ../screenshots/test_execution_execute_diagram.PNG
   :align: center
 
-Before starting a test session, the test bed checks to see whether it needs to present you any configuration that you need to take into account. This
+Before starting a test session, the test bed checks to see whether it needs to present you any configuration that you need to take into account. This 
 step is the counterpart of the verification that was previously discussed, where the test bed checked the configuration that you provided. In this case
 the test bed will present to you its own configuration to take into account when preparing your system. If such configuration properties indeed exist and
 need to be displayed, they will be presented to you in a popup:
@@ -143,7 +145,7 @@ need to be displayed, they will be presented to you in a popup:
 .. figure:: ../screenshots/test_execution_simulated.PNG
   :align: center
 
-The configuration properties displayed here correspond to a specification actor that is being simulated. These :ref:`properties<introduction__glossary__endpoint>`
+The configuration properties displayed here correspond to a specification actor that is being simulated. These :ref:`properties<introduction__glossary__endpoint>` 
 are listed with their names and values, and are grouped by simulated actor (there may be multiple).
 
 Apart from the display of such configuration parameters, it could also be the case that this step presents you with additional notification popups 
@@ -152,7 +154,7 @@ to provide you with further information or instructions. The existence or not of
 .. figure:: ../screenshots/test_execution_simulated_instruction.PNG
   :align: center
 
-Once all configuration has been verified and the current test case's definition has been loaded you will be able to proceed with the
+Once all configuration has been verified and the current test case's definition has been loaded you will be able to proceed with the 
 :ref:`test execution<execute_tests_interactive_execution>`. You can do this by clicking the **Start** button from the test execution controls.
 
 .. figure:: ../screenshots/test_execution_execute_start.PNG
@@ -168,7 +170,7 @@ To start executing your selected tests click the **Start** button from the test 
 .. figure:: ../screenshots/test_execution_test_cases.png
   :align: center
 
-Test execution goes through the steps defined in the test case's definition which are presented in a way similar to a `sequence diagram`_. The
+Test execution goes through the steps defined in the test case's definition which are presented in a way similar to a `sequence diagram`_. The 
 elements included in this diagram are:
 
 * A **lifeline per actor** defined in the test case. One of these will be marked as the "SUT" (the System Under Test), whereas the other
@@ -210,18 +212,18 @@ During the execution of the test case, colours are used to inform you of each st
 
 The colour-based feedback is also repeated at the level of the test case overview in the **status** cog icons. The icon's colour serves to highlight the currently 
 active test case, versus future ones or completed ones (in case these are displayed). Once completed, the status icon for the test case is replaced by
-a green tick or red cross to indicate the session's overall result as a success or failure respectively. Note that a test session is considered as
-failed if it contains at least one error; warnings are displayed but don't affect the overall test outcome (i.e. in the presence of warnings and no
+a green tick or red cross to indicate the session's overall result as a success or failure respectively. Note that a test session is considered as 
+failed if it contains at least one error; warnings are displayed but don't affect the overall test outcome (i.e. in the presence of warnings and no 
 errors the overall test result will be successful).
 
 In case multiple test cases are up for execution, testing proceeds automatically unless you have chosen to continue manually. In such a case you will
-need to click againt the **Start** button to proceed. Stopping the test(s) execution is achieved by clicking the **Stop** button from the test
+need to click againt the **Start** button to proceed. Stopping the test(s) execution is achieved by clicking the **Stop** button from the test 
 execution controls. In case you are executing multiple test cases this offers two options, stopping only the current test or all test cases.
 
 .. figure:: ../screenshots/test_execution_execute_stop_options.PNG
   :align: center
 
-During test case execution (or when tests are no longer running) the **Reset** button will also be enabled. This serves as shortcut to stop any ongoing
+During test case execution (or when tests are no longer running) the **Reset** button will also be enabled. This serves as shortcut to stop any ongoing 
 tests and re-run them.
 
 .. _execute_tests__step3__view_test_step_documentation:
@@ -259,7 +261,7 @@ View test step results
 
 During test case execution, additional controls are made available to allow you to inspect the ongoing test(s) results.
 
-First of all, if multiple test cases are selected for execution, completed test case sessions can be inspected by clicking **Options**, selecting to **show completed tests**
+First of all, if multiple test cases are selected for execution, completed test case sessions can be inspected by clicking **Options**, selecting to **show completed tests** 
 and clicking their relevant row. Doing so will expand the clicked row to display the relevant test execution diagram.
 
 .. figure:: ../screenshots/test_execution_execute_multiple_view_completed.PNG
@@ -270,7 +272,7 @@ a green tick or red cross (for success or failure respectively). This applies fo
 
 .. figure:: ../screenshots/test_execution_execute_step_result_controls.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 Apart from serving as an additional indication on the success or failure of the test step, these controls provide further details on the step's
 results. Clicking them triggers a popup that shows the different information elements that can be viewed inline or opened in
@@ -308,7 +310,7 @@ The errors, warnings and information messages displayed are contained in a **det
 severity level. This summary title is also clickable, to allow the listed details to be collapsed or expanded if already collapsed. Collapsing the
 displayed details could be useful in case they are numerous, providing as such easier access to the popup's additional controls.
 
-The results of the test step can also be exported as a **test step report** (in PDF and XML format). This is made available through the **Export as PDF** and **Export as XML** buttons that trigger the
+The results of the test step can also be exported as a **test step report** (in PDF and XML format). This is made available through the **Export report as PDF** and **Export report as XML** buttons that trigger the
 generation and download of the step report in the desired format. The following example represents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG
@@ -321,8 +323,8 @@ The PDF report includes:
 * The **report details**, included in case of a validation step to list the details of the validation report's findings.
 * The **report data** matching the step's input and output data. Note that only text values are presented in full and are truncated if too long.
 
-When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing.
-The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_,
+When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing. 
+The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_, 
 with the following being a simple sample:
 
 .. literalinclude:: ../executeTests/resources/test_step_report.xml
@@ -369,12 +371,90 @@ Finally, the popup's header presents controls to manage the log display. Specifi
 * **Download** the log as a text file.
 * **Close** the popup.
 
+.. _execute_tests__step3__view_report:
+
+Export test session report
+++++++++++++++++++++++++++
+
+Once a test session has completed it is also possible to export its report in PDF or XML, using the **Export report as PDF**
+and **Export report as XML** buttons respectively.
+
+.. figure:: ../screenshots/test_execution_export.png
+  :align: center
+
+The XML export format of this report is defined by the
+`GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_,
+and is suitable for machine-based processing. The following XML content is a sample of such a report:
+
+.. literalinclude:: ../testHistory/resources/test_case_report.xml
+   :language: xml
+
+The report includes the following information:
+
+* The **identifier**, **name** and **description** of the test case.
+* The **start** and **end time**.
+* The overall **result** as well as the **output message** that may have been produced.
+* The list of **step reports** that include each step's **identifier**, **description**, **timestamp**, **result** and **findings** (if validations were carried out).
+
+The PDF report includes similar information to its XML counterpart with certain additional context data. The following sample report
+illustrates the information included:
+
+.. figure:: ../screenshots/test_case_report.png
+  :align: center
+
+The report contains a first **overview** section that summarises the purpose and result of the test session. The information
+included here is:
+
+* The name of the **system** that was tested and the name of its related **organisation**.
+* The names of the **domain**, **specification** and **actor** of the relevant conformance statement.
+* The **test case's name** and **description**.
+* The session's **result**, **start** and **end time**.
+* The session's **output message** if one was produced.
+
+Below the overview information follow the test case's **references** where, as available, you are provided with links to additional
+information included as annexes in the report. These may be:
+
+* The **extended documentation** of the test case.
+* The **test session log**.
+
+This first page is followed by the section on the test case's **step reports**. All steps are initially presented as an overview
+including per step, its **description** and **result**. The detailed step reports follow this overview, with individual reports being
+directly accessible by clicking each step's sequence identifier that prefixes its description.
+
+.. figure:: ../screenshots/test_case_report_step.png
+  :align: center
+
+Each detailed **step report** includes the following information for its step:
+
+* Its **sequence number** and **description** in its header, that also includes a link to return to the steps' overview section.
+* Its **result** and completion **time**.
+* The number of validation report findings classified as **errors**, **warnings** and **messages** (if applicable).
+* A **report details** section listing the details of each validation finding (if applicable).
+* A **report data** section listing the step's input and output. Note that only text values are presented here and are truncated if too long.
+
+.. figure:: ../screenshots/test_case_report_step_details.png
+  :align: center
+
+At the end of the test case report follow the report's annexes, specifically the **test case's documentation** and the produced **log output**.
+
+.. figure:: ../screenshots/test_case_report_documentation.png
+  :align: center
+
+Regarding the **log output**, this is limited to messages reported at **information** level thus excluding debugging output that could be quite
+long for elaborate test cases.
+
+.. figure:: ../screenshots/test_case_report_log.png
+  :align: center
+
+.. note::
+    The XML report for a given test session can also be obtained through the test bed's :ref:`REST API<api>` (if enabled for your test bed instance).
+
 .. _execute_tests_rest:
 
 Execution via REST API
 ----------------------
 
-Apart from launching tests through its user interface, the test bed also provides a **REST API** allowing you to manage test sessions
+Apart from launching tests through its user interface, the test bed also provides a **REST API** allowing you to manage test sessions 
 via REST calls. Specifically you may use the API to:
 
 * **Start** test sessions.

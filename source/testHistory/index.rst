@@ -3,25 +3,8 @@
 View your test history
 ======================
 
-All tests you carry out on the test bed are linked to specific conformance statements, each linking one of your
-organisation's systems to a specification actor. The first step in viewing your test session history is to 
-select the **TESTS** button from the screen header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-You can then select the system you are interested in from the listing of your organisation's systems (see :ref:`manage_your_systems`).
-
-.. figure:: ../screenshots/systems_admin.PNG
-  :align: center
-
-Selecting a system from the list brings you to its :ref:`list of conformance statements<manage_your_conformance_statements__view_your_conformance_statements>`.
-From this point you will be able to click the **Test Sessions** link from the left side menu.
-
-.. figure:: ../screenshots/conformance_statements_admin.PNG
-  :align: center
-
-Clicking this link presents you with the test session history screen. This screen is split into three main parts:
+To view your organisation's test history click the **My test sessions** link from the side menu. Doing so
+presents you with the test session history screen which is split into three main parts:
 
 * A set of **search filters** to help locating specific test results.
 * The list of **active test sessions**.
@@ -45,6 +28,7 @@ Each session is presented on a separate table row, with the following informatio
 
 * The **specification** and **actor** (defined as the test case’s SUT).
 * The relevant **test case**.
+* The relevant **system**.
 * The session **start time**.
 
 The information displayed in the table is sorted using the sessions’ **start time** in ascending manner (i.e. the oldest sessions are presented first).
@@ -65,7 +49,7 @@ Completed test sessions
 
 The history of all your completed test sessions is presented in the **Completed test sessions** table.
 
-.. figure:: ../screenshots/test_history__completed_admin.png
+.. figure:: ../screenshots/test_history__completed.png
   :align: center
 
 Tests are presented in a paged table, offering controls to go to the **first**, **previous**, **next** and **last** pages as applicable, and are sorted based on their
@@ -77,6 +61,7 @@ Test sessions are displayed one per table row, with each row including the follo
 
 * The **specification** and **actor** of the test session.
 * The relevant **test case**.
+* The relevant **system**.
 * The session's **start** and **end time**.
 * The test **result**.
 
@@ -95,8 +80,8 @@ In addition, the header itself can also be clicked to **collapse** or **expand**
 Apply search filters
 --------------------
 
-When you first visit this screen the filter controls are initially ignored, indicated by the relevant toggle button being indicated
-as **Disabled**. Clicking on this sets it to **Enabled** and displays the filtering criteria that you can use to filter the test sessions.
+To locate specific test sessions you are provided with a set of filter controls at the top of the screen. These are presented initially
+as collapsed as they are not taken into account, but can be clicked to expand and set specific filter criteria.
 
 .. figure:: ../screenshots/test_history_filters.PNG
   :align: center
@@ -104,9 +89,9 @@ as **Disabled**. Clicking on this sets it to **Enabled** and displays the filter
 The available filters are:
 
 * The **domain** (if applicable), **specification group**, **specification** and **actor** of the sessions' corresponding conformance statements.
-* The sessions' **test suite** and **test case**.
-* The sessions' **result**.
-* The sessions' **start** and **end time**.
+* The relevant' **test suite** and **test case**.
+* The relevant' **system**.
+* The sessions' **result**, **start** and **end time**.
 * A specific **session ID**.
 
 All filter controls with the exception of the start time, end time and session ID are multiple selection choices. The start and end time controls are
@@ -119,9 +104,10 @@ controls are applied as follows:
 Note additionally that selecting dependent values serves to limit the filter options that are presented. For example if a given specification
 is selected, the test suites and test cases available for filtering will be limited to that specification to already exclude impossible combinations.
 
-The presented tests are automatically updated whenever your filter options are modified, or when the filters are removed altogether by setting the
-filter toggle button to **Disabled**. It is also possible to collapse the filters without disabling them by clicking on the filter row. Note that displaying the performed tests with no filtering is the default when you first visit the screen.
-Finally, you may also choose to keep the current filtering but refresh the search results by clicking the **Refresh** button.
+The presented tests are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the
+**Clear filters** button. It is also possible to collapse the filters without disabling them by clicking on the filter panel header. Note that displaying the
+performed tests with no filtering is the default when you first visit the screen. Finally, you may also choose to keep the current filtering but refresh
+the search results by clicking the **Refresh** button.
 
 .. _view_your_test_history__search__export:
 
@@ -250,9 +236,9 @@ collapse (or expand) the diagram, which could be useful if you want to quickly v
 Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
-* **View organisation** takes you to view the :ref:`details of the organisation<community__manage_organisation>` linked to the test session.
-* **View system** takes you to view the :ref:`details of the system<manage_your_systems__edit>` this test session relates to.
-* **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
+* **Go to ...** allows you to navigate to any information linked to the specific test session, specifically the relevant
+  :ref:`conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details>`,
+  :ref:`organisation <community__manage_organisation>` and :ref:`system <TODO>`.
 
 In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
 specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant
@@ -273,7 +259,7 @@ following example for a validation failure.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
 can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
@@ -282,7 +268,7 @@ is also highlighted for the recorded validation messages.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure_code.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will
@@ -304,7 +290,7 @@ are not presented with the download and view buttons, but rather with a **Copy t
 Export test step report
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Export as PDF** and **Export as XML** button that trigger the 
+The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Export report as PDF** and **Export report as XML** options that trigger the
 generation and download of the step report in the requested format. The following example represents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG

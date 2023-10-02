@@ -14,6 +14,8 @@ adopted by the test bed and best practices while defining or executing tests as 
 
    introduction/index
    login/index
+   navigate/index
+   manageOrganisation/index
    sessionDashboard/index
    conformanceDashboard/index
    domainDashboard/index
