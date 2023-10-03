@@ -42,13 +42,7 @@ be a very time-consuming and error-prone task. To address this, the test bed all
 Export data
 -----------
 
-You export data by means of the **Data Export** screen. To access this click the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Data Export** link.
+You export data by means of the **Data export** screen, that you access by clicking the corresponding link from the menu.
 
 .. figure:: ../screenshots/admin_export.png
   :align: center
@@ -87,6 +81,7 @@ to include the information you need. The available types of information are pres
 
 * The domain's :ref:`parameters<domains__domain__parameter_list>`.
 * The domain's :ref:`specifications<domains__specification>`.
+* The domain's :ref:`shared test suites<domains__domain__shared_test_suites>`.
 * Each specification's :ref:`actors<domains__actor>`.
 * Each specification's :ref:`test suites<domains__specification__test_suite_list>`.
 * Each actor's :ref:`endpoints<domains__endpoint>` (including the :ref:`parameters<domains__endpoint__parameter_list>` they define).
@@ -100,6 +95,7 @@ following types of information that form part of the configuration of the commun
 * The community's :ref:`certificate settings<community__conformance_certificate_settings>`.
 * The :ref:`custom labels<community__labels>` and :ref:`custom properties<community__properties>` defined for the community members.
 * The :ref:`triggers<community__manage_triggers>` used to drive automated tasks when important events occur.
+* The :ref:`resources<community__manage_resources>` used in rich text content such as landing pages and test cases' documentation.
 
 Using the options from the **Organisation data** row you may also include data linked to the community's members:
 
@@ -132,13 +128,7 @@ Once you are satisfied with the export settings click the **Export** button to p
 Import data
 -----------
 
-You import data by means of the **Data Import** screen. To access this click the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Data Import** link.
+You export data by means of the **Data import** screen, that you access by clicking the corresponding link from the menu.
 
 .. figure:: ../screenshots/admin_import.png
   :align: center
