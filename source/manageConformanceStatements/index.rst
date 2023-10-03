@@ -136,12 +136,6 @@ in case your statement includes optional test cases, the counts and ratios will 
 clicked to expand and display both mandatory and optional tests. Note that optional and disabled tests do not count towards
 your conformance status.
 
-.. figure:: ../screenshots/conformance_statements_optional_counts.png
-  :align: center
-
-.. figure:: ../screenshots/conformance_statements_optional_ratios.png
-  :align: center
-
 At the bottom of the details' panel you are presented with buttons for further actions as follows:
 
 * The **Download report** button to export your system's current :ref:`conformance statement report <manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
