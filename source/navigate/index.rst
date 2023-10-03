@@ -21,8 +21,9 @@ Interesting points to highlight about the main user interface and navigation con
 Using the landing page
 ----------------------
 
-The first page you are presented with after logging in is called your **landing page**. This is set up by your
-administrator for you as a point to welcome you to the test bed.
+The first page you are presented with after logging in is called your **landing page**. This is set up by you
+as the point to welcome your community members to the test bed. If not set, this will be the default page
+configured by the test bed administrator.
 
 .. figure:: ../screenshots/navigate_landing_page.png
   :align: center
@@ -97,14 +98,21 @@ The following menu items are available to you:
     :delim: |
 
     **Home** | Takes you back to your :ref:`landing page <navigate__landing_page>`.
-    **My conformance statements** | Takes you to your organisation's :ref:`conformance statement overview <manage_your_conformance_statements>`.
-    **My test sessions** | Takes you to your organisation's :ref:`test history <view_your_test_history>`.
-    **My organisation** | Takes you to view your :ref:`organisation's information <manage_organisation>`.
+    **Conformance dashboard** | Takes you to view the overall :ref:`conformance status <monitor_conformance_status>` of your community.
+    **Session dashboard** | Takes you to the monitoring page for all active and completed :ref:`test sessions <monitor_test_sessions>`.
+    **Domain management** | Takes you to the management of your :ref:`specifications and test configuration <domains>`.
+    **Community management** | Takes you to the management of your :ref:`community <community>`.
+    **Data export** | Takes you to the page managing :ref:`data exports <exportimport__export>`.
+    **Data import** | Takes you to the page managing :ref:`data imports <exportimport__import>`.
+    **My conformance statements** | Takes you to your own organisation's :ref:`conformance statement overview <manage_your_conformance_statements>`.
+    **My test sessions** | Takes you to your own organisation's :ref:`test history <view_your_test_history>`.
+    **My organisation** | Takes you to view your own :ref:`organisation's information <manage_organisation>`.
     **Collapse menu** | Collapses (or expands) the menu.
 
 .. note::
 
-  Depending on your community's configuration you may see a different term for the **My organisation** menu.
+  Depending on your community's configuration and specifically its :ref:`custom labels <community__labels>`, you may see a different term for 
+  the **Domain management** and **My organisation** menus.
 
 .. _navigate__breadcrumbs:
 

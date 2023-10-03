@@ -3,15 +3,8 @@
 Monitor test sessions
 =====================
 
-Monitoring all current and past test sessions for your community is possible through the **Session Dashboard** screen.
-To access this click on the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Session Dashboard** link. Note that this screen is also the default selection once you click the 
-header's **ADMIN** link.
+Monitoring all current and past test sessions for your community is possible through the **Session dashboard** screen, accessible
+my clicking the corresponding link from the menu.
 
 .. figure:: ../screenshots/admin_session_dashboard.PNG
   :align: center
@@ -109,8 +102,7 @@ The session dashboard offers a set of filters that can be used to find test sess
 .. figure:: ../screenshots/admin_session_dashboard_filters_off.PNG
   :align: center
 
-Filtering is by default switched off as indicated by the toggle button that is set as **Disabled**. Clicking this switches it to **Enabled** resulting in the filter controls being displayed
-and filtering being switched on.
+Filters are initially not applied and displayed as a collapsed panel. To apply filters, click the panel to expand it.
 
 .. figure:: ../screenshots/admin_session_dashboard_filters_on.PNG
   :align: center
@@ -141,9 +133,8 @@ controls to confirm or cancel the filter. Multiple property filters can be added
 * Values provided for different properties are applied using "AND" logic.
 
 The presented sessions are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the 
-**Enabled** toggle button. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters. 
-The **Refresh** button is used to refresh the display of results based on the current filtering. Finally, note that applying no filtering is the default
-case when you first visit this screen.
+**Clean filters**. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters. 
+The **Refresh** button is used to refresh the display of results based on the current filtering.
 
 .. _session_dashboard__steps:
 
@@ -166,9 +157,11 @@ collapse (or expand) the diagram, which could be useful if you want to quickly v
 Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
-* **View organisation** takes you to view the :ref:`details of the organisation<community__manage_organisation>` linked to the test session.
-* **View system** takes you to view the :ref:`details of the system<community__manage_organisation__systems_edit>` this test session relates to.
-* **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
+* The **Go to ...** button allows you to navigate to any information linked to the test session, specifically the 
+  :ref:`conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details>`, 
+  :ref:`community <community>`, :ref:`organisation <community__manage_organisation>`, :ref:`system <community__manage_organisation__systems_edit>`,
+  :ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>`, :ref:`actor <domains__actor>`, 
+  :ref:`test suite <domains__test_suite_details>` and :ref:`test case <domains__test_case__details>`.
 
 In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
 specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant

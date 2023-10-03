@@ -5,33 +5,32 @@ Manage your organisation
 
 .. note::
     **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation linked to your
-    community that is used for testing purposes.
+    community that is used for testing purposes. You would typically use it by configuring :ref:`conformance statements <manage_your_conformance_statements>`
+    and :ref:`executing tests <execute_tests>` to :ref:`validate your testing setup <validate_test_setup>`.
 
 To view your organisation's information click the **My organisation** link from the side menu. The screen you 
 are presented with shows you the information relevant to your organisation, split in the following sections:
 
-* **Organisation details:** The name (short and full) of your organisation.
+* **Organisation details:** The name (short and full) of your organisation, as well as its currently applicable :ref:`landing page <community__manage_landing_pages>`.
 * **Systems**: A tab listing the systems defined for your organisation. Each listed system displays its **name** (short and full),
   **description** and **version**.
-* **Users:** A tab listing your organisation's users. This includes yourself as well as any other configured users.
-  For each user the **name**, **username** (or **email** if using EU Login), **role** and **status** are presented.
-* **REST API keys:** A tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled by your administrator, allowing you to view and manage the
+* **REST API keys:** A tab, visible if :ref:`testing via REST API<execute_tests_rest>` is enabled, allowing you to view and manage the
   keys you need to use it.
 
 .. figure:: ../screenshots/organisation_manage_admin.PNG
   :align: center
 
-If your community administrator has defined additional properties for its organisations you will also see here an
+If you have defined additional properties for the community's organisations you will also see here an
 **Additional properties** section that you can click to display your organisation's additional information. 
 
 .. figure:: ../screenshots/organisation_manage_admin_properties.PNG
   :align: center
 
 If this is expanded you will see a list of these additional properties along with their currently configured values.
-Such properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by your community 
-administrator, will display a help tooltip to understand their meaning.
+Such properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by you, will display a
+help tooltip to understand their meaning.
 
-As an administrator you can view and edit these properties, depending on their type:
+You can view and edit these properties, depending on their type:
 
 * For texts the current value is presented in an editable text field.
 * For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
@@ -39,14 +38,12 @@ As an administrator you can view and edit these properties, depending on their t
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
   check **Update**. When providing a new value you can also toggle the display of the typed characters.
 
-Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
-
 .. note::
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when editing the organisation's
   information but as long as required properties are missing you will not be able to launch tests.
 
 Update any of the existing values and click on **Update** to persist your changes. From here you can also review your
-organisation's :ref:`systems <manage_organisation__systems>`, :ref:`users <manage_organisation__users>`
+organisation's :ref:`systems <manage_organisation__systems>`
 and :ref:`REST API keys <manage_organisation__rest>` by clicking on their respective tabs. You may also click the **Manage tests** 
 button to view your organisation's :ref:`conformance statements <manage_your_conformance_statements>`.
 
@@ -175,28 +172,6 @@ or the **Delete** button which, following confirmation, will proceed to
 completely delete the system. In case you choose to delete the system, the tests realised for it will still be searchable but will be presented
 as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Back** button to return to the previous screen
 without making any changes.
-
-.. _manage_organisation__users:
-
-Manage your users
------------------
-
-Selecting the **Users** tab presents your organisation's users. This includes yourself as well as any other
-users defined by administrators.
-
-.. figure:: ../screenshots/organisation_users.png
-  :align: center
-
-Each user is displayed in a row presenting her **name**, **email**, **role** and **status**. Your entry in the table is
-highlighted with a "(You)" displayed at the end of your name.
-
-.. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
-  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
-  displayed as **Active**.
-
-  Your organisations users (i.e. community administrators) are managed as part of your :ref:`community management screen<community__administrators>`.
 
 .. _manage_organisation__rest:
 

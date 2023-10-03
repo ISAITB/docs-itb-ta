@@ -5,20 +5,14 @@ Monitor conformance status
 
 The conformance status for your community is the summary of the latest test results by all your
 member organisations for their currently active conformance statements. Monitoring this summary is possible
-by means of the **Conformance Dashboard** screen. To access this click on the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Conformance Dashboard** link.
+by means of the **Conformance dashboard**, accessible via the relevant menu link.
 
 .. figure:: ../screenshots/admin_conformance_dashboard.PNG
   :align: center
 
 The screen is split in two sections:
 
-* A set of **search filters**, initially disabled, to help you focus on specific organisations and specifications.
+* A set of **search filters**, to help you focus on specific organisations and specifications.
 * The list of **conformance statements** defined for your community's organisations.
 
 The currently defined conformance statements are presented in a paged table with one conformance statement per row. Recall that
@@ -57,25 +51,45 @@ Clicking on the row expands to present a nested table with the relevant test sui
 separate panel that indicates the overall result for its contained test cases. These test suite panel can also be clicked to collapse or expand. The content
 of the panels is a table listing the test suite's test cases, displaying for each the latest recorded test result. Each test case row includes the following:
 
-* The **test case name**.
+* The **test case name** and **description**, the latter visible by clicking the test case's row.
+* The list of **tags**, if any are defined for the test case.
 * The time of the test case's **last run**.
 * A **view** button to view the relevant session's details. Clicking this will open up the test session in the :ref:`session dashboard<session_dashboard__completed>`.
+* An **info** button to view the test case's HTML documentation.
 * Two **export** buttons, to generate the test case report for the presented, latest test session in XML or PDF format (see :ref:`monitor_conformance_status__statements__export__test_case`).
 * The latest test **result**. Note that if the relevant test session resulted in a specific **output message**, the result icon can be clicked to display it.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded_output_message.PNG
   :align: center
 
-As part of the display of the conformance statement's details you are also provided with shortcuts to navigate to the statement's relevant data.
-These are provided as buttons at the top of the statement's display as follows:
+As part of the display of the conformance statement's details you are provided with additional controls, to navigate to relevant information
+and view conformance badges.
 
-* **View organisation** takes you to the :ref:`details of the relevant organisation<community__manage_organisation>`.
-* **View system** takes you to the :ref:`details of the relevant system<community__manage_organisation__systems_edit>`.
-* **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` in question.
-* **View specification** takes you to the :ref:`specification<domains__specification>`.
-* **View actor** takes you to the specification's :ref:`actor<domains__actor>`.
+.. figure:: ../screenshots/admin_conformance_dashboard_expanded_controls.png
+  :align: center
+
+The **Go to ...** button is used to navigate to the statement's relevant data, specifically :ref:`conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details>`,
+:ref:`community <community>`, :ref:`organisation <community__manage_organisation>`, :ref:`system <community__manage_organisation__systems_edit>`,
+:ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>`, and :ref:`actor <domains__actor>`. The **Copy badge URL** button
+is presented if the relevant specification has configured :ref:`conformance badges <domains__specification>`. If so you, clicking it 
+will copy to your clipboard a URL that can be referred to from outside the test bed to display the badge. The same button also includes a
+secondary option named **Preview badge** that you can click for a preview.
+
+.. figure:: ../screenshots/conformance_statement_details_badge_preview.png
+  :align: center
+
+Note that the displayed badge is dynamically updated to always reflect the latest conformance testing status. For example if new test cases are
+added to the statement, accessing the same badge (displayed as a "success" badge above) will switch to an "incomplete" badge.
+
+.. figure:: ../screenshots/conformance_statement_details_badge_preview_incomplete.png
+  :align: center
 
 At the right of these controls you are also presented with the overall **test result percentages** as a horizontal bar chart, showing the ratio of successes, failures and incomplete tests.
+If the statement includes :ref:`optional test cases <domains__test_case__details>` the bar chart includes a **plus** control that you can click
+to see separate percentage for mandatory and optional tests (by default mandatory tests are presented).
+
+.. figure:: ../screenshots/conformance_statement_details_ratios.png
+  :align: center
 
 Expanded tables can be collapsed by clicking again on the expanded conformance statement's row. In addition, once one or more rows are expanded
 the conformance statement header also displays a **Collapse all** button to collapse all rows with a single click.
@@ -239,13 +253,12 @@ by the property's key value included in parentheses.
 Apply search filters
 --------------------
 
-The Conformance Dashboard offers a set of filters that can be used to limit the displayed conformance statements.
+The conformance dashboard offers a set of filters that can be used to limit the displayed conformance statements.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_filters_off.PNG
   :align: center
 
-Filtering is by default switched off as indicated by the toggle button that is indicated as **Disabled**. Clicking this sets
-the button to **Enabled**, displaying the filter controls and switching on filtering.
+Filters can be applied by clicking on the collapsed filter panel which expands to display the available controls.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_filters_on.PNG
   :align: center
@@ -275,6 +288,59 @@ following semantics:
 * Values provided for different properties are applied using "AND" logic.
 
 The presented conformance statements are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the 
-**Enabled** toggle button. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters. 
-The **Refresh** button is used to refresh the display of results based on the current filtering. Finally, note that applying no filtering is the default
-case when you first visit this screen.
+**Clear filters** button. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters. 
+The **Refresh** button is used to refresh the display of results based on the current filtering.
+
+.. _monitor_conformance_status__snapshots:
+
+Conformance snapshots
+---------------------
+
+The statements listed in the conformance dashboard correspond to the current status of your :ref:`community <community>` and 
+:ref:`testing setup <domains>`. It is possible to take a readonly snapshot of this status that you can later on consult to 
+review the conformance testing progress of your community at previous points in time. You may want to do this to record an
+overview at specific milestones of your project, or simply to track detailed testing progress over time. You could also find
+such snapshots useful to provide further versioning for your test configuration over what is normally possible, by defining
+snapshots as named and readonly version milestones. Regardless of their eventual purpose, these snapshots are referred to in
+the test bed as **conformance snapshots**.
+
+You can review and select a given snapshot through the relevant control on the statement listings' header. This is by default set
+to **Latest conformance status** indicating that you are viewing the current status.
+
+.. figure:: ../screenshots/monitor_conformance_status__snapshots_controls.png
+  :align: center
+
+.. _monitor_conformance_status__snapshots_create:
+
+To create a new snapshot or manage your existing ones, expand the snapshot button and select option **Manage conformance snapshots**.
+
+.. figure:: ../screenshots/monitor_conformance_status__snapshots_controls_expanded.png
+  :align: center
+
+Doing so presents you with a popup listing your existing snapshots, presenting for each its **label** and **timestamp**, the latter
+used also to sort the entries to display the most recent snapshot first. Above the listed snapshots you also have a simple search
+filter you can use to filter the displayed entries.
+
+.. figure:: ../screenshots/monitor_conformance_status__snapshots_popup.png
+  :align: center
+
+Each listed snapshot presents controls to **edit** and **delete** it. Editing a snapshot allows you to replace the snapshot's label.
+This is also what is requested when you create a new snapshot by clicking the **Create snapshot** button from the popup's footer.
+
+To view a specific snapshot you click its corresponding row. Doing so will close the popup and populate the conformance dashboard
+with the information from the snapshot. This is highlighted for you by displaying the snapshot's **label** and **timestamp** in
+the statement panel's header.
+
+.. figure:: ../screenshots/monitor_conformance_status__snapshots_selected.png
+  :align: center
+
+With the snapshot selected, you may proceed to review its statements, use the :ref:`search filters <monitor_conformance_status__filters>`
+and carry out all actions as you would on the current conformance status. Given that the snapshot's data is **fully readonly**, it is possible
+that related information is changed or even deleted. The snapshot always displays information reflecting the state at the time of the snapshot.
+In case of currently deleted information (e.g. a deleted test suite or organisation), references are displayed with the only difference
+being that navigation controls to view the deleted data's details will be unavailable. Finally, it is interesting to note that
+conformance badges are also part of the snapshot's data so that if a badge is subsequently changed, the snapshot will still refer to the
+previous badge.
+
+To have the conformance dashboard revert to the current status, select the **Latest conformance status** option from the snapshot button
+on the statement panel's header.

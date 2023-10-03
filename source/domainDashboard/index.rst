@@ -4,11 +4,8 @@ Manage test configuration
 =========================
 
 As community administrator you are responsible with setting up the specifications that your organisations are expected to conform to
-as well as the test suites to verify this. Managing this information is possible through the **Domain Management** screen. To access 
-this click on the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
+as well as the test suites to verify this. Managing this information is possible through the **Domain management** screen, accessible
+by clicking the relevant link from the menu.
 
 Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
 the **Domain Management** link.
