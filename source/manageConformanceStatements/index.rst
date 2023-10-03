@@ -137,7 +137,7 @@ At the bottom of the details' panel you are presented with buttons for further a
 * The **Download report** button to export your system's current :ref:`conformance statement report <manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
 * The **Download conformance certificate** button to generate a :ref:`conformance certificate <manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>` for your system.
 * The **Copy badge URL** and **Preview badge** buttons to copy (or preview) a conformance badge for your current status. This is available only
-  if your administrator had configured such badges.
+  if you have :ref:`configured such badges <domains__specification>`.
 * The **View system** button allows you to navigate to your :ref:`system <manage_organisation__systems>` or :ref:`organisation <manage_organisation>` details.
 * The **Back** button to return to the :ref:`conformance statement list <manage_your_conformance_statements__view_your_conformance_statements>`.
 * The **Delete statement** button to :ref:`delete the conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details__delete>`.
@@ -155,7 +155,7 @@ Beneath the statement details' panel you are presented with two tabs that allow 
 Using conformance badges
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Conformance badges are an optional feature for specifications that may be set up by the community administrator. Badges are
+Conformance badges are an optional feature for specifications that may be :ref:`set up for your community<domains__specification>`. Badges are
 images that indicate a specific live status for a given organisation's system, with respect to a specific conformance statement. They are
 meant to be accessible publicly so that they can be embedded in displays such as online dashboards or GitHub README files.
 
