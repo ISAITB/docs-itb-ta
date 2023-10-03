@@ -144,7 +144,7 @@ At the bottom of the details' panel you are presented with buttons for further a
 * The **Download conformance certificate** button to generate a :ref:`conformance certificate <manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>` for your system.
 * The **Copy badge URL** and **Preview badge** buttons to copy (or preview) a conformance badge for your current status. This is available only
   if your administrator had configured such badges.
-* The **Go to ...** button to navigate to related information, notably the **organisation** and **system** details.
+* The **View system** button allows you to navigate to your :ref:`system <manage_organisation__systems>` or :ref:`organisation <manage_organisation>` details.
 * The **Back** button to return to the :ref:`conformance statement list <manage_your_conformance_statements__view_your_conformance_statements>`.
 * The **Delete statement** button to :ref:`delete the conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details__delete>`.
 
