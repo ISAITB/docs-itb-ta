@@ -68,12 +68,12 @@ and view conformance badges.
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded_controls.png
   :align: center
 
-The **Go to ...** button is used to navigate to the statement's relevant data, specifically :ref:`conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details>`,
-:ref:`community <community>`, :ref:`organisation <community__manage_organisation>`, :ref:`system <community__manage_organisation__systems_edit>`,
-:ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>`, and :ref:`actor <domains__actor>`. The **Copy badge URL** button
-is presented if the relevant specification has configured :ref:`conformance badges <domains__specification>`. If so you, clicking it 
-will copy to your clipboard a URL that can be referred to from outside the test bed to display the badge. The same button also includes a
-secondary option named **Preview badge** that you can click for a preview.
+* **View statement** takes you to the relevant :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>`.
+* **View system** takes you to the relevant :ref:`system<community__manage_organisation__systems_edit>`, :ref:`community<community>` or :ref:`organisation<community__manage_organisation>`.
+* **View specification** takes you to the relevant :ref:`specification<domains__specification>`, :ref:`domain<domains__domain_details>` or :ref:`actor<domains__actor>`.
+* **Copy badge URL**, presented if the relevant specification has configured :ref:`conformance badges <domains__specification>`,
+  will copy to your clipboard a URL that can be referred to from outside the test bed to display the badge. The same button also includes a 
+  secondary option named **Preview badge** that you can click for a preview.  
 
 .. figure:: ../screenshots/conformance_statement_details_badge_preview.png
   :align: center
