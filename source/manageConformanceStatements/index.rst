@@ -62,7 +62,7 @@ from where you can see further information on the statements' test cases and exe
 Create a conformance statement
 ------------------------------
 
-To create a new conformance statement for the selected system click the **Create statements** button from the panels controls.
+To create a new conformance statement for the selected system click the **Create statements** button from the panel's controls.
 
 .. figure:: ../screenshots/conformance_statement_create_button.png
   :align: center

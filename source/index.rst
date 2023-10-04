@@ -8,7 +8,7 @@ features available through the test bed's user interface and machine-to-machine 
 adopted by the test bed and best practices while defining or executing tests as an administrator or tester.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Table of contents
    :includehidden:
 
