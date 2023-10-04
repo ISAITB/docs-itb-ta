@@ -22,8 +22,7 @@ activities. Through this organisation you can:
     community are linked to. It should however be clear that all actions carried out using this are meant only to validate
     the testing setup you have configured for your community.
 
-
-.. include:: ../manageSystems/index.rst
+.. include:: ../manageOrganisation/index.rst
 
 .. include:: ../manageConformanceStatements/index.rst
 

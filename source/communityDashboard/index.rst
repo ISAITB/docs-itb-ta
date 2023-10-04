@@ -3,14 +3,8 @@
 Manage your community
 =====================
 
-The **Community Management** screen is the place where you can manage your community's organisations and users. To access it click 
-the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Community Management** link.
+The **Community management** screen is the place where you can manage your community's organisations and users. It can be accessed
+by clicking the relevant link from the menu, which presents you the screen listing your community's information.
 
 .. figure:: ../screenshots/admin_community.PNG
   :align: center
@@ -20,15 +14,19 @@ The screen is split in two sections:
 * The **Community details** section presenting to you the information for your community.
 * Tabs listing additional data linked to the community.
 
+.. figure:: ../screenshots/admin_community_tabs.png
+  :align: center
+
+
 The information grouped in the provided tabs include:
 
-* The **Organisations** section in which you can view and manage your organisations.
-* The **Administrators** section allowing you to view and manage your community administrators.
-* The **Landing pages** section listing the landing pages you can use for your organisations.
-* The **Legal notices** section listing the legal notices you can display for your organisations.
-* The **Error templates** section listing the error message templates used to display unexpected errors to your organisations.
-* The **Triggers** section listing the triggers used to automate processes upon specific events.
-* The **Resources** section listing the resources referenced in documentation and other rich content.
+* The **Organisations** section in which you can view and manage your :ref:`organisations<community__organisations>`.
+* The **Administrators** section allowing you to view and manage your :ref:`community administrators<community__administrators>`.
+* The **Landing pages** section listing the :ref:`landing pages<community__manage_landing_pages>` you can use for your organisations.
+* The **Legal notices** section listing the :ref:`legal notices<community__manage_legal_notices>` you can display for your organisations.
+* The **Error templates** section listing the :ref:`error message templates<community__manage_error_templates>` used to display unexpected errors to your organisations.
+* The **Triggers** section listing the :ref:`triggers<community__manage_triggers>` used to automate processes upon specific events.
+* The **Resources** section listing the :ref:`resources<community__manage_resources>` referenced in documentation and other rich content.
 
 The **Community details** section allows you to view and edit your community's basic information.
 
@@ -160,7 +158,7 @@ allows you to **sort based on creation order**. Such sorting is by default not a
 or **latest created first** manner to refresh the display. Note that while sorting by creation order, you will not be able to sort by clicking on the table's
 headers. To enable this again you will need to first disable creation order sorting.
 
-On the right side you are provided with the **Create organisation** button, allowing you to :ref:`add a new organisation<community__create_organisation>` to the community.
+On the right end of the controls you are provided with the **Create organisation** button, allowing you to :ref:`add a new organisation<community__create_organisation>` to the community.
 Finally, each organisation's row can be clicked to proceed to :ref:`view and edit its details<community__manage_organisation>`.
 
 .. _community__create_organisation:
@@ -251,6 +249,7 @@ To manage an organisation's details click its corresponding row from the **Organ
 Doing so presents you with the organisation details page that is split in the following sections:
 
 * The **Organisation details** section, displaying the organisation's information and allowing it to be edited.
+* The **Systems** tab, displaying the list of systems registered for the organisation (see :ref:`community__manage_organisation__systems`)
 * The **Users** tab, displaying the list of users for the organisation (see :ref:`community__manage_organisation__users`).
 * The **REST API keys** tab, visible if the test bed's :ref:`REST API<api>` is enabled by your test bed's administrator, allowing you to view and manage the
   organisation's API keys (see :ref:`community__manage_organisation__api_keys`).
@@ -309,20 +308,18 @@ Manage the organisation's tests
 An interesting option available from the organisation's detail screen is the **Manage tests** button. This allows you to configure the organisation's test setup, 
 including its systems (see :ref:`community__manage_organisation__systems`) and conformance statements (see :ref:`manage_your_conformance_statements`). You can even proceed to 
 complete a system's configuration parameters used in test cases (see :ref:`execute_tests__provide_your_systems_configuration`) and also execute tests on behalf of 
-the organisation (see :ref:`execute_tests`). When you click the **Manage tests** button you will be directly taken to the organisation's system management screen.
+the organisation (see :ref:`execute_tests`). When you click the **Manage tests** button you will be directly taken to the organisation's conformance statements.
 
-.. figure:: ../screenshots/admin_community_organisations_organisation_manage.PNG
+.. figure:: ../screenshots/conformance_statements_admin.PNG
   :align: center
 
-When on this screen you are effectively taking on the role of an administrator for the organisation, with the screen being displayed matching exactly what 
-such a user would see if he/she clicked the **TESTS** button from the screen header. To avoid confusion between this screen and the one you can access for
-your own special-purpose test organisation (see :ref:`validate_test_setup`), the banner displays the name of the selected organisation.
+Through this screen you are effectively taking on the role of an administrator for the organisation. To highlight the fact that these are the statements of an 
+organisation in your community, rather than :ref:`your own admin organisation<manage_organisation>`, the 
+:ref:`navigation breadcrumb<navigate__breadcrumbs>` highlights the organisation you have selected from within your community. In
+addition, the overall interface's banner will still display as "Community management" rather than "My conformance statements".
 
 .. figure:: ../screenshots/admin_community_organisations_organisation_manage_banner.PNG
   :align: center
-
-In addition, the system management screen now also presents a **Back** button that will bring you back to the organisation's detail screen. If you proceed to manage
-your organisation's setup in further screens you can always return where you were through this **Back** button.
 
 .. note::
     **Managing your organisations' test setup on their behalf** 
@@ -333,8 +330,7 @@ your organisation's setup in further screens you can always return where you wer
     If you define multiple specifications and want your organisations to fully take charge over what they want to conform to then the best approach would be 
     to avoid using the **Manage tests** feature and let your organisations' administrators manage their own setup. On the other hand if you have more simple 
     needs, it could be beneficial to define only non-administrator users for your organisations and configure on their behalf their system(s) and conformance 
-    statement(s). Simple cases with only a single system and conformance statement per organisation would allow users to login, click on **TESTS** from the 
-    screen header and immediately start testing.
+    statement(s).
 
 .. _community__manage_organisation__systems:
 
@@ -345,7 +341,7 @@ Selecting the **Systems** tab presents the :ref:`systems <introduction__glossary
 Systems are an important concept in the test bed as they represent the software components being tested. Before
 proceeding to test anything, an organisation will need to have one or more systems for which conformance statements will be defined.
 
-.. figure:: ../screenshots/organisation_systems.png
+.. figure:: ../screenshots/admin_community_organisations_systems.png
   :align: center
 
 The organisation's systems are presented in a table that displays for each system:
@@ -355,8 +351,8 @@ The organisation's systems are presented in a table that displays for each syste
 * A **description**, providing additional context on the specific system.
 * A **version** number.
 
-To :ref:`view the details of a specific system <manage_organisation__systems_edit>` you can click its row in the table. Clicking on
-the **Create system** button allows you to :ref:`create a new system <manage_organisation__systems_create>`.
+To :ref:`view the details of a specific system <community__manage_organisation__systems_edit>` you can click its row in the table. Clicking on
+the **Create system** button allows you to :ref:`create a new system <community__manage_organisation__systems_create>`.
 
 .. _community__manage_organisation__systems_create:
 
@@ -365,10 +361,15 @@ Create a new system
 
 To create a new system click on the **Create system** button displayed above the listing of existing systems.
 
-.. figure:: ../screenshots/systems_create.PNG
+.. figure:: ../screenshots/admin_community_organisations_systems_header.png
   :align: center
 
-Doing so you will be presented with a screen to provide the new system's information. The inputs presented in the form are:
+Doing so you will be presented with a screen to provide the new system's information.
+
+.. figure:: ../screenshots/admin_community_organisations_systems_create.png
+  :align: center
+
+The inputs presented in the form are:
 
 * The system's **short name** (required). This is used when the system is displayed in lists.
 * The system's **full name** (required). This is included in reports that mention the system.
@@ -459,7 +460,7 @@ Certain properties may actually be non-editable. Such properties can only be man
 Once ready click the **Update** button to finish. You may also click here the **Manage tests** button to view the system's :ref:`conformance statements <manage_your_conformance_statements>`,
 or the **Delete** button which, following confirmation, will proceed to
 completely delete the system. In case you choose to delete the system, the tests realised for it will still be searchable but will be presented
-as obsolete (see :ref:`view_your_test_history`). Finally, you can also click the **Back** button to return to the previous screen
+as obsolete (see :ref:`monitor_test_sessions`). Finally, you can also click the **Back** button to return to the previous screen
 without making any changes.
 
 .. _community__manage_organisation__users:
@@ -683,6 +684,10 @@ Adding a new landing page can be done in one of the following ways:
 * You can copy the test bed's default landing page by clicking the **Copy Test Bed landing page** button.
 * You can copy one of your community's existing landing pages while editing its details.
 
+.. note::
+  A specialised landing page may also be configured for your own "Admin organisation" (see :ref:`manage_organisation`).
+  If not configured, the default community landing page will apply.
+
 Create landing page
 ~~~~~~~~~~~~~~~~~~~
 
@@ -700,7 +705,19 @@ form will be prefilled. The information you are expected to complete for the lan
 * Whether or not it should be the **default** landing page for the community (default is "false").
 * The landing page **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
-When you have provided the required information you can complete the landing page creation by clicking **Save**. Note that if you have set this as the 
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
+you save it. The preview is presented in a popup that is styled and positioned exactly as the landing page :ref:`would appear<navigate__landing_page>`
+when the community users log in. This allows you to fine tune aspects such as positioning and spacing to make sure the result is exactly
+how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_landing_pages_preview.png
+  :align: center
+
+When you have finished defining the landing page you can complete its creation by clicking **Save**. Note that if you have set this as the 
 new default landing page for your community you will also be prompted for confirmation considering that this will be immediately visible to all your
 users. Clicking on the **Cancel** button will discard pending changes and return to the previous screen.
 
@@ -720,6 +737,18 @@ Doing so will take you to a screen where the landing page's information is displ
 In this screen you can change the landing page's **name**, **description**, **default** setting and **content**. Note that if the landing page is currently
 the default, this can't be unset. To switch defaults you would need to edit or create another landing page and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default landing page.
+
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
+you save it. The preview is presented in a popup that is styled and positioned exactly as the landing page :ref:`would appear<navigate__landing_page>`
+when the community users log in. This allows you to fine tune aspects such as positioning and spacing to make sure the result is exactly
+how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_landing_pages_preview.png
+  :align: center
 
 To persist any changes click on the **Update** button or discard them clicking on the **Back** button. The **Delete** button will, following confirmation,
 remove the landing page. Finally, the **Copy** button allows you to make a copy of this landing page, by taking you to the landing page creation screen prefilled
@@ -770,6 +799,16 @@ form will be prefilled. The information you are expected to complete for the leg
 * Whether or not it should be the **default** legal notice for the community (default is "false").
 * The legal notice **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
+you save it. This allows you to fine tune its presentation and content to make sure the result is exactly how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_legal_notices_preview.png
+  :align: center
+
 When you have provided the required information you can complete the legal notice creation by clicking **Save**. Note that if you have set this as the 
 new default legal notice for your community you will also be prompted for confirmation considering that this will be available to all your
 users. Clicking on the **Cancel** button will discard pending changes and return to the previous screen.
@@ -790,6 +829,16 @@ Doing so will take you to a screen where the legal notice's information is displ
 In this screen you can change the legal notice's **name**, **description**, **default** setting and **content**. Note that if the legal notice is currently
 the default, this can't be unset. To switch defaults you would need to edit or create another legal notice and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default legal notice.
+
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
+you save it. This allows you to fine tune its presentation and content to make sure the result is exactly how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_legal_notices_preview.png
+  :align: center
 
 To persist any changes click on the **Update** button or discard them clicking on the **Back** button. The **Delete** button will, following confirmation,
 remove the legal notice. Finally, the **Copy** button allows you to make a copy of this legal notice, by taking you to the legal notice creation screen prefilled
@@ -841,14 +890,17 @@ When completing the content of the template you are also provided with two place
 * **$ERROR_DESCRIPTION:** The error message text (a text value - may be empty).
 * **$ERROR_ID:** The error identifier (used to trace error in logs).
 
-You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button. In addition, you have a
+**Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the template's content you can see a preview of what it would look like when used. To do so click the **Preview** button that will open an
 error popup using a sample error and your current template:
 
 .. figure:: ../screenshots/admin_community_error_templates_preview.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 When you have provided the required information you can complete the template's creation by clicking **Save**. Note that if you have set this as the 
 new default for your community you will also be prompted for confirmation. Clicking on the **Cancel** button will discard pending changes and return to
@@ -871,10 +923,27 @@ In this screen you can change the template's **name**, **description**, **defaul
 the default, this can't be unset. To switch defaults you would need to edit or create another one and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default error template.
 
-Similar to when you create an error template you can preview your changes using the **Preview** button. Once you are finished click on the **Update** button 
-to persist your changes or discard them clicking on the **Back** button. The **Delete** button will, following confirmation,
-remove the template. Finally, the **Copy** button allows you to make a copy of this error template, by taking you to the creation screen prefilled
-with the current template's information. This can be useful if you want to create minor variations of a default template for certain organisations.
+When completing the content of the template you are also provided with two placeholders you can use that will be completed when an actual error is being treated:
+
+* **$ERROR_DESCRIPTION:** The error message text (a text value - may be empty).
+* **$ERROR_ID:** The error identifier (used to trace error in logs).
+
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button. In addition, you have a
+**Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the template's content you can see a preview of what it would look like when used. To do so click the **Preview** button that will open an
+error popup using a sample error and your current template:
+
+.. figure:: ../screenshots/admin_community_error_templates_preview.PNG
+  :align: center
+  :scale: 70%
+
+Once you are finished click on the **Update** button to persist your changes or discard them clicking on the **Back** button. The **Delete** button 
+will, following confirmation, remove the template. Finally, the **Copy** button allows you to make a copy of this error template, by taking you to
+the creation screen prefilled with the current template's information. This can be useful if you want to create minor variations of a default template
+for certain organisations.
 
 .. _community__manage_triggers:
 
@@ -1003,9 +1072,8 @@ To add a property to the inputs click its row (clicking it again will remove it)
 
 Once you have selected the inputs required by the service you can click the **Preview and test service call** button.
 
-.. figure:: ../screenshots/admin_community_triggers_buttons.png
+.. figure:: ../screenshots/admin_community_triggers_buttons_create.png
   :align: center
-  :scale: 70%
 
 This will use the information provided to display the sample payload that will be sent to the service. In case this is configured to 
 be a **GITB processing service** this will be the input SOAP envelope.
@@ -1188,7 +1256,7 @@ that can also be overridden when creating each certificate if certain organisati
 
 The options you can provide to customise your issued certificates are as follows:
 
-* The **title** to use. If none is provided "Conformance Certificate" is used.
+* The **title** to use. If none is provided "Conformance Certificate" is used, but you may also choose to not include any title.
 * Whether to add the conformance statement **details**. These are the information on the domain, specification, actor, organisation and system.
 * Whether to add the **result overview**. This is a summary text on the number of successfully passed and failed test cases.
 * Whether to add the individual **test cases**. Doing so will include a table showing the status for each test case in the conformance statement.
@@ -1219,12 +1287,18 @@ the certificate is generated. The supported placeholders are:
 * **$DOMAIN:** The full name of the domain.
 * **$SPECIFICATION:** The full name of the specification.
 * **$SPECIFICATION_GROUP:** The full name of the specification group.
-* **$SPECIFICATION_GROUP_OPTION:** The full name of the option (a specification within a group).
+* **$SPECIFICATION_GROUP_OPTION:** The full name of the option (specification within a group).
 * **$ACTOR:** The full name of the actor linked to the conformance statement.
 * **$ORGANISATION:** The full name of the organisation to be granted the certificate.
 * **$SYSTEM:** The full name of the organisation's system that was used in the tests.
 
-You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
+You may also include in the custom message placeholders for :ref:`domain parameters<domains__domain__parameter_list>` that are defined
+for the community's domain. These are presented beneath the previously mentioned predefined placeholders. You can review and copy all such
+placeholder values to your content using the **Copy placeholder text** button.
+
+Besides placeholders, you also have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 .. _community__conformance_certificate_settings__signature:
 
