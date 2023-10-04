@@ -714,8 +714,8 @@ When editing a user you see a similar screen, this time prefilled with the user'
   :align: center
 
 The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
-edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
-for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
+edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Finally, clicking **Back** will discard any pending
+changes and return you to the previous screen.
 
 In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you 
 additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
@@ -743,7 +743,7 @@ community's default landing page is what the community's administrator(s) also v
 Adding a new landing page can be done in one of the following ways:
 
 * You can create a new landing page from scratch by clicking the **Create landing page** button.
-* You can copy the test bed's default landing page by clicking the **Copy Test Bed landing page** button.
+* You can copy the :ref:`test bed's default landing page<systemAdmin__landing_pages>` by clicking the **Copy Test Bed landing page** button.
 * You can copy one of the community's existing landing pages while editing its details.
 
 Create landing page
@@ -837,7 +837,7 @@ the community's administrator(s) can also view the community's default legal not
 Adding a new legal notice can be done in one of the following ways:
 
 * You can create a new legal notice from scratch by clicking the **Create legal notice** button.
-* You can copy the test bed's default legal notice by clicking the **Copy Test Bed legal notice** button.
+* You can copy the :ref:`test bed's default legal notice<systemAdmin__legal_notices>` by clicking the **Copy Test Bed legal notice** button.
 * You can copy one of the community's existing legal notices while editing its details.
 
 Create legal notice
@@ -923,7 +923,7 @@ template is defined then the one that applies to the test bed as a whole is auto
 Adding a new error template can be done in one of the following ways:
 
 * You can create a new template from scratch by clicking the **Create error template** button.
-* You can copy the test bed's default template by clicking the **Copy Test Bed error template** button.
+* You can copy the :ref:`test bed's default template<systemAdmin__error_templates>` by clicking the **Copy Test Bed error template** button.
 * You can copy one of the community's existing templates while editing its details.
 
 Create error template
@@ -1205,7 +1205,7 @@ pending changes and return to the :ref:`community details page<community>`.
 Returning output from triggers
 ++++++++++++++++++++++++++++++
 
-OOne of the powerful features of triggers is that they can also adapt the configuration in the test bed. A trigger can achieve this by having its web service return an output as per the
+One of the powerful features of triggers is that they can also adapt the configuration in the test bed. A trigger can achieve this by having its web service return an output as per the
 `GITB processing service API`_ specification that can modify, depending on the trigger's event type, the values for **organisation properties**, **system properties** or **conformance statement parameters**.
 In case of a JSON HTTP service, the same possibility exists by returning JSON output using the same names and structures as the `GITB processing service API`_.
 
