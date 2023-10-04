@@ -197,12 +197,12 @@ Clicking on **Cancel** closes the popup to return you to the previous screen.
 
 The following sample illustrates the information that is included in the conformance statement report's overview section. Specifically:
 
- * The information on the **domain**, **specification** and **actor** for the selected system.
- * The name of the system's **organisation** and the **system** itself.
- * The **date** the report was produced, the number of **successfully passed test cases** versus the total, and the **percentage of results** (successes, failures and incomplete tests).
- * The list of **test suites** displaying per test suite its **name**, **description** and **status**.
- * For each test suite, the list of **test cases**, displaying similarly each test case's **name**, **description** and **result**. The
-   test case name is also prefixed with the test's overall sequence that, in case test case steps are included, is a **link** to jump to its detailed report.
+* The information on the **domain**, **specification** and **actor** for the selected system.
+* The name of the system's **organisation** and the **system** itself.
+* The **date** the report was produced, the number of **successfully passed test cases** versus the total, and the **percentage of results** (successes, failures and incomplete tests).
+* The list of **test suites** displaying per test suite its **name**, **description** and **status**.
+* For each test suite, the list of **test cases**, displaying similarly each test case's **name**, **description** and **result**. The
+  test case name is also prefixed with the test's overall sequence that, in case test case steps are included, is a **link** to jump to its detailed report.
 
 .. figure:: ../screenshots/conformance_statement_report_sample.png
   :align: center
