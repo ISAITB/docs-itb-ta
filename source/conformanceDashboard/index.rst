@@ -307,7 +307,7 @@ Conformance snapshots
 ---------------------
 
 The statements listed in the conformance dashboard correspond to the current status of the :ref:`communities <community>` and
-:ref:`domains <domains>`. If you have selected a single community using the provided filter, it becomes possible to take a readonly snapshot of this status that you can later on consult to
+:ref:`domains <domains>`. If you have :ref:`selected a single community<monitor_conformance_status__filters>` using the provided filter, it becomes possible to take a readonly snapshot of this status that you can later on consult to
 review the conformance testing progress at previous points in time. You may want to do this to record an
 overview at specific milestones, or simply to track detailed testing progress over time. You could also find
 such snapshots useful to provide further versioning for test configurations over what is normally possible, by defining
@@ -353,4 +353,5 @@ conformance badges are also part of the snapshot's data so that if a badge is su
 previous badge.
 
 To have the conformance dashboard revert to the current status, select the **Latest conformance status** option from the snapshot button
-on the statement panel's header.
+on the statement panel's header. This will also happen by default if you are no longer viewing a single community based on your current 
+:ref:`search filters<monitor_conformance_status__filters>`.

@@ -6,13 +6,10 @@ Manage communities
 The **Community management** screen is the place where you can manage the test bed's communities, organisations and users. It can be accessed
 by clicking the relevant link from the menu, which presents you the screen :ref:`listing the defined communities<community_testbed_communities>`.
 
-.. figure:: ../screenshots/admin_community_ta.PNG
-  :align: center
-
 .. _community_testbed_communities:
 
-Manage communities
-------------------
+Communities
+-----------
 
 The **Communities** section allows you to manage the test bed's communities. Existing communities are presented in a table with a row per
 community.
@@ -51,11 +48,10 @@ More information on the domain, support email, self-registration settings and us
 Once the information is entered you complete the community creation by clicking **Save**. Clicking **Cancel** discards pending changes and returns you to
 the previous screen.
 
-
 .. _community_testbed_communities__manage:
 
-Manage a community's details
-----------------------------
+Manage community details
+------------------------
 
 To manage a community's details click its corresponding row from the **Communities** section.
 
@@ -380,8 +376,8 @@ the organisation (see :ref:`execute_tests`). When you click the **Manage tests**
   :align: center
 
 Through this screen you are effectively taking on the role of an administrator for the organisation. To highlight the fact that these are the statements of an
-organisation in your community, rather than :ref:`your own admin organisation<manage_organisation>`, the
-:ref:`navigation breadcrumb<navigate__breadcrumbs>` highlights the organisation you have selected from within your community. In
+organisation in a selected community, rather than :ref:`your own admin organisation<manage_organisation>`, the
+:ref:`navigation breadcrumb<navigate__breadcrumbs>` highlights the organisation you have selected from within the community. In
 addition, the overall interface's banner will still display as "Community management" rather than "My conformance statements".
 
 .. figure:: ../screenshots/admin_community_organisations_organisation_manage_banner.PNG
@@ -461,7 +457,7 @@ you will also see an **Additional properties** section. Clicking this expands th
 .. figure:: ../screenshots/systems_create_properties.PNG
   :align: center
 
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you or a community
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
 * For texts through an editable text field or by selecting a preset value from a dropdown list.
@@ -508,7 +504,7 @@ will also see an **Additional properties** section. You can click this to expand
 .. figure:: ../screenshots/systems_update_properties.PNG
   :align: center
 
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by you or a community
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
 
 * For texts the current value is presented in an editable text field or dropdown menu (if the property has preset values).
@@ -517,7 +513,7 @@ administrator, you will also see a help tooltip to understand their meaning. Suc
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
   check **Update**. When providing a new value you can also toggle the display of the typed characters.
 
-Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
+Certain properties may actually be non-editable. Such properties can only be managed by you or a community administrator.
 
 .. note::
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
@@ -611,7 +607,7 @@ button will, following confirmation, delete the current user.
 .. _community__manage_organisation__api_keys:
 
 Manage the organisation's REST API keys
-+++++++++++++++++++++++++++++++++++++++
+.......................................
 
 Management of the organisation's REST API keys is done through the **REST API keys** section of the organisation's detail screen. This is visible if the
 :ref:`test bed's REST API<api>` is enabled.
@@ -652,7 +648,7 @@ Details on how these REST API keys are used to launch and manage test sessions a
 Manage administrators
 ~~~~~~~~~~~~~~~~~~~~~
 
-The **Community administrators** section displays the users, including yourself, that are capable of managing your community. 
+The **Community administrators** section displays the users that are capable of managing the community. 
 
 .. figure:: ../screenshots/admin_community_administrators.PNG
   :align: center
@@ -780,7 +776,7 @@ how you expect it to be.
   :align: center
 
 When you have finished defining the landing page you can complete its creation by clicking **Save**. Note that if you have set this as the
-new default landing page for your community you will also be prompted for confirmation considering that this will be immediately visible to all your
+new default landing page for the community you will also be prompted for confirmation considering that this will be immediately visible to all your
 users. Clicking on the **Cancel** button will discard pending changes and return to the previous screen.
 
 Edit landing page
@@ -1150,7 +1146,7 @@ Alternatively, if the service is set as an **HTTP service**, the payload will be
 
 From this preview popup you can click **Copy to clipboard** to copy all text or **Close** to hide the preview. Clicking on **Call service** will call the trigger's service
 using the presented payload, allowing you to test it directly from the trigger definition screen. Before making such a call you can also edit the payload to test different
-input values and potentially refer to actual information from your community.
+input values and potentially refer to actual information from the community.
 
 Once the service has been called you will see its result displayed in the popup or a detailed error trace. The
 below example is a sample result after successfully calling a GITB processing service.
