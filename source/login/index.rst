@@ -20,9 +20,10 @@ the option to log in, as well as shortcuts for tasks you may want to do before c
 The content of the welcome page may vary depending on the test bed's setup. The example listed above is a simple case which
 displays:
 
-* A welcome message.
+* A welcome message. This can be adapted as part of the overall :ref:`system settings<systemAdmin__config>`.
 * The main **Click to log in** button to log you in.
 * The **Register in a public community** shortcut allowing to self-register for one of the test bed's communities (see :ref:`login__create_account`).
+  This can be deactivated as part of the overall :ref:`system settings<systemAdmin__config>`
 * A privacy note with a link to view the test bed's legal notice.
 
 A more complete example can be found in the `DIGIT test bed instance`_ where additional information and shortcuts are displayed:

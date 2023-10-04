@@ -288,7 +288,7 @@ As a **test bed administrator** you are expected to carry out the following main
 * Develop test cases and test services, and manage the test suites for each specification (see :ref:`domains__specification__test_suite_upload`).
 * Validate the overall test setup by executing sample test sessions (see :ref:`validate_test_setup`).
 * Monitor the test bed organisations' conformance status (see :ref:`monitor_conformance_status`) and test history (see :ref:`monitor_test_sessions`).
-* Manage test bed default elements such as landing pages and legal notices (see :ref:`community__defaults`).
+* Manage the test bed's configuration and default elements such as landing pages and legal notices (see :ref:`systemAdmin`).
 
 .. note::
     **Community-managed test configuration:** Although you have access to all communities and test configurations, the detailed management of organisations,

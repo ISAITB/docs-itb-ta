@@ -104,15 +104,11 @@ The following menu items are available to you:
     **Community management** | Takes you to the management of your :ref:`community <community>`.
     **Data export** | Takes you to the page managing :ref:`data exports <exportimport__export>`.
     **Data import** | Takes you to the page managing :ref:`data imports <exportimport__import>`.
+    **System administration** | Takes you to the page managing the overall :ref:`test bed configuration<systemAdmin>`.
     **My conformance statements** | Takes you to your own organisation's :ref:`conformance statement overview <manage_your_conformance_statements>`.
     **My test sessions** | Takes you to your own organisation's :ref:`test history <view_your_test_history>`.
     **My organisation** | Takes you to view your own :ref:`organisation's information <manage_organisation>`.
     **Collapse menu** | Collapses (or expands) the menu.
-
-.. note::
-
-  Depending on your community's configuration and specifically its :ref:`custom labels <community__labels>`, you may see a different term for 
-  the **Domain management** and **My organisation** menus.
 
 .. _navigate__breadcrumbs:
 

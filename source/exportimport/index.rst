@@ -61,8 +61,7 @@ that will be exported as well as additional configuration options.
 .. figure:: ../screenshots/admin_export_domain_ta.png
   :align: center
 
-If you select **Community configuration** the form is similarly expanded to display the list of available communities and the export options. Note that the 
-test bed's :ref:`default community<community__defaults__community>` is not included in this list as it cannot be exported.
+If you select **Community configuration** the form is similarly expanded to display the list of available communities and the export options.
 
 .. figure:: ../screenshots/admin_export_community_ta.png
   :align: center

@@ -126,7 +126,7 @@ To change your name enter a new value and click the **Save changes** button. You
 to **Register another organisation**. This is a shortcut allowing you to disconnect from your current session and register
 another organisation in one of the test bed's communities (also not necessarily the current one). If you click this you will
 be presented with a confirmation message and then transferred to the :ref:`organisation self-registration page<login__create_account>`.
-Note that this button may not be available if :ref:`self-registration is disabled<TODO>`.
+Note that this button may not be available if :ref:`self-registration is disabled<systemAdmin__config>`.
 
 .. _manage_your_profile__change_your_password:
 

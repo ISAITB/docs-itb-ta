@@ -23,11 +23,6 @@ community.
 For each community the **short name** and **full name** is presented. From this section you can :ref:`add a new community<community_testbed_communities__create>`
 or :ref:`edit an existing one<community_testbed_communities__manage>`.
 
-.. note::
-    **The default community:** The list of communities always includes the **Default community** which is a special-purpose community corresponding to
-    the overall test bed itself. This community allows management of organisations without a specific community and also elements such as landing pages
-    and legal notices defined at test bed level. See :ref:`community__defaults__community` for more information.
-
 .. _community_testbed_communities__create:
 
 Create a community
@@ -559,7 +554,7 @@ The displayed screens and required information both when you edit or create a ne
 is integrated with EU Login.
 
 Case: EU Login
-##############
+^^^^^^^^^^^^^^
 
 When creating a user you will be presented with a form to enter her information.
 
@@ -586,7 +581,7 @@ the user's role and click on **Update** to save your change. Alternatively you c
 on **Delete** or click **Back** to cancel and return to the previous screen.
 
 Case: No EU Login
-#################
+^^^^^^^^^^^^^^^^^
 
 When creating a user you will be presented with a form to enter the user's information.
 
@@ -678,7 +673,7 @@ The displayed screens and required information both when you edit or create a ne
 is integrated with EU Login.
 
 Case: EU Login
-..............
+++++++++++++++
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -702,7 +697,7 @@ by clicking on **Delete** unless she is the only administrator configured for th
 will return you to the previous screen.
 
 Case: No EU Login
-.................
++++++++++++++++++
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -746,7 +741,7 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The landing page marked as default is the one that applies to all organisations in the community that don't have another, more specific one configured. If no
-landing page is defined then the one that applies to the test bed as a whole is automatically used (see :ref:`community__defaults__landing_page`). Note the
+landing page is defined then the one that applies to the test bed as a whole is automatically used (see :ref:`systemAdmin__landing_pages`). Note the
 community's default landing page is what the community's administrator(s) also view upon login.
 
 Adding a new landing page can be done in one of the following ways:
@@ -840,7 +835,7 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The legal notice marked as default is the one that applies to all organisations in the community that don't have another, more specific one configured. If no
-legal notice is defined then the one that applies to the test bed as a whole is automatically used (see :ref:`community__defaults__landing_page`). Note that
+legal notice is defined then the one that applies to the test bed as a whole is automatically used (see :ref:`systemAdmin__landing_pages`). Note that
 the community's administrator(s) can also view the community's default legal notice when they click the relevant link from the screen footer.
 
 Adding a new legal notice can be done in one of the following ways:

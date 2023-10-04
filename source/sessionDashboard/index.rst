@@ -138,7 +138,7 @@ controls to confirm or cancel the filter. Multiple property filters can be added
 * Values provided for different properties are applied using "AND" logic.
 
 The presented sessions are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the 
-**Clean filters**. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters.
+**Clear filters**. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters.
 The **Refresh** button is used to refresh the display of results based on the current filtering.
 
 .. _session_dashboard__steps:

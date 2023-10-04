@@ -20,6 +20,7 @@ adopted by the test bed and best practices while defining or executing tests as 
    domainDashboard/index
    communityDashboard/index
    exportimport/index
+   systemAdministration/index
    validateTestSetup/index
    profile/index
    contactSupport/index
