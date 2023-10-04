@@ -66,7 +66,7 @@ Create a conformance statement
   **Missing create option:** The create conformance statement option may be missing if your community administrator has disabled the management of
   conformance statements by organisation users.
 
-To create a new conformance statement for your selected system click the **Create statements** button from the panels controls.
+To create a new conformance statement for your selected system click the **Create statements** button from the panel's controls.
 
 .. figure:: ../screenshots/conformance_statement_create_button.png
   :align: center
