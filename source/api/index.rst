@@ -36,7 +36,7 @@ be to do so as part of a development or quality assurance workflow that would in
 4. Monitor the progress of the launched test sessions by periodically polling the test bed for updates.
 5. Once all test sessions are complete, compile an overview report and shut down your system.
 
-All test session management operations identify relevant data via API keys that are :ref:`managed as part of the organisation's details<manage_your_profile__view_organisation_details__rest>`.
+All test session management operations identify relevant data via API keys that are :ref:`managed as part of the organisation's details<manage_organisation__rest>`.
 API keys are defined to cover the following information:
 
 * **Organisation:** The key to identify the specific organisation for which test sessions will be launched or managed.

@@ -1,101 +1,13 @@
 .. _community:
 
-Manage test bed users
-=====================
+Manage communities
+==================
 
-The **User Management** screen is the place where you can manage your test bed's communities, organisations and users. To access it click
-the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **User Management** link.
+The **Community management** screen is the place where you can manage the test bed's communities, organisations and users. It can be accessed
+by clicking the relevant link from the menu, which presents you the screen :ref:`listing the defined communities<community_testbed_communities>`.
 
 .. figure:: ../screenshots/admin_community_ta.PNG
   :align: center
-
-The screen is split in two sections:
-
-* The **Administrators** section listing the currently defined test bed administrators, including yourself (see :ref:`community_testbed_administrators`).
-* The **Communities** section listing the test bed's communities (see :ref:`community_testbed_communities`).
-
-.. _community_testbed_administrators:
-
-Manage test bed administrators
-------------------------------
-
-The **Administrators** section lists the test bed administrators in a table, with one row per administrator.
-
-.. figure:: ../screenshots/admin_community_test_bed_administrators.PNG
-  :align: center
-
-Test bed administrators are listed in a table with one row per user displaying the user's **name**, **email** address (or **username** if integrated with EU Login) and **status**.
-
-.. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
-  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
-  displayed as **Active**.
-
-To create a new test bed administrator click on the **Create administrator** button from the table's header.
-Clicking on an existing row from the table allows you to edit the relevant user's information.
-
-The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
-is integrated with EU Login.
-
-Case: EU Login
-~~~~~~~~~~~~~~
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_test_bed_administrators_create_eulogin.PNG
-  :align: center
-
-You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to the list of test bed administrators
-but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
-
-To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
-
-Editing an administrator's details displays her information as read-only.
-
-.. figure:: ../screenshots/admin_community_test_bed_administrators_edit_eulogin.PNG
-  :align: center
-
-The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user
-by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back**
-will return you to the previous screen.
-
-Case: No EU Login
-~~~~~~~~~~~~~~~~~
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_test_bed_administrators_create.PNG
-  :align: center
-
-In this form you are expected to provide the following information:
-
-* The administrator's **name** (required), used in feedback submissions to the test bed.
-* The **username** (required), used to login.
-* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
-
-To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
-
-When editing a user you see a similar screen, this time prefilled with the user's information.
-
-.. figure:: ../screenshots/admin_community_test_bed_administrators_edit.PNG
-  :align: center
-
-The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
-edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
-for the test bed the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
-
-In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you
-additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
-to change it at his/her next login.
 
 .. _community_testbed_communities:
 
@@ -144,6 +56,7 @@ More information on the domain, support email, self-registration settings and us
 Once the information is entered you complete the community creation by clicking **Save**. Clicking **Cancel** discards pending changes and returns you to
 the previous screen.
 
+
 .. _community_testbed_communities__manage:
 
 Manage a community's details
@@ -161,15 +74,18 @@ Doing so takes you to the community's detail screen that is split in two section
 
 The information grouped in the provided tabs include:
 
-* The **Organisations** section in which you can view and manage the community's organisations.
-* The **Administrators** section allowing you to view and manage the community's administrators.
-* The **Landing pages** section listing the landing pages that can be can used for the community's organisations.
-* The **Legal notices** section listing the legal notices that can be can used for the community's organisations.
-* The **Error templates** section listing the error message templates used to display unexpected errors to the community's organisations.
-* The **Triggers** section listing the triggers used to automate processes upon specific events.
-* The **Resources** section listing the resources referenced in documentation and other rich content.
+.. figure:: ../screenshots/admin_community_tabs.png
+  :align: center
 
-The **Community detail** section allows you to view and edit the community's basic information.
+* The **Organisations** section in which you can view and manage the :ref:`organisations<community__organisations>`.
+* The **Administrators** section allowing you to view and manage the :ref:`community administrators<community__administrators>`.
+* The **Landing pages** section listing the :ref:`landing pages<community__manage_landing_pages>` that can be can used for the community's organisations.
+* The **Legal notices** section listing the :ref:`legal notices<community__manage_legal_notices>` that can be can used for the community's organisations.
+* The **Error templates** section listing the :ref:`error message templates<community__manage_error_templates>` used to display unexpected errors to the community's organisations.
+* The **Triggers** section listing the :ref:`triggers<community__manage_triggers>` used to automate processes upon specific events.
+* The **Resources** section listing the :ref:`resources<community__manage_resources>` referenced in documentation and other rich content.
+
+The **Community details** section allows you to view and edit the community's basic information.
 
 .. figure:: ../screenshots/admin_community_details_ta.PNG
   :align: center
@@ -294,93 +210,6 @@ In terms of additional features available here:
 * The **Edit custom member properties** button is addressed in section :ref:`community__properties`.
 * The **Edit labels** button is addressed in section :ref:`community__labels`.
 
-.. note::
-
-    **Default community:** The **Delete** button is hidden for the test bed's **Default community** as it cannot be deleted.
-    See :ref:`community__defaults__community` for more information.
-
-.. _community__administrators:
-
-Manage community administrators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-    **Default community:** This section is not displayed in case you are viewing the details of the test bed's **Default community**.
-    See :ref:`community__defaults__community` for more information.
-
-The **Community administrators** section displays the users that are capable of managing the community.
-
-.. figure:: ../screenshots/admin_community_administrators.PNG
-  :align: center
-
-Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
-(or **username** if not integrated with EU Login) and **status**.
-
-.. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
-  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
-  displayed as **Active**.
-
-To create a new community administrator click on the **Create community administrator** button from the table's header.
-Clicking on an existing row from the table allows you to edit the relevant user's information.
-
-The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
-is integrated with EU Login.
-
-Case: EU Login
-++++++++++++++
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_create_eulogin.PNG
-  :align: center
-
-You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to the list of community administrators
-but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
-updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
-
-To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
-
-Editing an administrator's details displays her information as read-only.
-
-.. figure:: ../screenshots/admin_community_administrators_edit_eulogin.PNG
-  :align: center
-
-The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user
-by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back**
-will return you to the previous screen.
-
-Case: No EU Login
-+++++++++++++++++
-
-When creating an administrator you will be presented with a form to enter the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_create.PNG
-  :align: center
-
-In this form you are expected to provide the following information:
-
-* The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
-* The **username** (required), used to login.
-* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
-
-To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
-
-When editing a user you see a similar screen, this time prefilled with the user's information.
-
-.. figure:: ../screenshots/admin_community_administrators_edit.PNG
-  :align: center
-
-The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
-edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
-for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
-
-In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you
-additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
-to change it at his/her next login.
-
 .. _community__organisations:
 
 Manage organisations
@@ -400,7 +229,7 @@ allows you to **sort based on creation order**. Such sorting is by default not a
 or **latest created first** manner to refresh the display. Note that while sorting by creation order, you will not be able to sort by clicking on the table's
 headers. To enable this again you will need to first disable creation order sorting.
 
-On the right side you are provided with the **Create organisation** button, allowing you to :ref:`add a new organisation<community__create_organisation>` to the community.
+On the right end of the controls you are provided with the **Create organisation** button, allowing you to :ref:`add a new organisation<community__create_organisation>` to the community.
 Finally, each organisation's row can be clicked to proceed to :ref:`view and edit its details<community__manage_organisation>`.
 
 .. _community__create_organisation:
@@ -491,6 +320,7 @@ To manage an organisation's details click its corresponding row from the **Organ
 Doing so presents you with the organisation details page that is split in the following sections:
 
 * The **Organisation details** section, displaying the organisation's information and allowing it to be edited.
+* The **Systems** tab, displaying the list of systems registered for the organisation (see :ref:`community__manage_organisation__systems`)
 * The **Users** tab, displaying the list of users for the organisation (see :ref:`community__manage_organisation__users`).
 * The **REST API keys** tab, visible if :ref:`testing via REST API<api>` is enabled, allowing you to view and manage the
   organisation's API keys (see :ref:`community__manage_organisation__api_keys`).
@@ -546,23 +376,21 @@ organisation's test configuration (see :ref:`community__manage_organisation__tes
 Manage the organisation's tests
 ...............................
 
-An interesting option available from the organisation's detail screen is the **Manage tests** button. This allows you to configure the organisation's test setup,
-including its systems (see :ref:`manage_your_systems`) and conformance statements (see :ref:`manage_your_conformance_statements`). You can even proceed to 
+An interesting option available from the organisation's detail screen is the **Manage tests** button. This allows you to configure the organisation's test setup, 
+including its systems (see :ref:`community__manage_organisation__systems`) and conformance statements (see :ref:`manage_your_conformance_statements`). You can even proceed to
 complete a system's configuration parameters used in test cases (see :ref:`execute_tests__provide_your_systems_configuration`) and also execute tests on behalf of
-the organisation (see :ref:`execute_tests`). When you click the **Manage tests** button you will be directly taken to the organisation's system management screen.
+the organisation (see :ref:`execute_tests`). When you click the **Manage tests** button you will be directly taken to the organisation's conformance statements.
 
-.. figure:: ../screenshots/admin_community_organisations_organisation_manage.PNG
+.. figure:: ../screenshots/conformance_statements_admin.PNG
   :align: center
 
-When on this screen you are effectively taking on the role of an administrator for the organisation, with the screen being displayed matching exactly what 
-such a user would see if he/she clicked the **TESTS** button from the screen header. To avoid confusion between this screen and the one you can access for
-your own special-purpose test organisation (see :ref:`validate_test_setup`), the banner displays the name of the selected organisation.
+Through this screen you are effectively taking on the role of an administrator for the organisation. To highlight the fact that these are the statements of an
+organisation in your community, rather than :ref:`your own admin organisation<manage_organisation>`, the
+:ref:`navigation breadcrumb<navigate__breadcrumbs>` highlights the organisation you have selected from within your community. In
+addition, the overall interface's banner will still display as "Community management" rather than "My conformance statements".
 
 .. figure:: ../screenshots/admin_community_organisations_organisation_manage_banner.PNG
   :align: center
-
-In addition, the system management screen now also presents a **Back** button that will bring you back to the organisation's detail screen. If you proceed to manage
-the organisation's setup in further screens you can always return where you were through this **Back** button.
 
 .. note::
     **Managing your organisations' test setup on their behalf** 
@@ -573,8 +401,138 @@ the organisation's setup in further screens you can always return where you were
     If the community defines multiple specifications and its organisations are to fully take charge over what they want to conform to then the best approach would be
     to avoid using the **Manage tests** feature and let organisation administrators manage their own setup. On the other hand if the community has more simple
     needs, it could be beneficial to define only non-administrator users for its organisations and configure on their behalf their system(s) and conformance
-    statement(s). Simple cases with only a single system and conformance statement per organisation would allow users to login, click on **TESTS** from the 
-    screen header and immediately start testing.
+    statement(s).
+
+.. _community__manage_organisation__systems:
+
+Manage an organisation's systems
+................................
+
+Selecting the **Systems** tab presents the :ref:`systems <introduction__glossary__system>` defined for the organisation.
+Systems are an important concept in the test bed as they represent the software components being tested. Before
+proceeding to test anything, an organisation will need to have one or more systems for which conformance statements will be defined.
+
+.. figure:: ../screenshots/admin_community_organisations_systems.png
+  :align: center
+
+The organisation's systems are presented in a table that displays for each system:
+
+* Its **short name**, a brief name used to display in search results.
+* Its **full name**, the complete system name presented in reports and detail screens.
+* A **description**, providing additional context on the specific system.
+* A **version** number.
+
+To :ref:`view the details of a specific system <community__manage_organisation__systems_edit>` you can click its row in the table. Clicking on
+the **Create system** button allows you to :ref:`create a new system <community__manage_organisation__systems_create>`.
+
+.. _community__manage_organisation__systems_create:
+
+Create a new system
+^^^^^^^^^^^^^^^^^^^
+
+To create a new system click on the **Create system** button displayed above the listing of existing systems.
+
+.. figure:: ../screenshots/admin_community_organisations_systems_header.png
+  :align: center
+
+Doing so you will be presented with a screen to provide the new system's information.
+
+.. figure:: ../screenshots/admin_community_organisations_systems_create.png
+  :align: center
+
+The inputs presented in the form are:
+
+* The system's **short name** (required). This is used when the system is displayed in lists.
+* The system's **full name** (required). This is included in reports that mention the system.
+* An optional **description** to provide more information about the system.
+* A **version** number. Although requested this is not currently used in the test bed apart from display purposes.
+
+If the organisation includes other systems you are also presented here with an option to **copy the test setup** from
+one of them as a source. Selecting one will replicate the selected system's conformance statements for the new system.
+
+.. figure:: ../screenshots/systems_create_copy.PNG
+  :align: center
+  :scale: 70%
+
+Once another system is selected to copy from, you are also presented with additional options to include:
+
+* **System properties:** To also copy any additional system-level properties that the source system defines.
+* **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
+  conformance statements.
+
+If the community foresees additional system properties, and as long as you are not copying the properties from another system,
+you will also see an **Additional properties** section. Clicking this expands the section so that you can manage the new system's properties.
+
+.. figure:: ../screenshots/systems_create_properties.PNG
+  :align: center
+
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
+
+* For texts through an editable text field or by selecting a preset value from a dropdown list.
+* For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by
+  clicking **Remove**.
+* For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
+  **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
+
+.. note::
+  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
+  information but as long as required properties are missing you will not be able to launch tests.
+
+Once you have entered the system's information click the **Save** button to record it. You can also click the **Cancel** button
+to return to the previous screen without making any changes.
+
+.. _community__manage_organisation__systems_edit:
+
+Edit an existing system
+^^^^^^^^^^^^^^^^^^^^^^^
+
+To edit an existing system click its row from the listing of existing systems. Doing so results in a screen
+displaying the system's information, presented in editable input fields.
+
+.. figure:: ../screenshots/systems_update.PNG
+  :align: center
+
+You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system. If the organisation defines
+other systems you can also select to **copy the test setup** from another system which will reset the system's conformance statements to
+match the selected one (upon confirmation).
+
+.. figure:: ../screenshots/systems_create_copy.PNG
+  :align: center
+  :scale: 70%
+
+Once another system is selected to copy from, you are also presented with additional options to include:
+
+* **System properties:** To also copy any additional system-level properties that the source system defines.
+* **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
+  conformance statements.
+
+If the community foresees additional system properties, and as long as you are not copying the properties from another system, you
+will also see an **Additional properties** section. You can click this to expand and manage the system's properties.
+
+.. figure:: ../screenshots/systems_update_properties.PNG
+  :align: center
+
+Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
+administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
+
+* For texts the current value is presented in an editable text field or dropdown menu (if the property has preset values).
+* For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
+  by clicking on its link, or delete it by clicking **Remove**.
+* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
+  check **Update**. When providing a new value you can also toggle the display of the typed characters.
+
+Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
+
+.. note::
+  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
+  information but as long as required properties are missing you will not be able to launch tests.
+
+Once ready click the **Update** button to finish. You may also click here the **Manage tests** button to view the system's :ref:`conformance statements <manage_your_conformance_statements>`,
+or the **Delete** button which, following confirmation, will proceed to
+completely delete the system. In case you choose to delete the system, the tests realised for it will still be searchable but will be presented
+as obsolete (see :ref:`monitor_test_sessions`). Finally, you can also click the **Back** button to return to the previous screen
+without making any changes.
 
 .. _community__manage_organisation__users:
 
@@ -694,6 +652,84 @@ Details on how these REST API keys are used to launch and manage test sessions a
 
   The displayed specifications, actors, test suites and test cases are limited to those linked to the organisation's :ref:`conformance statements<manage_your_conformance_statements>`.
 
+.. _community__administrators:
+
+Manage administrators
+~~~~~~~~~~~~~~~~~~~~~
+
+The **Community administrators** section displays the users, including yourself, that are capable of managing your community. 
+
+.. figure:: ../screenshots/admin_community_administrators.PNG
+  :align: center
+
+Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
+(or **username** if not integrated with EU Login) and **status**.
+
+.. note::
+  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
+  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  displayed as **Active**.
+
+To create a new community administrator click on the **Create community administrator** button from the section's header.
+Clicking on an existing row from the table allows you to edit the relevant user's information.
+
+The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
+is integrated with EU Login.
+
+Case: EU Login
+..............
+
+When creating an administrator you will be presented with a form to enter the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_create_eulogin.PNG
+  :align: center
+
+You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
+her EU Login account. Once you have created the user you will see that a new entry is added to the list of community administrators 
+but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
+updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. 
+
+To finish creating the user click **Save**, otherwise click **Cancel** to close the dialog.
+
+Editing an administrator's details displays her information as read-only.
+
+.. figure:: ../screenshots/admin_community_administrators_edit_eulogin.PNG
+  :align: center
+
+The information presented here is the user's **name**, **email**, **role**, and **status**. From here you can delete the user 
+by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back** 
+will return you to the previous screen.
+
+Case: No EU Login
+.................
+
+When creating an administrator you will be presented with a form to enter the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_create.PNG
+  :align: center
+
+In this form you are expected to provide the following information:
+
+* The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
+* The **username** (required), used to login.
+* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
+
+To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
+
+When editing a user you see a similar screen, this time prefilled with the user's information.
+
+.. figure:: ../screenshots/admin_community_administrators_edit.PNG
+  :align: center
+
+The information presented here is the user's **name**, **username**, **role**, and **status**, of which only the name is editable. To change the name
+edit the existing value and click on **Update**, whereas to delete the user click on **Delete**. Note that if this user is the only administrator configured
+for the community the **Delete** button is disabled. Finally, clicking **Back** will discard any pending changes and return you to the previous screen.
+
+In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you 
+additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
+to change it at his/her next login.
+
 .. _community__manage_landing_pages:
 
 Manage landing pages
@@ -719,10 +755,6 @@ Adding a new landing page can be done in one of the following ways:
 * You can copy the test bed's default landing page by clicking the **Copy Test Bed landing page** button.
 * You can copy one of the community's existing landing pages while editing its details.
 
-.. note::
-    **Default community:** In case you are viewing the details of the test bed's **Default community** no **Copy Test Bed landing page** button is presented. This
-    is because the default landing page defined for this is actually considered the test bed's default. See :ref:`community__defaults__landing_page` for more information.
-
 Create landing page
 +++++++++++++++++++
 
@@ -740,8 +772,20 @@ form will be prefilled. The information you are expected to complete for the lan
 * Whether or not it should be the **default** landing page for the community (default is "false").
 * The landing page **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
-When you have provided the required information you can complete the landing page creation by clicking **Save**. Note that if you have set this as the 
-new default landing page for the community you will also be prompted for confirmation considering that this will be immediately visible to all its
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
+you save it. The preview is presented in a popup that is styled and positioned exactly as the landing page :ref:`would appear<navigate__landing_page>`
+when the community users log in. This allows you to fine tune aspects such as positioning and spacing to make sure the result is exactly
+how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_landing_pages_preview.png
+  :align: center
+
+When you have finished defining the landing page you can complete its creation by clicking **Save**. Note that if you have set this as the
+new default landing page for your community you will also be prompted for confirmation considering that this will be immediately visible to all your
 users. Clicking on the **Cancel** button will discard pending changes and return to the previous screen.
 
 Edit landing page
@@ -761,6 +805,18 @@ In this screen you can change the landing page's **name**, **description**, **de
 the default, this can't be unset. To switch defaults you would need to edit or create another landing page and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default landing page for the community.
 
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
+you save it. The preview is presented in a popup that is styled and positioned exactly as the landing page :ref:`would appear<navigate__landing_page>`
+when the community users log in. This allows you to fine tune aspects such as positioning and spacing to make sure the result is exactly
+how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_landing_pages_preview.png
+  :align: center
+
 To persist any changes click on the **Update** button or discard them clicking on the **Back** button. The **Delete** button will, following confirmation,
 remove the landing page. Finally, the **Copy** button allows you to make a copy of this landing page, by taking you to the landing page creation screen prefilled
 with the current landing page's information. This can be useful if you want to create minor variations of a default landing page for certain organisations.
@@ -773,7 +829,7 @@ Manage legal notices
 A **legal notice** is an arbitrary text that can be presented to the community's users when they click on the **Legal notice** link from the screen footer.
 The purpose of this is to define terms and conditions, notices and disclaimers that you want to make known to the community.
 
-.. figure:: ../screenshots/footer.PNG
+.. figure:: ../screenshots/navigate_footer.png
   :align: center
 
 You may define a default legal notice that applies to the entire community or even specific legal notices for one or more organisations.
@@ -793,10 +849,6 @@ Adding a new legal notice can be done in one of the following ways:
 * You can copy the test bed's default legal notice by clicking the **Copy Test Bed legal notice** button.
 * You can copy one of the community's existing legal notices while editing its details.
 
-.. note::
-    **Default community:** In case you are viewing the details of the test bed's **Default community** no **Copy Test Bed legal notice** button is presented. This
-    is because the default legal notice defined for this is actually considered the test bed's default. See :ref:`community__defaults__landing_page` for more information.
-
 Create legal notice
 +++++++++++++++++++
 
@@ -814,7 +866,17 @@ form will be prefilled. The information you are expected to complete for the leg
 * Whether or not it should be the **default** legal notice for the community (default is "false").
 * The legal notice **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
-When you have provided the required information you can complete the legal notice creation by clicking **Save**. Note that if you have set this as the 
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
+you save it. This allows you to fine tune its presentation and content to make sure the result is exactly how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_legal_notices_preview.png
+  :align: center
+
+When you have provided the required information you can complete the legal notice creation by clicking **Save**. Note that if you have set this as the
 new default legal notice for the community you will also be prompted for confirmation considering that this will be available to all its
 users. Clicking on the **Cancel** button will discard pending changes and return to the previous screen.
 
@@ -834,6 +896,16 @@ Doing so will take you to a screen where the legal notice's information is displ
 In this screen you can change the legal notice's **name**, **description**, **default** setting and **content**. Note that if the legal notice is currently
 the default, this can't be unset. To switch defaults you would need to edit or create another legal notice and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default legal notice for the community.
+
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
+you save it. This allows you to fine tune its presentation and content to make sure the result is exactly how you expect it to be.
+
+.. figure:: ../screenshots/admin_community_legal_notices_preview.png
+  :align: center
 
 To persist any changes click on the **Update** button or discard them clicking on the **Back** button. The **Delete** button will, following confirmation,
 remove the legal notice. Finally, the **Copy** button allows you to make a copy of this legal notice, by taking you to the legal notice creation screen prefilled
@@ -885,14 +957,17 @@ When completing the content of the template you are also provided with two place
 * **$ERROR_DESCRIPTION:** The error message text (a text value - may be empty).
 * **$ERROR_ID:** The error identifier (used to trace error in logs).
 
-You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button. In addition, you have a
+**Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the template's content you can see a preview of what it would look like when used. To do so click the **Preview** button that will open an
 error popup using a sample error and your current template:
 
 .. figure:: ../screenshots/admin_community_error_templates_preview.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 When you have provided the required information you can complete the template's creation by clicking **Save**. Note that if you have set this as the
 new default for the community you will also be prompted for confirmation. Clicking on the **Cancel** button will discard pending changes and return to
@@ -915,10 +990,27 @@ In this screen you can change the template's **name**, **description**, **defaul
 the default, this can't be unset. To switch defaults you would need to edit or create another one and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default error template.
 
-Similar to when you create an error template you can preview your changes using the **Preview** button. Once you are finished click on the **Update** button
-to persist your changes or discard them clicking on the **Back** button. The **Delete** button will, following confirmation,
-remove the template. Finally, the **Copy** button allows you to make a copy of this error template, by taking you to the creation screen prefilled
-with the current template's information. This can be useful if you want to create minor variations of a default template for certain organisations.
+When completing the content of the template you are also provided with two placeholders you can use that will be completed when an actual error is being treated:
+
+* **$ERROR_DESCRIPTION:** The error message text (a text value - may be empty).
+* **$ERROR_ID:** The error identifier (used to trace error in logs).
+
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button. In addition, you have a
+**Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+While editing the template's content you can see a preview of what it would look like when used. To do so click the **Preview** button that will open an
+error popup using a sample error and your current template:
+
+.. figure:: ../screenshots/admin_community_error_templates_preview.PNG
+  :align: center
+  :scale: 70%
+
+Once you are finished click on the **Update** button to persist your changes or discard them clicking on the **Back** button. The **Delete** button
+will, following confirmation, remove the template. Finally, the **Copy** button allows you to make a copy of this error template, by taking you to
+the creation screen prefilled with the current template's information. This can be useful if you want to create minor variations of a default template
+for certain organisations.
 
 .. _community__manage_triggers:
 
@@ -1047,9 +1139,8 @@ To add a property to the inputs click its row (clicking it again will remove it)
 
 Once you have selected the inputs required by the service you can click the **Preview and test service call** button.
 
-.. figure:: ../screenshots/admin_community_triggers_buttons.png
+.. figure:: ../screenshots/admin_community_triggers_buttons_create.png
   :align: center
-  :scale: 70%
 
 This will use the information provided to display the sample payload that will be sent to the service. In case this is configured to
 be a **GITB processing service** this will be the input SOAP envelope.
@@ -1140,8 +1231,8 @@ a trigger fired for a newly created organisation that fails, will never prevent 
 
 The following sample output illustrates a case where a trigger linked to the creation of a new conformance statement is returning values to set:
 
- * For the organisation, setting its "identifier" property.
- * For two conformance statement properties named "client.flag" and "client.number".
+* For the organisation, setting its "identifier" property.
+* For two conformance statement properties named "client.flag" and "client.number".
 
 .. code-block:: xml
 
@@ -1232,7 +1323,7 @@ that can also be overridden when creating each certificate if certain organisati
 
 The options you can provide to customise the issued certificates are as follows:
 
-* The **title** to use. If none is provided "Conformance Certificate" is used.
+* The **title** to use. If none is provided "Conformance Certificate" is used, but you may also choose to not include any title.
 * Whether to add the conformance statement **details**. These are the information on the domain, specification, actor, organisation and system.
 * Whether to add the **result overview**. This is a summary text on the number of successfully passed and failed test cases.
 * Whether to add the individual **test cases**. Doing so will include a table showing the status for each test case in the conformance statement.
@@ -1263,12 +1354,18 @@ the certificate is generated. The supported placeholders are:
 * **$DOMAIN:** The full name of the domain.
 * **$SPECIFICATION:** The full name of the specification.
 * **$SPECIFICATION_GROUP:** The full name of the specification group.
-* **$SPECIFICATION_GROUP_OPTION:** The full name of the option (a specification within a group).
+* **$SPECIFICATION_GROUP_OPTION:** The full name of the option (specification within a group).
 * **$ACTOR:** The full name of the actor linked to the conformance statement.
 * **$ORGANISATION:** The full name of the organisation to be granted the certificate.
 * **$SYSTEM:** The full name of the organisation's system that was used in the tests.
 
-You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
+You may also include in the custom message placeholders for :ref:`domain parameters<domains__domain__parameter_list>` that are defined
+for the community's domain. These are presented beneath the previously mentioned predefined placeholders. You can review and copy all such
+placeholder values to your content using the **Copy placeholder text** button.
+
+Besides placeholders, you also have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 .. _community__conformance_certificate_settings__signature:
 
@@ -1493,69 +1590,6 @@ and :ref:`systems<introduction__glossary__system>`. For each concept the followi
 
 To provide a custom label check the **Override** checkbox and supply the desired labels. Once finished editing the labels, click on **Save**
 to persist your changes or **Back** to discard them and return to the community details' page.
-
-.. _community__defaults:
-
-Manage test bed defaults
-------------------------
-
-As test bed administrator you can define information as being default at test bed level, allowing your communities to fall back to them if no
-community-specific replacement is defined. The test-bed default elements that can be configured are:
-
-* A default landing page.
-* A default legal notice.
-* A default error template.
-
-In addition, the test bed foresees a **Default community** to facilitate with the management of default elements as well as to support organisations
-that don't belong to a specific community.
-
-.. _community__defaults__community:
-
-The Default community
-~~~~~~~~~~~~~~~~~~~~~
-
-The **Default community** is a special purpose community that is always present in the test bed and cannot be removed. It allows use of the test bed
-without needing to define specific user communities for organisations with limited testing activities. Your special purpose **Admin organisation** is
-also defined as part of this community and allows you to verify any defined test cases before your users execute them.
-
-In terms of management the **Default community** is exactly like a regular community with the following differences:
-
-* It cannot be deleted.
-* It cannot have community administrators defined for it (its administrators are the test bed administrators).
-* Any organisations you add to this community will have access to all the specifications and test suites defined in the test bed.
-* Elements defined as community defaults (landing page, legal notice, error template) are considered also as the test bed defaults.
-
-These exceptions aside, management of the **Default community** uses the same screens as a regular community. See :ref:`community_testbed_communities__manage`
-for more information.
-
-.. note::
-    **When to define organisations in the Default community:** The **Default community** can include organisations as any other community. It is advised
-    however that organisations are added to this only in cases where testing activities are very limited or in case of proof-of-concepts. In most scenarios
-    where a set of organisations need to execute tests that need to be followed up by administrators they would be better served by a dedicated
-    community. This allows you to delegate management, configuration and support tasks to the community's administrators and allow for easier use as
-    non-relevant specifications will be hidden (both for community administrators and organisation users).
-
-.. _community__defaults__landing_page:
-
-Default pages, notices and templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The test bed's default landing page, legal notice and error template, are those displayed to all users that don't have more specific ones configured. This could be possible
-in two cases:
-
-* For users within a specific community for which a community-level default landing page, legal notice and/or error template are defined.
-* For users of organisations that have a specific landing page, legal notice and/or error template configured directly for their organisation.
-
-In all other cases it is the test bed's defaults that will be displayed, including for test bed administrators.
-Management of these defaults is achieved through the **Default community's** management screen as you would do for any community. The difference here is
-that the landing page, legal notice and error template that are defined as the defaults are the ones considered as such not only for the **Default community's** organisations
-but also for all communities.
-
-To manage the default landing page, legal notice and error template:
-
-1. Select to manage the **Default community's** details (see :ref:`community_testbed_communities__manage`).
-2. Manage the landing pages, legal notices and error templates through the same screens used for the community-specific ones
-   (see :ref:`community__manage_landing_pages`, :ref:`community__manage_legal_notices` and :ref:`community__manage_error_templates` respectively).
 
 .. _GITB TDL documentation: https://www.itb.ec.europa.eu/docs/tdl/latest/expressions/index.html#referring-to-configuration-parameters
 .. _GITB processing service API: https://www.itb.ec.europa.eu/docs/services/latest/processing/

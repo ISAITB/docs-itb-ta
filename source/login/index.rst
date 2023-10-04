@@ -79,7 +79,7 @@ a link on the welcome page.
 
 Once you have authenticated you will be transferred back to the test bed as follows:
 
-* If you have a single role assigned to you you will be automatically transferred to the test bed's :ref:`landing page<login__interface_layout>`.
+* If you have a single role assigned to you you will be automatically transferred to the :ref:`test bed's landing page<navigate__landing_page>`.
 * If you don't have an assigned role or have multiple roles you will be transferred to a screen to select the one to proceed with. See :ref:`login__roles` for details.
 
 .. note::
@@ -208,7 +208,7 @@ If the test bed foresees a set of demo scenarios these can be accessed through t
   :align: center
 
 Doing so will connect you to the test bed using a special demo account with predefined test scenarios you can execute. From the
-:ref:`landing page<login__interface_layout>` for this account you can then click the **TESTS** link to view the
+:ref:`landing page<navigate__landing_page>` for this account you can then click the **My conformance statements** link from the menu to view the
 available :ref:`demo conformance statements<manage_your_conformance_statements__view_your_conformance_statements>` and proceed
 to execute their test cases.
 
@@ -235,7 +235,7 @@ This screen presents to you the list of roles currently linked to your account. 
 * The name of your organisation.
 * The name of your organisation's community.
 
-Clicking on one of the listed roles will select it and transfer you to the relevant :ref:`organisation's landing page<login__interface_layout>`.
+Clicking on one of the listed roles will select it and transfer you to the relevant :ref:`organisation's landing page<navigate__landing_page>`.
 Alternatively from here you can click the **Link another role to your account** button to select additional roles. Doing so
 displays a popup with your available options:
 
@@ -304,7 +304,6 @@ To complete the registration form provide the following information:
   that will predefine your organisation's systems and conformance statements. This will not be displayed if no such
   templates are available.
 
-Once the information is provided click on **Complete** to finish the registration. Doing so will close the dialog and
 The **Organisation details** section may also include one or more additional properties that the community's administrator requires
 for completion during registration. These properties may be simple text values, secret values or files for you to upload, and may be
 optional or required. Note that properties highlighted as required will not prevent you from completing the registration if you don't
@@ -349,46 +348,6 @@ the process and close the dialog.
   process of migrating your legacy account.
 
   This is available at https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin.
-
-.. _login__interface_layout:
-
-Interface layout
-----------------
-
-Once logged in, you are presented with the test bed's user interface. The first screen you see is called the 
-**landing page**.
-
-.. figure:: ../screenshots/welcome_admin.PNG
-  :align: center
-
-The bar at the top of the interface is called the **header**. This is always visible on every screen
-and provides quick access to the following options:
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-* **HOME:** Return back to the landing page.
-* **TESTS:** Access the test management page for the test bed's "Admin Organization".
-* **ADMIN:** Access the test bed's administrator features.
-* **Profile controls:** Displays your name and can be hovered over for additional options such as
-  editing your profile and logging out.
-
-Beneath the header you find the screen's main **banner**. This displays a title relevant to the
-screen you are on to give you context on where you are.
-
-.. figure:: ../screenshots/banner.PNG
-  :align: center
-
-At the bottom of the screen is where you find the screen's **footer**. This displays the following information:
-
-.. figure:: ../screenshots/footer.PNG
-  :align: center
-
-* A link to the **user guide**. The section of the user guide displayed depends on the screen you are currently accessing.
-* A link to **contact the support team** for problems, questions and feedback (see :ref:`contact_support`).
-* A link to view the test bed's **legal notice**.
-* A link to **find out more** information on the test bed.
-* The test bed's **version** number which can also be clicked to view its release notes.
 
 .. _DIGIT test bed instance: https://www.itb.ec.europa.eu/itb
 .. _EU Login user guide: https://www.itb.ec.europa.eu/docs/guides/latest/usingEULogin/

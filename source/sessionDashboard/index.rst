@@ -3,25 +3,17 @@
 Monitor test sessions
 =====================
 
-Monitoring all current and past test sessions for the test bed is possible through the **Session Dashboard** screen.
-To access this click on the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Session Dashboard** link. Note that this screen is also the default selection once you click the 
-header's **ADMIN** link.
+Monitoring all current and past test sessions for the test bed is possible through the **Session dashboard** screen, accessible
+my clicking the corresponding link from the menu.
 
 .. figure:: ../screenshots/admin_session_dashboard.PNG
   :align: center
 
-The screen is split in four sections:
+The screen is split in three sections:
 
 * A set of **search filters**, initially disabled, to help locate specific test sessions (see :ref:`session_dashboard__filters`).
 * The list of currently **active sessions** (see :ref:`session_dashboard__active`).
 * The list of **completed sessions** (see :ref:`session_dashboard__completed`).
-* The setting to **automatically terminate idle sessions** (see :ref:`session_dashboard__terminate`).
 
 .. _session_dashboard__active:
 
@@ -102,8 +94,7 @@ Finally, the presented completed sessions can be exported in CSV format by click
 
 .. note::
     **Deleting obsolete tests from the session dashboard:** As test bed administrator if you select to delete the obsolete tests you will be doing so for the entire test bed.
-    If you want to target a specific community you could login as a community administrator to do the purge. Alternatively, at the level of a system you can always use
-    the relevant option from the test session history display (see :ref:`view_your_test_history`).
+    If you want to target a specific community you could login as a community administrator to do the purge.
 
 .. _session_dashboard__filters:
 
@@ -115,8 +106,7 @@ The session dashboard offers a set of filters that can be used to find test sess
 .. figure:: ../screenshots/admin_session_dashboard_filters_off.PNG
   :align: center
 
-Filtering is by default switched off as indicated by the toggle button that is set as **Disabled**. Clicking this switches it to **Enabled** resulting in the filter controls being displayed
-and filtering being switched on.
+Filters are initially not applied and displayed as a collapsed panel. To apply filters, click the panel to expand it.
 
 .. figure:: ../screenshots/admin_session_dashboard_filters_on_ta.PNG
   :align: center
@@ -147,10 +137,9 @@ controls to confirm or cancel the filter. Multiple property filters can be added
 * Values provided for the same property are applied using "OR" logic.
 * Values provided for different properties are applied using "AND" logic.
 
-The presented sessions are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the
-**Enabled** toggle button. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters.
-The **Refresh** button is used to refresh the display of results based on the current filtering. Finally, note that applying no filtering is the default
-case when you first visit this screen.
+The presented sessions are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the 
+**Clean filters**. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters.
+The **Refresh** button is used to refresh the display of results based on the current filtering.
 
 .. _session_dashboard__steps:
 
@@ -173,9 +162,10 @@ collapse (or expand) the diagram, which could be useful if you want to quickly v
 Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
-* **View organisation** takes you to view the :ref:`details of the organisation<community__manage_organisation>` linked to the test session.
-* **View system** takes you to view the :ref:`details of the system<manage_your_systems__edit>` this test session relates to.
-* **View conformance statement** takes you to the :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>` for which this session was executed.
+* **View statement** takes you to the relevant :ref:`conformance statement's details <manage_your_conformance_statements__view_a_conformance_statements_details>`.
+* **View system** takes you to the relevant :ref:`system <community__manage_organisation__systems_edit>` or :ref:`organisation <community__manage_organisation>` details.
+* **View specification** takes you to the relevant :ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>` or :ref:`actor <domains__actor>`.
+* **View test case** takes you to the relevant :ref:`test case <domains__test_case__details>` or :ref:`test suite <domains__test_suite_details>`.
 
 In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
 specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant
@@ -276,23 +266,3 @@ by the property's key value included in parentheses.
   **Exporting custom properties from multiple communities:** It is not possible to produce a single export for multiple communities
   including custom properties. The reason for this is that the resulting CSV file needs to have a single structure in terms of
   columns. The best workaround is to make individual exports per community selecting one at a time from the filtering criteria.
-
-.. _session_dashboard__terminate:
-
-Automatically terminate idle sessions
--------------------------------------
-
-In the bottom of the Session Dashboard you are presented with the control to terminate idle sessions. These are sessions that have started but for which
-no update has been made for a specific time threshold. Through this control the test bed will automatically scan the currently active sessions and forcibly
-terminate those that have exceeded the maximum. The purpose of this is to automate clean-up operations allowing the test bed and connected test services to
-free up any resources that are being used by the sessions in question.
-
-.. figure:: ../screenshots/admin_session_dashboard_terminate.png
-  :align: center
-
-To enable this click the **Disabled** toggle button to switch it to **Enabled**. Doing so you will need to provide the maximum allowed idle time (in seconds).
-
-.. figure:: ../screenshots/admin_session_dashboard_terminate_on.png
-  :align: center
-
-Enter the value in seconds and click on **Apply** to persist your change. Switching the toggle button to **Disabled** removes the setting.

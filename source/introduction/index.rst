@@ -20,7 +20,7 @@ otherwise stated.
 What is the test bed?
 ---------------------
 
-The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT D.2,
+The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT B.2,
 to support the interoperability and conformance testing of projects that enable the development of cross-border public
 services. Its purpose is to facilitate such projects by providing project leaders with the means to define their project's testing strategy 
 that will be used by their participating organisations. The test services offered in this way may either be presented as a tool to help
@@ -44,7 +44,7 @@ How is it maintained?
 ~~~~~~~~~~~~~~~~~~~~~
 
 Following the initial work from the CEN GITB workgroup, the maintenance and evolution of the GITB software and specifications has been taken over 
-by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT D.2. DIGIT D.2 foresees the 
+by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT. DIGIT foresees the
 evolutive maintenance of the GITB software and specifications based on the needs of the testing community and publishes regular releases.
 
 .. _Interoperability Test Bed Team: https://joinup.ec.europa.eu/solution/interoperability-test-bed/about
@@ -275,7 +275,7 @@ In this case the previously discussed test bed concepts could be mapped as follo
 Your role
 ---------
 
-Your test bed account is configured as a **test bed administrator**. This means that you are responsible for the configuration of user communities 
+Your test bed account is configured as a **test bed administrator**. This means that you are responsible for the configuration of user communities
 and, where not managed by community administrators, the test strategy and the management of your users' organisations in the test bed.
 
 Expectations
@@ -291,7 +291,7 @@ As a **test bed administrator** you are expected to carry out the following main
 * Manage test bed default elements such as landing pages and legal notices (see :ref:`community__defaults`).
 
 .. note::
-    **Community-managed test configuration:** Although you have access to all communities and test configurations, the detailed management of organisations, 
+    **Community-managed test configuration:** Although you have access to all communities and test configurations, the detailed management of organisations,
     test entities and test suites within a community will typically be handled by its administrators.
 
 .. _introduction__system_requirements:
@@ -304,7 +304,6 @@ The test bed is a web application with minimal prerequisites for its use. The fo
 * Apple Safari.
 * Google Chrome.
 * Microsoft Edge.
-* Microsoft Internet Explorer (minimum version 11).
 * Mozilla Firefox.
 * Opera.
 

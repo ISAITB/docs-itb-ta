@@ -3,38 +3,71 @@
 Manage your conformance statements
 ==================================
 
-Conformance statements serve to define an organisation's testing goals by linking one of its registered
-systems with a specification's actor (see :ref:`introduction__glossary__conformance_statement`). It is a system's conformance statements that determine the test
+:ref:`Conformance statements <introduction__glossary__conformance_statement>` serve to define an organisation's testing goals by linking one of its registered
+systems with a specification's actor. It is a system's conformance statements that determine the test
 suites and test cases that will be presented for execution.
+
+Depending on your preferences you may allow organisation administrators to configure their own conformance statements or you
+may configure them on their behalf.
 
 .. _manage_your_conformance_statements__view_your_conformance_statements:
 
 View your conformance statements
 --------------------------------
 
-Conformance statements are made at the level of a system and as such, the first step is to select one of the systems 
-configured for your organisation (see :ref:`manage_your_systems`).
+To view your organisation's conformance statements click the **My conformance statements** link from the menu. Doing so
+presents you with a screen listing each statement and its status.
 
 .. figure:: ../screenshots/conformance_statements_admin.PNG
   :align: center
 
-This table presents for the selected system its list of conformance statements in terms
-of their **domain** (in case different domains are available), **specification** and **actor**. Simply put this set of information serves to uniquely
-identify the specification role that your system aims to play, thus determining the test cases that it should
-execute. The **last update** timestamp shows the last time the status of the conformance statement was updated, whereas the presented **test results** provide an overview
-of the latest results, showing how many configured tests your system has succeeded, failed, or has not yet completed. This can also be hovered over to view a text summary
-of the displayed counts. Finally, the overall conformance **status** is also displayed per statement indicating its current result as incomplete, failed or successful.
+Conformance statements are made at the level of a system and as such, the first step is to select a system from the presented dropdown.
+If the organisation only has a single system this appears preselected and its conformance statements are automatically loaded.
 
-From this table you can click any row to proceed to the conformance statement's details (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details`).
-You can return to the listing of conformance statements at any time by clicking the **Conformance Statement** entry in the left side menu.
+Assuming there are conformance statements defined these will be presented in expandable panels, split and grouped based on their
+relevant specifications, specification groups and options (if applicable). If you do indeed see such groupings, related statements
+can be expanded and collapsed by clicking on their relevant titles.
+
+For each statement you can see besides the **name** of the specification, an overview of the system's current testing status. This overview
+consists of:
+
+* The **last update time**, corresponding to the last time the status of the conformance statement was updated.
+* The **result counts**, showing the number of tests in the conformance statement that are completed, failed or incomplete.
+* The **result ratios**, illustrating the same results but as a percentage of the total tests in the statement.
+* The **overall status** of the statement which can be successful, failed, or incomplete, based on the latest test results.
+
+In case numerous statements are defined, you can use the provided **search controls** to filter them based on:
+
+* The specifications' **name**.
+* The **overall status**.
+
+.. figure:: ../screenshots/conformance_statements_filters.png
+  :align: center
+
+It could be that certain test cases configured for the specification are **optional** in nature. Such tests can be consulted
+but are not counted towards the conformance testing status. If such optional tests exist, the displayed counts and ratios
+will present a **plus** button to expand their display allowing you to consult both mandatory and optional tests.
+
+.. figure:: ../screenshots/conformance_statements_optional_counts.png
+  :align: center
+
+.. figure:: ../screenshots/conformance_statements_optional_ratios.png
+  :align: center
+
+Clicking any conformance statement row will take you to the :ref:`conformance statement's details <manage_your_conformance_statements__view_a_conformance_statements_details>`
+from where you can see further information on the statements' test cases and execute new test sessions.
 
 .. _manage_your_conformance_statements__create:
 
 Create a conformance statement
 ------------------------------
 
-To create a new conformance statement for your selected system click the **Create conformance statements** button from the top right side of the
-conformance statement listing's header. This presents to you the available conformance statements that you may create.
+To create a new conformance statement for the selected system click the **Create statements** button from the panels controls.
+
+.. figure:: ../screenshots/conformance_statement_create_button.png
+  :align: center
+
+Doing so presents to you the available conformance statements that are available for the system.
 
 .. figure:: ../screenshots/conformance_statement_create.png
   :align: center
@@ -59,7 +92,7 @@ Using these controls you may:
 * **View** all details by collapsing or expanding all statements.
 
 Once you have selected one or more statements you may click on **Confirm** to proceed with their creation. Clicking on **Cancel** will return you back
-to the listing of your existing conformance statements.
+to the listing of the existing conformance statements.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details:
 
@@ -70,38 +103,91 @@ The conformance statement detail screen provides you the test status summary for
 and a specification's actor. In addition it is the point from which you can start new tests. The information displayed 
 in this page is organised in three sections to present to you:
 
-* The details of the conformance statement.
-* The configuration for your system, used when it is defined as a test case's SUT.
-* The status and controls of the related tests.
+* The **details** of the conformance statement.
+* The **configuration** for your system, used when it is defined as a test case's SUT.
+* The status and controls of the related **tests**.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__overview:
 
 Overview
 ~~~~~~~~
 
-The **Conformance statement details** section provides you the context of what your system is supposed to conform to.
+The **Conformance statement details** section provides you the context of what the selected system is supposed to conform to.
 
 .. figure:: ../screenshots/conformance_statement_details_overview_admin.PNG
   :align: center
 
-The **domain** details are presented on the top as the high-level description of the relevant specifications. The
-**specification** information follows to define the specification you have chosen for your system to conform to
-(a domain may have multiple specifications). The **actor** information defines the specific role your system is expected to fulfil
-as part of this specification (a specification may have multiple actors). The **last update** timestamp highlights the last time the
-conformance statement's status was updated. The **test results** present an overview of the testing progress for the conformance statement's test cases
-as totals and percentages, whereas the **status** represents the statement's current progress. Below this section you are presented with buttons for further actions as follows:
+At the top of the detail panel you see the name of the **organisation** and **system** for which this conformance statement has
+been made. Following this you see the name and description of the **specification** it is claiming conformance for, including
+any options (e.g. specification versions, profiles or roles) that apply. Finally, at the bottom of the panel you see the current
+status of the statement, specifically:
 
-* The **Download conformance certificate** button to generate a conformance certificate for your system (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate`).
-* The **Download report** button to export your system's current conformance statement report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`).
-* The **Delete statement** button to delete the conformance statement (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__delete`).
+* The **overall status** based on the latest test results (success, failure or incomplete).
+* The **last update time**, corresponding to the last time the status of the conformance statement was updated.
+* The **result counts**, showing the number of tests in the conformance statement that are completed, failed or incomplete.
+* The **result ratios**, illustrating the same results but as a percentage of the total tests in the statement.
 
-The overall detail panel can also be **collapsed** and **expanded** by clicking its header. Collapsing its display could be useful if you would want to focus on the tests to
+Similar to the :ref:`conformance statements' listing <manage_your_conformance_statements__view_your_conformance_statements>`,
+in case your statement includes optional test cases, the counts and ratios will display a **plus** button that can be
+clicked to expand and display both mandatory and optional tests. Note that optional and disabled tests do not count towards
+your conformance status.
+
+.. figure:: ../screenshots/conformance_statement_optional_counts.png
+  :align: center
+
+.. figure:: ../screenshots/conformance_statement_optional_ratios.png
+  :align: center
+
+At the bottom of the details' panel you are presented with buttons for further actions as follows:
+
+* The **Download report** button to export your system's current :ref:`conformance statement report <manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
+* The **Download conformance certificate** button to generate a :ref:`conformance certificate <manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>` for your system.
+* The **Copy badge URL** and **Preview badge** buttons to copy (or preview) a conformance badge for your current status. This is available only
+  if you have :ref:`configured such badges <domains__specification>`.
+* The **View system** button allows you to navigate to your :ref:`system <manage_organisation__systems>` or :ref:`organisation <manage_organisation>` details.
+* The **Back** button to return to the :ref:`conformance statement list <manage_your_conformance_statements__view_your_conformance_statements>`.
+* The **Delete statement** button to :ref:`delete the conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details__delete>`.
+
+In addition, the overall detail panel can also be **collapsed** and **expanded** by clicking its header. Collapsing its display could be useful if you would want to focus on the tests to
 execute rather than the statement's details.
 
 Beneath the statement details' panel you are presented with two tabs that allow you to interact and manage the conformance statement:
 
-* The **Conformance tests** tab to view and launch the statement's tests (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__tests`).
-* The **Configuration parameters** tab to view and edit the statement's configuration parameters if needed (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__endpoints`).
+* The :ref:`Conformance tests <manage_your_conformance_statements__view_a_conformance_statements_details__tests>` tab to view and launch the statement's tests.
+* The :ref:`Configuration parameters <manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>` tab to view and edit the statement's configuration parameters if needed.
+
+.. _manage_your_conformance_statements__view_a_conformance_statements_details__badge:
+
+Using conformance badges
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Conformance badges are an optional feature for specifications that may be :ref:`set up for your community<domains__specification>`. Badges are
+images that indicate a specific live status for a given organisation's system, with respect to a specific conformance statement. They are
+meant to be accessible publicly so that they can be embedded in displays such as online dashboards or GitHub README files.
+
+In case conformance badges are configured for the statement's specification, the detail panel's controls will also include a **Copy badge URL**
+button.
+
+.. figure:: ../screenshots/conformance_statement_details_controls.png
+  :align: center
+
+Clicking this will copy to your clipboard a URL that you can then refer to from outside the test bed to display a badge. A typical use case for this
+would be to add it as the source of an image in a HTML page listing conformant solutions. The same button also includes a secondary option named
+**Preview badge** that you can click for a preview.
+
+.. figure:: ../screenshots/conformance_statement_details_badge_preview.png
+  :align: center
+
+Note that the displayed badge is dynamically updated to always reflect the latest conformance testing status. For example if new test cases are
+added to the statement, accessing the same badge (displayed as a "success" badge above) will switch to an "incomplete" badge.
+
+.. figure:: ../screenshots/conformance_statement_details_badge_preview_incomplete.png
+  :align: center
+
+.. note::
+
+    By default conformance badges illustrate a "success" and "not success" state. It could be the case however that specific "failure" badges
+    are also configured depending on your community's setup.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__tests:
 
@@ -121,12 +207,14 @@ The statement's test cases are grouped by their test suite, of which the **name*
 to expand or collapse the displayed test cases, which could be interesting if there are multiple test suites. Note that if only a single test suite is defined it
 appears as expanded by default.
 
-Each test suite includes a table listing its test cases. The information displayed for each test case includes:
+Each test suite includes within it the listing of its test cases. The information displayed for each test case includes:
 
+* An icon indicating of whether it is **required**, **optional**, or **disabled**. Note that if only required tests are defined this icon is hidden.
 * Its **name**, a short text to identify and refer to the test case.
-* Its **description**, providing the context you need to understand the purpose of the test case and plan for its execution.
-* The date and time of the test case's **last run** (i.e. when a test session was last executed).
-* The **status** of the latest test session executed for the test cases (displayed on the right).
+* Zero or more **tags** that highlight specific traits relevant to the test case. These can also be hovered over to view further information.
+* The date and time of the test case's **last execution**.
+* The **status** of the latest test session executed for the test case (displayed on the right).
+* The test case extended **description**, which is initially hidden but can be displayed if clicking on the test case row.
 
 This information is complemented by the test case controls which depending on the status of the test case include:
 
@@ -152,9 +240,14 @@ Above the display of test suites the **Conformance tests** tab also includes con
 
 On the left side you are presented with controls to **search test cases**. You may use the provided **search box** to look for a specific test case, with the text
 you provide being used to match, in a case-insensitive way, test cases based on their name or description. Next to this you are provided with a **dropdown menu** that
-defines which tests are displayed based on their **status**. You may choose to show all tests (the default), or show only successful tests, failed tests or incomplete tests.
-Any change to this will update the display to list the matched test cases. It is important to note that when selecting to run test cases at the level of the displayed
+defines which tests are displayed based on their **status**. You may choose to show all tests (the default), or select successful tests, failed tests or incomplete tests.
+If there are also optional and disabled test cases you may also select (or deselect) their display from here as well.
+Any change to filtering options will update the display to list the matched test cases. It is important to note that when selecting to run test cases at the level of the displayed
 test suite, the test cases to be executed will be those currently displayed.
+
+.. note::
+
+  Disabled test cases can be reviewed in case they have previous test results, but they are hidden by default and cannot be executed.
 
 To the right side you may find a further **dropdown menu** that determines how test cases will be **executed**. The options presented here are the following:
 
@@ -210,27 +303,27 @@ To edit a configuration parameter click its **edit** icon on its relevant row. D
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_simple.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 In case of a parameter that is a file, the popup will be adapted to allow you to download the file and upload a replacement.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_binary.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
-A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide and confirm
-a new value.
+A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide the
+value in the secret value input.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 Finally, an additional scenario is when preset values are defined for the parameter. In this case you are presented with a dropdown selection
 list that includes the available options.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_dropdown.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 To change the parameter's value click on **Save**. Clicking on **Delete** will clear the current value, whereas **Cancel** will close the popup without
 making changes.
@@ -243,12 +336,15 @@ Export conformance statement report
 The conformance statement report (in PDF format) provides the details on the conformance statement and also an overview of its relevant tests. To generate it
 click the **Download report** button from the overview section's panel.
 
-Once the button is clicked you will be prompted for the level of detail you want to include in the report. Two options are available regarding 
+.. figure:: ../screenshots/conformance_statement_details_overview_admin.PNG
+  :align: center
+
+Once the button is clicked you will be prompted for the level of detail you want to include in the report. Two options are available regarding
 whether or not you want to include each test case's step results in the report.
 
 .. figure:: ../screenshots/conformance_statement_report_detail_prompt.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 Selecting **Yes** includes the conformance statement details and test overview but also each test case's step results. Selecting **No** on the 
 other hand skips the test step results.
@@ -259,10 +355,16 @@ The following sample illustrates the information that is included in the report'
  * The name of the system's **organisation** and the **system** itself.
  * The **date** the report was produced.
  * The overall **conformance status**, the number of **successfully passed test cases** versus the total as well as **result percentage ratios**.
- * A listing of the statement's **test suites**, each including its **test cases** and their **result**. Test cases are prefixed by a **link** to
+ * A listing of the statement's **test suites**, each including its **test cases** and their **result**. Test cases are presented as a **link** to
    take you directly to the relevant result (if test steps were selected to be included).
 
 .. figure:: ../screenshots/conformance_statement_report_sample.png
+  :align: center
+
+If the listed test cases include optional or disabled test cases, or if any of them define tags, the listing of test cases is followed by a
+**legend** explaining the meaning of the different status icons and tags.
+
+.. figure:: ../screenshots/conformance_statement_report_legend.png
   :align: center
 
 In case the option to add each test case's step results is selected, the report includes a page per test case displaying its summary
@@ -303,31 +405,5 @@ Deleting the conformance statement may be desired if you created it by mistake o
 given specification. Deleting the conformance statement is possible through the **Delete statement** button from the overview panel.
 
 Clicking this will request confirmation and, if confirmed, will remove the conformance statement. Note that your testing history relevant
-to this conformance statement still remains and can be consulted through your test history (see :ref:`view_your_test_history`). In addition,
+to this conformance statement still remains and can be consulted through your :ref:`test history <view_your_test_history>`. In addition,
 if you create the same conformance statement again, your previous tests will be once again counted towards your conformance testing status.
-
-.. _manage_your_conformance_statements__view_system_information:
-
-View selected system's information
-----------------------------------
-
-Once a system is selected from the list of your organisation's systems (see :ref:`manage_your_systems`) you can manage its conformance statements and view its test history. 
-At any given time you can review the information of your selected system by clicking the **System Information** entry from the left side menu.
-
-.. figure:: ../screenshots/conformance_statements_systeminfo.PNG
-  :align: center
-
-In this screen you can see the **short** and **full name** of the system, its **description** and its **version** number. If you or a
-community administrator have foreseen additional properties for systems you will also see here the **Additional properties** section.
-Clicking this will expand to also display the current system's additional information.
-
-.. figure:: ../screenshots/conformance_statements_systeminfo_properties.PNG
-  :align: center
-
-The displayed properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by you, will display a help
-tooltip to understand their meaning. You can view here the configured values or download linked files. Required properties are
-marked with an asterisk and will need to be completed before launching any tests for this system.
-
-.. note::
-    **Editing a system's information:** The information displayed on this screen is read-only. Editing the system's information is possible through the screen
-    listing your organisation's systems (see :ref:`manage_your_systems__edit`).

@@ -8,13 +8,97 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.20.1**.
+The latest test bed release is **1.21.0**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.21.0 - 02/10/2023
+---------------------------
+
+This release restructures the test bed's user interface to simplify navigation and make the organisation of all screens more intuitive.
+In addition, complex specification setups are now presented in a more intuitive manner, hiding concepts that depending on a 
+community's configuration may be superfluous. Test case management is extended by introducing optional and disabled
+test cases, as well as new tags that provide visual cues for test case traits. With respect to monitoring a community's conformance, 
+administrators can now take and review snapshots of their organisations' testing progress, and also define public badges for their
+specifications that can be externally referred to to illustrate an organisation's conformance status. Finally, the management
+of on-premise test bed instances is better supported, by exposing a new administration interface allowing administrators to
+review and adapt the instance's configuration, as well as define global defaults for all hosted communities.
+
+Alongside these changes to the test bed software, several new features were introduced in the GITB Test Description Language. New 
+metadata was introduced to streamline test suite updates, and to define aspects such as test case custom tags, optional and disabled 
+flags, from within test suite archives. Furthermore new embedded processing capabilities were introduced to facilitate JSON processing,
+test session delays, and generation of random content.
+
+**Bug**
+
+* [ITB-1431] - Background test sessions failing to initialise appear as active
+* [ITB-1442] - If the Test Bed is behind a proxy it may fail to redirect the user post-login to the public (internal) home page
+* [ITB-1443] - Unable to deploy non-shared test suite via REST API
+* [ITB-1447] - Test cases and scriptlets that fail syntax validation should not be attempted to be validated in depth during test suite upload
+* [ITB-1451] - Shared test suites are skipped in bulk data imports
+* [ITB-1461] - Unable to deploy via REST API a non-shared test suite that matches a shared test suite from another specification in the domain
+* [ITB-1468] - Ignore leading and trailing whitespace in user emails when linking EU Login accounts
+* [ITB-1470] - Unable to load scriptlets from other test suite in the domain
+* [ITB-1471] - Unable to update shared test suite that is not linked to a specification
+* [ITB-1472] - Unable to lookup built-in session variables (e.g. DOMAIN) from remote scriptlets
+* [ITB-1473] - Scriptlets having a single parameter with a default value and no call inputs produce an error
+* [ITB-1478] - Cannot delete specification group that contains specification options
+* [ITB-1484] - Unable to import export archives with custom labels set for specification groups
+
+**New Feature**
+
+* [ITB-673] - Navigation breadcrumb
+* [ITB-1223] - Allow Test Bed administrators to view and edit system-wide configuration properties
+* [ITB-1313] - Support the definition of badges for different specifications
+* [ITB-1315] - Allow badges to be queried publicly for organisations (like GitHub badges)
+* [ITB-1342] - Allow the Test Bed administrator to define the welcome text displayed on the Test Bed's welcome page
+* [ITB-1351] - JSON Pointer embedded processing handler for data extraction from JSON content
+* [ITB-1422] - Allow exporting a test case report from the test execution page
+* [ITB-1429] - Allow administrators to preview pending changes to community landing pages
+* [ITB-1430] - Allow administrators to preview pending changes to community legal notices
+* [ITB-1438] - Support for optional test cases that do not count towards conformance
+* [ITB-1452] - New embedded processing handler to apply a delay during a test session's execution
+* [ITB-1453] - Support quick lookup of community resources when editing rich text content such as landing pages and test case documentation
+* [ITB-1454] - Support disabled test cases
+* [ITB-1458] - Allow test suite and test case definitions to define their update approach regarding metadata updates and test history reset
+* [ITB-1462] - Extend TokenGenerator embedded processing handler to generate random numbers
+* [ITB-1463] - Support the definition of labels with custom text and colour for test cases to display in the UI and reports
+* [ITB-1466] - Allow administrators to take named snapshots of the conformance overview of their community
+* [ITB-1467] - Allow domain parameters to be used as placeholders in conformance certificates
+* [ITB-1482] - Allow the Test Bed administrator to adapt the home page message displayed on the login page
+* [ITB-1483] - Edit a Test Bed instance's basic configuration values through the user interface
+
+**Improvement**
+
+* [ITB-743] - Restructure organisation user interface
+* [ITB-919] - Make the left-side menu collapsible
+* [ITB-920] - Move all navigation controls to the left-side menu
+* [ITB-1014] - Migrate to latest Java LTS release (17)
+* [ITB-1197] - Remove support for Internet Explorer 11
+* [ITB-1238] - Use icons to illustrate the different menu options and tabs
+* [ITB-1391] - Improve the efficiency of the conformance dashboard
+* [ITB-1444] - Allow test services to define an empty getModuleDefinition implementation
+* [ITB-1450] - If a test session is terminating do not attempt to create scriptlet outputs
+* [ITB-1465] - Allow organisation administrators to edit their users without needing to delete and recreate
+* [ITB-1469] - If multiple error messages are raised in a page prevent them from being displayed altogether
+* [ITB-1474] - Allow instructions in interact steps to be forcefully displayed without using an editor
+* [ITB-1476] - Make the title of a community's conformance certificate optional
+* [ITB-1477] - Display test case and test suite descriptions in the conformance dashboard
+* [ITB-1479] - Improve display of domain specifications and specification groups
+* [ITB-1480] - Make the management of Test Bed default community settings (e.g. landing page) more intuitive
+* [ITB-1481] - Make search filters immediately usable without needing to enable them
+* [ITB-1485] - Return a 404 "Not found" response for any request to a non-existent path
+* [ITB-1486] - Better distinguish non-reversible delete operations on the UI
+* [ITB-1489] - Allow navigation to community and domain from conformance dashboard entries
+* [ITB-1490] - Allow navigation to community, domain, specification and actor from session dashboard entries
+* [ITB-1492] - Allow navigation to community and domain information from conformance statement detail page
+* [ITB-1493] - Display system information in conformance statement details page
+* [ITB-1495] - Allow a specific landing page to be set for the community or Test Bed administrator
+* [ITB-1496] - Present the default conformance certificate options if these have never been set
 
 Release 1.20.1 - 23/06/2023
 ---------------------------

@@ -3,18 +3,9 @@
 Manage test configuration
 =========================
 
-As test bed administrator you are able to work in parallel with community administrators in setting up the specifications that organisations
-are expected to conform to as well as the test suites to verify this. Managing this information is possible through the **Domain Management** screen. To access
-this click on the **ADMIN** link from the screen's header.
-
-.. figure:: ../screenshots/header_admin.PNG
-  :align: center
-
-Doing so presents you with a left side menu containing links to administrative functions, of which you need to click 
-the **Domain Management** link.
-
-.. figure:: ../screenshots/admin_domains_ta.PNG
-  :align: center
+As test bed administrator you are able to work in parallel with community administrators in setting up the specifications that organisations are expected to conform to
+as well as the test suites to verify this. Managing this information is possible through the **Domain management** screen, accessible
+by clicking the relevant link from the menu. Once you do so you will be presented with the :ref:`listing of available domains<domains__domain_view>`.
 
 .. _domains__domain_view:
 
@@ -109,7 +100,7 @@ The **Specifications** tab presents a table with the domain's configured specifi
 
 Each specification is presented in a separate row, in which the following information is provided:
 
-* The **specification** name.
+* The **specification** name (in bold).
 * Its **description**, used in detail screens and reports.
 * Whether or not the specification is **hidden** from organisation users (represented as a "hidden" icon).
 
@@ -142,14 +133,35 @@ The information to provide for the specification is:
   as a dropdown selection at the top. In case the specification is being created as an option to add to a group, the group in question
   will be preselected.
 
-.. figure:: ../screenshots/admin_domains_specification_group_dropdown.png
-  :align: center
-
 Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
 deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
 however any existing conformance statements or performed tests that refer to it remain unaffected. A good example of such
 a scenario is when you want to support versioning in specifications and, upon release of a new version, you want to ensure
 new conformance statements are only made for this latest version.
+
+At the bottom of the form you may also find an option labelled **Badges enabled** which is by default unchecked. Checking this
+expands the form to show further controls to define badges.
+
+.. figure:: ../screenshots/admin_domains_domain_create_specification_badges.png
+  :align: center
+
+Badges are images that can be publicly looked up for a given organisation's system to produce an image that visually represents
+its conformance status. If you choose to define such badges you need to provide at least a badge for the "successful" state
+and "other" (i.e. not successful) state. Optionally you may also provide a badge for the "failure" state, for which the "other"
+badge is used by default.
+
+Once a badge is provided you will be presented with additional controls to **delete** and **preview** it.
+
+.. figure:: ../screenshots/conformance_statement_details_badge_preview.png
+  :align: center
+
+A badge URL is of the form ``[TEST_BED_ADDRESS]/[SYSTEM_KEY]/[ACTOR_KEY]/[SNAPSHOT_KEY]`` with the ``[SNAPSHOT_KEY]``
+being optional. Such URLs can be copied by both administrators through the :ref:`conformance dashboard <monitor_conformance_status>`,
+as well as normal users through a :ref:`conformance statement's detail page <manage_your_conformance_statements__view_a_conformance_statements_details>`.
+
+.. note::
+  Badges can also be defined at :ref:`actor level <domains__actor>` if this is more meaningful for your setup. If a badge
+  is missing at actor level, the one configured for the specification will be used by default.
 
 To complete the creation of the specification click the **Save** button. To cancel and return to the :ref:`domain detail page<domains__domain_details>`
 click the **Cancel** button.
@@ -167,8 +179,8 @@ perspective of conformance statements, specifications map to the versions, but t
 .. figure:: ../screenshots/admin_domains_domain_specification_groups.png
   :align: center
 
-Specification groups are displayed separately from their contained specifications (termed by default as "options" when grouped) in search filters and
-when :ref:`creating new conformance statements<manage_your_conformance_statements__create>`. Most reports and listings in screens don't
+Specification groups are displayed separately from their contained specifications (termed by default as "options" when grouped) in search filters and 
+when :ref:`creating new conformance statements<manage_your_conformance_statements__create>`. PDF reports and certain screen listings don't
 present these as separate concepts, showing rather as a specification the concatenation between group and option (separated by a hyphen).
 
 To define a specification group expand the **Create specification** options and select **Create specification group**.
@@ -476,9 +488,7 @@ The following information is presented in corresponding form controls:
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 * In case :ref:`specification groups<domains__domain_specification_groups>` are defined in the domain, these will also be presented
   as a dropdown selection at the top, with the specification's group (if defined) being preselected.
-
-.. figure:: ../screenshots/admin_domains_specification_group_dropdown.png
-  :align: center
+* Whether or not **conformance badges** are enabled for the specification (see their explanation in the :ref:`specification creation screen <domains__domain_create_specification>`).
 
 Setting a specification as **hidden** is typically meaningful for existing specifications as doing so will effectively
 deprecate it. Once set as hidden, a specification does not appear as available when creating new conformance statements,
@@ -693,6 +703,30 @@ The information to provide for the actor is:
 * Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
 
+At the bottom of the form you may also find an option labelled **Badges enabled** which is by default unchecked. Checking this
+expands the form to show further controls to define badges.
+
+.. figure:: ../screenshots/admin_domains_domain_create_specification_badges.png
+  :align: center
+
+Badges are images that can be publicly looked up for a given organisation's system to produce an image that visually represents
+its conformance status. If you choose to define such badges you need to provide at least a badge for the "successful" state
+and "other" (i.e. not successful) state. Optionally you may also provide a badge for the "failure" state, for which the "other"
+badge is used by default.
+
+Once a badge is provided you will be presented with additional controls to **delete** and **preview** it.
+
+.. figure:: ../screenshots/conformance_statement_details_badge_preview.png
+  :align: center
+
+A badge URL is of the form ``[TEST_BED_ADDRESS]/[SYSTEM_KEY]/[ACTOR_KEY]/[SNAPSHOT_KEY]`` with the ``[SNAPSHOT_KEY]``
+being optional. Such URLs can be copied by both administrators through the :ref:`conformance dashboard <monitor_conformance_status>`,
+as well as normal users through a :ref:`conformance statement's detail page <manage_your_conformance_statements__view_a_conformance_statements_details>`.
+
+.. note::
+  Badges can also be defined at :ref:`specification level <domains__domain_create_specification>` if this is more meaningful for your setup. If a badge
+  is missing at actor level, the one configured for the specification will be used by default.
+
 To complete the creation of the actor click the **Save** button. To cancel and return to the :ref:`specification's detail page<domains__specification>`
 click the **Cancel** button.
 
@@ -737,6 +771,10 @@ documentation check the **Documentation** header, which will expand to display a
 
 .. figure:: ../screenshots/admin_domains_test_suites_details_documentation.PNG
   :align: center
+
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources <community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 If you choose to provide such documentation you may also click the **Preview documentation** to ensure it matches your expectations. Doing so
 presents a popup with the documentation, displaying it exactly as when viewed by your users.
@@ -846,14 +884,35 @@ An editable form is presented here that displays the metadata for the test case,
   :ref:`test execution<execute_tests_interactive>`.
 * Its **description** (optional), displayed alongside the test case's name in the :ref:`conformance statement details page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`
   and during :ref:`test execution<execute_tests_interactive>`. The purpose of this description is to summarise its purpose and steps.
+* Whether or not the test case is **optional**. Optional test cases can be executed but are not counted towards a conformance statement's status.
+* Whether or not the test case is **disabled**. Disabled test cases are by default hidden and cannot be executed.
+* One or more **tags** you can define to highlight traits for the current test case.
 
-You may also view and edit here the test case's **documentation**. This is displayed to users as part of the
+If you choose to define **tags** you can add new ones through the **Add** button that opens up a popup to provide the tag's information.
+
+.. figure:: ../screenshots/admin_domains_test_case_details_tag_create.png
+  :align: center
+
+The information to provide here consists of the tag's **name** that will be displayed on the tag, its **background** and **text** colour, as well
+as an optional **description** to display in tooltips and report legends. To create the tag click on **Save**, or click on **Cancel** to close the popup
+without making changes.
+
+Once tags are defined you can see an editable preview of each along with **edit** and **delete** buttons.
+
+.. figure:: ../screenshots/admin_domains_test_case_details_tag_list.png
+  :align: center
+
+Besides tags, you may also view and edit here the test case's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
 being to add extended rich documentation that describes the steps to follow and reference external resources. To display the existing
 documentation click the **Documentation** section, to reveal a rich text editor.
 
 .. figure:: ../screenshots/admin_domains_test_cases_details_documentation.PNG
   :align: center
+
+Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources <community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 If you choose to provide such documentation you may also click the **Preview documentation** to ensure it matches your expectations. Doing so
 presents a popup with the documentation, displaying it exactly as when viewed by your users.
@@ -928,6 +987,7 @@ The following information is presented in corresponding form controls:
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
 * The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<api>` (if the REST API is enabled).
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
+* Whether or not **conformance badges** are enabled for the actor (see their explanation in the :ref:`actor creation screen <domains__specification__create_actor>`).
 
 To edit the actor's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
 following confirmation, delete the actor and all related information. The **Back** button does not make any changes but takes you back to the
