@@ -8,13 +8,34 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.21.0**.
+The latest test bed release is **1.21.1**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.21.1 - 07/11/2023
+---------------------------
+
+.. warning::
+  This patch contains important security updates and upgrading from earlier versions is advised.
+
+This is a limited maintenance release to address reported bugs, and most importantly to patch third-party libraries to resolve
+published vulnerabilities. Of these the most important is the HTTP/2 Rapid Reset vulnerability that could render a Test Bed
+instance vulnerable to a DDoS attack if used directly (i.e. without a reverse proxy) from end users.
+
+**Bug**
+
+* [ITB-1502] - The system administration screen shows the custom welcome page message as disabled even when it is set
+* [ITB-1519] - Test Bed REST API documentation may become unavailable
+
+**Improvement**
+
+* [ITB-1516] - Library updates to address CVE-2023-44487 (HTTP/2 Rapid Reset)
+* [ITB-1517] - Library updates to address (as a precaution) CVE-2023-22102 (MySQL connector exploit)
+* [ITB-1518] - Library updates to address (as a precaution) CVE-2023-45819 (TinyMCE notifications exploit)
 
 Release 1.21.0 - 06/10/2023
 ---------------------------
