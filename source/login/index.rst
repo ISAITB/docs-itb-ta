@@ -118,7 +118,7 @@ an administrator has reset your password.
 In the form that appears you are requested to:
 
 * Provide your **current password**.
-* Provide a **new password** which you will also need to confirm.
+* Provide a **new password**.
 
 The new password you provide must meet minimum expected complexity requirements. Specifically:
 
@@ -175,7 +175,7 @@ The information needed to complete this form is as follows:
   templates are available.
 * **Name:** The name for your new organisation's initial administrator account.
 * **Username:** A username for the account.
-* **Password:** The password for the new administrator account that needs to also be confirmed.
+* **Password:** The password for the new administrator account.
 
 The password you provide must meet minimum expected complexity requirements. Specifically:
 

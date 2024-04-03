@@ -43,9 +43,6 @@ The popup information displays your name, current role, and three links:
 * **Switch role:** To :ref:`switch your currently connected role<logout__eulogin>`.
 * **Logout:** To :ref:`log out from the test bed<logout__eulogin>`.
 
-.. figure:: ../screenshots/profile_edit_eulogin.png
-  :align: center
-
 .. _manage_your_profile__edit__eulogin:
 
 Edit your profile
@@ -56,8 +53,12 @@ To edit your profile click on the **My profile** link from the header's profile 
 .. figure:: ../screenshots/profile_hover_eulogin.png
   :align: center
 
-The information you see here is taken from your EU Login account and cannot be edited within the test bed. The options you
-have here relate to the test bed roles linked to your account, specifically:
+The information you see here is taken from your EU Login account and cannot be edited within the test bed.
+
+.. figure:: ../screenshots/profile_edit_eulogin.png
+  :align: center
+
+The options you have here relate to the test bed roles linked to your account, specifically:
 
 * **Remove role from your account** is used to remove one or more roles from your EU Login account.
 * **Link another role to your account** will transfer you to the screen where you can :ref:`link additional roles to your EU Login account<login__roles>`.
@@ -141,8 +142,7 @@ To change your password click on the **Change password** link from the header's 
 .. figure:: ../screenshots/profile_hover.png
   :align: center
 
-Doing this presents you with a form to enter your current password and the new one. To ensure your new password is entered
-correctly you need to enter it twice (in the **New password** and **Confirm password** fields).
+Doing this presents you with a form to enter your current password and the new one.
 
 .. figure:: ../screenshots/password.PNG
   :align: center

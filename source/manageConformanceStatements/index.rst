@@ -94,6 +94,123 @@ Using these controls you may:
 Once you have selected one or more statements you may click on **Confirm** to proceed with their creation. Clicking on **Cancel** will return you back
 to the listing of the existing conformance statements.
 
+.. _manage_your_conformance_statements__export_overview:
+
+Conformance overview report
+---------------------------
+
+Besides viewing your conformance statements and their grouping on this screen, you can also generate **conformance overview reports**. These
+reports are a complement to the :ref:`conformance statement reports<manage_your_conformance_statements__view_a_conformance_statements_details__export>`
+available when :ref:`viewing a specific conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>`,
+focusing rather on a set of related conformance statements. Such overview reports are available at different levels depending on how
+specifications are configured, specifically (per decreasing aggregation level):
+
+* Your **overall** status as an organisation (always available).
+* A **domain**, when your conformance statements can cover more than one domains.
+* A **specification group**, if groups are defined.
+* A **specification**, when multiple actors can be tested for.
+
+A report of your overall conformance status can be produced by clicking on the **Download report** button presented above the listing of statements. By default
+this will produce a **PDF report**, but clicking the presented caret for additional options allows you to also **download the report in XML format**.
+
+.. figure:: ../screenshots/conformance_statements_overall_report_control.png
+  :align: center
+
+The PDF report includes an **overview** section summarising the report's context and status. This includes:
+
+* The **organisation** and **system** the report refers to.
+* The selected **domain**, **specification group**, or **specification** (skipped if the report refers to the overall status).
+* The report **date** and **status**.
+* The summary of conformance statement results, as **counts** and also **percentage ratios**.
+
+Below the overview section, the report includes the listing of **conformance statements** presented in the same grouping as the on-screen display. Each
+statement includes its **name** and **test result ratio** and **status**.
+
+.. figure:: ../screenshots/conformance_overview_pdf.png
+  :align: center
+
+Following the summary of conformance statements, the report includes each individual **statement report** that lists its specific status, test suites and test cases.
+In fact the name of each presented conformance statement from the summary is a link you may click to access the page of the relevant statement report.
+
+.. figure:: ../screenshots/conformance_overview_pdf_statement.png
+  :align: center
+
+.. note::
+
+  Each conformance statement report included in the overview report, matches the report you can produce separately for the
+  :ref:`statement's detail screen<manage_your_conformance_statements__view_a_conformance_statements_details__export>`. When included in an overview report there are however
+  no extended details for specific test cases.
+
+An alternative to producing the report in PDF is to select the **Download report as XML** option. The format of this report is defined by the
+`GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
+and allows simpler machine-based processing. The following XML content is a sample of such a report:
+
+.. literalinclude:: ../manageConformanceStatements/resources/conformance_overview_xml.xml
+   :language: xml
+
+Producing a conformance overview report at the level of a specific **domain**, **specification group** or **specification**, is achieved
+using the report icon buttons presented at the right side of the statements' display. The first button is used to produce the report in XML
+and the second one in PDF.
+
+.. figure:: ../screenshots/conformance_statements_specific_report_control.png
+  :align: center
+
+The reports in either case are structured in the same way as the overall reports discussed above. The only difference is that a report at a
+specific aggregation level (e.g. a specification group) will also list the relevant level as part of the report's overview information.
+
+.. figure:: ../screenshots/conformance_overview_pdf_statement_specific.png
+  :align: center
+
+.. _manage_your_conformance_statements__export_overview_certificate:
+
+Conformance overview certificate
+--------------------------------
+
+Depending on your community's configuration you may also produce a **conformance overview certificate**. This certificate is a report
+(in PDF format) that attests to the fact that your current system has successfully completed testing for all relevant conformance statements.
+Such certificates are available for you to download if enabled by the community administrator, and if you have succeeded all relevant testing.
+
+To produce a certificate you click on the PDF report generation buttons, either at the overall level or for a specific domain, specification
+group or specification. If generating a certificate is possible you will be prompted with a choice to select the kind of report to produce.
+
+.. figure:: ../screenshots/conformance_report_generation_options_popup.png
+  :align: center
+
+Selecting **Conformance overview certificate** and clicking **Generate report** will produce the certificate, which is similar in content to
+the :ref:`normal overview report<manage_your_conformance_statements__export_overview>` but is further curated by the administrator.
+
+.. figure:: ../screenshots/conformance_overview_pdf_certificate.png
+  :align: center
+
+.. note::
+
+  The **Conformance overview report** option is the default if no certificate can be produced. In such a case clicking a PDF report download
+  button will skip the report type prompt and directly download the overview report.
+
+.. _manage_your_conformance_statements__view_snapshot:
+
+Select a conformance snapshot
+-----------------------------
+
+A **conformance snapshot** represents a milestone in the conformance testing process that can be made by a community administrator. It is called a snapshot
+as it is a readonly copy of the conformance testing status at a given point in time, that captures the defined specifications, organisations and test results
+at that moment. If such snapshots are available you will see the header on this screen display an additional control to select which conformance testing status
+you want to view. By default you always view the **latest conformance status**.
+
+.. figure:: ../screenshots/conformance_statements_snapshots.png
+  :align: center
+
+Selecting a specific snapshot, or switching back to the latest status, will refresh the screen to present the relevant conformance statements. Note that a snapshot
+could also include elements such as specifications and systems that were defined at the time the snapshot was taken, but that may have since been modified or ever
+deleted. All controls here otherwise remain the same with the exception of not being able to define new conformance statements while a snapshot is selected.
+
+In addition, when viewing a specific snapshot and selecting to :ref:`view a statement's details<manage_your_conformance_statements__view_a_conformance_statements_details>`
+you will notice that the statement is presented as **readonly**, meaning that is cannot be deleted or have new test executions. In addition, you will see a message
+informing you that this statement does not represent the latest testing status.
+
+.. figure:: ../screenshots/conformance_statement_snapshot_message.png
+  :align: center
+
 .. _manage_your_conformance_statements__view_a_conformance_statements_details:
 
 View a conformance statement's details
@@ -140,8 +257,7 @@ your conformance status.
 
 At the bottom of the details' panel you are presented with buttons for further actions as follows:
 
-* The **Download report** button to export your system's current :ref:`conformance statement report <manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
-* The **Download conformance certificate** button to generate a :ref:`conformance certificate <manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>` for your system.
+* The **Download report** button to export your system's current :ref:`conformance statement report <manage_your_conformance_statements__view_a_conformance_statements_details__export>` in PDF or XML, or download a :ref:`conformance certificate<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
 * The **Copy badge URL** and **Preview badge** buttons to copy (or preview) a conformance badge for your current status. This is available only
   if you have :ref:`configured such badges <domains__specification>`.
 * The **View system** button allows you to navigate to your :ref:`system <manage_organisation__systems>` or :ref:`organisation <manage_organisation>` details.
@@ -303,27 +419,27 @@ To edit a configuration parameter click its **edit** icon on its relevant row. D
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_simple.PNG
   :align: center
-  :scale: 70%
+  :scale: 80%
 
 In case of a parameter that is a file, the popup will be adapted to allow you to download the file and upload a replacement.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_binary.PNG
   :align: center
-  :scale: 70%
+  :scale: 80%
 
 A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide the
 value in the secret value input.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
   :align: center
-  :scale: 70%
+  :scale: 80%
 
 Finally, an additional scenario is when preset values are defined for the parameter. In this case you are presented with a dropdown selection
 list that includes the available options.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_edit_dropdown.PNG
   :align: center
-  :scale: 70%
+  :scale: 80%
 
 To change the parameter's value click on **Save**. Clicking on **Delete** will clear the current value, whereas **Cancel** will close the popup without
 making changes.
@@ -333,7 +449,7 @@ making changes.
 Export conformance statement report
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The conformance statement report (in PDF format) provides the details on the conformance statement and also an overview of its relevant tests. To generate it
+The conformance statement report provides the details on the conformance statement and also an overview of its relevant tests. To generate it
 click the **Download report** button from the overview section's panel.
 
 .. figure:: ../screenshots/conformance_statement_details_overview_admin.PNG
@@ -344,10 +460,9 @@ whether or not you want to include each test case's step results in the report.
 
 .. figure:: ../screenshots/conformance_statement_report_detail_prompt.PNG
   :align: center
-  :scale: 70%
 
-Selecting **Yes** includes the conformance statement details and test overview but also each test case's step results. Selecting **No** on the 
-other hand skips the test step results.
+Selecting **Conformance statement report (with test case results)** includes the conformance statement details and test overview but also each
+test case's step results. Selecting **Conformance statement report** on the other hand skips the test step results.
 
 The following sample illustrates the information that is included in the report's overview section that is always included. Specifically:
 
@@ -379,6 +494,15 @@ provides also a link to return to the listing of test cases.
     a separate page. If your conformance statement contains numerous test cases, each with multiple test steps, the resulting detailed report 
     could be quite long.
 
+An alternative to producing the report in PDF is to select the **Download report as XML** option presented by clicking to expand the download
+button's options. The format of this report is defined by the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
+and allows simpler machine-based processing. As in the case of the PDF report, you are prompted whether or not to include detailed test step
+results before proceeding with the download. The following XML content is a sample of such a report:
+
+.. literalinclude:: ../manageConformanceStatements/resources/conformance_statement_xml.xml
+   :language: xml
+
+
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate:
 
 Export conformance certificate
@@ -387,8 +511,8 @@ Export conformance certificate
 The conformance certificate is a report (in PDF format) that attests to the fact that your current system has successfully passed its expected test cases. The option
 to generate this is only visible if your system has succeeded in all configured tests.
 
-Assuming the option is available for you, clicking the button will generate the certificate and prompt you for its download. The certificate will typically resemble the
-following sample:
+Assuming the option is available for you, you can select the **Download conformance certificate** option after having expanded the download button's options.
+The certificate will typically resemble the following sample:
 
 .. figure:: ../screenshots/conformance_statement_certificate_sample.png
   :align: center

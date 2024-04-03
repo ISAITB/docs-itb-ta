@@ -8,13 +8,102 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.21.1**.
+The latest test bed release is **1.22.0**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.22.0 - XX/XX/XXXX
+---------------------------
+
+This release significantly extends the test bed's reporting capabilities by introducing new report types at various aggregation
+levels, as well as customisable certificates and XML reports at all levels for machine-based post-processing. In addition, conformance status monitoring
+was enhanced by allowing users to view their status in earlier conformance snapshots, and by introducing a new hierarchical view per organisation as the
+default presentation of the administrator's conformance dashboard. For users operating their own test bed instances, the new release brings 
+significant new features such as advanced theming possibilities, new configuration options covering email and automated account clean-up, and the inclusion
+of system settings in exports for configuration portability and sandbox definitions. Finally, the test bed's automation API was also extended to include
+a lightweight health-check mechanism for availability monitoring, and an operation enabling the management of configuration properties.
+
+With respect to test capabilities, this release brings first-class support for the management of images in test steps, and extends test suite and 
+test case metadata to include normative specification references. Furthermore, user interactions were significantly overhauled to allow them to be
+minimised and asynchronously completed, manage the inputs included in reports, and support configurable timeouts. Finally, it is now possible to
+define administrator verifications of test sessions directly within the test bed, supporting scenarios where manual verification of test results
+is required.
+
+**Bug**
+
+* [ITB-1521] - When creating a new community the option to use the domain's description cannot be enabled
+* [ITB-1523] - The search field of multi-select filters is hidden when no results are found
+* [ITB-1526] - Always display statement actor when creating new statements if specification foresees multiple non-hidden SUT actors
+* [ITB-1527] - Organisation users are unable to filter by specification group
+* [ITB-1531] - Valid TDL expressions referring to multiple nested containers do not get validated correctly
+* [ITB-1532] - Unexpected test suite deployment errors via the REST API don't get logged
+* [ITB-1536] - Test session creation error when using a SimulatedMessaging handler with an actor that has statement configuration properties
+* [ITB-1541] - Prevent editor style caching that fails to display editor
+* [ITB-1552] - Don't show target domain on import screen for administrator of community with no domain
+* [ITB-1556] - Containerised build fails for gitb-ui
+* [ITB-1565] - When deploying a test suite via REST API test case update instructions are ignored if test suite instructions are missing
+* [ITB-1580] - Error while closing a processing transaction involving a remote processing service
+* [ITB-1583] - Importing a domain archive skips the update of existing specification groups
+
+**New Feature**
+
+* [ITB-42] - Allow user-defined themes
+* [ITB-1322] - Create conformance certificates and reports at the level of specification groups
+* [ITB-1448] - Support the display of images in test step reports
+* [ITB-1449] - Support the display of images in user interaction steps
+* [ITB-1487] - Optionally allow organisation users to view their conformance status in earlier conformance snapshots
+* [ITB-1503] - Make the page counters optional in conformance certificates
+* [ITB-1509] - Support administrator input in TDL test cases
+* [ITB-1511] - Allow the configurable inclusion of badges in conformance certificates
+* [ITB-1512] - Support separate conformance badges for on-screen display and in PDF reports
+* [ITB-1535] - Allow Test Bed administrators to configure automatic account deletion following inactivity
+* [ITB-1540] - Include system settings in exports, imports and sandbox setups
+* [ITB-1542] - Add a dedicated Test Bed health-check endpoint to facilitate automation processes and availability monitoring
+* [ITB-1543] - Extend test suite and test case metadata to record specification references
+* [ITB-1549] - Include default landing pages, legal notices and error templates in exports, imports and sandbox setups
+* [ITB-1550] - Include system administrators in exports, imports and sandbox setups
+* [ITB-1557] - Support asynchronous user input for test case interaction steps
+* [ITB-1558] - Allow minimising user interaction prompts in test sessions
+* [ITB-1561] - Support timeouts for user interactions in test sessions
+* [ITB-1562] - Support user interaction inputs that are not displayed on the step's report
+* [ITB-1563] - Allow configuration of a Test Bed instance's email settings through the UI
+* [ITB-1570] - Support setting test configuration via the REST API
+* [ITB-1572] - Support XML conformance statement reports
+* [ITB-1573] - Allow community administrators to configure XSLTs for customised XML reports
+* [ITB-1574] - Create conformance certificates and reports for an organisation spanning all conformance statements
+* [ITB-1577] - Support use of custom organisation and system properties in conformance certificate custom messages
+* [ITB-1582] - Replace the default presentation of the conformance dashboard with a hierarchical display of conformance statements per organisation
+
+**Improvement**
+
+* [ITB-597] - Make all password or secret value input fields consistent
+* [ITB-789] - Disable the search buttons for custom properties when the relevant community does not define any
+* [ITB-1378] - Replace default administrator password for new installations with auto-generated unique value
+* [ITB-1418] - Support drag and drop for the reordering of parameters, properties and specifications
+* [ITB-1505] - Allow TDL interaction steps to have their mime type provided as a variable expression
+* [ITB-1515] - Add a "development mode" indication for sandbox Test Bed instances that lack a full security configuration
+* [ITB-1524] - Migrate to latest Bootstrap version
+* [ITB-1525] - Display an actor's name instead of its identifier in screens and reports
+* [ITB-1528] - Don't display a statement's actor when all other specification actors are hidden
+* [ITB-1533] - Ensure images provided in test cases can always be previewed
+* [ITB-1534] - Extend the TDL DisplayProcessor to set its severity level
+* [ITB-1539] - Display expandable icon for system settings panel
+* [ITB-1544] - Adapt a sandbox instance's pre-configuration process to not remove processed data archives
+* [ITB-1546] - Scan image uploads (badges, theme logos) to ensure they are of accepted image types
+* [ITB-1548] - Upgrade Play and replace Akka by Pekko
+* [ITB-1551] - Don't show system administrator options to community administrator during import preview
+* [ITB-1553] - Support drag and drop for file uploads
+* [ITB-1555] - Make all file upload controls consistent
+* [ITB-1559] - Show badge indication for refreshed active sessions' logs in session listings
+* [ITB-1564] - Allow disabling the Test Bed's contact form and copying the default mailbox
+* [ITB-1575] - Hide actor information from PDF reports if actors are not displayed on the UI
+* [ITB-1576] - Separate in PDF reports the display of specification groups and options
+* [ITB-1578] - Define baseline DB scripts for faster setup time on new installations
+* [ITB-1579] - Improve test engine error message when dynamically imported resource cannot be found
 
 Release 1.21.1 - 07/11/2023
 ---------------------------
