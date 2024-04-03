@@ -292,8 +292,8 @@ are not presented with the download and view buttons, but rather with a **Copy t
   :align: center
 
 .. note::
-    **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
-    always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
+    **Viewing binary output:** Images are presented as a preview when selecting to view them. For other binary content (e.g. a PDF document), the best
+    way to inspect it is to download it. Opening such content in the in-place code editor will still be possible, but this will most likely not be useful.
 
 .. _view_your_test_history__test_steps__export:
 
