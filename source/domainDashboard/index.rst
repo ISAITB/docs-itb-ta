@@ -104,6 +104,15 @@ its conformance status. If you choose to define such badges you need to provide 
 and "other" (i.e. not successful) state. Optionally you may also provide a badge for the "failure" state, for which the "other"
 badge is used by default.
 
+Badges can also be included in :ref:`conformance statement certificates<monitor_conformance_status__statements__export_certificate>`
+(and :ref:`conformance overview certificates<monitor_conformance_status__detailed_view_conformance_overview_certificates>`),
+which are PDF reports attesting to an organisation's successful testing. In this case you may choose to use alternate badge images
+that are more appropriate for usage in PDF documents (as opposed to within an HTML page). For this purpose you have the option of
+selecting different badges for HTML and PDF display.
+
+.. figure:: ../screenshots/admin_domains_domain_create_specification_badges_reports.png
+  :align: center
+
 Once a badge is provided you will be presented with additional controls to **delete** and **preview** it.
 
 .. figure:: ../screenshots/conformance_statement_details_badge_preview.png
@@ -134,7 +143,7 @@ perspective of conformance statements, specifications map to the versions, but t
   :align: center
 
 Specification groups are displayed separately from their contained specifications (termed by default as "options" when grouped) in search filters and 
-when :ref:`creating new conformance statements<manage_your_conformance_statements__create>`. PDF reports and certain screen listings don't
+when :ref:`creating new conformance statements<manage_your_conformance_statements__create>`. Certain screen listing don't
 present these as separate concepts, showing rather as a specification the concatenation between group and option (separated by a hyphen).
 
 To define a specification group expand the **Create specification** options and select **Create specification group**. 
@@ -185,16 +194,17 @@ by applying a specific presentation order that will be used in the following cas
 
 * When reviewing available options while :ref:`creating new conformance statements<manage_your_conformance_statements__create>`.
 * When :ref:`viewing existing conformance statements<manage_your_conformance_statements__view_your_conformance_statements>`.
+* In conformance overview :ref:`reports<monitor_conformance_status__detailed_view_conformance_overview_reports>` and :ref:`certificates<monitor_conformance_status__detailed_view_conformance_overview_certificates>`.
 
-Changing the specifications' ordering is achieved using the **move up** and **move down** buttons displayed in the end of each specification's row.
-These buttons are presented as soon as you have more than one specification in your domain.
+Changing the specifications' ordering is achieved using the **move** button displayed in the end of each specification's row.
+This button is presented as soon as you have more than one specification in your domain.
 
 .. figure:: ../screenshots/admin_domains_domain_specification_order_specs.png
   :align: center
 
-Once you have used these buttons to achieve the desired ordering you need to click the **Save specification order** button to save it.
-Clicking on the secondary options of this button you see the **Reset specification order** option that when clicked will remove all custom
-ordering and revert to an alphabetic sorting.
+Using these buttons you can drag and drop specifications to adapt their desired ordering. Once you have the result you want, click the 
+**Save specification order** button to save the ordering. Clicking on the secondary options of this button you see the **Reset specification order**
+option that when clicked will remove all custom ordering and revert to an alphabetic sorting.
 
 Adapting the order of specifications is naturally also possible when you are using :ref:`specification groups<domains__domain_specification_groups>`.
 In this case you can manage the order both at the level of the groups, and within each group's options. It is also possible to set a specific
@@ -369,15 +379,14 @@ adapt to request additionally the parameter's **value** (required)
 .. figure:: ../screenshots/admin_domains_domain_create_parameter_simple.PNG
   :align: center
 
-If selected to be a "Binary" parameter, you are presented with an **Upload** button to provide the file in question. Once set, 
-the file is displayed as a link to download.
+If selected to be a "Binary" parameter, you are presented with an **upload** button to provide the file in question. Once set, 
+the file can also be downloaded.
 
 .. figure:: ../screenshots/admin_domains_domain_create_parameter_binary.PNG
   :align: center
   
-Finally, if you select that the parameter is "Secret", the screen will adapt to request an obfuscated **value** (required), requesting
-you also to **repeat** it to ensure that you have entered it correctly. Hidden parameters are treated similar to passwords, in that they will
-never be presented on-screen.
+Finally, if you select that the parameter is "Secret", the screen will adapt to request an obfuscated **value** (required). Hidden parameters are
+treated similar to passwords, in that they will never be presented on-screen.
 
 .. figure:: ../screenshots/admin_domains_domain_create_parameter_hidden.PNG
   :align: center
@@ -668,6 +677,15 @@ its conformance status. If you choose to define such badges you need to provide 
 and "other" (i.e. not successful) state. Optionally you may also provide a badge for the "failure" state, for which the "other"
 badge is used by default.
 
+Badges can also be included in :ref:`conformance statement certificates<monitor_conformance_status__statements__export_certificate>`
+(and :ref:`conformance overview certificates<monitor_conformance_status__detailed_view_conformance_overview_certificates>`),
+which are PDF reports attesting to an organisation's successful testing. In this case you may choose to use alternate badge images
+that are more appropriate for usage in PDF documents (as opposed to within an HTML page). For this purpose you have the option of
+selecting different badges for HTML and PDF display.
+
+.. figure:: ../screenshots/admin_domains_domain_create_specification_badges_reports.png
+  :align: center
+
 Once a badge is provided you will be presented with additional controls to **delete** and **preview** it.
 
 .. figure:: ../screenshots/conformance_statement_details_badge_preview.png
@@ -717,6 +735,17 @@ Using the provided form you can edit the test suite's metadata, specifically:
 * Its **name** (required), a short text presented to users to identify the test suite.
 * Its **version** (required), a version identifier for the test suite presented only to administrators.
 * Its **description** (optional), a text providing context on the test suite and a brief overview of its purpose and contained test cases.
+
+You can also include here an additional set of properties related to the test suite's normative **specification reference**. This information 
+forms part of the test suite's metadata, that if completed will figure in the test suite's definition file, reports, and on-screen displays.
+
+.. figure:: ../screenshots/admin_domains_test_suites_details_reference.png
+  :align: center
+
+You can provide here as part of this information a **reference code**, a **description**, as well as a **link** to an online resource where
+more information can be found. Providing this information is optional, and depending on what you provide it will be displayed accordingly. For
+example providing all information will show the reference code as a link followed by the description, whereas if only a link is provided this
+will be displayed as a link icon to follow.
 
 You may also view and edit here the test suite's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
@@ -856,7 +885,18 @@ Once tags are defined you can see an editable preview of each along with **edit*
 .. figure:: ../screenshots/admin_domains_test_case_details_tag_list.png
   :align: center
 
-Besides tags, you may also view and edit here the test case's **documentation**. This is displayed to users as part of the
+You can also include here an additional set of properties related to the test case's normative **specification reference**. This information 
+forms part of the test case's metadata, that if completed will figure in the test case's definition file, reports, and on-screen displays.
+
+.. figure:: ../screenshots/admin_domains_test_suites_details_reference.png
+  :align: center
+
+You can provide here as part of this information a **reference code**, a **description**, as well as a **link** to an online resource where
+more information can be found. Providing this information is optional, and depending on what you provide it will be displayed accordingly. For
+example providing all information will show the reference code as a link followed by the description, whereas if only a link is provided this
+will be displayed as a link icon to follow.
+
+You may also view and edit here the test case's **documentation**. This is displayed to users as part of the
 :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`, its purpose
 being to add extended rich documentation that describes the steps to follow and reference external resources. To display the existing 
 documentation click the **Documentation** section, to reveal a rich text editor.
@@ -1140,13 +1180,14 @@ Change parameter ordering
 +++++++++++++++++++++++++
 
 By default parameters are ordered alphabetically based on their name. You may override this default ordering by reordering the parameters as needed and saving their
-relative positions. This is done through the table listing the parameters by clicking the **up** and **down** arrows at each row's right end.
+relative positions. This is done through the table listing the parameters, by using the **move** buttons at each row's right end, to drag and drop them into their
+desired ordering.
 
 .. figure:: ../screenshots/admin_domains_endpoint_parameters.PNG
   :align: center
 
-At each click the relevant row will be moved accordingly by one. Once you have reordered parameters in this way you will notice that the **Save parameter order** button
-becomes enabled. You will need to click this to confirm and persist the displayed ordering.
+Once you have reordered parameters in this way you will notice that the **Save parameter order** button becomes enabled. You will need to click this to confirm and
+persist the displayed ordering.
 
 .. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
 .. _production: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/

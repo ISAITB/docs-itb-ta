@@ -292,8 +292,8 @@ are not presented with the download and view buttons, but rather with a **Copy t
   :align: center
 
 .. note::
-    **Viewing binary output:** Images are presented as a preview when selecting to view them. For other binary content (e.g. a PDF document), the best
-    way to inspect it is to download it. Opening such content in the in-place code editor will still be possible, but this will most likely not be useful.
+  **Viewing binary output:** Images are presented as a preview when selecting to view them. For other binary content (e.g. a PDF document), the best
+  way to inspect it is to download it. Opening such content in the in-place code editor will still be possible, but this will most likely not be useful.
 
 .. _view_your_test_history__test_steps__export:
 

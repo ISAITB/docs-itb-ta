@@ -39,9 +39,12 @@ using an arrow icon next to the relevant column’s title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
 (see :ref:`monitor_test_sessions__export`). In addition, the **Terminate all** button can be used to terminate, upon confirmation, all currently active test 
-sessions in the community. Clicking on the header itself, allows you to **collapse** or **expand** its display. Finally, each session's row offers controls to:
+sessions in the community. Clicking on the header itself, allows you to **collapse** or **expand** its display. In case there are test sessions that are
+**pending administrator input** you can also check the relevant toggle to filter them, before proceeding to :ref:`make the necessary interactions<session_dashboard__steps>`.
 
-* View its **test step details**, by clicking on the session's row (see :ref:`session_dashboard__steps`).
+With respect to the listing of active sessions, each session's row offers controls to:
+
+* View its **details**, by clicking on the session's row (see :ref:`session_dashboard__steps`).
 * Forcibly **terminate**, it by clicking the cross icon on the relevant session's row under the **Operation** column.
 
 .. _session_dashboard__completed:
@@ -73,6 +76,9 @@ The following is an example of such a report in **XML format**, the XML content 
 
 .. literalinclude:: ../testHistory/resources/test_case_report.xml
    :language: xml
+
+.. note::
+  You can also define **custom formats** for any kind of XML report. This is managed as part of the community's :ref:`report settings<community__report_settings>`.
 
 Selecting the second export option produces the report in **PDF format**:
 
@@ -138,10 +144,10 @@ The **Refresh** button is used to refresh the display of results based on the cu
 
 .. _session_dashboard__steps:
 
-View a test session's steps
----------------------------
+View test session details
+-------------------------
 
-Each row from the lists of presented test sessions may also be clicked to view its detailed steps. Doing so expands the row to present
+Each row from the lists of presented test sessions may also be clicked to view its details. Doing so expands the row to present
 a diagram that is identical to the one presented during the live test execution (see :ref:`execute_tests_interactive`).
 
 .. figure:: ../screenshots/test_history_test_result.PNG
@@ -162,10 +168,17 @@ Above the diagram display you are presented with additional buttons linked to th
 * **View specification** takes you to the relevant :ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>` or :ref:`actor <domains__actor>`.
 * **View test case** takes you to the relevant :ref:`test case <domains__test_case__details>` or :ref:`test suite <domains__test_suite_details>`.
 
-In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
-specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant
-test session and reflect changes on its diagram. Note that it is possible that upon refresh, the test session has in the meanwhile completed,
-in which case a relevant information popup will inform you accordingly.
+In the case of an active test session you are also provided with a button to **refresh** its display and **view pending interactions**
+(in case interactions are pending).
+
+.. figure:: ../screenshots/test_history_active_session_controls.png
+  :align: center
+
+**Refreshing** the display allows you to track the progress of a specific test session without needing to make a full refresh of the displayed results.
+Clicking this button will refresh only the relevant test session and reflect changes on its diagram. Note that it is possible that upon refresh, the
+test session has in the meanwhile completed, in which case a relevant information popup will inform you accordingly. In case of a **pending interaction**,
+clicking to view it will present it so that it can be completed and allow the session to proceed. This allows you to have test sessions execute in the background
+while checking through this screen on whether they need user interactions.
 
 Clicking on the session row will once again collapse the display. Note that once one or more session
 details are expanded the table's header will display a **Collapse all** button that can be clicked to collapse all details.
@@ -181,7 +194,7 @@ following example for a validation failure.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
 can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
@@ -190,7 +203,7 @@ is also highlighted for the recorded validation messages.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure_code.PNG
   :align: center
-  :scale: 50%
+  :scale: 70%
 
 The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will 
@@ -204,16 +217,17 @@ are not presented with the download and view buttons, but rather with a **Copy t
   :align: center
 
 .. note::
-    **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
-    always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
+  **Viewing binary output:** Images are presented as a preview when selecting to view them. For other binary content (e.g. a PDF document), the best
+  way to inspect it is to download it. Opening such content in the in-place code editor will still be possible, but this will most likely not be useful.
 
 .. _session_dashboard__steps_report:
 
 Export test step report
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Export as PDF** and **Export as XML** button that trigger the 
-generation and download of the step report in the requested format. The following example represents such a report in PDF.
+The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Download report** button
+for PDF, and its **Download report as XML** additional option for XML, that will trigger the generation and download of the report in the requested format.
+The following example represents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG
   :align: center
@@ -230,6 +244,9 @@ with the following being a simple sample:
 
 .. literalinclude:: ../executeTests/resources/test_step_report.xml
    :language: xml
+
+.. note::
+  You can also define **custom formats** for any kind of XML report. This is managed as part of the community's :ref:`report settings<community__report_settings>`.
 
 .. _monitor_test_sessions__export:
 
