@@ -50,7 +50,8 @@ You export data by means of the **Data export** screen, that you access by click
 The first choice you need to make is the type of data you will be exporting. This is defined by the **Data to export** choices and can be:
 
 * **Domain configuration:** Select this to export only the information linked to a domain (e.g. specifications, test suites).
-* **Community configuration:** Select this to export the full information linked to a community (e.g. custom properties, organisations) as well as its linked domain.
+* **Community configuration:** Select this to export the full information linked to a community (e.g. custom properties, organisations) as well as its linked domain, optionally also including system settings.
+* **System settings:** Select this to export the system settings associated to the current Test Bed instance.
 
 The second option can be viewed as a superset of the first one in that the community data can also include all information on the domain. It is important however to 
 provide the distinction given that you may want to only export your testing configuration without any information linked to a community.
@@ -66,9 +67,14 @@ If you select **Community configuration** the form is similarly expanded to disp
 .. figure:: ../screenshots/admin_export_community_ta.png
   :align: center
 
+Finally, if you select **System settings** the form expands to present the export options.
+
+.. figure:: ../screenshots/admin_export_system_settings.png
+  :align: center
+
 Regardless of your choice, the information you need to provide is as follows:
 
-* The **domain** or **community** (depending on the export type) that you want to export.
+* The **domain** or **community** (depending on the export type) that you want to export (if applicable).
 * An **export password** that will be used to encrypt the export archive as well as any sensitive information that the archive would internally include. This password
   will need to be provided when you :ref:`import the archive<exportimport__import_step1>` or if you manually open it.
 * The information to **include** in the archive presented as a table of available choices.
@@ -84,10 +90,11 @@ to include the information you need. The available types of information are pres
 * Each actor's :ref:`endpoints<domains__endpoint>` (including the :ref:`parameters<domains__endpoint__parameter_list>` they define).
 
 A community export includes in addition to **domain data** the **community data** and **organisation data**. By default it includes its basic information (**short name**,
-**full name**, **notification options**, **self-registration settings** and **user permissions**) but can similarly be extended. From the **Community data** row you may include the 
+**full name**, **notification options**, **self-registration settings** and **user permissions**) but can similarly be extended. In addition, you can also include the
+**system settings** for the current Test Bed instance. From the **Community data** row you may include the 
 following types of information that form part of the configuration of the community itself:
 
-* The :ref:`administrator accounts<community__administrators>` (only if the test bed instance is not integrated with EU Login).
+* The :ref:`administrator accounts<community__administrators>` (if the Test Bed instance is not integrated with EU Login).
 * The community's :ref:`landing pages<community__manage_landing_pages>`, :ref:`legal notices<community__manage_legal_notices>` and :ref:`error templates<community__manage_error_templates>`.
 * The community's :ref:`certificate settings<community__report_settings>`.
 * The :ref:`custom labels<community__labels>` and :ref:`custom properties<community__properties>` defined for the community members.
@@ -97,13 +104,26 @@ following types of information that form part of the configuration of the commun
 Using the options from the **Organisation data** row you may also include data linked to the community's members:
 
 * The :ref:`organisations<community__organisations>`, including those that are defined as self-registration templates.
-* Each :ref:`organisation's users<community__manage_organisation__users>` (only if the test bed instance is not integrated with EU Login).
+* Each :ref:`organisation's users<community__manage_organisation__users>` (if the Test Bed instance is not integrated with EU Login).
 * The values provided by each organisation for the community's :ref:`custom organisation properties<community__properties>`.
 * The :ref:`systems<community__manage_organisation__systems>` defined by each organisation.
 * The values provided for each organisation's systems relevant to the community's :ref:`custom system properties<community__properties>`.
 * Each system's :ref:`conformance statements<manage_your_conformance_statements>` and :ref:`statement configuration values<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
 
-Selecting one of these options will also ensure that any prerequisites are also included. For example an export including test suites will also automatically include the
+Regarding **system settings**, you may also include the following:
+
+* The Test Bed's :ref:`configuration settings<systemAdmin__config>`.
+* The Test Bed :ref:`administrators<systemAdmin__admins>` (if the Test Bed instance is not integrated with EU Login).
+* The default :ref:`landing pages<systemAdmin__landing_pages>`, :ref:`legal notices<systemAdmin__legal_notices>` and :ref:`error templates<systemAdmin__error_templates>`.
+* The configured (and active) :ref:`themes<systemAdmin__themes>`.
+
+The system settings listed above are also the set of options available when having selected the **System settings** export options.
+
+.. note::
+  System settings are optionally included in community exports to allow generating a single data archive for a new Test Bed instance.
+  If imported by a community administrator in another Test Bed instance these settings will be ignored.
+
+Selecting one of these options will ensures also that any prerequisites are also included. For example an export including test suites will also automatically include the
 domain's specifications and actors, checking these options automatically as mandatory. You may also check the **All** option from each table row to include all its 
 relevant information or the **All** button from the table's header to include everything. Clicking on **None** in the table's header will uncheck all options.
 
@@ -144,7 +164,8 @@ Similarly to the :ref:`data export<exportimport__export>`, the first choice you 
 of import you want to carry out. You have two choices:
 
 * **Domain configuration:** Select this to import domain information (e.g. specifications, test suites).
-* **Community configuration:** Select this to import community information (e.g. custom properties, organisations) as well as its linked domain.
+* **Community configuration:** Select this to import community information (e.g. custom properties, organisations) as well as its linked domain. If included in the archive, system settings will also be imported.
+* **System settings:** Select this to import the configuration settings for the Test Bed instance.
 
 Choosing the type of import to carry out is important given that the data archive you want to import from may include additional information
 you would want to skip. A good example is when you have an archive containing a full community export but you want to import
@@ -155,7 +176,7 @@ Selecting one of these options expands the screen to present additional informat
 .. figure:: ../screenshots/admin_import_community_ta.png
   :align: center
 
-Depending on the type of data you chose to import, you see the available **domains** or **communities** presented as the **target** for the import.
+Depending on the type of data you chose to import, you see the available **domains** or **communities** presented as the **target** for the import (unless importing only system settings).
 Following this you are prompted to provide the **data archive** to use as well as the **password** that was set during the export to
 encrypt it. Finally you are presented with a set of **default import actions** that will determine how data is to be processed.
 These options are specifically:
@@ -187,11 +208,12 @@ Once you have provided all requested information for the import you can proceed 
 Step 2: Review and complete the import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this screen you see the detailed actions that will be carried out as a result of the import. Actions are displayed under two main categories,
-**Domains** and **Communities** that are displayed as follows:
+In this screen you see the detailed actions that will be carried out as a result of the import. Actions are displayed under three main categories -
+**Domains**, **Communities** and **System settings** - that are displayed as follows:
 
 * The **Domains** group is displayed if you are importing a domain or a community that is linked to a domain.
 * The **Communities** group is displayed if you are importing a community.
+* The **System settings** group is displayed if you are importing a community with included system settings, or only system settings.
 
 Next to each group you also see the count of its items which at the top level will always be 1.
 

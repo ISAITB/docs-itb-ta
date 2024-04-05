@@ -31,7 +31,7 @@ View per organisation
 ---------------------
 
 The dashboard display per organisation is the presentation mode active by default. It allows you to select a specific organisation
-and system within the community, to display the complete set of its conformance statements. These statements are grouped and split
+and system within a specific community, to display the complete set of its conformance statements. These statements are grouped and split
 according to the organisation of your :ref:`domains<domains__domain_details>`, :ref:`specification groups<domains__domain_specification_groups>`,
 :ref:`specifications<domains__domain__specification_list>` and :ref:`actors<domains__specification__actor_list>`.
 
@@ -262,7 +262,7 @@ by clicking the **Search filters** button from the table header.
 
 Doing so will expand the table header to present the available filter controls.
 
-.. figure:: ../screenshots/admin_conformance_dashboard_filters_on.PNG
+.. figure:: ../screenshots/admin_conformance_dashboard_filters_on_ta.PNG
   :align: center
 
 The controls that can be used for filtering are:

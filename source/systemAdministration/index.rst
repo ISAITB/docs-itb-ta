@@ -14,6 +14,7 @@ The displayed page allows you to:
 * Manage the :ref:`test bed's administrators<systemAdmin__admins>`.
 * Manage default :ref:`landing pages<systemAdmin__landing_pages>`, :ref:`legal notices<systemAdmin__legal_notices>`
   and :ref:`error templates<systemAdmin__error_templates>` for the hosted communities.
+* Manage the test bed's :ref:`theme<systemAdmin__themes>`.
 
 .. _systemAdmin__config:
 
@@ -52,11 +53,13 @@ environment variables (if applicable) if you prefer to have these configured `vi
     :header: "Setting", "Description", "Environment variable(s)", "Default"
     :delim: |
 
-    **Test session timeout** | A duration in seconds after which an active test session will be terminated. | | None
-    **Self-registration** | Whether users are allows to self-register for communities :ref:`supporting self-registration<community_testbed_communities__manage>`. | ``REGISTRATION_ENABLED`` | Enabled
-    **Demo account** | An optional, non-administrator account that users can use to connect with from the login screen to :ref:`execute demos<login__demos>`. | ``DEMOS_ENABLED``, ``DEMOS_ACCOUNT`` | Disabled
-    **REST API** | Whether the test bed's :ref:`REST API<api>` is available. | ``AUTOMATION_API_ENABLED`` | Disabled
     **Custom welcome page message** | A custom text to display on the test bed's :ref:`welcome page<login__welcome>`. | | Disabled
+    **Demo account** | An optional, non-administrator account that users can use to connect with from the login screen to :ref:`execute demos<login__demos>`. | ``DEMOS_ENABLED``, ``DEMOS_ACCOUNT`` | Disabled
+    **Email settings** | Settings related to allow the test bed to send emails when applicable. | ``EMAIL_*`` variables | Disabled
+    **Inactive account retention period** | Whether inactive user accounts will be removed after a maximum retention period. | | Disabled
+    **REST API** | Whether the test bed's :ref:`REST API<api>` is available. | ``AUTOMATION_API_ENABLED`` | Disabled
+    **Self-registration** | Whether users are allows to self-register for communities :ref:`supporting self-registration<community_testbed_communities__manage>`. | ``REGISTRATION_ENABLED`` | Enabled
+    **Test session timeout** | A duration in seconds after which an active test session will be terminated. | | None
 
 Updating each setting is done individually through its relevant controls. All such controls include a **Save** button that you may
 click to persist your choice. Note that the overall settings panel can also be **collapsed** and **expanded** by clicking on its header.
@@ -121,7 +124,7 @@ In this form you are expected to provide the following information:
 
 * The administrator's **name** (required), used in feedback submissions to the test bed.
 * The **username** (required), used to login.
-* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
+* The user's **password**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
 
 To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
 
@@ -367,8 +370,89 @@ error popup using a sample error and your current template:
 
 .. figure:: ../screenshots/admin_community_error_templates_preview.PNG
   :align: center
-  :scale: 70%
+  :scale: 80%
 
 Once you are finished click on the **Update** button to persist your changes or discard them clicking on the **Back** button. The **Delete** button
 will, following confirmation, remove the template. Finally, the **Copy** button allows you to make a copy of this error template, by taking you to
 the creation screen prefilled with the current template's information.
+
+.. _systemAdmin__themes:
+
+Manage themes
+-------------
+
+As test bed administrator you can adapt the test bed's look and feel to match your organisation's needs. Look and feel settings are grouped
+into **themes**, allowing you to define multiple themes from which one will be set as the active one. Managing the test bed's themes is done
+from the **Themes** tab.
+
+.. figure:: ../screenshots/system_configuration_themes_tab.png
+  :align: center
+
+By default, the test bed comes with two built-in themes that can be deactivated but not removed: a European Commission theme and a GITB theme.
+The GITB theme (identified by the key "gitb") is the active one following a clean test bed installation. The active theme can be set through 
+the user interface when :ref:`editing a theme<systemAdmin__themes_edit>`, or by setting the ``THEME`` environment variable to match a theme's
+**key**.
+
+All pre-configured and custom themes are listed in this tab, presenting for each one:
+
+* Its **key**, the unique identifier that can be used as the value of the ``THEME`` environment variable.
+* Its **description**, giving a brief explanation on the purpose of the theme.
+* Whether the theme is the **active** one.
+
+.. _systemAdmin__themes_create:
+
+Create theme
+~~~~~~~~~~~~
+
+To create a new theme, click the **Create theme** button from the **Themes** tab.
+
+.. figure:: ../screenshots/system_configuration_themes_tab.png
+  :align: center
+
+Doing so will present a form in which you can define all the theme's information and settings. The default settings for the theme are
+initialised based on the currently active one.
+
+.. figure:: ../screenshots/system_configuration_themes_create.png
+  :align: center
+
+The information you are expected to provide here is as follows:
+
+* The theme's unique **key** and **description**.
+* Whether the theme should be the **active** one.
+* The theme's **colour set**. For each setting here clicking the current colour will present a colour picker to choose the new value.
+* The theme's **images**, including the **header** and **footer** logos, as well as the **favicon**. Images can be **uploaded** through the
+  provided controls, **downloaded** and **previewed**.
+
+Once you have completed the information and settings for the new theme, click on **Save** to persist your changes. If set as **active**,
+the new theme will be immediately applied to the test bed instance (other users will see the change upon their next login).
+
+.. note::
+  New themes can also be made by :ref:`selecting an existing theme<systemAdmin__themes_edit>` and creating a copy of it.
+
+.. _systemAdmin__themes_edit:
+
+Edit theme
+~~~~~~~~~~
+
+To edit an existing theme click its row from the table presented in the **Themes** tab.
+
+.. figure:: ../screenshots/system_configuration_themes_tab.png
+  :align: center
+
+Doing so will present the theme's information and settings.
+
+.. figure:: ../screenshots/system_configuration_themes_edit.png
+  :align: center
+
+The fields and controls in this form match those when :ref:`creating a new theme<systemAdmin__themes_create>`. To persist any changes, as
+well as activate (or deactivate) the theme, click the **Update** button. You may also click the **Copy** button here to create a new theme based on the 
+current theme's settings.
+
+If you selected one of the test bed's predefined themes, its information and settings are presented as readonly information with a message
+to explain this.
+
+.. figure:: ../screenshots/system_configuration_themes_edit_readonly.png
+  :align: center
+
+You cannot update such a predefined theme but you can choose to **Activate** it (if inactive) by clicking the relevant button. You can 
+also **Copy** the theme to create a new one based on its settings.

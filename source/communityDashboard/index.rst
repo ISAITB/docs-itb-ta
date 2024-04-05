@@ -1300,7 +1300,7 @@ Edit report settings
 All reports produced in the scope of the community's testing activities can be customised by the community administrator. This is done by clicking
 the **Edit conformance certificate settings** button from the community details' panel:
 
-.. figure:: ../screenshots/admin_community_details.PNG
+.. figure:: ../screenshots/admin_community_details_ta.PNG
   :align: center
 
 The reports that can be customised here are:

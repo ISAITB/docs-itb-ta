@@ -169,7 +169,7 @@ Above the diagram display you are presented with additional buttons linked to th
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
 * **View statement** takes you to the relevant :ref:`conformance statement's details <manage_your_conformance_statements__view_a_conformance_statements_details>`.
-* **View system** takes you to the relevant :ref:`system <community__manage_organisation__systems_edit>` or :ref:`organisation <community__manage_organisation>` details.
+* **View system** takes you to the relevant :ref:`system <community__manage_organisation__systems_edit>`, :ref:`organisation <community__manage_organisation>` or :ref:`community<community_testbed_communities__manage>` details.
 * **View specification** takes you to the relevant :ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>` or :ref:`actor <domains__actor>`.
 * **View test case** takes you to the relevant :ref:`test case <domains__test_case__details>` or :ref:`test suite <domains__test_suite_details>`.
 
