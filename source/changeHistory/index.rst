@@ -16,7 +16,7 @@ The latest test bed release is **1.22.0**.
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
 
-Release 1.22.0 - XX/XX/XXXX
+Release 1.22.0 - 08/04/2024
 ---------------------------
 
 This release significantly extends the test bed's reporting capabilities by introducing new report types at various aggregation
