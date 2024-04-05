@@ -89,7 +89,7 @@ following types of information that form part of the configuration of the commun
 
 * The :ref:`administrator accounts<community__administrators>` (only if the test bed instance is not integrated with EU Login).
 * The community's :ref:`landing pages<community__manage_landing_pages>`, :ref:`legal notices<community__manage_legal_notices>` and :ref:`error templates<community__manage_error_templates>`.
-* The community's :ref:`certificate settings<community__conformance_certificate_settings>`.
+* The community's :ref:`certificate settings<community__report_settings>`.
 * The :ref:`custom labels<community__labels>` and :ref:`custom properties<community__properties>` defined for the community members.
 * The :ref:`triggers<community__manage_triggers>` used to drive automated tasks when important events occur.
 * The :ref:`resources<community__manage_resources>` used in rich text content such as landing pages and test cases' documentation.

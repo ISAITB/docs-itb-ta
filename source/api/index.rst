@@ -12,6 +12,7 @@ involve choices and confirmations if done via their corresponding user interface
 
 The REST API foresees the following types of operations:
 
+* Management of configuration properties (see :ref:`api__configuration`).
 * Launch and management of test sessions (see :ref:`api__test_sessions`).
 * Management of test suites (see :ref:`api__test_suites`).
 
@@ -21,6 +22,159 @@ These sets of operations are documented in the sections that follow.
 
   Using the test bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done
   by setting the `AUTOMATION_API_ENABLED`_ property to true in the test bed's configuration.
+
+.. _api__configuration:
+
+Configuration management
+------------------------
+
+The test bed provides the possibility to manage configuration entries via its automation API through the 
+:ref:`configure<api__configuration__configure>` operation.
+
+.. _api__configuration__configure:
+
+configure
+~~~~~~~~~
+
+The **configure** operation allows you to adapt the values for configuration entries at all levels, specifically:
+
+* At **domain** level, for configuration applying to the overall test configuration.
+* At **organisation** level, for configuration pertinent to a specific organisation.
+* At **system** level, for configuration pertinent to a specific organisation's system.
+* At **statement** level, for configuration relevant to a conformance statement linking a system and specification actor.
+
+For properties at these levels this operation allows you to **create**, **update** and **delete** values with two restrictions relevant to domain-level properties:
+
+* Management of domain-level properties is possible only if the identified community is linked to a specific domain.
+* Domain-level properties can only be updated. Creating new properties and deleting existing properties cannot be done through this operation.
+
+To call the **configure** operation make an HTTP ``POST`` to path ``/api/rest/configure``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/configure``. To authorise the operation and identify the properties to be,
+you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+
+In the request's payload you can provide any of the following properties depending on what configuration you want to update:
+
+* ``domainProperties`` as an array of ``key`` and ``value`` pairs.
+* ``organisationProperties`` as an array where each item defines the relevant ``organisation`` API key followed by an array of ``key`` and ``value`` pairs.
+* ``systemProperties`` as an array where each item defines the relevant ``system`` API key followed by an array of ``key`` and ``value`` pairs.
+* ``statementProperties`` as an array where each item defines the relevant ``system`` and ``actor`` API keys followed by an array of ``key`` and ``value`` pairs.
+
+The above properties are optional, allowing you to specify precisely what you want to update. Regarding the ``key`` and ``value`` pairs, the ``key`` always
+refers to the unique identifier of the property in question (the same as what is used to refer to it in test cases), for which the provided ``value`` will be
+applied. The specific action to take place is determined as follows:
+
+* If ``value`` is provided, the property will be updated or created if not existing.
+* If ``value`` is not provided and an existing value is defined it will be deleted.
+
+Recall that in the case of domain properties, only updates of existing properties are allowed to take place. In addition, only properties that are simple text
+values can be managed via the API.
+
+The following sample is a JSON request to update a property at each configuration level.
+
+.. code-block:: json
+
+  {
+    "domainProperties": [
+      { "key": "sampleProperty", "value": "newValue" }
+    ],
+    "organisationProperties": [
+      {
+        "organisation": "ORGANISATION_API_KEY",
+        "properties": [
+          { "key": "sampleProperty", "value": "newValue" }
+        ]
+      }
+    ],
+    "systemProperties": [
+      {
+        "system": "SYSTEM_API_KEY",
+        "properties": [
+          { "key": "sampleProperty", "value": "newValue" }
+        ]
+      }
+    ],
+    "statementProperties": [
+      {
+        "system": "SYSTEM_API_KEY",
+        "actor": "ACTOR_API_KEY",
+        "properties": [
+          { "key": "sampleProperty", "value": "newValue" }
+        ]
+      }
+    ]
+  }
+
+As mentioned previously you can also focus on specific properties and update multiple in one go. The following sample updates two organisation properties for
+two different organisations.
+
+.. code-block:: json
+
+  {
+    "organisationProperties": [
+      {
+        "organisation": "ORGANISATION_API_KEY_1",
+        "properties": [
+          { "key": "sampleProperty1", "value": "newValue1" },
+          { "key": "sampleProperty2", "value": "newValue2" }
+        ]
+      },
+      {
+        "organisation": "ORGANISATION_API_KEY_2",
+        "properties": [
+          { "key": "sampleProperty1", "value": "newValue1" },
+          { "key": "sampleProperty2", "value": "newValue2" }
+        ]
+      }
+    ]
+  }
+
+To delete properties, simply identify the properties in question and omit the ``value``.
+
+.. code-block:: json
+
+  {
+    "organisationProperties": [
+      {
+        "organisation": "ORGANISATION_API_KEY",
+        "properties": [
+          { "key": "sampleProperty1" },
+          { "key": "sampleProperty2" }
+        ]
+      }
+    ]
+  }
+
+Once the **configure** operation has completed you will receive a JSON response providing feedback on the result. If all actions could be carried out the payload
+will be en empty JSON object. In case warnings were encountered (for example an organisation not being found, or a target property not being a simple text value),
+these will be reported in a string array named ``messages``.
+
+.. code-block:: json
+
+  {
+    "messages": [
+      "No conformance statement defined for system [SYSTEM_API_KEY] and actor [ACTOR_API_KEY]."
+    ]
+  }
+
+.. _api__configuration__configure__request:
+
+configure - request schema
+++++++++++++++++++++++++++
+
+The payload of the **configure** operation's request is defined by the following :download:`JSON Schema<resources/configuration/configure_request.schema.json>`:
+
+.. literalinclude:: resources/configuration/configure_request.schema.json
+   :language: json
+
+.. _api__configuration__configure__response:
+
+configure - response schema
++++++++++++++++++++++++++++
+
+The payload of the **configure** operation's response is defined by the following :download:`JSON Schema<resources/configuration/configure_response.schema.json>`:
+
+.. literalinclude:: resources/configuration/configure_response.schema.json
+   :language: json
 
 .. _api__test_sessions:
 
@@ -272,7 +426,7 @@ In the request's payload you may provide two properties to define your query:
 * The ``session`` array, including one or more session identifiers to look up.
 * The ``withLogs`` boolean flag to specify whether you want to view the detailed log trace for each returned session. By default log traces
   are not returned, but you can set this to ``true`` to include them.
-* The ``withReports`` boolean flag to specify whether you want to also include the sessions' XML report expressed in the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_.
+* The ``withReports`` boolean flag to specify whether you want to also include the sessions' XML report expressed in the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__.
   By default reports are not included.
 
 The following example call makes a query for one test session, choosing to also return its detailed log:
@@ -398,7 +552,7 @@ The payload of the **stop** operation's request is defined by the following :dow
 report
 ~~~~~~
 
-The **report** operation is used to retrieve a test session's XML report expressed in the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_.
+The **report** operation is used to retrieve a test session's XML report expressed in the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__.
 It can be used with any test session, not only sessions launched via the test bed's REST API, as long as you are authorised to view them.
 
 To call the **report** operation make an HTTP ``GET`` to path ``/api/rest/tests/report/{sessionId}``, where ``sessionId`` is replaced by the session's identifier.
@@ -870,6 +1024,22 @@ you may now view and use the test bed's REST API:
 
 .. figure:: ../screenshots/swagger-ui.png
   :align: center
+
+.. _api__health:
+
+Health monitoring
+-----------------
+
+As a complement to its REST API, the test bed also publishes a **health-check endpoint** to facilitate availability monitoring. This
+is not listed as a part of the other REST operations, nor does it figure in the :ref:`OpenAPI documentation<api__openapi>` as it is
+always available regardless of whether the REST API is enabled or not.
+
+To make a health-check, send a ``GET`` to path ``/api/healthcheck``. As an example, for the `DIGIT instance`_, the path would be
+``https://www.itb.ec.europa.eu/itb/api/healthcheck``. If all services are up and running the response will have a code ``200`` and
+empty body.
+
+Besides testing as part of availability monitoring, this operation could also be used as part of automated build scripting to
+identify when the test bed has completed its initialisation and is ready to receive other API calls.
 
 .. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
 .. _DIGIT instance: https://www.itb.ec.europa.eu/itb/

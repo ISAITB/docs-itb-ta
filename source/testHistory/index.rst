@@ -35,12 +35,14 @@ The information displayed in the table is sorted using the sessions’ **start t
 Sorting can be adapted by clicking on each column’s header to sort by it in ascending manner. The currently active sort column and type are displayed
 using an arrow icon next to the relevant column’s title.
 
-The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
-(see :ref:`view_your_test_history__search__export_csv`). The **Terminate all** button on the other hand allows you to terminate, upon confirmation, all active test
-sessions for the organisation. Clicking on the header itself, allows you to **collapse** or **expand** its display. Finally, each session’s row offers controls to:
+The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header 
+(see :ref:`view_your_test_history__search__export_csv`). You may also click the **Terminate all** button that, upon confirmation, will
+forcibly stop all currently active tests. Finally, the header itself can also be clicked to **collapse** or **expand** its display.
 
-* Forcibly **terminate** it, by clicking the cross icon on the relevant session’s row under the **Operation** column.
-* View its **test step details**, by clicking on the row itself (see :ref:`view_your_test_history__test_steps`).
+Regarding individual active test sessions, each session's row offers controls to:
+
+* Forcibly **terminate** it, by clicking the delete icon on the relevant session’s row.
+* View its **details**, by clicking on the row itself (see :ref:`view_your_test_history__test_steps`).
 
 .. _view_your_test_history__completed:
 
@@ -120,7 +122,7 @@ Exporting a test case's report is possible for completed test sessions, through 
   :align: center
 
 The file icon on the left corresponds to the test case's **XML report**. The format of this report is defined by the 
-`GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_,
+`GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
 and allows simpler machine-based processing. The following XML content is a sample of such a report:
 
 .. literalinclude:: ../testHistory/resources/test_case_report.xml
@@ -217,10 +219,10 @@ deleted are limited to those specific to the system that is currently selected.
 
 .. _view_your_test_history__test_steps:
 
-View a test session's steps
----------------------------
+View test session details
+-------------------------
 
-Each row from the list of presented test sessions, both active and completed, may also be clicked to view its detailed steps. Doing so expands the
+Each row from the list of presented test sessions, both active and completed, may also be clicked to view its detailed information. Doing so expands the
 row to present the test session's steps in a manner similar to the live test execution diagram displayed while the test session is
 active (see :ref:`execute_tests_interactive_execution`).
 
@@ -241,10 +243,17 @@ Above the diagram display you are presented with additional buttons linked to th
 * **View specification** allows you to navigate to the relevant :ref:`specification <domains__specification>`, :ref:`actor <domains__actor>` or :ref:`domain <domains__domain_details>` details.
 * **View test case** takes you to the relevant :ref:`test case <domains__test_case__details>` or :ref:`test suite <domains__test_suite_details>`.
 
-In the case of an active test session you are also provided with a button to **refresh** its display. This allows you to track the progress of a
-specific test session without needing to make a full refresh of the displayed results. Clicking this button will refresh only the relevant
-test session and reflect changes on its diagram. Note that it is possible that upon refresh, the test session has in the meanwhile completed,
-in which case a relevant information popup will inform you accordingly.
+In the case of an active test session you are also provided with a button to **refresh** its display and **view pending interactions**
+(in case interactions are pending).
+
+.. figure:: ../screenshots/test_history_active_session_controls.png
+  :align: center
+
+**Refreshing** the display allows you to track the progress of a specific test session without needing to make a full refresh of the displayed results.
+Clicking this button will refresh only the relevant test session and reflect changes on its diagram. Note that it is possible that upon refresh, the
+test session has in the meanwhile completed, in which case a relevant information popup will inform you accordingly. In case of a **pending interaction**,
+clicking to view it will present it so that it can be completed and allow the session to proceed. This allows you to have test sessions execute in the background
+while checking through this screen on whether they need user interactions.
 
 Clicking on the session row will once again collapse the display. Note that once one or more session
 details are expanded the table's header will display a **Collapse all** button that can be clicked to collapse all details.
@@ -283,16 +292,17 @@ are not presented with the download and view buttons, but rather with a **Copy t
   :align: center
 
 .. note::
-    **Viewing binary output:** The **Download as file** option is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
-    always present the **Open in editor** option but given that the content is then assumed to be text, this will likely not be useful.
+  **Viewing binary output:** Images are presented as a preview when selecting to view them. For other binary content (e.g. a PDF document), the best
+  way to inspect it is to download it. Opening such content in the in-place code editor will still be possible, but this will most likely not be useful.
 
 .. _view_your_test_history__test_steps__export:
 
 Export test step report
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Export report as PDF** and **Export report as XML** options that trigger the
-generation and download of the step report in the requested format. The following example represents such a report in PDF.
+The results of the test step can also be exported as a test step report in PDF and XML formats. This is made available through the **Download report** button
+for PDF, and its **Download report as XML** additional option for XML, that will trigger the generation and download of the report in the requested format.
+The following example represents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG
   :align: center
@@ -304,7 +314,7 @@ This PDF report includes:
 * The **report details**, included in case of a validation step to list the details of the validation report's findings.
 
 When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing. 
-The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_, 
+The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
 with the following being a simple sample:
 
 .. literalinclude:: ../executeTests/resources/test_step_report.xml

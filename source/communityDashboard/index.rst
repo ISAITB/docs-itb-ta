@@ -106,9 +106,10 @@ the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enab
 automatically generated key that can be copied to your clipboard using the provided **copy** control.
 
 Regarding the **support email**, this is the address, typically a functional mailbox, where community users' feedback is sent via
-the test bed's contact form (see :ref:`contact_support`). If this email address is configured, it will be used as the recipient of
-submissions from the community's users, with the test bed team's functional mailbox (DIGIT-ITB@ec.europa.eu) added in CC. If not
-configured, submissions will only be delivered to the test bed team's functional mailbox.
+the test bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of 
+submissions, with the test bed default functional mailbox added in CC. If not configured, submissions will only
+be delivered to the test bed default functional mailbox. You can also check here the **Notify for pending interactions** option so
+that alerts are sent to the mailbox if test sessions are pending for administrator verification.
 
 .. note::
     **When to configure a support email:** If this is a large user community expected to have frequent user interactions it is highly
@@ -197,7 +198,7 @@ To persist any changes you have made in the community detail form click the **Sa
 return to the previous screen. The **Delete** button will, following confirmation, delete the complete community and all its dependent information.
 In terms of additional features available here:
 
-* The **Edit conformance certificate settings** button is addressed in section :ref:`community__conformance_certificate_settings`.
+* The **Edit report settings** button is addressed in section :ref:`community__report_settings`.
 * The **Edit custom member properties** button is addressed in section :ref:`community__properties`.
 * The **Edit labels** button is addressed in section :ref:`community__labels`.
 
@@ -279,8 +280,7 @@ Configured properties can be simple texts, secret values (e.g. passwords) or fil
 see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
 * For texts through an editable text field or dropdown select (for preset values).
-* For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by 
-  clicking **Remove**.
+* For files using the **upload** button. Once one is selected you can **download** or **delete** it.
 * For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
   **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
 
@@ -590,7 +590,7 @@ The resulting screen provides you with a form to enter the following information
 * The **username** (required), used by the user to login.
 * The user's **role** (required), either "Administrator" or "User". Recall that the "User" role can execute and follow up on tests, whereas the "Administrator"
   role can additionally manage the organisation's test configuration (e.g. systems and conformance statements) and add other users.
-* The user's **password** and the password **confirmation**. The entered password is considered a "one-time" password that the user will need to change upon his/her next login.
+* The user's **password**. The entered password is considered a "one-time" password that the user will need to change upon his/her next login.
 
 To complete the creation of the user click the **Save** button. Clicking on **Cancel** will discard pending changes and return to the previous screen.
 
@@ -648,7 +648,7 @@ Details on how these REST API keys are used to launch and manage test sessions a
 Manage administrators
 ~~~~~~~~~~~~~~~~~~~~~
 
-The **Community administrators** section displays the users that are capable of managing the community. 
+The **Community administrators** section displays the users that are capable of managing the community.
 
 .. figure:: ../screenshots/admin_community_administrators.PNG
   :align: center
@@ -704,7 +704,7 @@ In this form you are expected to provide the following information:
 
 * The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
 * The **username** (required), used to login.
-* The user's **password** that needs also to be **confirmed**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
+* The user's **password**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
 
 To complete the creation of the new administrator click on **Save**. Clicking **Cancel** discards changes and returns you to the previous screen.
 
@@ -718,7 +718,7 @@ edit the existing value and click on **Update**, whereas to delete the user clic
 changes and return you to the previous screen.
 
 In this form you may also choose to reset the user's password. You can do this by checking the **Set one-time password** option which will display for you 
-additional input fields to provide and confirm the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
+an additional input field to provide the new password. The password you enter is considered a "one-time" password meaning that the user will be forced
 to change it at his/her next login.
 
 .. _community__manage_landing_pages:
@@ -958,7 +958,7 @@ error popup using a sample error and your current template:
 
 .. figure:: ../screenshots/admin_community_error_templates_preview.PNG
   :align: center
-  :scale: 70%
+  :scale: 80%
 
 When you have provided the required information you can complete the template's creation by clicking **Save**. Note that if you have set this as the
 new default for the community you will also be prompted for confirmation. Clicking on the **Cancel** button will discard pending changes and return to
@@ -996,7 +996,7 @@ error popup using a sample error and your current template:
 
 .. figure:: ../screenshots/admin_community_error_templates_preview.PNG
   :align: center
-  :scale: 70%
+  :scale: 80%
 
 Once you are finished click on the **Update** button to persist your changes or discard them clicking on the **Back** button. The **Delete** button
 will, following confirmation, remove the template. Finally, the **Copy** button allows you to make a copy of this error template, by taking you to
@@ -1292,83 +1292,111 @@ To use a community resource in rich content you simply need to provide the resou
 rich content through the test bed's user interface, but also when preparing documentation included in test suite archives. It is important to note that resources are
 **not publicly available**, but rather require you to have access to the community in question.
 
-.. _community__conformance_certificate_settings:
+.. _community__report_settings:
 
-Edit conformance certificate settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Edit report settings
+--------------------
 
-A **conformance certificate** is a report that can be created only by administrators on behalf of an organisation. Its purpose is to act as the official
-summary of an organisation's testing activities, providing proof of its results for a given conformance statement.
-
-The conformance certificate is a report that is constructed automatically by the test bed but that can be customised for the community. This is done by clicking
+All reports produced in the scope of the community's testing activities can be customised by the community administrator. This is done by clicking
 the **Edit conformance certificate settings** button from the community details' panel:
 
-.. figure:: ../screenshots/admin_community_details_ta.PNG
+.. figure:: ../screenshots/admin_community_details.PNG
   :align: center
 
-Doing so presents you with a screen in which you can review and edit the current certificate settings. These are settings that are considered the defaults but
-that can also be overridden when creating each certificate if certain organisation-specific customisations need to be made.
+The reports that can be customised here are:
+
+* The :ref:`conformance statement certificate<community__report_settings__statement_certificate>`, confirming the successful testing of an organisation for a specific conformance statement.
+* The :ref:`conformance overview certificate<community__report_settings__overview_certificate>`, confirming the successful testing of an organisation for a set of related conformance statements.
+* The :ref:`conformance statement report<community__report_settings__statement_report>`, summarising the status of a specific conformance statement.
+* The :ref:`conformance overview report<community__report_settings__overview_report>`, summarising the status of a set of related conformance statements.
+* The :ref:`test case report<community__report_settings__test_case_report>`, summarising the result of a test session.
+* The :ref:`test step report<community__report_settings__test_step_report>`, summarising the result of a test session's specific step.
+
+Each report's settings are managed through specific panels included in the report settings screen. Clicking each panel expands it to display the available settings,
+whereas clicking the **Back** button returns you to the :ref:`community details screen<community>`.
+
+.. figure:: ../screenshots/admin_community_details_report_settings.png
+  :align: center
+
+.. note::
+  Not all elements of these reports can be customised. The settings that are available however are addressed in the following sections.
+
+.. _community__report_settings__statement_certificate:
+
+Conformance statement certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A **conformance statement certificate** acts as the official summary of an organisation's testing activities, providing proof of successfully passing a given
+conformance statement. It is constructed based on predefined sets of information that can be customised for the community. To manage the report
+click the **Conformance statement certificate** panel to display its available settings.
 
 .. figure:: ../screenshots/admin_community_certificate.PNG
   :align: center
 
-The options you can provide to customise the issued certificates are as follows:
+These settings will be used to automatically generate the certificate when requested by organisation users. When a certificate is generated by a community
+administrator, these settings serve as defaults that can be further customised before producing the final report.
+
+The options you can provide to customise your issued certificates are as follows:
 
 * The **title** to use. If none is provided "Conformance Certificate" is used, but you may also choose to not include any title.
 * Whether to add the conformance statement **details**. These are the information on the domain, specification, actor, organisation and system.
 * Whether to add the **result overview**. This is a summary text on the number of successfully passed and failed test cases.
 * Whether to add the individual **test cases**. Doing so will include a table showing the status for each test case in the conformance statement.
-* Whether to add a custom **message**. This is a rich-text section that you can customise as needed (see :ref:`community__conformance_certificate_settings__message`).
-* Whether to add a digital **signature** to the report. This is done to serve as proof of authenticity and for non-repudiation (see :ref:`community__conformance_certificate_settings__signature`).
+* Whether to add a custom **message**. This is a rich-text section that you can customise as needed.
+* Whether to add a digital **signature** to the report. This is done to serve as proof of authenticity and for non-repudiation.
+* Whether to include **page numbers** in the report's footer.
 
 When you have adjusted your settings you may preview them by clicking the **Generate preview** button. This generates a sample certificate such as the following:
 
 .. figure:: ../screenshots/admin_community_certificate_preview.PNG
   :align: center
 
-Note that by default the conformance certificate includes the same information as the conformance test report (see :ref:`manage_your_conformance_statements__view_a_conformance_statements_details__export`).
-You are however free to customise this as you see fit for the community in question.
+Note that by default the conformance certificate includes the same information as the :ref:`conformance statement report<manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
+You are however free to customise this as you see fit for your community.
 
-.. _community__conformance_certificate_settings__message:
-
-Setting a custom message
-++++++++++++++++++++++++
-
-If you select to add a message, the form will expand to allow you to define its content:
+If you select to add a **message**, the form will expand to allow you to define its content:
 
 .. figure:: ../screenshots/admin_community_certificate_message.PNG
   :align: center
 
 This is provided by means of a rich text editor that supports several placeholders that will be replaced using values from the actual conformance statement when
-the certificate is generated. The supported placeholders are:
+the certificate is generated. The supported placeholders and their meaning are listed in the following table.
 
-* **$DOMAIN:** The full name of the domain.
-* **$SPECIFICATION:** The full name of the specification.
-* **$SPECIFICATION_GROUP:** The full name of the specification group.
-* **$SPECIFICATION_GROUP_OPTION:** The full name of the option (specification within a group).
-* **$ACTOR:** The full name of the actor linked to the conformance statement.
-* **$ORGANISATION:** The full name of the organisation to be granted the certificate.
-* **$SYSTEM:** The full name of the organisation's system that was used in the tests.
+.. csv-table::
+  :header: "Placeholder", "Description"
+  :delim: ~
 
-You may also include in the custom message placeholders for :ref:`domain parameters<domains__domain__parameter_list>` that are defined
-for the community's domain. These are presented beneath the previously mentioned predefined placeholders. You can review and copy all such
-placeholder values to your content using the **Copy placeholder text** button.
+  $DOMAIN ~ The full name of the domain.
+  $SPECIFICATION ~ The full name of the specification.
+  $SPECIFICATION_GROUP ~ The full name of the specification group.
+  $SPECIFICATION_GROUP_OPTION ~ The full name of the option (specification within a group).
+  $ACTOR ~ The full name of the actor linked to the conformance statement.
+  $ORGANISATION ~ The full name of the organisation to be granted the certificate.
+  $SYSTEM ~ The full name of the organisation's system that was used in the tests.
+  $BADGE ~ The :ref:`configured badge<domains__specification>` for the statement's status.
+  $BADGE{width} ~ Similar to **$BADGE** but forcing a specific width (in pixels) for the image.
+  $ORGANISATION{PROPERTY} ~ The value of a :ref:`custom organisation-level property<community__properties>` (named "PROPERTY" here) set for the statement's organisation.
+  $SYSTEM{PROPERTY} ~ The value of a :ref:`custom system-level property<community__properties>` (named "PROPERTY" here) set for the statement's system.
+  $DOMAIN{PROPERTY} ~ The value of a :ref:`domain parameter<domains__domain__parameter_list>` (named "PROPERTY" here) set for the community's domain.
 
-Besides placeholders, you also have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
+You can review and copy all the above placeholder values to your message content using the **Copy placeholder text** button.
+
+Besides placeholders, you also have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
 such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
-.. _community__conformance_certificate_settings__signature:
+To finalise your report you may also choose to include a **digital signature**. To manage your signature setting click on **Manage signature settings** from the
+panel's footer.
 
-Adding digital signatures
-+++++++++++++++++++++++++
-
-If you select to include a digital signature to generated certificates, the form will expand for you to provide the additionally required information:
-
-.. figure:: ../screenshots/admin_community_certificate_signature.PNG
+.. figure:: ../screenshots/admin_community_report_signature_controls.PNG
   :align: center
 
-To support signatures you are expected to provide:
+Doing so will display a popup in which you can provide information on the certificate to be used for the signatures.
+
+.. figure:: ../screenshots/admin_community_report_signature_controls_popup.PNG
+  :align: center
+
+You are expected to provide here:
 
 * The **keystore** file that includes the keypair (private and public key) that will be used. The keystore should contain **a single keypair**.
 * The **keystore type**. Supported types are JCEKS, JKS and PKCS#12.
@@ -1376,19 +1404,266 @@ To support signatures you are expected to provide:
 * The **key's password**, that is needed to use the private key when producing signatures.
 
 .. note::
-    **Use of a community keypair for signatures:** The reason you are expected to provide a community-specific keypair for signatures is because ultimately it is
-    the responsibility of the community administrator to determine whether an organisation should be issued a conformance certificate. An administrator could
+    **Use of a community keypair for signatures:** The reason you are expected to provide a keypair for signatures is because ultimately it is
+    the responsibility of the community administrator to determine whether an organisation should be issued a conformance certificate. You could
     even choose to issue this if the organisation in question has not succeeded in passing all test cases. As a signature reflects the authenticity
     of the certificate's content, the responsibility for issuing and signing it, as well as maintaining the validity of the relevant keypair,
-    lies within the community and not the test bed as a whole.
+    lies within the community.
 
-Once a keystore file is uploaded you may **Download** or **Remove** it. In the latter case this will also reset the keystore type and provided passwords.
-When you have provided all information required you may also validate your configuration to be certain that the test bed can read the keystore and use
-the provided passwords. You can do so by clicking the **test keystore configuration** button.
+Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
+that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
 
 .. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
   :align: center
-  :scale: 50%
+
+.. _community__report_settings__overview_certificate:
+
+Conformance overview certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A **conformance overview certificate** is similar in nature to the :ref:`conformance statement certificate<community__report_settings__statement_certificate>` in
+that is provides proof of successful test completion for a given organisation. The difference in this case is that it focuses not on a single conformance statement,
+but rather on a set of related statements at different aggregation levels. These could be the **overall status** of the organisation; or a specific **domain**,
+**specification group**, or **specification**. The report is constructed based on predefined sets of information that can be customised for the community. To manage
+the report click the **Conformance overview certificate** panel to display its available settings.
+
+.. figure:: ../screenshots/admin_community_overview_certificate.png
+  :align: center
+
+These settings will be used to automatically generate the certificate when requested by organisation users. When a certificate is generated by a community
+administrator, these settings serve as defaults that can be further customised before producing the final report.
+
+The options you can provide to customise your issued certificates are as follows:
+
+* The **title** to use. If none is provided "Conformance Certificate" is used, but you may also choose to not include any title.
+* Whether to add the conformance overview **details**. These are the information on the domain, specification, actor, organisation and system.
+* Whether to add the **result overview**. This is a summary text on the number of successfully passed and failed statement.
+* Whether to add the **statement list**. Doing so will include a table showing the status for each statement in the conformance statement.
+* Whether to add the individual **statement details**. Doing so will include a detailed report for each covered statement.
+* Whether to add a custom **message**. This is a rich-text section that you can customise as needed.
+* Whether to add a digital **signature** to the report. This is done to serve as proof of authenticity and for non-repudiation.
+* Whether to include **page numbers** in the report's footer.
+
+In addition, you can also select here the **report levels** for which conformance overview certificates will be enabled. By default users can produce a
+normal :ref:`conformance overview report<manage_your_conformance_statements__export_overview>` at any level, but no conformance certificates. If and at which
+levels such certificates are to be made available is determined by the community administrator with these options.
+
+When you have adjusted your settings you may preview them by clicking the **Generate preview** button. This generates a sample certificate such as the following:
+
+.. figure:: ../screenshots/admin_community_certificate_preview_overview.png
+  :align: center
+
+Note that by default the conformance certificate includes the same information as the :ref:`conformance overview report<manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
+You are however free to customise this as you see fit for your community.
+
+If you select to add a **message**, the form will expand to allow you to define its content:
+
+.. figure:: ../screenshots/admin_community_certificate_message_overview.png
+  :align: center
+
+You can define different custom messages for different report aggregation levels and even specific levels, such as a given specification group. The available
+choices are determined by the **report levels** for which you have enabled certificates as defined previously (using the **Report enabled for** options).
+Depending on these levels you can define a custom message as follows:
+
+* For the overall **aggregate status** of an organisation.
+* For **domains**, **specification groups** or **specifications**.
+
+In the cases of domains, specification groups and specifications you may define the **default message** to appear regardless of which domain, group or specification
+the report refers to, or a **specific message** for the one the report refers to. In all cases, the custom message itself is configured by means of a rich text editor
+that supports several placeholders that will be replaced when the certificate is generated. The supported placeholders, the levels for which they apply, and their
+meaning are listed in the following table.
+
+.. note::
+  Where placeholders below include the term **index**, this refers to the 0-based sequential index of the overview's included conformance statements. For example,
+  **$SPECIFICATION{0}** refers to the specification name of the first included conformance statement.
+
+.. csv-table::
+  :header: "Placeholder", "Report level", "Description"
+  :delim: ~
+
+  $DOMAIN ~ All levels (when a specific domain applies). ~ The full name of the domain.
+  $DOMAIN{index} ~ Aggregate status (when more than one domains apply). ~ The full name of the domain at the given index.
+  $SPECIFICATION ~ Specification. ~ The full name of the specification.
+  $SPECIFICATION{index} ~ Aggregate status or Domain. ~ The full name of the specification at the given index.
+  $SPECIFICATION_GROUP ~ Specification group. ~ The full name of the specification group.
+  $SPECIFICATION_GROUP{index} ~ Aggregate status or Domain. ~ The full name of the specification group at the given index.
+  $SPECIFICATION_GROUP_OPTION{index} ~ Specification group ~ The full name of the option (specification within a group) at the given index.
+  $ACTOR{index} ~ All levels. ~ The full name of the actor at the given index.
+  $ORGANISATION ~ All levels. ~ The full name of the organisation to be granted the certificate.
+  $SYSTEM ~ All levels. ~ The full name of the organisation's system that was used in the tests.
+  $BADGE{index} ~ All levels. ~ The :ref:`configured badge<domains__specification>` for the status of the statement at the given index.
+  $BADGE{index|width} ~ All levels. ~ Similar to **$BADGE{index}** but forcing a specific width (in pixels) for the image.
+  $BADGES{layout} ~ All levels. ~ All :ref:`configured badges<domains__specification>` for the statements' status, displayed either horizontally or vertically.
+  $BADGES{layout|width} ~ All levels. ~ Similar to **$BADGES{layout}** but forcing a specific width (in pixels) for the images.
+  $ORGANISATION{PROPERTY} ~ All levels. ~ The value of a :ref:`custom organisation-level property<community__properties>` (named "PROPERTY" here) set for the relevant organisation.
+  $SYSTEM{PROPERTY} ~ All levels. ~ The value of a :ref:`custom system-level property<community__properties>` (named "PROPERTY" here) set for the relevant system.
+  $DOMAIN{PROPERTY} ~ Aggregate status (when a single domain applies), Domain, Specification group or Specification. ~ The value of a :ref:`domain parameter<domains__domain__parameter_list>` (named "PROPERTY" here) set for the community's domain.
+
+You can review and copy all the above placeholder values to your message content using the **Copy placeholder text** button.
+
+Besides placeholders, you also have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link. Finally, the **Remove message** button can
+be used to remove a specific message's configuration.
+
+To finalise your report you may also choose to include a **digital signature**. To manage your signature setting click on **Manage signature settings** from the
+panel's footer.
+
+.. figure:: ../screenshots/admin_community_report_signature_controls.PNG
+  :align: center
+
+Doing so will display a popup in which you can provide information on the certificate to be used for the signatures.
+
+.. figure:: ../screenshots/admin_community_report_signature_controls_popup.PNG
+  :align: center
+
+You are expected to provide here:
+
+* The **keystore** file that includes the keypair (private and public key) that will be used. The keystore should contain **a single keypair**.
+* The **keystore type**. Supported types are JCEKS, JKS and PKCS#12.
+* The **keystore's password**, used to open and read the keystore's contents.
+* The **key's password**, that is needed to use the private key when producing signatures.
+
+.. note::
+    **Use of a community keypair for signatures:** The reason you are expected to provide a keypair for signatures is because ultimately it is
+    the responsibility of the community administrator to determine whether an organisation should be issued a conformance certificate. You could
+    even choose to issue this if the organisation in question has not succeeded in passing all test cases. As a signature reflects the authenticity
+    of the certificate's content, the responsibility for issuing and signing it, as well as maintaining the validity of the relevant keypair,
+    lies within the community.
+
+Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
+that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
+
+.. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
+  :align: center
+
+.. _community__report_settings__statement_report:
+
+Conformance statement report
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **conformance statement report** is used to summarise the status or a given conformance statement. Producing this as a :ref:`PDF report<manage_your_conformance_statements__view_a_conformance_statements_details__export>`
+is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
+as the output format. In the case of the XML report, the output syntax can be customised by means of a custom XSLT stylesheet that will be applied to GITB TRL report
+before it is returned. Configuring this stylesheet is done through the **Conformance statement report** panel.
+
+.. figure:: ../screenshots/admin_community_statement_report.png
+  :align: center
+
+To configure a custom format for the report check the **Apply stylesheet to XML reports** option and upload your stylesheet.
+
+.. figure:: ../screenshots/admin_community_statement_report_expanded.png
+  :align: center
+
+Once uploaded, you can click the preview button to view your stylesheet and download it.
+
+.. figure:: ../screenshots/admin_community_statement_report_view.png
+  :align: center
+
+To check your configuration you can also select to **generate a preview**, selecting optionally to generate one with **test case results**. Doing so will present
+a demo report in a popup allowing you also to **copy** and **download** it.
+
+.. figure:: ../screenshots/admin_community_statement_report_preview.png
+  :align: center
+
+To complete your configuration click on **Update**. Note that clicking on **Update** while **Apply stylesheet to XML reports** is unchecked will also remove
+any existing stylesheet and revert back to using the GITB TRL as the report's output format.
+
+.. _community__report_settings__overview_report:
+
+Conformance overview report
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **conformance overview report** is used to summarise the status or a set of related conformance statements. Producing this as a :ref:`PDF report<manage_your_conformance_statements__export_overview>`
+is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
+as the output format. In the case of the XML report, the output syntax can be customised by means of a custom XSLT stylesheet that will be applied to GITB TRL report
+before it is returned. Configuring this stylesheet is done through the **Conformance overview report** panel.
+
+.. figure:: ../screenshots/admin_community_overview_report.png
+  :align: center
+
+To configure a custom format for the report check the **Apply stylesheet to XML reports** option and upload your stylesheet.
+
+.. figure:: ../screenshots/admin_community_overview_report_expanded.png
+  :align: center
+
+Once uploaded, you can click the preview button to view your stylesheet and download it.
+
+.. figure:: ../screenshots/admin_community_statement_report_view.png
+  :align: center
+
+To check your configuration you can also select to **generate a preview**, selecting the report **aggregation level** you want to generate it for. Doing so will present
+a demo report in a popup allowing you also to **copy** and **download** it.
+
+.. figure:: ../screenshots/admin_community_overview_report_preview.png
+  :align: center
+
+To complete your configuration click on **Update**. Note that clicking on **Update** while **Apply stylesheet to XML reports** is unchecked will also remove
+any existing stylesheet and revert back to using the GITB TRL as the report's output format.
+
+.. _community__report_settings__test_case_report:
+
+Test case report
+~~~~~~~~~~~~~~~~
+
+The **test case report** is used to summarise the result of a given test case's session. Producing this as a :ref:`PDF report<view_your_test_history__search__export>`
+is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
+as the output format. In the case of the XML report, the output syntax can be customised by means of a custom XSLT stylesheet that will be applied to GITB TRL report
+before it is returned. Configuring this stylesheet is done through the **Test case report** panel.
+
+.. figure:: ../screenshots/admin_community_test_case_report.png
+  :align: center
+
+To configure a custom format for the report check the **Apply stylesheet to XML reports** option and upload your stylesheet.
+
+.. figure:: ../screenshots/admin_community_test_case_report_expanded.png
+  :align: center
+
+Once uploaded, you can click the preview button to view your stylesheet and download it.
+
+.. figure:: ../screenshots/admin_community_statement_report_view.png
+  :align: center
+
+To check your configuration you can also select to **generate a preview**. Doing so will present
+a demo report in a popup allowing you also to **copy** and **download** it.
+
+.. figure:: ../screenshots/admin_community_test_case_report_preview.png
+  :align: center
+
+To complete your configuration click on **Update**. Note that clicking on **Update** while **Apply stylesheet to XML reports** is unchecked will also remove
+any existing stylesheet and revert back to using the GITB TRL as the report's output format.
+
+.. _community__report_settings__test_step_report:
+
+Test step report
+~~~~~~~~~~~~~~~~
+
+The **test step report** is used to summarise the result of a specific test session step. Producing this as a :ref:`PDF report<view_your_test_history__test_steps__export>`
+is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
+as the output format. In the case of the XML report, the output syntax can be customised by means of a custom XSLT stylesheet that will be applied to GITB TRL report
+before it is returned. Configuring this stylesheet is done through the **Test step report** panel.
+
+.. figure:: ../screenshots/admin_community_test_step_report.png
+  :align: center
+
+To configure a custom format for the report check the **Apply stylesheet to XML reports** option and upload your stylesheet.
+
+.. figure:: ../screenshots/admin_community_test_step_report_expanded.png
+  :align: center
+
+Once uploaded, you can click the preview button to view your stylesheet and download it.
+
+.. figure:: ../screenshots/admin_community_statement_report_view.png
+  :align: center
+
+To check your configuration you can also select to **generate a preview**. Doing so will present
+a demo report in a popup allowing you also to **copy** and **download** it.
+
+.. figure:: ../screenshots/admin_community_test_step_report_preview.png
+  :align: center
+
+To complete your configuration click on **Update**. Note that clicking on **Update** while **Apply stylesheet to XML reports** is unchecked will also remove
+any existing stylesheet and revert back to using the GITB TRL as the report's output format.
 
 .. _community__properties:
 
@@ -1436,7 +1711,7 @@ Regardless of the type of property, the information recorded and displayed is th
 * **Editable:** Whether the property can be edited by organisation users. Otherwise this will be reserved to administrators.
 * **In tests:** Whether the property is included as a variable in test sessions. If so the name of this variable is determined by the **key** value
   and is accessed through the **ORGANISATION** or **SYSTEM** map depending on the case (see the `GITB TDL documentation`_ for more details).
-* **In exports:** Whether the property will be included in the CSV exports generated from administration dashboards (the
+* **In exports:** Whether the property will be included in the PDF reports and CSV exports generated from administration dashboards (the
   :ref:`session dashboard<monitor_test_sessions>` and :ref:`conformance dashboard<monitor_conformance_status>`).
 * **Hidden:** Whether the property apart from being editable only by administrators is also hidden from organisation users. Such properties could be very
   useful as control flags that are set by administrators, :ref:`triggers<community__manage_triggers>` or external scripts before testing starts.
@@ -1515,13 +1790,12 @@ Change property ordering
 ++++++++++++++++++++++++
 
 By default properties are ordered alphabetically based on their label. You may override this default ordering by reordering the properties as needed and saving their
-relative positions. This is done through the table listing the properties per type by clicking the **up** and **down** arrows at each row's right end.
+relative positions. This is done through the table listing the properties, by using the **move** button at each row's right end to drag and drop each property to the desired position.
 
 .. figure:: ../screenshots/admin_community_properties_ordering.PNG
   :align: center
 
-At each click the relevant row will be moved accordingly by one. Once you have reordered properties in this way you will notice that the **Save property order** button
-becomes enabled. You will need to click this to confirm and persist the displayed ordering.
+Once you have reordered properties in this way you will notice that the **Save property order** button becomes enabled. You will need to click this to confirm and persist the displayed ordering.
 
 .. _community__properties__preview:
 

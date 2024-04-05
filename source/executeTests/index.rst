@@ -100,7 +100,7 @@ In each case you are presented with the following information:
 
 From this point you have the following options:
 
-* Click the **Back** button to return to the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
+* Click the **Go to conformance statement** button to return to the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
 * Click one of the **View** buttons on the top right corners of the presented tables to review the configuration in question.
 
 Once all required information is correctly defined you can proceed to execute your test(s). In this case, or in case no configuration was missing to
@@ -216,6 +216,25 @@ a green tick or red cross to indicate the session's overall result as a success 
 failed if it contains at least one error; warnings are displayed but don't affect the overall test outcome (i.e. in the presence of warnings and no
 errors the overall test result will be successful).
 
+During a test you may be prompted with certain information or be requested for inputs. When this occurs you will see a **user interaction popup** with
+information and inputs depending on the specific test step.
+
+.. figure:: ../screenshots/test_execution_user_input.png
+  :align: center
+
+Such prompts allow you to inspect the information provided (for example a simple text value, a file, an image) with controls to copy, open in an editor,
+preview or download as applicable. Input controls on the other hand vary depending on the information requested, ranging from file upload and text inputs
+to code editors. Information-only pop-ups can be **closed**, whereas when inputs are requested you are able to **reset** and **submit** your data.
+In addition, you may **minimise** the prompt to inspect other information such as :ref:`previous test step reports<execute_tests__step3__view_test_step_results>`.
+If user prompts are minimised you will see a a **View pending interaction** button, that can be clicked to restore the popup.
+
+.. figure:: ../screenshots/test_execution_user_input_restore.png
+  :align: center
+
+.. note::
+
+  User interactions can also be completed asynchronously by inspecting your currently :ref:`active test sessions<view_your_test_history__active>`.
+
 In case multiple test cases are up for execution, testing proceeds automatically unless you have chosen to continue manually. In such a case you will
 need to click againt the **Start** button to proceed. Stopping the test(s) execution is achieved by clicking the **Stop** button from the test
 execution controls. In case you are executing multiple test cases this offers two options, stopping only the current test or all test cases.
@@ -303,15 +322,16 @@ are not presented with the download and view buttons, but rather with a **Copy t
   :align: center
 
 .. note::
-    **Viewing binary output:** Downloading a file is the best way to inspect information that is binary (e.g. an image). The test bed will nonetheless
-    always present an option to open the file in an editor but given that the content is then assumed to be text, this will likely not be useful.
+    **Viewing binary output:** Images are presented as a preview when selecting to view them. For other binary content (e.g. a PDF document), the best
+    way to inspect it is to download it. Opening such content in the in-place code editor will still be possible, but this will most likely not be useful.
 
 The errors, warnings and information messages displayed are contained in a **details** section that also shows the overall counts per violation
 severity level. This summary title is also clickable, to allow the listed details to be collapsed or expanded if already collapsed. Collapsing the
 displayed details could be useful in case they are numerous, providing as such easier access to the popup's additional controls.
 
-The results of the test step can also be exported as a **test step report** (in PDF and XML format). This is made available through the **Export report as PDF** and **Export report as XML** buttons that trigger the
-generation and download of the step report in the desired format. The following example represents such a report in PDF.
+The results of the test step can also be exported as a **test step report** (in PDF and XML format). This is made available through the **Download report** button
+and its additional **Download report as XML** option, that trigger the generation and download of the step report in the desired format. The following example
+presents such a report in PDF.
 
 .. figure:: ../screenshots/test_execution_test_step_report.PNG
   :align: center
@@ -323,8 +343,8 @@ The PDF report includes:
 * The **report details**, included in case of a validation step to list the details of the validation report's findings.
 * The **report data** matching the step's input and output data. Note that only text values are presented in full and are truncated if too long.
 
-When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing.
-The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_,
+When selecting to **download the report as XML**, you receive similar information but represented in XML for simpler machine-processing. 
+The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
 with the following being a simple sample:
 
 .. literalinclude:: ../executeTests/resources/test_step_report.xml
@@ -383,7 +403,7 @@ and **Export report as XML** buttons respectively.
   :align: center
 
 The XML export format of this report is defined by the
-`GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_,
+`GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
 and is suitable for machine-based processing. The following XML content is a sample of such a report:
 
 .. literalinclude:: ../testHistory/resources/test_case_report.xml

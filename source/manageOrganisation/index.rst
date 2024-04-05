@@ -8,7 +8,7 @@ Manage your organisation
     community that is used for testing purposes. You would typically use it by configuring :ref:`conformance statements <manage_your_conformance_statements>`
     and :ref:`executing tests <execute_tests>` to :ref:`validate your testing setup <validate_test_setup>`.
 
-To view your organisation's information click the **My organisation** link from the side menu. The screen you 
+To view your organisation's information click the **My organisation** link from the side menu. The screen you
 are presented with shows you the information relevant to your organisation, split in the following sections:
 
 * **Organisation details:** The name (short and full) of your organisation, as well as its currently applicable :ref:`landing page <community__manage_landing_pages>`.
@@ -33,8 +33,7 @@ help tooltip to understand their meaning.
 You can view and edit these properties, depending on their type:
 
 * For texts the current value is presented in an editable text field.
-* For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
-  by clicking on its link, or delete it by clicking **Remove**.
+* For files you can **upload** a new file, whereas if one is already set you can **download** or **delete** it.
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
   check **Update**. When providing a new value you can also toggle the display of the typed characters.
 
@@ -109,8 +108,7 @@ Configured properties can be simple texts, secret values (e.g. passwords) or fil
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
 
 * For texts through an editable text field or by selecting a preset value from a dropdown list.
-* For files using the **Upload** button. Once one is selected you can download it by clicking on its link, or delete it by
-  clicking **Remove**.
+* For files you can **upload** a new file, whereas if one is already set you can **download** or **delete** it.
 * For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
   **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
 
@@ -156,8 +154,7 @@ Configured properties can be simple texts, secret values (e.g. passwords) or fil
 administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
 
 * For texts the current value is presented in an editable text field or dropdown menu (if the property has preset values).
-* For files the **Upload** button is used to select a new file, whereas if one is already set you can download it
-  by clicking on its link, or delete it by clicking **Remove**.
+* For files you can **upload** a new file, whereas if one is already set you can **download** or **delete** it.
 * For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
   check **Update**. When providing a new value you can also toggle the display of the typed characters.
 
