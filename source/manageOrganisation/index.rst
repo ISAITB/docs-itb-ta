@@ -218,7 +218,7 @@ Case: EU Login
 
 In case EU Login is used the following screen is displayed.
 
-.. figure:: ../screenshots/organisation_manage_add_member_eulogin.png
+.. figure:: ../screenshots/organisation_manage_add_member_eulogin.PNG
   :align: center
 
 You are required to provide the **email** address and **role** of the user. The email address needs to be the one that the user has

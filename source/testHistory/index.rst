@@ -51,7 +51,7 @@ Completed test sessions
 
 The history of all your completed test sessions is presented in the **Completed test sessions** table.
 
-.. figure:: ../screenshots/test_history__completed.png
+.. figure:: ../screenshots/test_history__completed.PNG
   :align: center
 
 Tests are presented in a paged table, offering controls to go to the **first**, **previous**, **next** and **last** pages as applicable, and are sorted based on their
