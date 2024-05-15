@@ -539,7 +539,7 @@ Clicking on **Cancel** closes the popup to return you to the previous screen.
 The following example is a sample conformance certificate. It can significantly resemble the :ref:`conformance statement report<monitor_conformance_status__statements__export_statement>`
 with its overview section drawing from the same information as a normal report. In this example however, a custom message for the recipient organisation is also included:
 
-.. figure:: ../screenshots/conformance_statement_certificate_sample.PNG
+.. figure:: ../screenshots/conformance_statement_certificate_sample.png
   :align: center
 
 .. _monitor_conformance_status__snapshots:
