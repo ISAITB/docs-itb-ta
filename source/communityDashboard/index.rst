@@ -1295,7 +1295,7 @@ rich content through the test bed's user interface, but also when preparing docu
 .. _community__report_settings:
 
 Edit report settings
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 All reports produced in the scope of the community's testing activities can be customised by the community administrator. This is done by clicking
 the **Edit conformance certificate settings** button from the community details' panel:
@@ -1324,7 +1324,7 @@ whereas clicking the **Back** button returns you to the :ref:`community details 
 .. _community__report_settings__statement_certificate:
 
 Conformance statement certificate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++
 
 A **conformance statement certificate** acts as the official summary of an organisation's testing activities, providing proof of successfully passing a given
 conformance statement. It is constructed based on predefined sets of information that can be customised for the community. To manage the report
@@ -1419,7 +1419,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__overview_certificate:
 
 Conformance overview certificate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++
 
 A **conformance overview certificate** is similar in nature to the :ref:`conformance statement certificate<community__report_settings__statement_certificate>` in
 that is provides proof of successful test completion for a given organisation. The difference in this case is that it focuses not on a single conformance statement,
@@ -1540,7 +1540,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__statement_report:
 
 Conformance statement report
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++
 
 The **conformance statement report** is used to summarise the status or a given conformance statement. Producing this as a :ref:`PDF report<manage_your_conformance_statements__view_a_conformance_statements_details__export>`
 is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
@@ -1572,7 +1572,7 @@ any existing stylesheet and revert back to using the GITB TRL as the report's ou
 .. _community__report_settings__overview_report:
 
 Conformance overview report
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++
 
 The **conformance overview report** is used to summarise the status or a set of related conformance statements. Producing this as a :ref:`PDF report<manage_your_conformance_statements__export_overview>`
 is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
@@ -1604,7 +1604,7 @@ any existing stylesheet and revert back to using the GITB TRL as the report's ou
 .. _community__report_settings__test_case_report:
 
 Test case report
-~~~~~~~~~~~~~~~~
+++++++++++++++++
 
 The **test case report** is used to summarise the result of a given test case's session. Producing this as a :ref:`PDF report<view_your_test_history__search__export>`
 is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
@@ -1636,7 +1636,7 @@ any existing stylesheet and revert back to using the GITB TRL as the report's ou
 .. _community__report_settings__test_step_report:
 
 Test step report
-~~~~~~~~~~~~~~~~
+++++++++++++++++
 
 The **test step report** is used to summarise the result of a specific test session step. Producing this as a :ref:`PDF report<view_your_test_history__test_steps__export>`
 is possible for all users and the contents of the report are fixed. The report can however also be produced in XML, using the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__
