@@ -33,7 +33,7 @@ minimised and asynchronously completed, manage the inputs included in reports, a
 define administrator verifications of test sessions directly within the test bed, supporting scenarios where manual verification of test results
 is required.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1521] - When creating a new community the option to use the domain's description cannot be enabled
 * [ITB-1523] - The search field of multi-select filters is hidden when no results are found
@@ -49,7 +49,7 @@ is required.
 * [ITB-1580] - Error while closing a processing transaction involving a remote processing service
 * [ITB-1583] - Importing a domain archive skips the update of existing specification groups
 
-**New Feature**
+**New Features**
 
 * [ITB-42] - Allow user-defined themes
 * [ITB-1322] - Create conformance certificates and reports at the level of specification groups
@@ -78,7 +78,7 @@ is required.
 * [ITB-1577] - Support use of custom organisation and system properties in conformance certificate custom messages
 * [ITB-1582] - Replace the default presentation of the conformance dashboard with a hierarchical display of conformance statements per organisation
 
-**Improvement**
+**Improvements**
 
 * [ITB-597] - Make all password or secret value input fields consistent
 * [ITB-789] - Disable the search buttons for custom properties when the relevant community does not define any
@@ -115,12 +115,12 @@ This is a limited maintenance release to address reported bugs, and most importa
 published vulnerabilities. Of these the most important is the HTTP/2 Rapid Reset vulnerability that could render a Test Bed
 instance vulnerable to a DDoS attack if used directly (i.e. without a reverse proxy) from end users.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1502] - The system administration screen shows the custom welcome page message as disabled even when it is set
 * [ITB-1519] - Test Bed REST API documentation may become unavailable
 
-**Improvement**
+**Improvements**
 
 * [ITB-1516] - Library updates to address CVE-2023-44487 (HTTP/2 Rapid Reset)
 * [ITB-1517] - Library updates to address (as a precaution) CVE-2023-22102 (MySQL connector exploit)
@@ -143,7 +143,7 @@ metadata was introduced to streamline test suite updates, and to define aspects 
 flags, from within test suite archives. Furthermore new embedded processing capabilities were introduced to facilitate JSON processing,
 test session delays, and generation of random content.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1431] - Background test sessions failing to initialise appear as active
 * [ITB-1442] - If the Test Bed is behind a proxy it may fail to redirect the user post-login to the public (internal) home page
@@ -159,7 +159,7 @@ test session delays, and generation of random content.
 * [ITB-1478] - Cannot delete specification group that contains specification options
 * [ITB-1484] - Unable to import export archives with custom labels set for specification groups
 
-**New Feature**
+**New Features**
 
 * [ITB-673] - Navigation breadcrumb
 * [ITB-1223] - Allow Test Bed administrators to view and edit system-wide configuration properties
@@ -182,7 +182,7 @@ test session delays, and generation of random content.
 * [ITB-1482] - Allow the Test Bed administrator to adapt the home page message displayed on the login page
 * [ITB-1483] - Edit a Test Bed instance's basic configuration values through the user interface
 
-**Improvement**
+**Improvements**
 
 * [ITB-743] - Restructure organisation user interface
 * [ITB-919] - Make the left-side menu collapsible
@@ -216,11 +216,11 @@ Release 1.20.1 - 23/06/2023
 This release corrects an issue reported by users concerning the test bed's user interface. It also adds a variant of the gitb-types
 library to extend its support for older Java platforms.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1440] - Error while retrieving a system's conformance statements
 
-**Improvement**
+**Improvements**
 
 * [ITB-1432] - Extend support of gitb-types library to include Java 8 as a minimum
 
@@ -233,7 +233,7 @@ test session log output, test coverage ratios and step result overviews. In addi
 customise reports, and to facilitate the management and maintenance of test suite documentation. Finally, this release provided an opportunity to 
 resolve reported bugs and to apply precautionary security patches to the test bed's underlying third party software libraries.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-522] - Test case report pages may have misplaced headings for complex test cases
 * [ITB-1399] - Test suite validation does not catch duplicate test case references
@@ -242,7 +242,7 @@ resolve reported bugs and to apply precautionary security patches to the test be
 * [ITB-1412] - Error importing export archive in community without assigned domain
 * [ITB-1416] - When selecting to check all available conformance statements it is possible to create invalid statements
 
-**New Feature**
+**New Features**
 
 * [ITB-1394] - Include the test session log in test case reports
 * [ITB-1395] - Include extended test case documentation in test session reports
@@ -251,7 +251,7 @@ resolve reported bugs and to apply precautionary security patches to the test be
 * [ITB-1413] - Allow copying to the clipboard the HTML source for test suite and test case documentation
 * [ITB-1414] - Allow previewing a test case's documentation in PDF reports
 
-**Improvement**
+**Improvements**
 
 * [ITB-1397] - Show only unique options in search filters
 * [ITB-1398] - Expand the height of the selection box for specifications in the test suite upload dialogs
@@ -277,7 +277,7 @@ Alongside these changes, minor improvements were also made to the GITB Test Desc
 of working with data collections. In addition, new variants of the "gitb-types" library were published catering for different API
 versions making it simpler to maintain and evolve test extension services.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1302] - Self messaging steps (same to and from actors) are displayed with a squashed arrow
 * [ITB-1333] - When selecting to delete test sessions, expanded test sessions are not displayed at full width
@@ -294,7 +294,7 @@ versions making it simpler to maintain and evolve test extension services.
 * [ITB-1368] - Skipped loop steps within other loop steps are not displayed correctly
 * [ITB-1374] - Tests including flow steps and set to stopOnError may result in a wrong overall result
 
-**New Feature**
+**New Features**
 
 * [ITB-1010] - Allow multiple conformance statements to be defined at the same time
 * [ITB-1233] - Introduce optional specification groups to allow additional organisation over specifications
@@ -307,7 +307,7 @@ versions making it simpler to maintain and evolve test extension services.
 * [ITB-1380] - Allow filtering of available conformance statements when creating a new one
 * [ITB-1383] - Extend CollectionUtils processor with operation to remove an item from a list or map
 
-**Improvement**
+**Improvements**
 
 * [ITB-1309] - In the conformance statement list for organisations don't display the domain if one is linked to the relevant community
 * [ITB-1323] - Record completed test session information as a snapshot of the metadata applicable when the session was executed
@@ -328,11 +328,11 @@ Release 1.18.1 - 24/11/2022
 This is a minor maintenance release to upgrade third party libraries and the test bed's database, as well as correct an
 issue reported by test bed users when viewing the test session history.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1331] - Viewing the test session history may produce an "Out of sort memory" error
 
-**Improvement**
+**Improvements**
 
 * [ITB-1329] - Upgrade MySQL to version 8.0.31
 * [ITB-1330] - Upgrade Commons Text to resolve CVE-2022-42889 (Text4Shell)
@@ -357,7 +357,7 @@ retrieve complete test session reports. These new features were complemented by 
 custom property values, and various bug fixes. Finally, the test bed software's build tooling was extended to allow
 containerised builds, allowing rapid prototyping and experimentation directly from the test bed's source.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1245] - The TokenGenerator's string operation may crash for badly formatted regular expressions
 * [ITB-1254] - Updating an organisation user on a Test Bed instance not connected to EU Login produces an error
@@ -367,7 +367,7 @@ containerised builds, allowing rapid prototyping and experimentation directly fr
 * [ITB-1287] - Messaging steps without transactions pass test suite validation for invalid step inputs of handlers
 * [ITB-1308] - Imports used to clone domains and communities within the same Test Bed instance fail to complete
 
-**New Feature**
+**New Features**
 
 * [ITB-791] - Allow the complete test of a trigger from its detail page
 * [ITB-812] - New trigger event on test session start
@@ -394,7 +394,7 @@ containerised builds, allowing rapid prototyping and experimentation directly fr
 * [ITB-1299] - Include the test engine version information in all external messaging, processing and validation service calls
 * [ITB-1300] - New predefined SESSION map in the test session context including test session metadata for use in test cases
 
-**Improvement**
+**Improvements**
 
 * [ITB-1243] - Fail test suite validation when multi-operation embedded processing handlers are used without specifying the operation to use
 * [ITB-1244] - Extend the TokenGenerator's uuid operation to support optional prefix and postfix inputs
@@ -432,12 +432,12 @@ extensive test suite validation, and most importantly new REST API operations to
 The new test suite management operations complement the previously available test session operations to further
 facilitate using the test bed in continuous integration processes for test development.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1200] - Assign step set to append for a map variable should create (and append) to a list
 * [ITB-1241] - Map variables cannot be directly assigned to other maps or steps' map inputs
 
-**New Feature**
+**New Features**
 
 * [ITB-91] - Switch TDL expression language from XPath 1.0 to XPath 3.0
 * [ITB-484] - Embedded processing handler to display to the user provided inputs
@@ -452,7 +452,7 @@ facilitate using the test bed in continuous integration processes for test devel
 * [ITB-1206] - Allow the title of the popup of user interaction steps to be set dynamically
 * [ITB-1207] - Allow interaction step actors to be set dynamically within scriptlets
 
-**Improvement**
+**Improvements**
 
 * [ITB-885] - Make messaging transactions optional
 * [ITB-1186] - Provide Open API documentation for the Test Bed's REST API
@@ -469,12 +469,12 @@ Release 1.16.1 - 06/04/2022
 This is a minor maintenance release to upgrade third party libraries, and to correct minor bugs related to the display
 of tooltips and the test bed's test execution REST API.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1178] - Long help tooltips are not correctly wrapped after activating conformance dashboard status tooltips
 * [ITB-1184] - REST API inputs cannot replace user input map variables
 
-**Improvement**
+**Improvements**
 
 * [ITB-1182] - Upgrade to Java 11.0.14
 * [ITB-1183] - Upgrade 3rd party libraries to address reported CVEs
@@ -496,7 +496,7 @@ by numerous minor extensions such as the support for namespace declarations to s
 improvement of step progress logging. Finally, this release introduces bug fixes for reported issues and internal performance enhancements to increase test session
 throughput.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1110] - Remote messaging handlers signalled twice to finalize session
 * [ITB-1111] - A scriptlet should inherit the caller's stopOnError approach if it does not define it itself
@@ -509,7 +509,7 @@ throughput.
 * [ITB-1162] - A test step with an explicit stopOnError approach should override the approach defined by its caller
 * [ITB-1166] - Long, non-breakable texts break table displays
 
-**New Feature**
+**New Features**
 
 * [ITB-387] - Allow execution of test cases via machine-to-machine API
 * [ITB-883] - Allow a test case definition to define whether it must run sequentially or can be parallelised
@@ -524,7 +524,7 @@ throughput.
 * [ITB-1148] - Display badge for new log messages on test execution's log display button
 * [ITB-1158] - Allow the definition of namespaces for use in XPath expressions in test cases
 
-**Improvement**
+**Improvements**
 
 * [ITB-50] - Display message to user for an interactive session that is externally terminated
 * [ITB-1040] - Add tooltips to all buttons that are displayed as icons
@@ -568,16 +568,16 @@ This is a minor maintenance release that corrects user-reported bugs, notably is
 session concurrency, and handling of XML data. In addition, minor problems linked to the test bed's user interface
 were also addressed.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1085] - STEP_SUCCESS map may not be updated before consulted from next step
 * [ITB-1086] - Lookup of XML (object) variables from test session context may fail
 * [ITB-1087] - Test execution diagram displays titles of messages sent to the same lifeline with inconsistent justification
 * [ITB-1090] - Contact form submission during login process sends notification but returns to home page
 
-**Task**
+**Tasks**
 
-[ITB-1101] - Automate GitHub release process
+* [ITB-1101] - Automate GitHub release process
 
 Release 1.15.0 - 29/11/2021
 ---------------------------
@@ -591,7 +591,7 @@ test data. With respect to the GITB Test Description Language, several new featu
 frequently used steps and to further automated type conversions. In addition, new features such as test session logging and stylised
 messaging presentations allow for further customisation and management of test session output.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1009] - Date-based search filtering should ignore specific times
 * [ITB-1011] - Unable to bulk import a test suite where the test suite name does not match its identifier
@@ -607,7 +607,7 @@ messaging presentations allow for further customisation and management of test s
 * [ITB-1057] - TDL test suite validation does not report the offending steps for invalid expressions
 * [ITB-1059] - Past test session execution diagrams display actor names using their IDs
 
-**New Feature**
+**New Features**
 
 * [ITB-756] - Support paging and filtering in the listing of a community's organisations
 * [ITB-760] - Allow search filtering for organisations in community details page
@@ -631,7 +631,7 @@ messaging presentations allow for further customisation and management of test s
 * [ITB-1047] - Support severity levels for the TDL log step
 * [ITB-1050] - Support different messaging arrow display styles in test execution diagram
 
-**Improvement**
+**Improvements**
 
 * [ITB-450] - Make binary configuration property handling more lightweight
 * [ITB-755] - Support paging in the presentation of the conformance dashboard
@@ -670,12 +670,12 @@ This is a minor maintenance release that corrects bugs, most notable of which is
 template files in GITB TDL test cases. In addition, minor improvements are made to the display of validation step
 reporting output.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-1000] - Provide error feedback when attempting to open binary content in an editor
 * [ITB-1001] - Imported template files cannot be reused with different placeholder values
 
-**Improvement**
+**Improvements**
 
 * [ITB-890] - Allow a verify step's details to be minimised upon display
 * [ITB-891] - Allow a test suite validation report's details, displayed upon upload, to be minimised
@@ -688,7 +688,7 @@ This is a limited release that adds better support for handling user interaction
 now be provided using various controls, whereas data displayed to users can also be downloaded or displayed in
 syntax-sensitive editors. In addition, this release resolves several user-reported bugs.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-986] - Test case presentation may not present separator line between a flow step's threads
 * [ITB-987] - Custom select-based organisation property does not trigger checks for dependencies when updated
@@ -698,11 +698,11 @@ syntax-sensitive editors. In addition, this release resolves several user-report
 * [ITB-992] - Popup to remove a user's role (when EU Login is used) does not display tooltips
 * [ITB-993] - Unable to access the profile options on very low resolutions
 
-**New Feature**
+**New Features**
 
 * [ITB-614] - Allow content editors presented to report on test execution to display content-specific highlighting
 
-**Improvement**
+**Improvements**
 
 * [ITB-645] - Support different types of text input fields in user interaction steps
 * [ITB-985] - Interact step instructions that are too large should be opened in an editor or downloaded
@@ -719,7 +719,7 @@ release brings several new features and improvements that facilitate the develop
 simplifying their execution, the test cases' presentation is also enriched, allowing test developers to define test step
 grouping, display style and visibility, for a better structured and simplified presentation to users.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-482] - Test case group tests executed but not displayed
 * [ITB-671] - Styling of WYSIWYG editors does not match exactly the final display
@@ -739,7 +739,7 @@ grouping, display style and visibility, for a better structured and simplified p
 * [ITB-959] - Data import does not correctly update matching domain parameters of type "secret"
 * [ITB-965] - Prevent large custom titles for steps with sub-steps from breaking the display
 
-**New Feature**
+**New Features**
 
 * [ITB-704] - Extend all group step types to define if they are presented as collapsed by default
 * [ITB-805] - Allow a test bed master encryption password to be replaced
@@ -747,7 +747,7 @@ grouping, display style and visibility, for a better structured and simplified p
 * [ITB-966] - Allow test step groups to be collapsed and expanded by the user
 * [ITB-969] - Include a "Find out more" link in the footer links
 
-**Improvement**
+**Improvements**
 
 * [ITB-64] - Optionally make a processing service a visible test step
 * [ITB-155] - Concatenate and minify web assets
@@ -779,7 +779,7 @@ a test suite to not include test cases itself but rather act as a resource holde
 features focusing on sharing and reuse, this release also simplifies test suite validation and extends the test engine's
 embedded processing capabilities with new options of working with timestamps, regular expressions and collection structures.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-172] - Scriptlet parameter errors lead to inconsistent results
 * [ITB-173] - Scriptlet requires parameters and variables
@@ -797,7 +797,7 @@ embedded processing capabilities with new options of working with timestamps, re
 * [ITB-876] - Imports defined in scriptlets are not processed
 * [ITB-882] - The display of nested loop steps is not correctly updated during test execution
 
-**New Feature**
+**New Features**
 
 * [ITB-780] - Archive test sessions after a specific time period has elapsed
 * [ITB-782] - Allow scriptlets to be shared across multiple test cases
@@ -806,7 +806,7 @@ embedded processing capabilities with new options of working with timestamps, re
 * [ITB-869] - Support the import of test suites without test cases (i.e. shared resource packages)
 * [ITB-894] - Allow test cases to make custom regular expression manipulations
 
-**Improvement**
+**Improvements**
 
 * [ITB-175] - Allow scriptlets to not have outputs
 * [ITB-463] - Allow timestamp generation based on received dates and times
@@ -830,7 +830,7 @@ Release 1.11.1 - 11/12/2020
 This is a minor maintenance release that corrects issues with test session error handling and the display of active test sessions, and adds support in the
 GITB Test Description Language for managing undefined variables.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-829] - A completed test session's diagram does not display steps as skipped when the session was stopped by the user
 * [ITB-830] - Internal flow steps are not displayed as skipped when stopping a test session
@@ -839,7 +839,7 @@ GITB Test Description Language for managing undefined variables.
 * [ITB-833] - Test session diagram may fail to display step updates
 * [ITB-834] - Pending messaging steps from a flow step's threads that are skipped result in a test session failure
 
-**Improvement**
+**Improvements**
 
 * [ITB-819] - Expressions with references to non-existent variables should return an empty value rather than fail
 
@@ -854,7 +854,7 @@ These updates are further complemented by interface improvements such as progres
 extends the GITB Test Description Language with new features such as customised output messages, termination of tests on errors and persistent
 validator outputs.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-508] - Test sessions that are pending but not started are not automatically terminated after the idle period
 * [ITB-735] - Community export with triggers and no linked data may cause imports to fail validation
@@ -862,7 +862,7 @@ validator outputs.
 * [ITB-772] - User interaction steps should allow scrolling for long non-breaking text
 * [ITB-783] - Call step initialises prematurely and fails for missing input variables
 
-**New Feature**
+**New Features**
 
 * [ITB-428] - Test session variable recording the current overall test result status
 * [ITB-693] - Add loading indication on UI when waiting to load data
@@ -889,7 +889,7 @@ validator outputs.
 * [ITB-769] - Configure a sequence of steps to immediately fail upon any error
 * [ITB-770] - Display test session output message in test case report
 
-**Improvement**
+**Improvements**
 
 * [ITB-534] - Replace completed test session display with sequence diagram presentation
 * [ITB-604] - Allow custom member properties to be optionally used for filtering
@@ -912,13 +912,13 @@ Release 1.10.2 - 12/10/2020
 This is a minor maintenance release that extends the usage of domain parameters and corrects issues reported by users,
 notably on the handling of custom properties in self-registration.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-694] - Updating landing pages, error templates and legal notices should remain on the detail page
 * [ITB-732] - Self-registration organisation properties may not get recorded in an SSO-enabled environment
 * [ITB-733] - Required organisation properties in self-registration with unfulfilled prerequisites should not be required
 
-**Improvement**
+**Improvements**
 
 * [ITB-696] - Allow domain parameters to be provided as input to community triggers
 * [ITB-697] - Support domain parameters that are not included in tests
@@ -932,12 +932,12 @@ Release 1.10.1 - 02/10/2020
 This is a minor maintenance release to address issues reported by users, notably on the handling of documentation content
 in test suites.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-721] - Large test step documentation content prevents test sessions from starting
 * [ITB-722] - Documentation links ignore link target attribute
 
-**Improvement**
+**Improvements**
 
 * [ITB-708] - Hide empty "Test" entry from PDF validation report
 * [ITB-723] - Ensure all documentation links open in a separate window
@@ -955,7 +955,7 @@ complemented by the latest improvements in the GITB Test Description Language, a
 documentation and artefact resources, customisation of display labels, and a new logging step to add details to 
 test sessions' output.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-519] - Multiple session invalid messages when session is invalidated
 * [ITB-599] - Sessions have a maximum global timeout of 1 hour regardless of activity
@@ -964,7 +964,7 @@ test sessions' output.
 * [ITB-677] - Invalid test suite resource imports may succeed test suite validation
 * [ITB-681] - Warning message when copying a system's test configuration is not correct
 
-**New Feature**
+**New Features**
 
 * [ITB-474] - Add logging element to GITB TDL
 * [ITB-591] - Replicate a test suite to other specifications
@@ -985,7 +985,7 @@ test sessions' output.
 * [ITB-691] - Support dependencies between conformance statements parameters
 * [ITB-692] - Support predefined values for conformance statement properties
 
-**Improvement**
+**Improvements**
 
 * [ITB-400] - Use an uploaded test suite's ID instead of its name to match existing test suites
 * [ITB-451] - Allow administrators to specify ordering for custom community properties
@@ -1010,18 +1010,18 @@ This is a patch release to address issues linked to errors in data imports and f
 In terms of new features this release extends the customisation options linked to community self-registration by extending the
 help text linked to community tokens.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-608] - Interactive test session may on unexpected error display message for continuing execution
 * [ITB-610] - Unable to import community when no domain data are included in the data archive
 * [ITB-612] - Empty file input through user interaction during a test session stops the test session
 
-**New Feature**
+**New Features**
 
 * [ITB-595] - Automatic migration of older version data archives to target Test Bed version
 * [ITB-609] - Allow customised message for self-registration help text
 
-**Improvement**
+**Improvements**
 
 * [ITB-600] - Hide the description of endpoint parameter inputs when there is no description
 * [ITB-603] - Add progress indicator for CSV export buttons
@@ -1038,7 +1038,7 @@ and improved result display. FInally, a wide range of enhancements have been mad
 ubiquitous help tooltips, visual feedback for all actions, a context-specific user guide and the possibility to fully manage a user's 
 own information.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-457] - Invalid map variable references not detected by TDL validator
 * [ITB-475] - Unable to pass a BASE64 encoded string to a binary input variable
@@ -1055,7 +1055,7 @@ own information.
 * [ITB-558] - Community administrators should not be allowed to delete their domain
 * [ITB-561] - Binary and secret domain parameters should have a disabled save button when name is missing
 
-**New Feature**
+**New Features**
 
 * [ITB-189] - Allow test suite test cases to be executed in parallel
 * [ITB-288] - Allow an administrator to export and then import a community or domain setup
@@ -1074,7 +1074,7 @@ own information.
 * [ITB-555] - New processing handler to handle base64 encoding and decoding
 * [ITB-562] - Support sandbox instance creation by automating the import of data from a provided data archive
 
-**Improvement**
+**Improvements**
 
 * [ITB-223] - Set a community's domain upon creation
 * [ITB-388] - Show report item counts resulting from a verify step (validation)
@@ -1111,7 +1111,7 @@ This release focuses on providing additional community customisation possibiliti
 specific labels for test bed concepts and the optional display of actors. GITB TDL is also enhanced with support for warning-level 
 validation steps and the possibility to display for test steps additional documentation or instructions as rich text.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-512] - Deleting conformance statement text parameter values does not immediately refresh the display
 * [ITB-513] - Test suite upload can fail if endpoint names vary in case
@@ -1119,7 +1119,7 @@ validation steps and the possibility to display for test steps additional docume
 * [ITB-518] - Binary actor parameters interpreted as strings in test sessions
 * [ITB-520] - Test execution diagrams with multiple actors can break diagram display
 
-**New Feature**
+**New Features**
 
 * [ITB-432] - Support warning-level failures for verify steps
 * [ITB-433] - Support more extensive descriptions as metadata for test steps
@@ -1127,7 +1127,7 @@ validation steps and the possibility to display for test steps additional docume
 * [ITB-489] - Allow a community administrator to customise the labels used for Test Bed concepts
 * [ITB-511] - Allow actors to be set as hidden (deprecated)
 
-**Improvement**
+**Improvements**
 
 * [ITB-461] - Remove noise from gitb-ui logs
 
@@ -1138,7 +1138,7 @@ This is a patch release to address issues with the core test engine and specific
 test session variables. This patch also extended the templating possibilities in test cases by allowing any expressions
 to be treated as templates.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-422] - Conversions between GITB types using pure variable expressions should also work through the source attribute
 * [ITB-464] - Cannot convert string to nodelist in assign step
@@ -1147,7 +1147,7 @@ to be treated as templates.
 * [ITB-503] - If a test bed instance has a demo account configured prevent this from being linked to a user
 * [ITB-509] - Cannot directly assign non-binary variables to binary ones
 
-**Improvement**
+**Improvements**
 
 * [ITB-505] - Allow any variable to be used as a template (not only imports)
 
@@ -1157,7 +1157,7 @@ Release 1.7.1 - 21/11/2019
 This is a patch release to address issues linked primarily with the handling of test session variables and improved error
 reporting during test sessions.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-424] - All list types returned by external services are considered to be list[string]
 * [ITB-458] - Processing steps with no transaction cannot use variable references to determine handler
@@ -1177,7 +1177,7 @@ and the introduction of custom properties for organisations and systems. Such cu
 data collection options and the scripting of automation processes, introducing at the same time new means of providing 
 input values and configuration to test sessions.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-421] - Resolving the index of a GITB list when in double format fails
 * [ITB-423] - Dropdown menus not visible for loop and flow test step reports
@@ -1188,7 +1188,7 @@ input values and configuration to test sessions.
 * [ITB-448] - Test case definition doesn't reload if user refreshes browser
 * [ITB-449] - Specification details not included in conformance dashboard CSV export
 
-**New Feature**
+**New Features**
 
 * [ITB-73] - ECAS integration
 * [ITB-196] - One account - multiple communities
@@ -1203,7 +1203,7 @@ input values and configuration to test sessions.
 * [ITB-441] - Make available custom and standard organisation properties in test sessions
 * [ITB-442] - Make available custom and standard system properties in test sessions
 
-**Improvement**
+**Improvements**
 
 * [ITB-100] - Allow organisation to request addition to a community
 * [ITB-398] - Optionally copy configuration parameters when copying the testing setup to another system
@@ -1224,13 +1224,13 @@ of template files in test cases. In addition, given the opportunity of the patch
 and important improvements are introduced to facilitate reporting and increase the built-in possibilities to generate
 timestamps within test cases.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-401] - Invalid test case imports may pass test suite validation
 * [ITB-407] - Unable to reference map or list variables from within template
 * [ITB-409] - Clearing search filters does not clear the "result" criterion
 
-**Improvement**
+**Improvements**
 
 * [ITB-390] - Remember search filters when returning from a detail page to a search page
 * [ITB-404] - Support diffs for TokenGenerator timestamps
@@ -1246,7 +1246,7 @@ updates to library versions, the execution environment and core security feature
 and its support through the test bed, has been extended to simplify test case definition and bring new features such as new built-in
 processing and validation capabilities as well as extended user input options.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-170] - Variables allow defining superfluous "source" and "lang" attributes
 * [ITB-217] - Systems link not presented to organisation basic users
@@ -1272,12 +1272,12 @@ processing and validation capabilities as well as extended user input options.
 * [ITB-381] - Allow spaces for expressions defined as "StringOrVariable"
 * [ITB-384] - Processing step errors may not get logged
 
-**New Feature**
+**New Features**
 
 * [ITB-311] - Embedded processing handler to create random text tokens
 * [ITB-382] - New embedded validator for matching XML content based on XMLUnit
 
-**Improvement**
+**Improvements**
 
 * [ITB-51] - Validate uploaded test suite
 * [ITB-241] - Ensure content is filtered based on a whitelist for HTML rendering
@@ -1303,7 +1303,7 @@ This release focuses on improving error handling and adding support for a custom
 Numerous additional improvements are also made to facilitate the management of test suites and conformance testing configuration, as
 well as to improve support for the GITB Test Description Language (TDL).
 
-**Bug**
+**Bug fixes**
 
 * [ITB-171] - Referring to missing map key in interaction step swallows error
 * [ITB-181] - Stop step results in the interface not being signalled to show the test as finished
@@ -1313,7 +1313,7 @@ well as to improve support for the GITB Test Description Language (TDL).
 * [ITB-272] - Opening the contact support form clears other rich text editors
 * [ITB-273] - Forms to create elements do not take advantage of full screen width
 
-**New Feature**
+**New Features**
 
 * [ITB-79] - Create conformance certificate
 * [ITB-106] - Error message template per community
@@ -1322,11 +1322,11 @@ well as to improve support for the GITB Test Description Language (TDL).
 * [ITB-247] - Create an embedded regular expression validator
 * [ITB-260] - Allow administrators to purge obsolete test results
 
-**Task**
+**Tasks**
 
 * [ITB-275] - Remove obsolete resources
 
-**Improvement**
+**Improvements**
 
 * [ITB-78] - Download test suites
 * [ITB-92] - Allow If steps without Else
@@ -1363,7 +1363,7 @@ Release 1.4.1 - 28/09/2018
 
 This is a bug fix release to address critical production bugs. Minor additional internal features are also added.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-243] - Support the use of lists in validation services
 * [ITB-252] - Messaging sessions close unexpectedly
@@ -1371,7 +1371,7 @@ This is a bug fix release to address critical production bugs. Minor additional 
 * [ITB-254] - A mis-configured system address results in a server error
 * [ITB-255] - Error during test execution repeat indefinitely
 
-**Improvement**
+**Improvements**
 
 * [ITB-244] - Adapt HttpMessaging messaging handler to switch to HTTPS based on configuration
 * [ITB-245] - Support sending and receiving multipart form data in HttpMessaging
@@ -1381,7 +1381,7 @@ Release 1.4.0 - 03/07/2018
 
 This is a minor release to correct bugs and also to improve the test bed's GDPR compliance.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-219] - Cannot delete domain with domain parameters
 * [ITB-222] - Cannot delete community for which tests have been executed
@@ -1391,12 +1391,12 @@ This is a minor release to correct bugs and also to improve the test bed's GDPR 
 * [ITB-235] - Icons may not appear when using IE 11
 * [ITB-242] - Active footer links are not visible
 
-**New Feature**
+**New Features**
 
 * [ITB-49] - Link to online documentation
 * [ITB-221] - Link to role-specific documentation
 
-**Improvement**
+**Improvements**
 
 * [ITB-236] - Add cookie-related statement on login screen for GDPR compliance
 * [ITB-237] - Add consent message on community admin creation screen
@@ -1410,7 +1410,7 @@ Release 1.3.0 - 25/05/2018
 This release focuses on improving support for the GITB Test Description Language (TDL), improving the test execution process including automatic
 test suite execution, and providing additional tools for administrators and users to monitor their conformance testing progress.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-57] - User interaction to inform does nothing
 * [ITB-93] - Test execution in UI can continue displaying turning spanner for completed step
@@ -1423,14 +1423,14 @@ test suite execution, and providing additional tools for administrators and user
 * [ITB-184] - Test session report does not include child steps for conditional branches
 * [ITB-188] - Flow step results are always reported inversely
 
-**New Feature**
+**New Features**
 
 * [ITB-72] - Conformance overview for administrators
 * [ITB-199] - Implement conformance statement report
 * [ITB-207] - Add feedback form
 * [ITB-208] - Add survey link
 
-**Improvement**
+**Improvements**
 
 * [ITB-60] - Run all test cases in test suite
 * [ITB-87] - Display different actor name in test cases (do not use actor ID) 
@@ -1462,7 +1462,7 @@ This release focuses on correcting issues impacting the platform's robustness an
 to better manage their configured domains and specifications, as well as users to improve their test reporting capabilities. 
 The key improvement area targeted is the management of new test suite versions.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-55] - Count of passed test cases displays wrong
 * [ITB-68] - Hide buttons for actions that are not permitted
@@ -1477,13 +1477,13 @@ The key improvement area targeted is the management of new test suite versions.
 * [ITB-147] - Domain name and description not displayed on conformance statement
 * [ITB-154] - Correct transaction management
 
-**New Feature**
+**New Features**
 
 * [ITB-47] - Delete system
 * [ITB-94] - Display test bed version
 * [ITB-136] - Create PDF report from validator report
 
-**Improvement**
+**Improvements**
 
 * [ITB-80] - Remove "Test Suites" menu entry
 * [ITB-61] - Improve export of test sessions
@@ -1512,19 +1512,19 @@ Release 1.1.0 - 20/09/2017
 Release that most importantly introduces user communities to the test bed. This includes also additional improvements to facilitate management
 of test configuration and improved reporting capabilities.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-65] - Test session history for an organisational user is incomplete
 * [ITB-86] - No longer possible to create a domain
 * [ITB-89] - XPath 2.0 support breaks TDL variable lookup
 * [ITB-90] - Problem interacting with processing services
 
-**New Feature**
+**New Features**
 
 * [ITB-66] - Add filtering of test sessions for organisation user
 * [ITB-71] - Allow admin to manage an organisation's test setup
 
-**Improvement**
+**Improvements**
 
 * [ITB-53] - Add user communities to user management
 * [ITB-56] - Group test cases by test suite
@@ -1539,12 +1539,12 @@ Release 1.0.3 - 14/08/2017
 
 Minor release to address mainly Internet Explorer support issues and correct important bugs.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-52] - Errors on UI when using Internet Explorer 11
 * [ITB-82] - Streamlined test execution wizard skips steps when it should not
 
-**Improvement**
+**Improvements**
 
 * [ITB-81] - Decouple payload information from PEPPOL AS2 validators
 * [ITB-83] - Support XPath 2.0 in expressions
@@ -1556,13 +1556,13 @@ Release 1.0.2 - 19/05/2017
 Release to correct critical problems when running test cases, simplify use of the test bed for non-administrator users and provide a dashboard for
 test bed administrators to monitor current and past sessions.
 
-**Bug**
+**Bug fixes**
 
 * [ITB-30] - Allow ID to be more than one character long
 * [ITB-32] - Type metadata is not applicable to test modules
 * [ITB-34] - GITB remote send operation does not populate context
 
-**New Feature**
+**New Features**
 
 * [ITB-35] - Dashboard: Overview of running test sessions
 * [ITB-36] - Dashboard: Display test session status
@@ -1570,7 +1570,7 @@ test bed administrators to monitor current and past sessions.
 * [ITB-38] - Dashboard: Set max idle time for test cases
 * [ITB-46] - Customizable legal notices
 
-**Improvement**
+**Improvements**
 
 * [ITB-9] - Automatically kill test sessions that are idle
 * [ITB-39] - Allow GITB UI to run on any port
@@ -1585,11 +1585,11 @@ Release 1.0.1 - 06/02/2017
 
 The main focus of this release is the addition of user management features and features to manage the test setup (domains, specifications, actors).
 
-**Bug**
+**Bug fixes**
 
 * [ITB-15] - When logging out the page content is not cleared
 
-**New Feature**
+**New Features**
 
 * [ITB-3] - Remove "Team" link
 * [ITB-11] - Allow test bed administrator to add and edit users
@@ -1607,7 +1607,7 @@ The main focus of this release is the addition of user management features and f
 * [ITB-29] - Implement feature to save endpoint changes
 * [ITB-31] - Add support for processing services
 
-**Improvement**
+**Improvements**
 
 * [ITB-5] - Provide labels for user roles
 * [ITB-6] - View test bed users
