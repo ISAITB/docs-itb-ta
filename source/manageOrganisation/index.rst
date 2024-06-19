@@ -130,9 +130,13 @@ displaying the system's information, presented in editable input fields.
 .. figure:: ../screenshots/systems_update.PNG
   :align: center
 
-You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system. If your organisation defines
-other systems you can also select to **copy the test setup** from another system which will reset the system's conformance statements to
-match the selected one (upon confirmation).
+You can proceed here to modify the **short name**, **full name**, **description**, **version**. At the bottom you
+also see the unique **API key** for the system that can be clicked to copy it to the clipboard or refreshed to update it.
+This API key can be used in case the test bed's :ref:`REST API <api>` is enabled, or for
+`messaging in test cases <https://www.itb.ec.europa.eu/docs/tdl/latest/handlers/index.html#built-in-messaging-handlers>`_.
+
+If your organisation defines other systems you can also select to **copy the test setup** from another system which will
+reset the system's conformance statements to match the selected one (upon confirmation).
 
 .. figure:: ../screenshots/systems_create_copy.PNG
   :align: center
@@ -190,7 +194,7 @@ The keys listed include the following:
 * **Organisation:** The key to identify your organisation. The readonly name of the organisation is displayed alongside the key. You are also presented here
   with **reset** and **delete** controls to replace or remove the key.
 * **System:** The key to identify a specific system. If your organisation defines multiple systems these are presented in a dropdown list and selecting one
-  will display its API key. The displayed key also provides **reset** and **delete** controls to replace or remove it.
+  will display its API key. The displayed key also provides a **reset** control to replace it.
 * **Specification:** The target specification does not itself define an API key but you need to select one to view the API keys of its related information
   (actors, test suites and test cases). If you have conformance statements for only a single specification this appears as preselected and readonly.
 * **Actor:** The key to identify the target specification's actor. The actor, along with your selected system essentially constitute your target
@@ -198,6 +202,11 @@ The keys listed include the following:
   Selecting an actor from the list displays its related API key.
 * **Test suite:** The key to identify a specific test suite. Selecting a given test suite displays its relevant API key.
 * **Test case:** The key to identify a specific test case within the selected test suite. Selecting a given test case displays its relevant API key.
+
+.. note::
+
+  The listed API keys do not include **conformance snapshots**. This is because your own administrator organisation is never included
+  in snapshots.
 
 When removing or replacing the API key of your organisation or one of its systems, you will be prompted to confirm it. If you
 proceed to do so any existing automation setups you may have would need to be updated accordingly given that the previous

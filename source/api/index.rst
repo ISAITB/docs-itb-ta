@@ -176,6 +176,78 @@ The payload of the **configure** operation's response is defined by the followin
 .. literalinclude:: resources/configuration/configure_response.schema.json
    :language: json
 
+.. _api__conformance_statements:
+
+Conformance statement management
+--------------------------------
+
+You can use the test bed's REST API to manage an organisation's **conformance statements**. The following operations are provided:
+
+* :ref:`api__conformance_statements__create`: Create a conformance statement linking an organisation's system with a specification actor.
+* :ref:`api__conformance_statements__delete`: Delete an organisation's conformance statement.
+* :ref:`api__conformance_statements__report`: Produce a conformance statement report for a given conformance statement.
+
+Details on each operation, including sample requests and responses, are provided in the following sections.
+
+.. _api__conformance_statements__create:
+
+create
+~~~~~~
+
+The **create** operation is used to create a conformance statement for an organisation, linking one of its systems with a specification
+actor. To call the operation make an HTTP ``PUT`` to path ``/api/rest/conformance/{system}/{actor}``. As an example, for the `DIGIT instance`_,
+the path would be ``https://www.itb.ec.europa.eu/itb/api/rest/conformance/{system}/{actor}``. Regarding the placeholders in the path
+you need to replace them as follows:
+
+* For ``{system}`` use the API key of the system you want to create the statement for.
+* For ``{actor}`` use the API key of the specification actor.
+
+In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set with the **organisation's API key**. Finally, note that
+this operation does not take a body.
+
+As an example, if we want to create a conformance statement linking a system and actor with API keys ``SYSTEM123`` and ``ACTOR456`` you
+would make a ``PUT`` to ``/api/rest/conformance/SYSTEM123/ACTOR456``. In terms of response, if the conformance statement was successfully
+created you will receive a ``200`` response with no body.
+
+.. _api__conformance_statements__delete:
+
+delete
+~~~~~~
+
+The **delete** operation is used to delete an organisation's conformance statement. To call the operation make an HTTP ``DELETE``
+to path ``/api/rest/conformance/{system}/{actor}``. As an example, for the `DIGIT instance`_, the path would be
+``https://www.itb.ec.europa.eu/itb/api/rest/conformance/{system}/{actor}``. Regarding the placeholders in the path
+you need to replace them as follows:
+
+* For ``{system}`` use the API key of the system that is currently linked to the statement.
+* For ``{actor}`` use the API key of the relevant specification actor.
+
+In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set with the **organisation's API key**.
+
+As an example, if we want to delete a conformance statement that currently links a system and actor with API keys ``SYSTEM123`` and ``ACTOR456``
+you would make a ``DELETE`` to ``/api/rest/conformance/SYSTEM123/ACTOR456``. In terms of response, if the conformance statement was successfully
+removed you will receive a ``200`` response with no body.
+
+.. _api__conformance_statements__report:
+
+report
+~~~~~~
+
+The **report** operation is used to produce a conformance statement XML report expressed in the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__.
+To call operation make an HTTP ``GET`` to path ``/api/rest/conformance/{system}/{actor}``. As an example, for the `DIGIT instance`_, the path would be
+``https://www.itb.ec.europa.eu/itb/api/rest/conformance/{system}/{actor}``. Regarding the placeholders in the path you need to replace them as follows:
+
+* For ``{system}`` use the API key of the system linked to the statement.
+* For ``{actor}`` use the API key of the relevant specification actor.
+
+In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set with the **organisation's API key**.
+
+Once this call is made, the test bed will return a response with a ``200`` status code, whose payload is the report’s XML content.
+The following sample is a complete example of such a report:
+
+.. literalinclude:: ../manageConformanceStatements/resources/conformance_statement_xml.xml
+   :language: xml
+
 .. _api__test_sessions:
 
 Test session management
@@ -668,6 +740,15 @@ produced by the test suite's validation in three arrays named ``errors``, ``warn
 and ``location``, the latter being the path of the test suite's resource (e.g. a test case file) that resulted in it being reported. A test suite's
 deployment may not be completed in case it's validation produced errors or warnings (that were not set to be ignored via the request's ``ignoreWarnings`` flag).
 
+Besides the overall status and validation summary, the response will also include the **API keys** of all data created, or affects by the test suite. These keys allow
+you to automate other operations related to this test suite through the REST API, such as :ref:`running test sessions <api__test_sessions__start>` or
+:ref:`managing conformance statements <api__conformance_statements>`. The returned API keys include:
+
+* The **identifier** of the **test suite** that was created or updated as a result of the operation.
+* The **identifiers** of **test cases** that form the latest version of the test suite.
+* The **names** and **identifiers** of the target **specifications**.
+* The **names** and **identifiers** of the test suite **actors**.
+
 The following example presents a response that produced a validation warning but was nonetheless completed:
 
 .. code-block:: json
@@ -676,9 +757,29 @@ The following example presents a response that produced a validation warning but
     "completed": true,
     "warnings": [
       {
-        "description": "[TDL-015] Actor [Actor4] is not referenced in any test cases."
+        "description": "[TDL-015] Actor [Actor2] is not referenced in any test cases."
       }
-    ]
+    ],
+    "identifiers": {
+        "testSuite": "testSuite1",
+        "testCases": [ "testCase1", "testCase2", "testCase3" ],
+        "specifications": [
+          {
+            "name": "Specification 1",
+            "identifier": "77040396X168EX40CDXBD3FX62347E1A09E6",
+            "actors": [
+              {
+                "name": "Actor 1",
+                "identifier": "28E6E6C9X80BDX40C9XB54DX102800BC32D7"
+              },
+              {
+                "name": "Actor 2",
+                "identifier": "4F5E9DEBX1F5DX4ECBX92DBXC5DEF1035643"
+              }
+            ]
+          }
+        ]
+      }
   }
 
 For the full specification of the **deploy** operation's response payload you may check its :ref:`JSON schema definition<api__test_suites__deploy__response>`.
@@ -814,6 +915,15 @@ produced by the test suite's validation in three arrays named ``errors``, ``warn
 and ``location``, the latter being the path of the test suite's resource (e.g. a test case file) that resulted in it being reported. A test suite's
 deployment may not be completed in case it's validation produced errors or warnings (that were not set to be ignored via the request's ``ignoreWarnings`` flag).
 
+Besides the overall status and validation summary, the response will also include the **API keys** of all data created, or affects by the test suite. These keys allow
+you to automate other operations related to this test suite through the REST API, such as :ref:`running test sessions <api__test_sessions__start>` or
+:ref:`managing conformance statements <api__conformance_statements>`. The returned API keys include:
+
+* The **identifier** of the **test suite** that was created or updated as a result of the operation.
+* The **identifiers** of **test cases** that form the latest version of the test suite.
+* The **names** and **identifiers** of the **specifications** linked to the shared test suite.
+* The **names** and **identifiers** of the test suite **actors**.
+
 The following example presents a response that produced a validation warning but was nonetheless completed:
 
 .. code-block:: json
@@ -822,9 +932,29 @@ The following example presents a response that produced a validation warning but
     "completed": true,
     "warnings": [
       {
-        "description": "[TDL-015] Actor [Actor4] is not referenced in any test cases."
+        "description": "[TDL-015] Actor [Actor2] is not referenced in any test cases."
       }
-    ]
+    ],
+    "identifiers": {
+        "testSuite": "testSuite1",
+        "testCases": [ "testCase1", "testCase2", "testCase3" ],
+        "specifications": [
+          {
+            "name": "Specification 1",
+            "identifier": "77040396X168EX40CDXBD3FX62347E1A09E6",
+            "actors": [
+              {
+                "name": "Actor 1",
+                "identifier": "28E6E6C9X80BDX40C9XB54DX102800BC32D7"
+              },
+              {
+                "name": "Actor 2",
+                "identifier": "4F5E9DEBX1F5DX4ECBX92DBXC5DEF1035643"
+              }
+            ]
+          }
+        ]
+      }
   }
 
 For the full specification of the **deployShared** operation's response payload you may check its :ref:`JSON schema definition<api__test_suites__deployShared__response>`.
