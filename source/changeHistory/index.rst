@@ -16,7 +16,7 @@ The latest test bed release is **1.23.0**.
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
 
-Release 1.23.0 - 19/06/2024
+Release 1.23.0 - 20/06/2024
 ---------------------------
 
 This release focuses mostly on test engine extensions by introducing new and improved built-in messaging capabilities for REST and SOAP web services.
