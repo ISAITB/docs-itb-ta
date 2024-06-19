@@ -130,7 +130,7 @@ displaying the system's information, presented in editable input fields.
 .. figure:: ../screenshots/systems_update.PNG
   :align: center
 
-You can proceed here to modify the **short name**, **full name**, **description**, **version**.  At the bottom you
+You can proceed here to modify the **short name**, **full name**, **description**, **version**. At the bottom you
 also see the unique **API key** for the system that can be clicked to copy it to the clipboard or refreshed to update it.
 This API key can be used in case the test bed's :ref:`REST API <api>` is enabled, or for
 `messaging in test cases <https://www.itb.ec.europa.eu/docs/tdl/latest/handlers/index.html#built-in-messaging-handlers>`_.
