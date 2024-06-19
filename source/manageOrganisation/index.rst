@@ -193,7 +193,6 @@ The keys listed include the following:
 
 * **Organisation:** The key to identify your organisation. The readonly name of the organisation is displayed alongside the key. You are also presented here
   with **reset** and **delete** controls to replace or remove the key.
-* **Conformance snapshot:** The conformance snapshots that include the organisation. Select one to view its key and update the other values.
 * **System:** The key to identify a specific system. If your organisation defines multiple systems these are presented in a dropdown list and selecting one
   will display its API key. The displayed key also provides a **reset** control to replace it.
 * **Specification:** The target specification does not itself define an API key but you need to select one to view the API keys of its related information
@@ -203,6 +202,11 @@ The keys listed include the following:
   Selecting an actor from the list displays its related API key.
 * **Test suite:** The key to identify a specific test suite. Selecting a given test suite displays its relevant API key.
 * **Test case:** The key to identify a specific test case within the selected test suite. Selecting a given test case displays its relevant API key.
+
+.. note::
+
+  The listed API keys do not include **conformance snapshots**. This is because your own administrator organisation is never included
+  in snapshots.
 
 When removing or replacing the API key of your organisation or one of its systems, you will be prompted to confirm it. If you
 proceed to do so any existing automation setups you may have would need to be updated accordingly given that the previous
