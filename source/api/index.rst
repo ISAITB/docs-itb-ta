@@ -21,7 +21,8 @@ These sets of operations are documented in the sections that follow.
 .. note::
 
   Using the test bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done
-  by setting the `AUTOMATION_API_ENABLED`_ property to true in the test bed's configuration.
+  by setting the `AUTOMATION_API_ENABLED`_ property to true in the test bed's configuration, or through the user interface 
+  via the :ref:`system configuration screen <systemAdmin__config>`.
 
 .. _api__configuration:
 
