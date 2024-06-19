@@ -8,13 +8,64 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.22.0**.
+The latest test bed release is **1.23.0**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.23.0 - 19/06/2024
+---------------------------
+
+This release focuses mostly on test engine extensions by introducing new and improved built-in messaging capabilities for REST and SOAP web services.
+In addition, several bug fixes and improvements to existing capabilities were introduced, including the possibility to use unique API keys for test
+exchanges with systems, improved logging, and better error messages for external service communication failures.
+
+Besides engine updates, the test bed's REST API was extended with new operations allowing the management of conformance statements, and enriched
+metadata reporting for existing ones. Finally, new custom theming and rich-text editing options were introduced, as well as improvements to the 
+bulk data import process to allow more fine grained control when updating matching data.
+
+**Bug fixes**
+
+* [ITB-1592] - Selection of a conformance snapshot for a community or Test Bed administrator's organisation should not be visible
+* [ITB-1594] - HttpMessaging handler blocks when receiving response with a 204 (no content) status
+* [ITB-1602] - Legal notice link not working when on the welcome page
+* [ITB-1605] - Using HttpMessaging handler to send request with no payload may result in 400 response
+* [ITB-1609] - Test execution diagram fails to update due to websocket notification buffer overflow
+* [ITB-1610] - Warnings from domain parameter updates via REST API not getting reported
+* [ITB-1615] - Links blocked when defining a custom welcome page message
+* [ITB-1622] - When no theme has been explicitly set as active the THEME environment variable should be used
+* [ITB-1623] - Unable to cancel the activation of a built-in theme once selected
+
+**New Features**
+
+* [ITB-790] - Redesign messaging handlers based on HTTP to allow simpler configuration
+* [ITB-886] - Support HTTP-based embedded messaging handlers that don't rely on port assignments
+* [ITB-1588] - Return test suite metadata following a test suite deployment via REST API
+* [ITB-1590] - Allow management of conformance statements via the Test Bed's REST API
+* [ITB-1593] - Add a new HttpMessagingV2 handler to make/receive HTTP(s) calls to/from external systems
+* [ITB-1611] - Always include in test sessions the system API key as a default value of the SYSTEM map
+* [ITB-1613] - Add a new SoapMessagingV2 handler to make/receive SOAP calls to/from external systems
+
+**Improvements**
+
+* [ITB-1585] - The organisation management screen should only bring basic information for rich content (e.g. landing pages)
+* [ITB-1591] - When the REST API is enabled display a conformance snapshot's REST API key
+* [ITB-1595] - Include status code in receive output of HttpMessaging handler
+* [ITB-1603] - Support SVG files in PDF reports
+* [ITB-1606] - Improve error reporting when an invalid external step handler URL is provided
+* [ITB-1607] - Display interact message instructions for simple texts as normal text (not bold)
+* [ITB-1608] - Allow configuration of domain parameters via REST API for communities linked to no specific domain
+* [ITB-1612] - Report deprecated step handlers as warnings when validating a test suite
+* [ITB-1614] - Consider by default INFO as the test session log level
+* [ITB-1616] - Add button colouring as part of Test Bed theming options
+* [ITB-1617] - Support table cell padding and spacing in rich text content such as landing pages and documentation
+* [ITB-1618] - Remove the obsolete X-XSS-Protection header
+* [ITB-1619] - Replace the obsolete Feature-Policy header with the new Permissions-Policy
+* [ITB-1620] - Use API keys during automated data archive import at bootstrap to match existing domains and communities
+* [ITB-1621] - Ensure the processing order of data archives during bootstrap matches the alphabetical ordering of their filenames
 
 Release 1.22.0 - 08/04/2024
 ---------------------------
