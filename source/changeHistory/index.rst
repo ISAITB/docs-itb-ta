@@ -8,13 +8,23 @@ the following information is provided:
 * The **release summary**, describing briefly the main focus of the release and its key highlights.
 * The **release details**, listing the issues addressed in each release (bug fixes, new features and improvements).
 
-The latest test bed release is **1.23.0**.
+The latest test bed release is **1.23.1**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.23.1 - 28/06/2024
+---------------------------
+
+This is a minor bug fix release to correct issues reported by users.
+
+**Bug fixes**
+
+* [ITB-1632] - Prevent wrapping of buttons in the listing of test cases
+* [ITB-1634] - Correctly determine gitb-srv messaging callback address when using the CALLBACK_ROOT_URL variable
 
 Release 1.23.0 - 20/06/2024
 ---------------------------
