@@ -345,14 +345,12 @@ In short, to follow this approach you would prepare the test bed's installation 
 to use for its initialisation. The archive and its password are provided as input to the test bed, allowing it to read and process it automatically
 upon its initial run.
 
-The test bed's overall installation is driven through `Docker`_ and specifically `docker-compose`_. Make a copy of the installation script provided
+The test bed's overall installation is driven through `Docker`_ and specifically `Docker Compose`_. Make a copy of the installation script provided
 in the test bed's `installation guide`_ and adapt it as needed to include additional services you need such as validators. What is important for the
 sandbox setup is the additional configuration to be done to the **gitb-ui** service. Specifically:
 
 .. code::
 
-    version: '2.1'
-        ...
     services:
         ...
         gitb-ui:
@@ -391,14 +389,12 @@ The manual setup approach requires an extra step by users as part of the install
 * It can be ubiquitously applied as it has no prerequisites on how `Docker containers`_ access the host file system.
 * It avoids the need of including the archive password in the installation script.
 
-The test bed's overall installation is driven through `Docker`_ and specifically `docker-compose`_. Make a copy of the installation script provided
+The test bed's overall installation is driven through `Docker`_ and specifically `Docker Compose`_. Make a copy of the installation script provided
 in the test bed's `installation guide`_ and adapt it as needed to include additional services you need such as validators. What you need to do in
 this case is configure the **gitb-ui** service to expect a data archive upon first connection:
 
 .. code::
 
-    version: '2.1'
-        ...
     services:
         ...
         gitb-ui:
@@ -438,6 +434,6 @@ reappear by refreshing the screen (assuming no login has been made in the meanti
 
 .. _installing an empty test bed: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed
 .. _installation guide: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed
-.. _docker-compose: https://docs.docker.com/compose/
+.. _Docker Compose: https://docs.docker.com/compose/
 .. _Docker containers: https://www.docker.com/
 .. _Docker: https://www.docker.com/
