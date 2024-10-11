@@ -107,11 +107,12 @@ The following menu items are available to you:
     **My conformance statements** | Takes you to your own organisation's :ref:`conformance statement overview <manage_your_conformance_statements>`.
     **My test sessions** | Takes you to your own organisation's :ref:`test history <view_your_test_history>`.
     **My organisation** | Takes you to view your own :ref:`organisation's information <manage_organisation>`.
+    **Link to current page** | Copies an external and shareable link for the current page.
     **Collapse menu** | Collapses (or expands) the menu.
 
 .. note::
 
-  Depending on your community's configuration and specifically its :ref:`custom labels <community__labels>`, you may see a different term for 
+  Depending on your community's configuration and specifically its :ref:`custom labels <community__labels>`, you may see a different term for
   the **Domain management** and **My organisation** menus.
 
 .. _navigate__breadcrumbs:

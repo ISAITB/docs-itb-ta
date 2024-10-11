@@ -4,23 +4,67 @@
   "description": "JSON schema for the tests' status operation response payload",
   "type": "object",
   "properties": {
-    "sessions": { "type": "array", "items": { "$ref": "#/definitions/sessionStatus" } }
+    "sessions": {
+      "description": "The list of status information for retrieved test sessions.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/sessionStatus"
+      }
+    }
   },
-  "required": [ "sessions" ],
+  "required": [
+    "sessions"
+  ],
   "additionalProperties": false,
   "definitions": {
     "sessionStatus": {
+      "description": "Status information for a test session.",
       "type": "object",
       "properties": {
-        "session": { "type": "string" }, 
-        "result": { "type": "string", "enum": [ "SUCCESS", "FAILURE", "UNDEFINED" ] },
-        "startTime": { "type": "string" },
-        "endTime": { "type": "string" },
-        "message": { "type": "string" },
-        "logs": { "type": "array", "items": { "type": "string" } },
-        "report": { "type": "string" }
+        "session": {
+          "description": "The session's unique identifier.",
+          "type": "string"
+        },
+        "result": {
+          "description": "The session's result.",
+          "type": "string",
+          "enum": [
+            "SUCCESS",
+            "FAILURE",
+            "UNDEFINED"
+          ]
+        },
+        "startTime": {
+          "description": "The session start time.",
+          "type": "string",
+          "format": "yyyy-MM-ddTHH:mm:ssZ"
+        },
+        "endTime": {
+          "description": "The session end time (if the session is completed).",
+          "type": "string",
+          "format": "yyyy-MM-ddTHH:mm:ssZ"
+        },
+        "message": {
+          "description": "The resulting output message of the session.",
+          "type": "string"
+        },
+        "logs": {
+          "description": "The list of log entries produced by the session.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "report": {
+          "description": "The test session's XML report.",
+          "type": "string"
+        }
       },
-      "required": [ "session", "result", "startTime" ],
+      "required": [
+        "session",
+        "result",
+        "startTime"
+      ],
       "additionalProperties": false
     }
   }

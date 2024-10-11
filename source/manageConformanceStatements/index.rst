@@ -400,49 +400,18 @@ Note that the documentation on test cases is also available to consult during th
 Configuration parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Alongside the **Conformance tests** tab you are presented with the **Configuration parameters** tab. This includes any necessary configuration at the level of the
-specific conformance statement that you are expected to provide.
+Alongside the **Conformance tests** tab you are presented with the **Configuration parameters** tab. This includes configuration for the
+specific conformance statement that you are expected to provide, as well as your organisation and selected system.
 
 .. figure:: ../screenshots/conformance_statement_details_endpoints_admin.PNG
   :align: center
 
-Configuration properties are displayed in rows where for each one the following information is presented:
+Configuration properties are displayed in panels grouping together **organisation properties**, **system properties** and **statement properties**.
+For each property you see its name, value and a tooltip with a description, including an asterisk if a value is required before executing tests.
 
-* Whether or not it is **set**.
-* Its **parameter name**, serving as its identifier. This is prefixed with an asterisk if the parameter is mandatory.
-* Its **configured value**, which in case it is a file will be presented as a download link.
-* Its **description** to help understand the parameter's purpose.
-* An **edit** icon to change or remove its value.
-
-To edit a configuration parameter click its **edit** icon on its relevant row. Doing so will open a prompt that presents the parameter's
-**name**, **description** and current **value** that is editable.
-
-.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_simple.PNG
-  :align: center
-  :scale: 80%
-
-In case of a parameter that is a file, the popup will be adapted to allow you to download the file and upload a replacement.
-
-.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_binary.PNG
-  :align: center
-  :scale: 80%
-
-A third scenario is that of a parameter being a secret value (e.g. a password). In this case you are prompted to provide the
-value in the secret value input.
-
-.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_secret.PNG
-  :align: center
-  :scale: 80%
-
-Finally, an additional scenario is when preset values are defined for the parameter. In this case you are presented with a dropdown selection
-list that includes the available options.
-
-.. figure:: ../screenshots/conformance_statement_details_endpoints_edit_dropdown.PNG
-  :align: center
-  :scale: 80%
-
-To change the parameter's value click on **Save**. Clicking on **Delete** will clear the current value, whereas **Cancel** will close the popup without
-making changes.
+How you view and edit the value of each property depends on its type, and can be either a text field, password field or file upload control.
+To update the properties' values make the desired changes and click on **Update configuration**. Doing so will save the latest values and
+validate once again whether you can proceed with executing tests.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__export:
 

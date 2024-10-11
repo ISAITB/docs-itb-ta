@@ -3,17 +3,57 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "JSON schema for the test suites' linkShared operation response payload",
   "type": "array",
-  "items": { "$ref": "#/definitions/linkResult" },
+  "items": {
+    "$ref": "#/definitions/testSuiteLinkResponseSpecification"
+  },
   "definitions": {
-    "linkResult": {
+    "testSuiteLinkResponseSpecification": {
+      "description": "The result from linking a shared test suite to a given specification.",
       "type": "object",
       "properties": {
-        "specification": { "type": "string" },
-        "linked": { "type": "boolean" },
-        "message": { "type": "string" }
+        "specification": {
+          "description": "The API key identifying the specification.",
+          "type": "string"
+        },
+        "linked": {
+          "description": "Whether or not the test suite was linked to the specification.",
+          "type": "boolean"
+        },
+        "message": {
+          "description": "A message detailing why the specification was not linked (if linking didn't take place).",
+          "type": "string"
+        },
+        "actors": {
+          "description": "The information for the actors linked to the specification.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/testSuiteUploadActorKeys"
+          }
+        }
       },
-      "required": [ "specification" ],
+      "required": [
+        "specification",
+        "linked"
+      ],
       "additionalProperties": false
-    }
+    },
+    "testSuiteUploadActorKeys": {
+      "description": "The API keys for the actors related to the test suite.",
+      "type": "object",
+      "required": [
+        "name",
+        "identifier"
+      ],
+      "properties": {
+        "name": {
+          "description": "The name of the actor.",
+          "type": "string"
+        },
+        "identifier": {
+          "description": "The API key of the actor.",
+          "type": "string"
+        }
+      }
+    }    
   }
 }

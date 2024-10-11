@@ -4,20 +4,42 @@
   "description": "JSON schema for the tests' start operation response payload",
   "type": "object",
   "properties": {
-    "createdSessions": { "type": "array", "items": { "$ref": "#/definitions/sessionInfo" } }
+    "createdSessions": {
+      "description": "Information on the created test session(s).",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/sessionCreationInformation"
+      }
+    }
   },
-  "required": [ "createdSessions" ],
+  "required": [
+    "createdSessions"
+  ],
   "additionalProperties": false,
   "definitions": {
-    "sessionInfo": {
-    "type": "object",
-    "properties": {
-      "testSuite": { "type": "string" },
-      "testCase": { "type": "string" },
-      "session": { "type": "string" }
-    },
-    "required": [ "testSuite", "testCase", "session" ],
-    "additionalProperties": false
+    "sessionCreationInformation": {
+      "description": "The metadata for a created test session.",
+      "type": "object",
+      "properties": {
+        "testSuite": {
+          "description": "The identifier of the test session's relevant test suite.",
+          "type": "string"
+        },
+        "testCase": {
+          "description": "The identifier of the test session's relevant test case.",
+          "type": "string"
+        },
+        "session": {
+          "description": "The identifier assigned to the test session.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "testSuite",
+        "testCase",
+        "session"
+      ],
+      "additionalProperties": false
     }
   }
 }

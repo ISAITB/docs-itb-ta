@@ -4,51 +4,120 @@
   "description": "JSON schema for the test suites' deploy operation response payload",
   "type": "object",
   "properties": {
-    "completed": { "type": "boolean" },
-    "errors": { "type": "array", "items": { "$ref": "#/definitions/reportItem" } },
-    "warnings": { "type": "array", "items": { "$ref": "#/definitions/reportItem" } },
-    "messages": { "type": "array", "items": { "$ref": "#/definitions/reportItem" } },
+    "completed": {
+      "description": "Whether or not the deployment was completed.",
+      "type": "boolean"
+    },
+    "errors": {
+      "description": "The list of errors resulting from the test suite's validation.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/testSuiteValidationReportItem"
+      }
+    },
+    "warnings": {
+      "description": "The list of warnings resulting from the test suite's validation.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/testSuiteValidationReportItem"
+      }
+    },
+    "messages": {
+      "description": "The list of information messages resulting from the test suite's validation.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/testSuiteValidationReportItem"
+      }
+    },
     "identifiers": {
+      "description": "The API key identifiers linked to the test suite.",
       "type": "object",
+      "required": [
+        "testSuite"
+      ],
       "properties": {
-        "testSuite": { "type": "string" },
-        "testCases": { "type": "array", "items": { "type": "string" } },
-        "specifications": { "type": "array",  "items": { "$ref": "#/definitions/specificationInfo" } }
-      },
-      "required": [ "testSuite" ],
-      "additionalProperties": false
+        "testSuite": {
+          "description": "The test suite identifier.",
+          "type": "string"
+        },
+        "testCases": {
+          "description": "The identifiers of the test suite's test cases.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "specifications": {
+          "description": "The identifiers linked to the test suite's linked specification(s).",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "identifier"
+            ],
+            "properties": {
+              "name": {
+                "description": "The specification's name.",
+                "type": "string"
+              },
+              "identifier": {
+                "description": "The specification's API key.",
+                "type": "string"
+              },
+              "actors": {
+                "description": "The information for the actors linked to the specification.",
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/testSuiteUploadActorKeys"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
-  "required": [ "completed" ],
+  "required": [
+    "completed"
+  ],
   "additionalProperties": false,
   "definitions": {
-    "reportItem": {
+    "testSuiteValidationReportItem": {
+      "description": "A test suite validation report finding.",
       "type": "object",
       "properties": {
-        "description": { "type": "string" },
-        "location": { "type": "string" }
+        "description": {
+          "description": "The finding's description.",
+          "type": "string"
+        },
+        "location": {
+          "description": "The path of the resource within the test suite that resulted in this finding.",
+          "type": "string"
+        }
       },
-      "required": [ "description" ],
+      "required": [
+        "description"
+      ],
       "additionalProperties": false
     },
-    "specificationInfo": {
+    "testSuiteUploadActorKeys": {
+      "description": "The API keys for the actors related to the test suite.",
       "type": "object",
+      "required": [
+        "name",
+        "identifier"
+      ],
       "properties": {
-        "name": { "type": "string" },
-        "identifier": { "type": "string" },
-        "actors": { "type": "array", "items": { "$ref": "#/definitions/actorInfo" } }
-      },
-      "required": [ "name", "identifier" ],
-      "additionalProperties": false
-    },
-    "actorInfo": {
-      "type": "object",
-      "properties": {
-        "name": { "type": "string" },
-        "identifier": { "type": "string" }
-      },
-      "required": [ "name", "identifier" ],
-      "additionalProperties": false
+        "name": {
+          "description": "The name of the actor.",
+          "type": "string"
+        },
+        "identifier": {
+          "description": "The API key of the actor.",
+          "type": "string"
+        }
+      }
     }
   }
 }

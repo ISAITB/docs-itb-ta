@@ -4,9 +4,18 @@
   "description": "JSON schema for the test suites' undeploy operation request payload",
   "type": "object",
   "properties": {
-    "specification": { "type": "string" },
-    "testSuite": { "type": "string" }
+    "specification": {
+      "description": "The API key value to uniquely identify the specification from which the test suite will be undeployed from.",
+      "type": "string"
+    },
+    "testSuite": {
+      "description": "The identifier of the test suite that will be undeployed.",
+      "type": "string"
+    }
   },
-  "required": [ "specification", "testSuite" ],
+  "required": [
+    "specification",
+    "testSuite"
+  ],
   "additionalProperties": false
 }

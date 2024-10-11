@@ -4,19 +4,40 @@
   "description": "JSON schema for the test suites' linkShared operation request payload",
   "type": "object",
   "properties": {
-    "testSuite": { "type": "string" },
-    "specifications": { "type": "array", "items": { "$ref": "#/definitions/targetSpecification" } }
+    "testSuite": {
+      "description": "The identifier of the shared test suite.",
+      "type": "string"
+    },
+    "specifications": {
+      "description": "The list of specifications to link the test suite to.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/testSuiteLinkRequestSpecification"
+      }
+    }
   },
-  "required": [ "testSuite", "specifications" ],
+  "required": [
+    "testSuite",
+    "specifications"
+  ],
   "additionalProperties": false,
   "definitions": {
-    "targetSpecification": {
+    "testSuiteLinkRequestSpecification": {
+      "description": "Information on how to link a shared test suite to a given specification.",
       "type": "object",
       "properties": {
-        "specification": { "type": "string" },
-        "update": { "type": "boolean" }
+        "specification": {
+          "description": "The API key identifying the specification to link the test suite to.",
+          "type": "string"
+        },
+        "update": {
+          "description": "Whether or not to update the specification's actor metadata based on the test suite.",
+          "type": "boolean"
+        }
       },
-      "required": [ "specification" ],
+      "required": [
+        "specification"
+      ],
       "additionalProperties": false
     }
   }

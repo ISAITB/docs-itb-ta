@@ -1,0 +1,42 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/createCommunity_request",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the createCommunity operation request payload",
+  "type": "object",
+  "properties": {
+    "shortName": {
+      "description": "The community's short name.",
+      "type": "string"
+    },
+    "fullName": {
+      "description": "The community's full name.",
+      "type": "string"
+    },
+    "description": {
+      "description": "The community's description.",
+      "type": "string"
+    },
+    "supportEmail": {
+      "description": "A support email address to receive community-specific notifications at.",
+      "type": "string"
+    },
+    "interactionNotifications": {
+      "description": "Whether to receive notifications for pending interactions by email at the support mailbox (see supportEmail).",
+      "type": "boolean",
+      "default": false
+    },
+    "apiKey": {
+      "description": "The API key to set for the community. If this key is already assigned, a new one will be generated.",
+      "type": "string"
+    },
+    "domain": {
+      "description": "The API key identifying a domain that should be linked to the community.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "shortName",
+    "fullName"
+  ],
+  "additionalProperties": false
+}

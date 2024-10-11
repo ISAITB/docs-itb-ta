@@ -4,10 +4,26 @@
   "description": "JSON schema for the tests' status operation request payload",
   "type": "object",
   "properties": {
-    "session": { "type": "array", "items": { "type": "string" } },
-    "withLogs": { "type": "boolean" },
-    "withReports": { "type": "boolean" }
+    "session": {
+      "description": "The session identifier(s) to look up.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "withLogs": {
+      "description": "Whether or not the log output for each session should be returned.",
+      "type": "boolean",
+      "default": false
+    },
+    "withReports": {
+      "description": "Whether or not the XML test case report should be returned.",
+      "type": "boolean",
+      "default": false
+    }
   },
-  "required": [ "session" ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "required": [
+    "session"
+  ]
 }
