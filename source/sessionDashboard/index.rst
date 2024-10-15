@@ -155,7 +155,7 @@ View test session details
 Each row from the lists of presented test sessions may also be clicked to view its details. Doing so expands the row to present
 a diagram that is identical to the one presented during the live test execution (see :ref:`execute_tests_interactive`).
 
-.. figure:: ../screenshots/test_history_test_result.PNG
+.. figure:: ../screenshots/admin_session_dashboard_test_result.png
   :align: center
 
 Once one or more test session rows have been expanded the relevant table's header will also include a **Collapse all** button that can be clicked
@@ -168,7 +168,8 @@ collapse (or expand) the diagram, which could be useful if you want to quickly v
 Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
-* **Copy link** copies a shareable link for the current session that can be used to directly navigate to its detailed display.
+* **Copy link** copies a shareable link for the current session that can be used to directly navigate to its detailed display. You also have an option
+  termed **Copy link for organisation** that will generate a shareable link to the test session in the relevant organisation's session history, for use by the organisation's users.
 * **View statement** takes you to the relevant :ref:`conformance statement's details <manage_your_conformance_statements__view_a_conformance_statements_details>`.
 * **View system** takes you to the relevant :ref:`system <community__manage_organisation__systems_edit>`, :ref:`organisation <community__manage_organisation>` or :ref:`community<community_testbed_communities__manage>` details.
 * **View specification** takes you to the relevant :ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>` or :ref:`actor <domains__actor>`.
@@ -177,7 +178,7 @@ Above the diagram display you are presented with additional buttons linked to th
 In the case of an active test session you are also provided with a button to **refresh** its display and **view pending interactions**
 (in case interactions are pending).
 
-.. figure:: ../screenshots/test_history_active_session_controls.png
+.. figure:: ../screenshots/admin_session_dashboard_active_session_controls.png
   :align: center
 
 **Refreshing** the display allows you to track the progress of a specific test session without needing to make a full refresh of the displayed results.
