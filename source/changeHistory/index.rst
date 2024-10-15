@@ -66,6 +66,7 @@ new options are available for HTTP exchanges, management of collections, and ver
   ITB-1682 | :ui:`UI` | Prevent updating the role of the configured demo user
   ITB-1695 | :ui:`UI` | Images defined as base64 strings can't be rendered in interaction popups even when setting an image mime type
   ITB-1696 | :ui:`UI` | Interaction steps with large content may fail to be persisted for later viewing
+  ITB-1698 | :ui:`UI` | Dash character (-) not counted towards non-character password symbols
 
 **New Features**
 
@@ -124,6 +125,7 @@ new options are available for HTTP exchanges, management of collections, and ver
   ITB-1689 | :ui:`UI` | Show busy indicators for all forms that have not finished loading
   ITB-1690 | :ui:`UI` | Use searchable multiple selection filter for specifications when uploading a test suite
   ITB-1693 | :tdl:`TESTS` | Allow scriptlet parameters to be marked as optional
+  ITB-1697 | :ui:`UI` | Allow administrators of communities not linked to a specific domain to manage any domain
 
 Release 1.23.1 - 28/06/2024
 ---------------------------
