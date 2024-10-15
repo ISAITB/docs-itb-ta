@@ -43,7 +43,7 @@ All community management operations use API keys to authorise calls and determin
 on the operation:
 
 * The key identifying a **community**, for all operations that a community administrator can do through the user interface.
-* The **master API key**, for selected top-level operations that are normally reserved for the overall test bed administrator.
+* The :ref:`master API key <systemAdmin__config__restApi>`, for selected top-level operations that are normally reserved for the overall test bed administrator.
 
 The sections that follow provide instructions and examples for each operation.
 
@@ -53,7 +53,7 @@ createCommunity
 ~~~~~~~~~~~~~~~
 
 The **createCommunity** operation is used to create a new community. To use it make an HTTP ``PUT`` to path ``/api/rest/community``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **master API key**.
+and include in your request an HTTP header named ``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 In the request's body you specify the information of the new community, of which the ``shortName`` and ``fullName`` are mandatory. Other information you
 would typically be providing, although not mandatory, would be the community's ``description`` and the ``domain`` it relates to, the latter identified through
@@ -134,7 +134,7 @@ HTTP header named ``ITB_API_KEY`` to your **community API key**.
 The second variant allows you to perform tasks reserved for the test bed administrator. This means that you can select any existing community in the
 test bed, and also change or remove its assigned domain. In this case you call the operation by making an HTTP ``POST`` to path
 ``/api/rest/community/{community}``, setting ``{community}`` to the target community's API key. The ``ITB_API_KEY`` HTTP header needs to be set
-with the **master API key**.
+with the :ref:`master API key <systemAdmin__config__restApi>`.
 
 When calling this operation, regardless of the specific variant, all input properties are optional. You specify the properties that you want to
 update, and for the ones that are to be left unchanged you don't include them. In case you want to remove a value, for example unlinking the
@@ -176,7 +176,7 @@ deleteCommunity
 
 The **deleteCommunity** operation is used to delete an existing community. To use it make an HTTP ``DELETE`` to path ``/api/rest/community/{community}``,
 setting ``{community}`` to the target community's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to your **master API key**.
+``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 This operation takes no payload when making a request. If the target community has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
@@ -1090,7 +1090,7 @@ All domain management operations use API keys to authorise calls and determine t
 on the operation:
 
 * The key identifying a **community**, for all operations that a community administrator can do through the user interface.
-* The **master API key**, for selected top-level operations that are normally reserved for the overall test bed administrator.
+* The :ref:`master API key <systemAdmin__config__restApi>`, for selected top-level operations that are normally reserved for the overall test bed administrator.
 
 The sections that follow provide instructions and examples for each operation.
 
@@ -1100,7 +1100,7 @@ createDomain
 ~~~~~~~~~~~~
 
 The **createDomain** operation is used to create a new domain. To use it make an HTTP ``PUT`` to path ``/api/rest/domain``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **master API key**.
+and include in your request an HTTP header named ``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 In the request's body you specify the information of the new domain, of which the ``shortName`` and ``fullName`` are mandatory. Other information you
 could provide, although not mandatory, would be the domain's ``description`` and custom ``reportMetadata`` for XML reports.
@@ -1174,7 +1174,7 @@ path ``/api/rest/domain`` and setting an HTTP header named ``ITB_API_KEY`` to yo
 The second variant allows you to perform tasks reserved for the test bed administrator. This means that you can manage any domain within the
 test bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path
 ``/api/rest/domain/{domain}``, setting ``{domain}`` to the target domain's API key. The ``ITB_API_KEY`` HTTP header needs to be set
-with the **master API key**.
+with the :ref:`master API key <systemAdmin__config__restApi>`.
 
 When calling this operation, regardless of the specific variant, all input properties are optional. You specify the properties that you want to
 update, and for the ones that are to be left unchanged you don't include them. In case you want to remove a value you would specify the property
@@ -1216,7 +1216,7 @@ deleteDomain
 
 The **deleteDomain** operation is used to delete an existing domain. To use it make an HTTP ``DELETE`` to path ``/api/rest/domain/{domain}``,
 setting ``{domain}`` to the target domain's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to your **master API key**.
+``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 This operation takes no payload when making a request. If the target domain has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.

@@ -39,7 +39,8 @@ The information you are expected to provide is:
 
 * The **short name** for the community (required), used in list displays.
 * Its **full name** (required), used in detail screens and reports.
-* The **domain** it will be linked with (optional) defining the conformance statements its members can create.
+* The **domain** it will be linked with (optional) defining the conformance statements its members can create. Having selected a domains
+  you may also click on the **View** button to see its details.
 * A **support email** address (optional), used to deliver feedback provided by the community's users.
 * The preference on allowing **self-registration** for the community.
 * The **user permissions** to apply for the community's organisation users.
@@ -84,7 +85,8 @@ The **Community details** section allows you to view and edit the community's ba
 The information you can edit in this form is:
 
 * The community's **short** and **full name** (required). These are visible to the test bed administrator and in certain user reports.
-* The community's linked **domain** (optional), granting full access to it to community administrators.
+* The community's linked **domain** (optional), granting full access to it to community administrators. With a domain selected you 
+  may also click the **View** button to view its details.
 * The community's **support email** address (optional) to receive contact form submissions.
 * The preference on allowing **self-registration** for the community.
 * The **user permissions** you foresee for the community's members (initially collapsed).

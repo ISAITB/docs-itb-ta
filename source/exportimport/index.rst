@@ -52,9 +52,11 @@ The first choice you need to make is the type of data you will be exporting. Thi
 * **Domain configuration:** Select this to export only the information linked to a domain (e.g. specifications, test suites).
 * **Community configuration:** Select this to export the full information linked to a community (e.g. custom properties, organisations) as well as its linked domain, optionally also including system settings.
 * **System settings:** Select this to export the system settings associated to the current Test Bed instance.
+* **Deletions:** Select this to delete top-level information, specifically domains and communities, in a target test bed instance.
 
-The second option can be viewed as a superset of the first one in that the community data can also include all information on the domain. It is important however to 
-provide the distinction given that you may want to only export your testing configuration without any information linked to a community.
+The **community configuration** option can be viewed as a superset of the **domain configuration** and **system settings**, in that the community data
+can also include domain information and settings. It is important however to provide the distinction given that you may want to only export your testing
+configuration or system settings without any information linked to a community.
 
 Selecting **Domain configuration** expands the form to provide information on the exported data. Doing so displays the list of available domains
 that will be exported as well as additional configuration options.
@@ -67,20 +69,27 @@ If you select **Community configuration** the form is similarly expanded to disp
 .. figure:: ../screenshots/admin_export_community_ta.png
   :align: center
 
-Finally, if you select **System settings** the form expands to present the export options.
+In the case of **System settings** the form expands to present the export options.
 
 .. figure:: ../screenshots/admin_export_system_settings.png
   :align: center
 
-Regardless of your choice, the information you need to provide is as follows:
+Finally, when selecting **Deletions** the form allows to select the domains and communities to be deleted upon import.
 
-* The **domain** or **community** (depending on the export type) that you want to export (if applicable).
-* An **export password** that will be used to encrypt the export archive as well as any sensitive information that the archive would internally include. This password
-  will need to be provided when you :ref:`import the archive<exportimport__import_step1>` or if you manually open it.
-* The information to **include** in the archive presented as a table of available choices.
+.. figure:: ../screenshots/admin_export_deletions.png
+  :align: center
 
-By default a domain export includes the basic information of the domain (its **short name**, **full name** and **description**) but you would typically further extend this
-to include the information you need. The available types of information are presented in the **Domain data** row and can be:
+In both cases you can select multiple domains and communities, looking them up from the test bed's current data. On top of these you may also
+use the **Add more API keys for deletion** options, to directly add one or more API key values that will be used to match communities and domains
+in the target instance. Based on the selected and directly inputted values, the resulting API keys will be used upon import to match the domains
+and communities to delete.
+
+To complete your export you need to also provide an **export password** to encrypt the export archive as well as any contained sensitive information.
+This password will need to be provided when you :ref:`import the archive<exportimport__import_step1>` or if you manually open it.
+
+In the case of all export types except deletions, you are also presented with a table listing the information to **include** in the archive.
+By default a **domain export** includes the basic information of the domain (its **short name**, **full name** and **description**) but you would typically
+further extend this to include the information you need. The available types of information are presented in the **Domain data** row and can be:
 
 * The domain's :ref:`parameters<domains__domain__parameter_list>`.
 * The domain's :ref:`specifications<domains__specification>`.
@@ -89,7 +98,7 @@ to include the information you need. The available types of information are pres
 * Each specification's :ref:`test suites<domains__specification__test_suite_list>`.
 * Each actor's :ref:`configuration parameters<domains__actor>`.
 
-A community export includes in addition to **domain data** the **community data** and **organisation data**. By default it includes its basic information (**short name**,
+A **community export** includes in addition to **domain data** the **community data** and **organisation data**. By default it includes its basic information (**short name**,
 **full name**, **notification options**, **self-registration settings** and **user permissions**) but can similarly be extended. In addition, you can also include the
 **system settings** for the current Test Bed instance. From the **Community data** row you may include the
 following types of information that form part of the configuration of the community itself:
@@ -123,7 +132,7 @@ The system settings listed above are also the set of options available when havi
   System settings are optionally included in community exports to allow generating a single data archive for a new Test Bed instance.
   If imported by a community administrator in another Test Bed instance these settings will be ignored.
 
-Selecting one of these options will ensures also that any prerequisites are also included. For example an export including test suites will also automatically include the
+Selecting one of these options will ensure also that any prerequisites are also included. For example an export including test suites will also automatically include the
 domain's specifications and actors, checking these options automatically as mandatory. You may also check the **All** option from each table row to include all its 
 relevant information or the **All** button from the table's header to include everything. Clicking on **None** in the table's header will uncheck all options.
 
@@ -166,6 +175,7 @@ of import you want to carry out. You have two choices:
 * **Domain configuration:** Select this to import domain information (e.g. specifications, test suites).
 * **Community configuration:** Select this to import community information (e.g. custom properties, organisations) as well as its linked domain. If included in the archive, system settings will also be imported.
 * **System settings:** Select this to import the configuration settings for the Test Bed instance.
+* **Deletions:** Select this to import definitions of domains and communities to be deleted.
 
 Choosing the type of import to carry out is important given that the data archive you want to import from may include additional information
 you would want to skip. A good example is when you have an archive containing a full community export but you want to import
@@ -176,10 +186,14 @@ Selecting one of these options expands the screen to present additional informat
 .. figure:: ../screenshots/admin_import_community_ta.png
   :align: center
 
-Depending on the type of data you chose to import, you see the available **domains** or **communities** presented as the **target** for the import (unless importing only system settings).
-Following this you are prompted to provide the **data archive** to use as well as the **password** that was set during the export to
-encrypt it. Finally you are presented with a set of **default import actions** that will determine how data is to be processed.
-These options are specifically:
+In case you are importing **domain** or **community** configuration you see the available domains or communities presented as the **target** for the import.
+You also have the option of not selecting a target but rather importing the data as a **new** domain or community. If this option is selected you can also
+choose to **replace the name** of the imported domain or community (providing its short and full variants). Doing so could be interesting if you are
+experimenting with multiple data copies and want to be able to easily tell one from another.
+
+In all import cases you are also prompted to provide the **data archive** to use as well as the **password** that was set during the export to
+encrypt it. Finally, in all cases except **deletions**, you are presented with a set of **default import actions** that will determine how data
+is to be processed. These options are specifically:
 
 * **Create new data found in the archive:** This will flag for creation all data that exists only in the archive and not the 
   target test bed instance.
@@ -211,8 +225,8 @@ Step 2: Review and complete the import
 In this screen you see the detailed actions that will be carried out as a result of the import. Actions are displayed under three main categories -
 **Domains**, **Communities** and **System settings** - that are displayed as follows:
 
-* The **Domains** group is displayed if you are importing a domain or a community that is linked to a domain.
-* The **Communities** group is displayed if you are importing a community.
+* The **Domains** group is displayed if you are importing a domain, a community linked to a domain, or a domain deletion.
+* The **Communities** group is displayed if you are importing a community or a community deletion.
 * The **System settings** group is displayed if you are importing a community with included system settings, or only system settings.
 
 Next to each group you also see the count of its items which at the top level will always be 1.

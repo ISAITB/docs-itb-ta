@@ -64,6 +64,24 @@ environment variables (if applicable) if you prefer to have these configured `vi
 Updating each setting is done individually through its relevant controls. All such controls include a **Save** button that you may
 click to persist your choice. Note that the overall settings panel can also be **collapsed** and **expanded** by clicking on its header.
 
+.. _systemAdmin__config__restApi:
+
+REST API configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+One configuration option of note is the **REST API**, which determines whether or not the test bed's :ref:`REST API <api>` will be enabled.
+
+.. figure:: ../screenshots/system_configuration_rest_api.png
+  :align: center
+
+Besides enabling or disabling the REST API, this section also allows you to manage the test bed's **Master API key**. This is used for
+authorisation purposes in certain REST operations that require test bed administrator privileges, such as :ref:`creating a new community <community_testbed_communities__create>`.
+
+Regarding the value of the Master API key, this is randomly assigned to the test bed upon initial startup, thus ensuring that two instances will
+never inadvertently share the same value. In case you need to foresee a predetermined value for this, for example if you automate an instance's
+initial configuration via REST API calls, you may set its value by providing the ``AUTOMATION_API_MASTER_KEY`` environment variable to the gitb-ui
+application.
+
 .. _systemAdmin__admins:
 
 Manage system administrators
