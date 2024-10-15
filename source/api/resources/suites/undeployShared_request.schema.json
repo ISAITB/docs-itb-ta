@@ -4,8 +4,13 @@
   "description": "JSON schema for the test suites' undeployShared operation request payload",
   "type": "object",
   "properties": {
-    "testSuite": { "type": "string" }
+    "testSuite": {
+      "description": "The identifier of the test suite that will be undeployed.",
+      "type": "string"
+    }
   },
-  "required": [ "testSuite" ],
+  "required": [
+    "testSuite"
+  ],
   "additionalProperties": false
 }

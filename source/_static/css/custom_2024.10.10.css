@@ -1,0 +1,51 @@
+table > thead > tr > th > p,
+table > tbody > tr > th > p {
+    margin-bottom: 0px;
+}
+
+.rst-content figure.align-center {
+    margin-bottom: 24px;
+}
+
+.rst-content figure.align-center.no-bottom-margin {
+    margin-bottom: auto;
+}
+
+.changelog-table, .changelog-legend {
+    width: 100%;
+}
+
+.changelog-legend .tdl, .changelog-table .tdl {
+    border-radius: 5px;
+    background-color: #298672;
+    color: white;
+    font-size: .7rem;
+    padding: 3px;
+    font-weight: bold;    
+}
+
+.changelog-legend .ui, .changelog-table .ui {
+    border-radius: 5px;
+    background-color: #2767d9;
+    color: white;
+    font-size: .7rem;
+    padding: 3px;
+    font-weight: bold;    
+}
+
+.changelog-legend .other, .changelog-table .other {
+    border-radius: 5px;
+    background-color: #393939;
+    color: white;
+    font-size: .7rem;
+    padding: 3px;
+    font-weight: bold;    
+}
+
+.changelog-legend td:nth-of-type(1) {
+    text-align: center;
+}
+
+.changelog-table td:nth-of-type(2) {
+    text-align: center;
+}

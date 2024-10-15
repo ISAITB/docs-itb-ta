@@ -1,0 +1,24 @@
+{
+    "$id": "https://www.itb.ec.europa.eu/api/updateSystem_request",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "JSON schema for the updateSystem operation request payload",
+    "properties": {
+        "shortName": {
+            "description": "The system's short name. Skip this if no update should be made.",
+            "type": "string"
+        },
+        "fullName": {
+            "description": "The system's full name. Skip this if no update should be made.",
+            "type": "string"
+        },
+        "description": {
+            "description": "The system's description. Skip this if no update should be made or provide as an empty string to remove the current value.",
+            "type": "string"
+        },
+        "version": {
+            "description": "The system's version information. Skip this if no update should be made or provide as an empty string to remove the current value.",
+            "type": "string"
+        }
+    },
+    "additionalProperties": false
+}

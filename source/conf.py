@@ -24,9 +24,9 @@ copyright = '2024, European Commission, DIGIT'
 author = 'European Commission, DIGIT'
 
 # The short X.Y version
-version = 'ITB version 1.23.1'
+version = 'ITB version 1.24.0'
 # The full version, including alpha/beta/rc tags
-release = 'ITB version 1.23.1'
+release = 'ITB version 1.24.0'
 
 html_show_sourcelink = False
 html_show_sphinx = False
@@ -90,7 +90,7 @@ pygments_style = 'sphinx'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = ['css/custom_2024.01.29.css']
+html_css_files = ['css/custom_2024.10.10.css']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

@@ -29,6 +29,19 @@ specific test case or a complete test suite and choose whether the test sessions
 in the background or in interactive mode (the default). Furthermore, for background test sessions you may choose whether these will be executed
 in parallel or sequentially.
 
+Regardless of how test sessions are to be launched, if required configuration is missing you will presented with a popup listing the missing information,
+split per type:
+
+* **Organisation properties:** Properties at the level of the whole organisation.
+* **System properties:** Properties at the level of the system being tested.
+* **Conformance statement parameters:** Configuration parameters linked to the specific conformance statement.
+
+.. figure:: ../screenshots/test_execution_config_background.PNG
+  :align: center
+
+In each case you see the **name** and **description** of the missing property. Clicking **Close** will close the popup, whereas clicking
+**View missing configuration** will take you to the **Configuration parameters** tab.
+
 .. _execute_tests_background:
 
 Background execution
@@ -40,31 +53,8 @@ Launching tests in the background is done by selecting one of the **background e
 .. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
   :align: center
 
-With this set you click the **Play** button to launch a full test suite, a specific test case, or a currently filtered set of test cases. Before doing
-so the test bed will verify that all required configuration properties are defined, and will display a popup notification for those that are missing.
-
-.. figure:: ../screenshots/test_execution_config_background.PNG
-  :align: center
-
-The missing information is presented to you in sections depending on its type:
-
-* **Organisation properties:** Properties at the level of the whole organisation.
-* **System properties:** Properties at the level of the system being tested.
-* **Conformance statement parameters:** Configuration parameters linked to the specific conformance statement.
-
-In each case you are presented with the following information:
-
-* The name of the **property** or **parameter** (marked with an asterisk if mandatory).
-* The information's **description**.
-
-From this point you have the following options:
-
-* Click the **Close** button in the bottom right corner to return to the 
-  :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
-* Click one of the **View** buttons on top right corners of the presented tables to access the configuration in question.
-
-Once all required information is correctly defined you can proceed to execute your test(s). Doing so will launch the test
-sessions in the background presenting a brief visual confirmation in the top right area of the screen.
+With this set you click the **Play** button to launch a full test suite, a specific test case, or a currently filtered set of test cases. Doing so will
+launch the test sessions in the background presenting a brief visual confirmation in the top right area of the screen.
 
 .. figure:: ../screenshots/test_execution_background.PNG
   :align: center
@@ -81,30 +71,8 @@ Launching tests interactively is the default option and is enabled by setting th
 .. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
   :align: center
 
-The first step when launching one or more test sessions is to verify the completeness of :ref:`your configuration<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
-If you are expected to enter required information that is missing you will be presented with a screen listing the **missing properties**.
-
-.. figure:: ../screenshots/test_execution_config.PNG
-  :align: center
-
-This screen includes separate sections for the different types of configuration you are missing. Specifically:
-
-* **Missing organisation properties:** Properties at the level of the whole organisation.
-* **Missing system properties:** Properties at the level of the system being tested.
-* **Missing conformance statement parameters:** Configuration parameters linked to the specific conformance statement.
-
-In each case you are presented with the following information:
-
-* The name of the **property** or **parameter** (marked with an asterisk if mandatory).
-* The property's **description**.
-
-From this point you have the following options:
-
-* Click the **Go to conformance statement** button to return to the :ref:`conformance statement detail screen<manage_your_conformance_statements__view_a_conformance_statements_details>`.
-* Click one of the **View** buttons on the top right corners of the presented tables to review the configuration in question.
-
-Once all required information is correctly defined you can proceed to execute your test(s). In this case, or in case no configuration was missing to
-begin with, the display presents the list of test cases you have selected for execution:
+With this set you click the **Play** button to launch a full test suite, a specific test case, or a currently filtered set of test cases. Doing so
+will display the list of test cases you have selected for execution:
 
 .. figure:: ../screenshots/test_execution_test_cases.png
   :align: center

@@ -1,0 +1,25 @@
+{
+    "$id": "https://www.itb.ec.europa.eu/api/createOrganisation_request",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "JSON schema for the createOrganisation operation request payload",
+    "type": "object",
+    "properties": {
+        "shortName": {
+            "description": "The organisation's short name.",
+            "type": "string"
+        },
+        "fullName": {
+            "description": "The organisation's full name.",
+            "type": "string"
+        },
+        "apiKey": {
+            "description": "The API key to set for the organisation. If this key is already assigned, a new one will be generated.",
+            "type": "string"
+        }
+    },
+    "required": [
+        "shortName",
+        "fullName"
+    ],
+    "additionalProperties": false
+  }

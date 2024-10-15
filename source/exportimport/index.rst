@@ -3,7 +3,7 @@
 Export and import your data
 ===========================
 
-A key part of your administration tasks is the configuration of :ref:`domains<domains>` and :ref:`user communities<community>` to 
+A key part of your administration tasks is the configuration of :ref:`domains<domains>` and :ref:`user communities<community>` to
 define your conformance testing setup and customise the experience of your users. This configuration involves significant data entry
 and upload of files (most importantly test suites) that can be time-consuming if needed to be replicated. Replicating this setup is 
 nonetheless something that often needs to be done, typically as part of the following scenarios:
@@ -87,11 +87,11 @@ to include the information you need. The available types of information are pres
 * The domain's :ref:`shared test suites<domains__domain__shared_test_suites>`.
 * Each specification's :ref:`actors<domains__actor>`.
 * Each specification's :ref:`test suites<domains__specification__test_suite_list>`.
-* Each actor's :ref:`endpoints<domains__endpoint>` (including the :ref:`parameters<domains__endpoint__parameter_list>` they define).
+* Each actor's :ref:`configuration parameters<domains__actor>`.
 
 A community export includes in addition to **domain data** the **community data** and **organisation data**. By default it includes its basic information (**short name**,
 **full name**, **notification options**, **self-registration settings** and **user permissions**) but can similarly be extended. In addition, you can also include the
-**system settings** for the current Test Bed instance. From the **Community data** row you may include the 
+**system settings** for the current Test Bed instance. From the **Community data** row you may include the
 following types of information that form part of the configuration of the community itself:
 
 * The :ref:`administrator accounts<community__administrators>` (if the Test Bed instance is not integrated with EU Login).
@@ -145,7 +145,7 @@ Once you are satisfied with the export settings click the **Export** button to p
 Import data
 -----------
 
-You export data by means of the **Data import** screen, that you access by clicking the corresponding link from the menu.
+You import data by means of the **Data import** screen, that you access by clicking the corresponding link from the menu.
 
 .. figure:: ../screenshots/admin_import.png
   :align: center
@@ -187,10 +187,10 @@ These options are specifically:
   is no match within the data archive.
 * **Update matched data:** This will flag for update all data that exists both in the data archive and the target test bed instance.
 
-These options assume a matching between data that exists within the archive and the target test bed instance. This matching is based on
+These options refer to the matching between data that exists within the archive and the target test bed instance. This matching is based on
 information such as names (e.g. a specification's short name) which should be sufficient to identify it although not always guaranteed
 to be unique. For example, a specification's actors always have a unique identifier, whereas there can be no guarantee on the name of an
-organisation. Although duplicate information is not typical, administrators are advised to always :ref:`review<exportimport__import_step2>` 
+organisation. Although duplicate information is not typical, administrators are advised to always :ref:`review<exportimport__import_step2>`
 the processing actions that will result from an import.
 
 Finally, it is important to highlight that the options set as **default import actions** only affect how data is flagged to be processed.

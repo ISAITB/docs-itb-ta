@@ -168,6 +168,7 @@ collapse (or expand) the diagram, which could be useful if you want to quickly v
 Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
+* **Copy link** copies a shareable link for the current session that can be used to directly navigate to its detailed display.
 * **View statement** takes you to the relevant :ref:`conformance statement's details <manage_your_conformance_statements__view_a_conformance_statements_details>`.
 * **View system** takes you to the relevant :ref:`system <community__manage_organisation__systems_edit>`, :ref:`organisation <community__manage_organisation>` or :ref:`community<community_testbed_communities__manage>` details.
 * **View specification** takes you to the relevant :ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>` or :ref:`actor <domains__actor>`.

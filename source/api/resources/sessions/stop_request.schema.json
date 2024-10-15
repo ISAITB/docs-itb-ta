@@ -4,8 +4,17 @@
   "description": "JSON schema for the tests' stop operation request payload",
   "type": "object",
   "properties": {
-    "session": { "type": "array", "items": { "type": "string" } }
+    "session": {
+      "description": "The identifier(s) of the test session(s) to stop.",
+      "type": "array",
+      "items": {
+        "description": "Test session identifier.",
+        "type": "string"
+      }
+    }
   },
-  "required": [ "session" ],
+  "required": [
+    "session"
+  ],
   "additionalProperties": false
 }
