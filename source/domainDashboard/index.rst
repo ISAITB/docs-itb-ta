@@ -33,6 +33,8 @@ The following information is presented in corresponding form controls:
 * The domain's **short name** (required), displayed in lists.
 * Its **full name** (required), displayed in detail screens and reports.
 * Its **description** (optional), displayed in details screens and reports.
+* Its **report metadata** (optional), included in XML reports.
+* The domain's **API key**, used to refer to it through the :ref:`REST API <api>` and in :ref:`data exports <exportimport>`.
 
 To edit the domain's information, enter the new values you require and click the **Save changes** button.
 
@@ -82,6 +84,7 @@ The information to provide for the specification is:
 * The specification's **short name** (required), displayed in list views.
 * Its **full name** (required), displayed in detail screens and reports.
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
+* Custom **report metadata** that is included in XML reports.
 * Whether or not the specification is to be considered as **hidden** (by default set to false).
 * In case :ref:`specification groups<domains__domain_specification_groups>` are defined in the domain, these will also be presented
   as a dropdown selection at the top. In case the specification is being created as an option to add to a group, the group in question
@@ -151,8 +154,8 @@ To define a specification group expand the **Create specification** options and 
 .. figure:: ../screenshots/admin_domains_domain_specifications_header.PNG
   :align: center
 
-Doing so will present you with the form to provide the group's information, notably its **short name**, **full name** and 
-**description** (optional).
+Doing so will present you with the form to provide the group's information, notably its **short name**, **full name**, 
+**description** (optional), and custom XML **report metadata** (optional).
 
 .. figure:: ../screenshots/admin_domains_domain_specification_groups_create.png
   :align: center
@@ -167,7 +170,7 @@ row presents options to **edit** it and :ref:`add within it a new option<domains
 a group (a group option), as well as non-grouped specifications presents controls to **ungroup** it (for options), **copy** it to a group, 
 and **move** it to a group. Specifically regarding copying to a group, this is meant to simplify the definition of similar options by cloning
 the selected option's :ref:`details<domains__specification>`, :ref:`actors<domains__specification__actor_list>`, 
-:ref:`endpoints<domains__actor__endpoint_list>` and :ref:`parameters<domains__endpoint__parameter_list>`. Test suites however are **not copied**.
+and parameters. Test suites however are **not copied**.
 
 Selecting to **edit** a specification group takes you to its detail page where you are presented with its information. 
 
@@ -446,6 +449,7 @@ The following information is presented in corresponding form controls:
 * The specification's **short name** (required), displayed in list views.
 * Its **full name** (required), displayed in detail screens and reports.
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
+* Custom **report metadata** included in XML reports.
 * Whether or not the specification is to be considered as **hidden** (by default set to false).
 * The specification's **REST API key** that is used to identify the specification when managing test suites via the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled by the test bed administrator).
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
@@ -525,7 +529,7 @@ select the test suite archive.
   :align: center
 
 Note that in case you are :ref:`uploading a test suite for multiple specifications<domains__domain_deploy_test_suite>` from the :ref:`domain details page<domains__domain_details>`, 
-this screen presents the domain's specifications as a multiple selection list (use Control and left-click to select entries).
+this screen presents the domain's specifications as a multiple selection list.
 
 .. figure:: ../screenshots/admin_domains_specification_test_suite_upload_multiple.PNG
   :align: center
@@ -658,6 +662,7 @@ The information to provide for the actor is:
 * The actor's **ID** (required), displayed in list views and used to reference the actor within test suites.
 * Its **name** (required), displayed in detail screens and reports, as well as in the test execution screen (unless overridden at test case level).
 * A **description** to provide more context on the actor's purpose (optional), displayed in detail screens and reports.
+* Custom **report metadata** to include in XML reports.
 * The actor's **display order** (optional), used to determine where the actor should be displayed in the test execution diagram (see :ref:`execute_tests`).
   If provided this should be an integer that will be compared to the other specification actors' display order to determine the presentation order. An actor
   with a configured value will be displayed before actors with a larger value or ones that have no value configured.
@@ -960,7 +965,7 @@ of the :ref:`specification details page<domains__specification>`.
 Doing so will take you to the actor details screen. This is split in two sections:
 
 * The **Actor details** section, presenting the actor's information.
-* The **Endpoints** section, listing the :ref:`endpoints configured for this actor<domains__actor__endpoint_list>`.
+* The **Configuration parameters** tab, listing the parameters configured for this actor.
 
 In the **Actor details** section you are presented with a form to view and edit the actor's information.
 
@@ -972,6 +977,7 @@ The following information is presented in corresponding form controls:
 * The actor's **ID** (required), used for display purposes and to refer to the actor in test suites.
 * A **name** (required), displayed in detail screens and reports, as well as the test execution screen.
 * A **description** to provide more context on the actor's purpose (optional), displayed in detail screens and reports.
+* Custom **report metadata** to include in XML reports.
 * The actor's **display order** (optional), used to determine where the actor should be displayed in the test execution diagram (see :ref:`execute_tests`).
   If provided this should be an integer that will be compared to the other specification actors' display order to determine the presentation order. An actor
   with a configured value will be displayed before actors with a larger value or ones that have no value configured.
@@ -989,90 +995,8 @@ following confirmation, delete the actor and all related information. The **Back
 
 .. _domains__actor__endpoint_list:
 
-Endpoints
-~~~~~~~~~
-
-The **Endpoints** section presents the endpoints defined for the actor. They are presented in a table with one row per endpoint.
-
-.. figure:: ../screenshots/admin_domains_actor_endpoints.PNG
-  :align: center
-
-For each endpoint the following information is displayed:
-
-* Its **name**, used for display purposes and to refer to the endpoint within test cases.
-* Its **description**, used to provide context to users on the endpoint's purpose.
-* A comma-separated list of its defined **parameters**.
-
-Clicking on an endpoint's row will take you to its :ref:`detail page<domains__endpoint>`. To manually :ref:`create a new endpoint<domains__actor__create_endpoint>` click the **Create endpoint**
-button from the table's header.
-
-.. note::
-    **Automatic vs manual endpoint creation:** Endpoints can also be created automatically during test suite upload.
-
-.. _domains__actor__create_endpoint:
-
-Create endpoint
-+++++++++++++++
-
-To create a new endpoint manually (as opposed to automatically via test suite upload) click  the **Create endpoint** button from the **Endpoints** list header.
-
-.. figure:: ../screenshots/admin_domains_actor_endpoints_header.PNG
-  :align: center
-
-Doing so presents you a screen in which you need to provide the information for the new endpoint.
-
-.. figure:: ../screenshots/admin_domains_actor_endpoints_create.PNG
-  :align: center
-
-The information to provide for the endpoint is:
-
-* Its **name** (required), displayed in detail screens and used to refer to it from test cases.
-* Its **description** to provide more context on the endpoint's purpose (optional).
-
-To complete the creation of the endpoint click the **Save** button. To cancel and return to the :ref:`actor's detail page<domains__actor>` 
-click the **Cancel** button.
-
-.. _domains__endpoint:
-
-Manage endpoint details
------------------------
-
-To view an endpoint's details and edit its information you need to click on the endpoint's row, displayed in the **Endpoints** table
-of the :ref:`actor details page<domains__actor>`.
-
-.. figure:: ../screenshots/admin_domains_actor_endpoints.PNG
-  :align: center
-
-Doing so will take you to the endpoint details screen. This is split in two sections:
-
-* The **Endpoint details** section, presenting the endpoint's information.
-* The **Parameters** section, listing the :ref:`endpoint's parameters<domains__endpoint__parameter_list>`.
-
-In the **Endpoint details** section you are presented with a form to view and edit the endpoint's information.
-
-.. figure:: ../screenshots/admin_domains_endpoint_details.PNG
-  :align: center
-
-The following information is presented in corresponding form controls:
-
-* the endpoint's **name** (required), displayed in detail screens and used to refer to it from test cases.
-* Its **description** to provide more context on the endpoint's purpose (optional).
-
-To edit the endpoint's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
-following confirmation, delete the endpoint and its parameters. The **Back** button does not make any changes but takes you back to the
-:ref:`actor's detail screen<domains__actor>`.
-
-.. note::
-  **Endpoint display for users:** In most cases each actor will define at most one endpoint for its configuration. If this is the case the endpoint
-  is hidden from users in the :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`
-  which instead displays directly the endpoint's configuration parameters.
-
-.. _domains__endpoint__parameter_list:
-
-Endpoint parameters
-~~~~~~~~~~~~~~~~~~~
-
-The **Parameters** section presents the endpoint's parameters. They are displayed in a table with one row per parameter.
+The **Configuration parameters** tab presents actor-related information that varies per conformance statement. They
+are displayed in a table with one row per parameter.
 
 .. figure:: ../screenshots/admin_domains_endpoint_parameters.PNG
   :align: center
@@ -1088,18 +1012,17 @@ For each parameter the following information is displayed:
 * A **hidden** flag, determining whether or not a non-editable parameter is is also to be hidden from organisation users.
 
 Clicking on a parameter's row will open a popup to :ref:`view and edit its information<domains__endpoint__edit_parameter>`. To manually 
-:ref:`create a new parameter<domains__endpoint__create_parameter>` click the **Create parameter** button from the table's header.
+:ref:`create a new parameter<domains__endpoint__create_parameter>` click the **Create parameter** button.
 
 .. note::
-    **Automatic vs manual parameter creation:** Endpoint parameters can also be created automatically during :ref:`test suite upload<domains__specification__test_suite_upload>`.
+    **Automatic vs manual parameter creation:** Actor configuration parameters can also be created automatically during :ref:`test suite upload<domains__specification__test_suite_upload>`.
 
 .. _domains__endpoint__create_parameter:
 
-Create endpoint parameter
-+++++++++++++++++++++++++
+Create parameter
+~~~~~~~~~~~~~~~~
 
-To create a new endpoint parameter manually (as opposed to automatically via test suite upload) click  the **Create parameter** button from the 
-**Parameters** list header.
+To create a new actor parameter manually (as opposed to automatically via test suite upload) click the **Create parameter** button.
 
 .. figure:: ../screenshots/admin_domains_endpoint_parameters_header.PNG
   :align: center
@@ -1126,7 +1049,7 @@ and viewing a :ref:`conformance detail page<manage_your_conformance_statements__
 automatically via a conformance statement :ref:`trigger<community__manage_triggers>`.
 
 .. note::
-  **Organisation and system properties:** Endpoint parameters can be seen as input and configuration properties that are 
+  **Organisation and system properties:** Actor parameters can be seen as input and configuration properties that are 
   relevant to a system's specific conformance statement. For information that is more high-level, you may also use
   :ref:`system or organisation properties<community__properties>` when this is linked, respectively, to a system or a complete
   organisation. Finally, parameters can also be :ref:`set at domain level<domains__domain__parameter_list>`, applying to a
@@ -1157,10 +1080,10 @@ To complete the creation of the parameter, click the **Save** button. To cancel 
 
 .. _domains__endpoint__edit_parameter:
 
-Edit endpoint parameter
-+++++++++++++++++++++++
+Edit parameter
+~~~~~~~~~~~~~~
 
-To edit an endpoint parameter click its corresponding row from the **Parameters** table.
+To edit a parameter click its corresponding row from the **Parameters** table.
 
 .. figure:: ../screenshots/admin_domains_endpoint_parameters.PNG
   :align: center
@@ -1177,7 +1100,7 @@ following confirmation, delete the parameter. The **Cancel** button closes the p
 .. _domains__endpoint__order_parameters:
 
 Change parameter ordering
-+++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default parameters are ordered alphabetically based on their name. You may override this default ordering by reordering the parameters as needed and saving their
 relative positions. This is done through the table listing the parameters, by using the **move** buttons at each row's right end, to drag and drop them into their
@@ -1188,6 +1111,26 @@ desired ordering.
 
 Once you have reordered parameters in this way you will notice that the **Save parameter order** button becomes enabled. You will need to click this to confirm and
 persist the displayed ordering.
+
+.. _domains__endpoint__manage_endpoints:
+
+Parameter endpoints
+~~~~~~~~~~~~~~~~~~~
+
+You may have noticed when :ref:`creating a parameter <domains__endpoint__create_parameter>` that the **Create parameter** button offers also 
+a second option titled **Create endpoint**.
+
+.. figure:: ../screenshots/admin_domains_endpoint_parameters_header.PNG
+  :align: center
+
+Endpoints are a feature that was **deprecated** as of release 1.24.0 as it offered little additional value and made actor-specific
+configuration properties less accessible. Endpoints are a means of grouping together configuration properties, of which you could
+in theory have multiple. In practice you should only ever need one, so when you define an actor, an implicit *config* endpoint is also
+created and subsequently hidden from view.
+
+For backwards compatibility reasons you can still create and subsequently manage endpoints, although you are advised not to do so.
+For the same reason, the endpoint management screens are not documented here given that the meaningful actions - managing parameters - is
+identical to those performed directly under actors.
 
 .. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
 .. _production: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/
