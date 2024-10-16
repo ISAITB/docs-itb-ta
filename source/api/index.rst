@@ -1707,6 +1707,10 @@ As a complement to the information on which tests are to be launched, you may al
 These inputs will be added to the test session context before executing each test, overriding any variables defined with default values.
 Providing inputs can be very useful allowing you to execute tests that would otherwise require user interactions (which in this case will be skipped).
 
+.. note::
+    **Declaring input variables in test cases:** If you design your test cases based on REST API inputs you will also
+    need to declare the inputs as `test case variables <https://www.itb.ec.europa.eu/docs/tdl/latest/testcase/index.html#variables>`__.
+
 The inputs provided can be done so in a flexible manner, defining each input (e.g. a text or even a file) once and mapping it to the test cases
 for which it should be considered. To do this you use the ``inputMapping`` property, an array with one item per input, complemented by the
 information on the test cases to apply it to. Regarding this test case mapping, you may specify property ``testSuite`` to map it to the tests
