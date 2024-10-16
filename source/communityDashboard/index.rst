@@ -1391,7 +1391,7 @@ to the clipboard. You can then use this reference as e.g. the source of an image
 .. _community__report_settings__statement_certificate__external:
 
 Delegate to an external service
-+++++++++++++++++++++++++++++++
+...............................
 
 Besides using the built-in certificate template you may choose to delegate the report's generation to an **external service**. Doing so affords you full control over the
 resulting report, both in terms of included information as well as styling. To use this option, select the **Use external service** option for the **report configuration**.
@@ -1414,7 +1414,7 @@ Selecting this option presents you with a set of relevant inputs:
 .. _community__report_settings__statement_certificate__signature:
 
 Configure digital signatures
-++++++++++++++++++++++++++++
+............................
 
 To ensure the integrity and trust of your report you may also choose to include a **digital signature**. To manage your signature setting click on **Manage signature settings**
 from the panel's footer.
@@ -1447,7 +1447,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__statement_certificate__review:
 
 Preview your configuration
-++++++++++++++++++++++++++
+..........................
 
 Once you have adjusted your settings you may preview them by clicking the **Generate preview** button. This will produce a certificate using sample values which,
 in case you are using the default template, will be similar to the following example:
@@ -1552,7 +1552,7 @@ be used to remove a specific message's configuration.
 .. _community__report_settings__overview_certificate__external:
 
 Delegate to an external service
-+++++++++++++++++++++++++++++++
+...............................
 
 Besides using the built-in certificate template you may choose to delegate the report's generation to an **external service**. Doing so affords you full control over the
 resulting report, both in terms of included information as well as styling. To use this option, select the **Use external service** option for the **report configuration**.
@@ -1575,7 +1575,7 @@ Selecting this option presents you with a set of relevant inputs:
 .. _community__report_settings__overview_certificate__signature:
 
 Configure digital signatures
-++++++++++++++++++++++++++++
+............................
 
 To ensure the integrity and trust of your report you may also choose to include a **digital signature**. To manage your signature setting click on **Manage signature settings**
 from the panel's footer.
@@ -1608,7 +1608,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__overview_certificate__review:
 
 Preview your configuration
-++++++++++++++++++++++++++
+..........................
 
 Once you have adjusted your settings you may preview them by clicking the **Generate preview** button. This will produce a certificate using sample values which,
 in case you are using the default template, will be similar to the following example:
@@ -1654,7 +1654,7 @@ If you have the test bed sign PDF reports you will need to also configure your :
 .. _community__report_settings__statement_report__signature:
 
 Configure digital signatures
-++++++++++++++++++++++++++++
+............................
 
 If you have selected to add digital signatures to PDF reports you will need to foresee a signing certificate. To manage this click on **Manage signature settings**
 from the panel's footer.
@@ -1687,7 +1687,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__statement_report__preview:
 
 Preview your configuration
-++++++++++++++++++++++++++
+..........................
 
 Once you have adjusted your settings you may preview them by clicking the **Generate preview** button. You can preview both PDF and XML reports, and in both
 cases produce reports with or without test case details.
@@ -1741,7 +1741,7 @@ If you have the test bed sign PDF reports you will need to also configure your :
 .. _community__report_settings__overview_report__signature:
 
 Configure digital signatures
-++++++++++++++++++++++++++++
+............................
 
 If you have selected to add digital signatures to PDF reports you will need to foresee a signing certificate. To manage this click on **Manage signature settings**
 from the panel's footer.
@@ -1774,7 +1774,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__overview_report__preview:
 
 Preview your configuration
-++++++++++++++++++++++++++
+..........................
 
 Once you have adjusted your settings you may preview them by clicking the **Generate preview** button. You can preview both PDF and XML reports, and also
 select the aggregation level at which you would want to produce the report at.
@@ -1827,7 +1827,7 @@ If you have the test bed sign PDF reports you will need to also configure your :
 .. _community__report_settings__test_case_report__signature:
 
 Configure digital signatures
-++++++++++++++++++++++++++++
+............................
 
 If you have selected to add digital signatures to PDF reports you will need to foresee a signing certificate. To manage this click on **Manage signature settings**
 from the panel's footer.
@@ -1860,7 +1860,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__test_case_report__preview:
 
 Preview your configuration
-++++++++++++++++++++++++++
+..........................
 
 Once you have adjusted your settings you may preview them by clicking the **Generate preview** button. You can preview both PDF and XML reports.
 
@@ -1912,7 +1912,7 @@ If you have the test bed sign PDF reports you will need to also configure your :
 .. _community__report_settings__test_step_report__signature:
 
 Configure digital signatures
-++++++++++++++++++++++++++++
+............................
 
 If you have selected to add digital signatures to PDF reports you will need to foresee a signing certificate. To manage this click on **Manage signature settings**
 from the panel's footer.
@@ -1945,7 +1945,7 @@ that the test bed can read the certificate by clicking the **Test settings** but
 .. _community__report_settings__test_step_report__preview:
 
 Preview your configuration
-++++++++++++++++++++++++++
+..........................
 
 Once you have adjusted your settings you may preview them by clicking the **Generate preview** button. You can preview both PDF and XML reports.
 
