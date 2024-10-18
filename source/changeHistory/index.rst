@@ -48,7 +48,7 @@ This is a minor bug fix release to correct issues reported by users.
   :class: changelog-table
   :delim: |
 
-  ITB-1700 | :other:`UI` | Display specific logout pending indicator when logout is pending
+  ITB-1700 | :ui:`UI` | Display specific logout pending indicator when logout is pending
 
 Release 1.24.0 - 15/10/2024
 ---------------------------
