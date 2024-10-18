@@ -42,10 +42,14 @@ table > tbody > tr > th > p {
     font-weight: bold;    
 }
 
-.changelog-legend td:nth-of-type(1) {
+.changelog-legend td:first-of-type {
     text-align: center;
+    white-space: nowrap;
+    width: 1px;
 }
 
-.changelog-table td:nth-of-type(2) {
+.changelog-table td:first-of-type, .changelog-table td:nth-of-type(2) {
     text-align: center;
+    white-space: nowrap;
+    width: 1px;
 }
