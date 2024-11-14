@@ -40,7 +40,7 @@ This is a minor bug fix release to correct issues reported by users.
   :class: changelog-table
   :delim: |
 
-  ITB-1708 | :ui:`TESTS` | When stopOnError semantics apply, an error in a flow step's thread should immediately complete pending steps in other threads
+  ITB-1708 | :tdl:`TESTS` | When stopOnError semantics apply, an error in a flow step's thread should immediately complete pending steps in other threads
 
 Release 1.24.2 - 29/10/2024
 ---------------------------
