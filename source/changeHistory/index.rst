@@ -21,13 +21,26 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest test bed release is **1.24.2**.
+The latest test bed release is **1.24.3**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.24.3 - 14/11/2024
+---------------------------
+
+This is a minor bug fix release to correct issues reported by users.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1708 | :ui:`UI` | When stopOnError semantics apply, an error in a flow step's thread should immediately complete pending steps in other threads
 
 Release 1.24.2 - 29/10/2024
 ---------------------------
