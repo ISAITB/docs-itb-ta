@@ -21,13 +21,35 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest test bed release is **1.24.3**.
+The latest test bed release is **1.24.4**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.24.4 - 25/11/2024
+---------------------------
+
+This is a minor release to correct bug fix and introduce improvements to better support Kubernetes deployment.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1712 | :ui:`UI` | Setting TESTBED_HOME_LINK with a trailing slash and no sub path breaks web socket connections
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1711 | :ui:`UI` | Immediately abort initialisation steps at startup if DB is not available
+  ITB-1716 | :ui:`UI` | Support a configurable web application context for the gitb-ui application
 
 Release 1.24.3 - 14/11/2024
 ---------------------------
