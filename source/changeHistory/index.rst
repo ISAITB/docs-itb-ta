@@ -32,7 +32,7 @@ The latest test bed release is **1.24.4**.
 Release 1.24.4 - 25/11/2024
 ---------------------------
 
-This is a minor release to correct bug fix and introduce improvements to better support Kubernetes deployment.
+This is a minor release to correct bug fixes and introduce improvements to better support Kubernetes deployment.
 
 **Bug fixes**
 
