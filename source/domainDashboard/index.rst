@@ -790,18 +790,23 @@ test results as obsolete, whereas clicking on **Back** will discard any pending 
 Test cases
 ~~~~~~~~~~
 
-The **Test cases** section presents the test cases included in the test suite. They are presented in a table with one row per test case.
+The **Test cases** section presents the test cases included in the test suite.
 
 .. figure:: ../screenshots/admin_domains_test_cases.PNG
   :align: center
 
-For each test case the following information is displayed:
+The presentation of test cases is the same as what you would see in a :ref:`conformance statement detail page <manage_your_conformance_statements__view_a_conformance_statements_details>`.
+Test case are displayed following their execution sequence, displaying per test case:
 
-* Its **ID**, an internal identifier for the test case used to reference it from its test suite and to match it during test suite uploads.
 * Its **name**, displayed to users as a short name for the test case.
-* Its **description**, displayed to users to provide context on the purpose of the test case and a brief summary of its steps.
+* Its **description**, displayed to users to provide context on the purpose of the test case and a brief summary of its steps. This
+  becomes visible once a test case is clicked to be expanded.
+* Indicators on whether a test case is **optional** and/or **disabled**.
+* Its **group** indicator and name in the test case is defined within a group.
+* Its **tags** to highlight interesting aspects of the test case.
+* A button to view its **documentation**, if such documentation is defined.
 
-Clicking on an test case's row will take you to its :ref:`detail page<domains__test_case__details>`.
+Each test case also provides an **edit button** that you can click to proceed to its :ref:`detail page<domains__test_case__details>`.
 
 .. note::
   **Creating a test case:** Creating a new test case is only possible through :ref:`test suite upload<domains__specification__test_suite_upload>`.

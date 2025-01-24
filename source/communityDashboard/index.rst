@@ -1007,6 +1007,40 @@ The event types that are available for configuration are listed in the following
     Test session succeeded | Completion of a test session that resulted in a "successful" result.
     Test session failed | Completion of a test session that resulted in a "failed" result.
 
+Once an event type is selected you will also be presented with an optional **fire condition**.
+
+.. figure:: ../screenshots/admin_community_triggers_fire_condition.png
+  :align: center
+
+A fire condition is a specific rule that governs whether the trigger will be activated. This means that besides the trigger
+event itself (e.g. starting a test session), you can specific for which cases the trigger should fire (e.g. specific test cases).
+Clicking the **Add condition clause** button prompts you to add a clause to your condition (you can have any number of such clauses).
+Doing so opens a popup to define the clause's parameters:
+
+.. figure:: ../screenshots/admin_community_triggers_fire_condition_popup.png
+  :align: center
+
+Clauses are based on checking values against **regular expressions**. In this popup you can select the value to check based 
+on the trigger's event type, provide the expression to use, as well as whether the expression should
+result in a match or not (the latter used to invert the check). 
+
+Once you have selected the value type and provided an expression, you can also **test the expression** by checking the relevant
+checkbox and using a sample value. For example, we can consider a trigger when test sessions start, that should apply
+only for specifications with *"Export"* in their name:
+
+.. figure:: ../screenshots/admin_community_triggers_fire_condition_popup_test.png
+  :align: center
+
+Once you have configured your fire condition with one or more clauses, you can manage it and also test it to make sure it works
+as you expect. To test it check the relevant checkbox, and try it out for a specific type of value:
+
+.. figure:: ../screenshots/admin_community_triggers_fire_condition_test.png
+  :align: center
+
+.. note::
+
+  Defining fire conditions is optional - triggers without conditions will always fire.
+
 The separate **Web service details** section includes the inputs concerning the trigger's web service. Consider that the trigger itself is a set of metadata
 that determines what fires and with what data, however the actual processing linked to the trigger is handled by the configured web service. This service
 needs to be accessible by the test bed and must be either:
@@ -1316,8 +1350,11 @@ the certificate is generated. The supported placeholders and their meaning are l
   $ACTOR ~ The full name of the actor linked to the conformance statement.
   $ORGANISATION ~ The full name of the organisation to be granted the certificate.
   $SYSTEM ~ The full name of the organisation's system that was used in the tests.
+  $SNAPSHOT ~ The public name of the :ref:`relevant conformance snapshot <monitor_conformance_status__snapshots>` (or the label for the latest status).
   $BADGE ~ The :ref:`configured badge<domains__specification>` for the statement's status.
   $BADGE{width} ~ Similar to **$BADGE** but forcing a specific width (in pixels) for the image.
+  $REPORT_DATE{format} ~ The date and time when the report was generated, using the defined format (as a `Java data format string <https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/format/DateTimeFormatter.html>`__).
+  $LAST_UPDATE_DATE{format} ~ The date and time when the conformance status was last updated, using the defined format (as a `Java data format string <https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/format/DateTimeFormatter.html>`__).
   $ORGANISATION{PROPERTY} ~ The value of a :ref:`custom organisation-level property<community__properties>` (named "PROPERTY" here) set for the statement's organisation.
   $SYSTEM{PROPERTY} ~ The value of a :ref:`custom system-level property<community__properties>` (named "PROPERTY" here) set for the statement's system.
   $DOMAIN{PROPERTY} ~ The value of a :ref:`domain parameter<domains__domain__parameter_list>` (named "PROPERTY" here) set for the community's domain.
@@ -1474,10 +1511,13 @@ meaning are listed in the following table.
   $ACTOR{index} ~ All levels. ~ The full name of the actor at the given index.
   $ORGANISATION ~ All levels. ~ The full name of the organisation to be granted the certificate.
   $SYSTEM ~ All levels. ~ The full name of the organisation's system that was used in the tests.
+  $SNAPSHOT ~ All levels. ~ The public name of the :ref:`relevant conformance snapshot <monitor_conformance_status__snapshots>` (or the label for the latest status).
   $BADGE{index} ~ All levels. ~ The :ref:`configured badge<domains__specification>` for the status of the statement at the given index.
   $BADGE{index|width} ~ All levels. ~ Similar to **$BADGE{index}** but forcing a specific width (in pixels) for the image.
   $BADGES{layout} ~ All levels. ~ All :ref:`configured badges<domains__specification>` for the statements' status, displayed either horizontally or vertically.
   $BADGES{layout|width} ~ All levels. ~ Similar to **$BADGES{layout}** but forcing a specific width (in pixels) for the images.
+  $REPORT_DATE{format} ~ All levels. ~ The date and time when the report was generated, using the defined format (as a `Java data format string <https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/format/DateTimeFormatter.html>`__).
+  $LAST_UPDATE_DATE{format} ~ All levels. ~ The date and time when the overall conformance status was last updated, using the defined format (as a `Java data format string <https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/format/DateTimeFormatter.html>`__).
   $ORGANISATION{PROPERTY} ~ All levels. ~ The value of a :ref:`custom organisation-level property<community__properties>` (named "PROPERTY" here) set for the relevant organisation.
   $SYSTEM{PROPERTY} ~ All levels. ~ The value of a :ref:`custom system-level property<community__properties>` (named "PROPERTY" here) set for the relevant system.
   $DOMAIN{PROPERTY} ~ Aggregate status (when a single domain applies), Domain, Specification group or Specification. ~ The value of a :ref:`domain parameter<domains__domain__parameter_list>` (named "PROPERTY" here) set for the community's domain.

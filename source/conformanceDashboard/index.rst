@@ -167,6 +167,10 @@ except for the signature settings.
 .. figure:: ../screenshots/conformance_report_generation_options_popup_overview_certificate.png
   :align: center
 
+In case you have defined an elaborate custom message, acting for example as a full cover page for your certificate, it may be difficult
+to view and edit it in the editor. For this purpose you are provided with the **Maximise editor** button that when clicked will expand
+the editor to take up the full screen.
+
 Once the settings are reviewed and adapted, clicking **Generate report** will produce the certificate.
 
 .. figure:: ../screenshots/conformance_overview_pdf_certificate.png
@@ -522,6 +526,10 @@ cannot be overridden at this point is the digital signature configuration.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_export_prompt_cert.PNG
   :align: center
+
+In case you have defined an elaborate custom message, acting for example as a full cover page for your certificate, it may be difficult
+to view and edit it in the editor. For this purpose you are provided with the **Maximise editor** button that when clicked will expand
+the editor to take up the full screen.
 
 Once you have selected the report type and adapted your settings you can click the **Generate report** button to download the produced report.
 Clicking on **Cancel** closes the popup to return you to the previous screen.
