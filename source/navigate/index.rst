@@ -62,6 +62,7 @@ At the bottom of the screen you are presented with the interface's **footer**.
 The footer includes the following information and links:
 
 * A link to the **user guide**. The section of the user guide displayed depends on the screen you are currently accessing.
+* A link to the **REST API** OpenAPI documentation, if the :ref:`REST API is enabled <api>`.
 * A link to **contact the support team** for problems, questions and feedback (see :ref:`contact_support`).
 * A link to view the test bed's **legal notice**.
 * A link to **find out more** information on the test bed.
