@@ -261,6 +261,7 @@ At the bottom of the details' panel you are presented with buttons for further a
 * The **Copy badge URL** and **Preview badge** buttons to copy (or preview) a conformance badge for your current status. This is available only
   if you have :ref:`configured such badges <domains__specification>`.
 * The **View system** button allows you to navigate to your :ref:`system <manage_organisation__systems>` or :ref:`organisation <manage_organisation>` details.
+* The **Refresh** button allows you to refresh the status of your conformance statement to view its latest results.
 * The **Back** button to return to the :ref:`conformance statement list <manage_your_conformance_statements__view_your_conformance_statements>`.
 * The **Delete statement** button to :ref:`delete the conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details__delete>`.
 

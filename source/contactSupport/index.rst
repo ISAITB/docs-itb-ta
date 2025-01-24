@@ -20,9 +20,9 @@ In this form you are asked to enter the following information:
   still change it to another preferred address.
 * The **feedback type** to specify the nature of the message. You can choose from a **technical issue**, **question on usage**, 
   **feature request** or **other**.
-* The **message** itself. This is provided as a rich text editor so that you can format it as you please.
 * One or more **attachments** linked to your message. A maximum of five attachments is allowed that should not exceed a total of five megabytes.
   Currently, accepted file types are images (GIF, PNG, JPEG), PDF files, text files and XML files.
+* The **message** itself. This is provided as a rich text editor so that you can format it as you please.
 
 To add an attachment click the file input field to select the file you want, or drag and drop it to the input. For added attachments you 
 will see their file name along with a delete button you can use to remove them.

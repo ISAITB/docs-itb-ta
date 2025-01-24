@@ -21,13 +21,81 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest test bed release is **1.24.4**.
+The latest test bed release is **1.25.0**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_. 
+
+Release 1.25.0 - 31/01/2025
+---------------------------
+
+This release focuses primarily on the Test Bed's test engine and the capabilities of the GITB Test Description Language (TDL). It is now simpler
+to manage the behaviour and presentation of sets of steps, as well as to apply fine-grained failure management. This is complemented by new features
+to better convey feedback on test steps' progress and the overall test outcome. Furthermore, it is now possible to define test case groups, whereby
+only one successful result within a group is needed, towards considering the overall group as successfully completed.
+
+Besides extensions to the test engine, the Test Bed's user interface comes with new features to further facilitate community customisation.
+Triggers, the Test Bed's equivalent to web hooks, can now be configured with firing expressions to control precisely when they should activate.
+Test case groups are now presented on the interface, and the administrator's view of test suites is adapted to match precisely the end result viewed
+by testers. Finally, PDF report customisation is enhanced with new values available for inclusion in custom cover pages, complemented by simpler
+report previewing.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1705 | :tdl:`TESTS` | A test session with tolerated prior errors followed by an exit step with a forced success output should result in a success
+  ITB-1723 | :ui:`UI` | Unable to delete custom community templates for error popups
+  ITB-1736 | :ui:`UI` | XSS protection filter blocks valid inputs for uncommon character combinations
+  ITB-1737 | :ui:`UI` | Conformance statement configuration tab disregards custom community labels
+  ITB-1738 | :ui:`UI` | Uploading an empty file for a required binary configuration property should not pass validation
+  ITB-1745 | :tdl:`TESTS` | SoapMessagingV2 handler may fail to deserialise response envelopes
+
+**New Features**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1355 | :tdl:`TESTS` | Allow group steps to display their child steps without a boundary
+  ITB-1356 | :tdl:`TESTS` | Allow group (and other container) steps to apply stopOnError semantics only for their child steps
+  ITB-1677 | :tdl:`TESTS` | Support an UNDEFINED exit status for the exit step in TDL test cases
+  ITB-1694 | :tdl:`TESTS` | Add to the test session context the name of a file uploaded via a user interaction step
+  ITB-1702 | :ui:`UI` | Conditional execution of test session triggers based on related test case and test suite identifiers
+  ITB-1706 | :tdl:`TESTS` | Extend the test case output section to support messages for an undefined or skipped state 
+  ITB-1707 | :ui:`UI` | Conditional execution of triggers based on related data
+  ITB-1709 | :tdl:`TESTS` | Support test case groups in which only one of the included test cases needs to pass for a successful conformance result
+  ITB-1722 | :tdl:`TESTS` | Allow a verify step's overall result to be the opposite of the validation outcome
+  ITB-1725 | :tdl:`TESTS` | Allow a messaging and processing step's result to be the opposite of the step's validation outcome
+  ITB-1726 | :tdl:`TESTS` | Allow errors from messaging and processing steps to be considered as warnings
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1701 | :ui:`UI` | Improve the responsive behaviour of the conformance statement detail page
+  ITB-1710 | :ui:`UI` | Allow previewing a trigger's payload before completing all information
+  ITB-1713 | :tdl:`TESTS` | Allow the DisplayProcessor handler to not have parameters for its displayed report
+  ITB-1718 | :ui:`UI` | Display simple message on welcome page when no other prompts are present
+  ITB-1724 | :tdl:`TESTS` | Display detailed validation reports from external messaging and processing handlers when counters not defined
+  ITB-1728 | :ui:`UI` | Allow Test Bed administrator to view and use community-specific resources (e.g. images)
+  ITB-1730 | :other:`OTHER` | Remove cluster issuer ingress annotations and document their use through Helm
+  ITB-1734 | :ui:`UI` | Display test cases in the test suite detail screen in the same way as in the conformance statement
+  ITB-1739 | :ui:`UI` | Automatically close open test session summary messages presented in the conformance statement page
+  ITB-1740 | :ui:`UI` | If enabled add a REST API footer link to the Test Bed's OpenAPI documentation
+  ITB-1742 | :ui:`UI` | Allow the conformance status to be refreshed from the conformance statement page
+  ITB-1744 | :tdl:`TESTS` | Add session log output when SoapMessagingV2 handler fails to process a response for the send operation
+  ITB-1747 | :ui:`UI` | Support last update time as placeholder for PDF conformance certificates
+  ITB-1749 | :ui:`UI` | Support public snapshot label as placeholder for PDF conformance certificates
+  ITB-1750 | :ui:`UI` | Support report creation date as placeholder for PDF conformance certificates
+  ITB-1751 | :ui:`UI` | Allow maximising report preview modals for easier custom message editing
 
 Release 1.24.4 - 25/11/2024
 ---------------------------
