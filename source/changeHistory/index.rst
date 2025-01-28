@@ -73,6 +73,7 @@ report previewing.
   ITB-1722 | :tdl:`TESTS` | Allow a verify step's overall result to be the opposite of the validation outcome
   ITB-1725 | :tdl:`TESTS` | Allow a messaging and processing step's result to be the opposite of the step's validation outcome
   ITB-1726 | :tdl:`TESTS` | Allow errors from messaging and processing steps to be considered as warnings
+  ITB-1759 | :tdl:`TESTS` | New XPathProcessor handler to extract content from XML using XPath
 
 **Improvements**
 
@@ -96,6 +97,7 @@ report previewing.
   ITB-1749 | :ui:`UI` | Support public snapshot label as placeholder for PDF conformance certificates
   ITB-1750 | :ui:`UI` | Support report creation date as placeholder for PDF conformance certificates
   ITB-1751 | :ui:`UI` | Allow maximising report preview modals for easier custom message editing
+  ITB-1763 | :ui:`UI` | When a test suite fails validation due to an invalid expression include the cause in the reported message
 
 Release 1.24.4 - 25/11/2024
 ---------------------------
