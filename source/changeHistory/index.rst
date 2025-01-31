@@ -56,7 +56,7 @@ report previewing.
   ITB-1738 | :ui:`UI` | Uploading an empty file for a required binary configuration property should not pass validation
   ITB-1745 | :tdl:`TESTS` | SoapMessagingV2 handler may fail to deserialise response envelopes
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -208,7 +208,7 @@ new options are available for HTTP exchanges, management of collections, and ver
   ITB-1696 | :ui:`UI` | Interaction steps with large content may fail to be persisted for later viewing
   ITB-1698 | :ui:`UI` | Dash character (-) not counted towards non-character password symbols
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -308,7 +308,7 @@ bulk data import process to allow more fine grained control when updating matchi
   ITB-1622 | :ui:`UI` | When no theme has been explicitly set as active the THEME environment variable should be used
   ITB-1623 | :ui:`UI` | Unable to cancel the activation of a built-in theme once selected
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -381,7 +381,7 @@ is required.
   ITB-1580 | :tdl:`TESTS` | Error while closing a processing transaction involving a remote processing service
   ITB-1583 | :ui:`UI` | Importing a domain archive skips the update of existing specification groups
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -511,7 +511,7 @@ test session delays, and generation of random content.
   ITB-1478 | :ui:`UI` | Cannot delete specification group that contains specification options
   ITB-1484 | :ui:`UI` | Unable to import export archives with custom labels set for specification groups
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -614,7 +614,7 @@ resolve reported bugs and to apply precautionary security patches to the test be
   ITB-1412 | :ui:`UI` | Error importing export archive in community without assigned domain
   ITB-1416 | :ui:`UI` | When selecting to check all available conformance statements it is possible to create invalid statements
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -678,7 +678,7 @@ versions making it simpler to maintain and evolve test extension services.
   ITB-1368 | :ui:`UI` | Skipped loop steps within other loop steps are not displayed correctly
   ITB-1374 | :tdl:`TESTS` | Tests including flow steps and set to stopOnError may result in a wrong overall result
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -771,7 +771,7 @@ containerised builds, allowing rapid prototyping and experimentation directly fr
   ITB-1287 | :ui:`UI` | Messaging steps without transactions pass test suite validation for invalid step inputs of handlers
   ITB-1308 | :ui:`UI` | Imports used to clone domains and communities within the same Test Bed instance fail to complete
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -853,7 +853,7 @@ facilitate using the test bed in continuous integration processes for test devel
   ITB-1200 | :tdl:`TESTS` | Assign step set to append for a map variable should create (and append) to a list
   ITB-1241 | :tdl:`TESTS` | Map variables cannot be directly assigned to other maps or steps' map inputs
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -945,7 +945,7 @@ throughput.
   ITB-1162 | :tdl:`TESTS` | A test step with an explicit stopOnError approach should override the approach defined by its caller
   ITB-1166 | :ui:`UI` | Long, non-breakable texts break table displays
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1063,7 +1063,7 @@ messaging presentations allow for further customisation and management of test s
   ITB-1057 | :ui:`UI` | TDL test suite validation does not report the offending steps for invalid expressions
   ITB-1059 | :ui:`UI` | Past test session execution diagrams display actor names using their IDs
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1174,7 +1174,7 @@ syntax-sensitive editors. In addition, this release resolves several user-report
   ITB-992 | :ui:`UI` | Popup to remove a user's role (when EU Login is used) does not display tooltips
   ITB-993 | :ui:`UI` | Unable to access the profile options on very low resolutions
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1227,7 +1227,7 @@ grouping, display style and visibility, for a better structured and simplified p
   ITB-959 | :ui:`UI` | Data import does not correctly update matching domain parameters of type "secret"
   ITB-965 | :ui:`UI` | Prevent large custom titles for steps with sub-steps from breaking the display
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1297,7 +1297,7 @@ embedded processing capabilities with new options of working with timestamps, re
   ITB-876 | :tdl:`TESTS` | Imports defined in scriptlets are not processed
   ITB-882 | :ui:`UI` | The display of nested loop steps is not correctly updated during test execution
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1382,7 +1382,7 @@ validator outputs.
   ITB-772 | :ui:`UI` | User interaction steps should allow scrolling for long non-breaking text
   ITB-783 | :tdl:`TESTS` | Call step initialises prematurely and fails for missing input variables
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1512,7 +1512,7 @@ test sessions' output.
   ITB-677 | :ui:`UI` | Invalid test suite resource imports may succeed test suite validation
   ITB-681 | :ui:`UI` | Warning message when copying a system's test configuration is not correct
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1576,7 +1576,7 @@ help text linked to community tokens.
   ITB-610 | :ui:`UI` | Unable to import community when no domain data are included in the data archive
   ITB-612 | :tdl:`TESTS` | Empty file input through user interaction during a test session stops the test session
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1627,7 +1627,7 @@ own information.
   ITB-558 | :ui:`UI` | Community administrators should not be allowed to delete their domain
   ITB-561 | :ui:`UI` | Binary and secret domain parameters should have a disabled save button when name is missing
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1703,7 +1703,7 @@ validation steps and the possibility to display for test steps additional docume
   ITB-518 | :tdl:`TESTS` | Binary actor parameters interpreted as strings in test sessions
   ITB-520 | :ui:`UI` | Test execution diagrams with multiple actors can break diagram display
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1796,7 +1796,7 @@ input values and configuration to test sessions.
   ITB-448 | :ui:`UI` | Test case definition doesn't reload if user refreshes browser
   ITB-449 | :ui:`UI` | Specification details not included in conformance dashboard CSV export
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1900,7 +1900,7 @@ processing and validation capabilities as well as extended user input options.
   ITB-381 | :tdl:`TESTS` | Allow spaces for expressions defined as "StringOrVariable"
   ITB-384 | :tdl:`TESTS` | Processing step errors may not get logged
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -1953,7 +1953,7 @@ well as to improve support for the GITB Test Description Language (TDL).
   ITB-272 | :ui:`UI` | Opening the contact support form clears other rich text editors
   ITB-273 | :ui:`UI` | Forms to create elements do not take advantage of full screen width
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -2055,7 +2055,7 @@ This is a minor release to correct bugs and also to improve the test bed's GDPR 
   ITB-235 | :ui:`UI` | Icons may not appear when using IE 11
   ITB-242 | :ui:`UI` | Active footer links are not visible
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -2099,7 +2099,7 @@ test suite execution, and providing additional tools for administrators and user
   ITB-184 | :ui:`UI` | Test session report does not include child steps for conditional branches
   ITB-188 | :ui:`UI` | Flow step results are always reported inversely
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -2165,7 +2165,7 @@ The key improvement area targeted is the management of new test suite versions.
   ITB-147 | :ui:`UI` | Domain name and description not displayed on conformance statement
   ITB-154 | :ui:`UI` | Correct transaction management
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -2219,7 +2219,7 @@ of test configuration and improved reporting capabilities.
   ITB-89 | :tdl:`TESTS` | XPath 2.0 support breaks TDL variable lookup
   ITB-90 | :tdl:`TESTS` | Problem interacting with processing services
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -2282,7 +2282,7 @@ test bed administrators to monitor current and past sessions.
   ITB-32 | :tdl:`TESTS` | Type metadata is not applicable to test modules
   ITB-34 | :tdl:`TESTS` | GITB remote send operation does not populate context
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
@@ -2321,7 +2321,7 @@ The main focus of this release is the addition of user management features and f
 
   ITB-15 | :ui:`UI` | When logging out the page content is not cleared
 
-**New Features**
+**New features**
 
 .. csv-table::
   :class: changelog-table
