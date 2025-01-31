@@ -25,7 +25,7 @@ These sets of operations are documented in the sections that follow.
 
   Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
   your own test bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true
-  or by `through the user interface <https://www.itb.ec.europa.eu/docs/itb-ta/latest/systemAdministration/index.html#manage-configuration-settings>`_
+  or `through the user interface <https://www.itb.ec.europa.eu/docs/itb-ta/latest/systemAdministration/index.html#manage-configuration-settings>`_
   after switching to the test bed administrator account.
 
 .. _api__community:
