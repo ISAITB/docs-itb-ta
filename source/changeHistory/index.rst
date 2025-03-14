@@ -21,13 +21,35 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest test bed release is **1.25.1**.
+The latest test bed release is **1.25.2**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.25.2 - 17/03/2025
+---------------------------
+
+This is a minor release to correct reported bug fixes, and introduce minor optimisations.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1779 | :ui:`UI` | Importing a community export archive does not delete undefined community resources
+  ITB-1788 | :ui:`UI` | Input parameters ignored when launching test sessions via REST API
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1789 | :ui:`UI` | Optimize virus scanning for uploaded files
 
 Release 1.25.1 - 12/02/2025
 ---------------------------
