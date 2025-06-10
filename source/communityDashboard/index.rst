@@ -120,8 +120,9 @@ The available permission options are as follows:
 * **Create or delete conformance statements**.
 * **Update organisation data after testing**. If not allowed, an organisation that has performed at least one test session will not be allowed to edit its organisation information or its custom properties (if defined).
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
-* **Update conformance statement after testing.** If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
-* **Manage test sessions via REST API.** If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<api>`.
+* **Update conformance statement after testing**. If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
+* **View community test history**. If allowed, organisation users will be able to have a readonly view of all other community members' completed test sessions and reports.
+* **Manage test sessions via REST API**. If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<api>`.
   This is option will be listed only if the test bed's administrator has enabled use of its REST API.
 
 In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
@@ -130,7 +131,7 @@ and test bed administrators through the :ref:`session dashboard<monitor_test_ses
 
 .. note::
   **When to set user permissions:** You would restrict user permissions in your community if you want to make sure that only you can manage systems and conformance statements or
-  if you want to ensure that once testing starts no data is changed.This also works well when you have enabled self-registration and require the selection of a :ref:`configuration template<community__create_organisation>`. This way you ensure
+  if you want to ensure that once testing starts no data is changed. This also works well when you have enabled self-registration and require the selection of a :ref:`configuration template<community__create_organisation>`. This way you ensure
   only predefined and non-editable conformance testing setups for your users.
 
 To persist any changes you have made in the community detail form click the **Save changes** button. Navigating away from this page will discard any pending changes.

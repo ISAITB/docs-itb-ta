@@ -26,16 +26,18 @@ users or ones that due to technical issues have been blocked.
 .. figure:: ../screenshots/admin_session_dashboard_active.PNG
   :align: center
 
+Tests are presented in a paged table sorted based on their **start time** in a ascending order (i.e. the oldest sessions are presented first). Custom sorting
+can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
+controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
+corner the total and currently displayed test counts.
+
 Each session is presented on a separate table row, with the following information displayed per session:
 
 * The **specification** and **actor** (defined as the test case's SUT).
 * The relevant **test case**.
 * The session **start time**.
 * The **organisation** and **system** this session is executed for.
-
-The information displayed in the table is sorted using the sessions’ **start time** in ascending manner (i.e. the oldest sessions are presented first).
-Sorting can be adapted by clicking on each column’s header to sort by it in ascending manner. The currently active sort column and type are displayed
-using an arrow icon next to the relevant column’s title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
 (see :ref:`monitor_test_sessions__export`). In addition, the **Terminate all** button can be used to terminate, upon confirmation, all currently active test 
@@ -65,9 +67,11 @@ Each session is presented in a separate row that displays the following informat
 * The **organisation** and **system** this session was executed for.
 * Its **result**.
 
-In this case the display of sessions uses paging, providing controls to go to the **first**, **previous**, **next** and **last** page (as applicable) and the rows are by
-default sorted based on the session **end time**, in a descending manner (i.e. latest sessions appear first). Sorting can be adapted by clicking on each column's header to 
-sort by it in ascending manner. The currently active sort column and type are displayed using an arrow icon next to the relevant column's title.
+Tests are presented in a paged table sorted based on their **end time** in a descending order (i.e. showing the latest tests at the top). Custom sorting
+can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
+controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
+corner the total and currently displayed test counts.
 
 Viewing a test session's further details and steps is done by clicking on the session's row, similar to the case of the :ref:`active test sessions<session_dashboard__active>`. See :ref:`session_dashboard__steps` for further
 information on the details displayed. Moreover, each row provides two **export** buttons that allows you to download the session's **test case report** in XML and PDF format.

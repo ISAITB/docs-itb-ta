@@ -23,11 +23,12 @@ Chapter overview
    :doc:`introduction/index` | Introducing the Interoperability Test Bed and key concepts.
    :doc:`login/index` | Logging in, and self-registering for an account.
    :doc:`navigate/index` | Navigating screens using the menu and provided controls.
-   :doc:`manageOrganisation/index` | Managing your organisation's information.
-   :doc:`manageConformanceStatements/index` | Managing the specifications to test against.
-   :doc:`executeTests/index` | Providing required configuration and executing tests.
-   :doc:`testHistory/index` | Viewing your test history and producing reports.
-   :doc:`communityTests/index` | Viewing the test history of other community members.
+   :doc:`sessionDashboard/index` | Reviewing your community's test sessions.
+   :doc:`conformanceDashboard/index` | Reviewing your community's conformance status.
+   :doc:`domainDashboard/index` | Managing your specifications and test suites.
+   :doc:`communityDashboard/index` | Managing your community's configuration and members.
+   :doc:`exportimport/index` | Exporting and importing data archives.
+   :doc:`validateTestSetup/index` | Validating your test setup.
    :doc:`profile/index` | Managing your user profile.
    :doc:`contactSupport/index` | Contacting support and providing feedback.
    :doc:`logout/index` | Logging out to complete your session.
@@ -69,17 +70,19 @@ Looking for the user guide of another Interoperability Test Bed role? Follow the
 
 .. |guide2| raw:: html
 
-   <a href="https://www.itb.ec.europa.eu/docs/itb-ca/latest/" target="_blank"><img src="https://www.itb.ec.europa.eu/files/docs-static/images/itb_guide_ca.png" rel="noopener noreferrer" alt="User guide (Community administrator)"/></a>
+   <a href="https://www.itb.ec.europa.eu/docs/itb-oa/latest/" target="_blank"><img src="https://www.itb.ec.europa.eu/files/docs-static/images/itb_guide_oa.png" rel="noopener noreferrer" alt="User guide (Organisation administrator)"/></a>
+
 .. |guide3| raw:: html
 
    <a href="https://www.itb.ec.europa.eu/docs/itb-ta/latest/" target="_blank"><img src="https://www.itb.ec.europa.eu/files/docs-static/images/itb_guide_ta.png" rel="noopener noreferrer" alt="User guide (Test Bed administrator)"/></a>
+
 .. csv-table::
     :widths: 33,33,33
     :delim: ~
     :class: image-caption-table
 
     |guide1| ~ |guide2| ~ |guide3|
-    User guide for organisation users covering test execution and reporting in the context of a specific organisation. ~ User guide for the community administrator covering the management and configuration of a complete community. ~ User guide for the Test Bed administrator covering the management and configuration of the entire Test Bed.
+    User guide for organisation users covering test execution and reporting in the context of a specific organisation. ~ User guide for organisation administrators covering the management and configuration of a specific organisation. ~ User guide for the Test Bed administrator covering the management and configuration of the entire Test Bed.
 
 Related documentation
 ---------------------

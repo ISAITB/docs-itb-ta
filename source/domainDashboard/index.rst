@@ -785,6 +785,30 @@ test results as obsolete, whereas clicking on **Back** will discard any pending 
   the values you have been editing through the user interface are to be kept or replaced. Note that the content and execution order of 
   the test suite's test cases can only be changed via upload.
 
+In the case of a **non-shared test suite**, the available controls also include options to:
+
+* **Move the test suite** from the current specification to another one.
+* **Convert the test suite** to a shared test suite.
+
+.. figure:: ../screenshots/admin_test_suite_controls_non_shared.png
+  :align: center
+
+Both these operations can be useful when reorganising your tests and specifications. You may want to move test suites across specifications
+if you realise that certain tests are best placed under another specification. Similarly, converting to a shared test suite can be useful if
+you want to associate this test suite with multiple specifications without requiring the re-execution of its tests. In case the test suite is
+already shared, these two options are replaced by the option to **convert to a non-shared test suite**. This acts as the opposite of what we
+saw previously, allowing you to link the test suite with a specific specification. This could be interesting if you want to have a test
+suite re-executed per linked specification.
+
+.. figure:: ../screenshots/admin_test_suite_controls_shared.png
+  :align: center
+
+It is important to note that moving test suites across specifications, as well as converting to and from being shared, **maintains the current test history**.
+You can also effectively always undo such actions by reversing them once complete (e.g. converting to shared and then back to non-shared). In addition, 
+the scenarios when you will be unable to make such changes will be highlighted in advance. For example a test suite cannot be converted to being shared 
+if one already exists with the same identifier, whereas converting from to non-shared is not allowed if the test suite is already linked to multiple
+specifications.
+
 .. _domains__test_suite_test_case_list:
 
 Test cases
