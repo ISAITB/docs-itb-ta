@@ -1157,9 +1157,14 @@ configuration properties less accessible. Endpoints are a means of grouping toge
 in theory have multiple. In practice you should only ever need one, so when you define an actor, an implicit *config* endpoint is also
 created and subsequently hidden from view.
 
-For backwards compatibility reasons you can still create and subsequently manage endpoints, although you are advised not to do so.
+For backwards compatibility reasons you can still directly create and subsequently manage endpoints, although you are advised not to do so.
 For the same reason, the endpoint management screens are not documented here given that the meaningful actions - managing parameters - is
 identical to those performed directly under actors.
+
+.. note::
+  **Endpoints defined in the GITB TDL**: Even though direct management of endpoints via the user interface is not advised, this still remains
+  the way to define actor configuration properties in `GITB TDL test suite definitions <https://www.itb.ec.europa.eu/docs/tdl/latest/testsuite/index.html#endpoints-for-simple-configuration-values>`__. Once defined however, the endpoint as a concept will be
+  hidden on the user interface, displaying instead directly the parameters.
 
 .. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
 .. _production: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/
