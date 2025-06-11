@@ -14,8 +14,8 @@ Provide your system's configuration
 -----------------------------------
 
 The testing configuration for your selected specification may require that you provide one or more 
-configuration parameters before executing tests. If for example test cases require that the test bed 
-sends messages to your system, it is likely that you need to inform the test bed on how to do so.
+configuration parameters before executing tests. If for example test cases require that the Test Bed
+sends messages to your system, it is likely that you need to inform the Test Bed on how to do so.
 
 Providing and reviewing the configuration for your system is done through the **Configuration parameters** tab of
 the :ref:`conformance statement detail page <manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>`.
@@ -105,9 +105,9 @@ the test session's log (see :ref:`execute_tests__step3__view_log`).
 .. figure:: ../screenshots/test_execution_execute_diagram.PNG
   :align: center
 
-Before starting a test session, the test bed checks to see whether it needs to present you any configuration that you need to take into account. This 
-step is the counterpart of the verification that was previously discussed, where the test bed checked the configuration that you provided. In this case
-the test bed will present to you its own configuration to take into account when preparing your system. If such configuration properties indeed exist and
+Before starting a test session, the Test Bed checks to see whether it needs to present you any configuration that you need to take into account. This
+step is the counterpart of the verification that was previously discussed, where the Test Bed checked the configuration that you provided. In this case
+the Test Bed will present to you its own configuration to take into account when preparing your system. If such configuration properties indeed exist and
 need to be displayed, they will be presented to you in a popup:
 
 .. figure:: ../screenshots/test_execution_simulated.PNG
@@ -160,7 +160,7 @@ Monitor and manage test progress
 Clicking the **Start** button begins the first selected test case's session. What follows depends on the definition of the test case as illustrated
 in the presented diagram but can be summarised in the following types of feedback:
 
-* **Exchanges of messages** between actors (i.e. the displayed arrows) proceed. Messaging initiated by the test bed happens automatically, whereas for messages
+* **Exchanges of messages** between actors (i.e. the displayed arrows) proceed. Messaging initiated by the Test Bed happens automatically, whereas for messages
   originating from your system the test session blocks until you trigger them, e.g. through your system's user interface.
 * **Popup dialogs** relative to interaction steps are presented to either inform you or request input.
 * **Validation or processing steps** take place automatically.
@@ -282,7 +282,7 @@ The editor popup allows you to copy a specific part of the content or, by means 
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will  
 open the validated content and automatically focus on the selected error.
 
-An alternative to viewing the content in this way is to click the **Download** button which will download the content as a file. The test bed will determine
+An alternative to viewing the content in this way is to click the **Download** button which will download the content as a file. The Test Bed will determine
 the most appropriate type for the content and name the downloaded file accordingly (if possible). In the case of simple texts that are presented inline, you
 are not presented with the download and view buttons, but rather with a **Copy to clipboard** button that allows you to copy the presented value.
 
@@ -341,7 +341,7 @@ for your test session.
   :align: center
 
 The detailed log output is typically very useful when you receive error messages but for which the description provided is not clear. The log
-output may be used in such a case to determine the cause of the problem or, for unexpected issues, provide input to the test bed support team
+output may be used in such a case to determine the cause of the problem or, for unexpected issues, provide input to the Test Bed support team
 (see :ref:`contact_support`). Note that once opened, the log display is automatically updated for newly received messages.
 
 The displayed log messages are highlighted with different colours depending on their severity:
@@ -435,14 +435,14 @@ long for elaborate test cases.
   :align: center
 
 .. note::
-    The XML report for a given test session can also be obtained through the test bed's :ref:`REST API<api>` (if enabled for your test bed instance).
+    The XML report for a given test session can also be obtained through the Test Bed's :ref:`REST API<api>` (if enabled for your Test Bed instance).
 
 .. _execute_tests_rest:
 
 Execution via REST API
 ----------------------
 
-Apart from launching tests through its user interface, the test bed also provides a **REST API** allowing you to manage test sessions 
+Apart from launching tests through its user interface, the Test Bed also provides a **REST API** allowing you to manage test sessions
 via REST calls. Specifically you may use the API to:
 
 * **Start** test sessions.

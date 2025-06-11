@@ -3,11 +3,11 @@
 REST API
 ========
 
-The test bed's REST API allows you to carry out most operations without connecting to its user interface. Its typical use case is to allow 
+The Test Bed's REST API allows you to carry out most operations without connecting to its user interface. Its typical use case is to allow 
 integration with automated processes enabling use cases such as **automated testing** and **continuous integration**. For 
 test developers certain API operations may also be interesting as it allows them to more easily validate changes while **developing test cases**.
 
-As a general note, identifying the operations' caller and referring to existing data in the test bed is done via **API keys**. For operations that would
+As a general note, identifying the operations' caller and referring to existing data in the Test Bed is done via **API keys**. For operations that would
 involve choices and confirmations if done via their corresponding user interface screens, these are provided in each case as inputs of the relevant REST calls.
 
 The REST API foresees the following types of operations:
@@ -23,18 +23,18 @@ These sets of operations are documented in the sections that follow.
 
 .. note::
 
-  Using the test bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
-  your own test bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true
+  Using the Test Bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
+  your own Test Bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true
   or `through the user interface <https://www.itb.ec.europa.eu/docs/itb-ta/latest/systemAdministration/index.html#manage-configuration-settings>`_
-  after switching to the test bed administrator account.
+  after switching to the Test Bed administrator account.
 
 .. _api__community:
 
 Community management
 --------------------
 
-The community management operations allow you to manage the test bed's **communities**, **organisations** and **systems**. They are useful if you want to
-have processes external to the test bed manage such information without needing manual actions through the test bed's user interface. Specifically you can:
+The community management operations allow you to manage the Test Bed's **communities**, **organisations** and **systems**. They are useful if you want to
+have processes external to the Test Bed manage such information without needing manual actions through the Test Bed's user interface. Specifically you can:
 
 * :ref:`Create <api__community__createCommunity>`, :ref:`update <api__community__updateCommunity>` and :ref:`delete <api__community__deleteCommunity>` communities.
 * :ref:`Create <api__community__createOrganisation>`, :ref:`update <api__community__updateOrganisation>` and :ref:`delete <api__community__deleteOrganisation>` organisations.
@@ -44,7 +44,7 @@ All community management operations use API keys to authorise calls and determin
 on the operation:
 
 * The key identifying a **community**, for all operations that a community administrator can do through the user interface.
-* The **master API key**, for selected top-level operations that are normally reserved for the overall test bed administrator.
+* The **master API key**, for selected top-level operations that are normally reserved for the overall Test Bed administrator.
 
 The sections that follow provide instructions and examples for each operation.
 
@@ -73,7 +73,7 @@ The following example shows how you can create a community with the provided dat
     "domain": "3F471BA2XDD33X4FCEX8045X1D8039E6B92A"
   }
 
-Calling this operation, the test bed will create the community and link it with the identified domain. Once complete, the operation will
+Calling this operation, the Test Bed will create the community and link it with the identified domain. Once complete, the operation will
 respond with the community's assigned API key:
 
 .. code-block:: json
@@ -83,7 +83,7 @@ respond with the community's assigned API key:
   }
 
 It is possible to avoid the automatic API key assignment by defining an API key to use as part of the input. This could
-be useful if you are configuring a test bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
+be useful if you are configuring a Test Bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
 
 .. code-block:: json
 
@@ -97,7 +97,7 @@ be useful if you are configuring a test bed instance based on fixed data and you
     "apiKey": "A_FIXED_API_KEY_FOR_THE_COMMUNITY"
   }
 
-In this case the test bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
+In this case the Test Bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
 the operation will still report the API key that was assigned.
 
 .. _api__community__createCommunity__request:
@@ -132,8 +132,8 @@ The first variant assumes that you are performing an update as a community admin
 and cannot change the community's assigned domain. You call the operation by making an HTTP ``POST`` to path ``/api/rest/community`` and setting an
 HTTP header named ``ITB_API_KEY`` to your **community API key**.
 
-The second variant allows you to perform tasks reserved for the test bed administrator. This means that you can select any existing community in the
-test bed, and also change or remove its assigned domain. In this case you call the operation by making an HTTP ``POST`` to path 
+The second variant allows you to perform tasks reserved for the Test Bed administrator. This means that you can select any existing community in the
+Test Bed, and also change or remove its assigned domain. In this case you call the operation by making an HTTP ``POST`` to path 
 ``/api/rest/community/{community}``, setting ``{community}`` to the target community's API key. The ``ITB_API_KEY`` HTTP header needs to be set
 with the **master API key**.
 
@@ -203,7 +203,7 @@ The following example shows how you can create an organisation with the provided
     "fullName": "ACME Ltd."
   }
 
-Calling this operation, the test bed will create the organisation and respond with its assigned API key:
+Calling this operation, the Test Bed will create the organisation and respond with its assigned API key:
 
 .. code-block:: json
 
@@ -212,7 +212,7 @@ Calling this operation, the test bed will create the organisation and respond wi
   }
 
 It is possible to avoid the automatic API key assignment by defining an API key to use as part of the input. This could
-be useful if you are configuring a test bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
+be useful if you are configuring a Test Bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
 
 .. code-block:: json
 
@@ -222,7 +222,7 @@ be useful if you are configuring a test bed instance based on fixed data and you
     "apiKey": "A_FIXED_API_KEY_FOR_THE_ORGANISATION"
   }
 
-In this case the test bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
+In this case the Test Bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
 the operation will still report the API key that was assigned.
 
 .. _api__community__createOrganisation__request:
@@ -315,7 +315,7 @@ The following example shows how you can create a system under a given organisati
     "organisation": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
   }
 
-Calling this operation, the test bed will create the system and respond with its assigned API key:
+Calling this operation, the Test Bed will create the system and respond with its assigned API key:
 
 .. code-block:: json
 
@@ -324,7 +324,7 @@ Calling this operation, the test bed will create the system and respond with its
   }
 
 It is possible to avoid the automatic API key assignment by defining an API key to use as part of the input. This could
-be useful if you are configuring a test bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
+be useful if you are configuring a Test Bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
 
 .. code-block:: json
 
@@ -334,7 +334,7 @@ be useful if you are configuring a test bed instance based on fixed data and you
     "apiKey": "A_FIXED_API_KEY_FOR_THE_SYSTEM"
   }
 
-In this case the test bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
+In this case the Test Bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
 the operation will still report the API key that was assigned.
 
 .. _api__community__createSystem__request:
@@ -415,7 +415,7 @@ empty body and a status of ``200`` (OK) to signal that the deletion was successf
 Configuration management
 ------------------------
 
-The test bed provides the possibility to manage configuration entries via its REST API. Two types of configuration actions are available:
+The Test Bed provides the possibility to manage configuration entries via its REST API. Two types of configuration actions are available:
 
 * Managing the **definition** of configuration properties.
 * Setting the **values** of configuration properties.
@@ -596,7 +596,7 @@ The following example shows how you can create a domain property with the provid
     "description": "The WSDL address of the validation service used in test cases."
   }
 
-Calling this operation, the test bed will create the property and respond with a ``200`` (OK) response if successful.
+Calling this operation, the Test Bed will create the property and respond with a ``200`` (OK) response if successful.
 
 .. _api__configuration__createDomainProperty__request:
 
@@ -716,7 +716,7 @@ that the current one depends upon:
     "dependsOnValue": "Y"
   }
 
-Calling this operation, the test bed will create the property and respond with a ``200`` (OK) response if successful.
+Calling this operation, the Test Bed will create the property and respond with a ``200`` (OK) response if successful.
 
 .. _api__configuration__createOrganisationProperty__request:
 
@@ -826,7 +826,7 @@ that the current one depends upon:
     "dependsOn": "apiEndpoint"
   }
 
-Calling this operation, the test bed will create the property and respond with a ``200`` (OK) response if successful.
+Calling this operation, the Test Bed will create the property and respond with a ``200`` (OK) response if successful.
 
 .. _api__configuration__createSystemProperty__request:
 
@@ -937,7 +937,7 @@ that the current one depends upon:
     "dependsOn": "apiEndpoint"
   }
 
-Calling this operation, the test bed will create the property and respond with a ``200`` (OK) response if successful.
+Calling this operation, the Test Bed will create the property and respond with a ``200`` (OK) response if successful.
 
 .. _api__configuration__createStatementProperty__request:
 
@@ -1011,7 +1011,7 @@ empty body and a status of ``200`` (OK) to signal that the deletion was successf
 Conformance statement management
 --------------------------------
 
-You can use the test bed's REST API to manage an organisation's **conformance statements**. The following operations are provided:
+You can use the Test Bed's REST API to manage an organisation's **conformance statements**. The following operations are provided:
 
 * :ref:`api__conformance_statements__create`: Create a conformance statement linking an organisation's system with a specification actor.
 * :ref:`api__conformance_statements__delete`: Delete an organisation's conformance statement.
@@ -1068,7 +1068,7 @@ By default the format of the returned report will be XML, expressed in the `GITB
 You can also request a PDF report by specifying the ``Accept`` HTTP header as ``application/pdf``. In addition, you must include in your request an additional 
 HTTP header named ``ITB_API_KEY`` set with the **organisation's API key**.
 
-Once this call is made, the test bed will return a response with a ``200`` status code, whose payload is the report’s content.
+Once this call is made, the Test Bed will return a response with a ``200`` status code, whose payload is the report’s content.
 The following sample is a complete example of such a report (in the default XML format):
 
 .. literalinclude:: ../manageConformanceStatements/resources/conformance_statement_xml.xml
@@ -1079,8 +1079,8 @@ The following sample is a complete example of such a report (in the default XML 
 Domain management
 -----------------
 
-The domain management operations allow you to manage the test bed's **domains**, **specification groups**, **specifications** and **actors**. They are useful if you want to
-have processes external to the test bed manage such information without needing manual actions through the test bed's user interface. Specifically you can:
+The domain management operations allow you to manage the Test Bed's **domains**, **specification groups**, **specifications** and **actors**. They are useful if you want to
+have processes external to the Test Bed manage such information without needing manual actions through the Test Bed's user interface. Specifically you can:
 
 * :ref:`Create <api__domain__createDomain>`, :ref:`update <api__domain__updateDomain>` and :ref:`delete <api__domain__deleteDomain>` domains.
 * :ref:`Create <api__domain__createSpecificationGroup>`, :ref:`update <api__domain__updateSpecificationGroup>` and :ref:`delete <api__domain__deleteSpecificationGroup>` specification groups.
@@ -1091,7 +1091,7 @@ All domain management operations use API keys to authorise calls and determine t
 on the operation:
 
 * The key identifying a **community**, for all operations that a community administrator can do through the user interface.
-* The **master API key**, for selected top-level operations that are normally reserved for the overall test bed administrator.
+* The **master API key**, for selected top-level operations that are normally reserved for the overall Test Bed administrator.
 
 The sections that follow provide instructions and examples for each operation.
 
@@ -1117,7 +1117,7 @@ The following example shows how you can create a domain with the provided data:
     "description": "The European Purchase Order specifications defining the exchange of purchase orders in the EU."
   }
 
-Calling this operation, the test bed will create the domain and respond with the domain's assigned API key:
+Calling this operation, the Test Bed will create the domain and respond with the domain's assigned API key:
 
 .. code-block:: json
 
@@ -1126,7 +1126,7 @@ Calling this operation, the test bed will create the domain and respond with the
   }
 
 It is possible to avoid the automatic API key assignment by defining an API key to use as part of the input. This could
-be useful if you are configuring a test bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
+be useful if you are configuring a Test Bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
 
 .. code-block:: json
 
@@ -1137,7 +1137,7 @@ be useful if you are configuring a test bed instance based on fixed data and you
     "apiKey": "A_FIXED_API_KEY_FOR_THE_DOMAIN"
   }
 
-In this case the test bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
+In this case the Test Bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
 the operation will still report the API key that was assigned.
 
 .. _api__domain__createDomain__request:
@@ -1172,8 +1172,8 @@ The first variant assumes that you are performing an update as a community admin
 to the community or any domain, in case the community is not linked to a specific one. The operation is called by making an HTTP ``POST`` to
 path ``/api/rest/domain`` and setting an HTTP header named ``ITB_API_KEY`` to your **community API key**.
 
-The second variant allows you to perform tasks reserved for the test bed administrator. This means that you can manage any domain within the
-test bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path 
+The second variant allows you to perform tasks reserved for the Test Bed administrator. This means that you can manage any domain within the
+Test Bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path 
 ``/api/rest/domain/{domain}``, setting ``{domain}`` to the target domain's API key. The ``ITB_API_KEY`` HTTP header needs to be set
 with the **master API key**.
 
@@ -1244,7 +1244,7 @@ The following example shows how you can create a specification group with the pr
     "fullName": "Data package specification"
   }
 
-Calling this operation, the test bed will create the specification group and respond with its assigned API key:
+Calling this operation, the Test Bed will create the specification group and respond with its assigned API key:
 
 .. code-block:: json
 
@@ -1253,7 +1253,7 @@ Calling this operation, the test bed will create the specification group and res
   }
 
 It is possible to avoid the automatic API key assignment by defining an API key to use as part of the input. This could
-be useful if you are configuring a test bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
+be useful if you are configuring a Test Bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
 
 .. code-block:: json
 
@@ -1263,7 +1263,7 @@ be useful if you are configuring a test bed instance based on fixed data and you
     "apiKey": "A_FIXED_API_KEY_FOR_THE_GROUP"
   }
 
-In this case the test bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
+In this case the Test Bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
 the operation will still report the API key that was assigned.
 
 .. _api__domain__createSpecificationGroup__request:
@@ -1374,7 +1374,7 @@ In case you use specification groups you could also have referred to the group w
     "group": "C48CD2F7XB02FX45B5XB483X6DE1294C9F00"
   }
 
-Calling this operation, the test bed will create the specification and respond with its assigned API key:
+Calling this operation, the Test Bed will create the specification and respond with its assigned API key:
 
 .. code-block:: json
 
@@ -1383,7 +1383,7 @@ Calling this operation, the test bed will create the specification and respond w
   }
 
 It is possible to avoid the automatic API key assignment by defining an API key to use as part of the input. This could
-be useful if you are configuring a test bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
+be useful if you are configuring a Test Bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
 
 .. code-block:: json
 
@@ -1393,7 +1393,7 @@ be useful if you are configuring a test bed instance based on fixed data and you
     "apiKey": "A_FIXED_API_KEY_FOR_THE_SPECIFICATION"
   }
 
-In this case the test bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
+In this case the Test Bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
 the operation will still report the API key that was assigned.
 
 .. _api__domain__createSpecification__request:
@@ -1504,7 +1504,7 @@ The following example shows how you can create an actor with the provided data:
     "specification": "1A748C4DXBFD6X4FD3XA196X969D9B695244"
   }
 
-Calling this operation, the test bed will create the actor and respond with its assigned API key:
+Calling this operation, the Test Bed will create the actor and respond with its assigned API key:
 
 .. code-block:: json
 
@@ -1513,7 +1513,7 @@ Calling this operation, the test bed will create the actor and respond with its 
   }
 
 It is possible to avoid the automatic API key assignment by defining an API key to use as part of the input. This could
-be useful if you are configuring a test bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
+be useful if you are configuring a Test Bed instance based on fixed data and you want to ensure assigned API keys have specific, known values.
 
 .. code-block:: json
 
@@ -1524,7 +1524,7 @@ be useful if you are configuring a test bed instance based on fixed data and you
     "apiKey": "A_FIXED_API_KEY_FOR_THE_ACTOR"
   }
 
-In this case the test bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
+In this case the Test Bed will use the provided API key unless it is found to already exist, in which case a new one will be generated instead. Regardless,
 the operation will still report the API key that was assigned.
 
 .. _api__domain__createActor__request:
@@ -1611,9 +1611,9 @@ Apart from launching tests through the user interface you may also launch, manag
 be to do so as part of a development or quality assurance workflow that would involve the following steps:
 
 1. Upon changes to your system, or at given intervals, deploy and initialise the latest version of your system.
-2. Once your system is ready, use the test bed's REST API to launch a series of test sessions for your system.
-3. Have your system proceed, via scripting or responding to test bed requests, to complete the launched test sessions.
-4. Monitor the progress of the launched test sessions by periodically polling the test bed for updates.
+2. Once your system is ready, use the Test Bed's REST API to launch a series of test sessions for your system.
+3. Have your system proceed, via scripting or responding to Test Bed requests, to complete the launched test sessions.
+4. Monitor the progress of the launched test sessions by periodically polling the Test Bed for updates.
 5. Once all test sessions are complete, compile an overview report and shut down your system.
 
 All test session management operations identify relevant data via API keys that are :ref:`managed as part of the organisation's details<manage_organisation__rest>`.
@@ -1649,7 +1649,7 @@ to execute, allowing for targetted choices or batch execution of complete sets o
 launched, by specifying whether they should be parallelised or executed in sequence. In addition, you may provide inputs for the tests to execute
 that could serve to replace values that would be otherwise provided interactively (e.g. user inputs or uploaded files).
 
-To call the **start** operation make an HTTP ``POST`` to path ``/api/rest/tests/start``. As with all test bed REST operations for session
+To call the **start** operation make an HTTP ``POST`` to path ``/api/rest/tests/start``. As with all Test Bed REST operations for session
 management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
 
 In the request's payload you typically define at least the following properties:
@@ -1670,7 +1670,7 @@ For example the following request defines only the ``actor``, thus launching all
     "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7"
   }
 
-Including in addition the ``testSuite`` property will instruct the test bed to launch the test cases defined in that specific test suite(s):
+Including in addition the ``testSuite`` property will instruct the Test Bed to launch the test cases defined in that specific test suite(s):
 
 .. code-block:: json
 
@@ -1690,9 +1690,9 @@ If you want to launch only one or more specific test cases you can use the ``tes
     "testCase": [ "TS1_TC1", "TS1_TC2" ]
   }
 
-Apart from selecting the test cases to launch, you may also specify property ``forceSequentialExecution`` to inform the test bed how the
-test sessions should be launched. Setting this to ``true`` will force the test bed to launch all tests sequentially. By default, this is
-considered as ``false``, meaning that the test bed will launch all test sessions in parallel, unless certain of the selected test cases
+Apart from selecting the test cases to launch, you may also specify property ``forceSequentialExecution`` to inform the Test Bed how the
+test sessions should be launched. Setting this to ``true`` will force the Test Bed to launch all tests sequentially. By default, this is
+considered as ``false``, meaning that the Test Bed will launch all test sessions in parallel, unless certain of the selected test cases
 require sequential execution.
 
 .. code-block:: json
@@ -1704,9 +1704,9 @@ require sequential execution.
   }
 
 By default the ``start`` call  immediately returns after having launched its test sessions. In case you need to take certain actions only
-**once the launched test sessions are completed**, you can set the ``waitForCompletion`` flag to ``true``. Doing so the test bed will monitor the
+**once the launched test sessions are completed**, you can set the ``waitForCompletion`` flag to ``true``. Doing so the Test Bed will monitor the
 status of the launched sessions, and will produce a response only once all of them are completed. To avoid pending indefinitely for long-running
-sessions, the test bed will wait by default for 30 seconds, however you can override this by using the ``maximumWaitTime`` parameter and
+sessions, the Test Bed will wait by default for 30 seconds, however you can override this by using the ``maximumWaitTime`` parameter and
 specifying the number of milliseconds to consider as the maximum wait time. The response to the ``start`` operation that included such
 monitoring will also include in the response a ``completed`` boolean flag per test session to inform the caller on whether the session was known
 to have completed.
@@ -1881,9 +1881,9 @@ status
 ~~~~~~
 
 The **status** operation is used to check the progress of one or more specific test sessions. It can be used with any test session, not only
-sessions launched via the test bed's REST API, as long as you are authorised to view them.
+sessions launched via the Test Bed's REST API, as long as you are authorised to view them.
 
-To call the **status** operation make an HTTP ``POST`` to path ``/api/rest/tests/status``. As with all test bed REST operations for session
+To call the **status** operation make an HTTP ``POST`` to path ``/api/rest/tests/status``. As with all Test Bed REST operations for session
 management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
 
 .. note::
@@ -1908,7 +1908,7 @@ The following example call makes a query for one test session, choosing to also 
     "withLogs": true
   }
 
-As a response for the **status** operation, the test bed returns the latest information for the requested sessions in an array named ``sessions``.
+As a response for the **status** operation, the Test Bed returns the latest information for the requested sessions in an array named ``sessions``.
 This includes one item per reported session which includes in turn the following properties:
 
 * ``session``, for the session's identifier.
@@ -1988,9 +1988,9 @@ stop
 ~~~~
 
 The **stop** operation is used to forcibly terminate one or more specific test sessions. It can be used with any test session, not only
-sessions launched via the test bed's REST API, as long as you are authorised to view them.
+sessions launched via the Test Bed's REST API, as long as you are authorised to view them.
 
-To call the **stop** operation make an HTTP ``POST`` to path ``/api/rest/tests/stop``. As with all test bed REST operations for session
+To call the **stop** operation make an HTTP ``POST`` to path ``/api/rest/tests/stop``. As with all Test Bed REST operations for session
 management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
 
 In the request's payload you are expected to provide an array named ``session``, including the session identifiers for one or more test sessions 
@@ -2002,7 +2002,7 @@ you want to stop. In the following example, a request is being made to terminate
     "session": ["08e49917-d560-4ffb-bbf5-280bf1084148", "a866297c-ccb0-4133-9ae9-2c3af7aba0bd"]
   }
 
-Once this call is made, the test bed will immediately terminate the requested test sessions. The response to the **stop** operation has an
+Once this call is made, the Test Bed will immediately terminate the requested test sessions. The response to the **stop** operation has an
 empty body and is returned with a ``200`` (OK) status code.
 
 .. _api__test_sessions__stop__request:
@@ -2020,15 +2020,15 @@ The payload of the **stop** operation's request is defined by the following :dow
 report
 ~~~~~~
 
-The **report** operation is used to retrieve a test session's report. It can be used with any test session, not only sessions launched via the test bed's REST API, as long as you are authorised to view them.
+The **report** operation is used to retrieve a test session's report. It can be used with any test session, not only sessions launched via the Test Bed's REST API, as long as you are authorised to view them.
 
 To call the **report** operation make an HTTP ``GET`` to path ``/api/rest/tests/report/{sessionId}``, where ``sessionId`` is replaced by the session's identifier.
-As with all test bed REST operations for session management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+As with all Test Bed REST operations for session management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
 
 The format of the report is by default XML, using in particular the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__ syntax.
 You may also request the report in PDF, by setting the ``Accept`` HTTP header to ``application/pdf``.
 
-Once this call is made, the test bed will return a response with a ``200`` (OK) status code, whose payload is the report's content. The following sample is a complete 
+Once this call is made, the Test Bed will return a response with a ``200`` (OK) status code, whose payload is the report's content. The following sample is a complete 
 example of such a report (in the default XML format):
 
 .. literalinclude:: ../testHistory/resources/test_case_report.xml
@@ -2039,7 +2039,7 @@ example of such a report (in the default XML format):
 Test suite management
 ---------------------
 
-The test bed foresees API operations to **deploy** and **undeploy** test suites. Managing test suites in this way is primarily used during **test suite development**, 
+The Test Bed foresees API operations to **deploy** and **undeploy** test suites. Managing test suites in this way is primarily used during **test suite development**, 
 to allow the deployment of test suites via automation processes.
 
 Test suite management operations make use of API keys to determine the information relevant to a specific call. These keys are:
@@ -2226,7 +2226,7 @@ The following sample is a request to remove a test suite from a specification.
     "testSuite": "test_suite_1"
   }
 
-Once this call is made, the test bed will remove the specified test suite and clear any related conformance tests. The response to the **undeploy** operation has an
+Once this call is made, the Test Bed will remove the specified test suite and clear any related conformance tests. The response to the **undeploy** operation has an
 empty body and is returned with a ``200`` (OK) status code.
 
 .. _api__test_suites__undeploy__request:
@@ -2394,7 +2394,7 @@ The following sample is a request to remove a test suite from a specification.
     "testSuite": "test_suite_1"
   }
 
-Once this call is made, the test bed will remove the specified test suite and clear any related conformance tests. The response to the **undeployShared** operation has an
+Once this call is made, the Test Bed will remove the specified test suite and clear any related conformance tests. The response to the **undeployShared** operation has an
 empty body and is returned with a ``200`` (OK) status code.
 
 .. _api__test_suites__undeployShared__request:
@@ -2508,7 +2508,7 @@ The following sample is a request to unlink a test suite from a specification.
     "specifications": [ "B277E210X2FB4X4BD7X88B6X951504F45F8F" ]
   }
 
-Once this call is made, the test bed will unlink the specified test suite from the specification(s). The response has an empty body and is returned with a ``200`` (OK) status code.
+Once this call is made, the Test Bed will unlink the specified test suite from the specification(s). The response has an empty body and is returned with a ``200`` (OK) status code.
 
 .. _api__test_suites__unlinkShared__request:
 
@@ -2525,11 +2525,11 @@ The payload of the **unlinkShared** operation's request is defined by the follow
 OpenAPI documentation
 ---------------------
 
-The test bed's REST API is also documented using the standard `OpenAPI specification <https://swagger.io/specification/>`_. You may 
-download this from :download:`here <resources/openapi.json>`, or access it live from the test bed from path ``/api/rest``. On a typical 
+The Test Bed's REST API is also documented using the standard `OpenAPI specification <https://swagger.io/specification/>`_. You may 
+download this from :download:`here <resources/openapi.json>`, or access it live from the Test Bed from path ``/api/rest``. On a typical 
 `developer instance <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/>`_ this would be available at ``http://localhost:9000/api/rest``.
 
-To facilitate reviewing and using the REST API, the test bed exposes also a `Swagger UI <https://swagger.io/tools/swagger-ui/>`_ accessible
+To facilitate reviewing and using the REST API, the Test Bed exposes also a `Swagger UI <https://swagger.io/tools/swagger-ui/>`_ accessible
 at ``http://localhost:9000/api/rest/swagger``.
 
 .. figure:: ../screenshots/swagger-ui.png
@@ -2540,7 +2540,7 @@ at ``http://localhost:9000/api/rest/swagger``.
 Health monitoring
 -----------------
 
-As a complement to its REST API, the test bed also publishes a **health-check endpoint** to facilitate availability monitoring. This
+As a complement to its REST API, the Test Bed also publishes a **health-check endpoint** to facilitate availability monitoring. This
 is not listed as a part of the other REST operations, nor does it figure in the :ref:`OpenAPI documentation<api__openapi>` as it is
 always available regardless of whether the REST API is enabled or not.
 
@@ -2548,7 +2548,7 @@ To make a health-check, send a ``GET`` to path ``/api/healthcheck``. If all serv
 empty body.
 
 Besides testing as part of availability monitoring, this operation could also be used as part of automated build scripting to
-identify when the test bed has completed its initialisation and is ready to receive other API calls.
+identify when the Test Bed has completed its initialisation and is ready to receive other API calls.
 
 .. _AUTOMATION_API_ENABLED: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties
 .. _production: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/

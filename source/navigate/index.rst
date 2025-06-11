@@ -3,8 +3,8 @@
 Navigate the user interface
 ===========================
 
-Once you have :ref:`logged into the test bed <login>` you are presented with its main user interface. From here you can proceed to go about your tasks,
-navigating screens using the test bed's various navigation options.
+Once you have :ref:`logged into the Test Bed <login>` you are presented with its main user interface. From here you can proceed to go about your tasks,
+navigating screens using the Test Bed's various navigation options.
 
 .. figure:: ../screenshots/navigate_overview.png
   :align: center
@@ -64,14 +64,14 @@ The footer includes the following information and links:
 * A link to the **user guide**. The section of the user guide displayed depends on the screen you are currently accessing.
 * A link to the **REST API** OpenAPI documentation, if the :ref:`REST API is enabled <api>`.
 * A link to **contact the support team** for problems, questions and feedback (see :ref:`contact_support`).
-* A link to view the test bed's **legal notice**.
-* A link to **find out more** information on the test bed.
-* The test bed's **version** number which can also be clicked to view its release notes.
+* A link to view the Test Bed's **legal notice**.
+* A link to **find out more** information on the Test Bed.
+* The Test Bed's **version** number which can also be clicked to view its release notes.
 
-In case you are accessing a development instance of the test bed you will also see in the footer a clear indication that you
+In case you are accessing a development instance of the Test Bed you will also see in the footer a clear indication that you
 are running in **development mode**. This is presented as a warning given that such an instance is not suited for use in production
 due to certain `security configurations <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#step-3-prepare-basic-configuration>`_
-being pending. When accessing the test bed in development mode the version information displayed will also include the software's 
+being pending. When accessing the Test Bed in development mode the version information displayed will also include the software's
 build timestamp.
 
 .. figure:: ../screenshots/navigate_footer_development_mode.png
@@ -82,7 +82,7 @@ build timestamp.
 Using the menu
 --------------
 
-The main **navigation menu** of the test bed is presented in the left side of the screen and is always present. The menu is 
+The main **navigation menu** of the Test Bed is presented in the left side of the screen and is always present. The menu is
 presented by default in collapsed mode but can be expanded to see full descriptions of the available links.
 
 .. figure:: ../screenshots/navigate_menu.png

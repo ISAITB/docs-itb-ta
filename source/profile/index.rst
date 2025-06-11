@@ -9,7 +9,7 @@ will expand it to reveal information about your profile and the actions you may 
 .. figure:: ../screenshots/profile_hover.png
   :align: center
 
-How you manage your personal profile depends largely on whether or not you are using EU Login to connect to the test bed.
+How you manage your personal profile depends largely on whether or not you are using EU Login to connect to the Test Bed.
 Use the following links depending on your case:
 
 * :ref:`Profile management when using EU Login<manage_your_profile__eulogin>`.
@@ -20,8 +20,8 @@ Use the following links depending on your case:
   to different organisations and/or communities. The profile management section of the test bed offers
   the means of managing these roles but not your EU Login account.
 
-  When not using EU Login you will have a distinct test bed user account per role that you use to log in with. In this case
-  your profile management differs as you can also modify this test bed specific account.
+  When not using EU Login you will have a distinct Test Bed user account per role that you use to log in with. In this case
+  your profile management differs as you can also modify this Test Bed specific account.
 
 .. _manage_your_profile__eulogin:
 
@@ -29,7 +29,7 @@ Case: EU Login
 --------------
 
 .. note::
-  This section is relevant if you are **using EU Login** to connect to the test bed. Click :ref:`here<manage_your_profile__noeulogin>`
+  This section is relevant if you are **using EU Login** to connect to the Test Bed. Click :ref:`here<manage_your_profile__noeulogin>`
   if this is not the case.
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
@@ -41,7 +41,7 @@ The popup information displays your name, current role, and three links:
 
 * **My profile:** To :ref:`manage your profile settings<manage_your_profile__edit__eulogin>`.
 * **Switch role:** To :ref:`switch your currently connected role<logout__eulogin>`.
-* **Logout:** To :ref:`log out from the test bed<logout__eulogin>`.
+* **Logout:** To :ref:`log out from the Test Bed<logout__eulogin>`.
 
 .. _manage_your_profile__edit__eulogin:
 
@@ -53,18 +53,18 @@ To edit your profile click on the **My profile** link from the header's profile 
 .. figure:: ../screenshots/profile_hover_eulogin.png
   :align: center
 
-The information you see here is taken from your EU Login account and cannot be edited within the test bed.
+The information you see here is taken from your EU Login account and cannot be edited within the Test Bed.
 
 .. figure:: ../screenshots/profile_edit_eulogin.png
   :align: center
 
-The options you have here relate to the test bed roles linked to your account, specifically:
+The options you have here relate to the Test Bed roles linked to your account, specifically:
 
 * **Remove role from your account** is used to remove one or more roles from your EU Login account.
 * **Link another role to your account** will transfer you to the screen where you can :ref:`link additional roles to your EU Login account<login__roles>`.
 * **Register another organisation** will transfer you to the screen to :ref:`register another organisation<login__roles__register>`
-  in one of the test bed's communities (not necessarily the current one). Note that this button may not be available if
-  self-registration is disabled by your test bed's administrator.
+  in one of the Test Bed's communities (not necessarily the current one). Note that this button may not be available if
+  self-registration is disabled by your Test Bed's administrator.
 
 Clicking **Remove role from your account** will present you with a popup in which you are prompted to select the role(s) to remove.
 
@@ -80,9 +80,9 @@ You have three options from which to choose from, each with increasing weight:
 * **Delete current role:** This deactivates the current role (see above) but also deletes the inactive role. Only an administrator can
   redefine this role for you.
 * **Delete all roles:** This deletes not only your current role (see above) but also all other roles you may have linked to your EU Login
-  account (in other organisations or communities). This effectively wipes all your information from the test bed.
+  account (in other organisations or communities). This effectively wipes all your information from the Test Bed.
 
-The delete options, either for the current role or all roles, provide you the ability to fully manage your own information in the test bed.
+The delete options, either for the current role or all roles, provide you the ability to fully manage your own information in the Test Bed.
 Removing your information, specifically the email, user ID and name associated to your EU Login account can thus be driven by you without
 needing to involve other parties. Importantly, deactivating or deleting user roles never impacts the test session history or conformance status
 of your organisation.
@@ -96,7 +96,7 @@ Case: No EU Login
 -----------------
 
 .. note::
-  This section is relevant if you are **not using EU Login** to connect to the test bed. Click :ref:`here<manage_your_profile__eulogin>`
+  This section is relevant if you are **not using EU Login** to connect to the Test Bed. Click :ref:`here<manage_your_profile__eulogin>`
   if this is not the case.
 
 To manage your profile hover over your user's name in the screen's header to see the available options.
@@ -108,7 +108,7 @@ The popup information displays your name, current role, and three links:
 
 * **My profile:** To :ref:`manage your profile settings<manage_your_profile__edit>`.
 * **Change password:** To :ref:`change your password<manage_your_profile__change_your_password>`.
-* **Logout:** To :ref:`log out from the test bed<logout__noeulogin>`.
+* **Logout:** To :ref:`log out from the Test Bed<logout__noeulogin>`.
 
 .. _manage_your_profile__edit:
 
@@ -128,9 +128,9 @@ Doing so will take you to the profile editing screen where you are presented wit
 You see here your **username** and **role**, as well as your **name** which is the only editable (and required) field.
 To change your name enter a new value and click the **Save changes** button. You are also presented here with the option
 to **Register another organisation**. This is a shortcut allowing you to disconnect from your current session and register
-another organisation in one of the test bed's communities (also not necessarily the current one). If you click this you will
+another organisation in one of the Test Bed's communities (also not necessarily the current one). If you click this you will
 be presented with a confirmation message and then transferred to the :ref:`organisation self-registration page<login__create_account>`.
-Note that this button may not be available if self-registration is disabled by your test bed's administrator.
+Note that this button may not be available if self-registration is disabled by your Test Bed's administrator.
 
 .. _manage_your_profile__change_your_password:
 

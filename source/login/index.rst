@@ -3,7 +3,7 @@
 Log in
 ======
 
-Before carrying out any action on the test bed you will need to log in. The first step in doing so is to access the test bed's
+Before carrying out any action on the Test Bed you will need to log in. The first step in doing so is to access the Test Bed's
 welcome page.
 
 .. _login__welcome:
@@ -17,15 +17,15 @@ the option to log in, as well as shortcuts for tasks you may want to do before c
 .. figure:: ../screenshots/welcome_basic.PNG
   :align: center
 
-The content of the welcome page may vary depending on the test bed's setup. The example listed above is a simple case which
+The content of the welcome page may vary depending on the Test Bed's setup. The example listed above is a simple case which
 displays:
 
 * A welcome message.
 * The main **Click to log in** button to log you in.
-* The **Register in a public community** shortcut allowing to self-register for one of the test bed's communities (see :ref:`login__create_account`).
-* A privacy note with a link to view the test bed's legal notice.
+* The **Register in a public community** shortcut allowing to self-register for one of the Test Bed's communities (see :ref:`login__create_account`).
+* A privacy note with a link to view the Test Bed's legal notice.
 
-A more complete example can be found in the `DIGIT test bed instance`_ where additional information and shortcuts are displayed:
+A more complete example can be found in the `DIGIT Test Bed instance`_ where additional information and shortcuts are displayed:
 
 .. figure:: ../screenshots/welcome_complete.PNG
   :align: center
@@ -33,27 +33,27 @@ A more complete example can be found in the `DIGIT test bed instance`_ where add
 In this case, you are additionally presented with:
 
 * The **Confirm your new role** shortcut to approve a role that is assigned to you by an administrator (see :ref:`login__roles__confirm`).
-* The **Try out our demos** shortcut to directly take you to the test bed's demos (see :ref:`login__demos`).
+* The **Try out our demos** shortcut to directly take you to the Test Bed's demos (see :ref:`login__demos`).
 * A message on the use of **EU Login** to authenticate, along with the link to a simplified `EU Login user guide`_.
 * A **migration note** on how to migrate a legacy username and password based account to EU Login, including a shortcut to
   start the migration and a link to a `step-by-step guide`_ (see :ref:`login__roles__migrate`).
 
 .. note::
 
-  **EU Login:** Most of the additional information on the test bed's welcome page is only displayed if the instance you are
-  using is integrated with EU Login. This is normally the case for test bed instances operated by the European Commission.
+  **EU Login:** Most of the additional information on the Test Bed's welcome page is only displayed if the instance you are
+  using is integrated with EU Login. This is normally the case for Test Bed instances operated by the European Commission.
 
 .. _login__login:
 
 Log in
 ------
 
-To trigger the login process click on **Click to log in** from the test bed's welcome page.
+To trigger the login process click on **Click to log in** from the Test Bed's welcome page.
 
 .. figure:: ../screenshots/welcome__login.png
   :align: center
 
-What happens from here depends on the test bed's authentication approach:
+What happens from here depends on the Test Bed's authentication approach:
 
 * EU Login (see :ref:`login__login__eulogin`).
 * Test bed username and password based accounts (see :ref:`login__login__eulogin`).
@@ -63,9 +63,9 @@ What happens from here depends on the test bed's authentication approach:
 Logging in with EU Login
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If EU Login integration is enabled (most likely the case for European Commission test bed instances), you will be transferred
+If EU Login integration is enabled (most likely the case for European Commission Test Bed instances), you will be transferred
 to a sign-in page where you will be requested to authenticate using your EU Login account. If you already have an active
-session you will simply be displayed a confirmation message before proceeding to access the test bed.
+session you will simply be displayed a confirmation message before proceeding to access the Test Bed.
 
 .. figure:: ../screenshots/eu_login.png
   :align: center
@@ -77,7 +77,7 @@ a link on the welcome page.
 .. figure:: ../screenshots/welcome_eu_login_tutorial.png
   :align: center
 
-Once you have authenticated you will be transferred back to the test bed as follows:
+Once you have authenticated you will be transferred back to the Test Bed as follows:
 
 * If you have a single role assigned to you you will be automatically transferred to your :ref:`organisation's landing page<navigate__landing_page>`.
 * If you don't have an assigned role or have multiple roles you will be transferred to a screen to select the one to proceed with. See :ref:`login__roles` for details.
@@ -87,7 +87,7 @@ Once you have authenticated you will be transferred back to the test bed as foll
 Logging in without EU Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case EU Login is not enabled for your test bed you will be using username and password based accounts. The login screen 
+In case EU Login is not enabled for your Test Bed you will be using username and password based accounts. The login screen
 in this case requires you to provide:
 
 * Your account's **username**.
@@ -98,7 +98,7 @@ in this case requires you to provide:
 
 Your account credentials are those provided to you by the test bed administrator.
 
-On the login screen you also have the possibility to have the test bed keep your session open. To do this 
+On the login screen you also have the possibility to have the Test Bed keep your session open. To do this
 simply check the **Remember me** checkbox below the login form. Once you have entered your credentials click
 the **Log in** button.
 
@@ -109,7 +109,7 @@ Replacing a one-time password
 
 If this is the first time you are logging into the test bed your password provided to you by your administrator is
 considered a "one-time password". This means that it is only valid for a single login in which as a first step you
-will need to change it. Note that you may also need to go through this step if you are already a test bed user but
+will need to change it. Note that you may also need to go through this step if you are already a Test Bed user but
 an administrator has reset your password.
 
 .. figure:: ../screenshots/login_change_onetime_password.PNG
@@ -125,29 +125,29 @@ The new password you provide must meet minimum expected complexity requirements.
 * It must include at least one lowercase letter, uppercase letter, digit and symbol.
 * It must be at least 8 characters long.
 
-Once ready click on **Save** to change your password and access the test bed.
+Once ready click on **Save** to change your password and access the Test Bed.
 
 .. _login__create_account:
 
 Register for a public community
 -------------------------------
 
-From the test bed's welcome page you have the option of registering for one of its public communities. Selecting to do this will prompt
-you to create an account linked to a new organisation that will be registered in one of the test bed's available communities. 
+From the Test Bed's welcome page you have the option of registering for one of its public communities. Selecting to do this will prompt
+you to create an account linked to a new organisation that will be registered in one of the Test Bed's available communities.
 This process is also referred to as "self-registration".
 
-To carry out the registration start by clicking the **Register in a public community** shortcut from the test bed's welcome page.
+To carry out the registration start by clicking the **Register in a public community** shortcut from the Test Bed's welcome page.
 
 .. figure:: ../screenshots/welcome__create_account.png
   :align: center
 
 .. note::
-  In case the test bed uses EU Login you will be first prompted to authenticate and then transferred to a simplified
+  In case the Test Bed uses EU Login you will be first prompted to authenticate and then transferred to a simplified
   registration form described in :ref:`login__roles__register`.
 
-  The information that follows in this section covers the case of a test bed where EU Login is **not enabled**.
+  The information that follows in this section covers the case of a Test Bed where EU Login is **not enabled**.
 
-If you are using a test bed that is not integrated with EU Login you will be presented with a registration form in which 
+If you are using a Test Bed that is not integrated with EU Login you will be presented with a registration form in which
 you are expected to:
 
 * Select the community you want to register for.
@@ -195,13 +195,13 @@ on **Cancel** will return you back to the welcome page.
 Launch demos
 ------------
 
-If the test bed foresees a set of demo scenarios these can be accessed through the welcome page by clicking on the
+If the Test Bed foresees a set of demo scenarios these can be accessed through the welcome page by clicking on the
 **try out our demos** link.
 
 .. figure:: ../screenshots/welcome__demos.png
   :align: center
 
-Doing so will connect you to the test bed using a special demo account with predefined test scenarios you can execute. From the
+Doing so will connect you to the Test Bed using a special demo account with predefined test scenarios you can execute. From the
 :ref:`landing page<navigate__landing_page>` for this account you can then click the **My conformance statements** link from the menu to view the
 available :ref:`demo conformance statements<manage_your_conformance_statements__view_your_conformance_statements>` and proceed
 to execute their test cases.
@@ -213,12 +213,12 @@ Manage your roles
 
 .. note::
 
-  This feature is applicable only if the test bed is integrated with EU Login. In this case you are
+  This feature is applicable only if the Test Bed is integrated with EU Login. In this case you are
   considered as having a single account (your EU Login account) and one or more roles in defined organisations (potentially in
-  different communities). If the test bed is not integrated with EU Login such roles are determined by separate username and password based accounts.
+  different communities). If the Test Bed is not integrated with EU Login such roles are determined by separate username and password based accounts.
 
 In this screen you can view and manage the roles assigned to you. You can reach this screen by multiple means, including shortcuts on
-the test bed's :ref:`welcome page<login__welcome>` and controls from your :ref:`profile management page<manage_your_profile>`.
+the Test Bed's :ref:`welcome page<login__welcome>` and controls from your :ref:`profile management page<manage_your_profile>`.
 
 .. figure:: ../screenshots/roles__ou.PNG
   :align: center
@@ -272,7 +272,7 @@ close the dialog.
 Register a new organisation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can register yourself a new organisation in one of the test bed's available communities. To do so select the relevant option
+You can register yourself a new organisation in one of the Test Bed's available communities. To do so select the relevant option
 from the popup dialog.
 
 .. figure:: ../screenshots/roles__popup__register_option.PNG
@@ -312,7 +312,7 @@ close the dialog.
 Migrate a legacy account
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the test bed has migrated from legacy username and password accounts to EU Login it will allow you to migrate such an account
+If the Test Bed has migrated from legacy username and password accounts to EU Login it will allow you to migrate such an account
 as a new role linked to your EU Login profile.
 
 To migrate a legacy account start by selecting the relevant option from the popup dialog. Note that this selection is already done
@@ -338,11 +338,11 @@ the process and close the dialog.
 
 .. note::
 
-  The test bed offers also a step-by-step migration guide to inform and guide you through the
+  The Test Bed offers also a step-by-step migration guide to inform and guide you through the
   process of migrating your legacy account.
   
   This is available at https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin.
 
-.. _DIGIT test bed instance: https://www.itb.ec.europa.eu/itb
+.. _DIGIT Test Bed instance: https://www.itb.ec.europa.eu/itb
 .. _EU Login user guide: https://www.itb.ec.europa.eu/docs/guides/latest/usingEULogin/
 .. _step-by-step guide: https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin/

@@ -5,7 +5,7 @@ Release history
 .. role:: ui
 .. role:: other
 
-The current section provides an overview of the changes introduced in each test bed release (specifically each GITB software release) up to the current one. For each release
+The current section provides an overview of the changes introduced in each Test Bed release (specifically each GITB software release) up to the current one. For each release
 the following information is provided:
 
 * The **release number** and **date**.
@@ -21,11 +21,11 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest test bed release is **1.26.0**.
+The latest Test Bed release is **1.26.0**.
 
 .. note::
     
-    **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
+    **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
 
@@ -320,10 +320,10 @@ This is a minor bug fix release to correct issues reported by users.
 Release 1.24.0 - 15/10/2024
 ---------------------------
 
-This release significantly extends the test bed's REST API, allowing the management of all test-related data, and providing additional reporting 
+This release significantly extends the Test Bed's REST API, allowing the management of all test-related data, and providing additional reporting 
 options. Regarding reports in particular, PDF reports can now be produced using external services and support signatures for all report types,
 whereas XML reports can be further customised with additional project-specific metadata. On the execution of tests, users can now benefit from
-a consolidated display of all configuration related to a given conformance statement. Finally, concerning the setup of on-premise test bed instances,
+a consolidated display of all configuration related to a given conformance statement. Finally, concerning the setup of on-premise Test Bed instances,
 this release brings support for Kubernetes, use of deployment secrets, optional multi-factor authentication when integrating with EU Login, and more
 control over an instance's initial data loading.
 
@@ -436,7 +436,7 @@ This release focuses mostly on test engine extensions by introducing new and imp
 In addition, several bug fixes and improvements to existing capabilities were introduced, including the possibility to use unique API keys for test
 exchanges with systems, improved logging, and better error messages for external service communication failures.
 
-Besides engine updates, the test bed's REST API was extended with new operations allowing the management of conformance statements, and enriched
+Besides engine updates, the Test Bed's REST API was extended with new operations allowing the management of conformance statements, and enriched
 metadata reporting for existing ones. Finally, new custom theming and rich-text editing options were introduced, as well as improvements to the 
 bulk data import process to allow more fine grained control when updating matching data.
 
@@ -495,18 +495,18 @@ bulk data import process to allow more fine grained control when updating matchi
 Release 1.22.0 - 08/04/2024
 ---------------------------
 
-This release significantly extends the test bed's reporting capabilities by introducing new report types at various aggregation
+This release significantly extends the Test Bed's reporting capabilities by introducing new report types at various aggregation
 levels, as well as customisable certificates and XML reports at all levels for machine-based post-processing. In addition, conformance status monitoring
 was enhanced by allowing users to view their status in earlier conformance snapshots, and by introducing a new hierarchical view per organisation as the
-default presentation of the administrator's conformance dashboard. For users operating their own test bed instances, the new release brings 
+default presentation of the administrator's conformance dashboard. For users operating their own Test Bed instances, the new release brings 
 significant new features such as advanced theming possibilities, new configuration options covering email and automated account clean-up, and the inclusion
-of system settings in exports for configuration portability and sandbox definitions. Finally, the test bed's automation API was also extended to include
+of system settings in exports for configuration portability and sandbox definitions. Finally, the Test Bed's automation API was also extended to include
 a lightweight health-check mechanism for availability monitoring, and an operation enabling the management of configuration properties.
 
 With respect to test capabilities, this release brings first-class support for the management of images in test steps, and extends test suite and 
 test case metadata to include normative specification references. Furthermore, user interactions were significantly overhauled to allow them to be
 minimised and asynchronously completed, manage the inputs included in reports, and support configurable timeouts. Finally, it is now possible to
-define administrator verifications of test sessions directly within the test bed, supporting scenarios where manual verification of test results
+define administrator verifications of test sessions directly within the Test Bed, supporting scenarios where manual verification of test results
 is required.
 
 **Bug fixes**
@@ -625,16 +625,16 @@ instance vulnerable to a DDoS attack if used directly (i.e. without a reverse pr
 Release 1.21.0 - 06/10/2023
 ---------------------------
 
-This release restructures the test bed's user interface to simplify navigation and make the organisation of all screens more intuitive.
+This release restructures the Test Bed's user interface to simplify navigation and make the organisation of all screens more intuitive.
 In addition, complex specification setups are now presented in a more intuitive manner, hiding concepts that depending on a 
 community's configuration may be superfluous. Test case management is extended by introducing optional and disabled
 test cases, as well as new tags that provide visual cues for test case traits. With respect to monitoring a community's conformance, 
 administrators can now take and review snapshots of their organisations' testing progress, and also define public badges for their
 specifications that can be externally referred to to illustrate an organisation's conformance status. Finally, the management
-of on-premise test bed instances is better supported, by exposing a new administration interface allowing administrators to
+of on-premise Test Bed instances is better supported, by exposing a new administration interface allowing administrators to
 review and adapt the instance's configuration, as well as define global defaults for all hosted communities.
 
-Alongside these changes to the test bed software, several new features were introduced in the GITB Test Description Language. New 
+Alongside these changes to the Test Bed software, several new features were introduced in the GITB Test Description Language. New 
 metadata was introduced to streamline test suite updates, and to define aspects such as test case custom tags, optional and disabled 
 flags, from within test suite archives. Furthermore new embedded processing capabilities were introduced to facilitate JSON processing,
 test session delays, and generation of random content.
@@ -721,7 +721,7 @@ test session delays, and generation of random content.
 Release 1.20.1 - 23/06/2023
 ---------------------------
 
-This release corrects an issue reported by users concerning the test bed's user interface. It also adds a variant of the gitb-types
+This release corrects an issue reported by users concerning the Test Bed's user interface. It also adds a variant of the gitb-types
 library to extend its support for older Java platforms.
 
 **Bug fixes**
@@ -743,11 +743,11 @@ library to extend its support for older Java platforms.
 Release 1.20.0 - 05/05/2023
 ---------------------------
 
-This release focuses fully on the test bed's user interface and specifically enhancing its reporting capabilities. The PDF reports produced by the 
-test bed have been fully redesigned making them more intuitive, and enriching them with supporting information such as extended documentation,
+This release focuses fully on the Test Bed's user interface and specifically enhancing its reporting capabilities. The PDF reports produced by the 
+Test Bed have been fully redesigned making them more intuitive, and enriching them with supporting information such as extended documentation,
 test session log output, test coverage ratios and step result overviews. In addition, new options were introduced for community administrators to 
 customise reports, and to facilitate the management and maintenance of test suite documentation. Finally, this release provided an opportunity to 
-resolve reported bugs and to apply precautionary security patches to the test bed's underlying third party software libraries.
+resolve reported bugs and to apply precautionary security patches to the Test Bed's underlying third party software libraries.
 
 **Bug fixes**
 
@@ -865,8 +865,8 @@ versions making it simpler to maintain and evolve test extension services.
 Release 1.18.1 - 24/11/2022
 ---------------------------
 
-This is a minor maintenance release to upgrade third party libraries and the test bed's database, as well as correct an
-issue reported by test bed users when viewing the test session history.
+This is a minor maintenance release to upgrade third party libraries and the Test Bed's database, as well as correct an
+issue reported by Test Bed users when viewing the test session history.
 
 **Bug fixes**
 
@@ -889,21 +889,21 @@ issue reported by test bed users when viewing the test session history.
 Release 1.18.0 - 17/10/2022
 ---------------------------
 
-This release focuses primarily on test engine and GITB TDL extensions to increase the test bed's testing capabilities.
+This release focuses primarily on test engine and GITB TDL extensions to increase the Test Bed's testing capabilities.
 It extends significantly the customisation of scriptlets, allowing steps, information and behaviours to be
 adapted dynamically depending on the needs of the calling test cases. The most important of these changes are the new
 possibilities to manage the visibility of all scriptlet elements, the conditional inclusion of blocks of steps, and the
-support for default input values. Apart from scriptlet extensions, the test bed's built-in service handlers received 
+support for default input values. Apart from scriptlet extensions, the Test Bed's built-in service handlers received 
 several updates, focused primarily on adding further XML validation features, and the customisation of generated identifiers
 and simulated message exchanges.
 
-Aside GITB TDL extensions, several updates were made to the test bed's software. New automation options were made available
+Aside GITB TDL extensions, several updates were made to the Test Bed's software. New automation options were made available
 through triggers, including new trigger events, input data, support for REST services and JSON, as well as the possibility to
 fully test triggers directly from the user interface. Reporting options were also extended, by supporting XML reports of test
-sessions and individual test steps for machine processing, as well as a new operation on the test bed's REST API to 
+sessions and individual test steps for machine processing, as well as a new operation on the Test Bed's REST API to 
 retrieve complete test session reports. These new features were complemented by further minor improvements, such as support for default
-custom property values, and various bug fixes. Finally, the test bed software's build tooling was extended to allow
-containerised builds, allowing rapid prototyping and experimentation directly from the test bed's source.
+custom property values, and various bug fixes. Finally, the Test Bed software's build tooling was extended to allow
+containerised builds, allowing rapid prototyping and experimentation directly from the Test Bed's source.
 
 **Bug fixes**
 
@@ -979,7 +979,7 @@ containerised builds, allowing rapid prototyping and experimentation directly fr
 Release 1.17.0 - 20/07/2022
 ---------------------------
 
-This release focuses primarily on the GITB Test Description Language (TDL) and the capabilities of the test bed's
+This release focuses primarily on the GITB Test Description Language (TDL) and the capabilities of the Test Bed's
 test execution engine. The GITB TDL is extended with several new processing and messaging capabilities that simplify
 common operations and working with data transformations and templates. In addition, scriptlets, the GITB TDL 
 construct for reusing test steps across test cases and test suites, are now made more flexible by allowing texts
@@ -987,10 +987,10 @@ and actors to be dynamically set according to their usage context. Finally, the 
 steps for simple processing is now upgraded to the latest XPath version leading to expression simplifications and multiple
 new use cases becoming available.
 
-Apart from the new GITB TDL features, changes in the test bed software include performance improvements, more
+Apart from the new GITB TDL features, changes in the Test Bed software include performance improvements, more
 extensive test suite validation, and most importantly new REST API operations to deploy and undeploy test suites.
 The new test suite management operations complement the previously available test session operations to further
-facilitate using the test bed in continuous integration processes for test development.
+facilitate using the Test Bed in continuous integration processes for test development.
 
 **Bug fixes**
 
@@ -1039,7 +1039,7 @@ Release 1.16.1 - 06/04/2022
 ---------------------------
 
 This is a minor maintenance release to upgrade third party libraries, and to correct minor bugs related to the display
-of tooltips and the test bed's test execution REST API.
+of tooltips and the Test Bed's test execution REST API.
 
 **Bug fixes**
 
@@ -1062,8 +1062,8 @@ of tooltips and the test bed's test execution REST API.
 Release 1.16.0 - 18/03/2022
 ---------------------------
 
-This release introduces numerous changes for the test bed's user interface as well as the internal test engine. The key feature of this
-release is the test bed's new machine-to-machine API that allows test sessions to be launched and managed via REST calls. The execution approach 
+This release introduces numerous changes for the Test Bed's user interface as well as the internal test engine. The key feature of this
+release is the Test Bed's new machine-to-machine API that allows test sessions to be launched and managed via REST calls. The execution approach 
 of test sessions is also extended to allow parallel or sequential test execution, as well as a redesigned test execution display that offers 
 execution options and simplified monitoring when running large numbers of tests. Monitoring of active test sessions is also extended to allow easier 
 following of updates and an enhanced session log experience by automatically updating log entries, allowing log tailing, filtering of log levels, highlighting
@@ -1157,7 +1157,7 @@ Release 1.15.1 - 24/01/2022
 ---------------------------
 
 This is a minor maintenance release that corrects user-reported bugs, notably issues in the test engine due to test
-session concurrency, and handling of XML data. In addition, minor problems linked to the test bed's user interface
+session concurrency, and handling of XML data. In addition, minor problems linked to the Test Bed's user interface
 were also addressed.
 
 **Bug fixes**
@@ -1182,7 +1182,7 @@ were also addressed.
 Release 1.15.0 - 29/11/2021
 ---------------------------
 
-This release introduces multiple changes both to the test bed's user interface as well as the internal test engine. In the user
+This release introduces multiple changes both to the Test Bed's user interface as well as the internal test engine. In the user
 interface several screens have been streamlined to better present information and provide shortcuts to consult test sessions,
 involved parties, conformance statements and detailed test log outputs. These updates are complemented by improvements allowing test 
 information to be extracted more easily, and further filtering options for conformance statements and organisations. In addition,
@@ -1225,7 +1225,7 @@ messaging presentations allow for further customisation and management of test s
   ITB-822 | :ui:`UI` | Preview a test case's steps from test suite management screens
   ITB-918 | :tdl:`TESTS` | Simplified usage of process and call steps by optional use of attributes versus elements
   ITB-948 | :ui:`UI` | Provide shortcuts to detail pages from session dashboard and test history entries
-  ITB-951 | :ui:`UI` | Allow test bed, community and organisation administrators to terminate all active sessions
+  ITB-951 | :ui:`UI` | Allow Test Bed, community and organisation administrators to terminate all active sessions
   ITB-979 | :tdl:`TESTS` | Allow return values from test services to be forDisplay, forContext or both (default)
   ITB-1004 | :ui:`UI` | Provide shortcut to view the latest session details for the test cases shown in the conformance dashboard
   ITB-1005 | :ui:`UI` | Provide shortcut to view the latest session details for the test cases shown in the conformance details page
@@ -1344,9 +1344,9 @@ syntax-sensitive editors. In addition, this release resolves several user-report
 Release 1.13.0 - 01/07/2021
 ---------------------------
 
-This release brings important internal updates to the test bed by upgrading its components to use the latest middleware
+This release brings important internal updates to the Test Bed by upgrading its components to use the latest middleware
 and framework versions. In addition, it resolves several reported bugs and makes improvements both with respect to test
-execution but also the operation of on-premise test bed instances. Regarding the GITB Test Description Language, this
+execution but also the operation of on-premise Test Bed instances. Regarding the GITB Test Description Language, this
 release brings several new features and improvements that facilitate the development of multi-step test cases. Apart from
 simplifying their execution, the test cases' presentation is also enriched, allowing test developers to define test step
 grouping, display style and visibility, for a better structured and simplified presentation to users.
@@ -1382,7 +1382,7 @@ grouping, display style and visibility, for a better structured and simplified p
   :delim: |
 
   ITB-704 | :tdl:`TESTS` | Extend all group step types to define if they are presented as collapsed by default
-  ITB-805 | :ui:`UI` | Allow a test bed master encryption password to be replaced
+  ITB-805 | :ui:`UI` | Allow a Test Bed master encryption password to be replaced
   ITB-814 | :tdl:`TESTS` | Allow test steps to be set as hidden
   ITB-966 | :ui:`UI` | Allow test step groups to be collapsed and expanded by the user
   ITB-969 | :ui:`UI` | Include a "Find out more" link in the footer links
@@ -1415,7 +1415,7 @@ grouping, display style and visibility, for a better structured and simplified p
 Release 1.12.0 - 03/03/2021
 ---------------------------
 
-This releases focuses on the test bed's test execution engine and the GITB Test Description Language to facilitate the development
+This releases focuses on the Test Bed's test execution engine and the GITB Test Description Language to facilitate the development
 of complex test suites. The test case scriptlet concept has been significantly extended, allowing reusable blocks of test steps
 to be shared across test cases but also across test suites. Moreover, reusing common resources is now also possible for any kind
 of artefact, template or documentation content that may be imported by test cases, and is further facilitated by allowing
@@ -1510,7 +1510,7 @@ GITB Test Description Language for managing undefined variables.
 Release 1.11.0 - 13/11/2020
 ---------------------------
 
-This release brings a range of improvements for all test bed users. Community administrators benefit from further customisation options 
+This release brings a range of improvements for all Test Bed users. Community administrators benefit from further customisation options 
 through additional trigger events to react to test results, as well as fine-grained permissions to prevent modifications once testing has
 started. In addition, all users benefit from extended search capabilities on test sessions and conformance statements based on custom
 properties, session IDs and specification actors; and a redesigned test session display that clarifies output and extends presented information.
@@ -1748,9 +1748,9 @@ Release 1.9.0 - 30/04/2020
 
 This release introduces numerous new features and improvements, the most important ones being the support for parallel and 
 background test session execution, and the ability to transfer via export a community's complete configuration across different
-test bed instances. Apart from these key features, numerous improvements are made also to the self-registration process enabling 
+Test Bed instances. Apart from these key features, numerous improvements are made also to the self-registration process enabling 
 configuration options such as user restrictions and notifications, and the use of test cases that now support extended documentation
-and improved result display. FInally, a wide range of enhancements have been made to the test bed's user centricity, including 
+and improved result display. FInally, a wide range of enhancements have been made to the Test Bed's user centricity, including 
 ubiquitous help tooltips, visual feedback for all actions, a context-specific user guide and the possibility to fully manage a user's 
 own information.
 
@@ -1836,7 +1836,7 @@ Release 1.8.0 - 20/01/2020
 --------------------------
 
 This release focuses on providing additional community customisation possibilities through features such as the definition of 
-specific labels for test bed concepts and the optional display of actors. GITB TDL is also enhanced with support for warning-level 
+specific labels for Test Bed concepts and the optional display of actors. GITB TDL is also enhanced with support for warning-level 
 validation steps and the possibility to display for test steps additional documentation or instructions as rich text.
 
 **Bug fixes**
@@ -1888,7 +1888,7 @@ to be treated as templates.
   ITB-464 | :tdl:`TESTS` | Cannot convert string to nodelist in assign step
   ITB-473 | :tdl:`TESTS` | TDL Inputs with both source and value set ignore the value
   ITB-476 | :tdl:`TESTS` | A string variable used as a source of an XPath expression always returns itself
-  ITB-503 | :ui:`UI` | If a test bed instance has a demo account configured prevent this from being linked to a user
+  ITB-503 | :ui:`UI` | If a Test Bed instance has a demo account configured prevent this from being linked to a user
   ITB-509 | :tdl:`TESTS` | Cannot directly assign non-binary variables to binary ones
 
 **Improvements**
@@ -1977,13 +1977,13 @@ input values and configuration to test sessions.
   ITB-438 | :ui:`UI` | Make more intuitive the display of endpoint parameters for administrators
   ITB-439 | :ui:`UI` | Support files as domain configuration parameters
   ITB-445 | :ui:`UI` | Increase size limit for uploaded files
-  ITB-446 | :ui:`UI` | Allow community and test bed admins to edit their own organisation's information
+  ITB-446 | :ui:`UI` | Allow community and Test Bed admins to edit their own organisation's information
   ITB-447 | :ui:`UI` | When test case configuration is missing allow user to directly navigate to provide it
 
 Release 1.6.1 - 14/06/2019
 --------------------------
 
-This is a patch release to address bugs that were blocking for new test bed users, specifically linked to the processing
+This is a patch release to address bugs that were blocking for new Test Bed users, specifically linked to the processing
 of template files in test cases. In addition, given the opportunity of the patch, additional minor bugs are corrected
 and important improvements are introduced to facilitate reporting and increase the built-in possibilities to generate
 timestamps within test cases.
@@ -2015,7 +2015,7 @@ Release 1.6.0 - 29/05/2019
 From an end-user perspective the main highlights of this release are the validation of uploaded test suites and various improvements to
 streamline the user interface (e.g. simplified conformance statement creation). Internally this release brings critical
 updates to library versions, the execution environment and core security features. In addition, the GITB Test Description Language (TDL),
-and its support through the test bed, has been extended to simplify test case definition and bring new features such as new built-in
+and its support through the Test Bed, has been extended to simplify test case definition and bring new features such as new built-in
 processing and validation capabilities as well as extended user input options.
 
 **Bug fixes**
@@ -2036,7 +2036,7 @@ processing and validation capabilities as well as extended user input options.
   ITB-308 | :tdl:`TESTS` | Correct regular expressions for variable references
   ITB-310 | :tdl:`TESTS` | Actor name should be optional to allow external references
   ITB-315 | :tdl:`TESTS` | Correct configuration to allow test cases based on UDP
-  ITB-322 | :tdl:`TESTS` | Automatic test suite execution continues to ping test bed after completion
+  ITB-322 | :tdl:`TESTS` | Automatic test suite execution continues to ping Test Bed after completion
   ITB-324 | :ui:`UI` | In certain cases the previous test session view displays unexecuted steps as overlapping
   ITB-337 | :ui:`UI` | Test step report requests can get broken by reverse proxies
   ITB-338 | :tdl:`TESTS` | If step without else with internal step reports causes overall report generation to fail
@@ -2187,7 +2187,7 @@ This is a bug fix release to address critical production bugs. Minor additional 
 Release 1.4.0 - 03/07/2018
 --------------------------
 
-This is a minor release to correct bugs and also to improve the test bed's GDPR compliance.
+This is a minor release to correct bugs and also to improve the Test Bed's GDPR compliance.
 
 **Bug fixes**
 
@@ -2197,7 +2197,7 @@ This is a minor release to correct bugs and also to improve the test bed's GDPR 
 
   ITB-219 | :ui:`UI` | Cannot delete domain with domain parameters
   ITB-222 | :ui:`UI` | Cannot delete community for which tests have been executed
-  ITB-224 | :ui:`UI` | Hide the special purpose Admin organisation from the test bed Default community
+  ITB-224 | :ui:`UI` | Hide the special purpose Admin organisation from the Test Bed Default community
   ITB-231 | :ui:`UI` | Legal Notice link not working without user login
   ITB-232 | :ui:`UI` | Legal notice top-level headings appear grey
   ITB-235 | :ui:`UI` | Icons may not appear when using IE 11
@@ -2220,7 +2220,7 @@ This is a minor release to correct bugs and also to improve the test bed's GDPR 
 
   ITB-236 | :ui:`UI` | Add cookie-related statement on login screen for GDPR compliance
   ITB-237 | :ui:`UI` | Add consent message on community admin creation screen
-  ITB-238 | :ui:`UI` | Add consent message on test bed admin creation screen
+  ITB-238 | :ui:`UI` | Add consent message on Test Bed admin creation screen
   ITB-239 | :ui:`UI` | Add consent message on organisation user creation screens
   ITB-240 | :ui:`UI` | Add data use notification on contact form for GDPR compliance
 
@@ -2320,7 +2320,7 @@ The key improvement area targeted is the management of new test suite versions.
   :delim: |
 
   ITB-47 | :ui:`UI` | Delete system
-  ITB-94 | :ui:`UI` | Display test bed version
+  ITB-94 | :ui:`UI` | Display Test Bed version
   ITB-136 | :ui:`UI` | Create PDF report from validator report
 
 **Improvements**
@@ -2353,7 +2353,7 @@ The key improvement area targeted is the management of new test suite versions.
 Release 1.1.0 - 20/09/2017
 --------------------------
 
-Release that most importantly introduces user communities to the test bed. This includes also additional improvements to facilitate management
+Release that most importantly introduces user communities to the Test Bed. This includes also additional improvements to facilitate management
 of test configuration and improved reporting capabilities.
 
 **Bug fixes**
@@ -2417,8 +2417,8 @@ Minor release to address mainly Internet Explorer support issues and correct imp
 Release 1.0.2 - 19/05/2017
 --------------------------
 
-Release to correct critical problems when running test cases, simplify use of the test bed for non-administrator users and provide a dashboard for
-test bed administrators to monitor current and past sessions.
+Release to correct critical problems when running test cases, simplify use of the Test Bed for non-administrator users and provide a dashboard for
+Test Bed administrators to monitor current and past sessions.
 
 **Bug fixes**
 
@@ -2476,8 +2476,8 @@ The main focus of this release is the addition of user management features and f
   :delim: |
 
   ITB-3 | :ui:`UI` | Remove "Team" link
-  ITB-11 | :ui:`UI` | Allow test bed administrator to add and edit users
-  ITB-12 | :ui:`UI` | Create test bed landing page
+  ITB-11 | :ui:`UI` | Allow Test Bed administrator to add and edit users
+  ITB-12 | :ui:`UI` | Create Test Bed landing page
   ITB-13 | :ui:`UI` | View landing page
   ITB-14 | :ui:`UI` | Add date in log for all log messages (frontend and backend)
   ITB-16 | :ui:`UI` | Manage organisations
@@ -2498,7 +2498,7 @@ The main focus of this release is the addition of user management features and f
   :delim: |
 
   ITB-5 | :ui:`UI` | Provide labels for user roles
-  ITB-6 | :ui:`UI` | View test bed users
+  ITB-6 | :ui:`UI` | View Test Bed users
   ITB-7 | :other:`OTHER` | Parameterise build
   ITB-8 | :ui:`UI` | Allow code/content editors to copy & paste
   ITB-10 | :ui:`UI` | Include licence in source distribution
