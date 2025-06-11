@@ -5,7 +5,7 @@ Validate your test setup
 
 This section details the features you can use to validate your testing setup. The screens addressed
 here are available to your users to configure, execute and report on their tests and as such, provide
-insight into the experience they have from using the test bed.
+insight into the experience they have from using the Test Bed.
 
 In order to test your overall setup, you are provided with a special organisation named **Admin Organisation**.
 You can use this organisation as any other organisation used within the test bed to engage in testing

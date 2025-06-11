@@ -326,7 +326,7 @@ Clicking this button opens a dialog prompting you to select the test suite archi
 .. figure:: ../screenshots/admin_domains_specification_shared_test_suite_upload.png
   :align: center
 
-Once the archive is selected you can click on **Proceed** to proceed with the upload. Upon doing so the test bed will validate the archive to ensure it is a
+Once the archive is selected you can click on **Proceed** to proceed with the upload. Upon doing so the Test Bed will validate the archive to ensure it is a
 valid test suite. In case your uploaded test suite has errors or warnings these will be presented to you including for each:
 
 * An error code and description of the validation finding.
@@ -375,7 +375,7 @@ Parameters
 ~~~~~~~~~~
 
 The **Parameters** section presents the configuration parameters defined at domain level. These are configuration values that are expected to be used
-within the `GITB TDL test cases`_ that you upload to the test bed. They typically relate to information you don't want to include in test cases either
+within the `GITB TDL test cases`_ that you upload to the Test Bed. They typically relate to information you don't want to include in test cases either
 because they would hinder portability (e.g. service URLs), they are sensitive (e.g. service authentication credentials), or they are settings that apply
 to all test cases that are subject to change. 
 
@@ -393,7 +393,7 @@ The domain's parameters are presented in a table with one parameter per row. The
 
 .. note::
     **Parameters not in tests:** Typically domain parameters are meant to be used as global configuration values that are used in test cases.
-    A parameter that is not meant to be used in tests could be used as a means of recording arbitrary data within the test bed or as
+    A parameter that is not meant to be used in tests could be used as a means of recording arbitrary data within the Test Bed or as
     :ref:`input to a trigger<community__manage_triggers>`.
 
 To create a new parameter click the **Create parameter** button (see :ref:`domains__domain_create_parameter`). To edit an existing one click its 
@@ -497,7 +497,7 @@ The following information is presented in corresponding form controls:
 * A **description** to provide more context on the specification (optional), displayed in detail screens and reports.
 * Custom **report metadata** included in XML reports.
 * Whether or not the specification is to be considered as **hidden** (by default set to false).
-* The specification's **REST API key** that is used to identify the specification when managing test suites via the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled by the test bed administrator).
+* The specification's **REST API key** that is used to identify the specification when managing test suites via the :ref:`Test Bed's REST API<domains__specification__test_suite_rest>` (if enabled by the Test Bed administrator).
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 * In case :ref:`specification groups<domains__domain_specification_groups>` are defined in the domain, these will also be presented
   as a dropdown selection at the top, with the specification's group (if defined) being preselected.
@@ -580,7 +580,7 @@ this screen presents the domain's specifications as a multiple selection list.
 .. figure:: ../screenshots/admin_domains_specification_test_suite_upload_multiple.PNG
   :align: center
 
-Once the archive is selected you can click on **Proceed** to proceed with the upload. Upon doing so the test bed will validate the archive to ensure it is a
+Once the archive is selected you can click on **Proceed** to proceed with the upload. Upon doing so the Test Bed will validate the archive to ensure it is a
 valid test suite. In case your uploaded test suite has errors or warnings these will be presented to you including for each:
 
 * An error code and description of the validation finding.
@@ -642,7 +642,7 @@ clicking the **Cancel** button that closes the popup without making any updates.
 Manage test suites via REST API
 +++++++++++++++++++++++++++++++
 
-Apart from managing test suites through its user interface, the test bed also provides a **REST API** allowing you to deploy and undeploy test suites
+Apart from managing test suites through its user interface, the Test Bed also provides a **REST API** allowing you to deploy and undeploy test suites
 via REST calls. Managing test suites in this way is primarily used during **test suite development**, to allow the deployment of test suites via
 automation processes. Specifically you may use the API to:
 
@@ -683,7 +683,7 @@ button from the table's header.
 
 .. note::
     **Automatic vs manual actor creation:** Actors can also be created automatically during test suite upload as long as their complete
-    information is provided. If you prefer to manually create actors through the test bed's interface you should opt to refer to these
+    information is provided. If you prefer to manually create actors through the Test Bed's interface you should opt to refer to these
     using their ID rather than define them fully from within test suites (see the `GITB TDL documentation`_ for more details).
 
 .. _GITB TDL documentation: https://www.itb.ec.europa.eu/docs/tdl/latest/testsuite/index.html#deploying-a-test-suite-in-the-gitb-software

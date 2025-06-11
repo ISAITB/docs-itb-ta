@@ -52,7 +52,7 @@ Manage your systems
 -------------------
 
 Selecting the **Systems** tab presents the :ref:`systems <introduction__glossary__system>` defined for your organisation.
-Systems are an important concept in the test bed as they represent the software components you are testing for. Before
+Systems are an important concept in the Test Bed as they represent the software components you are testing for. Before
 proceeding to test anything you will need to have one or more systems that you can use to define conformance statements.
 
 .. figure:: ../screenshots/organisation_systems.png
@@ -83,7 +83,7 @@ Doing so you will be presented with a screen to provide the new system's informa
 * The system's **short name** (required). This is used when the system is displayed in lists.
 * The system's **full name** (required). This is included in reports that mention the system.
 * An optional **description** to provide more information about the system.
-* A **version** number. Although requested this is not currently used in the test bed apart from display purposes.
+* A **version** number. Although requested this is not currently used in the Test Bed apart from display purposes.
 
 If your organisation includes other systems you are also presented here with an option to **copy the test setup** from
 one of them as a source. Selecting one will replicate the selected system's conformance statements for the new system.
@@ -132,7 +132,7 @@ displaying the system's information, presented in editable input fields.
 
 You can proceed here to modify the **short name**, **full name**, **description**, **version**. At the bottom you
 also see the unique **API key** for the system that can be clicked to copy it to the clipboard or refreshed to update it.
-This API key can be used in case the test bed's :ref:`REST API <api>` is enabled, or for
+This API key can be used in case the Test Bed's :ref:`REST API <api>` is enabled, or for
 `messaging in test cases <https://www.itb.ec.europa.eu/docs/tdl/latest/handlers/index.html#built-in-messaging-handlers>`_.
 
 If your organisation defines other systems you can also select to **copy the test setup** from another system which will

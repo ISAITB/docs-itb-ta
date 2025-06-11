@@ -12,28 +12,28 @@ The approach followed by the user guide is based on use cases. Each distinct act
 interface is documented in a separate chapter covering the core sequence of steps you would take as well the
 different options that each action may present to you.
 
-For the sake of brevity the term "test bed" will be used to refer to the Interoperability Test Bed unless 
+For the sake of brevity the term "Test Bed" will be used to refer to the Interoperability Test Bed unless
 otherwise stated.
 
 .. _introduction__what_is_the_test_bed:
 
-What is the test bed?
+What is the Test Bed?
 ---------------------
 
-The test bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT B.2,
+The Test Bed is a service offered by the European Commission, specifically the `Interoperability Test Bed Team`_ of DIGIT B.2,
 to support the interoperability and conformance testing of projects that enable the development of cross-border public
 services. Its purpose is to facilitate such projects by providing project leaders with the means to define their project's testing strategy 
 that will be used by their participating organisations. The test services offered in this way may either be presented as a tool to help
 in e.g. the development of relevant software, or even as a mandatory qualification step to consider software as conforming to a given
-specification. Note that the focus of the test bed is software components and specifically:
+specification. Note that the focus of the Test Bed is software components and specifically:
 
 * **Conformance** and **interoperability** to ensure that the software in question can participate in its foreseen information exchanges with 
-  other parties in a correct and meaningful way. The test bed is not meant to help with a software's regression, performance or penetration testing.
+  other parties in a correct and meaningful way. The Test Bed is not meant to help with a software's regression, performance or penetration testing.
 * The **technical level** ensuring that the software implementation is correct but without addressing (at least directly) interoperability at other 
   levels such as the legal constructs in place or the relevant organisational processes the software supports.
 
-At the core of the test bed is the **GITB test bed software**. This is a product of the `GITB project`_, a CEN standardisation initiative funded by
-the European Commission’s DG GROW to define the specifications and software needed to support a generic interoperability test bed service.
+At the core of the Test Bed is the **GITB Test Bed software**. This is a product of the `GITB project`_, a CEN standardisation initiative funded by
+the European Commission’s DG GROW to define the specifications and software needed to support a generic interoperability Test Bed service.
 
 .. _GITB project: http://www.cen.eu/work/areas/ict/ebusiness/pages/ws-gitb.aspx
 .. _Interoperability Test Bed Team: https://joinup.ec.europa.eu/solution/interoperability-test-bed/about
@@ -54,9 +54,9 @@ evolutive maintenance of the GITB software and specifications based on the needs
 Glossary
 --------
 
-The glossary provided here is meant to acquaint you to the concepts used within the test bed. The sequence in which each concept is 
+The glossary provided here is meant to acquaint you to the concepts used within the Test Bed. The sequence in which each concept is
 defined is selected to gradually build up your understanding of the complete terminology. In addition, to simplify definitions, the 
-perspective adopted is that of the test bed, i.e. technical and with focus on software components.
+perspective adopted is that of the Test Bed, i.e. technical and with focus on software components.
 
 .. _introduction__glossary__specification:
 
@@ -64,7 +64,7 @@ Specification
 ~~~~~~~~~~~~~
 
 A **specification** is a detailed set of requirements that aim to precisely define an aspect of a software component's operation. From the 
-perspective of the test bed, this would typically either be a content specification, focusing on the data that it produces or processes, 
+perspective of the Test Bed, this would typically either be a content specification, focusing on the data that it produces or processes,
 or a messaging specification, focusing on the rules and message exchange steps that it needs to follow when interacting with one or 
 more other components.
 
@@ -102,7 +102,7 @@ or verifying that they can actually exchange information in a manner that is res
 Domain
 ~~~~~~
 
-A **domain** in the test bed is the means by which related specifications are grouped together. It allows projects to define multiple 
+A **domain** in the Test Bed is the means by which related specifications are grouped together. It allows projects to define multiple
 specifications as a cohesive whole that may each be tested for conformance individually. Conforming to all specifications within a domain 
 may be mandatory but could also be optional, depending on the project's needs.
 
@@ -113,13 +113,13 @@ Actor
 
 An **actor** is the term used to identify one participating entity in a specification. This becomes important especially in the case of
 messaging specifications where multiple participants are typically defined; at least one to send messages and another to receive. When you
-want to ensure that your software component conforms to a specification you need to select your target actor. Actors in the test bed are 
+want to ensure that your software component conforms to a specification you need to select your target actor. Actors in the Test Bed are
 key considering that they serve to organise tests and determine what is actually being tested. Each test focuses on a single actor that is 
 identified as the **System Under Test (SUT)** which is the part your software component needs to play. Other specification actors that are
-relevant to the test in question are simulated by the test bed to automate and validate the information exchange.
+relevant to the test in question are simulated by the Test Bed to automate and validate the information exchange.
 
 As an example of this consider a specification defining a message exchange between a "Sender" and a "Receiver". If your software component 
-is to act as the Receiver then the Sender will be simulated by the test bed and will generate messages for you to receive and respond to, 
+is to act as the Receiver then the Sender will be simulated by the Test Bed and will generate messages for you to receive and respond to,
 with your responses being automatically validated according to the specification. Even if your component is supposed to both send and receive 
 (i.e. participate in the exchange as either actor), the distinction is important as a different set of tests would apply per case.
 
@@ -129,14 +129,14 @@ Endpoint
 ~~~~~~~~
 
 An **endpoint** is related to an actor and refers to a named set of configuration parameters. In order to test, these parameters need to be
-defined but how this happens depends on the role of each actor in the test in question. For a simulated actor the test bed will automatically
+defined but how this happens depends on the role of each actor in the test in question. For a simulated actor the Test Bed will automatically
 define the required parameters and present these to you (if relevant) so that you can take any needed configuration actions on your
 software component before starting. On the other hand, when such configuration parameters are defined for an actor that you are testing as 
 (i.e. your software component is the SUT), you will need to input the expected values before starting.
 
 Continuing the Sender and Receiver example, if the communication in question is SOAP web service calls we would expect that the address of
-each service endpoint would need to be configured. In case your system is acting as the Receiver you would need to provide to the test bed
-the address of your service endpoint. Similarly, if you are acting as the Sender, the test bed would need to provide you the address to make
+each service endpoint would need to be configured. In case your system is acting as the Receiver you would need to provide to the Test Bed
+the address of your service endpoint. Similarly, if you are acting as the Sender, the Test Bed would need to provide you the address to make
 your calls on so that you can configure it in your software.
 
 .. _introduction__glossary__organisation:
@@ -144,7 +144,7 @@ your calls on so that you can configure it in your software.
 Organisation
 ~~~~~~~~~~~~
 
-An **organisation** is the concept that maps to a member of the project who is using the test bed to test conformance. Each user belongs to
+An **organisation** is the concept that maps to a member of the project who is using the Test Bed to test conformance. Each user belongs to
 an organisation and its via the organisation that a user can execute tests, inspect results and extract reports. An organisation can have
 two types of users:
 
@@ -159,7 +159,7 @@ System
 
 A **system** is related to an organisation and represents the actual software component that will be tested. In simple cases an organisation 
 will have a single system and the terms "organisation" and "system" may be conceptually interchangeable. It is often the case however that a single organisation defines 
-multiple systems, each with its own specification conformance needs and testing history. The system in the test bed is actually the point 
+multiple systems, each with its own specification conformance needs and testing history. The system in the Test Bed is actually the point
 where configuration for your software component is introduced and it is the system that is selected when defining the specifications you aim 
 to test for.
 
@@ -169,9 +169,9 @@ Conformance statement
 ~~~~~~~~~~~~~~~~~~~~~
 
 A **conformance statement** is the concept that defines the statement (to be tested) that a given software component conforms to a given 
-specification. From the perspective of the test bed this means more specifically that an organisation's system aims to conform to the 
+specification. From the perspective of the Test Bed this means more specifically that an organisation's system aims to conform to the
 requirements of a specific actor in the specification. Simply put, the conformance statement links a system to an actor. Conformance
-statements are important as they encapsulate the goal of the test bed, to allow systems to test for conformance.
+statements are important as they encapsulate the goal of the Test Bed, to allow systems to test for conformance.
 
 .. _introduction__glossary__community:
 
@@ -191,7 +191,7 @@ Test case
 
 A **test case** represents a set of steps and assertions that form a cohesive scenario for testing purposes. A specification's requirements
 are implemented as one or more test cases in which the specification's actors are defined either as the SUT (i.e. the actual software components being
-tested) or as being simulated by the test bed. In terms of implementation, a test case is an XML file authored using the `GITB Test Description Language
+tested) or as being simulated by the Test Bed. In terms of implementation, a test case is an XML file authored using the `GITB Test Description Language
 (TDL)`_. A test case is linked to a system's conformance statement when it defines the relevant statement's actor as the test case actor with SUT role.
 
 .. _GITB Test Description Language (TDL): https://www.itb.ec.europa.eu/docs/tdl/latest
@@ -242,7 +242,7 @@ successfully tested, all test cases must be executed and have their latest resul
 Example use of concepts
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The purpose of the following example is to help you understand how some of the key test bed concepts would map to the real world. Consider a solution
+The purpose of the following example is to help you understand how some of the key Test Bed concepts would map to the real world. Consider a solution
 named "EU message exchange" used within the EU whereby Member State endpoint systems exchange messages with a central EU portal. There are different
 message types ("Message1", "Message2" and "Message3") each with a specific syntax and content rules. Member States can optionally support each message type
 but if they do they need to ensure that they can successfully use them when interacting with the EU portal.
@@ -250,7 +250,7 @@ but if they do they need to ensure that they can successfully use them when inte
 .. figure:: example.png
   :align: center
 
-In this case the previously discussed test bed concepts could be mapped as follows:
+In this case the previously discussed Test Bed concepts could be mapped as follows:
 
 * **Domain:** This a logical concept to group together specifications. It can be called "EU message exchange".
 * **Specifications:** Given that we have three message types that can be optionally supported, one way to map this
@@ -299,7 +299,7 @@ As a **test bed administrator** you are expected to carry out the following main
 System requirements
 -------------------
 
-The test bed is a web application with minimal prerequisites for its use. The following web browsers have been successfully tested for support:
+The Test Bed is a web application with minimal prerequisites for its use. The following web browsers have been successfully tested for support:
 
 * Apple Safari.
 * Google Chrome.
@@ -307,8 +307,8 @@ The test bed is a web application with minimal prerequisites for its use. The fo
 * Mozilla Firefox.
 * Opera.
 
-Given that the test bed makes use of JavaScript to power its user interface, please ensure that your browser has no security configuration in place 
-that blocks JavaScript execution. In addition, in terms of network connectivity, the test bed uses `web sockets`_ to push updates to your web browser
+Given that the Test Bed makes use of JavaScript to power its user interface, please ensure that your browser has no security configuration in place
+that blocks JavaScript execution. In addition, in terms of network connectivity, the Test Bed uses `web sockets`_ to push updates to your web browser
 during the execution of test sessions. If you experience test sessions starting but appearing as frozen with no visual updates, it could be that you
 are behind a proxy or firewall that blocks the web socket protocol. In such a case please contact your network administrator for assistance.
 

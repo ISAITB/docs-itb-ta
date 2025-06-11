@@ -432,7 +432,7 @@ The information displayed for each step is:
 * For validation steps, a **Details** section listing the details of each validation finding.
 
 .. note::
-    The XML report for a given test session can also be obtained through the test bed's :ref:`REST API<api>` (if enabled for your test bed instance).
+    The XML report for a given test session can also be obtained through the Test Bed's :ref:`REST API<api>` (if enabled for your Test Bed instance).
 
 .. _monitor_conformance_status__statements__export_statement:
 
@@ -563,7 +563,7 @@ review the conformance testing progress at previous points in time. You may want
 overview at specific milestones, or simply to track detailed testing progress over time. You could also find
 such snapshots useful to provide further versioning for test configurations over what is normally possible, by defining
 snapshots as named and readonly version milestones. Regardless of their eventual purpose, these snapshots are referred to in
-the test bed as **conformance snapshots**.
+the Test Bed as **conformance snapshots**.
 
 You can review and select a given snapshot through the relevant control on the statement listings' header. This is by default set
 to **Latest conformance status** indicating that you are viewing the current status.

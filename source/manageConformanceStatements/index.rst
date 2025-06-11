@@ -288,7 +288,7 @@ button.
 .. figure:: ../screenshots/conformance_statement_details_controls.png
   :align: center
 
-Clicking this will copy to your clipboard a URL that you can then refer to from outside the test bed to display a badge. A typical use case for this
+Clicking this will copy to your clipboard a URL that you can then refer to from outside the Test Bed to display a badge. A typical use case for this
 would be to add it as the source of an image in a HTML page listing conformant solutions. The same button also includes a secondary option named
 **Preview badge** that you can click for a preview.
 
