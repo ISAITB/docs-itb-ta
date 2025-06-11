@@ -806,9 +806,14 @@ documentation check the **Documentation** header, which will expand to display a
 .. figure:: ../screenshots/admin_domains_test_suites_details_documentation.PNG
   :align: center
 
-Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources <community__manage_resources>`,
+Above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
 such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+.. note::
+
+  Unlike community administrators, you cannot search and include :ref:`community-specific resources <community__manage_resources>` here because the relevant domain
+  could be linked to multiple communities.
 
 If you choose to provide such documentation you may also click the **Preview documentation** to ensure it matches your expectations. Doing so
 presents a popup with the documentation, displaying it exactly as when viewed by your users.
@@ -984,9 +989,14 @@ documentation click the **Documentation** section, to reveal a rich text editor.
 .. figure:: ../screenshots/admin_domains_test_cases_details_documentation.PNG
   :align: center
 
-Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources <community__manage_resources>`,
+Above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
 such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
+.. note::
+
+  Unlike community administrators, you cannot search and include :ref:`community-specific resources <community__manage_resources>` here because the relevant domain
+  could be linked to multiple communities.
 
 If you choose to provide such documentation you may also click the **Preview documentation** to ensure it matches your expectations. Doing so
 presents a popup with the documentation, displaying it exactly as when viewed by your users.

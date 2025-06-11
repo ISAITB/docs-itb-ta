@@ -474,3 +474,10 @@ to explain this.
 
 You cannot update such a predefined theme but you can choose to **Activate** it (if inactive) by clicking the relevant button. You can 
 also **Copy** the theme to create a new one based on its settings.
+
+.. _systemAdmin__resources:
+
+Manage resources
+----------------
+
+TODO
