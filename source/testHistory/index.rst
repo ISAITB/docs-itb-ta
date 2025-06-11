@@ -24,16 +24,18 @@ or sessions that are :ref:`interactively being executed<execute_tests_interactiv
 .. figure:: ../screenshots/test_history__active.PNG
   :align: center
 
+Tests are presented in a paged table sorted based on their **start time** in a ascending order (i.e. the oldest sessions are presented first). Custom sorting
+can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
+controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
+corner the total and currently displayed test counts.
+
 Each session is presented on a separate table row, with the following information displayed per session:
 
 * The **specification** and **actor** (defined as the test case’s SUT).
 * The relevant **test case**.
 * The relevant **system**.
 * The session **start time**.
-
-The information displayed in the table is sorted using the sessions’ **start time** in ascending manner (i.e. the oldest sessions are presented first).
-Sorting can be adapted by clicking on each column’s header to sort by it in ascending manner. The currently active sort column and type are displayed
-using an arrow icon next to the relevant column’s title.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header 
 (see :ref:`view_your_test_history__search__export_csv`). You may also click the **Terminate all** button that, upon confirmation, will
@@ -54,10 +56,11 @@ The history of all your completed test sessions is presented in the **Completed 
 .. figure:: ../screenshots/test_history__completed.PNG
   :align: center
 
-Tests are presented in a paged table, offering controls to go to the **first**, **previous**, **next** and **last** pages as applicable, and are sorted based on their
-**end time** in a descending order (i.e. showing the latest tests at the top). Custom sorting can also be made by clicking the title of each column;
-clicking a column header for the first time will sort by it in ascending manner and clicking it again will switch to descending. The active sort
-column and type are indicated using an arrow next to the relevant column header.
+Tests are presented in a paged table sorted based on their **end time** in a descending order (i.e. showing the latest tests at the top). Custom sorting
+can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
+controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
+corner the total and currently displayed test counts.
 
 Test sessions are displayed one per table row, with each row including the following information:
 

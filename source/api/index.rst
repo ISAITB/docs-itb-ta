@@ -1702,7 +1702,28 @@ require sequential execution.
     "forceSequentialExecution": true
   }
 
-As a complement to the information on which tests are to be launched, you may also provide one or more **inputs** for the selected test cases.
+By default the ``start`` call  immediately returns after having launched its test sessions. In case you need to take certain actions only
+**once the launched test sessions are completed**, you can set the ``waitForCompletion`` flag to ``true``. Doing so the test bed will monitor the
+status of the launched sessions, and will produce a response only once all of them are completed. To avoid pending indefinitely for long-running
+sessions, the test bed will wait by default for 30 seconds, however you can override this by using the ``maximumWaitTime`` parameter and
+specifying the number of milliseconds to consider as the maximum wait time. The response to the ``start`` operation that included such
+monitoring will also include in the response a ``completed`` boolean flag per test session to inform the caller on whether the session was known
+to have completed.
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "waitForCompletion": true,
+    "maximumWaitTime": 60000
+  }
+
+.. note::
+  **Using the REST API in scripting:** When using scripts or automation processes to trigger tests, using ``waitForCompletion`` can greatly simplify
+  your implementation, as you can know when sessions complete without using polling.
+
+As a complement to the specifying which tests are to be launched and how, you may also provide one or more **inputs** for the selected test cases.
 These inputs will be added to the test session context before executing each test, overriding any variables defined with default values.
 Providing inputs can be very useful allowing you to execute tests that would otherwise require user interactions (which in this case will be skipped).
 
@@ -1810,6 +1831,28 @@ each item corresponds to one session. For each session you are informed of its r
   }
 
 You may use the reported session identifiers to check the sessions' :ref:`status<api__test_sessions__status>` and, if needed, forcibly :ref:`stop<api__test_sessions__stop>` them.
+In case your ``start`` call specified ``waitForCompletion`` as ``true`` with a
+``maximumWaitTime``, each returned test session information will include a ``completed`` flag to inform you whether it was known to have completed
+within the specified delay.
+
+.. code-block:: json
+
+  {
+    "createdSessions": [
+      {
+        "testSuite": "TS1",
+        "testCase": "TS1_TC1",
+        "session": "63b76ce6-5ade-431f-8620-8dadb13d2f42",
+        "completed": true
+      },
+      {
+        "testSuite": "TS1",
+        "testCase": "TS1_TC2",
+        "session": "a866297c-ccb0-4133-9ae9-2c3af7aba0bd",
+        "completed": false
+      }
+    ]
+  }
 
 .. _api__test_sessions__start__request:
 
@@ -2037,6 +2080,7 @@ Apart from these properties, you may optionally specify additional properties as
 * Set ``replaceTestHistory`` to ``true`` to clear any existing conformance testing history relevant to the test suite. By default existing tests are maintained.
 * Set ``updateSpecification`` to ``true`` to update existing specification metadata to values provided in the test suite archive. By default existing information will not
   be updated.
+* Set ``showIdentifiers`` to ``false`` to skip returning the API identifiers relevant to the uploaded test suite and its test cases.
 
 In addition to the above properties, you may also specify an array named ``testCases`` that provides fine-grained instructions on how to handle the test suite's
 test cases if these are found to already exist. For test cases not specified in this way, or if the ``testCases`` array is altogether missing, the values provided
@@ -2071,7 +2115,7 @@ The following sample is a JSON request to deploy a test suite to a specification
   }
 
 As discussed earlier you may also include additional flags to determine how the upload should be handled. The following example includes the
-``ignoreWarnings``, ``replaceTestHistory`` and ``updateSpecification`` flags to override the default behaviours.
+``ignoreWarnings``, ``replaceTestHistory``, ``updateSpecification``, and ``showIdentifiers`` flags to override the default behaviours.
 
 .. code-block:: json
 
@@ -2080,6 +2124,7 @@ As discussed earlier you may also include additional flags to determine how the 
     "ignoreWarnings": true,
     "replaceTestHistory": true,
     "updateSpecification": true,
+    "showIdentifiers": false,
     "testSuite": "UEsDBBQAAAAIAIWIr...wNAAAAAA=="
   }
 
@@ -2091,7 +2136,7 @@ produced by the test suite's validation in three arrays named ``errors``, ``warn
 and ``location``, the latter being the path of the test suite's resource (e.g. a test case file) that resulted in it being reported. A test suite's
 deployment may not be completed in case it's validation produced errors or warnings (that were not set to be ignored via the request's ``ignoreWarnings`` flag).
 
-Besides the overall status and validation summary, the response will also include the **API keys** of all data created, or affects by the test suite. These keys allow
+Besides the overall status and validation summary, and unless you have specified ``showIdentifiers`` as ``false``, the response will also include the **API keys** of all data created, or affects by the test suite. These keys allow
 you to automate other operations related to this test suite through the REST API, such as :ref:`running test sessions <api__test_sessions__start>` or
 :ref:`managing conformance statements <api__conformance_statements>`. The returned API keys include:
 
@@ -2483,20 +2528,8 @@ The test bed's REST API is also documented using the standard `OpenAPI specifica
 download this from :download:`here <resources/openapi.json>`, or access it live from the test bed from path ``/api/rest``. On a typical 
 `developer instance <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/>`_ this would be available at ``http://localhost:9000/api/rest``.
 
-The API's documentation does not only provide a standardised representation of its operations. It also allows it to be imported into 
-tools that can process it to generate **code**, **documentation** and even **call the live services**.
-
-An example of a popular, free and open-source tool for this purpose is the `Swagger UI <https://swagger.io/tools/swagger-ui/>`_ 
-which provides a full user interface to explore and use an API. This can either be downloaded or used directly from the cloud.
-If you use `Docker <https://www.docker.com/>`_ and have it installed on your workstation you can get it up and running by issuing:
-
-.. code-block:: none
-  
-  docker pull swaggerapi/swagger-ui
-  docker run -p 80:8080 swaggerapi/swagger-ui
-
-Executing the above two commands will download and launch Swagger UI, making it available at ``http://localhost``. Accessing this
-you may now view and use the test bed's REST API:
+To facilitate reviewing and using the REST API, the test bed exposes also a `Swagger UI <https://swagger.io/tools/swagger-ui/>`_ accessible
+at ``http://localhost:9000/api/rest/swagger``.
 
 .. figure:: ../screenshots/swagger-ui.png
   :align: center

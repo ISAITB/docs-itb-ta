@@ -21,13 +21,116 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest test bed release is **1.25.2**.
+The latest test bed release is **1.26.0**.
 
 .. note::
     
     **GitHub repository:** The test bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.26.0 - 16/06/2025
+---------------------------
+
+The main focus of this release is the Test Bed's test engine and the capabilities of the GITB Test Description Language (TDL).
+New built-in validators are available for JSON, RDF, and YAML data, as well as utilities to facilitate working with collections 
+and RDF models. User interactions are extended, allowing them to be set with required inputs, skipped when not applicable, but
+also effectively managed when sessions are not interactively launched. In addition, numerous improvements are made to enhance
+reporting, make tests more configurable, and simplify test development.
+
+Besides the new test engine features, the Test Bed's user interface is extended to include a system health dashboard,
+configurable system-wide resources, the possibility to move test suites without test history loss, and support for
+communities with shared test history for all members. Furthermore, the REST API was extended to allow fine tuning of
+returned results from test suite deployments, as well as automated status monitoring to greatly simplify its use in
+integrations and automation processes. 
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1791 | :tdl:`TESTS` | Test cases with very large definitions may fail to start
+  ITB-1797 | :tdl:`TESTS` | Iteration steps must stop immediately upon child step error if stopOnError is true
+  ITB-1800 | :ui:`UI` | Session diagram crops iteration step dropdown for large number of iterations
+  ITB-1801 | :ui:`UI` | Instruction labels in interaction step popups may appear with unnecessary word breaks
+  ITB-1806 | :ui:`OTHER` | Helm chart does not correctly set the default web context root for itb-ui
+  ITB-1824 | :tdl:`TESTS` | External services returning reports with missing dates should be set by default to the current time to avoid PDF report generation errors
+  ITB-1835 | :ui:`UI` | Manual import of a system setting archive should never change the currently active theme
+  ITB-1841 | :tdl:`TESTS` | Sequence diagram breaks when using multiple levels of scriptlet calls or hidden container steps with visible child step
+  ITB-1855 | :tdl:`TESTS` | Automatic creation of new variables in scriptlets via the assign step should never affect parent scope
+  ITB-1858 | :ui:`UI` | Failure to automatically load sandbox data archive at startup when target environment does not define email settings and archive includes system settings
+  ITB-1860 | :ui:`UI` | When self-registering with EU Login enabled and one community available, the community is not automatically selected
+
+**New features**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1686 | :ui:`UI` | Health monitoring dashboard for Test Bed services
+  ITB-1727 | :tdl:`TESTS` | Support system-wide resources that can be publicly accessed by any user
+  ITB-1761 | :ui:`UI` | Allow switching a test suite to and from shared and not shared status without losing the testing history
+  ITB-1765 | :tdl:`TESTS` | Support multiple test session output messages
+  ITB-1770 | :tdl:`TESTS` | Support custom handlers for interact steps that are optionally activated for alternate user input methods
+  ITB-1775 | :tdl:`TESTS` | New JsonValidator built-in validation handler for validation of JSON content
+  ITB-1776 | :tdl:`TESTS` | New ShaclValidator built-in validation handler for validation of RDF content with SHACL shapes
+  ITB-1778 | :tdl:`TESTS` | New YamlValidator built-in validation handler for validation of YAML content
+  ITB-1780 | :ui:`UI` | Allow system-wide resources to be used in rich text content
+  ITB-1783 | :ui:`UI` | Support the synchronous execution of test sessions via the REST API for better support of CI/CD processes
+  ITB-1792 | :tdl:`TESTS` | Support case-insensitive lookups in maps and lists through the CollectionUtils handler
+  ITB-1803 | :tdl:`TESTS` | New built-in process step handler to execute queries (construct, select, ask) against RDF models
+  ITB-1808 | :ui:`UI` | Allow an administrator to move a test suite between specifications without losing its test history
+  ITB-1809 | :ui:`UI` | Foresee a community permission for organisation users to allow a readonly view over other members' test results
+  ITB-1812 | :tdl:`TESTS` | New built-in process step handler to convert RDF content between RDF syntaxes
+  ITB-1813 | :tdl:`TESTS` | New built-in process step handler to merge RDF models
+  ITB-1819 | :tdl:`TESTS` | Allow interact steps containing only instructions to be non-blocking
+  ITB-1822 | :tdl:`TESTS` | Support 'skipped' attribute for all test steps to conditionally skip their execution
+  ITB-1833 | :tdl:`TESTS` | Support custom success and failure messages for built-in validation handlers
+  ITB-1836 | :tdl:`TESTS` | Allow the interact step to define requested inputs as required (with forced completion by the user)
+  ITB-1851 | :tdl:`TESTS` | Extend CollectionUtils processor append operation to append only missing items to a collection (case-sensitive or not)
+  ITB-1853 | :tdl:`TESTS` | Extend the assign step to allow an assignment by value for container types (maps and lists)
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-523 | :tdl:`TESTS`  | Allow session variables to be used within expressions of the XPathValidator
+  ITB-1530 | :tdl:`TESTS` | Support use of configuration parameters in dynamic scriptlets values and static ifs
+  ITB-1626 | :tdl:`TESTS` | Apply consistent naming for all built-in step handlers and their inputs
+  ITB-1733 | :ui:`UI` | Display user email or username for the demo account selection in the system settings
+  ITB-1735 | :other:`OTHER` | Introduce a gitb-redis image to replace the direct use of Redis
+  ITB-1764 | :ui:`UI` | Use consistent height for test case display regardless of whether it has test sessions or not
+  ITB-1777 | :ui:`UI` | The default URI for the footer's User guide link should not point to "latest" but the specific release's documentation
+  ITB-1781 | :ui:`UI` | Support community trigger HTTP endpoints that redirect and return empty responses
+  ITB-1785 | :ui:`UI` | Prevent generating detailed conformance statement reports if over a specific test case threshold
+  ITB-1786 | :ui:`UI` | Use asynchronous IO for all processing
+  ITB-1787 | :ui:`UI` | Support keyboard navigation and selection for searchable selection lists
+  ITB-1793 | :ui:`UI` | Allow long running requests to complete successfully if the user chooses to wait
+  ITB-1794 | :other:`OTHER` | Configurable ingress paths and default configuration of related properties (with override possibilities)
+  ITB-1795 | :ui:`UI` | Link to an embedded Swagger UI instead of the OpenAPI.json for the REST API's documentation
+  ITB-1798 | :ui:`UI` | Increase the update frequency of the test session diagram
+  ITB-1799 | :ui:`UI` | Consume pending diagram updates when stopping a test session
+  ITB-1804 | :other:`OTHER` | Allow overriding the MySQL DB name considered by gitb-ui via environment variable
+  ITB-1805 | :other:`OTHER` | Extend the ITB Helm chart to easily override the DB name considered by gitb-ui
+  ITB-1807 | :other:`OTHER` | Extend Helm chart to allow the ingress host to be configured with a specific value
+  ITB-1810 | :ui:`UI` | Use searchable selection lists in place of simple dropdown lists
+  ITB-1811 | :ui:`UI` | Improve the missing configuration message when all missing properties are visible but non-editable by users
+  ITB-1814 | :ui:`UI` | Display active test sessions with pagination
+  ITB-1816 | :ui:`UI` | Extend paginated displays with current page index, total pages, and total results
+  ITB-1820 | :tdl:`TESTS` | Consider the receive step "from" actor to be by default the SUT, and the "to" as the non-SUT actor (if only two actors are defined)
+  ITB-1821 | :tdl:`TESTS` | Consider the send step "to" actor to be by default the SUT, and the "from" as the non-SUT actor (if only two actors are defined)
+  ITB-1825 | :ui:`UI` | When deploying a test suite via the REST API allow caller to choose whether resulting API keys are returned
+  ITB-1826 | :ui:`UI` | Improve display of missing configuration properties before test execution
+  ITB-1827 | :ui:`UI` | Make the community custom property management tables collapsible
+  ITB-1829 | :tdl:`TESTS` | Consider the type of test case and scriptlet imports optional, with "binary" as the default
+  ITB-1834 | :ui:`UI` | Have all rich text editor links open by default in another window
+  ITB-1837 | :ui:`UI` | Retain temporary user inputs when minimising and restoring a user interaction step
+  ITB-1842 | :other:`OTHER` | Migrate Maven artifact publishing to Maven Central from Legacy OSSRH
+  ITB-1850 | :ui:`UI` | Tolerate misconfigured trailing slash at end of Test Bed home link
+  ITB-1854 | :tdl:`TESTS` | Remove the scope isolation restriction for remotely used scriptlets
 
 Release 1.25.2 - 17/03/2025
 ---------------------------

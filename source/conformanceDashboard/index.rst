@@ -197,6 +197,12 @@ statements of interest. The table listing statements is paged and includes one r
 .. figure:: ../screenshots/admin_conformance_dashboard.PNG
   :align: center
 
+Statements are presented in a paged table sorted based on the **organisation's name**. Custom sorting
+can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
+controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
+corner the total and currently displayed test counts.
+
 The information displayed for each conformance statement is:
 
 * The **community** of the organisation linked to the statement.
@@ -209,10 +215,6 @@ The information displayed for each conformance statement is:
 * The statement's **test results** showing how many configured tests are successful, failed, or incomplete. This can also be hovered over to view a text summary
   of the displayed counts.
 * The statement's overall **status** (success, failure or incomplete).
-
-The presented results are by default sorted based on the community's name, but clicking on each header label allows you to apply different sorting,
-based on the selected column, in either descending or ascending manner. The currently active sorting is indicated by an arrow next to the relevant
-header's label.
 
 The statement row can also be **expanded** by clicking it to :ref:`view its details<monitor_conformance_status__statement_details>`.
 These details include **specific controls** at the level of the statement, as well the listing of all its **test suites** and **test cases** with their

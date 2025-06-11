@@ -85,7 +85,7 @@ The **Community details** section allows you to view and edit the community's ba
 The information you can edit in this form is:
 
 * The community's **short** and **full name** (required). These are visible to the test bed administrator and in certain user reports.
-* The community's linked **domain** (optional), granting full access to it to community administrators. With a domain selected you 
+* The community's linked **domain** (optional), granting full access to it to community administrators. With a domain selected you
   may also click the **View** button to view its details.
 * The community's **support email** address (optional) to receive contact form submissions.
 * The preference on allowing **self-registration** for the community.
@@ -183,8 +183,9 @@ The available permission options are as follows:
 * **Create or delete conformance statements**.
 * **Update organisation data after testing**. If not allowed, an organisation that has performed at least one test session will not be allowed to edit its organisation information or its custom properties (if defined).
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
-* **Update conformance statement after testing.** If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
-* **Manage test sessions via REST API.** If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<api>`.
+* **Update conformance statement after testing**. If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
+* **View community test history**. If allowed, organisation users will be able to have a readonly view of all other community members' completed test sessions and reports.
+* **Manage test sessions via REST API**. If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<api>`.
   This is option will be listed only if the test bed's REST API is enabled.
 
 In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
