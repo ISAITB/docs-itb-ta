@@ -63,8 +63,8 @@ The options you have here relate to the Test Bed roles linked to your account, s
 * **Remove role from your account** is used to remove one or more roles from your EU Login account.
 * **Link another role to your account** will transfer you to the screen where you can :ref:`link additional roles to your EU Login account<login__roles>`.
 * **Register another organisation** will transfer you to the screen to :ref:`register another organisation<login__roles__register>`
-  in one of the test bed's communities. Note that this button may not be available if
-  self-registration is disabled for the test bed.
+  in one of the Test Bed's communities. Note that this button may not be available if
+  self-registration is disabled for the Test Bed.
 
 Clicking **Remove role from your account** will present you with a popup in which you are prompted to select the role(s) to remove.
 
@@ -77,11 +77,11 @@ You have three options from which to choose from, each with increasing weight:
   * **Deactivate current role:** This will disconnect your EU Login account from the current role and effectively deactivate it. You
     will be transferred to the :ref:`listing of your available roles<login__roles>` where you will no longer see the one you just removed.
     Note that this can once again be added to your account by :ref:`confirming again its assignment to you<login__roles__confirm>`.
-  * **Delete all other roles:** This deactivates but also deletes all roles other than your current test bed administrator role that are linked to
-    your EU Login account (in all organisations or communities). You test bed administrator account cannot be deleted as this is irreversible.
+  * **Delete all other roles:** This deactivates but also deletes all roles other than your current Test Bed administrator role that are linked to
+    your EU Login account (in all organisations or communities). You Test Bed administrator account cannot be deleted as this is irreversible.
 
-The delete option provides you the ability to better manage your own information in the test bed.
-Removing your information, specifically the email, user ID and name associated to your EU Login account can be achieved through the test bed's user interface.
+The delete option provides you the ability to better manage your own information in the Test Bed.
+Removing your information, specifically the email, user ID and name associated to your EU Login account can be achieved through the Test Bed's user interface.
 Importantly, deactivating or deleting user roles never impacts a user's test session history.
 
 .. note::

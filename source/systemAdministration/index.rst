@@ -3,18 +3,18 @@
 Manage system configuration
 ===========================
 
-Most configuration in the test bed is linked to specific :ref:`communities<introduction__glossary__community>` and :ref:`domains<introduction__glossary__domain>`,
+Most configuration in the Test Bed is linked to specific :ref:`communities<introduction__glossary__community>` and :ref:`domains<introduction__glossary__domain>`,
 and is managed respectively from the :ref:`community management<community>` and :ref:`domain management<domains>` screens.
 Everything that is not covered by these screens is managed through the **System administration** screen that allows you, as
-test bed administrator, to manage the overall configuration of the test bed. To access it click the relevant link from the menu.
+Test Bed administrator, to manage the overall configuration of the Test Bed. To access it click the relevant link from the menu.
 
 The displayed page allows you to:
 
 * Manage :ref:`configuration settings<systemAdmin__config>`.
-* Manage the :ref:`test bed's administrators<systemAdmin__admins>`.
+* Manage the :ref:`Test Bed's administrators<systemAdmin__admins>`.
 * Manage default :ref:`landing pages<systemAdmin__landing_pages>`, :ref:`legal notices<systemAdmin__legal_notices>`
   and :ref:`error templates<systemAdmin__error_templates>` for the hosted communities.
-* Manage the test bed's :ref:`theme<systemAdmin__themes>`.
+* Manage the Test Bed's :ref:`theme<systemAdmin__themes>`.
 * Manage :ref:`system-wide resources <systemAdmin__resources>`.
 
 .. _systemAdmin__config:
@@ -24,7 +24,7 @@ Manage configuration settings
 
 On the top of the screen you are presented with a panel listing the **system configuration properties**. These are properties
 that can for the most part be managed also through `environment variables <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#configuration-properties>`_
-set as part of the `test bed's installation <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html>`_.
+set as part of the `Test Bed's installation <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html>`_.
 
 .. figure:: ../screenshots/system_configuration.png
   :align: center
@@ -34,7 +34,7 @@ the setting is enabled, and how it was set. The status indicates if the setting 
 followed by an additional postfix:
 
 * No postfix, means that the setting in question was made through this screen.
-* **"Environment setting"**, indicates this is set through an environment variable in the test bed's installation configuration.
+* **"Environment setting"**, indicates this is set through an environment variable in the Test Bed's installation configuration.
 * **"Default setting"**, indicates this is an overall default setting.
 
 In terms of priority, a setting through this screen takes precedence over an environment variable, which is turn
@@ -48,17 +48,17 @@ but would typically include a means of enabling or disabling it, and if enabled,
   :align: center
 
 The settings that can be managed through this screen are listed int he following table. The table also references relevant
-environment variables (if applicable) if you prefer to have these configured `via the test bed's installation script <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#step-3-prepare-basic-configuration>`_.
+environment variables (if applicable) if you prefer to have these configured `via the Test Bed's installation script <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#step-3-prepare-basic-configuration>`_.
 
 .. csv-table::
     :header: "Setting", "Description", "Environment variable(s)", "Default"
     :delim: |
 
-    **Custom welcome page message** | A custom text to display on the test bed's :ref:`welcome page<login__welcome>`. | | Disabled
+    **Custom welcome page message** | A custom text to display on the Test Bed's :ref:`welcome page<login__welcome>`. | | Disabled
     **Demo account** | An optional, non-administrator account that users can use to connect with from the login screen to :ref:`execute demos<login__demos>`. | ``DEMOS_ENABLED``, ``DEMOS_ACCOUNT`` | Disabled
-    **Email settings** | Settings related to allow the test bed to send emails when applicable. | ``EMAIL_*`` variables | Disabled
+    **Email settings** | Settings related to allow the Test Bed to send emails when applicable. | ``EMAIL_*`` variables | Disabled
     **Inactive account retention period** | Whether inactive user accounts will be removed after a maximum retention period. | | Disabled
-    **REST API** | Whether the test bed's :ref:`REST API<api>` is available. | ``AUTOMATION_API_ENABLED`` | Disabled
+    **REST API** | Whether the Test Bed's :ref:`REST API<api>` is available. | ``AUTOMATION_API_ENABLED`` | Disabled
     **Self-registration** | Whether users are allows to self-register for communities :ref:`supporting self-registration<community_testbed_communities__manage>`. | ``REGISTRATION_ENABLED`` | Enabled
     **Test session timeout** | A duration in seconds after which an active test session will be terminated. | | None
 
@@ -70,15 +70,15 @@ click to persist your choice. Note that the overall settings panel can also be *
 REST API configuration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-One configuration option of note is the **REST API**, which determines whether or not the test bed's :ref:`REST API <api>` will be enabled.
+One configuration option of note is the **REST API**, which determines whether or not the Test Bed's :ref:`REST API <api>` will be enabled.
 
 .. figure:: ../screenshots/system_configuration_rest_api.png
   :align: center
 
-Besides enabling or disabling the REST API, this section also allows you to manage the test bed's **Master API key**. This is used for
-authorisation purposes in certain REST operations that require test bed administrator privileges, such as :ref:`creating a new community <community_testbed_communities__create>`.
+Besides enabling or disabling the REST API, this section also allows you to manage the Test Bed's **Master API key**. This is used for
+authorisation purposes in certain REST operations that require Test Bed administrator privileges, such as :ref:`creating a new community <community_testbed_communities__create>`.
 
-Regarding the value of the Master API key, this is randomly assigned to the test bed upon initial startup, thus ensuring that two instances will
+Regarding the value of the Master API key, this is randomly assigned to the Test Bed upon initial startup, thus ensuring that two instances will
 never inadvertently share the same value. In case you need to foresee a predetermined value for this, for example if you automate an instance's
 initial configuration via REST API calls, you may set its value by providing the ``AUTOMATION_API_MASTER_KEY`` environment variable to the gitb-ui
 application.
@@ -96,15 +96,15 @@ To manage the system administrators, select the **Administrators** tab from bene
 Administrators are listed in a table with one row per user displaying the user's **name**, **email** address (or **username** if integrated with EU Login) and **status**.
 
 .. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  **User status:** A user's status is meaningful when the Test Bed is integrated with EU Login. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
   a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
-To create a new test bed administrator click on the **Create system administrator** button. Clicking on an existing row from the
+To create a new Test Bed administrator click on the **Create system administrator** button. Clicking on an existing row from the
 table allows you to edit the relevant user's information.
 
-The displayed screens and required information, both when you edit or create a new administrator, depend on whether or not the test bed
+The displayed screens and required information, both when you edit or create a new administrator, depend on whether or not the Test Bed
 is integrated with EU Login.
 
 Case: EU Login
@@ -116,7 +116,7 @@ When creating an administrator you will be presented with a form to enter the us
   :align: center
 
 You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to the list of test bed administrators
+her EU Login account. Once you have created the user you will see that a new entry is added to the list of Test Bed administrators
 but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
 updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
 
@@ -141,7 +141,7 @@ When creating an administrator you will be presented with a form to enter the us
 
 In this form you are expected to provide the following information:
 
-* The administrator's **name** (required), used in feedback submissions to the test bed.
+* The administrator's **name** (required), used in feedback submissions to the Test Bed.
 * The **username** (required), used to login.
 * The user's **password**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
 
@@ -177,7 +177,7 @@ Adding a new landing page can be done in one of the following ways:
 * You can copy one of the existing landing pages while editing its details.
 
 .. note::
-    You can set a specific landing page for :ref:`your own "admin organisation"<manage_organisation>`. If none is set the default test bed landing page will be used.
+    You can set a specific landing page for :ref:`your own "admin organisation"<manage_organisation>`. If none is set the default Test Bed landing page will be used.
 
 Create landing page
 ~~~~~~~~~~~~~~~~~~~
@@ -193,7 +193,7 @@ if the landing page is being created as a copy of an existing one, the form will
 The information you are expected to complete for the landing page is:
 
 * Its **name** (required), used in the list of landing pages and when selecting one for an organisation.
-* Its **description** (optional), presented to test bed and community administrators.
+* Its **description** (optional), presented to Test Bed and community administrators.
 * Whether or not it should be the **default** landing page for the community (default is "false").
 * The landing page **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
@@ -210,7 +210,7 @@ how you expect it to be.
   :align: center
 
 When you have finished defining the landing page you can complete its creation by clicking **Save**. Note that if you have set this as the
-new default landing page for the test bed you will also be prompted for confirmation considering that this will be immediately visible to all your
+new default landing page for the Test Bed you will also be prompted for confirmation considering that this will be immediately visible to all your
 users. Clicking on the **Cancel** button will discard pending changes and return to the previous screen.
 
 Edit landing page
@@ -276,7 +276,7 @@ if the legal notice is being created as a copy of an existing one, the form will
 The information you are expected to complete for the legal notice is:
 
 * Its **name** (required), used in the list of legal notices and when selecting one for an organisation.
-* Its **description** (optional), presented to test bed and community administrators.
+* Its **description** (optional), presented to Test Bed and community administrators.
 * Whether or not it should be the **default** legal notice for the community (default is "false").
 * The legal notice **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
@@ -420,15 +420,15 @@ the creation screen prefilled with the current template's information.
 Manage themes
 -------------
 
-As test bed administrator you can adapt the test bed's look and feel to match your organisation's needs. Look and feel settings are grouped
-into **themes**, allowing you to define multiple themes from which one will be set as the active one. Managing the test bed's themes is done
+As Test Bed administrator you can adapt the Test Bed's look and feel to match your organisation's needs. Look and feel settings are grouped
+into **themes**, allowing you to define multiple themes from which one will be set as the active one. Managing the Test Bed's themes is done
 from the **Themes** tab.
 
 .. figure:: ../screenshots/system_configuration_themes_tab.png
   :align: center
 
-By default, the test bed comes with two built-in themes that can be deactivated but not removed: a European Commission theme and a GITB theme.
-The GITB theme (identified by the key "gitb") is the active one following a clean test bed installation. The active theme can be set through 
+By default, the Test Bed comes with two built-in themes that can be deactivated but not removed: a European Commission theme and a GITB theme.
+The GITB theme (identified by the key "gitb") is the active one following a clean Test Bed installation. The active theme can be set through 
 the user interface when :ref:`editing a theme<systemAdmin__themes_edit>`, or by setting the ``THEME`` environment variable to match a theme's
 **key**.
 
@@ -463,7 +463,7 @@ The information you are expected to provide here is as follows:
   provided controls, **downloaded** and **previewed**.
 
 Once you have completed the information and settings for the new theme, click on **Save** to persist your changes. If set as **active**,
-the new theme will be immediately applied to the test bed instance (other users will see the change upon their next login).
+the new theme will be immediately applied to the Test Bed instance (other users will see the change upon their next login).
 
 .. note::
   New themes can also be made by :ref:`selecting an existing theme<systemAdmin__themes_edit>` and creating a copy of it.
@@ -487,7 +487,7 @@ The fields and controls in this form match those when :ref:`creating a new theme
 well as activate (or deactivate) the theme, click the **Update** button. You may also click the **Copy** button here to create a new theme based on the 
 current theme's settings.
 
-If you selected one of the test bed's predefined themes, its information and settings are presented as readonly information with a message
+If you selected one of the Test Bed's predefined themes, its information and settings are presented as readonly information with a message
 to explain this.
 
 .. figure:: ../screenshots/system_configuration_themes_edit_readonly.png
@@ -501,7 +501,7 @@ also **Copy** the theme to create a new one based on its settings.
 Manage resources
 ----------------
 
-In several cases the test bed supports the definition of rich content as documentation or as a means of customising the experience of all users, regardless
+In several cases the Test Bed supports the definition of rich content as documentation or as a means of customising the experience of all users, regardless
 of the specific community they belong to. Such cases are:
 
 * The :ref:`welcome page <login__welcome>` displayed to users before logging in.
@@ -509,7 +509,7 @@ of the specific community they belong to. Such cases are:
 
 Within such rich content it is possible to include additional **resources**, either as displayed images or download links. Typical examples are logos,
 diagrams, and links to documents. When referring to such resources, you may either point to external sources (e.g. a public documentation site for your project)
-or to resources defined internally within the test bed. The configuration and use of such resources is addressed in the current section.
+or to resources defined internally within the Test Bed. The configuration and use of such resources is addressed in the current section.
 
 .. note::
   **Community-specific resources**: It is also possible for you and community administrators to define :ref:`community-specific resources <community__manage_resources>` available to connected community users.
@@ -541,5 +541,5 @@ and having chosen to keep matching resources. This is done because names of reso
 where needed.
 
 To use a resource in rich content you simply need to provide the resource reference as the source of an image or link. This can be done both when editing
-rich content through the test bed's user interface, but also when preparing documentation included in test suite archives. It is important to note that 
+rich content through the Test Bed's user interface, but also when preparing documentation included in test suite archives. It is important to note that 
 system-wide resources are **publicly accessible** to all users.

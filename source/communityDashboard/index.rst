@@ -3,7 +3,7 @@
 Manage communities
 ==================
 
-The **Community management** screen is the place where you can manage the test bed's communities, organisations and users. It can be accessed
+The **Community management** screen is the place where you can manage the Test Bed's communities, organisations and users. It can be accessed
 by clicking the relevant link from the menu, which presents you the screen :ref:`listing the defined communities<community_testbed_communities>`.
 
 .. _community_testbed_communities:
@@ -11,7 +11,7 @@ by clicking the relevant link from the menu, which presents you the screen :ref:
 Communities
 -----------
 
-The **Communities** section allows you to manage the test bed's communities. Existing communities are presented in a table with a row per
+The **Communities** section allows you to manage the Test Bed's communities. Existing communities are presented in a table with a row per
 community.
 
 .. figure:: ../screenshots/admin_community_communities.PNG
@@ -84,7 +84,7 @@ The **Community details** section allows you to view and edit the community's ba
 
 The information you can edit in this form is:
 
-* The community's **short** and **full name** (required). These are visible to the test bed administrator and in certain user reports.
+* The community's **short** and **full name** (required). These are visible to the Test Bed administrator and in certain user reports.
 * The community's linked **domain** (optional), granting full access to it to community administrators. With a domain selected you
   may also click the **View** button to view its details.
 * The community's **support email** address (optional) to receive contact form submissions.
@@ -95,7 +95,7 @@ Regarding the **domain**, it is typically the case that you would want to specif
 full management of the domain's specifications and test suites to the community's administrator(s) and is critical if they are responsible
 for their configuration and test suite development. In addition, linking the community to a specific domain hides other domains from the
 community administrators and also the community's users when defining conformance statements (see :ref:`manage_your_conformance_statements__create`).
-It effectively presents to the community a view over the test bed that is dedicated to their own testing needs. If no domain is linked to the community,
+It effectively presents to the community a view over the Test Bed that is dedicated to their own testing needs. If no domain is linked to the community,
 its administrators and users are presented with all available domains and specifications.
 
 .. note::
@@ -104,21 +104,21 @@ its administrators and users are presented with all available domains and specif
     changing a community's domain after creation is possible to facilitate initial setup but is almost never needed once the initial setup is compete.
 
 In this screen you can also view the community's **REST API key** that is used to identify the community when managing test suites via
-the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled). This is an
+the :ref:`Test Bed's REST API<domains__specification__test_suite_rest>` (if enabled). This is an
 automatically generated key that can be copied to your clipboard using the provided **copy** control.
 
 Regarding the **support email**, this is the address, typically a functional mailbox, where community users' feedback is sent via
-the test bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of
-submissions, with the test bed default functional mailbox added in CC. If not configured, submissions will only
-be delivered to the test bed default functional mailbox. You can also check here the **Notify for pending interactions** option so
+the Test Bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of
+submissions, with the Test Bed default functional mailbox added in CC. If not configured, submissions will only
+be delivered to the Test Bed default functional mailbox. You can also check here the **Notify for pending interactions** option so
 that alerts are sent to the mailbox if test sessions are pending for administrator verification.
 
 .. note::
     **When to configure a support email:** If this is a large user community expected to have frequent user interactions it is highly
     advised that it has its own support email. This is important since most questions would typically relate to the community's
-    test cases and specifications rather than the test bed software itself. The test bed team will most likely not be able to answer
+    test cases and specifications rather than the Test Bed software itself. The Test Bed team will most likely not be able to answer
     domain-specific questions and community users would experience unnecessary delays. On the other hand this could be unconfigured if
-    testing activities for the community are limited, to benefit from the test bed's helpdesk without setting up one by the community.
+    testing activities for the community are limited, to benefit from the Test Bed's helpdesk without setting up one by the community.
 
 Assuming a support email is defined, the contact form submission messages are formatted in HTML such as the following sample.
 
@@ -134,7 +134,7 @@ Received messages include the following information:
 * Any **attachments** that the user has included.
 
 The **self-registration method** is another point that merits further details. This setting determines whether users can themselves
-:ref:`register new organisations<login__create_account>` in the community through the test bed's :ref:`welcome page<login__welcome>`.
+:ref:`register new organisations<login__create_account>` in the community through the Test Bed's :ref:`welcome page<login__welcome>`.
 The possible values for this are as follows:
 
 * **Not supported:** Disables self-registration. By selecting this only you or a community administrator will be able to register
@@ -185,8 +185,8 @@ The available permission options are as follows:
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
 * **Update conformance statement after testing**. If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
 * **View community test history**. If allowed, organisation users will be able to have a readonly view of all other community members' completed test sessions and reports.
-* **Manage test sessions via REST API**. If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<api>`.
-  This is option will be listed only if the test bed's REST API is enabled.
+* **Manage test sessions via REST API**. If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the Test Bed's REST API<api>`.
+  This is option will be listed only if the Test Bed's REST API is enabled.
 
 In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
 the permissions for the entire community a better approach is to :ref:`delete the specific test sessions<session_dashboard__completed>` that should be ignored. This is possible for community
@@ -617,7 +617,7 @@ Manage the organisation's REST API keys
 .......................................
 
 Management of the organisation's REST API keys is done through the **REST API keys** section of the organisation's detail screen. This is visible if the
-:ref:`test bed's REST API<api>` is enabled.
+:ref:`Test Bed's REST API<api>` is enabled.
 
 .. figure:: ../screenshots/admin_community_organisations_organisation_api_keys.png
   :align: center
@@ -734,8 +734,8 @@ to change it at his/her next login.
 Manage landing pages
 ~~~~~~~~~~~~~~~~~~~~
 
-A **landing page** is the home page displayed to the community's users when they log into the test bed. Its purpose is to welcome users providing them context
-on the use of the test bed and potentially including a customised message. Moreover, this customised message can even be set at the level of specific organisations
+A **landing page** is the home page displayed to the community's users when they log into the Test Bed. Its purpose is to welcome users providing them context
+on the use of the Test Bed and potentially including a customised message. Moreover, this customised message can even be set at the level of specific organisations
 if you choose to do so (see :ref:`community__organisations`).
 
 The landing pages available for the community are listed in the **Landing pages** section. These are presented in a table with one row per landing page,
@@ -745,13 +745,13 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The landing page marked as default is the one that applies to all organisations in the community that don't have another, more specific one configured. If no
-landing page is defined then the one that applies to the test bed as a whole is automatically used (see :ref:`systemAdmin__landing_pages`). Note the
+landing page is defined then the one that applies to the Test Bed as a whole is automatically used (see :ref:`systemAdmin__landing_pages`). Note the
 community's default landing page is what the community's administrator(s) also view upon login.
 
 Adding a new landing page can be done in one of the following ways:
 
 * You can create a new landing page from scratch by clicking the **Create landing page** button.
-* You can copy the :ref:`test bed's default landing page<systemAdmin__landing_pages>` by clicking the **Copy Test Bed landing page** button.
+* You can copy the :ref:`Test Bed's default landing page<systemAdmin__landing_pages>` by clicking the **Copy Test Bed landing page** button.
 * You can copy one of the community's existing landing pages while editing its details.
 
 Create landing page
@@ -763,17 +763,17 @@ When creating a new landing page you are presented with a form to enter its info
   :align: center
 
 If you are creating a landing page from scratch (i.e. you have clicked the **Create landing page** button), this form will be empty. Alternatively,
-if the landing page is being created as a copy of an existing one (either the test bed's default landing page or another one defined for the community), the
+if the landing page is being created as a copy of an existing one (either the Test Bed's default landing page or another one defined for the community), the
 form will be prefilled. The information you are expected to complete for the landing page is:
 
 * Its **name** (required), used in the list of landing pages and when selecting one for an organisation.
-* Its **description** (optional), presented to test bed and community administrators.
+* Its **description** (optional), presented to Test Bed and community administrators.
 * Whether or not it should be the **default** landing page for the community (default is "false").
 * The landing page **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
 such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
-which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire Test Bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
@@ -807,7 +807,7 @@ This is done to avoid misconfiguration where you could end up with no default la
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
 such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
-which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire Test Bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
@@ -841,13 +841,13 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The legal notice marked as default is the one that applies to all organisations in the community that don't have another, more specific one configured. If no
-legal notice is defined then the one that applies to the test bed as a whole is automatically used (see :ref:`systemAdmin__landing_pages`). Note that
+legal notice is defined then the one that applies to the Test Bed as a whole is automatically used (see :ref:`systemAdmin__landing_pages`). Note that
 the community's administrator(s) can also view the community's default legal notice when they click the relevant link from the screen footer.
 
 Adding a new legal notice can be done in one of the following ways:
 
 * You can create a new legal notice from scratch by clicking the **Create legal notice** button.
-* You can copy the :ref:`test bed's default legal notice<systemAdmin__legal_notices>` by clicking the **Copy Test Bed legal notice** button.
+* You can copy the :ref:`Test Bed's default legal notice<systemAdmin__legal_notices>` by clicking the **Copy Test Bed legal notice** button.
 * You can copy one of the community's existing legal notices while editing its details.
 
 Create legal notice
@@ -859,17 +859,17 @@ When creating a new legal notice you are presented with a form to enter its info
   :align: center
 
 If you are creating a legal notice from scratch (i.e. you have clicked the **Create legal notice** button), this form will be empty. Alternatively,
-if the legal notice is being created as a copy of an existing one (either the test bed's default legal notice or another one defined for the community), the
+if the legal notice is being created as a copy of an existing one (either the Test Bed's default legal notice or another one defined for the community), the
 form will be prefilled. The information you are expected to complete for the legal notice is:
 
 * Its **name** (required), used in the list of legal notices and when selecting one for an organisation.
-* Its **description** (optional), presented to test bed and community administrators.
+* Its **description** (optional), presented to Test Bed and community administrators.
 * Whether or not it should be the **default** legal notice for the community (default is "false").
 * The legal notice **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
 such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
-which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire Test Bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
@@ -901,7 +901,7 @@ This is done to avoid misconfiguration where you could end up with no default le
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
 such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
-which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire Test Bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
@@ -930,12 +930,12 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The template marked as default is the one that applies to all organisations in the community that don't have another, more specific one configured. If no
-template is defined then the one that applies to the test bed as a whole is automatically used.
+template is defined then the one that applies to the Test Bed as a whole is automatically used.
 
 Adding a new error template can be done in one of the following ways:
 
 * You can create a new template from scratch by clicking the **Create error template** button.
-* You can copy the :ref:`test bed's default template<systemAdmin__error_templates>` by clicking the **Copy Test Bed error template** button.
+* You can copy the :ref:`Test Bed's default template<systemAdmin__error_templates>` by clicking the **Copy Test Bed error template** button.
 * You can copy one of the community's existing templates while editing its details.
 
 Create error template
@@ -947,7 +947,7 @@ When creating a new error template you are presented with a form to enter its in
   :align: center
 
 If you are creating an error template from scratch (i.e. you have clicked the **Create error template** button), this form will be empty. Alternatively,
-if the template is being created as a copy of an existing one (either the test bed's default one or another one defined for the community), the
+if the template is being created as a copy of an existing one (either the Test Bed's default one or another one defined for the community), the
 form will be prefilled. The information you are expected to complete for the error template is:
 
 * Its **name** (required), used in the list of templates and when selecting one for an organisation.
@@ -1022,7 +1022,7 @@ Manage triggers
 
 A **trigger** is a means of carrying out automated processing when a given event occurs. Triggers can receive various types of inputs depending
 on their configured event, and can be used both to receive notifications and to modify the current test setup. They represent a powerful means of
-extending the Test Bed's processing in a decoupled way and can be used to complete advanced tasks that the test bed alone cannot handle
+extending the Test Bed's processing in a decoupled way and can be used to complete advanced tasks that the Test Bed alone cannot handle
 (e.g. preparing configuration packages for new community members).
 
 Trigger execution is always an asynchronous step, and a failed trigger call will never cause its root event to fail itself. Numerous triggers
@@ -1118,7 +1118,7 @@ The information required to configure this web service are:
 
 * Its **endpoint URL** (required). In case of a GITB processing service this is expected to be the full URL to reach the service's WSDL file.
   If a JSON HTTP service is used instead, this is the URL at which the service is listening. In any case this URL needs to be provided
-  as it should be used by the test bed, meaning that it could also be an internal address.
+  as it should be used by the Test Bed, meaning that it could also be an internal address.
 * An **operation** (optional), to signal an operation name to the service. Such operations are foreseen by the `GITB processing service API`_, although this can also be used for HTTP services as
   extra metadata to distinguish calls.
 * The **input data** (optional) to provide as part of service's payload when the trigger fires.
@@ -1251,7 +1251,7 @@ pending changes and return to the :ref:`community details page<community>`.
 Returning output from triggers
 ++++++++++++++++++++++++++++++
 
-One of the powerful features of triggers is that they can also adapt the configuration in the test bed. A trigger can achieve this by having its web service return an output as per the
+One of the powerful features of triggers is that they can also adapt the configuration in the Test Bed. A trigger can achieve this by having its web service return an output as per the
 `GITB processing service API`_ specification that can modify, depending on the trigger's event type, the values for **organisation properties**, **system properties** or **conformance statement parameters**.
 In case of a JSON HTTP service, the same possibility exists by returning JSON output using the same names and structures as the `GITB processing service API`_.
 
@@ -2026,12 +2026,12 @@ information (names and versions).
 
 The additional properties that you define can be used in numerous ways:
 
-* As additional **data collection** for community's members, collecting through the test bed information not
+* As additional **data collection** for community's members, collecting through the Test Bed information not
   necessarily linked to the testing that you need for your reporting and follow-up.
 * To facilitate **test configuration**. Any properties you define can be included as variables in test sessions. By defining such
   information at a level higher than conformance statements you can avoid replication of properties that are of a cross-cutting nature
   (e.g. a country code linked to an organisation).
-* As additional **quality control** by restricting certain properties as being editable only by test bed or community administrators. Such properties
+* As additional **quality control** by restricting certain properties as being editable only by Test Bed or community administrators. Such properties
   can be considered as flags that you need to set before an organisation can engage in testing.
 * For **data sharing**, allowing you to configure for your users certain information that they will subsequently be able to access.
 * To **facilitate automation** via :ref:`triggers<community__manage_triggers>` or external scripting, by allowing the management of certain properties by external processes that could be used to
@@ -2177,7 +2177,7 @@ A key step in designing a conformance testing strategy using the Test Bed is to 
 concepts are flexible enough to address most needs the resulting mapping could result in terms being presented to
 users that may not be intuitive.
 
-As a means to further customise the test bed for a given community, community and test bed administrators are able to define
+As a means to further customise the Test Bed for a given community, community and Test Bed administrators are able to define
 replacement labels for each concept. These replacements are displayed in all screens, reports and exports, both
 for community members and administrators.
 

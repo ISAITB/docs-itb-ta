@@ -26,7 +26,7 @@ The popup displays the options available to you:
 .. figure:: ../screenshots/profile_hover_eulogin.png
   :align: center
 
-Both **Switch role** and **Logout** will complete your work with your currently active test bed role. The
+Both **Switch role** and **Logout** will complete your work with your currently active Test Bed role. The
 difference is that switching roles maintains your EU Login session active and takes you to your
 :ref:`list of available roles<login__roles>` whereas logging out will also terminate your EU Login session
 and transfer you to the Test Bed's :ref:`welcome page<login__welcome>`.

@@ -3,7 +3,7 @@
 Monitor test sessions
 =====================
 
-Monitoring all current and past test sessions for the test bed is possible through the **Session dashboard** screen, accessible
+Monitoring all current and past test sessions for the Test Bed is possible through the **Session dashboard** screen, accessible
 my clicking the corresponding link from the menu.
 
 .. figure:: ../screenshots/admin_session_dashboard.PNG
@@ -103,7 +103,7 @@ click on **Cancel** to abort the deletion and restore the normal table display.
 Finally, the presented completed sessions can be exported in CSV format by clicking the **Export CSV** button in the table header (see :ref:`monitor_test_sessions__export`).
 
 .. note::
-    **Deleting obsolete tests from the session dashboard:** As test bed administrator if you select to delete the obsolete tests you will be doing so for the entire test bed.
+    **Deleting obsolete tests from the session dashboard:** As Test Bed administrator if you select to delete the obsolete tests you will be doing so for the entire Test Bed.
     If you want to target a specific community you could login as a community administrator to do the purge.
 
 .. _session_dashboard__filters:

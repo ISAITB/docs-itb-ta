@@ -275,20 +275,20 @@ In this case the previously discussed Test Bed concepts could be mapped as follo
 Your role
 ---------
 
-Your test bed account is configured as a **test bed administrator**. This means that you are responsible for the configuration of user communities
-and, where not managed by community administrators, the test strategy and the management of your users' organisations in the test bed.
+Your Test Bed account is configured as a **Test Bed administrator**. This means that you are responsible for the configuration of user communities
+and, where not managed by community administrators, the test strategy and the management of your users' organisations in the Test Bed.
 
 Expectations
 ~~~~~~~~~~~~
 
-As a **test bed administrator** you are expected to carry out the following main activities:
+As a **Test Bed administrator** you are expected to carry out the following main activities:
 
-* Create user communities for the different projects using the test bed (see :ref:`community`).
+* Create user communities for the different projects using the Test Bed (see :ref:`community`).
 * Manage test configuration by defining the specification domains (see :ref:`domains`).
 * Develop test cases and test services, and manage the test suites for each specification (see :ref:`domains__specification__test_suite_upload`).
 * Validate the overall test setup by executing sample test sessions (see :ref:`validate_test_setup`).
-* Monitor the test bed organisations' conformance status (see :ref:`monitor_conformance_status`) and test history (see :ref:`monitor_test_sessions`).
-* Manage the test bed's configuration and default elements such as landing pages and legal notices (see :ref:`systemAdmin`).
+* Monitor the Test Bed organisations' conformance status (see :ref:`monitor_conformance_status`) and test history (see :ref:`monitor_test_sessions`).
+* Manage the Test Bed's configuration and default elements such as landing pages and legal notices (see :ref:`systemAdmin`).
 
 .. note::
     **Community-managed test configuration:** Although you have access to all communities and test configurations, the detailed management of organisations,

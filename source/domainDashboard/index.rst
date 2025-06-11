@@ -3,7 +3,7 @@
 Manage test configuration
 =========================
 
-As test bed administrator you are able to work in parallel with community administrators in setting up the specifications that organisations are expected to conform to
+As Test Bed administrator you are able to work in parallel with community administrators in setting up the specifications that organisations are expected to conform to
 as well as the test suites to verify this. Managing this information is possible through the **Domain management** screen, accessible
 by clicking the relevant link from the menu. Once you do so you will be presented with the :ref:`listing of available domains<domains__domain_view>`.
 
@@ -12,7 +12,7 @@ by clicking the relevant link from the menu. Once you do so you will be presente
 Domains
 -------
 
-The first screen you access is the display of the domains defined in the test bed. These are managed by you as test bed administrator but also by
+The first screen you access is the display of the domains defined in the Test Bed. These are managed by you as Test Bed administrator but also by
 community administrators, assuming that their community has been linked to a given domain.
 
 .. figure:: ../screenshots/admin_domains_domains_ta.PNG
@@ -29,7 +29,7 @@ To proceed within a :ref:`domain's details<domains__domain_details>` click its r
 
 .. note::
     **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification
-    and actor are important to provide context to test bed users. This information should summarise what they are testing for, whereas
+    and actor are important to provide context to Test Bed users. This information should summarise what they are testing for, whereas
     the name and description of test cases and test suites should summarise how they are supposed to test.
 
 .. _domains__domain_create:
@@ -655,8 +655,8 @@ Details on each operation, including sample requests and responses, are provided
 
 .. note::
 
-  Using the test bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done by setting the
-  `AUTOMATION_API_ENABLED`_ property to true in the test bed's configuration.
+  Using the Test Bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done by setting the
+  `AUTOMATION_API_ENABLED`_ property to true in the Test Bed's configuration.
 
 .. _domains__specification__actor_list:
 
@@ -1070,7 +1070,7 @@ The following information is presented in corresponding form controls:
   new conformance statements.
 * Whether or not the actor should be **hidden**. Hidden actors are valid for reference purposes but are not presented to users when creating conformance
   statements. They can be used to hide simulated actors or deprecate ones that have been previously used without affecting existing test sessions.
-* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`test bed's REST API<api>` (if the REST API is enabled).
+* The actor's **REST API key** that is used to identify the actor when launching tests via the :ref:`Test Bed's REST API<api>` (if the REST API is enabled).
   The readonly key value is automatically generated, and can be copied to your clipboard using the provided **copy** control.
 * Whether or not **conformance badges** are enabled for the actor (see their explanation in the :ref:`actor creation screen <domains__specification__create_actor>`).
 

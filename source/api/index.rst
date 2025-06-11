@@ -3,7 +3,7 @@
 REST API
 ========
 
-The test bed's REST API allows you to carry out most operations without connecting to its user interface. Its typical use case is to allow
+The Test Bed's REST API allows you to carry out most operations without connecting to its user interface. Its typical use case is to allow
 integration with automated processes enabling use cases such as **automated testing** and **continuous integration**. For 
 test developers certain API operations may also be interesting as it allows them to more easily validate changes while **developing test cases**.
 
@@ -23,8 +23,8 @@ These sets of operations are documented in the sections that follow.
 
 .. note::
 
-  Using the test bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done
-  by setting the `AUTOMATION_API_ENABLED`_ property to true in the test bed's configuration, or through the user interface
+  Using the Test Bed's REST API is an advanced feature that needs to first be enabled before it can be used. This is done
+  by setting the `AUTOMATION_API_ENABLED`_ property to true in the Test Bed's configuration, or through the user interface
   via the :ref:`system configuration screen <systemAdmin__config>`.
 
 .. _api__community:
@@ -43,7 +43,7 @@ All community management operations use API keys to authorise calls and determin
 on the operation:
 
 * The key identifying a **community**, for all operations that a community administrator can do through the user interface.
-* The :ref:`master API key <systemAdmin__config__restApi>`, for selected top-level operations that are normally reserved for the overall test bed administrator.
+* The :ref:`master API key <systemAdmin__config__restApi>`, for selected top-level operations that are normally reserved for the overall Test Bed administrator.
 
 The sections that follow provide instructions and examples for each operation.
 
@@ -131,8 +131,8 @@ The first variant assumes that you are performing an update as a community admin
 and cannot change the community's assigned domain. You call the operation by making an HTTP ``POST`` to path ``/api/rest/community`` and setting an
 HTTP header named ``ITB_API_KEY`` to your **community API key**.
 
-The second variant allows you to perform tasks reserved for the test bed administrator. This means that you can select any existing community in the
-test bed, and also change or remove its assigned domain. In this case you call the operation by making an HTTP ``POST`` to path
+The second variant allows you to perform tasks reserved for the Test Bed administrator. This means that you can select any existing community in the
+Test Bed, and also change or remove its assigned domain. In this case you call the operation by making an HTTP ``POST`` to path
 ``/api/rest/community/{community}``, setting ``{community}`` to the target community's API key. The ``ITB_API_KEY`` HTTP header needs to be set
 with the :ref:`master API key <systemAdmin__config__restApi>`.
 
@@ -1090,7 +1090,7 @@ All domain management operations use API keys to authorise calls and determine t
 on the operation:
 
 * The key identifying a **community**, for all operations that a community administrator can do through the user interface.
-* The :ref:`master API key <systemAdmin__config__restApi>`, for selected top-level operations that are normally reserved for the overall test bed administrator.
+* The :ref:`master API key <systemAdmin__config__restApi>`, for selected top-level operations that are normally reserved for the overall Test Bed administrator.
 
 The sections that follow provide instructions and examples for each operation.
 
@@ -1171,8 +1171,8 @@ The first variant assumes that you are performing an update as a community admin
 to the community or any domain, in case the community is not linked to a specific one. The operation is called by making an HTTP ``POST`` to
 path ``/api/rest/domain`` and setting an HTTP header named ``ITB_API_KEY`` to your **community API key**.
 
-The second variant allows you to perform tasks reserved for the test bed administrator. This means that you can manage any domain within the
-test bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path
+The second variant allows you to perform tasks reserved for the Test Bed administrator. This means that you can manage any domain within the
+Test Bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path
 ``/api/rest/domain/{domain}``, setting ``{domain}`` to the target domain's API key. The ``ITB_API_KEY`` HTTP header needs to be set
 with the :ref:`master API key <systemAdmin__config__restApi>`.
 
@@ -2027,7 +2027,7 @@ As with all Test Bed REST operations for session management you must include in 
 The format of the report is by default XML, using in particular the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__ syntax.
 You may also request the report in PDF, by setting the ``Accept`` HTTP header to ``application/pdf``.
 
-Once this call is made, the test bed will return a response with a ``200`` (OK) status code, whose payload is the report's content. The following sample is a complete
+Once this call is made, the Test Bed will return a response with a ``200`` (OK) status code, whose payload is the report's content. The following sample is a complete
 example of such a report (in the default XML format):
 
 .. literalinclude:: ../testHistory/resources/test_case_report.xml

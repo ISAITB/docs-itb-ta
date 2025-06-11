@@ -22,9 +22,9 @@ displays:
 
 * A welcome message. This can be adapted as part of the overall :ref:`system settings<systemAdmin__config>`.
 * The main **Click to log in** button to log you in.
-* The **Register in a public community** shortcut allowing to self-register for one of the test bed's communities (see :ref:`login__create_account`).
+* The **Register in a public community** shortcut allowing to self-register for one of the Test Bed's communities (see :ref:`login__create_account`).
   This can be deactivated as part of the overall :ref:`system settings<systemAdmin__config>`
-* A privacy note with a link to view the test bed's legal notice.
+* A privacy note with a link to view the Test Bed's legal notice.
 
 A more complete example can be found in the `DIGIT Test Bed instance`_ where additional information and shortcuts are displayed:
 
@@ -80,12 +80,12 @@ a link on the welcome page.
 
 Once you have authenticated you will be transferred back to the Test Bed as follows:
 
-* If you have a single role assigned to you you will be automatically transferred to the :ref:`test bed's landing page<navigate__landing_page>`.
+* If you have a single role assigned to you you will be automatically transferred to the :ref:`Test Bed's landing page<navigate__landing_page>`.
 * If you don't have an assigned role or have multiple roles you will be transferred to a screen to select the one to proceed with. See :ref:`login__roles` for details.
 
 .. note::
-  **Initial login following installation:** A fresh test bed installation defines an initial administrator account
-  that can be used to make the first login, however this is a username and password based account. If your test bed
+  **Initial login following installation:** A fresh Test Bed installation defines an initial administrator account
+  that can be used to make the first login, however this is a username and password based account. If your Test Bed
   instance is to be integrated with EU Login it needs to first be configured as being in "migration mode" to
   allow you to link your EU Login account to the default administrator.
 
@@ -94,7 +94,7 @@ Once you have authenticated you will be transferred back to the Test Bed as foll
 Logging in without EU Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case EU Login is not enabled for your test bed you will be using username and password based accounts. The login screen
+In case EU Login is not enabled for your Test Bed you will be using username and password based accounts. The login screen
 in this case requires you to provide:
 
 * Your account's **username**.
@@ -103,7 +103,7 @@ in this case requires you to provide:
 .. figure:: ../screenshots/login.PNG
   :align: center
 
-Your account credentials are those configured during installation or provided to you by another test bed administrator.
+Your account credentials are those configured during installation or provided to you by another Test Bed administrator.
 
 On the login screen you also have the possibility to have the Test Bed keep your session open. To do this
 simply check the **Remember me** checkbox below the login form. Once you have entered your credentials click
@@ -139,8 +139,8 @@ Once ready click on **Save** to change your password and access the Test Bed.
 Register for a public community
 -------------------------------
 
-From the test bed's welcome page you have the option of registering for one of its public communities. Selecting to do this will prompt
-you to create an account linked to a new organisation that will be registered in one of the test bed's available communities.
+From the Test Bed's welcome page you have the option of registering for one of its public communities. Selecting to do this will prompt
+you to create an account linked to a new organisation that will be registered in one of the Test Bed's available communities.
 This process is also referred to as "self-registration".
 
 To carry out the registration start by clicking the **Register in a public community** shortcut from the Test Bed's welcome page.
@@ -154,7 +154,7 @@ To carry out the registration start by clicking the **Register in a public commu
 
   The information that follows in this section covers the case of a Test Bed where EU Login is **not enabled**.
 
-If you are using a test bed that is not integrated with EU Login you will be presented with a registration form in which
+If you are using a Test Bed that is not integrated with EU Login you will be presented with a registration form in which
 you are expected to:
 
 * Select the community you want to register for.

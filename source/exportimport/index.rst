@@ -8,9 +8,9 @@ define your conformance testing setup and customise the experience of your users
 and upload of files (most importantly test suites) that can be time-consuming if needed to be replicated. Replicating this setup is 
 nonetheless something that often needs to be done, typically as part of the following scenarios:
 
-* **Development workflow:** You are implementing your test cases in a local test bed instance that you use for development. Once ready you will
-  want to replicate your configuration to the test bed instance your users will actually be using. 
-* **Setup of new test bed instance:** You may need at some point to set up a new test bed instance that matches a given community's configuration.
+* **Development workflow:** You are implementing your test cases in a local Test Bed instance that you use for development. Once ready you will
+  want to replicate your configuration to the Test Bed instance your users will actually be using. 
+* **Setup of new Test Bed instance:** You may need at some point to set up a new Test Bed instance that matches a given community's configuration.
   This could be the case when defining a separate environment (e.g. "TEST" and "ACCEPTANCE" environments) or when a new test developer joins
   the team and needs her own development instance.
 * **Troubleshooting:** If a specific organisation is facing issues with a test suite you may want to replicate its specific configuration in 
@@ -52,7 +52,7 @@ The first choice you need to make is the type of data you will be exporting. Thi
 * **Domain configuration:** Select this to export only the information linked to a domain (e.g. specifications, test suites).
 * **Community configuration:** Select this to export the full information linked to a community (e.g. custom properties, organisations) as well as its linked domain, optionally also including system settings.
 * **System settings:** Select this to export the system settings associated to the current Test Bed instance.
-* **Deletions:** Select this to delete top-level information, specifically domains and communities, in a target test bed instance.
+* **Deletions:** Select this to delete top-level information, specifically domains and communities, in a target Test Bed instance.
 
 The **community configuration** option can be viewed as a superset of the **domain configuration** and **system settings**, in that the community data
 can also include domain information and settings. It is important however to provide the distinction given that you may want to only export your testing
@@ -79,7 +79,7 @@ Finally, when selecting **Deletions** the form allows to select the domains and 
 .. figure:: ../screenshots/admin_export_deletions.png
   :align: center
 
-In both cases you can select multiple domains and communities, looking them up from the test bed's current data. On top of these you may also
+In both cases you can select multiple domains and communities, looking them up from the Test Bed's current data. On top of these you may also
 use the **Add more API keys for deletion** options, to directly add one or more API key values that will be used to match communities and domains
 in the target instance. Based on the selected and directly inputted values, the resulting API keys will be used upon import to match the domains
 and communities to delete.

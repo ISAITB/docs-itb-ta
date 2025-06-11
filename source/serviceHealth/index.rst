@@ -3,11 +3,11 @@
 Service health
 ==============
 
-The test bed's functioning involves the configuration of **internal components** that needs to be correct for users
-to test without issues. In addition, and depending on the test bed's setup, certain components may become important
+The Test Bed's functioning involves the configuration of **internal components** that needs to be correct for users
+to test without issues. In addition, and depending on the Test Bed's setup, certain components may become important
 in ensuring the overall environment's security and stability.
 
-Administrators can ensure the test bed is optimally configured and working correctly by means of the 
+Administrators can ensure the Test Bed is optimally configured and working correctly by means of the 
 **service health dashboard**. To access the dashboard select the **Service health** menu entry.
 
 .. figure:: ../screenshots/service_health_dashboard.png
@@ -26,8 +26,8 @@ The aggregate cards' status is also displayed as an **overall status** at the to
 
 Generally speaking, you should aim for all services being marked as **success** or **information**. It is normal to have
 services with information messages, given that certain configuration depends on the specific circumstances of the given
-test bed instance, which the administrator should evaluate. Whenever there is a **warning**, and in particular an **error**, 
-you are strongly advised to take action given that the test bed's configuration needs attention.
+Test Bed instance, which the administrator should evaluate. Whenever there is a **warning**, and in particular an **error**, 
+you are strongly advised to take action given that the Test Bed's configuration needs attention.
 
 At the bottom of the dashboard you are provided with a **Check all** control to launch the internal diagnostic checks
 for all services, and report results as they become available. Note that upon access to the dashboard all services
@@ -38,7 +38,7 @@ returned errors and the steps to take to address them.
 
 .. note::
     **Post installation health check:** Visiting the service health dashboard should be the first action following a
-    new test bed installation, be it `for development <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/>`__
+    new Test Bed installation, be it `for development <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed/>`__
     or `for production <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/>`__.
 
 .. _serviceHealth_overview:
@@ -53,11 +53,11 @@ The services that are monitored by the dashboard are summarised in the following
 User interface communications
 +++++++++++++++++++++++++++++
 
-This check ensures that there is nothing impeding communication between the test bed's backend and its user interface
+This check ensures that there is nothing impeding communication between the Test Bed's backend and its user interface
 running in the user's browser. An issue here is in almost all cases blocking, as users will be unable to receive updates from the
 test engine regarding ongoing tests.
 
-Problems here could be due to configuration issues in the test bed's installation that prevent communications, but also due to
+Problems here could be due to configuration issues in the Test Bed's installation that prevent communications, but also due to
 intermediate networking components that are configured to block specific protocols unless whitelisted.
 
 .. _serviceHealth_overview_engine:
@@ -65,7 +65,7 @@ intermediate networking components that are configured to block specific protoco
 Test engine communications
 ++++++++++++++++++++++++++
 
-This ensures that the internal test bed components, notably the interface component and the internal test engine, can correctly
+This ensures that the internal Test Bed components, notably the interface component and the internal test engine, can correctly
 communicate with each other in a bidirectional manner. Such bidirectional communications are needed to allow the launching of tests
 but also the communication of feedback from the test engine to users.
 
@@ -81,8 +81,8 @@ This ensures that there is nothing preventing the test engine's callback endpoin
 supporting test services. Such callbacks are made when components external to the core test engine are expected to directly interact
 with it.
 
-Problems here come from a general misconfiguration of access to the test bed's test engine. Note that whether this is fully correctly
-configured cannot be established automatically as this depends on the testing needs and setup of each test bed instance.
+Problems here come from a general misconfiguration of access to the Test Bed's test engine. Note that whether this is fully correctly
+configured cannot be established automatically as this depends on the testing needs and setup of each Test Bed instance.
 
 .. _serviceHealth_overview_antivirus:
 
@@ -90,10 +90,10 @@ Antivirus service
 +++++++++++++++++
 
 This checks whether an antivirus service is enabled, and if so, whether it is functioning correctly. When an `antivirus service is configured <https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBedProduction/index.html#antivirus-scanning>`__,
-which is strongly advised for production instances, all externally provided files are scanned before being accepted by the test bed.
+which is strongly advised for production instances, all externally provided files are scanned before being accepted by the Test Bed.
 
 Problems here are typically due to the configured service being offline, or to the service simply not being configured for a production
-test bed instance.
+Test Bed instance.
 
 .. _serviceHealth_overview_email:
 
@@ -129,7 +129,7 @@ the service's overall status as well as further details.
 .. figure:: ../screenshots/service_health_dashboard_details.png
   :align: center
 
-In all cases the information displayed will reflect the configuration values detected for the current test bed instance. You are 
+In all cases the information displayed will reflect the configuration values detected for the current Test Bed instance. You are 
 presented also with clear information on the service's impacts, and in case of **error** the information you need to know to evaluate
 and take action. Specifically you will be presented with sections on:
 

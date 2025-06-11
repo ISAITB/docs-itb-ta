@@ -105,7 +105,7 @@ The following menu items are available to you:
     **Community management** | Takes you to the management of your :ref:`community <community>`.
     **Data export** | Takes you to the page managing :ref:`data exports <exportimport__export>`.
     **Data import** | Takes you to the page managing :ref:`data imports <exportimport__import>`.
-    **System administration** | Takes you to the page managing the overall :ref:`test bed configuration<systemAdmin>`.
+    **System administration** | Takes you to the page managing the overall :ref:`Test Bed configuration<systemAdmin>`.
     **Service health** | Takes you to the monitoring page for the overall :ref:`service health <serviceHealth>`.
     **My conformance statements** | Takes you to your own organisation's :ref:`conformance statement overview <manage_your_conformance_statements>`.
     **My test sessions** | Takes you to your own organisation's :ref:`test history <view_your_test_history>`.

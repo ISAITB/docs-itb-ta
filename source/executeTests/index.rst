@@ -3,7 +3,7 @@
 Execute tests
 =============
 
-Executing conformance tests is the reason your users are using the test bed. Considering
+Executing conformance tests is the reason your users are using the Test Bed. Considering
 that test cases are linked to a system by means of conformance statements, the first step before
 executing a test is to visit a :ref:`conformance statement's detail screen <manage_your_conformance_statements__view_a_conformance_statements_details>`.
 This screen is the place where you input required configuration and are provided with the controls to execute one or more tests.
@@ -105,9 +105,9 @@ the test session's log (see :ref:`execute_tests__step3__view_log`).
 .. figure:: ../screenshots/test_execution_execute_diagram.PNG
   :align: center
 
-Before starting a test session, the test bed checks to see whether it needs to present you any configuration that you need to take into account. This
-step is the counterpart of the verification that was previously discussed, where the test bed checked the configuration that you provided. In this case
-the test bed will present to you its own configuration to take into account when preparing your system. If such configuration properties indeed exist and
+Before starting a test session, the Test Bed checks to see whether it needs to present you any configuration that you need to take into account. This
+step is the counterpart of the verification that was previously discussed, where the Test Bed checked the configuration that you provided. In this case
+the Test Bed will present to you its own configuration to take into account when preparing your system. If such configuration properties indeed exist and
 need to be displayed, they will be presented to you in a popup:
 
 .. figure:: ../screenshots/test_execution_simulated.PNG
@@ -442,7 +442,7 @@ long for elaborate test cases.
 Execution via REST API
 ----------------------
 
-Apart from launching tests through its user interface, the test bed also provides a **REST API** allowing you to manage test sessions
+Apart from launching tests through its user interface, the Test Bed also provides a **REST API** allowing you to manage test sessions
 via REST calls. Specifically you may use the API to:
 
 * **Start** test sessions.

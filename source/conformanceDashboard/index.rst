@@ -354,7 +354,7 @@ The presented controls permit the following actions:
 * **View system** takes you to the relevant :ref:`system<community__manage_organisation__systems_edit>`, :ref:`community<community>` or :ref:`organisation<community__manage_organisation>`.
 * **View specification** takes you to the relevant :ref:`specification<domains__specification>`, :ref:`domain<domains__domain_details>` or :ref:`actor<domains__actor>`.
 * **Copy badge URL**, presented if the relevant specification has configured :ref:`conformance badges <domains__specification>`,
-  will copy to your clipboard a URL that can be referred to from outside the test bed to display the badge. The same button also includes a 
+  will copy to your clipboard a URL that can be referred to from outside the Test Bed to display the badge. The same button also includes a 
   secondary option named **Preview badge** that you can click for a preview.
 * **Download report** (available in the :ref:`view per organisation<monitor_conformance_status__organisation_view>`), allows you to generate :ref:`conformance statement reports<monitor_conformance_status__statements__export_statement>` and :ref:`certificates<monitor_conformance_status__statements__export_certificate>`.
 

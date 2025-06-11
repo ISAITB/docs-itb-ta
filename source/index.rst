@@ -7,7 +7,7 @@ Welcome to the user guide of the **Interoperability Test Bed (ITB)**. The purpos
 features available through the Test Bed's user interface and machine-to-machine API. In addition, it explains the testing concepts
 adopted by the Test Bed and best practices while defining or executing tests as an administrator or tester.
 
-This documentation corresponds to the **test bed administrator** role. If you are interested in other roles please
+This documentation corresponds to the **Test Bed administrator** role. If you are interested in other roles please
 select the relevant user guide for `organisation users <https://www.itb.ec.europa.eu/docs/itb-ou/latest/>`_,
 `organisation administrators <https://www.itb.ec.europa.eu/docs/itb-oa/latest/>`_ or
 `community administrators <https://www.itb.ec.europa.eu/docs/itb-ca/latest/>`_.
