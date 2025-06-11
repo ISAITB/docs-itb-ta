@@ -56,7 +56,7 @@ To trigger the login process click on **Click to log in** from the Test Bed's we
 What happens from here depends on the Test Bed's authentication approach:
 
 * EU Login (see :ref:`login__login__eulogin`).
-* Test bed username and password based accounts (see :ref:`login__login__eulogin`).
+* Test Bed username and password based accounts (see :ref:`login__login__eulogin`).
 
 .. _login__login__eulogin:
 
