@@ -125,6 +125,7 @@ Regarding **system settings**, you may also include the following:
 * The Test Bed :ref:`administrators<systemAdmin__admins>` (if the Test Bed instance is not integrated with EU Login).
 * The default :ref:`landing pages<systemAdmin__landing_pages>`, :ref:`legal notices<systemAdmin__legal_notices>` and :ref:`error templates<systemAdmin__error_templates>`.
 * The configured (and active) :ref:`themes<systemAdmin__themes>`.
+* The defined :ref:`system-wide resources <systemAdmin__resources>`.
 
 The system settings listed above are also the set of options available when having selected the **System settings** export options.
 

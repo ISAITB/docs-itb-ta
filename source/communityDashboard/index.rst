@@ -772,7 +772,8 @@ form will be prefilled. The information you are expected to complete for the lan
 * The landing page **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
-such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
@@ -805,7 +806,8 @@ the default, this can't be unset. To switch defaults you would need to edit or c
 This is done to avoid misconfiguration where you could end up with no default landing page for the community.
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
-such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
@@ -866,7 +868,8 @@ form will be prefilled. The information you are expected to complete for the leg
 * The legal notice **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
-such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
@@ -897,7 +900,8 @@ the default, this can't be unset. To switch defaults you would need to edit or c
 This is done to avoid misconfiguration where you could end up with no default legal notice for the community.
 
 Above the rich text editor you have a **Copy resource reference** control that allows you to search in-place the :ref:`community's resources<community__manage_resources>`,
-such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+such as images to include or files to add download links for. Next to this you have the **Copy system-wide resource reference** control
+which allows you to make a similar search on :ref:`system resources <systemAdmin__resources>` defined for the entire test bed. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
@@ -1305,6 +1309,9 @@ displayed on its landing page, UML sequence diagrams to illustrate a test case's
 either point to external sources (e.g. a public documentation site for your project) or to resources defined internally within the test bed. The configuration and 
 use of such internal resources is addressed in the current section.
 
+.. note::
+  **System-wide resources**: It is also possible to define :ref:`system-wide resources <systemAdmin__resources>` available publicly and to all community users.
+
 Configured resources are displayed in the **Resources** section. Each resource is presented as a row displaying its file **name**, its **reference to use** when 
 including it in rich content, and its **description**. For each resource you are provided with controls to **copy** the resource's reference to the clipboard, **delete**
 the resource, and **download** it.
@@ -1422,8 +1429,8 @@ the certificate is generated. The supported placeholders and their meaning are l
 
 You can review and copy all the above placeholder values to your message content using the **Copy placeholder text** button.
 
-Besides placeholders, you also have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
-such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+Besides placeholders, you also have a **Copy resource reference** and **Copy system-wide resource reference** controls that allow you to search in-place respectively the :ref:`community's resources<community__manage_resources>`
+and :ref:`system resources <systemAdmin__resources>`, such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 .. _community__report_settings__statement_certificate__external:
@@ -1585,8 +1592,8 @@ meaning are listed in the following table.
 
 You can review and copy all the above placeholder values to your message content using the **Copy placeholder text** button.
 
-Besides placeholders, you also have a **Copy resource reference** control that allows you to search in-place your :ref:`community's resources<community__manage_resources>`,
-such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+Besides placeholders, you also have a **Copy resource reference** and **Copy system-wide resource reference** controls that allow you to search in-place respectively the :ref:`community's resources<community__manage_resources>`
+and :ref:`system resources <systemAdmin__resources>`, such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
 to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link. Finally, the **Remove message** button can
 be used to remove a specific message's configuration.
 

@@ -15,6 +15,7 @@ The displayed page allows you to:
 * Manage default :ref:`landing pages<systemAdmin__landing_pages>`, :ref:`legal notices<systemAdmin__legal_notices>`
   and :ref:`error templates<systemAdmin__error_templates>` for the hosted communities.
 * Manage the test bed's :ref:`theme<systemAdmin__themes>`.
+* Manage :ref:`system-wide resources <systemAdmin__resources>`.
 
 .. _systemAdmin__config:
 
@@ -196,6 +197,10 @@ The information you are expected to complete for the landing page is:
 * Whether or not it should be the **default** landing page for the community (default is "false").
 * The landing page **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
+Above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
 While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
 you save it. The preview is presented in a popup that is styled and positioned exactly as the landing page :ref:`would appear<navigate__landing_page>`
 when users log in. This allows you to fine tune aspects such as positioning and spacing to make sure the result is exactly
@@ -224,6 +229,10 @@ Doing so will take you to a screen where the landing page's information is displ
 In this screen you can change the landing page's **name**, **description**, **default** setting and **content**. Note that if the landing page is currently
 the default, this can't be unset. To switch defaults you would need to edit or create another landing page and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default landing page.
+
+Above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the landing page you can use the **Preview** button to preview how the landing page will look like before
 you save it. The preview is presented in a popup that is styled and positioned exactly as the landing page :ref:`would appear<navigate__landing_page>`
@@ -271,6 +280,10 @@ The information you are expected to complete for the legal notice is:
 * Whether or not it should be the **default** legal notice for the community (default is "false").
 * The legal notice **content**, provided through a rich text editor, allowing you to add styled text, lists, images and links.
 
+Above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
+
 While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
 you save it. This allows you to fine tune its presentation and content to make sure the result is exactly how you expect it to be.
 
@@ -297,6 +310,10 @@ Doing so will take you to a screen where the legal notice's information is displ
 In this screen you can change the legal notice's **name**, **description**, **default** setting and **content**. Note that if the legal notice is currently
 the default, this can't be unset. To switch defaults you would need to edit or create another legal notice and at that time set it as the new default.
 This is done to avoid misconfiguration where you could end up with no default legal notice.
+
+Above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the content of the legal notice you can use the **Preview** button to preview how it will look like before
 you save it. This allows you to fine tune its presentation and content to make sure the result is exactly how you expect it to be.
@@ -347,7 +364,9 @@ When completing the content of the template you are also provided with two place
 * **$ERROR_DESCRIPTION:** The error message text (a text value - may be empty).
 * **$ERROR_ID:** The error identifier (used to trace error in logs).
 
-You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button. In addition, above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the template's content you can see a preview of what it would look like when used. To do so click the **Preview** button that will open an
 error popup using a sample error and your current template:
@@ -381,7 +400,9 @@ When completing the content of the template you are also provided with two place
 * **$ERROR_DESCRIPTION:** The error message text (a text value - may be empty).
 * **$ERROR_ID:** The error identifier (used to trace error in logs).
 
-You can review and copy these placeholder values to your content using the **Copy placeholder text** button.
+You can review and copy these placeholder values to your content using the **Copy placeholder text** button. In addition, above the rich text editor you have a **Copy system-wide resource reference** control that allows you to search in-place your :ref:`system resources <systemAdmin__resources>`,
+such as images to include or files to add download links for. Once you find the resource you're looking for you can click it to copy its reference
+to the clipboard. You can then use this reference as e.g. the source of an image file or the target of a link.
 
 While editing the template's content you can see a preview of what it would look like when used. To do so click the **Preview** button that will open an
 error popup using a sample error and your current template:
@@ -480,4 +501,45 @@ also **Copy** the theme to create a new one based on its settings.
 Manage resources
 ----------------
 
-TODO
+In several cases the test bed supports the definition of rich content as documentation or as a means of customising the experience of all users, regardless
+of the specific community they belong to. Such cases are:
+
+* The :ref:`welcome page <login__welcome>` displayed to users before logging in.
+* Default :ref:`landing pages<systemAdmin__landing_pages>`, :ref:`legal notices<systemAdmin__legal_notices>` and :ref:`error templates<systemAdmin__error_templates>`.
+
+Within such rich content it is possible to include additional **resources**, either as displayed images or download links. Typical examples are logos,
+diagrams, and links to documents. When referring to such resources, you may either point to external sources (e.g. a public documentation site for your project)
+or to resources defined internally within the test bed. The configuration and use of such resources is addressed in the current section.
+
+.. note::
+  **Community-specific resources**: It is also possible for you and community administrators to define :ref:`community-specific resources <community__manage_resources>` available to connected community users.
+  These differ from system resources in that they are accessible only within their specific community.
+
+Configured resources are displayed in the **Resources** section. Each resource is presented as a row displaying its file **name**, its **reference to use** when 
+including it in rich content, and its **description**. For each resource you are provided with controls to **copy** the resource's reference to the clipboard, **delete**
+the resource, and **download** it.
+
+.. figure:: ../screenshots/system_configuration_resources_tab.png
+  :align: center
+
+Above the listing of resources you have a **search filter** to search against resources' names and descriptions in a case-insensitive manner. From here you may also
+select the  **Delete resources...** button to delete one or more resources, or the **Download all** button to download all resources in a ZIP archive. Adding new
+resources is achieved through the **Upload resource** button that opens a popup in which you are asked to select the resource file and provide an optional description.
+
+.. figure:: ../screenshots/system_configuration_resources_upload.png
+  :align: center
+
+Alternatively, you may also click the options of the **Upload resource** button to perform a **Bulk upload**. Doing so will display a popup in which you can 
+select a ZIP archive including all resources you would want to upload in one go. You may also select whether resources with the same name are to be replaced or
+kept.
+
+.. figure:: ../screenshots/system_configuration_resources_upload_bulk.png
+  :align: center
+
+Whenever you upload a resource with a name matching an existing one (regardless of case), the new resource will be added with an index postfix. The same applies when uploading in bulk 
+and having chosen to keep matching resources. This is done because names of resources need to be unique within a community to allow you to unambiguously refer to them
+where needed.
+
+To use a resource in rich content you simply need to provide the resource reference as the source of an image or link. This can be done both when editing
+rich content through the test bed's user interface, but also when preparing documentation included in test suite archives. It is important to note that 
+system-wide resources are **publicly accessible** to all users.
