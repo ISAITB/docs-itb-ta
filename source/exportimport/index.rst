@@ -8,26 +8,26 @@ define your conformance testing setup and customise the experience of your users
 and upload of files (most importantly test suites) that can be time-consuming if needed to be replicated. Replicating this setup is 
 nonetheless something that often needs to be done, typically as part of the following scenarios:
 
-* **Development workflow:** You are implementing your test cases in a local test bed instance that you use for development. Once ready you will
-  want to replicate your configuration to the test bed instance your users will actually be using. 
-* **Setup of new test bed instance:** You may need at some point to set up a new test bed instance that matches your community's configuration.
+* **Development workflow:** You are implementing your test cases in a local Test Bed instance that you use for development. Once ready you will
+  want to replicate your configuration to the Test Bed instance your users will actually be using. 
+* **Setup of new Test Bed instance:** You may need at some point to set up a new Test Bed instance that matches your community's configuration.
   This could be the case when defining a separate environment (e.g. "TEST" and "ACCEPTANCE" environments) or when a new test developer joins
   the team and needs her own development instance.
 * **Troubleshooting:** If a specific organisation is facing issues with a test suite you may want to replicate its specific configuration in 
-  a separate test bed instance for further investigation.
+  a separate Test Bed instance for further investigation.
 * **Experimentation:** When rolling out a new setup for a community you may want to initially set this up separately as a dry run of the 
   configuration update.
-* **Configuration of user-hosted test bed:** As part of your conformance testing strategy you may want to allow users to set up an on-premise
-  test bed instance as a tool to facilitate their implementation of the target specifications. Such test bed instances would need to be 
+* **Configuration of user-hosted Test Bed:** As part of your conformance testing strategy you may want to allow users to set up an on-premise
+  Test Bed instance as a tool to facilitate their implementation of the target specifications. Such Test Bed instances would need to be 
   populated to offer a ready-to-use environment for your users. This case constitutes the set up of sandbox instances that is specifically 
   addressed :ref:`here<exportimport__sandbox>`.
 
-One approach to carry out the above scenarios would be to manually create all data in the target test bed instance and 
+One approach to carry out the above scenarios would be to manually create all data in the target Test Bed instance and 
 :ref:`upload the relevant test suites<domains__specification__test_suite_upload>`. Needless to say, for a non-trivial setup, this would
-be a very time-consuming and error-prone task. To address this, the test bed allows you to process data in bulk by means of:
+be a very time-consuming and error-prone task. To address this, the Test Bed allows you to process data in bulk by means of:
 
-* **Exporting data** from the source test bed, selecting the information you want to export and generating an all-in-one data archive.
-* **Importing data** to the target test bed, providing a data archive and choosing how to apply its contents on the existing data.
+* **Exporting data** from the source Test Bed, selecting the information you want to export and generating an all-in-one data archive.
+* **Importing data** to the target Test Bed, providing a data archive and choosing how to apply its contents on the existing data.
 
 .. note::
     **Using imports for minor modifications:** The simplicity offered by generating and then importing data archives may appear as a valid
@@ -89,7 +89,7 @@ A community export includes in addition to **domain data** the **community data*
 **full name**, **notification options**, **self-registration settings** and **user permissions**) but can similarly be extended. From the **Community data** row you may include the 
 following types of information that form part of the configuration of the community itself:
 
-* The :ref:`administrator accounts<community__administrators>` (only if the test bed instance is not integrated with EU Login).
+* The :ref:`administrator accounts<community__administrators>` (only if the Test Bed instance is not integrated with EU Login).
 * The community's :ref:`landing pages<community__manage_landing_pages>`, :ref:`legal notices<community__manage_legal_notices>` and :ref:`error templates<community__manage_error_templates>`.
 * The community's :ref:`certificate settings<community__report_settings>`.
 * The :ref:`custom labels<community__labels>` and :ref:`custom properties<community__properties>` defined for the community members.
@@ -99,7 +99,7 @@ following types of information that form part of the configuration of the commun
 Using the options from the **Organisation data** row you may also include data linked to the community's members:
 
 * The :ref:`organisations<community__organisations>`, including those that are defined as self-registration templates.
-* Each :ref:`organisation's users<community__manage_organisation__users>` (only if the test bed instance is not integrated with EU Login).
+* Each :ref:`organisation's users<community__manage_organisation__users>` (only if the Test Bed instance is not integrated with EU Login).
 * The values provided by each organisation for the community's :ref:`custom organisation properties<community__properties>`.
 * The :ref:`systems<community__manage_organisation__systems>` defined by each organisation.
 * The values provided for each organisation's systems relevant to the community's :ref:`custom system properties<community__properties>`.
@@ -163,12 +163,12 @@ encrypt it. Finally you are presented with a set of **default import actions** t
 These options are specifically:
 
 * **Create new data found in the archive:** This will flag for creation all data that exists only in the archive and not the 
-  target test bed instance.
-* **Delete unmatched existing data:** This will flag for deletion all data that is found in the target test bed instance for which there
+  target Test Bed instance.
+* **Delete unmatched existing data:** This will flag for deletion all data that is found in the target Test Bed instance for which there
   is no match within the data archive.
-* **Update matched data:** This will flag for update all data that exists both in the data archive and the target test bed instance.
+* **Update matched data:** This will flag for update all data that exists both in the data archive and the target Test Bed instance.
 
-These options refer to the matching between data that exists within the archive and the target test bed instance. This matching is based on
+These options refer to the matching between data that exists within the archive and the target Test Bed instance. This matching is based on
 information such as names (e.g. a specification's short name) which should be sufficient to identify it although not always guaranteed
 to be unique. For example, a specification's actors always have a unique identifier, whereas there can be no guarantee on the name of an
 organisation. Although duplicate information is not typical, community administrators are advised to always :ref:`review<exportimport__import_step2>` 
@@ -206,7 +206,7 @@ side that will expand all items starting from the point you selected. Note that 
 
 The displayed items are organised in **groups** and individual **data items**. The groups provide an overview of the type of data as well as the 
 count of individual data items. Data items on the other hand represent each a processing action that will take place on specific data, and correspond
-to the result of the import taking into account data from the archive as well as existing data in the test bed.
+to the result of the import taking into account data from the archive as well as existing data in the Test Bed.
 
 .. figure:: ../screenshots/admin_import_community_review_group.png
   :align: center
@@ -216,12 +216,12 @@ and an icon displayed in the left side of each data item. The available processi
 proposed action per case determined from the settings you provided in the :ref:`previous step<exportimport__import_step1>`.
 Specifically:
 
-* **Blue item (marked with a tick):** Data that was found both in the archive and in the test bed. You may choose to **update** the data, **process only dependent child data**, 
+* **Blue item (marked with a tick):** Data that was found both in the archive and in the Test Bed. You may choose to **update** the data, **process only dependent child data**, 
   or **skip** the update altogether.
 * **Green item (marked with a plus):** Data that was found only in the archive. You may choose to **create** the data or **skip** it.
-* **Orange item (marked with a minus):** Data that was found only in the test bed. You may choose to **delete** the data or **skip** it.
+* **Orange item (marked with a minus):** Data that was found only in the Test Bed. You may choose to **delete** the data or **skip** it.
 
-From the above you likely see that the items matched both in the archive and the test bed (marked with blue) offer an additional option of processing only child data.
+From the above you likely see that the items matched both in the archive and the Test Bed (marked with blue) offer an additional option of processing only child data.
 This is useful if you don't want to update the matched data item itself (e.g. a specification) but want to continue processing dependent data (e.g. the specification's
 test suites). 
 
@@ -254,7 +254,7 @@ existing domain or community that is currently in use to ensure there are no unw
 An important final note is that during the time it takes for you to review the actions and confirm the import there may be changes introduced in the
 relevant data. For example, you may be importing a conformance statement for an organisation that in the meantime 
 is :ref:`created manually<manage_your_conformance_statements__create>` by another user. The review you are making is linked to specific data and will never affect data
-that was not reviewed. For example, if you are deleting test bed data not found in the archive, this will only be the data you have reviewed, with
+that was not reviewed. For example, if you are deleting Test Bed data not found in the archive, this will only be the data you have reviewed, with
 any additional non-reviewed data being ignored.
 
 Once you have completed your review and adapted the import actions click the **Confirm** button to proceed. Doing
@@ -266,9 +266,9 @@ Alternatively you can cancel the import by clicking the **Cancel** button.
 Define a sandbox instance
 -------------------------
 
-An interesting use case that is made possible through data exports is the definition of **sandbox instances**. A sandbox is a test bed instance
+An interesting use case that is made possible through data exports is the definition of **sandbox instances**. A sandbox is a Test Bed instance
 that is installed by a user and that is pre-configured to make available test scenarios and development tools. The purpose of such a sandbox is
-typically not formal conformance testing but rather to provide a set of test cases as utilities to be used during development. The test bed offers
+typically not formal conformance testing but rather to provide a set of test cases as utilities to be used during development. The Test Bed offers
 a perfect mechanism to provide scenario-based development tools but this needs to be done in a manner that is as streamlined as possible. This is
 made possible by means of importing data archives.
 
@@ -278,7 +278,7 @@ Step 1: Prepare the sandbox data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A sandbox's configuration is basically the full configuration linked to a domain and a community. As a first step you would prepare this in a
-test bed instance you are using for development purposes to which you connect as a test bed administrator to have full control. To prepare this
+Test Bed instance you are using for development purposes to which you connect as a Test Bed administrator to have full control. To prepare this
 proceed as follows:
 
 1. **Create a new domain** in which you include your testing setup. It is advised to use a new domain for this to keep things separate from your normal
@@ -300,33 +300,33 @@ Step 2: Prepare the sandbox installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A user setting up a sandbox instance will be expecting a **streamlined setup experience**. In theory, one could use the data archive you prepared in the 
-:ref:`previous step<exportimport__sandbox_step1>` by (a) `installing an empty test bed`_, (b) connecting using the default test bed administrator account, (c) creating
+:ref:`previous step<exportimport__sandbox_step1>` by (a) `installing an empty Test Bed`_, (b) connecting using the default Test Bed administrator account, (c) creating
 an empty domain and a community linked to it, and (d) importing the community. This however represents a multi-step process that seems more like a
 workaround rather than a streamlined setup.
 
-To simplify this process the test bed can be installed with configuration that enables advanced sandbox support. You have two options available depending
+To simplify this process the Test Bed can be installed with configuration that enables advanced sandbox support. You have two options available depending
 on the approach you want to make available:
 
-* **Automatic sandbox setup:** The sandbox data is set up as part of the test bed's installation.
-* **Manual sandbox setup:** Once the test bed is installed the user is prompted to provide the data archive.
+* **Automatic sandbox setup:** The sandbox data is set up as part of the Test Bed's installation.
+* **Manual sandbox setup:** Once the Test Bed is installed the user is prompted to provide the data archive.
 
 .. _exportimport__sandbox_step2_approach1:
 
 Approach 1: Automatic sandbox setup
 +++++++++++++++++++++++++++++++++++
 
-This approach sets up the sandbox data as part of the test bed's installation. It is the simplest approach given that users would simply install the test
+This approach sets up the sandbox data as part of the Test Bed's installation. It is the simplest approach given that users would simply install the test
 bed and get started. However, to use this approach there is a prerequisite and a caveat:
 
-* **Prerequisite:** The test bed sandbox instance needs to be installed on an operating system that allows direct access to its filesystem for `Docker containers`_ (via volumes).
-* **Caveat:** The password used to generate the export needs to be provided as part of the test bed's installation script.
+* **Prerequisite:** The Test Bed sandbox instance needs to be installed on an operating system that allows direct access to its filesystem for `Docker containers`_ (via volumes).
+* **Caveat:** The password used to generate the export needs to be provided as part of the Test Bed's installation script.
 
-In short, to follow this approach you would prepare the test bed's installation script according to your needs and provide alongside it the data archive
-to use for its initialisation. The archive and its password are provided as input to the test bed, allowing it to read and process it automatically
+In short, to follow this approach you would prepare the Test Bed's installation script according to your needs and provide alongside it the data archive
+to use for its initialisation. The archive and its password are provided as input to the Test Bed, allowing it to read and process it automatically
 upon its initial run.
 
-The test bed's overall installation is driven through `Docker`_ and specifically `Docker Compose`_. Make a copy of the installation script provided
-in the test bed's `installation guide`_ and adapt it as needed to include additional services you need such as validators. What is important for the
+The Test Bed's overall installation is driven through `Docker`_ and specifically `Docker Compose`_. Make a copy of the installation script provided
+in the Test Bed's `installation guide`_ and adapt it as needed to include additional services you need such as validators. What is important for the
 sandbox setup is the additional configuration to be done to the **gitb-ui** service. Specifically:
 
 .. code::
@@ -355,8 +355,8 @@ bundle and provide it to your users.
 On the side of the user the **installation process** is very simple:
 
 1. The user extracts the installation package you provided in a target folder.
-2. From within the target folder the user installs the test bed by issuing ``docker compose up -d``.
-3. Once the installation completes the user can connect to the test bed using the account(s) you have defined
+2. From within the target folder the user installs the Test Bed by issuing ``docker compose up -d``.
+3. Once the installation completes the user can connect to the Test Bed using the account(s) you have defined
    and start executing tests.
 
 .. _exportimport__sandbox_step2_approach2:
@@ -369,8 +369,8 @@ The manual setup approach requires an extra step by users as part of the install
 * It can be ubiquitously applied as it has no prerequisites on how `Docker containers`_ access the host file system.
 * It avoids the need of including the archive password in the installation script.
 
-The test bed's overall installation is driven through `Docker`_ and specifically `Docker Compose`_. Make a copy of the installation script provided
-in the test bed's `installation guide`_ and adapt it as needed to include additional services you need such as validators. What you need to do in
+The Test Bed's overall installation is driven through `Docker`_ and specifically `Docker Compose`_. Make a copy of the installation script provided
+in the Test Bed's `installation guide`_ and adapt it as needed to include additional services you need such as validators. What you need to do in
 this case is configure the **gitb-ui** service to expect a data archive upon first connection:
 
 .. code::
@@ -383,7 +383,7 @@ this case is configure the **gitb-ui** service to expect a data archive upon fir
                 ...
                 - DATA_WEB_INIT_ENABLED=true
 
-The important point here is the ``DATA_WEB_INIT_ENABLED`` environment variable that is set to ``true``. Doing so will instruct the test bed
+The important point here is the ``DATA_WEB_INIT_ENABLED`` environment variable that is set to ``true``. Doing so will instruct the Test Bed
 to prompt the user for the data archive upon first connection. To complete the preparation, bundle together the installation script and the 
 data archive :ref:`prepared previously<exportimport__sandbox_step1>` that you can then provide to your users. You need to also communicate the archive's password as this
 will be requested for the setup.
@@ -391,19 +391,19 @@ will be requested for the setup.
 From the user's point of view the **installation process** involves the following step:
 
 1. The user copies the installation script you provided in a target folder.
-2. From within the target folder the user installs the test bed by issuing ``docker compose up -d``.
+2. From within the target folder the user installs the Test Bed by issuing ``docker compose up -d``.
 3. Upon first connection the user is automatically prompted to supply the data archive she received as well as its password.
 
 .. figure:: ../screenshots/admin_sandbox_setup.png
   :align: center
 
-Note that compared to the :ref:`import screen<exportimport__import_step1>` you access within the test bed, there is here no selection of target domains or communities, nor choices
+Note that compared to the :ref:`import screen<exportimport__import_step1>` you access within the Test Bed, there is here no selection of target domains or communities, nor choices
 for default import actions. Upon clicking the **Import archive** button the archive is processed to create a new community linked to a new domain with all contained data flagged for creation. Once
 this initial import has been completed, the user can log in using the account(s) you have defined within the data archive. Note that this initialisation
 process can only be carried out once.
 
-The user may close the data initialisation popup by clicking the **Close** button. One reason to do this would be to skip data initialisation and proceed with an empty test bed instance. To
-do this the user can close the popup and proceed to make an initial login using the test bed's default administrator account. Note that if the dialog is closed by mistake, the user can always make it 
+The user may close the data initialisation popup by clicking the **Close** button. One reason to do this would be to skip data initialisation and proceed with an empty Test Bed instance. To
+do this the user can close the popup and proceed to make an initial login using the Test Bed's default administrator account. Note that if the dialog is closed by mistake, the user can always make it 
 reappear by refreshing the screen (assuming no login has been made in the meantime).
 
 .. note::
@@ -412,7 +412,7 @@ reappear by refreshing the screen (assuming no login has been made in the meanti
   that runs `Docker`_ natively, allowing it to directly read files from its filesystem. If this is a problem, or if you want to avoid including the data archive's password in the configuration file,
   choosing the manual approach is the best option. As a rule of thumb the approach that is guaranteed to work in all cases is the manual setup.
 
-.. _installing an empty test bed: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed
+.. _installing an empty Test Bed: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed
 .. _installation guide: https://www.itb.ec.europa.eu/docs/guides/latest/installingTheTestBed
 .. _Docker Compose: https://docs.docker.com/compose/
 .. _Docker containers: https://www.docker.com/

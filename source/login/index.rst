@@ -11,7 +11,7 @@ welcome page.
 Welcome page
 ------------
 
-The test bed's welcome page serves as your first stop when visiting the test bed. It provides you with useful information,
+The Test Bed's welcome page serves as your first stop when visiting the Test Bed. It provides you with useful information,
 the option to log in, as well as shortcuts for tasks you may want to do before connecting.
 
 .. figure:: ../screenshots/welcome_basic.PNG
@@ -71,7 +71,7 @@ session you will simply be displayed a confirmation message before proceeding to
   :align: center
   :scale: 70%
 
-The test bed features a simplified `EU Login user guide`_ in case you are unfamiliar with it. This is also accessible through
+The Test Bed features a simplified `EU Login user guide`_ in case you are unfamiliar with it. This is also accessible through
 a link on the welcome page.
 
 .. figure:: ../screenshots/welcome_eu_login_tutorial.png
@@ -96,7 +96,7 @@ in this case requires you to provide:
 .. figure:: ../screenshots/login.PNG
   :align: center
 
-Your account credentials are those provided to you by the test bed administrator.
+Your account credentials are those provided to you by the Test Bed administrator.
 
 On the login screen you also have the possibility to have the Test Bed keep your session open. To do this
 simply check the **Remember me** checkbox below the login form. Once you have entered your credentials click
@@ -107,7 +107,7 @@ the **Log in** button.
 Replacing a one-time password
 +++++++++++++++++++++++++++++
 
-If this is the first time you are logging into the test bed your password provided to you by your administrator is
+If this is the first time you are logging into the Test Bed your password provided to you by your administrator is
 considered a "one-time password". This means that it is only valid for a single login in which as a first step you
 will need to change it. Note that you may also need to go through this step if you are already a Test Bed user but
 an administrator has reset your password.
@@ -249,7 +249,7 @@ Confirm an assigned role
 
 Roles are assigned to you by administrators and represent your permission to access specific organisations. An administrator does
 this by linking your email address, the one also linked to your EU Login account, to the role in question. Before you start using
-such a role you need to first confirm its assignment to you, an action that will also record in the test bed your EU Login
+such a role you need to first confirm its assignment to you, an action that will also record in the Test Bed your EU Login
 account's information.
 
 To confirm an assigned role select the relevant option from the popup dialog.
@@ -316,7 +316,7 @@ If the Test Bed has migrated from legacy username and password accounts to EU Lo
 as a new role linked to your EU Login profile.
 
 To migrate a legacy account start by selecting the relevant option from the popup dialog. Note that this selection is already done
-for you in case you clicked the migration link from the test bed's :ref:`welcome page<login__welcome>`.
+for you in case you clicked the migration link from the Test Bed's :ref:`welcome page<login__welcome>`.
 
 .. figure:: ../screenshots/roles__popup__migrate_option.PNG
   :align: center

@@ -17,7 +17,7 @@ Use the following links depending on your case:
 
 .. note::
   When using EU Login you may have more than one user roles linked to your EU Login account. Each such role is related
-  to different organisations and/or communities. The profile management section of the test bed offers
+  to different organisations and/or communities. The profile management section of the Test Bed offers
   the means of managing these roles but not your EU Login account.
 
   When not using EU Login you will have a distinct Test Bed user account per role that you use to log in with. In this case

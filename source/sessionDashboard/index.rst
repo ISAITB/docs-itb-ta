@@ -20,7 +20,7 @@ The screen is split in three sections:
 Active test sessions
 --------------------
 
-The currently active sessions are those that are pending completion. These could be sessions actively being used by the test bed's
+The currently active sessions are those that are pending completion. These could be sessions actively being used by the Test Bed's
 users or ones that due to technical issues have been blocked.
 
 .. figure:: ../screenshots/admin_session_dashboard_active.PNG
@@ -215,7 +215,7 @@ The editor popup allows you to copy a specific part of the content or, by means 
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will 
 open the validated content and automatically focus on the selected error.
 
-An alternative to viewing the content in this way is to click the **Download** button which will download the content as a file. The test bed will determine
+An alternative to viewing the content in this way is to click the **Download** button which will download the content as a file. The Test Bed will determine
 the most appropriate type for the content and name the downloaded file accordingly (if possible). In the case of simple texts that are presented inline, you
 are not presented with the download and view buttons, but rather with a **Copy to clipboard** button that allows you to copy the presented value.
 

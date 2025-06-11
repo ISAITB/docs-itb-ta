@@ -22,8 +22,8 @@ Using the landing page
 ----------------------
 
 The first page you are presented with after logging in is called your **landing page**. This is set up by you
-as the point to welcome your community members to the test bed. If not set, this will be the default page
-configured by the test bed administrator.
+as the point to welcome your community members to the Test Bed. If not set, this will be the default page
+configured by the Test Bed administrator.
 
 .. figure:: ../screenshots/navigate_landing_page.png
   :align: center

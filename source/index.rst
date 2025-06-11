@@ -10,7 +10,7 @@ adopted by the Test Bed and best practices while defining or executing tests as 
 This documentation corresponds to the **community administrator** role. If you are interested in other roles please
 select the relevant user guide for `organisation users <https://www.itb.ec.europa.eu/docs/itb-ou/latest/>`_,
 `organisation administrators <https://www.itb.ec.europa.eu/docs/itb-oa/latest/>`_ or
-`test bed administrators <https://www.itb.ec.europa.eu/docs/itb-ta/latest/>`_.
+`Test Bed administrators <https://www.itb.ec.europa.eu/docs/itb-ta/latest/>`_.
 
 Chapter overview
 ----------------

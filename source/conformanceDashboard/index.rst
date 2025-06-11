@@ -344,7 +344,7 @@ The presented controls permit the following actions:
 * **View system** takes you to the relevant :ref:`system<community__manage_organisation__systems_edit>`, :ref:`community<community>` or :ref:`organisation<community__manage_organisation>`.
 * **View specification** takes you to the relevant :ref:`specification<domains__specification>`, :ref:`domain<domains__domain_details>` or :ref:`actor<domains__actor>`.
 * **Copy badge URL**, presented if the relevant specification has configured :ref:`conformance badges <domains__specification>`,
-  will copy to your clipboard a URL that can be referred to from outside the test bed to display the badge. The same button also includes a 
+  will copy to your clipboard a URL that can be referred to from outside the Test Bed to display the badge. The same button also includes a 
   secondary option named **Preview badge** that you can click for a preview.  
 * **Download report** (available in the :ref:`view per organisation<monitor_conformance_status__organisation_view>`), allows you to generate :ref:`conformance statement reports<monitor_conformance_status__statements__export_statement>` and :ref:`certificates<monitor_conformance_status__statements__export_certificate>`.
 
@@ -422,7 +422,7 @@ The information displayed for each step is:
 * For validation steps, a **Details** section listing the details of each validation finding.
 
 .. note::
-    The XML report for a given test session can also be obtained through the test bed's :ref:`REST API<api>` (if enabled for your test bed instance).
+    The XML report for a given test session can also be obtained through the Test Bed's :ref:`REST API<api>` (if enabled for your Test Bed instance).
 
 .. _monitor_conformance_status__statements__export_statement:
 
@@ -553,7 +553,7 @@ review the conformance testing progress of your community at previous points in 
 overview at specific milestones of your project, or simply to track detailed testing progress over time. You could also find
 such snapshots useful to provide further versioning for your test configuration over what is normally possible, by defining
 snapshots as named and readonly version milestones. Regardless of their eventual purpose, these snapshots are referred to in
-the test bed as **conformance snapshots**.
+the Test Bed as **conformance snapshots**.
 
 You can review and select a given snapshot through the relevant control on the statement listings' header. This is by default set
 to **Latest conformance status** indicating that you are viewing the current status.

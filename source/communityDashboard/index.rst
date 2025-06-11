@@ -35,27 +35,27 @@ The **Community details** section allows you to view and edit your community's b
 
 The information you can edit in this form is:
 
-* Your community's **short** and **full name** (required). These are visible to the test bed administrator and in certain user reports.
+* Your community's **short** and **full name** (required). These are visible to the Test Bed administrator and in certain user reports.
 * Your community's **support email** address (optional) to receive contact form submissions.
 * Your preference on allowing **self-registration** for your community.
 * The **user permissions** you foresee for the community's members (initially collapsed).
 
 Here you can also view the community's **REST API key** that is used to identify the community when managing test suites via 
-the :ref:`test bed's REST API<domains__specification__test_suite_rest>` (if enabled by the test bed administrator). This is an
+the :ref:`Test Bed's REST API<domains__specification__test_suite_rest>` (if enabled by the Test Bed administrator). This is an
 automatically generated key that can be copied to your clipboard using the provided **copy** control.
 
 Regarding the **support email**, this is the address, typically a functional mailbox, where your community users' feedback is sent via 
-the test bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of 
-submissions, with the test bed default functional mailbox added in CC. If not configured, submissions will only 
-be delivered to the test bed default functional mailbox. You can also check here the **Notify for pending interactions** option so
+the Test Bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of 
+submissions, with the Test Bed default functional mailbox added in CC. If not configured, submissions will only 
+be delivered to the Test Bed default functional mailbox. You can also check here the **Notify for pending interactions** option so
 that alerts are sent to the mailbox if test sessions are pending for administrator verification.
 
 .. note::
     **When to configure a support email:** If you have a large user community and expect to have frequent user interactions it is highly
     advised that you configure your own support email. This is important since most questions would typically relate to your community's
-    test cases and specifications rather than the test bed software itself. The test bed team will most likely not be able to answer 
+    test cases and specifications rather than the Test Bed software itself. The Test Bed team will most likely not be able to answer 
     domain-specific questions and your users would experience unnecessary delays. On the other hand you would leave this unconfigured if
-    your testing activities are limited, to benefit from the test bed's helpdesk without setting up your own.
+    your testing activities are limited, to benefit from the Test Bed's helpdesk without setting up your own.
 
 Assuming you have defined a support email, the contact form submission messages are formatted in HTML such as the following sample.
 
@@ -71,7 +71,7 @@ Received messages include the following information:
 * Any **attachments** that the user has included.
 
 The **self-registration method** is another point that merits further details. This setting determines whether users can themselves 
-:ref:`register new organisations<login__create_account>` in your community through the test bed's :ref:`welcome page<login__welcome>`.
+:ref:`register new organisations<login__create_account>` in your community through the Test Bed's :ref:`welcome page<login__welcome>`.
 The possible values for this are as follows:
 
 * **Not supported:** Disables self-registration. By selecting this only you as community administrator will be able to register
@@ -94,11 +94,11 @@ are:
   communities. The purpose of this is to provide a short summary of what this community offers to potential users. If the community is linked to a **domain**
   you have the option of replicating the description from the domain by checking the **Same as domain** checkbox. You may alternatively provide a different 
   description if this is more suitable.
-* **Self-registration notifications:** This option is available if the test bed supports email notifications and if the community defines a **support email**.
+* **Self-registration notifications:** This option is available if the Test Bed supports email notifications and if the community defines a **support email**.
   Checking this will send a notification email to the configured support mailbox whenever there is a new registration.
 * **Self-registration restrictions:** This allows you to select a means of restricting self-registration to ensure people and/or organisations enroll only once.
   The restrictions you can set are to not allow multiple registrations from the same user (based on her email address) or from the same email domain. Note
-  that such restrictions are only supported if the test bed is integrated with EU Login that allows the test bed to be aware of users' actual email addresses.
+  that such restrictions are only supported if the Test Bed is integrated with EU Login that allows the Test Bed to be aware of users' actual email addresses.
 * **Require from users:** These are requirements that you want to enforce to users completing the self-registration process. You have two options here, the first
   one being to force the selection of a :ref:`configuration template<community__create_organisation>` and the second one to require the completion of 
   :ref:`custom properties<community__properties>` marked as required (which are otherwise displayed as required but are not blocking).
@@ -122,12 +122,12 @@ The available permission options are as follows:
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
 * **Update conformance statement after testing**. If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
 * **View community test history**. If allowed, organisation users will be able to have a readonly view of all other community members' completed test sessions and reports.
-* **Manage test sessions via REST API**. If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the test bed's REST API<api>`.
-  This is option will be listed only if the test bed's administrator has enabled use of its REST API.
+* **Manage test sessions via REST API**. If allowed, the community's organisations will be able to launch, stop and query the status of tests :ref:`via the Test Bed's REST API<api>`.
+  This is option will be listed only if the Test Bed's administrator has enabled use of its REST API.
 
 In case you choose to set permissions linked to tests having been executed, you may find yourself in a position needing to allow changes due to misconfigurations. Instead of changing
 the permissions for the entire community a better approach is to :ref:`delete the specific test sessions<session_dashboard__completed>` that should be ignored. This is possible for community
-and test bed administrators through the :ref:`session dashboard<monitor_test_sessions>`.
+and Test Bed administrators through the :ref:`session dashboard<monitor_test_sessions>`.
 
 .. note::
   **When to set user permissions:** You would restrict user permissions in your community if you want to make sure that only you can manage systems and conformance statements or
@@ -190,7 +190,7 @@ In this screen you are expected to enter the following information for the organ
 
 Regarding the landing page, legal notice and error template, these are presented as a choice of the ones defined for your community 
 (see :ref:`community__manage_landing_pages`, :ref:`community__manage_legal_notices` and :ref:`community__manage_error_templates` respectively). If no selection
-is made then the default settings for the community are used, falling back to the test bed's overall defaults if none
+is made then the default settings for the community are used, falling back to the Test Bed's overall defaults if none
 are defined for the community. Defining these at the level of the organisation allows you to present
 customised messages and content per organisation and is left fully at your discretion as community administrator.
 
@@ -252,7 +252,7 @@ Doing so presents you with the organisation details page that is split in the fo
 * The **Organisation details** section, displaying the organisation's information and allowing it to be edited.
 * The **Systems** tab, displaying the list of systems registered for the organisation (see :ref:`community__manage_organisation__systems`)
 * The **Users** tab, displaying the list of users for the organisation (see :ref:`community__manage_organisation__users`).
-* The **REST API keys** tab, visible if the test bed's :ref:`REST API<api>` is enabled by your test bed's administrator, allowing you to view and manage the
+* The **REST API keys** tab, visible if the Test Bed's :ref:`REST API<api>` is enabled by your Test Bed's administrator, allowing you to view and manage the
   organisation's API keys (see :ref:`community__manage_organisation__api_keys`).
 
 The **Organisation details** section displays the organisation's information in an editable form in which you can modify its **short name**, **full name**,
@@ -339,7 +339,7 @@ Manage an organisation's systems
 ++++++++++++++++++++++++++++++++
 
 Selecting the **Systems** tab presents the :ref:`systems <introduction__glossary__system>` defined for the organisation.
-Systems are an important concept in the test bed as they represent the software components being tested. Before
+Systems are an important concept in the Test Bed as they represent the software components being tested. Before
 proceeding to test anything, an organisation will need to have one or more systems for which conformance statements will be defined.
 
 .. figure:: ../screenshots/admin_community_organisations_systems.png
@@ -375,7 +375,7 @@ The inputs presented in the form are:
 * The system's **short name** (required). This is used when the system is displayed in lists.
 * The system's **full name** (required). This is included in reports that mention the system.
 * An optional **description** to provide more information about the system.
-* A **version** number. Although requested this is not currently used in the test bed apart from display purposes.
+* A **version** number. Although requested this is not currently used in the Test Bed apart from display purposes.
 
 If the organisation includes other systems you are also presented here with an option to **copy the test setup** from
 one of them as a source. Selecting one will replicate the selected system's conformance statements for the new system.
@@ -425,7 +425,7 @@ displaying the system's information, presented in editable input fields.
 
 You can proceed here to modify the **short name**, **full name**, **description** and **version** of the system.  At the bottom you
 also see the unique **API key** for the system that can be clicked to copy it to the clipboard or refreshed to update it.
-This API key can be used in case the test bed's :ref:`REST API <api>` is enabled, or for
+This API key can be used in case the Test Bed's :ref:`REST API <api>` is enabled, or for
 `messaging in test cases <https://www.itb.ec.europa.eu/docs/tdl/latest/handlers/index.html#built-in-messaging-handlers>`_.
 
 If the organisation defines other systems you can also select to **copy the test setup** from another system which will reset the system's conformance statements to
@@ -481,7 +481,7 @@ Management of the organisation's users is done through the **Users** section of 
 This section lists the currently defined users in a table, with one row per user, displaying for each one his/her **name**, **email** (or **username** if not integrated with EU Login), **role** and **status**.
 
 .. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  **User status:** A user's status is meaningful when the Test Bed is integrated with EU Login. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
   a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
@@ -489,7 +489,7 @@ This section lists the currently defined users in a table, with one row per user
 To create a new user for the organisation click on the **Create user** button from the section's header.
 Clicking on an existing row from the table allows you to edit the relevant user's information.
 
-The displayed screens and required information both when you edit or create a new user depends on whether or not the test bed
+The displayed screens and required information both when you edit or create a new user depends on whether or not the Test Bed
 is integrated with EU Login.
 
 Case: EU Login
@@ -553,7 +553,7 @@ Manage the organisation's REST API keys
 +++++++++++++++++++++++++++++++++++++++
 
 Management of the organisation's REST API keys is done through the **REST API keys** section of the organisation's detail screen. This is visible if your
-test bed's administrator has enabled the :ref:`test bed's REST API<api>`.
+Test Bed's administrator has enabled the :ref:`Test Bed's REST API<api>`.
 
 .. figure:: ../screenshots/admin_community_organisations_organisation_api_keys.png
   :align: center
@@ -601,7 +601,7 @@ Community administrators are listed in a table with one row per user displaying 
 (or **username** if not integrated with EU Login) and **status**.
 
 .. note::
-  **User status:** A user's status is meaningful when the test bed is integrated with EU Login. A value of **Inactive** indicates
+  **User status:** A user's status is meaningful when the Test Bed is integrated with EU Login. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
   a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
@@ -609,7 +609,7 @@ Community administrators are listed in a table with one row per user displaying 
 To create a new community administrator click on the **Create community administrator** button from the section's header.
 Clicking on an existing row from the table allows you to edit the relevant user's information.
 
-The displayed screens and required information both when you edit or create a new administrator depends on whether or not the test bed
+The displayed screens and required information both when you edit or create a new administrator depends on whether or not the Test Bed
 is integrated with EU Login.
 
 Case: EU Login
@@ -646,7 +646,7 @@ When creating an administrator you will be presented with a form to enter the us
 
 In this form you are expected to provide the following information:
 
-* The administrator's **name** (required), used in your display and in feedback submissions to the test bed.
+* The administrator's **name** (required), used in your display and in feedback submissions to the Test Bed.
 * The **username** (required), used to login.
 * The user's **password**. The entered password is a "one-time" password which will need to be changed by the user upon his/her next login.
 
@@ -670,8 +670,8 @@ to change it at his/her next login.
 Manage landing pages
 --------------------
 
-A **landing page** is the home page displayed to your community's users when they log into the test bed. Its purpose is to welcome users providing them context
-on the use of the test bed and potentially including a customised message. Moreover, this customised message can even be set at the level of specific organisations
+A **landing page** is the home page displayed to your community's users when they log into the Test Bed. Its purpose is to welcome users providing them context
+on the use of the Test Bed and potentially including a customised message. Moreover, this customised message can even be set at the level of specific organisations
 if you choose to do so (see :ref:`community__organisations`).
 
 The landing pages available for your community are listed in the **Landing pages** section. These are presented in a table with one row per landing page,
@@ -681,13 +681,13 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The landing page marked as default is the one that applies to all organisations in your community that don't have another, more specific one configured. If no
-landing page is defined then the one that applies to the test bed as a whole is automatically used. Note that you, as community administrator, also view your
+landing page is defined then the one that applies to the Test Bed as a whole is automatically used. Note that you, as community administrator, also view your
 community's default landing page upon login.
 
 Adding a new landing page can be done in one of the following ways:
 
 * You can create a new landing page from scratch by clicking the **Create landing page** button.
-* You can copy the test bed's default landing page by clicking the **Copy Test Bed landing page** button.
+* You can copy the Test Bed's default landing page by clicking the **Copy Test Bed landing page** button.
 * You can copy one of your community's existing landing pages while editing its details.
 
 .. note::
@@ -703,7 +703,7 @@ When creating a new landing page you are presented with a form to enter its info
   :align: center
 
 If you are creating a landing page from scratch (i.e. you have clicked the **Create landing page** button), this form will be empty. Alternatively,
-if the landing page is being created as a copy of an existing one (either the test bed's default landing page or another one defined for your community), the 
+if the landing page is being created as a copy of an existing one (either the Test Bed's default landing page or another one defined for your community), the 
 form will be prefilled. The information you are expected to complete for the landing page is:
 
 * Its **name** (required), used in the list of landing pages and when selecting one for an organisation.
@@ -779,13 +779,13 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The legal notice marked as default is the one that applies to all organisations in your community that don't have another, more specific one configured. If no
-legal notice is defined then the one that applies to the test bed as a whole is automatically used. Note that you, as community administrator, can also view 
+legal notice is defined then the one that applies to the Test Bed as a whole is automatically used. Note that you, as community administrator, can also view 
 your community's default legal notice when you click the relevant link from the screen footer.
 
 Adding a new legal notice can be done in one of the following ways:
 
 * You can create a new legal notice from scratch by clicking the **Create legal notice** button.
-* You can copy the test bed's default legal notice by clicking the **Copy Test Bed legal notice** button.
+* You can copy the Test Bed's default legal notice by clicking the **Copy Test Bed legal notice** button.
 * You can copy one of your community's existing legal notices while editing its details.
 
 Create legal notice
@@ -797,7 +797,7 @@ When creating a new legal notice you are presented with a form to enter its info
   :align: center
 
 If you are creating a legal notice from scratch (i.e. you have clicked the **Create legal notice** button), this form will be empty. Alternatively,
-if the legal notice is being created as a copy of an existing one (either the test bed's default legal notice or another one defined for your community), the 
+if the legal notice is being created as a copy of an existing one (either the Test Bed's default legal notice or another one defined for your community), the 
 form will be prefilled. The information you are expected to complete for the legal notice is:
 
 * Its **name** (required), used in the list of legal notices and when selecting one for an organisation.
@@ -866,12 +866,12 @@ displaying for each its **name**, **description** and indication on whether it i
   :align: center
 
 The template marked as default is the one that applies to all organisations in your community that don't have another, more specific one configured. If no
-template is defined then the one that applies to the test bed as a whole is automatically used.
+template is defined then the one that applies to the Test Bed as a whole is automatically used.
 
 Adding a new error template can be done in one of the following ways:
 
 * You can create a new template from scratch by clicking the **Create error template** button.
-* You can copy the test bed's default template by clicking the **Copy Test Bed error template** button.
+* You can copy the Test Bed's default template by clicking the **Copy Test Bed error template** button.
 * You can copy one of your community's existing templates while editing its details.
 
 Create error template
@@ -883,7 +883,7 @@ When creating a new error template you are presented with a form to enter its in
   :align: center
 
 If you are creating an error template from scratch (i.e. you have clicked the **Create error template** button), this form will be empty. Alternatively,
-if the template is being created as a copy of an existing one (either the test bed's default one or another one defined for your community), the 
+if the template is being created as a copy of an existing one (either the Test Bed's default one or another one defined for your community), the 
 form will be prefilled. The information you are expected to complete for the error template is:
 
 * Its **name** (required), used in the list of templates and when selecting one for an organisation.
@@ -958,7 +958,7 @@ Manage triggers
 
 A **trigger** is a means of carrying out automated processing when a given event occurs. Triggers can receive various types of inputs depending
 on their configured event, and can be used both to receive notifications and to modify the current test setup. They represent a powerful means of
-extending the Test Bed's processing in a decoupled way and can be used to complete advanced tasks that the test bed alone cannot handle 
+extending the Test Bed's processing in a decoupled way and can be used to complete advanced tasks that the Test Bed alone cannot handle 
 (e.g. preparing configuration packages for new community members).
 
 Trigger execution is always an asynchronous step, and a failed trigger call will never cause its root event to fail itself. Numerous triggers
@@ -1044,7 +1044,7 @@ as you expect. To test it check the relevant checkbox, and try it out for a spec
 
 The separate **Web service details** section includes the inputs concerning the trigger's web service. Consider that the trigger itself is a set of metadata
 that determines what fires and with what data, however the actual processing linked to the trigger is handled by the configured web service. This service
-needs to be accessible by the test bed and must be either:
+needs to be accessible by the Test Bed and must be either:
 
 * A **SOAP service** implementing the `GITB processing service API`_, a simple API that expects an arbitrary set of inputs and can
   provide any number of outputs.
@@ -1054,7 +1054,7 @@ The information required to configure this web service are:
 
 * Its **endpoint URL** (required). In case of a GITB processing service this is expected to be the full URL to reach the service's WSDL file.
   If a JSON HTTP service is used instead, this is the URL at which the service is listening. In any case this URL needs to be provided 
-  as it should be used by the test bed, meaning that it could also be an internal address.
+  as it should be used by the Test Bed, meaning that it could also be an internal address.
 * An **operation** (optional), to signal an operation name to the service. Such operations are foreseen by the `GITB processing service API`_, although this can also be used for HTTP services as 
   extra metadata to distinguish calls.
 * The **input data** (optional) to provide as part of service's payload when the trigger fires.
@@ -1136,7 +1136,7 @@ below example is a sample result after successfully calling a GITB processing se
 .. figure:: ../screenshots/admin_community_triggers_preview_result.png
   :align: center
 
-It is important to note that such test calls will never result in updating data on the side of the test bed.
+It is important to note that such test calls will never result in updating data on the side of the Test Bed.
 Normal trigger calls support :ref:`updating data based on returned outputs<community__manage_triggers__output>`
 but this does not apply when testing. You do however have the opportunity to inspect returned outputs that would
 normally be used for updates, to ensure that everything is working as you expect. If you would like to make
@@ -1187,7 +1187,7 @@ pending changes and return to the :ref:`community details page<community>`.
 Returning output from triggers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One of the powerful features of triggers is that they can also adapt the configuration in the test bed. A trigger can achieve this by having its web service return an output as per the 
+One of the powerful features of triggers is that they can also adapt the configuration in the Test Bed. A trigger can achieve this by having its web service return an output as per the 
 `GITB processing service API`_ specification that can modify, depending on the trigger's event type, the values for **organisation properties**, **system properties** or **conformance statement parameters**.
 In case of a JSON HTTP service, the same possibility exists by returning JSON output using the same names and structures as the `GITB processing service API`_.
 
@@ -1234,7 +1234,7 @@ also be defined as a mandatory prerequisite through the use of a hidden but requ
 Manage resources
 ----------------
 
-In several cases the test bed supports the definition of rich content as documentation or as a means of customising the experience of a community's members.
+In several cases the Test Bed supports the definition of rich content as documentation or as a means of customising the experience of a community's members.
 Specifically, rich content is available as:
 
 * Community :ref:`landing pages<community__manage_landing_pages>`, :ref:`legal notices<community__manage_legal_notices>` and :ref:`error templates<community__manage_error_templates>`.
@@ -1242,7 +1242,7 @@ Specifically, rich content is available as:
 
 Within such rich content it is possible to include additional **resources**, either as displayed images or download links. Typical examples are a community's logo
 displayed on its landing page, UML sequence diagrams to illustrate a test case's steps, and links to download test data. When referring to such resources, you may
-either point to external sources (e.g. a public documentation site for your project) or to resources defined internally within the test bed. The configuration and 
+either point to external sources (e.g. a public documentation site for your project) or to resources defined internally within the Test Bed. The configuration and 
 use of such internal resources is addressed in the current section.
 
 Configured resources are displayed in the **Resources** section. Each resource is presented as a row displaying its file **name**, its **reference to use** when 
@@ -1271,7 +1271,7 @@ and having chosen to keep matching resources. This is done because names of reso
 where needed.
 
 To use a community resource in rich content you simply need to provide the resource reference as the source of an image or link. This can be done both when editing
-rich content through the test bed's user interface, but also when preparing documentation included in test suite archives. It is important to note that resources are
+rich content through the Test Bed's user interface, but also when preparing documentation included in test suite archives. It is important to note that resources are
 **not publicly available**, but rather require you to have access to the community in question.
 
 .. _community__report_settings:
@@ -1314,7 +1314,7 @@ conformance statement. To manage the report click the **Conformance statement ce
 .. figure:: ../screenshots/admin_community_certificate.PNG
   :align: center
 
-By default the **report's configuration** assumes you will be using the test bed's built-in report template. This foresees predefined but
+By default the **report's configuration** assumes you will be using the Test Bed's built-in report template. This foresees predefined but
 customisable sets of information, that will be used to automatically generate the certificate when requested by organisation users.
 When a certificate is generated by a community administrator, these settings serve as defaults that can be further customised before producing
 the final report.
@@ -1379,7 +1379,7 @@ resulting report, both in terms of included information as well as styling. To u
 
 With this option enabled you are expected to configure an HTTP service that will:
 
-* Receive from the test bed a ``POST`` request having as its body the relevant :ref:`conformance statement report <community__report_settings__statement_report>` in **XML format**.
+* Receive from the Test Bed a ``POST`` request having as its body the relevant :ref:`conformance statement report <community__report_settings__statement_report>` in **XML format**.
 * Respond with the produced PDF report.
 
 Selecting this option presents you with a set of relevant inputs:
@@ -1417,7 +1417,7 @@ You are expected to provide here:
     the responsibility for issuing and signing the report, as well as maintaining the validity of the relevant keypair lies within the community.
 
 Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
-that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
+that the Test Bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
 
 .. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
   :align: center
@@ -1459,7 +1459,7 @@ normal :ref:`conformance overview report<manage_your_conformance_statements__exp
 levels such certificates are to be made available is determined by the community administrator with these options.
 
 With at least one report level selected, the next option is on how to generate the report. By default the **report's configuration** assumes you will be
-using the test bed's built-in report template. This foresees predefined but customisable sets of information, that will be used to automatically generate
+using the Test Bed's built-in report template. This foresees predefined but customisable sets of information, that will be used to automatically generate
 the certificate when requested by organisation users. When a certificate is generated by a community administrator, these settings serve as defaults that
 can be further customised before producing the final report.
 
@@ -1543,7 +1543,7 @@ resulting report, both in terms of included information as well as styling. To u
 
 With this option enabled you are expected to configure an HTTP service that will:
 
-* Receive from the test bed a ``POST`` request having as its body the relevant :ref:`conformance statement report <community__report_settings__statement_report>` in **XML format**.
+* Receive from the Test Bed a ``POST`` request having as its body the relevant :ref:`conformance statement report <community__report_settings__statement_report>` in **XML format**.
 * Respond with the produced PDF report.
 
 Selecting this option presents you with a set of relevant inputs:
@@ -1581,7 +1581,7 @@ You are expected to provide here:
     the responsibility for issuing and signing the report, as well as maintaining the validity of the relevant keypair lies within the community.
 
 Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
-that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
+that the Test Bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
 
 .. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
   :align: center
@@ -1620,7 +1620,7 @@ When producing an **XML report** this uses by default the `GITB Test Reporting L
 as the output format. If you prefer to use a different structure, you can check the **custom XML reports** option to provide an XSLT stylesheet.
 This will be applied on the default XML data to produce the desired output.
 
-When producing a **PDF report** the test bed's built-in template is used by default. If you want to customise the report, you can check
+When producing a **PDF report** the Test Bed's built-in template is used by default. If you want to customise the report, you can check
 the **Custom PDF reports** option, in which case report generation will be delegated to an external service. In this case you will need to provide:
 
 * The **service address** of the endpoint that will generate the reports. This is an HTTP endpoint that will receive a ``POST`` with the report
@@ -1630,7 +1630,7 @@ the **Custom PDF reports** option, in which case report generation will be deleg
 
 Finally, regarding PDF reports you can also choose to include a **digital signature** to ensure your reports' integrity and trust. You can leave
 the relevant option unchecked if you don't require signatures, or if you delegate to an external service that already signs the produced PDF reports.
-If you have the test bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__statement_report__signature>`.
+If you have the Test Bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__statement_report__signature>`.
 
 .. _community__report_settings__statement_report__signature:
 
@@ -1660,7 +1660,7 @@ You are expected to provide here:
     the responsibility for issuing and signing the report, as well as maintaining the validity of the relevant keypair lies within the community.
 
 Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
-that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
+that the Test Bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
 
 .. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
   :align: center
@@ -1707,7 +1707,7 @@ When producing an **XML report** this uses by default the `GITB Test Reporting L
 as the output format. If you prefer to use a different structure, you can check the **custom XML reports** option to provide an XSLT stylesheet.
 This will be applied on the default XML data to produce the desired output.
 
-When producing a **PDF report** the test bed's built-in template is used by default. If you want to customise the report, you can check
+When producing a **PDF report** the Test Bed's built-in template is used by default. If you want to customise the report, you can check
 the **Custom PDF reports** option, in which case report generation will be delegated to an external service. In this case you will need to provide:
 
 * The **service address** of the endpoint that will generate the reports. This is an HTTP endpoint that will receive a ``POST`` with the report
@@ -1717,7 +1717,7 @@ the **Custom PDF reports** option, in which case report generation will be deleg
 
 Finally, regarding PDF reports you can also choose to include a **digital signature** to ensure your reports' integrity and trust. You can leave
 the relevant option unchecked if you don't require signatures, or if you delegate to an external service that already signs the produced PDF reports.
-If you have the test bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__overview_report__signature>`.
+If you have the Test Bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__overview_report__signature>`.
 
 .. _community__report_settings__overview_report__signature:
 
@@ -1747,7 +1747,7 @@ You are expected to provide here:
     the responsibility for issuing and signing the report, as well as maintaining the validity of the relevant keypair lies within the community.
 
 Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
-that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
+that the Test Bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
 
 .. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
   :align: center
@@ -1793,7 +1793,7 @@ When producing an **XML report** this uses by default the `GITB Test Reporting L
 as the output format. If you prefer to use a different structure, you can check the **custom XML reports** option to provide an XSLT stylesheet.
 This will be applied on the default XML data to produce the desired output.
 
-When producing a **PDF report** the test bed's built-in template is used by default. If you want to customise the report, you can check
+When producing a **PDF report** the Test Bed's built-in template is used by default. If you want to customise the report, you can check
 the **Custom PDF reports** option, in which case report generation will be delegated to an external service. In this case you will need to provide:
 
 * The **service address** of the endpoint that will generate the reports. This is an HTTP endpoint that will receive a ``POST`` with the report
@@ -1803,7 +1803,7 @@ the **Custom PDF reports** option, in which case report generation will be deleg
 
 Finally, regarding PDF reports you can also choose to include a **digital signature** to ensure your reports' integrity and trust. You can leave
 the relevant option unchecked if you don't require signatures, or if you delegate to an external service that already signs the produced PDF reports.
-If you have the test bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__test_case_report__signature>`.
+If you have the Test Bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__test_case_report__signature>`.
 
 .. _community__report_settings__test_case_report__signature:
 
@@ -1833,7 +1833,7 @@ You are expected to provide here:
     the responsibility for issuing and signing the report, as well as maintaining the validity of the relevant keypair lies within the community.
 
 Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
-that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
+that the Test Bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
 
 .. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
   :align: center
@@ -1878,7 +1878,7 @@ When producing an **XML report** this uses by default the `GITB Test Reporting L
 as the output format. If you prefer to use a different structure, you can check the **custom XML reports** option to provide an XSLT stylesheet.
 This will be applied on the default XML data to produce the desired output.
 
-When producing a **PDF report** the test bed's built-in template is used by default. If you want to customise the report, you can check
+When producing a **PDF report** the Test Bed's built-in template is used by default. If you want to customise the report, you can check
 the **Custom PDF reports** option, in which case report generation will be delegated to an external service. In this case you will need to provide:
 
 * The **service address** of the endpoint that will generate the reports. This is an HTTP endpoint that will receive a ``POST`` with the report
@@ -1888,7 +1888,7 @@ the **Custom PDF reports** option, in which case report generation will be deleg
 
 Finally, regarding PDF reports you can also choose to include a **digital signature** to ensure your reports' integrity and trust. You can leave
 the relevant option unchecked if you don't require signatures, or if you delegate to an external service that already signs the produced PDF reports.
-If you have the test bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__test_step_report__signature>`.
+If you have the Test Bed sign PDF reports you will need to also configure your :ref:`signature settings <community__report_settings__test_step_report__signature>`.
 
 .. _community__report_settings__test_step_report__signature:
 
@@ -1918,7 +1918,7 @@ You are expected to provide here:
     the responsibility for issuing and signing the report, as well as maintaining the validity of the relevant keypair lies within the community.
 
 Once the certificate information is provided you may **Download** or **Delete** it's keystore. You may also validate your configuration to be certain
-that the test bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
+that the Test Bed can read the certificate by clicking the **Test settings** button. Clicking **Save** will persist your settings, whereas **Close** will hide the popup.
 
 .. figure:: ../screenshots/admin_community_certificate_signature_test.PNG
   :align: center
@@ -1959,7 +1959,7 @@ information (names and versions).
 
 The additional properties that you define can be used in numerous ways:
 
-* As additional **data collection** for your community's members, collecting through the test bed information not 
+* As additional **data collection** for your community's members, collecting through the Test Bed information not 
   necessarily linked to the testing that you need for your reporting and follow-up.
 * To facilitate **test configuration**. Any properties you define can be included as variables in test sessions. By defining such
   information at a level higher than conformance statements you can avoid replication of properties that are of a cross-cutting nature
@@ -2093,9 +2093,9 @@ setup matches your expectations. To help with this you may click the **Preview**
 
 The displayed dialog offers a **Preview mode** selection with which you can adapt the preview based on the various available situations:
 
-* **Organisation user:** Presents the form visible by organisation administrators once they are logged into the test bed.
+* **Organisation user:** Presents the form visible by organisation administrators once they are logged into the Test Bed.
 * **Self-registration screen:** Presents the form that is displayed as part of the self-registration process (if enabled).
-* **Community administrator:** Presents the form visible to community and test bed administrators.
+* **Community administrator:** Presents the form visible to community and Test Bed administrators.
 
 In case the current configuration results in an empty form (e.g. all properties are set as hidden and the preview mode is set to "Organisation user") a relevant message
 is displayed.
@@ -2105,12 +2105,12 @@ is displayed.
 Edit labels
 -----------
 
-A key step in designing a conformance testing strategy using the test bed is to make a mapping between its
-:ref:`key concepts<introduction__glossary>` and the ones specific to a given community. Although the test bed's
+A key step in designing a conformance testing strategy using the Test Bed is to make a mapping between its
+:ref:`key concepts<introduction__glossary>` and the ones specific to a given community. Although the Test Bed's
 concepts are flexible enough to address most needs the resulting mapping could result in terms being presented to
 users that may not be intuitive.
 
-As a means to further customise the test bed for a given community, community administrators are able to define
+As a means to further customise the Test Bed for a given community, community administrators are able to define
 replacement labels for each concept. These replacements are displayed in all screens, reports and exports, both
 for community members and administrators.
 

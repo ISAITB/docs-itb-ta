@@ -3,7 +3,7 @@
 Execute tests
 =============
 
-Executing conformance tests is the reason your community is using the test bed. Considering
+Executing conformance tests is the reason your community is using the Test Bed. Considering
 that test cases are linked to your system by means of conformance statements, the first step before
 executing a test is to visit a :ref:`conformance statement's detail screen <manage_your_conformance_statements__view_a_conformance_statements_details>`.
 This screen is the place where you input required configuration and are provided with the controls to execute one or more tests.
@@ -453,6 +453,6 @@ Details on each operation, including sample requests and responses, are provided
 
 .. note::
 
-  The test bed's REST API is an advanced feature that needs to first be enabled by your administrator before it can be used.
+  The Test Bed's REST API is an advanced feature that needs to first be enabled by your administrator before it can be used.
 
 .. _GITB TDL content: https://www.itb.ec.europa.eu/docs/tdl/latest/constructs/index.html#rich-documentation-per-step
