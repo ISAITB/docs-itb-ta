@@ -28,6 +28,8 @@ Chapter overview
    :doc:`domainDashboard/index` | Managing your specifications and test suites.
    :doc:`communityDashboard/index` | Managing your community's configuration and members.
    :doc:`exportimport/index` | Exporting and importing data archives.
+   :doc:`systemAdministration/index` | Managing the Test Bed's system configuration.
+   :doc:`serviceHealth/index` | Checking the internal services' health status.
    :doc:`validateTestSetup/index` | Validating your test setup.
    :doc:`profile/index` | Managing your user profile.
    :doc:`contactSupport/index` | Contacting support and providing feedback.
@@ -50,6 +52,7 @@ Chapter overview
    communityDashboard/index
    exportimport/index
    systemAdministration/index
+   serviceHealth/index
    validateTestSetup/index
    profile/index
    contactSupport/index
@@ -75,7 +78,7 @@ Looking for the user guide of another Interoperability Test Bed role? Follow the
 
 .. |guide3| raw:: html
 
-   <a href="https://www.itb.ec.europa.eu/docs/itb-ta/latest/" target="_blank"><img src="https://www.itb.ec.europa.eu/files/docs-static/images/itb_guide_ta.png" rel="noopener noreferrer" alt="User guide (Test Bed administrator)"/></a>
+   <a href="https://www.itb.ec.europa.eu/docs/itb-ca/latest/" target="_blank"><img src="https://www.itb.ec.europa.eu/files/docs-static/images/itb_guide_ca.png" rel="noopener noreferrer" alt="User guide (Community administrator)"/></a>
 
 .. csv-table::
     :widths: 33,33,33
@@ -83,7 +86,7 @@ Looking for the user guide of another Interoperability Test Bed role? Follow the
     :class: image-caption-table
 
     |guide1| ~ |guide2| ~ |guide3|
-    User guide for organisation users covering test execution and reporting in the context of a specific organisation. ~ User guide for organisation administrators covering the management and configuration of a specific organisation. ~ User guide for the Test Bed administrator covering the management and configuration of the entire Test Bed.
+    User guide for organisation users covering test execution and reporting in the context of a specific organisation. ~ User guide for organisation administrators covering the management and configuration of a specific organisation. ~ User guide for community administrators covering the management and configuration of complete communities.
 
 Related documentation
 ---------------------
