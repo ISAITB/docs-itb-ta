@@ -29,7 +29,7 @@ The latest Test Bed release is **1.26.0**.
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
 
-Release 1.26.0 - 16/06/2025
+Release 1.26.0 - 12/06/2025
 ---------------------------
 
 The main focus of this release is the Test Bed's test engine and the capabilities of the GITB Test Description Language (TDL).
