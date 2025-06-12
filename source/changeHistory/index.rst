@@ -69,7 +69,7 @@ integrations and automation processes.
   :delim: |
 
   ITB-1686 | :ui:`UI` | Health monitoring dashboard for Test Bed services
-  ITB-1727 | :tdl:`TESTS` | Support system-wide resources that can be publicly accessed by any user
+  ITB-1727 | :ui:`UI` | Support system-wide resources that can be publicly accessed by any user
   ITB-1761 | :ui:`UI` | Allow switching a test suite to and from shared and not shared status without losing the testing history
   ITB-1765 | :tdl:`TESTS` | Support multiple test session output messages
   ITB-1770 | :tdl:`TESTS` | Support custom handlers for interact steps that are optionally activated for alternate user input methods
