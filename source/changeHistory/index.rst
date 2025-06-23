@@ -21,13 +21,40 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.26.0**.
+The latest Test Bed release is **1.27.0**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.27.0 - 24/06/2025
+---------------------------
+
+This is a minor feature release focusing on the Test Bed's test engine, and specifically on providing more control over
+the information included in test step reports. The Test Bed's user interface also received minor updates in terms of
+library upgrades, the highlighting of findings in validation step reports, and a minor improvement in the service health
+dashboard.
+
+**New features**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1859 | :tdl:`TESTS` | Extend the XmlValidator and SchematronValidator with an option to include the location path of findings in the step report
+  ITB-1865 | :tdl:`TESTS` | Extend the HttpMessagingV2 handlers to enable fine-grained control on the data displayed in step reports
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1790 | :other:`OTHER` | Add copyright notice to all source code
+  ITB-1863 | :ui:`UI` | When opening a code editor from a test step report item, highlight the relevant finding as the selected one
+  ITB-1867 | :ui:`UI` | Improve the service health dashboard reporting for the test engine callback configuration
 
 Release 1.26.0 - 12/06/2025
 ---------------------------
