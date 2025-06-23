@@ -44,7 +44,8 @@ dashboard.
   :delim: |
 
   ITB-1859 | :tdl:`TESTS` | Extend the XmlValidator and SchematronValidator with an option to include the location path of findings in the step report
-  ITB-1865 | :tdl:`TESTS` | Extend the HttpMessagingV2 handlers to enable fine-grained control on the data displayed in step reports
+  ITB-1865 | :tdl:`TESTS` | Extend the HttpMessagingV2 handler to enable fine-grained control on the data displayed in step reports
+  ITB-1868 | :tdl:`TESTS` | Extend the SoapMessagingV2 handler to enable fine-grained control on the data displayed in step reports
 
 **Improvements**
 
