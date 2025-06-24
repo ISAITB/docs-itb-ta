@@ -37,6 +37,14 @@ the information included in test step reports. The Test Bed's user interface als
 library upgrades, the highlighting of findings in validation step reports, and a minor improvement in the service health
 dashboard.
 
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1869 | :tdl:`TESTS` | Failure to pass inputs to remote processing service that defines an empty module definition (regression due to ITB-1626)
+
 **New features**
 
 .. csv-table::
