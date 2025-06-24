@@ -64,6 +64,7 @@ dashboard.
   ITB-1790 | :other:`OTHER` | Add copyright notice to all source code
   ITB-1863 | :ui:`UI` | When opening a code editor from a test step report item, highlight the relevant finding as the selected one
   ITB-1867 | :ui:`UI` | Improve the service health dashboard reporting for the test engine callback configuration
+  ITB-1870 | :other:`OTHER` | Define publiccode.yml metadata file
 
 Release 1.26.0 - 12/06/2025
 ---------------------------
