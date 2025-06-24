@@ -90,7 +90,7 @@ integrations and automation processes.
   ITB-1797 | :tdl:`TESTS` | Iteration steps must stop immediately upon child step error if stopOnError is true
   ITB-1800 | :ui:`UI` | Session diagram crops iteration step dropdown for large number of iterations
   ITB-1801 | :ui:`UI` | Instruction labels in interaction step popups may appear with unnecessary word breaks
-  ITB-1806 | :ui:`OTHER` | Helm chart does not correctly set the default web context root for itb-ui
+  ITB-1806 | :other:`OTHER` | Helm chart does not correctly set the default web context root for itb-ui
   ITB-1824 | :tdl:`TESTS` | External services returning reports with missing dates should be set by default to the current time to avoid PDF report generation errors
   ITB-1835 | :ui:`UI` | Manual import of a system setting archive should never change the currently active theme
   ITB-1841 | :tdl:`TESTS` | Sequence diagram breaks when using multiple levels of scriptlet calls or hidden container steps with visible child step
