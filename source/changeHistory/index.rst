@@ -21,13 +21,32 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.27.1**.
+The latest Test Bed release is **1.27.2**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.27.2 - 07/08/2025
+---------------------------
+
+This is a patch release to correct issues reported by users related to the configuration of communities,
+creation of systems, user experience issues, and an issue when validating JSON or YAML content.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1875 | :ui:`UI` | Unable to update the value of an existing domain parameter defined as a secret
+  ITB-1876 | :ui:`UI` | Adding a secret parameter to a trigger's payload should add it in cleartext
+  ITB-1884 | :ui:`UI` | Administrators of communities not linked to a specific domain must be able to view the list of all domains
+  ITB-1896 | :ui:`UI` | Hovering over the header's profile icon may fail to show the profile popup
+  ITB-1901 | :tdl:`TESTS` | Unexpected error when specifying a schemaCombinationApproach with the YamlValidator or JsonValidator
+  ITB-1904 | :ui:`UI` | Organisation administrators are unable to create systems
 
 Release 1.27.1 - 30/06/2025
 ---------------------------
