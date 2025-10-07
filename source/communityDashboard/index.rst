@@ -99,9 +99,12 @@ are:
 * **Self-registration restrictions:** This allows you to select a means of restricting self-registration to ensure people and/or organisations enroll only once.
   The restrictions you can set are to not allow multiple registrations from the same user (based on her email address) or from the same email domain. Note
   that such restrictions are only supported if the Test Bed is integrated with EU Login that allows the Test Bed to be aware of users' actual email addresses.
-* **Require from users:** These are requirements that you want to enforce to users completing the self-registration process. You have two options here, the first
-  one being to force the selection of a :ref:`configuration template<community__create_organisation>` and the second one to require the completion of 
-  :ref:`custom properties<community__properties>` marked as required (which are otherwise displayed as required but are not blocking).
+* **Organisation tokens:** These are settings that define whether you allow self-registering users to join existing organisations
+  after providing an organisation-specific token. You may also allow or not organisation administrators to manage such tokens.
+* **Require from users:** These are requirements that you want to enforce to users completing the self-registration process. The options available here, are
+  to force the selection of a :ref:`configuration template<community__create_organisation>`, to require the completion of
+  :ref:`custom properties<community__properties>` marked as required (otherwise displayed as required but not blocking), and
+  to require that users join existing organisations by means of organisation-specific tokens.
 
 .. note::
   **Organisation templates:** If you choose to enable self-registration for your community you may also find interesting the 
@@ -115,9 +118,11 @@ on the section's header. Doing so will present the available permission options
 
 The available permission options are as follows:
 
-* **Download conformance certificates**. If not allowed, only community administrators may generate such certificates from the :ref:`conformance dashboard<monitor_conformance_status__statements__export_statement>` or a :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
+* **Download conformance certificates**. If not allowed, only community administrators may create such certificates from the :ref:`conformance dashboard<monitor_conformance_status__statements__export_statement>` or a :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
+* **Manage organisation users**. If not allowed, only community administrators will be able to manage users.
 * **Create or delete systems**. Note that if this is not allowed, editing a system and its custom properties (if defined) will remain possible for organisation administrators.
-* **Create or delete conformance statements**.
+* **Create or delete conformance statements**. If not allowed, users will only be able to test for what you preconfigure for them, or what they select
+  during the self-registration process.
 * **Update organisation data after testing**. If not allowed, an organisation that has performed at least one test session will not be allowed to edit its organisation information or its custom properties (if defined).
 * **Update system data after testing**. If not allowed, a system for which a test has been performed will not be allowed to have its information or custom properties (if defined).
 * **Update conformance statement after testing**. If not allowed, it will not be possible to delete or change the parameters of a conformance statement for which tests have been made.
@@ -140,6 +145,107 @@ In terms of additional features available here:
 * The **Edit report settings** button is addressed in section :ref:`community__report_settings`.
 * The **Edit custom member properties** button is addressed in section :ref:`community__properties`.
 * The **Edit labels** button is addressed in section :ref:`community__labels`.
+
+.. _community__recipes:
+
+Recipes for user management
+---------------------------
+
+The combination of **self-registration options** and **user permissions** afford you great flexibility in defining how users
+would join the community and engage in testing. These approaches typically balance the effort and control administrators
+put into the testing process, versus the steps needed by - but also the flexibility afforded to - organisation users.
+
+.. _community__recipes__1:
+
+Approach 1: Full preconfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The community administrator preconfigures everything for the community, including the organisations
+that will be testing, their users, and their conformance statements. This requires more effort on the side of the administrator
+but this can be largely streamlined by copying configurations across organisations. With this approach you allow your
+end users to simply connect, find everything already prepared for them, and start testing. Given that users likely never
+need to administer their own organisation you could also create all users as basic, non-administrator users.
+
+**When to use?**
+
+When you have a limited amount of organisations that will be testing and want to make it as simple as possible for them
+to connect and test. Good examples are projects led by the European Commission where organisations are limited to EU
+Member States that will be testing against a predetermined set of specifications.
+
+**How to configure?**
+
+1. Disable self-registration.
+2. Create all organisations beforehand.
+3. Create conformance statements on behalf of each organisation before their initial connection.
+4. Create all users as simple (non-administrator) users, or fine tune their permissions so that they cannot update their
+   configuration or do their own user management.
+
+.. _community__recipes__2:
+
+Approach 2: Preconfigured users with test flexibility
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The community administrator manually creates organisations without enabling self-registration. As part of creating a new
+organisation, an organisation administrator is also created so that organisations can manage their own selection
+of target specifications.
+
+**When to use?**
+
+When you don't expect a large number of organisations testing, or want to be explicitly involved in their onboarding.
+This can also be useful if, even though you have a limited number of organisations, they can test against a multitude
+of different specifications. While the onboarding is managed, you still delegate to them their own management of users
+and conformance statements.
+
+**How to configure?**
+
+1. Disable self-registration.
+2. Create each organisation per case.
+3. Create the initial user for each organisation as an organisation administrator to allow them to manage their own users
+   and conformance statements.
+
+.. _community__recipes__3:
+
+Approach 3: Self-service testing with limited flexibility
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The community administrator enables self-registration for the community but controls what can be tested by defining
+configuration templates. Moreover selection of a template, and optionally the input of configuration properties, during self-registration
+can be set as mandatory. In case you know beforehand the organisations that will be testing you can also preconfigure these
+and require that users register only for existing organisations.
+
+**When to use?**
+
+You want to control the organisations that are testing and curate what they will be testing against, but allow them to
+make their own choices.
+
+**How to configure?**
+
+1. Enable self-registration.
+2. Predefine all organisations and enable organisation self-registration tokens.
+3. Allow organisation administrators to manage their own self-registration tokens.
+4. Define configuration templates and require that one is selected during self-registration.
+5. Disable the direct management of conformance statements.
+
+.. _community__recipes__4:
+
+Approach 4: Full self-service testing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The community administrator enables self-registration and delegates all user management and conformance statement creation
+to organisation users. Configuration templates could also optionally be used, but they need not be set as mandatory
+during the self-registration process.
+
+**When to use?**
+
+You don't know beforehand which organisations will be connecting to test, or there are multiple possible specifications to test against.
+This approach can be suitable if you are creating an open experimentation environment, or if you are not aware beforehand
+of the organisations that will be testing (e.g. software vendors).
+
+**How to configure?**
+
+1. Enable self-registration.
+2. Optionally create configuration templates.
+3. Ensure all permissions are in place to allow users to manage their own configuration (systems, users, and conformance statements).
 
 .. _community__organisations:
 
@@ -277,6 +383,16 @@ Once another organisation is selected to copy from, you are also presented with 
 * **Conformance statement configurations:** To also copy any of the source organisation's configuration parameters set on its
   systems' conformance statements.
 
+In case **self-registration** is enabled for the community, as well as **organisation self-registration tokens**, you will
+see in the organisation's details controls, to view and manage the self-registration token.
+
+.. figure:: ../screenshots/admin_community_organisations_self_reg_token.png
+  :align: center
+
+This token is used during the :ref:`self-registration process <login__roles__register>` to join an existing
+organisation as opposed to registering a new one. It is visible to the organisation's existing users, and may also be
+manageable by its administrator(s) if enabled by the community's :ref:`self-registration settings <community>`.
+
 If your community foresees additional organisation properties, and as long as you are not copying the properties from another organisation,
 you will also see an **Additional properties** section. Clicking this expands the section allowing you to manage the organisation's properties.
 
@@ -296,7 +412,7 @@ a help tooltip to understand their meaning. Such properties can be managed as fo
   Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the organisation's
   information but as long as required properties are missing it will not be able to launch tests.
 
-To change the organisation's information edit the displayed values and click the **Update** button. The organisation can also
+To change the organisation's information, edit the displayed values and click the **Update** button. The organisation can also
 be deleted from here by clicking the **Delete** button. Doing so will, following confirmation, delete the organisation and its dependent information (e.g. users). The 
 **Back** button will discard any pending changes and return you back to the community management screen. Finally, the **Manage tests** button allows you to manage the 
 organisation's test configuration (see :ref:`community__manage_organisation__tests`).
@@ -481,19 +597,19 @@ Management of the organisation's users is done through the **Users** section of 
 This section lists the currently defined users in a table, with one row per user, displaying for each one his/her **name**, **email** (or **username** if not integrated with EU Login), **role** and **status**.
 
 .. note::
-  **User status:** A user's status is meaningful when the Test Bed is integrated with EU Login. A value of **Inactive** indicates
+  **User status:** A user's status is meaningful when the Test Bed is integrated with an external identity provider such as EU Login. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  a legacy account that has not been :ref:`migrated <login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
 To create a new user for the organisation click on the **Create user** button from the section's header.
 Clicking on an existing row from the table allows you to edit the relevant user's information.
 
 The displayed screens and required information both when you edit or create a new user depends on whether or not the Test Bed
-is integrated with EU Login.
+is integrated with an external identity provider.
 
-Case: EU Login
-##############
+Case: using an identity provider
+################################
 
 When creating a user you will be presented with a form to enter her information.
 
@@ -501,7 +617,7 @@ When creating a user you will be presented with a form to enter her information.
   :align: center
 
 You are required to provide the **email** address and **role** of the user. The email address needs to be the one that the user has 
-linked to her EU Login account. The role can either be "Administrator" or "User". Recall that the "User" role can execute and follow 
+linked to her identity provider's account. The role can either be "Administrator" or "User". Recall that the "User" role can execute and follow
 up on tests, whereas the "Administrator" role can additionally manage the organisation's configuration (e.g. properties, systems and
 conformance statements) and add other users.
 
@@ -519,8 +635,8 @@ The information presented here is the user's **name**, **email**, **role**, **st
 the user's role and click on **Update** to save your change. Alternatively you can delete, upon confirmation, the user by clicking 
 on **Delete** or click **Back** to cancel and return to the previous screen.
 
-Case: No EU Login
-#################
+Case: no identity provider
+##########################
 
 When creating a user you will be presented with a form to enter the user's information.
 
@@ -598,12 +714,12 @@ The **Community administrators** section displays the users, including yourself,
   :align: center
 
 Community administrators are listed in a table with one row per user displaying the user's **name**, **email** address
-(or **username** if not integrated with EU Login) and **status**.
+(or **username** if not integrated with an external identity provider) and **status**.
 
 .. note::
-  **User status:** A user's status is meaningful when the Test Bed is integrated with EU Login. A value of **Inactive** indicates
+  **User status:** A user's status is meaningful when the Test Bed is integrated with an external identity provider such as EU Login. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  a legacy account that has not been :ref:`migrated <login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
 To create a new community administrator click on the **Create community administrator** button from the section's header.
@@ -612,8 +728,8 @@ Clicking on an existing row from the table allows you to edit the relevant user'
 The displayed screens and required information both when you edit or create a new administrator depends on whether or not the Test Bed
 is integrated with EU Login.
 
-Case: EU Login
-~~~~~~~~~~~~~~
+Case: using an identity provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -621,7 +737,7 @@ When creating an administrator you will be presented with a form to enter the us
   :align: center
 
 You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to the list of community administrators 
+her identity provider's account. Once you have created the user you will see that a new entry is added to the list of community administrators
 but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
 updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. 
 
@@ -636,8 +752,8 @@ The information presented here is the user's **name**, **email**, **role**, and 
 by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back** 
 will return you to the previous screen.
 
-Case: No EU Login
-~~~~~~~~~~~~~~~~~
+Case: no identity provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -1960,7 +2076,7 @@ information (names and versions).
 The additional properties that you define can be used in numerous ways:
 
 * As additional **data collection** for your community's members, collecting through the Test Bed information not 
-  necessarily linked to the testing that you need for your reporting and follow-up.
+  necessarily linked to testing that you need for your reporting and follow-up.
 * To facilitate **test configuration**. Any properties you define can be included as variables in test sessions. By defining such
   information at a level higher than conformance statements you can avoid replication of properties that are of a cross-cutting nature
   (e.g. a country code linked to an organisation).
@@ -2000,12 +2116,15 @@ Regardless of the type of property, the information recorded and displayed is th
   useful as control flags that are set by administrators, :ref:`triggers<community__manage_triggers>` or external scripts before testing starts.
 
 In the case of organisation-level properties there is an additional option **In registration** available. By checking this, the property
-will also appear as part of the self-registration form for the community. You would do this for key information you want to have users provide as early
-as possible, and ideally as part of their initial organisation data. Through the community's **user permissions** you may also specify that such properties when
-defined additionally as required are to be blocking if not provided.
+will also appear as part of the self-registration form for the community. You may also set this for non-editable properties,
+meaning that these will be presented for input during self-registration, but will subsequently only be editable by administrators.
+
+Including properties for input during self-registration is typically done for information you want to have users provide as early
+as possible, and ideally as part of their initial organisation data. Through the community's **user permissions** you may also specify that
+such properties, when defined additionally as required, are mandatory to complete the self-registration process.
 
 Regarding a property's key, there are certain predefined values that cannot be used as these correspond to the default 
-organisation's or system's information. The reserved key values per case are:
+organisation's or system's information. The reserved keys per case are:
 
 * For organisation properties values **shortName** and **fullName**.
 * For system properties values **shortName**, **fullName** and **version**.
@@ -2048,7 +2167,7 @@ and will apply automatically if the user does not explicitly override it.
 In terms of their configuration, new properties are by default set to be **simple** (i.e. text values) and **editable by users**. If the property is set as being 
 **binary** or **secret** it will not be able to be included in exports. In addition, a property can only be defined as **hidden** if it is set at non-editable by users.
 
-To create the property, complete the required information and click on **Save**. Clicking on **Cancel** will close the popup.
+To create the property, complete the required information and click on **Save**. Clicking on **Cancel** will close the popup without any action.
 
 .. _community__properties__edit:
 
@@ -2064,7 +2183,7 @@ In the resulting popup you can view the property's current configuration and edi
 property dependencies are provided in the :ref:`create property<community__properties__create>` documentation.
 
 To update the property's definition complete the required information and click on **Save**. Alternatively, clicking on **Delete** 
-will, upon confirmation delete the property as well as any existing values provided by your community members. Finally, clicking 
+will, upon confirmation, delete the property as well as any existing values provided by your community members. Finally, clicking
 on **Cancel** will close the popup without any action.
 
 .. _community__properties__ordering:

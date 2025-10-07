@@ -36,13 +36,19 @@ be a very time-consuming and error-prone task. To address this, the Test Bed all
 
     In other words, don't use such bulk operations as a replacement for :ref:`uploading a new test suite<domains__specification__test_suite_upload>` 
     or :ref:`creating a new organisation<community__create_organisation>`.
-    
+
+Management of exports and imports take place in the data management screen, accessible by clicking the relevant link from the
+menu.
+
+.. figure:: ../screenshots/admin_data_management.png
+  :align: center
+
 .. _exportimport__export:
 
 Export data
 -----------
 
-You export data by means of the **Data export** screen, that you access by clicking the corresponding link from the menu.
+To export data select the **Data export** option from the data management screen.
 
 .. figure:: ../screenshots/admin_export.png
   :align: center
@@ -79,6 +85,7 @@ By default a domain export includes the basic information of the domain (its **s
 to include the information you need. The available types of information are presented in the **Domain data** row and can be:
 
 * The domain's :ref:`parameters<domains__domain__parameter_list>`.
+* The domain's :ref:`test services<domains__domain__service_list>`.
 * The domain's :ref:`specifications<domains__specification>`.
 * The domain's :ref:`shared test suites<domains__domain__shared_test_suites>`.
 * Each specification's :ref:`actors<domains__actor>`.

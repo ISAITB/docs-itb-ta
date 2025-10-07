@@ -422,6 +422,13 @@ The fields presented for the parameter are:
 Once you adapt the parameter's information click the **Save** button to record your changes or the **Cancel** button to discard them. Clicking the 
 **Delete** button removes, upon confirmation, the parameter.
 
+.. _domains__domain__service_list:
+
+Test services
+~~~~~~~~~~~~~
+
+TODO
+
 .. _domains__specification:
 
 Manage specification details
