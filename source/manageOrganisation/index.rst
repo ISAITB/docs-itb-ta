@@ -18,11 +18,15 @@ are presented with shows you the information relevant to your organisation, spli
   :align: center
 
 In case your community supports self-registration for existing organisations, the information listed under the organisation
-will also include a **self-registration token**. This value can be copied from here and communicated to other users to
+will also include a **self-registration token**. This value can be managed from here and copied to communicate to other users to
 use when :ref:`self-registering <login__create_account>` to join the organisation.
 
 .. figure:: ../screenshots/organisation_manage_nonadmin_token.png
   :align: center
+
+.. note::
+  Depending on the community's settings, you may only be able to view and copy, but not change, the self-registration
+  token.
 
 If your community administrator has defined additional properties for its organisations you will also see here an
 **Additional properties** section that you can click to display your organisation's additional information. 
@@ -205,9 +209,9 @@ to :ref:`create a new user <manage_organisation__users_create>`, or click on an 
 :ref:`edit the user <manage_organisation__users_edit>`.
 
 .. note::
-  **User status:** A user's status is meaningful when the Test Bed is integrated with EU Login. A value of **Inactive** indicates
+  **User status:** A user's status is meaningful when the Test Bed is integrated with an external identity provider such as EU Login. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  a legacy account that has not been :ref:`migrated<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
 .. _manage_organisation__users_create:
@@ -222,18 +226,18 @@ the **Create user** button presented above the listing of existing users.
   :align: center
 
 Doing so will present a screen to input the new user's information, the content of which depends on whether or not your Test Bed
-uses EU Login for its authentication.
+uses an external identity provider for its authentication.
 
-Case: EU Login
-++++++++++++++
+Case: using an identity provider
+++++++++++++++++++++++++++++++++
 
-In case EU Login is used the following screen is displayed.
+In case an identity provider such as EU Login is used, the following screen is displayed.
 
 .. figure:: ../screenshots/organisation_manage_add_member_eulogin.PNG
   :align: center
 
 You are required to provide the **email** address and **role** of the user. The email address needs to be the one that the user has
-linked to her EU Login account. The role can either be "Administrator" or "User". Recall that the "User" role can execute and follow
+linked to her provider's account. The role can either be "Administrator" or "User". Recall that the "User" role can execute and follow
 up on tests, whereas the "Administrator" role can additionally manage the organisation's configuration (e.g. properties, systems and
 conformance statements) and add other users.
 
@@ -242,10 +246,10 @@ but for which there is no displayed name and the displayed status is **Inactive*
 updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`. To finish creating the user click **Save**,
 otherwise click **Cancel** to return to the previous screen.
 
-Case: no EU Login
-+++++++++++++++++
+Case: no identity provider
+++++++++++++++++++++++++++
 
-In case EU Login is not used the following screen is displayed.
+In case an external identity provider is not used, the following screen is displayed.
 
 .. figure:: ../screenshots/organisation_manage_add_member.PNG
   :align: center
@@ -266,10 +270,10 @@ Edit an existing user
 ~~~~~~~~~~~~~~~~~~~~~
 
 To edit an existing user of your organisation click on her corresponding row from the listing of existing users. The screen you see following
-this depends on whether or not your Test Bed uses EU Login for its authentication.
+this depends on whether or not your Test Bed uses an external identity provider for its authentication.
 
-Case: EU Login
-++++++++++++++
+Case: using an identity provider
+++++++++++++++++++++++++++++++++
 
 Editing a user's details opens a screen to display her current information.
 
@@ -280,8 +284,8 @@ The information presented here is the user's **name**, **email**, **role**, and 
 the user's role and click on **Update** to save your change. Alternatively you can delete, upon confirmation, the user by clicking
 on **Delete** or click **Back** to cancel and return to the previous screen.
 
-Case: no EU Login
-+++++++++++++++++
+Case: no identity provider
+++++++++++++++++++++++++++
 
 Editing a user's details displays presents her information in the following screen.
 

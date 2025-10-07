@@ -217,8 +217,7 @@ Obsolete test sessions can be deleted by clicking the **Delete obsolete sessions
 .. figure:: ../screenshots/test_history_admin_header.PNG
   :align: center
 
-Doing so will first prompt you for confirmation and then, if confirmed, will proceed to delete the obsolete test results. Note that the results
-deleted are limited to those specific to the system that is currently selected.
+Doing so will first prompt you for confirmation and then, if confirmed, will proceed to delete the obsolete test results.
 
 .. _view_your_test_history__test_steps:
 

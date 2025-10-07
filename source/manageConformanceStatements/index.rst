@@ -161,7 +161,7 @@ To create a new conformance statement for your selected system click the **Creat
 .. figure:: ../screenshots/conformance_statement_create_button.png
   :align: center
 
-Doing so presents to you the available conformance statements that are available for your system.
+Doing so presents to you the available conformance statements that can be selected for your system.
 
 .. figure:: ../screenshots/conformance_statement_create.png
   :align: center
@@ -175,15 +175,18 @@ in expandable options. You may click each statement to collapse or expand it, re
 Above the available conformance statements you are also presented with controls to facilitate your selection.
 
 .. figure:: ../screenshots/conformance_statement_create_controls.png
-  :scale: 80%
   :align: center
 
 Using these controls you may:
 
-* **Search** for an available statement (the search text is looked up in names and descriptions in a case-insensitive manner). Note that if
-  statements are already selected these will always remain visible regardless of the search results.
-* **Select**, or unselect the statements currently displayed.
-* **View** all details by collapsing or expanding all statements.
+* **Search** for an available statement (the search text is looked up in names and descriptions in a case-insensitive manner).
+* Show the currently **selected** or **unselected** statements.
+* **Select** or **unselect** the currently displayed statements.
+* **Collapse** or **expand** the displayed statements.
+
+At the right of these controls you also see the **total selected statements**. When selecting statements you can make
+several searches and navigate between returned pages of results without losing your currently selected statements. This allows
+you to fine-tune the conformance statements you want to create for your system.
 
 Once you have selected one or more statements you may click on **Confirm** to proceed with their creation. Clicking on **Cancel** will return you back
 to the listing of your existing conformance statements.
