@@ -608,7 +608,7 @@ Clicking on an existing row from the table allows you to edit the relevant user'
 The displayed screens and required information both when you edit or create a new user depends on whether or not the Test Bed
 is integrated with an external identity provider.
 
-Case: using an identity provider
+Case: Using an identity provider
 ################################
 
 When creating a user you will be presented with a form to enter her information.
@@ -635,7 +635,7 @@ The information presented here is the user's **name**, **email**, **role**, **st
 the user's role and click on **Update** to save your change. Alternatively you can delete, upon confirmation, the user by clicking 
 on **Delete** or click **Back** to cancel and return to the previous screen.
 
-Case: no identity provider
+Case: No identity provider
 ##########################
 
 When creating a user you will be presented with a form to enter the user's information.
@@ -728,7 +728,7 @@ Clicking on an existing row from the table allows you to edit the relevant user'
 The displayed screens and required information both when you edit or create a new administrator depends on whether or not the Test Bed
 is integrated with EU Login.
 
-Case: using an identity provider
+Case: Using an identity provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating an administrator you will be presented with a form to enter the user's information.
@@ -752,7 +752,7 @@ The information presented here is the user's **name**, **email**, **role**, and 
 by clicking on **Delete** unless she is the only administrator configured for the community. Finally, clicking **Back** 
 will return you to the previous screen.
 
-Case: no identity provider
+Case: No identity provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating an administrator you will be presented with a form to enter the user's information.
