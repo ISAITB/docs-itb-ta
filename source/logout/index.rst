@@ -14,7 +14,7 @@ relate to whether or not the Test Bed is using an external identity provider suc
 
 .. _logout__eulogin:
 
-Case: using an identity provider
+Case: Using an identity provider
 --------------------------------
 
 The popup displays the options available to you:
@@ -33,7 +33,7 @@ and transfer you to the Test Bed's :ref:`welcome page<login__welcome>`.
 
 .. _logout__noeulogin:
 
-Case: no identity provider
+Case: No identity provider
 --------------------------
 
 The popup displays the options available to you:

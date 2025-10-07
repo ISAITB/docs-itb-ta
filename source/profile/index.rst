@@ -25,7 +25,7 @@ Use the following links depending on your case:
 
 .. _manage_your_profile__eulogin:
 
-Case: using an identity provider
+Case: Using an identity provider
 --------------------------------
 
 .. note::
@@ -92,7 +92,7 @@ of your organisation.
 
 .. _manage_your_profile__noeulogin:
 
-Case: no identity provider
+Case: No identity provider
 --------------------------
 
 .. note::
