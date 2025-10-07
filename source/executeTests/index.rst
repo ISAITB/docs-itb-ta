@@ -29,7 +29,7 @@ specific test case or a complete test suite and choose whether the test sessions
 in the background or in interactive mode (the default). Furthermore, for background test sessions you may choose whether these will be executed 
 in parallel or sequentially.
 
-Regardless of how test sessions are to be launched, if required configuration is missing you will presented with a popup listing the missing information,
+Regardless of how test sessions are to be launched, if required configuration is missing you will be presented with a popup listing the missing information,
 split per type:
 
 * **Organisation properties:** Properties at the level of the whole organisation.
@@ -53,13 +53,13 @@ Launching tests in the background is done by selecting one of the **background e
 .. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
   :align: center
 
-With this set you click the **Play** button to launch a full test suite, a specific test case, or a currently filtered set of test cases. Doing so will
+With this set you click the **Play** button to launch all tests, a full test suite, a specific test case, or a currently filtered set of test cases. Doing so will
 launch the test sessions in the background presenting a brief visual confirmation in the top right area of the screen.
 
 .. figure:: ../screenshots/test_execution_background.PNG
   :align: center
 
-The status of test sessions launched in the background can be monitored by means of the :ref:`Test Sessions<view_your_test_history>` screen.
+The status of test sessions launched in the background can be monitored by means of the :ref:`test history<view_your_test_history>` screen.
 
 .. _execute_tests_interactive:
 
@@ -71,7 +71,7 @@ Launching tests interactively is the default option and is enabled by setting th
 .. figure:: ../screenshots/conformance_statement_details_tests_background.PNG
   :align: center
 
-With this set you click the **Play** button to launch a full test suite, a specific test case, or a currently filtered set of test cases. Doing so
+With this set you click the **Play** button to launch all tests, a full test suite, a specific test case, or a currently filtered set of test cases. Doing so
 will display the list of test cases you have selected for execution:
 
 .. figure:: ../screenshots/test_execution_test_cases.png
@@ -105,24 +105,7 @@ the test session's log (see :ref:`execute_tests__step3__view_log`).
 .. figure:: ../screenshots/test_execution_execute_diagram.PNG
   :align: center
 
-Before starting a test session, the Test Bed checks to see whether it needs to present you any configuration that you need to take into account. This
-step is the counterpart of the verification that was previously discussed, where the Test Bed checked the configuration that you provided. In this case
-the Test Bed will present to you its own configuration to take into account when preparing your system. If such configuration properties indeed exist and
-need to be displayed, they will be presented to you in a popup:
-
-.. figure:: ../screenshots/test_execution_simulated.PNG
-  :align: center
-
-The configuration properties displayed here correspond to a specification actor that is being simulated. These :ref:`properties<introduction__glossary__endpoint>` 
-are listed with their names and values, and are grouped by simulated actor (there may be multiple).
-
-Apart from the display of such configuration parameters, it could also be the case that this step presents you with additional notification popups 
-to provide you with further information or instructions. The existence or not of such a popup as well as its contents are defined within each test case.
-
-.. figure:: ../screenshots/test_execution_simulated_instruction.PNG
-  :align: center
-
-Once all configuration has been verified and the current test case's definition has been loaded you will be able to proceed with the 
+Once all configuration has been prepared and the current test case's definition has been loaded you will be able to proceed with the
 :ref:`test execution<execute_tests_interactive_execution>`. You can do this by clicking the **Start** button from the test execution controls.
 
 .. figure:: ../screenshots/test_execution_execute_start.PNG

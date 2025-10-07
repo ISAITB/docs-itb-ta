@@ -10,12 +10,12 @@ displaying your user's name.
   :align: center
 
 Hovering over this opens an in-place popup that provides you additional options. The options presented to you
-relate to whether or not the Test Bed is using EU Login for authentication.
+relate to whether or not the Test Bed is using an external identity provider such as EU Login for authentication.
 
 .. _logout__eulogin:
 
-Case: EU Login
---------------
+Case: using an identity provider
+--------------------------------
 
 The popup displays the options available to you:
 
@@ -27,14 +27,14 @@ The popup displays the options available to you:
   :align: center
 
 Both **Switch role** and **Logout** will complete your work with your currently active Test Bed role. The 
-difference is that switching roles maintains your EU Login session active and takes you to your 
-:ref:`list of available roles<login__roles>` whereas logging out will also terminate your EU Login session
+difference is that switching roles maintains your overall session active and takes you to your
+:ref:`list of available roles<login__roles>` whereas logging out will also terminate your session
 and transfer you to the Test Bed's :ref:`welcome page<login__welcome>`.
 
 .. _logout__noeulogin:
 
-Case: no EU Login
------------------
+Case: no identity provider
+--------------------------
 
 The popup displays the options available to you:
 

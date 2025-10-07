@@ -1,0 +1,26 @@
+{
+  "$id": "https://www.itb.ec.europa.eu/api/getOrganisation_response",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON schema for the getOrganisation operation response payload",
+  "type": "object",
+  "properties": {
+    "apiKey": {
+      "description": "The organisation's API key.",
+      "type": "string"
+    },
+    "shortName": {
+      "description": "The organisation's short name.",
+      "type": "string"
+    },
+    "fullName": {
+      "description": "The organisation's full name.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiKey",
+    "shortName",
+    "fullName"
+  ],
+  "additionalProperties": false
+}

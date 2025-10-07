@@ -21,13 +21,121 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.27.4**.
+The latest Test Bed release is **1.28.0**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.28.0 - XX/XX/2025
+---------------------------
+
+This release brings a host of new features focusing on community management, integrations and test capabilities. Administrators
+now have more options for managing self-registration processes and the fine tuning of user permissions. With respect to test
+configuration, extension services can now be explicitly defined to centralise their settings and enable their monitoring.
+Health checks also see improvements, with the service health dashboard including a new software update check with automated
+notifications for new releases and known security issues. These checks are complemented by further system-level customisation
+options, as well as a startup configuration wizard to easily prepare new Test Bed instances depending on their intended use.
+Concluding the new system configuration options, the Test Bed now also supports integration with external identity management
+services through OpenID Connect (OIDC), as an alternative to the Commission-specific EU Login service.
+
+Regarding the Test Bed's interfaces, this release brings a series of new REST API operations for the lookup and management
+of configuration information. With respect to the Test Bed's human interface, multiple user experience improvements were
+made, enabling paging and searching of most information, as well as new options to manage conformance statements and test
+execution. Finally, in terms of test capabilities, this release introduces further ways of working with collections, new looping
+constructs, and numerous new utilities to better manage JSON and YAML data, as well as calls to remote test services.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1893 | :ui:`UI` | When viewing the conformance dashboard in list mode, restrict the data loaded in the search filters to the current conformance snapshot (if selected)
+  ITB-1930 | :ui:`UI` | Unable to export domain if actors and endpoints are not included
+  ITB-1931 | :ui:`UI` | Secret inputs should focus when clicking on their label
+  ITB-1932 | :tdl:`TESTS` | Referencing in XPath expressions a list with an unknown contained type results in an error
+  ITB-1937 | :ui:`UI` | When copying configuration from another organisation or system the current one should be excluded
+  ITB-1938 | :ui:`UI` | Unable to print conformance overview PDF report when test suite contains test case groups
+  ITB-1954 | :tdl:`TESTS` | Iteration steps may terminate prematurely
+  ITB-1966 | :ui:`UI` | Unable to pass file inputs when triggering tests via REST API
+
+**New features**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1095 | :ui:`UI` | Support paging wherever test cases are displayed
+  ITB-1435 | :ui:`UI` | Support OpenID Connect (OIDC) as an alternative SSO authentication scheme
+  ITB-1720 | :ui:`UI` | Include a welcome popup and startup wizard displayed for new Test Bed installations
+  ITB-1796 | :ui:`UI` | Support conformance statement list view for organisation users
+  ITB-1831 | :tdl:`TESTS` | Support an iterator approach in the foreach step as an alternative to index based iterations (for lists and maps)
+  ITB-1840 | :ui:`UI` | Extend the REST API with find operations for all core information (domains, groups, specifications, actors, communities, organisations, systems)
+  ITB-1857 | :ui:`UI` | Extend service health dashboard with a software version check
+  ITB-1872 | :ui:`UI` | Allow filtering test suites in the conformance statement screen
+  ITB-1873 | :ui:`UI` | Allow filtering test suite, test cases and results in conformance dashboard
+  ITB-1874 | :ui:`UI` | Allow collapsing all test suites in the conformance dashboard and statement screens
+  ITB-1879 | :ui:`UI` | Support installation of SSO-enabled instance without needing to use migration mode
+  ITB-1880 | :ui:`UI` | Allow filtering test suites and test cases when editing their details
+  ITB-1885 | :ui:`UI` | New community user permission to prevent organisations users from creating other users
+  ITB-1891 | :ui:`UI` | Allow filtering and paging when viewing existing specifications
+  ITB-1894 | :tdl:`TESTS` | New YamlConverter processing handler to convert YAML to/from JSON
+  ITB-1895 | :tdl:`TESTS` | New CollectionUtils operations to get the keys, values or entries of a map as a list
+  ITB-1897 | :tdl:`TESTS` | New JsonPathProcessor to execute JsonPath expressions on JSON content
+  ITB-1899 | :ui:`UI` | Support organisation-level self-registration tokens, allowing users to self-register for existing organisations without requiring preconfigured user accounts
+  ITB-1900 | :ui:`UI` | Foresee self-registration setting to allow only self-registration for existing organisations
+  ITB-1902 | :ui:`UI` | New REST operations for domains, specifications, groups, and actors, to GET and filter by parent and name
+  ITB-1903 | :tdl:`TESTS` | Support YAML as input in the JsonPointerProcessor and JsonPathProcessor for direct processing of YAML
+  ITB-1905 | :ui:`UI` | Allow community and Test Bed administrators to explicitly define extension test services
+  ITB-1910 | :tdl:`TESTS` | Support configurable timeouts for handler service calls for send, receive, verify, process and interact steps
+  ITB-1914 | :tdl:`TESTS` | Extend the metadata for test suites and test cases to include scopes and dependencies
+  ITB-1915 | :ui:`UI` | Add a "show selected" option on the create conformance statement screen
+  ITB-1919 | :ui:`UI` | New REST API GET operation to retrieve a community's organisations
+  ITB-1920 | :ui:`UI` | New REST API GET operation to retrieve an organisation's systems
+  ITB-1921 | :ui:`UI` | New REST API GET operations to retrieve a system's conformance statements (current and in conformance snapshots)
+  ITB-1925 | :ui:`UI` | Allow custom HTTP header names to be configured (relating to (ITB-API-KEY and ITB-PATH headers)
+  ITB-1927 | :tdl:`TESTS` | Read recorded test service authentication information for use in test cases
+  ITB-1941 | :tdl:`TESTS` | Support an option in the HttpMessagingV2 handler to use HTTP/1.1 when making requests
+  ITB-1946 | :ui:`UI` | Extend the service health dashboard with warnings in case the current Test Bed version has know security issues
+  ITB-1951 | :ui:`UI` | Provide the possibility to change the default welcome page's title
+  ITB-1959 | :ui:`UI` | Show service health issues to Test Bed administrators upon login
+  ITB-1962 | :ui:`UI` | Allow the execution of all tests in a conformance statement in addition to execution per test suite and test case
+  ITB-1963 | :ui:`UI` | Allow completion of otherwise readonly configuration properties during self-registration
+  ITB-1964 | :ui:`UI` | Allow organisation adminitrators to manage their own self-registration tokens (if enabled for the community)
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1587 | :ui:`UI` | Remove the "remember me" option displayed on the login screen for non-SSO instances as it is anyway overruled by the Test Bed's global session timeout
+  ITB-1767 | :ui:`UI` | Replace TinyMCE with open source alternative for use in rich text editors
+  ITB-1881 | :ui:`UI` | Improve visual consistency of inline search filters
+  ITB-1882 | :ui:`UI` | Supporting filtering and paging when displaying the list of communities
+  ITB-1883 | :ui:`UI` | Supporting filtering and paging when displaying the list of domains
+  ITB-1888 | :tdl:`TESTS` | Improve error message and guidance when functions are used in raw Schematrons (SCH files)
+  ITB-1890 | :ui:`UI` | Consolidate view buttons in conformance statement and test session displays
+  ITB-1911 | :tdl:`TESTS` | Consider the 'from' and 'to' actors of btxn steps as optional
+  ITB-1913 | :ui:`UI` | When creating conformance statements ensure confirm and cancel options are always visible
+  ITB-1916 | :ui:`UI` | Improve the visual distinction of modal headers and footers
+  ITB-1917 | :ui:`UI` | In screens with tabs doing a full page refresh should remain on the currently opened tab
+  ITB-1918 | :ui:`UI` | Use paging when listing conformance statements
+  ITB-1926 | :ui:`UI` | Use ITB-API-KEY as the default header name for REST API authorisation while tolerating the previous ITB_API_KEY
+  ITB-1929 | :tdl:`TESTS` | When an artifact lookup fails report the artifact path and source test suite in the log
+  ITB-1933 | :ui:`UI` | Replace ITB_API_KEY header with ITB-API-KEY (while still accepting the old name)
+  ITB-1935 | :ui:`UI` | Ensure configuration parameter names created via the REST API are valid
+  ITB-1939 | :ui:`UI` | Adding a specification into a group should display the group as preselected
+  ITB-1940 | :ui:`UI` | Simplify conformance statement management controls
+  ITB-1942 | :ui:`UI` | Improve the presentation of options in table rows
+  ITB-1944 | :ui:`UI` | Merge the data import and export screens into a data management screen
+  ITB-1948 | :tdl:`TESTS` | Clean up temporary RDF models in ShaclValidator to optimise memory usage
+  ITB-1949 | :ui:`UI` | Allow the downloading of test session reports directly from the conformance statement detail page
+  ITB-1950 | :ui:`UI` | Include autocomplete metadata for secret inputs and credential forms
+  ITB-1961 | :ui:`UI` | Remove test suite execution button on conformance statement screen if the test suite contains only one test case
 
 Release 1.27.4 - 27/08/2025
 ---------------------------
