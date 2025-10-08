@@ -4,14 +4,14 @@ Monitor test sessions
 =====================
 
 Monitoring all current and past test sessions for your community is possible through the **Session dashboard** screen, accessible
-my clicking the corresponding link from the menu.
+by clicking the corresponding link from the menu.
 
 .. figure:: ../screenshots/admin_session_dashboard.PNG
   :align: center
 
 The screen is split in three sections:
 
-* A set of **search filters**, initially disabled, to help locate specific test sessions (see :ref:`session_dashboard__filters`).
+* A set of **search filters**, initially disabled, to find specific test sessions (see :ref:`session_dashboard__filters`).
 * The list of currently **active sessions** (see :ref:`session_dashboard__active`).
 * The list of **completed sessions** (see :ref:`session_dashboard__completed`).
 
@@ -47,7 +47,7 @@ sessions in the community. Clicking on the header itself, allows you to **collap
 With respect to the listing of active sessions, each session's row offers controls to:
 
 * View its **details**, by clicking on the session's row (see :ref:`session_dashboard__steps`).
-* Forcibly **terminate**, it by clicking the cross icon on the relevant session's row under the **Operation** column.
+* Forcibly **terminate**, it by clicking the delete button on the relevant session's row.
 
 .. _session_dashboard__completed:
 
@@ -73,8 +73,8 @@ will switch to descending. The active sort column and type are indicated using a
 controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
 corner the total and currently displayed test counts.
 
-Viewing a test session's further details and steps is done by clicking on the session's row, similar to the case of the :ref:`active test sessions<session_dashboard__active>`. See :ref:`session_dashboard__steps` for further
-information on the details displayed. Moreover, each row provides two **export** buttons that allows you to download the session's **test case report** in XML and PDF format.
+Viewing a test session's :ref:`further details and steps <session_dashboard__steps>` is done by clicking on the session's row, similar to the case of the :ref:`active test sessions<session_dashboard__active>`.
+Moreover, each row provides a button to access further options, notably to download the session's **test case report** in XML and PDF format.
 
 The following is an example of such a report in **XML format**, the XML content being defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_:
 
@@ -84,7 +84,7 @@ The following is an example of such a report in **XML format**, the XML content 
 .. note::
   You can also define **custom formats** for any kind of XML report. This is managed as part of the community's :ref:`report settings<community__report_settings>`.
 
-Selecting the second export option produces the report in **PDF format**:
+Besides the XML report, you may also produce the report in **PDF format**:
 
 .. figure:: ../screenshots/test_case_report.png
   :align: center
@@ -95,7 +95,7 @@ execution (e.g. the related organisation having been deleted). Such obsolete res
 
 Specific test sessions can also be selectively deleted by means of the **Delete sessions...** button. Clicking this will disable other buttons and display a checkbox
 on each row in the table. To delete one or more test sessions you need to check their checkbox and click on the **Confirm** button. Once in selection mode you may also
-click on **Cancel** to abort the deletion and restore the normal table display.
+click on **Cancel** to abort the deletion and restore the normal display.
 
 .. figure:: ../screenshots/admin_session_dashboard_delete.PNG
   :align: center
@@ -112,7 +112,7 @@ The session dashboard offers a set of filters that can be used to find test sess
 .. figure:: ../screenshots/admin_session_dashboard_filters_off.PNG
   :align: center
 
-Filters are initially not applied and displayed as a collapsed panel. To apply filters, click the panel to expand it.
+Filters are initially not applied and are displayed as a collapsed panel. To apply filters, click the panel to expand it.
 
 .. figure:: ../screenshots/admin_session_dashboard_filters_on.PNG
   :align: center
@@ -142,8 +142,8 @@ controls to confirm or cancel the filter. Multiple property filters can be added
 * Values provided for the same property are applied using "OR" logic.
 * Values provided for different properties are applied using "AND" logic.
 
-The presented sessions are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the 
-**Clean filters**. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters. 
+The presented sessions are automatically updated whenever your filter options are modified, or when the filters are removed altogether by clicking the
+**Clear filters** button. The filter panel may also be **collapsed and expanded** by clicking the panel's title while maintaining the defined filters.
 The **Refresh** button is used to refresh the display of results based on the current filtering.
 
 .. _session_dashboard__steps:
@@ -170,9 +170,9 @@ Above the diagram display you are presented with additional buttons linked to th
 * **Copy link** copies a shareable link for the current session that can be used to directly navigate to its detailed display. You also have an option
   termed **Copy link for organisation** that will generate a shareable link to the test session in the relevant organisation's session history, for use by the organisation's users.
 * **View statement** takes you to the relevant :ref:`conformance statement's details <manage_your_conformance_statements__view_a_conformance_statements_details>`.
-* **View system** takes you to the relevant :ref:`system <community__manage_organisation__systems_edit>` or :ref:`organisation <community__manage_organisation>` details.
-* **View specification** takes you to the relevant :ref:`domain <domains__domain_details>`, :ref:`specification <domains__specification>` or :ref:`actor <domains__actor>`.
-* **View test case** takes you to the relevant :ref:`test case <domains__test_case__details>` or :ref:`test suite <domains__test_suite_details>`.
+  This has further options for further navigation, to view the relevant :ref:`system <community__manage_organisation__systems_edit>`, :ref:`organisation <community__manage_organisation>`,
+  :ref:`community <community>`, :ref:`actor <domains__actor>`, :ref:`specification <domains__specification>`, :ref:`domain <domains__domain_details>`,
+  :ref:`test case <domains__test_case__details>` and :ref:`test suite <domains__test_suite_details>`.
 
 In the case of an active test session you are also provided with a button to **refresh** its display and **view pending interactions**
 (in case interactions are pending).

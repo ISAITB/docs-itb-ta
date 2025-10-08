@@ -21,7 +21,9 @@ The domain detail screen is where you can edit a domain's properties. It is spli
 
 * The **Domain details** section, to view and edit the domain's information.
 * Tabs for the information linked to the domain, notably the **Specifications** tab to :ref:`manage its specifications<domains__domain__specification_list>`,
-  the **Shared test suites** tab to manage the domain's :ref:`shared test suites<domains__domain__shared_test_suites>`, and the **Parameters** tab to :ref:`manage configuration parameters<domains__domain__parameter_list>` used in test cases.
+  the **Shared test suites** tab to manage the domain's :ref:`shared test suites<domains__domain__shared_test_suites>`, the
+  the **Parameters** tab to :ref:`manage configuration parameters<domains__domain__parameter_list>` used in test cases,
+  and the **Test services** tab to :ref:`manage supporting test services<domains__domain__service_list>`.
 
 In the **Domain details** section you are presented with a form to view and edit the domain's information.
 
@@ -49,7 +51,7 @@ Specifications
 ~~~~~~~~~~~~~~
 
 The **Specifications** tab presents a table with the domain's configured specifications. These represent the elements of your project's
-:ref:`specifications<introduction__glossary__specification>` that you want your organisations to conform to. 
+:ref:`specifications<introduction__glossary__specification>` that you want organisations to conform to.
 
 .. figure:: ../screenshots/admin_domains_domain_specifications.PNG
   :align: center
@@ -58,11 +60,15 @@ Each specification is presented in a separate row, in which the following inform
 
 * The **specification** name (in bold).
 * Its **description**, used in detail screens and reports.
-* Whether or not the specification is **hidden** from organisation users (represented as a "hidden" icon).
+* Whether or not the specification is **hidden** from users (represented as a "hidden" icon).
+
+You can use the provided **search box** to search for specifications, filtering based on the specifications' names in a case-insensitive manner,
+and supporting partial matching.
 
 Clicking on a specification's row will take you to its :ref:`detail page<domains__specification>`. To :ref:`create a new specification<domains__domain_create_specification>` click the **Create specification**
-button above the table. Clicking the **Upload test suite** button allows you to :ref:`upload a new test suite<domains__domain_deploy_test_suite>` for
-one or more specifications.
+button, whereas to :ref:`upload a new test suite<domains__domain_deploy_test_suite>` for one or more specifications
+click the **Upload test suite** button. You can also manage from here the specifications' :ref:`ordering<domains__domain_specification_ordering>`
+to control how they are displayed to users.
 
 .. _domains__domain_create_specification:
 
@@ -199,22 +205,20 @@ by applying a specific presentation order that will be used in the following cas
 * When :ref:`viewing existing conformance statements<manage_your_conformance_statements__view_your_conformance_statements>`.
 * In conformance overview :ref:`reports<monitor_conformance_status__detailed_view_conformance_overview_reports>` and :ref:`certificates<monitor_conformance_status__detailed_view_conformance_overview_certificates>`.
 
-Changing the specifications' ordering is achieved using the **move** button displayed in the end of each specification's row.
-This button is presented as soon as you have more than one specification in your domain.
+To change the specifications' ordering click the **Manage specification order** button. Doing so will hide specification
+controls and present all specifications in a single list (in case paging was active). You may now drag and drop
+specifications to adapt their ordering, by clicking and holding them while dragging them to the desired spot.
 
 .. figure:: ../screenshots/admin_domains_domain_specification_order_specs.png
   :align: center
 
-Using these buttons you can drag and drop specifications to adapt their desired ordering. Once you have the result you want, click the 
-**Save specification order** button to save the ordering. Clicking on the secondary options of this button you see the **Reset specification order**
-option that when clicked will remove all custom ordering and revert to an alphabetic sorting.
+In case you are using specification groups, you can manage the order both at the level of the groups, and within each group's options.
+It is also possible to set a specific ordering when you have a mix of grouped and ungrouped specifications. In this case you
+can also use the **View options** button to show and hide group options.
 
-Adapting the order of specifications is naturally also possible when you are using :ref:`specification groups<domains__domain_specification_groups>`.
-In this case you can manage the order both at the level of the groups, and within each group's options. It is also possible to set a specific
-ordering when you have a mix of grouped and ungrouped specifications.
-
-.. figure:: ../screenshots/admin_domains_domain_specification_order_groups.png
-  :align: center
+When you are happy with the ordering, click on **Save specification order** to record the ordering. You can also choose from
+here **Reset specification order** to revert to the natural ordering. Clicking on **Cancel** will take you out of specification
+ordering mode without applying any changes.
 
 .. note::
 
@@ -262,7 +266,9 @@ For each test suite the following information is displayed:
 * Its **description**. This typically would include information on the purpose of the test suite and limited instructions relevant to all its test cases.
 * Its **version**. This is metadata that is recorded but not presented to users.
 
-From here you may either :ref:`upload a new test suite<domains__domain__shared_test_suite_upload>` by clicking the **Upload shared test suite** button or 
+Test suites can be filtered using the provided **search box**, that will be applied against test suites' identifiers and names
+in a case-insensitive manner and supporting partial matches. In terms of further actions, you may either
+:ref:`upload a new test suite<domains__domain__shared_test_suite_upload>` by clicking the **Upload shared test suite** button or
 :ref:`view its details<domains__test_suite_details>` by clicking its row.
 
 .. _domains__domain__shared_test_suite_upload:
@@ -344,14 +350,15 @@ The domain's parameters are presented in a table with one parameter per row. The
 * Its **description** to provide context on the purpose of the parameter.
 * Its **value**, which in the case of sensitive parameters is hidden.
 * Whether or not the parameter is included **in tests**.
+* A **service icon** indication of whether this parameter is linked to a :ref:`test service<domains__domain__service_list>`.
 
 .. note::
     **Parameters not in tests:** Typically domain parameters are meant to be used as global configuration values that are used in test cases.
-    A parameter that is not meant to be used in tests could be used as a means of recording arbitrary data within the Test Bed or as
+    A parameter that is not meant to be used in tests could be used ti record arbitrary data within the Test Bed or as
     :ref:`input to a trigger<community__manage_triggers>`.
 
-To create a new parameter click the **Create parameter** button (see :ref:`domains__domain_create_parameter`). To edit an existing one click its 
-corresponding table row (see :ref:`domains__domain_edit_parameter`).
+To :ref:`create a new parameter<domains__domain_create_parameter>` click the **Create parameter** button. To
+:ref:`edit an existing one<domains__domain_edit_parameter>` click its corresponding table row.
 
 .. _domains__domain_create_parameter:
 
@@ -427,7 +434,111 @@ Once you adapt the parameter's information click the **Save** button to record y
 Test services
 ~~~~~~~~~~~~~
 
-TODO
+**Test services** represent extensions to the Test Bed's test engine, making available to test cases custom
+**validation**, **messaging** and **processing** capabilities that are not available out of the box. More concretely, these
+are web service endpoints implementing one or more `GITB test service APIs <https://www.itb.ec.europa.eu/docs/services/latest/>`__
+that will be called by the Test Bed when used in test cases, and specifically in test steps defining them as
+`service handlers <https://www.itb.ec.europa.eu/docs/tdl/latest/handlers/index.html#custom-external-handlers>`__.
+
+In practice all that is needed to use such a service in a test case is to define its endpoint address as a test step's handler.
+The simplest way to do this in a configurable manner is to define this address as a :ref:`domain parameter<domains__domain__parameter_list>`
+which can then be referenced as ``$DOMAIN{myService}``. Defining such an endpoint as a **test service** as opposed to a
+domain parameter is identical regarding its use from test cases, but brings important benefits:
+
+* You can **configure in a single location** additional service settings such as authentication details.
+* Services can be listed and managed through the Test Bed's :ref:`REST API <api__configuration__searchTestServices>`.
+* Additional **metadata** can be recorded for services to enable referencing from test suites.
+* Services can be supported with **health monitoring** to ensure no disruptions to testing activities.
+
+When a test service is defined it also defines a **linked domain parameter** with the same identifier. Test service definitions
+are passed to the test engine when tests are executed, and are referenced through the ``DOMAIN`` map, exactly as you would
+reference a domain parameter.
+
+To manage the domain's test services, select the **Test services** tab from the :ref:`domain details <domains__domain_details>` screen.
+
+.. figure:: ../screenshots/admin_domains_domain_services.png
+  :align: center
+
+The defined services are presented in a table, listing per service:
+
+* Its **identifier**, serving to identify it uniquely and reference it from test cases.
+* Its **endpoint address**, pointing to the address where the service's endpoint is listening.
+* Its **description**, providing a short description on the purpose of the service.
+* Its **service type**, defining whether this is a **validation**, **processing** or **messaging** service.
+
+To :ref:`create a new test service definition <domains__domain_create_service>` click on **Register service**. Alternatively,
+you can also use the **Register from parameter** button in case you have already defined the service's address as a
+:ref:`domain parameter <domains__domain__parameter_list>`.
+
+.. _domains__domain_create_service:
+
+Create test service
++++++++++++++++++++
+
+Creating a test service is done by clicking the **Register service** button form the **Test services** tab.
+
+.. figure:: ../screenshots/admin_domains_domain_services_create.png
+  :align: center
+
+Doing so will open a screen to input the test service's information. Alternatively, if you want to convert an existing
+:ref:`domain parameter <domains__domain__parameter_list>` to a test service, you can click the **Register from parameter** button which will allow you to look up
+and select an appropriate, existing parameter. In this case the resulting form will be prepopulated using the parameter's
+information.
+
+.. figure:: ../screenshots/admin_domains_domain_services_create_form.png
+  :align: center
+
+The core information requested in this form is:
+
+* The **identifier** of the service (required), used to identify it and refer to it from test cases.
+* The **description** of the service (optional).
+* The **endpoint address** (required) that is called when the service is used in test cases.
+* The **service type**, identifying this service as a validation, messaging or processing service as per the `GITB test service APIs <https://www.itb.ec.europa.eu/docs/services/latest/>`__.
+
+In case the service requires **authentication** to be used, you can specify here how to authenticate. You can
+configure HTTP basic authentication, the `WS-Security UsernameToken profile <https://www.oasis-open.org/committees/download.php/13392/wss-v1.1-spec-pr-UsernameTokenProfile-01.htm>`__,
+or both.
+
+.. figure:: ../screenshots/admin_domains_domain_services_create_form_authentication.png
+  :align: center
+
+Finally you can also specify optional **metadata** for the service, notably a **reference identifier** and **version** that
+are recorded and reported as information for the service, but that are not otherwise used within the Test Bed.
+
+Having provided the requested information you can click on **Test** to check whether the test service responds successfully,
+**Save** to persist your changes, or **Cancel** to close without creating the service. Once the test service is created you
+will also see that it created in addition a :ref:`domain parameter <domains__domain__parameter_list>`, with the same name
+(service identifier), value (endpoint address) and description as the service.
+
+.. figure:: ../screenshots/admin_domains_domain_services_create_parameter.png
+  :align: center
+
+.. _domains__domain_edit_service:
+
+Edit test service
++++++++++++++++++
+
+To edit en existing test service select its row from the test service's list.
+
+.. figure:: ../screenshots/admin_domains_domain_services.png
+  :align: center
+
+Doing so will open a popup screen presenting you the service’s current information, provided in editable fields.
+
+.. figure:: ../screenshots/admin_domains_domain_services_edit_form.png
+  :align: center
+
+You can use this form to review and edit the service's information, specifically:
+
+* The **identifier** of the service (required), used to identify it and refer to it from test cases.
+* The **description** of the service (optional).
+* The **endpoint address** (required) that is called when the service is used in test cases.
+* The **service type**, identifying this service as a validation, messaging or processing service as per the `GITB test service APIs <https://www.itb.ec.europa.eu/docs/services/latest/>`__.
+* The **authentication** settings.
+* The **reference identifier** and **version** as additional service metadata.
+
+Similar to when you are :ref:`creating a service <domains__domain_create_service>`, you can click on **Test** to check
+whether the test service responds successfully, **Save** to persist your changes, or **Cancel** to close without making changes.
 
 .. _domains__specification:
 
@@ -435,7 +546,7 @@ Manage specification details
 ----------------------------
 
 To view a specification's details and edit its information you need to click on the specification's row, displayed in the **Specifications** table
-of the domain details page (see :ref:`domains__domain_details`).
+of the :ref:`domain details page<domains__domain_details>`.
 
 .. figure:: ../screenshots/admin_domains_domain_specifications.PNG
   :align: center
@@ -443,8 +554,8 @@ of the domain details page (see :ref:`domains__domain_details`).
 Doing so will take you to the specification details screen. This is split in three sections:
 
 * The **Specification details** section, presenting the specification's information.
-* The **Test suites** section, listing the test suites that are configured for this specification (see :ref:`domains__specification__test_suite_list`).
-* The **Actors** section, listing the actors configured for the specification (see :ref:`domains__specification__actor_list`).
+* The **Test suites** section, listing the :ref:`test suites <domains__specification__test_suite_list>` configured for this specification.
+* The **Actors** section, listing the :ref:`actors <domains__specification__actor_list>` configured for the specification.
 
 In the **Specification details** section you are presented with a form to view and edit the specification's information.
 
@@ -494,7 +605,8 @@ For each test suite the following information is displayed:
 * Its **version**. This is metadata that is recorded but not presented to users.
 * An indication of whether this test suite is (or could be) **shared** with other specifications.
 
-From the table you may proceed to :ref:`upload a new test suite<domains__specification__test_suite_upload>` by clicking the **Upload test suite** button or 
+You can use the provided **search box** to filter test suites based on their identifier and name. In addition, you
+may proceed to :ref:`upload a new test suite<domains__specification__test_suite_upload>` by clicking the **Upload test suite** button or
 :ref:`view its details<domains__test_suite_details>` by clicking its row. In case your domain defines
 :ref:`shared test suites<domains__domain__shared_test_suites>` you may also:
 
@@ -523,7 +635,7 @@ To add or update a test suite for a specification you need to upload it using th
   :align: center
 
 Recall that test suites are ZIP archives containing a test suite's XML file, one or more test case XML files, and the resources they use. The
-test suite and test case XML files are authored in the `GITB TDL`_ for which online documentation is provided specifically on `test suite packaging and
+test suite and test case XML files are authored in the `GITB TDL`_ which includes detailed instructions and examples on `test suite packaging and
 deployment`_.
 
 .. _GITB TDL: https://www.itb.ec.europa.eu/docs/tdl/latest/
@@ -616,7 +728,7 @@ Details on each operation, including sample requests and responses, are provided
 
 .. note::
 
-  Using the Test Bed's REST API is an advanced feature that needs to first be enabled by your administrator to be available to you. If setting up
+  Using the Test Bed's REST API is an advanced feature that must be enabled by an administrator to be available to you. If setting up
   your own Test Bed instance (for `production`_ or `development`_) you may enable this by setting the `AUTOMATION_API_ENABLED`_ property to true.
 
 .. _domains__specification__actor_list:
@@ -634,7 +746,7 @@ For each actor the following information is displayed:
 * The **ID** of the actor, used for display purposes as a short name and also to reference the actor from test suites.
 * Its **name**, as the complete actor name to show in detail screens and reports. This is also the name presented to users during test
   execution, unless this is overridden at test case level.
-* Its **description**, displayed in details screens and reports to provide more information about the actor.
+* Its **description**, displayed in details screens and reports to provide more details on the actor.
 * Whether or not the actor is the specification's **default**. The default actor is the one that will be preselected as the SUT when creating new 
   conformance statements for the specification.
 * Whether or not the actor is set as **hidden** (presented as a "hidden" icon). Hidden actors are not presented to users during the creation of conformance statements.
@@ -781,15 +893,15 @@ Once you have introduced documentation for the test suite you may also click the
 HTML source. You can use this to inspect the documentation in an editor or to store it within your test suite archive (in case you refer to
 the documentation from the test suite definition file).
 
-If you make changes to the test suite's metadata you can apply them by clicking the **Save changes** button. From here you can also click the
-**Download** button to download the test suite's ZIP archive. Clicking **Delete** will delete, upon confirmation, the test suite rendering linked
+If you make changes to the test suite's metadata you can apply them by clicking the **Save changes** button. From here you can also click
+**Download** to download the test suite's ZIP archive. Clicking **Delete** will delete, upon confirmation, the test suite rendering linked
 test results as obsolete, whereas clicking on **Back** will discard any pending changes and return you to the :ref:`specification detail page<domains__specification>`
 (for a specification's test suite) or the :ref:`domain detail page<domains__domain__shared_test_suites>` (for a shared test suite).
 
 .. note::
   **Update via test suite upload:** A test suite's name, description and documentation can also be updated via 
   :ref:`test suite upload<domains__specification__test_suite_upload>`. When uploading a new version for a test suite you can choose whether
-  the values you have been editing through the user interface are to be kept or replaced. Note that the content and execution order of 
+  such values provided through the user interface are to be kept or replaced. Note that the content and execution order of
   the test suite's test cases can only be changed via upload.
 
 In the case of a **non-shared test suite**, the available controls also include options to:
@@ -837,7 +949,8 @@ Test case are displayed following their execution sequence, displaying per test 
 * Its **tags** to highlight interesting aspects of the test case.
 * A button to view its **documentation**, if such documentation is defined.
 
-Each test case also provides an **edit button** that you can click to proceed to its :ref:`detail page<domains__test_case__details>`.
+Each test case also provides an **edit button** that you can click to proceed to its :ref:`detail page<domains__test_case__details>`. You can
+also use use the provided **search box** to filter the displayed test cases based on their name.
 
 .. note::
   **Creating a test case:** Creating a new test case is only possible through :ref:`test suite upload<domains__specification__test_suite_upload>`.
@@ -848,13 +961,14 @@ Linked specifications
 ~~~~~~~~~~~~~~~~~~~~~
 
 For a :ref:`shared test suite<domains__domain__shared_test_suites>`, the **Linked specifications** tab presents the specifications with which
-the test suite is currently linked. Each specification is presented in a row showing the specification's name and description, allowing also
-to be clicked to :ref:`view its details<domains__specification>`.
+the test suite is currently linked. These are the specifications for which the test suite's test results will count towards,
+without needing to be re-executed per specification. Specifications are presented in a row showing per specification
+its name and description, that can be also clicked to display its :ref:`details<domains__specification>`.
 
 .. figure:: ../screenshots/admin_domains_test_suites_linked_specs.png
   :align: center
 
-To link the test suite with another specification you may click the **Link to specifications** button. Doing so will present a dialog with 
+To link the test suite with another specification click the **Link to specifications** button. Doing so will present a dialog with
 the specifications available to link the test suite with.
 
 .. figure:: ../screenshots/admin_domains_test_suites_linked_specs_link.png
@@ -888,7 +1002,7 @@ delete the test suite itself nor does it affect its recorded tests.
 Manage test case details
 ------------------------
 
-To view a test case's details and update its metadata you need to click on the test case's row, displayed in the **Test cases** table
+To view a test case's details and update its metadata you need to click on the test case's row, displayed in the **Test cases** tab
 of the :ref:`test suite details page<domains__test_suite_test_case_list>`.
 
 .. figure:: ../screenshots/admin_domains_test_cases.PNG

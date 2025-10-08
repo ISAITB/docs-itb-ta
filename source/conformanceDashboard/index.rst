@@ -11,11 +11,11 @@ You can view your conformance dashboard in two ways, depending on your preferenc
 
 * **View per organisation**, displaying all statements grouped and split according to their specifications for a specific organisation.
   This approach is best if you are interested in a specific organisation.
-* **Detailed tabular view**, displaying all statements for all organisations as a flat table. This approach os more suitable if you
+* **List view**, displaying all statements for all organisations as a flat table. This approach os more suitable if you
   want to make complex filtering covering both organisations and specifications.
 
 The default dashboard presentation is **per organisation**, considering that this is the most common dashboard use case. You can switch
-between both dashboard presentation modes by toggling the **View per organisation** control from the page's header.
+between both dashboard presentation modes by toggling the **List view** control from the page's header.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_banner.png
   :align: center
@@ -38,8 +38,8 @@ according to the organisation of your :ref:`domains<domains__domain_details>`, :
 .. figure:: ../screenshots/admin_conformance_dashboard_organisation_view.png
   :align: center
 
-Assuming there are conformance statements defined these will be presented in expandable panels, split and grouped based on their
-relevant specifications, specification groups and options (if applicable). If you do indeed see such groupings, related statements
+Assuming there are conformance statements defined, these will be presented in expandable panels, split and grouped based on their
+relevant specifications, specification groups and options (if applicable). If you do indeed see such groupings, they
 can be expanded and collapsed by clicking on their relevant titles.
 
 For each statement you can see besides the **name** of the specification, an overview of the system's current testing status. This overview
@@ -50,11 +50,17 @@ consists of:
 * The **result ratios**, illustrating the same results but as a percentage of the total tests in the statement.
 * The **overall status** of the statement which can be successful, failed, or incomplete, based on the latest test results.
 
-The statement row itself can also be **expanded** by clicking it to :ref:`view its details<monitor_conformance_status__statement_details>`.
-These details include **specific controls** at the level of the statement, as well the listing of all its **test suites** and **test cases** with their
-latest test results.
+Clicking on the statement row will take you to the :ref:`conformance statement detail <manage_your_conformance_statements__view_a_conformance_statements_details>` screen.
+Besides viewing its details you also can access further actions relevant to the conformance statement through the **option**
+button on the right. The available actions are as follows:
 
-In case numerous statements are defined, you can use the provided **search controls** to filter statements based on:
+* Download the statement :ref:`report <monitor_conformance_status__statements__export_statement>` or :ref:`certificate <monitor_conformance_status__statements__export_certificate>`.
+* Navigate to the related :ref:`system<community__manage_organisation__systems_edit>`,
+  :ref:`organisation<community__manage_organisation>`, :ref:`community<community>`,
+  :ref:`actor<domains__actor>`, :ref:`specification<domains__specification>` or :ref:`domain<domains__domain_details>`.
+* Copy or preview the :ref:`conformance badge <manage_your_conformance_statements__view_a_conformance_statements_details__badge>` for the statement.
+
+In case numerous statements are defined, you can use the provided **search controls** to filter them based on:
 
 * The specifications' **name**.
 * The **overall status**.
@@ -97,7 +103,7 @@ this will produce a **PDF report**, but clicking the presented caret for additio
 .. figure:: ../screenshots/admin_conformance_dashboard_organisation_view_overall_report_controls.png
   :align: center
 
-The PDF report includes an **overview** section summarising the report's context and status. This includes:
+The PDF report includes an **overview** summarising the report's context and status. This includes:
 
 * The **organisation** and **system** the report refers to.
 * The selected **domain**, **specification group**, or **specification** (skipped if the report refers to the overall status).
@@ -132,9 +138,8 @@ and allows simpler machine-based processing. The following XML content is a samp
 .. note::
   You can also define **custom formats** for any kind of XML report. This is managed as part of the community's :ref:`report settings<community__report_settings>`.
 
-Producing a conformance overview report at the level of a specific **domain**, **specification group** or **specification**, is achieved
-using the report icon buttons presented at the right side of the statements' display. The first button is used to produce the report in XML
-and the second one in PDF.
+Producing a conformance overview report for a specific **domain**, **specification group** or **specification**, is achieved
+through the **option** button presented at the right side of the statements' display.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_organisation_view_specific_report_controls.png
   :align: center
@@ -183,10 +188,10 @@ Once the settings are reviewed and adapted, clicking **Generate report** will pr
 
 .. _monitor_conformance_status__detailed_view:
 
-Detailed view
--------------
+List view
+---------
 
-You can switch to the **detailed dashboard view** at any time by toggling off the **View per organisation** control from the page's header.
+You can switch to the **list view** at any time by toggling the **List view** control from the page's header.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_banner.png
   :align: center
@@ -214,12 +219,16 @@ The information displayed for each conformance statement is:
   of the displayed counts.
 * The statement's overall **status** (success, failure or incomplete).
 
-The statement row can also be **expanded** by clicking it to :ref:`view its details<monitor_conformance_status__statement_details>`.
-These details include **specific controls** at the level of the statement, as well the listing of all its **test suites** and **test cases** with their
-latest test results.
+Finally, each row also provides on the right side an **option** button to trigger the actions supported for each statement.
+The available actions are as follows:
 
-Finally, each row also provides on the right side **export** controls that can be triggered clicking on the provided document icon.
-Clicking these produce the conformance statement report for the given statement in XML and PDF formats (see :ref:`monitor_conformance_status__statements__export_statement`).
+* Download the statement :ref:`report <monitor_conformance_status__statements__export_statement>` or :ref:`certificate <monitor_conformance_status__statements__export_certificate>`.
+* Navigate to the related :ref:`system<community__manage_organisation__systems_edit>`,
+  :ref:`organisation<community__manage_organisation>`, :ref:`community<community>`,
+  :ref:`actor<domains__actor>`, :ref:`specification<domains__specification>` or :ref:`domain<domains__domain_details>`.
+* Copy or preview the :ref:`conformance badge <manage_your_conformance_statements__view_a_conformance_statements_details__badge>` for the statement.
+
+Clicking on a statement row will take you to the :ref:`conformance statement detail <manage_your_conformance_statements__view_a_conformance_statements_details>` screen.
 
 .. _monitor_conformance_status__statements__export_all:
 
@@ -252,7 +261,7 @@ Apply search filters
 ~~~~~~~~~~~~~~~~~~~~
 
 When the dashboard's detailed display is active, it offers also a set of filters that can be used to select the displayed conformance statements. These can be enabled
-by clicking the **Search filters** button from the table header.
+by clicking the **Search** button from the table header.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_header_detailed.png
   :align: center
@@ -287,166 +296,33 @@ following semantics:
 * Values provided for different properties are applied using "AND" logic.
 
 The presented conformance statements are automatically updated whenever your filter options are modified. The filter panel may also be **collapsed and expanded**
-by clicking again the **Search filters** button. In addition, you may click the caret to the right of the button to select from its options to
+by clicking again the **Search** button. In addition, you may click the caret to the right of the button to select from its options to
 either **refresh** the current results, or to **clear all applied filters**.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_filters_options.png
   :align: center
 
-.. _monitor_conformance_status__statement_details:
-
-View statement details
-----------------------
-
-Viewing a statement's details depends on the type of display you have active for the conformance dashboard. In case you are have enabled the
-:ref:`view per organisation<monitor_conformance_status__organisation_view>` (the default) you click the desired statement from the presented
-statement presentation (statements are the entries displaying test result information):
-
-.. figure:: ../screenshots/admin_conformance_dashboard_statement_organisation_view.png
-  :align: center
-
-Alternatively, if you have the :ref:`detailed dashboard view<monitor_conformance_status__detailed_view>` enabled, you click the desired 
-statement's row from the statements' table.
-
-.. figure:: ../screenshots/admin_conformance_dashboard_statement_detailed_view.png
-  :align: center
-
-In both cases, the selected conformance statement will expand to present a nested table with its relevant test suites and test cases. Each test suite is presented in a
-separate panel that indicates the overall result for its contained test cases. These test suite panels can also be clicked to collapse or expand. The content
-of the panels is a table listing the test suite's test cases, displaying for each the latest recorded test result. Each test case row includes the following:
-
-* The **test case name** and **description**, the latter visible by clicking the test case's row.
-* The list of **tags**, if any are defined for the test case.
-* The time of the test case's **last run**.
-* A **view** button to view the relevant session's details. Clicking this will open up the test session in the :ref:`session dashboard<session_dashboard__completed>`.
-* An **info** button to view the test case's HTML documentation.
-* Two **export** buttons, to :ref:`generate the test case report<monitor_conformance_status__statements__export__test_case>` for the presented, latest test session in XML or PDF format.
-* The latest test **result**. Note that if the relevant test session resulted in a specific **output message**, the result icon can be clicked to display it.
-
-.. figure:: ../screenshots/admin_conformance_dashboard_expanded_output_message.PNG
-  :align: center
-
-As part of the display of the conformance statement's details you are provided with additional controls, to navigate to relevant information
-and view conformance badges. If you have active the dashboard's :ref:`view per organisation<monitor_conformance_status__organisation_view>`, you will see the following
-controls:
-
-.. figure:: ../screenshots/admin_conformance_dashboard_expanded_controls_organisation_view.png
-  :align: center
-
-For the :ref:`detailed dashboard view<monitor_conformance_status__detailed_view>`, the displayed controls differ slightly as follows:
-
-.. figure:: ../screenshots/admin_conformance_dashboard_expanded_controls.png
-  :align: center
-
-The presented controls permit the following actions:
-
-* **View statement** takes you to the relevant :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details>`.
-* **View system** takes you to the relevant :ref:`system<community__manage_organisation__systems_edit>`, :ref:`community<community>` or :ref:`organisation<community__manage_organisation>`.
-* **View specification** takes you to the relevant :ref:`specification<domains__specification>`, :ref:`domain<domains__domain_details>` or :ref:`actor<domains__actor>`.
-* **Copy badge URL**, presented if the relevant specification has configured :ref:`conformance badges <domains__specification>`,
-  will copy to your clipboard a URL that can be referred to from outside the Test Bed to display the badge. The same button also includes a 
-  secondary option named **Preview badge** that you can click for a preview.  
-* **Download report** (available in the :ref:`view per organisation<monitor_conformance_status__organisation_view>`), allows you to generate :ref:`conformance statement reports<monitor_conformance_status__statements__export_statement>` and :ref:`certificates<monitor_conformance_status__statements__export_certificate>`.
-
-Producing a conformance badge preview (if a badge is defined) results in a popup presenting the badge image.
-
-.. figure:: ../screenshots/conformance_statement_details_badge_preview.png
-  :align: center
-
-Note that the displayed badge is dynamically updated to always reflect the latest conformance testing status. For example if new test cases are
-added to the statement, accessing the same badge (displayed as a "success" badge above) will switch to an "incomplete" badge.
-
-.. figure:: ../screenshots/conformance_statement_details_badge_preview_incomplete.png
-  :align: center
-
-When the :ref:`detailed dashboard view<monitor_conformance_status__detailed_view>` is enabled, the controls will be complemented with the overall
-**test result percentages** as a horizontal bar chart, showing the ratio of successes, failures and incomplete tests.
-If the statement includes :ref:`optional test cases <domains__test_case__details>` the bar chart includes a **plus** control that you can click
-to see separate percentages for mandatory and optional tests (by default mandatory tests are presented).
-
-.. figure:: ../screenshots/conformance_statement_details_ratios.png
-  :align: center
-
-Expanded tables can be collapsed by clicking again on the expanded conformance statement's row. In addition, once one or more rows are expanded
-the conformance statement header also displays a **Collapse all** button to collapse all rows with a single click.
-
-.. figure:: ../screenshots/admin_conformance_dashboard_header_expanded.PNG
-  :align: center
-
-.. _monitor_conformance_status__statements__export__test_case:
-
-Export a test case report
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Exporting a test case's report is made possible through the file icon controls included in each test's row. The two **export** buttons provided
-allow you to download the session's **test case report** in XML and PDF format.
-
-The following is an example of such a report in **XML format**, the XML content being defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_:
-
-.. literalinclude:: ../testHistory/resources/test_case_report.xml
-   :language: xml
-
-The report includes the following information:
-
-* The **identifier**, **name** and **description** of the test case.
-* The **start** and **end time**.
-* The overall **result** as well as the **output message** that may have been produced.
-* The list of **step reports** that include each step's **identifier**, **description**, **timestamp**, **result** and **findings** (if validations were carried out).
-
-Selecting the second export option produces the report in **PDF format** which includes similar information to its XML counterpart with
-certain additional context data. The following sample report illustrates the information included:
-
-.. figure:: ../screenshots/test_case_report.png
-  :align: center
-
-The report contains a first **Overview** section that summarises the purpose and result of the test session. The information
-included here is:
-
-* The name of the **system** that was tested and the name of its related **organisation**.
-* The names of the **domain**, **specification** and **actor** of the relevant conformance statement.
-* The **test case's name** and **description**.
-* The session's **result**, **start** and **end time**.
-
-The overview section is then followed by a section per test case step, each starting on a separate page.
-
-.. figure:: ../screenshots/test_case_report_step.png
-  :align: center
-
-The information displayed for each step is:
-
-* Its **sequence number**.
-* Its **name**.
-* Its **result**.
-* Its completion **time**.
-* For validation steps, the number of validation report findings classified as **errors**, **warnings** and **messages**.
-* For validation steps, a **Details** section listing the details of each validation finding.
-
-.. note::
-    The XML report for a given test session can also be obtained through the Test Bed's :ref:`REST API<api>` (if enabled for your Test Bed instance).
-
 .. _monitor_conformance_status__statements__export_statement:
 
 Conformance statement report
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 The **conformance statement report** provides an overview of the conformance testing status relevant to a specific conformance statement. It can be
 generated to include only an overview or include also the results from its individual test cases. It is available in both XML and PDF formats.
 
-Generating this report depends on the active dashboard view. If the :ref:`view per organisation<monitor_conformance_status__organisation_view>` is active, 
-you use the **Download report** and **Download report as XML** controls.
+When the dashboard is presented either :ref:`per-organisation<monitor_conformance_status__organisation_view>` or in :ref:`list view<monitor_conformance_status__detailed_view>`,
+you generate reports by clicking the **option** button on the right and selecting **Download report** or **Download report as XML**.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded_controls_organisation_view.png
   :align: center
 
-In case the :ref:`detailed dashboard view<monitor_conformance_status__detailed_view>` is active, you click the export icons on the right side of the statement's row.
-
 .. figure:: ../screenshots/admin_conformance_dashboard_statement_detailed_view.png
   :align: center
 
-Selecting to download a PDF report, you will be prompted for the type of report you want to generate:
+If you select to download a PDF report, you will be prompted for the type of report you want to generate:
 
 * The **conformance statement report** (the default), for the report including the status overview for the conformance statement.
-* The **conformance statement report (with test case results)**, to also include the detailed test case results.
+* The **conformance statement report (with test case results)**, to also include detailed test results.
 * The **conformance certificate** (discussed in :ref:`monitor_conformance_status__statements__export_certificate`).
 
 When generating an XML report you will see a similar prompt including only the first two options (conformance certificates
@@ -492,25 +368,23 @@ The following XML content is a sample of such a report:
 .. _monitor_conformance_status__statements__export_certificate:
 
 Conformance statement certificate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 The **conformance certificate** is a PDF report similar to the :ref:`conformance statement report<monitor_conformance_status__statements__export_statement>`,
 that is meant to be delivered to the organisation linked to the conformance statement as a proof of its test results. It extends the base report by allowing
 you to selectively include its sections, include a custom text and also add a digital signature for integrity control and non-repudiation. These customisations
 are done for each generated certificate on the basis of defaults that are configured as part of the community's :ref:`report settings<community__report_settings>`.
 
-Generating a conformance certificate depends on the active dashboard view. If the :ref:`view per organisation<monitor_conformance_status__organisation_view>` is active, 
-you use the **Download report** control:
+When the dashboard is presented either :ref:`per-organisation<monitor_conformance_status__organisation_view>` or in :ref:`list view<monitor_conformance_status__detailed_view>`,
+you generate a certificate by clicking the **option** button on the right and selecting **Download report**.
 
 .. figure:: ../screenshots/admin_conformance_dashboard_expanded_controls_organisation_view.png
   :align: center
 
-In case the :ref:`detailed dashboard view<monitor_conformance_status__detailed_view>` is active, you click the export icon on the far right side of the statement's row:
-
 .. figure:: ../screenshots/admin_conformance_dashboard_statement_detailed_view.png
   :align: center
 
-Selecting to download a PDF report, you will be prompted for the type of report you want to generate:
+Once you select the **Download report** option, you will be prompted for the type of report you want to generate:
 
 .. figure:: ../screenshots/admin_conformance_dashboard_export_prompt.PNG
   :align: center
@@ -576,12 +450,15 @@ internal and public labels for the snapshots.
 .. figure:: ../screenshots/monitor_conformance_status__snapshots_popup.png
   :align: center
 
-Each listed snapshot presents controls to **edit** and **delete** it. Editing a snapshot allows you to replace the snapshot's label,
+Each listed snapshot has an **option** allowing you **edit** and **delete** it. Editing a snapshot allows you to replace the snapshot's label,
 but also to specify whether it is visible to organisation users, and if so, whether it will presented with a different label. This
 information is also what is requested when you create a new snapshot by clicking the **Create snapshot** button from the popup's footer.
 
 .. figure:: ../screenshots/monitor_conformance_status__snapshots_popup_edit.png
   :align: center
+
+When viewing an existing snapshot you may also view and copy from here the snapshot's **API key**, which you would need if you need to
+refer to a snapshot when using the Test Bed's :ref:`REST API<api>`.
 
 The default snapshot entry corresponding to the latest status is always present and visible to organisation users. However, you may still edit it to
 set a specific public label.
