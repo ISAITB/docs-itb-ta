@@ -33,8 +33,8 @@ A more complete example can be found in the `DIGIT Test Bed instance`_ where add
 In this case, you are additionally presented with:
 
 * The **Confirm your new role** shortcut to approve a role that is assigned to you by an administrator (see :ref:`login__roles__confirm`).
-* The **Try out our demos** shortcut to directly take you to the Test Bed's demos (see :ref:`login__demos`).
-* A message on the use of **EU Login** to authenticate, along with the link to a simplified `EU Login user guide`_.
+* The **Try out our demos** shortcut to take you to the Test Bed's demos (see :ref:`login__demos`).
+* A message on the use of **EU Login** to authenticate (if EU Login is used for authentication), along with the link to a simplified `EU Login user guide`_.
 * A **migration note** on how to migrate a legacy username and password based account to EU Login, including a shortcut to
   start the migration and a link to a `step-by-step guide`_ (see :ref:`login__roles__migrate`).
 
