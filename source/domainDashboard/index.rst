@@ -775,7 +775,7 @@ Details on each operation, including sample requests and responses, are provided
 .. note::
 
   Using the Test Bed's REST API is an advanced feature needs to first be enabled before it can be used. This is done by setting the
-  `AUTOMATION_API_ENABLED`_ property to true in the Test Bed's configuration or via the :ref:`system configuration screen <TODO>`.
+  `AUTOMATION_API_ENABLED`_ property to true in the Test Bed's configuration or via the :ref:`system configuration screen <systemAdmin>`.
 
 .. _domains__specification__actor_list:
 
