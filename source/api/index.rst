@@ -36,8 +36,8 @@ The community management operations allow you to manage the Test Bed's **communi
 have processes external to the Test Bed manage such information without needing manual actions through the Test Bed's user interface. Specifically you can:
 
 * :ref:`Create <api__community__createCommunity>`, :ref:`update <api__community__updateCommunity>` and :ref:`delete <api__community__deleteCommunity>` communities.
-* :ref:`Create <api__community__createOrganisation>`, :ref:`update <api__community__updateOrganisation>` and :ref:`delete <api__community__deleteOrganisation>` organisations.
-* :ref:`Create <api__community__createSystem>`, :ref:`update <api__community__updateSystem>` and :ref:`delete <api__community__deleteSystem>` systems.
+* :ref:`Create <api__community__createOrganisation>`, :ref:`update <api__community__updateOrganisation>`,  :ref:`delete <api__community__deleteOrganisation>` and :ref:`retrieve <api__community__getOrganisations>` organisations.
+* :ref:`Create <api__community__createSystem>`, :ref:`update <api__community__updateSystem>`, :ref:`delete <api__community__deleteSystem>` and :ref:`retrieve <api__community__getSystems>` systems.
 
 All community management operations use API keys to authorise calls and determine the information to be updated. Two types of API keys are used, depending
 on the operation:
@@ -53,7 +53,7 @@ createCommunity
 ~~~~~~~~~~~~~~~
 
 The **createCommunity** operation is used to create a new community. To use it make an HTTP ``PUT`` to path ``/api/rest/community``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 In the request's body you specify the information of the new community, of which the ``shortName`` and ``fullName`` are mandatory. Other information you
 would typically be providing, although not mandatory, would be the community's ``description`` and the ``domain`` it relates to, the latter identified through
@@ -129,11 +129,11 @@ identified, the updates that you can do, and the API key you will use for author
 
 The first variant assumes that you are performing an update as a community administrator would. In this case you can only update your own community,
 and cannot change the community's assigned domain. You call the operation by making an HTTP ``POST`` to path ``/api/rest/community`` and setting an
-HTTP header named ``ITB_API_KEY`` to your **community API key**.
+HTTP header named ``ITB-API-KEY`` to your **community API key**.
 
 The second variant allows you to perform tasks reserved for the Test Bed administrator. This means that you can select any existing community in the
 Test Bed, and also change or remove its assigned domain. In this case you call the operation by making an HTTP ``POST`` to path
-``/api/rest/community/{community}``, setting ``{community}`` to the target community's API key. The ``ITB_API_KEY`` HTTP header needs to be set
+``/api/rest/community/{community}``, setting ``{community}`` to the target community's API key. The ``ITB-API-KEY`` HTTP header needs to be set
 with the :ref:`master API key <systemAdmin__config__restApi>`.
 
 When calling this operation, regardless of the specific variant, all input properties are optional. You specify the properties that you want to
@@ -176,10 +176,50 @@ deleteCommunity
 
 The **deleteCommunity** operation is used to delete an existing community. To use it make an HTTP ``DELETE`` to path ``/api/rest/community/{community}``,
 setting ``{community}`` to the target community's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
+``ITB-API-KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 This operation takes no payload when making a request. If the target community has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
+
+.. _api__community__getOrganisations:
+
+getOrganisations
+~~~~~~~~~~~~~~~~
+
+The **getOrganisations** operation is used to retrieve all organisations defined within a specific community. To use it make an
+HTTP ``GET`` to path ``/api/rest/organisation`` and include in your request an HTTP header named ``ITB-API-KEY`` set to your
+**community API key**. This API key identifies the community of organisations to be retrieved.
+
+Calling this operation will return an array of organisation data, where each item contains the **API key** of the organisation,
+its **short name** and **full name**. The following example illustrates a sample response:
+
+.. code-block:: json
+
+  [
+    {
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+      "shortName": "Organisation 1",
+      "fullName": "Organisation 1"
+    },
+    {
+      "apiKey": "491235ECX4F64X4EBDX9392X7726BA2D1297",
+      "shortName": "Organisation 2",
+      "fullName": "Organisation 2"
+    }
+  ]
+
+The names returned for each of the organisations help you in identifying each one. The API key, then serves as the key to
+use in most other organisation-specific API operations.
+
+.. _api__community__getOrganisations__response:
+
+getOrganisations - response schema
+++++++++++++++++++++++++++++++++++
+
+The payload of the **getOrganisations** operation's response is defined by the following :download:`JSON Schema<resources/community/getOrganisations_response.schema.json>`:
+
+.. literalinclude:: resources/community/getOrganisations_response.schema.json
+   :language: json
 
 .. _api__community__createOrganisation:
 
@@ -187,7 +227,7 @@ createOrganisation
 ~~~~~~~~~~~~~~~~~~
 
 The **createOrganisation** operation is used to create a new organisation. To use it make an HTTP ``PUT`` to path ``/api/rest/organisation``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**. This API key identifies the community
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies the community
 within which the organisation will be created.
 
 In the request's body you specify the information of the new organisation, of which the ``shortName`` and ``fullName`` are mandatory as defined
@@ -244,13 +284,47 @@ The payload of the **createOrganisation** operation's response is defined by the
 .. literalinclude:: resources/common/apiKey_response.schema.json
    :language: json
 
+.. _api__community__getOrganisation:
+
+getOrganisation
+~~~~~~~~~~~~~~~~
+
+The **getOrganisation** operation is used to retrieve a specific organisation's information. To use it make an
+HTTP ``GET`` to path ``/api/rest/organisation/{organisation}`` and include in your request an HTTP header named ``ITB-API-KEY`` set to your
+**community API key**. The organisation in question is identified by setting the ``organisation`` path parameter with the
+organisation's API key.
+
+Calling this operation will return the specific organisation's data, including its **API key**, **short name** and **full name**.
+The following example illustrates a sample response:
+
+.. code-block:: json
+
+  {
+    "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "shortName": "Organisation 1",
+    "fullName": "Organisation 1"
+  }
+
+The name returned for the organisation help you in identifying it, whereas the API key serves as the key to use in
+other organisation-specific API operations.
+
+.. _api__community__getOrganisation__response:
+
+getOrganisation - response schema
++++++++++++++++++++++++++++++++++
+
+The payload of the **getOrganisation** operation's response is defined by the following :download:`JSON Schema<resources/community/getOrganisation_response.schema.json>`:
+
+.. literalinclude:: resources/community/getOrganisation_response.schema.json
+   :language: json
+
 .. _api__community__updateOrganisation:
 
 updateOrganisation
 ~~~~~~~~~~~~~~~~~~
 
 The **updateOrganisation** operation is used to update an existing organisation. To use it make an HTTP ``POST`` to path ``/api/rest/organisation/{organisation}``,
-setting ``{organisation}`` to the target organisation's API key. You also need to include in your request an HTTP header named ``ITB_API_KEY`` set to the
+setting ``{organisation}`` to the target organisation's API key. You also need to include in your request an HTTP header named ``ITB-API-KEY`` set to the
 **community API key** of the community containing the organisation.
 
 When calling this operation all input properties are optional. You specify the properties that you want to update, and for the ones that are to be left unchanged
@@ -284,10 +358,55 @@ deleteOrganisation
 
 The **deleteOrganisation** operation is used to delete an existing organisation. To use it make an HTTP ``DELETE`` to path ``/api/rest/organisation/{organisation}``,
 setting ``{organisation}`` to the target organisation's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to your **community API key**.
+``ITB-API-KEY`` set to your **community API key**.
 
 This operation takes no payload when making a request. If the target organisation has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
+
+.. _api__community__getSystems:
+
+getSystems
+~~~~~~~~~~
+
+The **getSystems** operation is used to retrieve all systems defined for a specific organisation. To use it make an
+HTTP ``GET`` to path ``/api/rest/organisation/{organisation}/systems`` and include in your request an HTTP header named ``ITB-API-KEY`` set to your
+**community API key**. The organisation in question is identified by passing it's API key in the ``organisation`` path
+parameter.
+
+Calling this operation will return an array of system data, where each item contains the **API key** of the system,
+its **short name**, **full name**, **description** and **version**. The following example illustrates a sample response:
+
+.. code-block:: json
+
+  [
+    {
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+      "shortName": "System 1",
+      "fullName": "System 1",
+      "description": "Description for system 1",
+      "version": "1.0"
+    },
+    {
+      "apiKey": "491235ECX4F64X4EBDX9392X7726BA2D1297",
+      "shortName": "System 2",
+      "fullName": "System 2",
+      "description": "Description for system 2",
+      "version": "1.0"
+    }
+  ]
+
+The names returned for each of the systems help you in identifying each one. The API key, then serves as the key to
+use in most other system-specific API operations, or operations relative to conformance statements.
+
+.. _api__community__getSystems__response:
+
+getSystems - response schema
+++++++++++++++++++++++++++++
+
+The payload of the **getSystems** operation's response is defined by the following :download:`JSON Schema<resources/community/getSystems_response.schema.json>`:
+
+.. literalinclude:: resources/community/getSystems_response.schema.json
+   :language: json
 
 .. _api__community__createSystem:
 
@@ -295,7 +414,7 @@ createSystem
 ~~~~~~~~~~~~
 
 The **createSystem** operation is used to create a new system. To use it make an HTTP ``PUT`` to path ``/api/rest/system``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**. This API key identifies the community
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies the community
 within which the system will be created.
 
 In the request's body you specify the information of the new system, of which the ``shortName`` and ``fullName`` are mandatory as defined
@@ -356,13 +475,49 @@ The payload of the **createSystem** operation's response is defined by the follo
 .. literalinclude:: resources/common/apiKey_response.schema.json
    :language: json
 
+.. _api__community__getSystem:
+
+getSystem
+~~~~~~~~~
+
+The **getSystem** operation is used to retrieve a specific system's information. To use it make an
+HTTP ``GET`` to path ``/api/rest/system/{system}`` and include in your request an HTTP header named ``ITB-API-KEY`` set to your
+**community API key**. The system in question is identified by setting the ``system`` path parameter with the
+system's API key.
+
+Calling this operation will return the specific system's data, including its **API key**, **short name**, **full name**,
+**description** and **version**. The following example illustrates a sample response:
+
+.. code-block:: json
+
+  {
+    "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "shortName": "System 1",
+    "fullName": "System 1",
+    "description": "Description for system 1",
+    "version": "1.0"
+  }
+
+The name returned for the system helps you in identifying it, whereas the API key serves as the key to use in
+other system-specific API operations, or operations linked to conformance statements.
+
+.. _api__community__getSystem__response:
+
+getSystem - response schema
++++++++++++++++++++++++++++
+
+The payload of the **getSystem** operation's response is defined by the following :download:`JSON Schema<resources/community/getSystem_response.schema.json>`:
+
+.. literalinclude:: resources/community/getSystem_response.schema.json
+   :language: json
+
 .. _api__community__updateSystem:
 
 updateSystem
 ~~~~~~~~~~~~
 
 The **updateSystem** operation is used to update an existing system. To use it make an HTTP ``POST`` to path ``/api/rest/system/{system}``,
-setting ``{system}`` to the target system's API key. You also need to include in your request an HTTP header named ``ITB_API_KEY`` set to the
+setting ``{system}`` to the target system's API key. You also need to include in your request an HTTP header named ``ITB-API-KEY`` set to the
 **community API key** of the community containing the system.
 
 When calling this operation all input properties are optional. You specify the properties that you want to update, and for the ones that are to
@@ -404,7 +559,7 @@ deleteSystem
 
 The **deleteSystem** operation is used to delete an existing system. To use it make an HTTP ``DELETE`` to path ``/api/rest/system/{system}``,
 setting ``{system}`` to the target system's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to your **community API key**.
+``ITB-API-KEY`` set to your **community API key**.
 
 This operation takes no payload when making a request. If the target system has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
@@ -422,6 +577,7 @@ The Test Bed provides the possibility to manage configuration entries via its RE
 In terms of defining configuration properties you can:
 
 * :ref:`Create <api__configuration__createDomainProperty>`, :ref:`update <api__configuration__updateDomainProperty>` and :ref:`delete <api__configuration__deleteDomainProperty>` domain properties.
+* :ref:`Create <api__configuration__createTestService>`, :ref:`update <api__configuration__updateTestService>`, :ref:`delete <api__configuration__deleteTestService>` and :ref:`search <api__configuration__searchTestServices>` test services.
 * :ref:`Create <api__configuration__createOrganisationProperty>`, :ref:`update <api__configuration__updateOrganisationProperty>` and :ref:`delete <api__configuration__deleteOrganisationProperty>` organisation properties.
 * :ref:`Create <api__configuration__createSystemProperty>`, :ref:`update <api__configuration__updateSystemProperty>` and :ref:`delete <api__configuration__deleteSystemProperty>` system properties.
 * :ref:`Create <api__configuration__createStatementProperty>`, :ref:`update <api__configuration__updateStatementProperty>` and :ref:`delete <api__configuration__deleteStatementProperty>` conformance statement (actor) properties.
@@ -445,7 +601,7 @@ creation and deletion of domain properties, for which you need to use the dedica
 and :ref:`deleteDomainProperty <api__configuration__deleteDomainProperty>` operations.
 
 To call the **configure** operation make an HTTP ``POST`` to path ``/api/rest/configure``. To authorise the operation and identify the properties to manage,
-you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's payload you can provide any of the following properties depending on what configuration you want to update:
 
@@ -578,12 +734,12 @@ createDomainProperty
 ~~~~~~~~~~~~~~~~~~~~
 
 The **createDomainProperty** operation is used to define a new domain property. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/domain``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**. This API key identifies a community
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies a community
 that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
 
 In the request's body you specify the information of the domain property, of which the ``key`` and ``value`` are mandatory as defined
 in the payload's :ref:`schema <api__configuration__createDomainProperty__request>`. In case the target domain cannot be determined by the community
-linked to the provided ``ITB_API_KEY``, you also need to specify the ``domain`` property, set with the API key of the target domain.
+linked to the provided ``ITB-API-KEY``, you also need to specify the ``domain`` property, set with the API key of the target domain.
 
 The following example shows how you can create a domain property with the provided data:
 
@@ -613,7 +769,7 @@ updateDomainProperty
 ~~~~~~~~~~~~~~~~~~~~
 
 The **updateDomainProperty** operation is used to update the definition of a domain property. To use it make an HTTP ``POST`` to path ``/api/rest/configure/domain``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**. This API key identifies a community
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies a community
 that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
 
 .. note::
@@ -660,7 +816,7 @@ deleteDomainProperty
 ~~~~~~~~~~~~~~~~~~~~
 
 The **deleteDomainProperty** operation is used to delete the definition of a domain property. To use it make an HTTP ``DELETE`` to path ``/api/rest/configure/domain/{parameter}``,
-setting ``{parameter}`` to the target property's key. In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+setting ``{parameter}`` to the target property's key. In addition, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 This API key identifies a community that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
 
 In case the provided community API key identifies a community without a linked domain, you also need to identify the target domain. This is done by adapting the operation's path to
@@ -669,13 +825,169 @@ In case the provided community API key identifies a community without a linked d
 This operation takes no payload when making a request. If the target property has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
 
+.. _api__configuration__searchTestServices:
+
+searchTestServices
+~~~~~~~~~~~~~~~~~~
+
+The **searchTestServices** operation is used to list test services and apply filtering on the results based on provided search criteria.
+To use it make an HTTP ``GET`` to path ``/api/rest/configure/service`` and include in your request an HTTP header named ``ITB-API-KEY``
+set to your **community API key**. This API key identifies a community that has access to manage the services' domain, either by being
+directly linked to it or by being linked to no domain.
+
+Test service search criteria are passed to this operation as query parameters. The criteria supported and their respective parameters are as follows:
+
+* ``domain``, provided with the API key of the services' domain. If not provided the domain considered by default is the
+  one linked to the community identified by the community API key specified through the ``ITB-API-KEY`` header.
+* ``key``, the service's key, to be matched exactly.
+* ``identifier``, the service's reference identifier, to be matched in a case-insensitive manner and with wildcard matching.
+* ``version``, the service's version number, to be matched in a case-insensitive manner and with wildcard matching.
+* ``serviceType``, provided as ``messaging``, ``validation`` or ``processing`` to match the service's type.
+* ``apiType``, provided as ``soap`` or ``rest`` to match the service's API type.
+
+An an example, to retrieve all validation services linked to a given community you would need to:
+
+* Pass the community's API key as the ``ITB-API-KEY`` header.
+* Make a ``GET`` to ``/api/rest/configure/service?serviceType=validation``.
+
+Regardless of the search parameters used in your request, the results are returned as a JSON array of matching test service
+definitions:
+
+.. code-block:: json
+
+  [
+    {
+      "key": "validationService",
+      "domain": "491235ECX4F64X4EBDX9392X7726BA2D1297",
+      "address": "http://test-services/services/validation?wsdl",
+      "serviceType": "validation",
+      "apiType": "soap",
+      "description": "The validation service used to validate purchase orders."
+    },
+    {
+      "key": "messagingService",
+      "domain": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+      "address": "http://test-services/services/messaging?wsdl",
+      "serviceType": "messaging",
+      "apiType": "soap",
+      "description": "The messaging service used to handle sending and receiving of purchase orders."
+    }
+  ]
+
+More details on the information returned on test services can be found in the operation's :ref:`response schema <api__configuration__searchTestServices__request>`.
+
+.. _api__configuration__searchTestServices__request:
+
+searchTestServices - response schema
+++++++++++++++++++++++++++++++++++++
+
+The payload of the **searchTestServices** operation's response is defined by the following :download:`JSON Schema<resources/configuration/searchTestServices_response.schema.json>`:
+
+.. literalinclude:: resources/configuration/searchTestServices_response.schema.json
+   :language: json
+
+.. _api__configuration__createTestService:
+
+createTestService
+~~~~~~~~~~~~~~~~~
+
+The **createTestService** operation is used to define a new test service. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/service``
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies a community
+that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
+
+In the request's body you specify the information of the test service, of which the ``key``, ``address`` and ``serviceType`` are mandatory as defined
+in the payload's :ref:`schema <api__configuration__createTestService__request>`. In case the target domain cannot be determined by the community
+linked to the provided ``ITB-API-KEY``, you also need to specify the ``domain`` property, set with the API key of the target domain.
+
+The following example shows how you can create a test service with the provided data:
+
+.. code-block:: json
+
+  {
+    "key": "validationService",
+    "address": "http://test-services/services/validation?wsdl",
+    "serviceType": "validation",
+    "description": "The validation service used to validate purchase orders."
+  }
+
+Calling this operation, the Test Bed will create the property and respond with a ``200`` (OK) response if successful.
+
+.. _api__configuration__createTestService__request:
+
+createTestService - request schema
+++++++++++++++++++++++++++++++++++
+
+The payload of the **createTestService** operation's request is defined by the following :download:`JSON Schema<resources/configuration/createTestService_request.schema.json>`:
+
+.. literalinclude:: resources/configuration/createTestService_request.schema.json
+   :language: json
+
+.. _api__configuration__updateTestService:
+
+updateTestService
+~~~~~~~~~~~~~~~~~
+
+The **updateTestService** operation is used to update the definition of a test service. To use it make an HTTP ``POST`` to path ``/api/rest/configure/service``
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies a community
+that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
+
+When calling this operation all input properties are optional except for the ``key`` that is used to identify the target service. In addition, providing ``domain``
+and setting it with a domain API key might be needed, in case the relevant domain cannot be determined. For all other properties you specify the ones that you want to update,
+and for those that are to be left unchanged you don't include them. In case you want to remove a value you would specify the property in question as an empty string.
+
+The following example illustrates an update of a test service's ``description``, leaving other information unchanged:
+
+.. code-block:: json
+
+  {
+    "key": "validationService",
+    "description": "The validation service used to validate purchase orders."
+  }
+
+In case you want to altogether remove a value, you specify it as an empty string:
+
+.. code-block:: json
+
+  {
+    "key": "validationService",
+    "description": ""
+  }
+
+The properties that can be updated through this operation are detailed in the payload's :ref:`schema <api__configuration__updateTestService__request>`.
+The operation's response is empty, signalling through a status ``200`` (OK) that the update was successfully made.
+
+.. _api__configuration__updateTestService__request:
+
+updateTestService - request schema
+++++++++++++++++++++++++++++++++++
+
+The payload of the **updateTestService** operation's request is defined by the following :download:`JSON Schema<resources/configuration/updateTestService_request.schema.json>`:
+
+.. literalinclude:: resources/configuration/updateTestService_request.schema.json
+   :language: json
+
+.. _api__configuration__deleteTestService:
+
+deleteTestService
+~~~~~~~~~~~~~~~~~
+
+The **deleteTestService** operation is used to delete the definition of a test service. To use it make an HTTP ``DELETE`` to path ``/api/rest/configure/service/{service}``,
+setting ``{service}`` to the target service's key. In addition, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
+This API key identifies a community that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
+
+In case the provided community API key identifies a community without a linked domain, you also need to identify the target domain. This is done by adapting the operation's path to
+``/api/rest/configure/service/{domain}/{service}`` where the additional ``{domain}`` placeholder is set with the target domain's API key.
+
+This operation takes no payload when making a request. If the target service has been successfully deleted, it will respond with an
+empty body and a status of ``200`` (OK) to signal that the deletion was successful.
+
 .. _api__configuration__createOrganisationProperty:
 
 createOrganisationProperty
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **createOrganisationProperty** operation is used to define a new organisation property for a community. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/organisation``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's body you specify the information of the organisation property, of which the ``key`` is mandatory. The full set of information you can set for the property is defined
 in the payload's :ref:`schema <api__configuration__createOrganisationProperty__request>`.
@@ -733,7 +1045,7 @@ updateOrganisationProperty
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **updateOrganisationProperty** operation is used to update the definition of an organisation property. To use it make an HTTP ``POST`` to path ``/api/rest/configure/organisation``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 When calling this operation all input properties are optional except for the ``key`` that is used to identify the target property. For all other properties you specify the ones that you want to update,
 and for those that are to be left unchanged you don't include them. In case you want to remove a value you would specify the property in question as an empty string.
@@ -776,7 +1088,7 @@ deleteOrganisationProperty
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **deleteOrganisationProperty** operation is used to delete the definition of an organisation property. To use it make an HTTP ``DELETE`` to path ``/api/rest/configure/organisation/{property}``,
-setting ``{property}`` to the target property's key. In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+setting ``{property}`` to the target property's key. In addition, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 This operation takes no payload when making a request. If the target property has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
@@ -787,7 +1099,7 @@ createSystemProperty
 ~~~~~~~~~~~~~~~~~~~~
 
 The **createSystemProperty** operation is used to define a new system property for a community. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/system``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's body you specify the information of the system property, of which the ``key`` is mandatory. The full set of information you can set for the property is defined
 in the payload's :ref:`schema <api__configuration__createSystemProperty__request>`.
@@ -843,7 +1155,7 @@ updateSystemProperty
 ~~~~~~~~~~~~~~~~~~~~
 
 The **updateSystemProperty** operation is used to update the definition of a system property. To use it make an HTTP ``POST`` to path ``/api/rest/configure/system``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 When calling this operation all input properties are optional except for the ``key`` that is used to identify the target property. For all other properties you specify the ones that you want to update,
 and for those that are to be left unchanged you don't include them. In case you want to remove a value you would specify the property in question as an empty string.
@@ -886,7 +1198,7 @@ deleteSystemProperty
 ~~~~~~~~~~~~~~~~~~~~
 
 The **deleteSystemProperty** operation is used to delete the definition of a system property. To use it make an HTTP ``DELETE`` to path ``/api/rest/configure/system/{property}``,
-setting ``{property}`` to the target property's key. In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+setting ``{property}`` to the target property's key. In addition, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 This operation takes no payload when making a request. If the target property has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
@@ -897,7 +1209,7 @@ createStatementProperty
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The **createStatementProperty** operation is used to define a new conformance statement (actor) property for a community. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/actor/{actor}``,
-setting ``{actor}`` with the API key of the target specification actor. In addition, you need to include in your request an HTTP header named ``ITB_API_KEY`` set to a **community API key**.
+setting ``{actor}`` with the API key of the target specification actor. In addition, you need to include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**.
 This API key identifies a community that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
 
 In the request's body you specify the information of the conformance statement property, of which the ``key`` is mandatory. The full set of information you can set for the property is defined
@@ -954,7 +1266,7 @@ updateStatementProperty
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The **updateStatementProperty** operation is used to update the definition of a conformance statement (actor) property. To use it make an HTTP ``POST`` to path ``/api/rest/configure/actor``,
-setting ``{actor}`` with the API key of the target specification actor. In addition, you need to include in your request an HTTP header named ``ITB_API_KEY`` set to a **community API key**.
+setting ``{actor}`` with the API key of the target specification actor. In addition, you need to include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**.
 This API key identifies a community that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
 
 When calling this operation all input properties are optional except for the ``key`` that is used to identify the target property. For all other properties you specify the ones that you want to update,
@@ -999,7 +1311,7 @@ deleteStatementProperty
 
 The **deleteStatementProperty** operation is used to delete the definition of a conformance statement (actor) property. To use it make an HTTP ``DELETE`` to path ``/api/rest/configure/actor/{actor}/{property}``,
 setting ``{actor}`` with the API key of the target specification actor, and ``{property}`` with the target property's key. In addition,
-you must include in your request an HTTP header named ``ITB_API_KEY`` set to a **community API key**.
+you must include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**.
 This API key identifies a community that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
 
 This operation takes no payload when making a request. If the target property has been successfully deleted, it will respond with an
@@ -1012,11 +1324,56 @@ Conformance statement management
 
 You can use the Test Bed's REST API to manage an organisation's **conformance statements**. The following operations are provided:
 
+* :ref:`api__conformance_statements__get`: Get the list of conformance statements defined for a given organisation.
 * :ref:`api__conformance_statements__create`: Create a conformance statement linking an organisation's system with a specification actor.
 * :ref:`api__conformance_statements__delete`: Delete an organisation's conformance statement.
 * :ref:`api__conformance_statements__report`: Produce a conformance statement report for a given conformance statement.
 
 Details on each operation, including sample requests and responses, are provided in the following sections.
+
+.. _api__conformance_statements__get:
+
+get
+~~~
+
+The **get** operation is used to retrieve the conformance statements defined for a given organisation. It can be used to retrieve
+all statements, as well as those specific to a given system, reflecting the latest conformance status or a specific
+conformance snapshot.
+
+To retrieve all conformance statements for an organisation make an HTTP ``GET`` to path ``/api/rest/conformance``. In addition,
+you must include in your request an HTTP header named ``ITB-API-KEY`` set with the **organisation's API key**. Besides
+authorising this call, this API key also specifies the organisation for which conformance statements will be retrieved.
+
+If you want to limit the statements returned to a specific system, the API key of the system in question is added as an
+additional path parameter ``/api/rest/conformance/{system}``. When targeting the statements within a conformance snapshot,
+this is specified by adding an extra path element followed by the snapshot API key in question. As such, retrieving all
+statements for an organisation in a snapshot uses path ``/api/rest/conformance/snapshot/{snapshot}``, whereas the ones linked to
+a specific system would be retrieved through path ``/api/rest/conformance/snapshot/{snapshot}/system``.
+
+In all cases the response of these calls will return a JSON payload including an array or ``system`` and ``actor`` API key
+combinations such as the following:
+
+.. code-block:: json
+
+  [
+    {
+      "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+      "actor": "491235ECX4F64X4EBDX9392X7726BA2D1297"
+    }
+  ]
+
+These system and actor combinations serve to identify uniquely a specific conformance statements, and would be the values
+needed for subsequent calls such as :ref:`producing a report <api__conformance_statements__report>` or :ref:`executing tests <api__test_sessions__start>`.
+
+.. _api__conformance_statements__get__response:
+
+get - response schema
++++++++++++++++++++++
+
+The payload of the **get** operation's response is defined by the following :download:`JSON Schema<resources/conformance/get_response.schema.json>`:
+
+.. literalinclude:: resources/conformance/get_response.schema.json
+   :language: json
 
 .. _api__conformance_statements__create:
 
@@ -1029,7 +1386,7 @@ actor. To call the operation make an HTTP ``PUT`` to path ``/api/rest/conformanc
 * For ``{system}`` use the API key of the system you want to create the statement for.
 * For ``{actor}`` use the API key of the specification actor.
 
-In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set with the **organisation's API key**. Finally, note that
+In addition, you must include in your request an HTTP header named ``ITB-API-KEY`` set with the **organisation's API key**. Finally, note that
 this operation does not take a body.
 
 As an example, if we want to create a conformance statement linking a system and actor with API keys ``SYSTEM123`` and ``ACTOR456`` you
@@ -1047,7 +1404,7 @@ to path ``/api/rest/conformance/{system}/{actor}`` setting the path placeholders
 * For ``{system}`` use the API key of the system that is currently linked to the statement.
 * For ``{actor}`` use the API key of the relevant specification actor.
 
-In addition, you must include in your request an HTTP header named ``ITB_API_KEY`` set with the **organisation's API key**.
+In addition, you must include in your request an HTTP header named ``ITB-API-KEY`` set with the **organisation's API key**.
 
 As an example, if we want to delete a conformance statement that currently links a system and actor with API keys ``SYSTEM123`` and ``ACTOR456``
 you would make a ``DELETE`` to ``/api/rest/conformance/SYSTEM123/ACTOR456``. In terms of response, if the conformance statement was successfully
@@ -1065,7 +1422,7 @@ The **report** operation is used to produce a conformance statement report. To u
 
 By default the format of the returned report will be XML, expressed in the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__.
 You can also request a PDF report by specifying the ``Accept`` HTTP header as ``application/pdf``. In addition, you must include in your request an additional
-HTTP header named ``ITB_API_KEY`` set with the **organisation's API key**.
+HTTP header named ``ITB-API-KEY`` set with the **organisation's API key**.
 
 Once this call is made, the Test Bed will return a response with a ``200`` status code, whose payload is the report’s content.
 The following sample is a complete example of such a report (in the default XML format):
@@ -1081,10 +1438,10 @@ Domain management
 The domain management operations allow you to manage the Test Bed's **domains**, **specification groups**, **specifications** and **actors**. They are useful if you want to
 have processes external to the Test Bed manage such information without needing manual actions through the Test Bed's user interface. Specifically you can:
 
-* :ref:`Create <api__domain__createDomain>`, :ref:`update <api__domain__updateDomain>` and :ref:`delete <api__domain__deleteDomain>` domains.
-* :ref:`Create <api__domain__createSpecificationGroup>`, :ref:`update <api__domain__updateSpecificationGroup>` and :ref:`delete <api__domain__deleteSpecificationGroup>` specification groups.
-* :ref:`Create <api__domain__createSpecification>`, :ref:`update <api__domain__updateSpecification>` and :ref:`delete <api__domain__deleteSpecification>` specifications.
-* :ref:`Create <api__domain__createActor>`, :ref:`update <api__domain__updateActor>` and :ref:`delete <api__domain__deleteActor>` actors.
+* :ref:`Create <api__domain__createDomain>`, :ref:`update <api__domain__updateDomain>`, :ref:`delete <api__domain__deleteDomain>` and :ref:`retrieve <api__domain__getDomain>` domains.
+* :ref:`Create <api__domain__createSpecificationGroup>`, :ref:`update <api__domain__updateSpecificationGroup>`, :ref:`delete <api__domain__deleteSpecificationGroup>` and :ref:`retrieve <api__domain__getSpecificationGroup>` specification groups.
+* :ref:`Create <api__domain__createSpecification>`, :ref:`update <api__domain__updateSpecification>`, :ref:`delete <api__domain__deleteSpecification>` and :ref:`retrieve <api__domain__getSpecification>` specifications.
+* :ref:`Create <api__domain__createActor>`, :ref:`update <api__domain__updateActor>`, :ref:`delete <api__domain__deleteActor>` and :ref:`retrieve <api__domain__getActor>` actors.
 
 All domain management operations use API keys to authorise calls and determine the information to be updated. Two types of API keys are used, depending
 on the operation:
@@ -1100,7 +1457,7 @@ createDomain
 ~~~~~~~~~~~~
 
 The **createDomain** operation is used to create a new domain. To use it make an HTTP ``PUT`` to path ``/api/rest/domain``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 In the request's body you specify the information of the new domain, of which the ``shortName`` and ``fullName`` are mandatory. Other information you
 could provide, although not mandatory, would be the domain's ``description`` and custom ``reportMetadata`` for XML reports.
@@ -1169,11 +1526,11 @@ identified, the updates that you can do, and the API key you will use for author
 
 The first variant assumes that you are performing an update as a community administrator would. In this case you can update the domain linked
 to the community or any domain, in case the community is not linked to a specific one. The operation is called by making an HTTP ``POST`` to
-path ``/api/rest/domain`` and setting an HTTP header named ``ITB_API_KEY`` to your **community API key**.
+path ``/api/rest/domain`` and setting an HTTP header named ``ITB-API-KEY`` to your **community API key**.
 
 The second variant allows you to perform tasks reserved for the Test Bed administrator. This means that you can manage any domain within the
 Test Bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path
-``/api/rest/domain/{domain}``, setting ``{domain}`` to the target domain's API key. The ``ITB_API_KEY`` HTTP header needs to be set
+``/api/rest/domain/{domain}``, setting ``{domain}`` to the target domain's API key. The ``ITB-API-KEY`` HTTP header needs to be set
 with the :ref:`master API key <systemAdmin__config__restApi>`.
 
 When calling this operation, regardless of the specific variant, all input properties are optional. You specify the properties that you want to
@@ -1209,6 +1566,40 @@ The payload of the **updateDomain** operation's request is defined by the follow
 .. literalinclude:: resources/domain/updateDomain_request.schema.json
    :language: json
 
+.. _api__domain__getCommunityDomain:
+
+getCommunityDomain
+~~~~~~~~~~~~~~~~~~
+
+The **getCommunityDomain** operation is used to retrieve the domain linked to a community, when the community is linked
+to a single domain. To call it make an HTTP ``GET`` to path ``/api/rest/domain`` and including an HTTP header named
+``ITB-API-KEY`` set with the relevant community's API key.
+
+This operation returns the information for the domain, specifically its **short name**, **full name**, **description**,
+**report metadata** and **API key**. The following is an example response received after calling the operation:
+
+.. code-block:: json
+
+  {
+    "shortName": "EUPO",
+    "fullName": "European Purchase Order",
+    "description": "The European Purchase Order specifications defining the exchange of purchase orders in the EU.",
+    "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+  }
+
+The returned name and description help to identify the domain in question, whereas the API key is used in other domain
+management operations.
+
+.. _api__domain__getCommunityDomain__response:
+
+getCommunityDomain - response schema
+++++++++++++++++++++++++++++++++++++
+
+The payload of the **getCommunityDomain** operation's response is defined by the following :download:`JSON Schema<resources/domain/getCommunityDomain_response.schema.json>`:
+
+.. literalinclude:: resources/domain/getCommunityDomain_response.schema.json
+   :language: json
+
 .. _api__domain__deleteDomain:
 
 deleteDomain
@@ -1216,10 +1607,96 @@ deleteDomain
 
 The **deleteDomain** operation is used to delete an existing domain. To use it make an HTTP ``DELETE`` to path ``/api/rest/domain/{domain}``,
 setting ``{domain}`` to the target domain's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
+``ITB-API-KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 This operation takes no payload when making a request. If the target domain has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
+
+.. _api__domain__getDomain:
+
+getDomain
+~~~~~~~~~
+
+The **getDomain** operation is used to retrieve a specific domain linked to a community. To call it make an HTTP ``GET``
+to path ``/api/rest/domain/{domain}`` and including an HTTP header named ``ITB-API-KEY`` set with the relevant **community API key**.
+The domain in question is identified by passing its API key as the value of the ``domain`` path variable.
+
+This operation returns the information for the domain, specifically its **short name**, **full name**, **description**,
+**report metadata** and **API key**. The following is an example response received after calling the operation:
+
+.. code-block:: json
+
+  {
+    "shortName": "EUPO",
+    "fullName": "European Purchase Order",
+    "description": "The European Purchase Order specifications defining the exchange of purchase orders in the EU.",
+    "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+  }
+
+The returned name and description help to identify the domain in question, whereas the API key is used in other domain
+management operations.
+
+.. _api__domain__getDomain__response:
+
+getDomain - response schema
++++++++++++++++++++++++++++
+
+The payload of the **getDomain** operation's response is defined by the following :download:`JSON Schema<resources/domain/getDomain_response.schema.json>`:
+
+.. literalinclude:: resources/domain/getDomain_response.schema.json
+   :language: json
+
+.. _api__domain__searchDomains:
+
+searchDomains
+~~~~~~~~~~~~~
+
+The **searchDomains** operation is used to search for domains that are accessible for a given community, and optionally
+filtering them by domain name. To call the operation make an HTTP ``GET`` to path ``/api/rest/domains`` and including an
+HTTP header named ``ITB-API-KEY`` set with the relevant **community API key**.
+
+The operation returns an array of domain data, including for each domain its **short name**, **full name**, **description**,
+**report metadata** and **API key**. The following is an example response received after calling the operation:
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "EUPO",
+      "fullName": "European Purchase Order",
+      "description": "The European Purchase Order specifications defining the exchange of purchase orders in the EU.",
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    }
+  ]
+
+The returned name and description help to identify the domain in question, whereas the API key is used in other domain
+management operations.
+
+When calling the operation using path ``/api/rest/domains`` it will return all the domains linked to specific community.
+These can be filtered by passing also a query parameter named ``name``, in which case the domains returned will be those
+whose full or short name match the provided value. Matching takes place in a case-insensitive manner and using wildcard matching.
+As an example, calling ``/api/rest/domains?name=order`` would return a matching domain as follows (matching the domain's full name):
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "EUPO",
+      "fullName": "European Purchase Order",
+      "description": "The European Purchase Order specifications defining the exchange of purchase orders in the EU.",
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    }
+  ]
+
+.. _api__domain__searchDomains__response:
+
+searchDomains - response schema
++++++++++++++++++++++++++++++++
+
+The payload of the **searchDomains** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchDomains_response.schema.json>`:
+
+.. literalinclude:: resources/domain/searchDomains_response.schema.json
+   :language: json
 
 .. _api__domain__createSpecificationGroup:
 
@@ -1227,11 +1704,11 @@ createSpecificationGroup
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **createSpecificationGroup** operation is used to create a new specification group. To use it make an HTTP ``PUT`` to path ``/api/rest/group``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to a **community API key**. This API key identifies the community
+and include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**. This API key identifies the community
 that is able to manage the group's domain, either by being directly linked to it or being linked to no domain.
 
 In the request's body you specify the information of the new specification group, of which the ``shortName`` and ``fullName`` are mandatory as defined
-in the payload's :ref:`schema <api__domain__createSpecificationGroup__request>`. In case the community identified by the ``ITB_API_KEY`` header
+in the payload's :ref:`schema <api__domain__createSpecificationGroup__request>`. In case the community identified by the ``ITB-API-KEY`` header
 is not linked to a specific domain, you will need to also specify the ``domain`` property with the target domain's API key.
 
 The following example shows how you can create a specification group with the provided data:
@@ -1291,7 +1768,7 @@ updateSpecificationGroup
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **updateSpecificationGroup** operation is used to update an existing specification group. To use it make an HTTP ``POST`` to path ``/api/rest/group/{group}``,
-setting ``{group}`` to the target specification group's API key. You also need to include in your request an HTTP header named ``ITB_API_KEY``
+setting ``{group}`` to the target specification group's API key. You also need to include in your request an HTTP header named ``ITB-API-KEY``
 set to a **community API key**. This API key identifies the community that is able to manage the group's domain, either by being directly linked to it
 or being linked to no domain.
 
@@ -1334,11 +1811,104 @@ deleteSpecificationGroup
 
 The **deleteSpecificationGroup** operation is used to delete an existing specification group. To use it make an HTTP ``DELETE`` to path ``/api/rest/group/{group}``,
 setting ``{group}`` to the target specification group's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to a **community API key**. This API key identifies the community that is able to manage the group's domain, either by
+``ITB-API-KEY`` set to a **community API key**. This API key identifies the community that is able to manage the group's domain, either by
 being directly linked to it or being linked to no domain.
 
 This operation takes no payload when making a request. If the target specification group has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
+
+.. _api__domain__getSpecificationGroup:
+
+getSpecificationGroup
+~~~~~~~~~~~~~~~~~~~~~
+
+The **getSpecificationGroup** operation is used to retrieve a given specification group. To call it make an HTTP ``GET``
+to path ``/api/rest/group/{group}`` and including an HTTP header named ``ITB-API-KEY`` set with a **community API key**.
+This API key identifies the community that is able to manage the specification group, either by being directly linked to
+its domain or being linked to no domain. The group in question is identified by passing its API key as the value of the
+``group`` path variable.
+
+This operation returns the information for the group, specifically its **short name**, **full name**, **description**,
+**report metadata**, **display order** and **API key**. The following is an example response received after calling the operation:
+
+.. code-block:: json
+
+  {
+    "shortName": "Data package",
+    "fullName": "Data package specification",
+    "description": "This is a set of requirements for data packages.",
+    "displayOrder": 0,
+    "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+  }
+
+The returned name and description help to identify the group in question, whereas the API key is used in other domain
+management operations.
+
+.. _api__domain__getSpecificationGroup__response:
+
+getSpecificationGroup - response schema
++++++++++++++++++++++++++++++++++++++++
+
+The payload of the **getSpecificationGroup** operation's response is defined by the following :download:`JSON Schema<resources/domain/getSpecificationGroup_response.schema.json>`:
+
+.. literalinclude:: resources/domain/getSpecificationGroup_response.schema.json
+   :language: json
+
+.. _api__domain__searchSpecificationGroups:
+
+searchSpecificationGroups
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **searchSpecificationGroups** operation is used to search for specification groups under a specific domain, possibly
+also filtering them by group name. To call the operation make an HTTP ``GET`` to path ``/api/rest/domain/{domain}/groups``
+setting ``{domain}`` to the relevant domain's API key. In addition, you must include in your request an HTTP header named
+``ITB-API-KEY`` set to a **community API key**. This API key identifies the community that is able to manage the groups'
+domain, either by being directly linked to it or being linked to no domain.
+
+The operation returns an array of specification group data, including for each group its **short name**, **full name**, **description**,
+**report metadata**, **display order** and **API key**. The following is an example response received after calling the operation:
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "Data package",
+      "fullName": "Data package specification",
+      "description": "This is a set of requirements for data packages.",
+      "displayOrder": 0,
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    }
+  ]
+
+The returned name and description help to identify the group in question, whereas the API key is used in other domain
+management operations.
+
+When calling the operation using path ``/api/rest/domain/{domain}/groups`` it will return all the groups under the specific domain.
+These can be filtered by passing also a query parameter named ``name``, in which case the groups returned will be those
+whose full or short name match the provided value. Matching takes place in a case-insensitive manner and using wildcard matching.
+As an example, calling ``/api/rest/domain/DOMAIN_API_KEY/groups?name=specification`` would return a matching group as follows (matching its full name):
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "Data package",
+      "fullName": "Data package specification",
+      "description": "This is a set of requirements for data packages.",
+      "displayOrder": 0,
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    }
+  ]
+
+.. _api__domain__searchSpecificationGroups__response:
+
+searchSpecificationGroups - response schema
++++++++++++++++++++++++++++++++++++++++++++
+
+The payload of the **searchSpecificationGroups** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchSpecificationGroups_response.schema.json>`:
+
+.. literalinclude:: resources/domain/searchSpecificationGroups_response.schema.json
+   :language: json
 
 .. _api__domain__createSpecification:
 
@@ -1346,11 +1916,11 @@ createSpecification
 ~~~~~~~~~~~~~~~~~~~
 
 The **createSpecification** operation is used to create a new specification. To use it make an HTTP ``PUT`` to path ``/api/rest/specification``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to a **community API key**. This API key identifies the community
+and include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**. This API key identifies the community
 that is able to manage the specification's domain, either by being directly linked to it or being linked to no domain.
 
 In the request's body you specify the information of the new specification, of which the ``shortName`` and ``fullName`` are mandatory as defined
-in the payload's :ref:`schema <api__domain__createSpecification__request>`. In case the community identified by the ``ITB_API_KEY`` header
+in the payload's :ref:`schema <api__domain__createSpecification__request>`. In case the community identified by the ``ITB-API-KEY`` header
 is not linked to a specific domain, you will need to also specify the ``domain`` property with the target domain's API key. Finally, if you
 want to place the specification within a specification group, you may also include the ``group`` property set with the group's API key.
 
@@ -1421,7 +1991,7 @@ updateSpecification
 ~~~~~~~~~~~~~~~~~~~
 
 The **updateSpecification** operation is used to update an existing specification. To use it make an HTTP ``POST`` to path ``/api/rest/specification/{specification}``,
-setting ``{specification}`` to the target specification's API key. You also need to include in your request an HTTP header named ``ITB_API_KEY``
+setting ``{specification}`` to the target specification's API key. You also need to include in your request an HTTP header named ``ITB-API-KEY``
 set to a **community API key**. This API key identifies the community that is able to manage the specification's domain, either by being directly linked to it
 or being linked to no domain.
 
@@ -1474,11 +2044,186 @@ deleteSpecification
 
 The **deleteSpecification** operation is used to delete an existing specification. To use it make an HTTP ``DELETE`` to path ``/api/rest/specification/{specification}``,
 setting ``{specification}`` to the target specification's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to a **community API key**. This API key identifies the community that is able to manage the specification's domain, either by
+``ITB-API-KEY`` set to a **community API key**. This API key identifies the community that is able to manage the specification's domain, either by
 being directly linked to it or being linked to no domain.
 
 This operation takes no payload when making a request. If the target specification has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
+
+.. _api__domain__getSpecification:
+
+getSpecification
+~~~~~~~~~~~~~~~~
+
+The **getSpecification** operation is used to retrieve a given specification. To call it make an HTTP ``GET``
+to path ``/api/rest/specification/{specification}`` and including an HTTP header named ``ITB-API-KEY`` set with a **community API key**.
+This API key identifies the community that is able to manage the specification, either by being directly linked to
+its domain or being linked to no domain. The specification in question is identified by passing its API key as the value of the
+``specification`` path variable.
+
+This operation returns the information for the specification, specifically its **short name**, **full name**, **description**,
+**report metadata**, **hidden** status, **display order** and **API key**. The following is an example response received after
+calling the operation:
+
+.. code-block:: json
+
+  {
+    "shortName": "Create order",
+    "fullName": "Create order specification",
+    "description": "Requirements for creating purchase orders.",
+    "hidden": false,
+    "displayOrder": 0,
+    "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+  }
+
+The returned name and description help to identify the specification in question, whereas the API key is used in other domain
+management operations.
+
+.. _api__domain__getSpecification__response:
+
+getSpecification - response schema
+++++++++++++++++++++++++++++++++++
+
+The payload of the **getSpecification** operation's response is defined by the following :download:`JSON Schema<resources/domain/getSpecification_response.schema.json>`:
+
+.. literalinclude:: resources/domain/getSpecification_response.schema.json
+   :language: json
+
+.. _api__domain__searchSpecifications:
+
+searchSpecifications
+~~~~~~~~~~~~~~~~~~~~
+
+The **searchSpecifications** operation is used to search for specifications under a specific domain that are not defined
+within groups, possibly also filtering them by name. To call the operation make an HTTP ``GET`` to path ``/api/rest/domain/{domain}/specifications``
+setting ``{domain}`` to the relevant domain's API key. In addition, you must include in your request an HTTP header named
+``ITB-API-KEY`` set to a **community API key**. This API key identifies the community that is able to manage the specifications'
+domain, either by being directly linked to it or being linked to no domain.
+
+The operation returns an array of specification data, including for each specification its **short name**, **full name**, **description**,
+**report metadata**, **hidden** status, **display order** and **API key**. The following is an example response received after
+calling the operation:
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "Create order",
+      "fullName": "Create order specification",
+      "description": "Requirements for creating purchase orders.",
+      "hidden": false,
+      "displayOrder": 0,
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    },
+    {
+      "shortName": "Update order",
+      "fullName": "Update order specification",
+      "description": "Requirements for updating purchase orders.",
+      "hidden": false,
+      "displayOrder": 1,
+      "apiKey": "491235ECX4F64X4EBDX9392X7726BA2D1297"
+    }
+  ]
+
+The returned names and descriptions help to identify the specifications, whereas the API keys are used in other domain
+management operations.
+
+When calling the operation using path ``/api/rest/domain/{domain}/specifications`` it will return all the specifications
+directly under the specific domain. These can be filtered by passing also a query parameter named ``name``, in which case the
+specifications returned will be those whose full or short name match the provided value. Matching takes place in a case-insensitive
+manner and using wildcard matching. As an example, calling ``/api/rest/domain/DOMAIN_API_KEY/specifications?name=update`` would return
+a matching specification as follows:
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "Update order",
+      "fullName": "Update order specification",
+      "description": "Requirements for updating purchase orders.",
+      "hidden": false,
+      "displayOrder": 1,
+      "apiKey": "491235ECX4F64X4EBDX9392X7726BA2D1297"
+    }
+  ]
+
+.. _api__domain__searchSpecifications__response:
+
+searchSpecifications - response schema
+++++++++++++++++++++++++++++++++++++++
+
+The payload of the **searchSpecifications** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchSpecifications_response.schema.json>`:
+
+.. literalinclude:: resources/domain/searchSpecifications_response.schema.json
+   :language: json
+
+.. _api__domain__searchSpecificationsInGroup:
+
+searchSpecificationsInGroup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **searchSpecificationsInGroup** operation is used to search for specification under a specific group, possibly also filtering them by name.
+To call the operation make an HTTP ``GET`` to path ``/api/rest/group/{group}/specifications``
+setting ``{group}`` to the relevant specification group's API key. In addition, you must include in your request an HTTP header named
+``ITB-API-KEY`` set to a **community API key**. This API key identifies the community that is able to manage the specifications'
+domain, either by being directly linked to it or being linked to no domain.
+
+The operation returns an array of specification data, including for each specification its **short name**, **full name**, **description**,
+**report metadata**, **hidden** status, **display order** and **API key**. The following is an example response received after
+calling the operation:
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "Create order",
+      "fullName": "Create order specification",
+      "description": "Requirements for creating purchase orders.",
+      "hidden": false,
+      "displayOrder": 0,
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    },
+    {
+      "shortName": "Update order",
+      "fullName": "Update order specification",
+      "description": "Requirements for updating purchase orders.",
+      "hidden": false,
+      "displayOrder": 1,
+      "apiKey": "491235ECX4F64X4EBDX9392X7726BA2D1297"
+    }
+  ]
+
+The returned names and descriptions help to identify the specifications, whereas the API keys are used in other domain
+management operations.
+
+When calling the operation using path ``/api/rest/group/{group}/specifications`` it will return all the specifications
+directly under the specific group. These can be filtered by passing also a query parameter named ``name``, in which case the
+specifications returned will be those whose full or short name match the provided value. Matching takes place in a case-insensitive
+manner and using wildcard matching. As an example, calling ``/api/rest/group/GROUP_API_KEY/specifications?name=update`` would return
+a matching specification as follows:
+
+.. code-block:: json
+
+  [
+    {
+      "shortName": "Update order",
+      "fullName": "Update order specification",
+      "description": "Requirements for updating purchase orders.",
+      "hidden": false,
+      "displayOrder": 1,
+      "apiKey": "491235ECX4F64X4EBDX9392X7726BA2D1297"
+    }
+  ]
+
+.. _api__domain__searchSpecificationsInGroup__response:
+
+searchSpecificationsInGroup - response schema
++++++++++++++++++++++++++++++++++++++++++++++
+
+The payload of the **searchSpecificationsInGroup** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchSpecificationsInGroup_response.schema.json>`:
+
+.. literalinclude:: resources/domain/searchSpecificationsInGroup_response.schema.json
+   :language: json
 
 .. _api__domain__createActor:
 
@@ -1486,7 +2231,7 @@ createActor
 ~~~~~~~~~~~
 
 The **createActor** operation is used to create a new actor. To use it make an HTTP ``PUT`` to path ``/api/rest/actor``
-and include in your request an HTTP header named ``ITB_API_KEY`` set to a **community API key**. This API key identifies the community
+and include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**. This API key identifies the community
 that is able to manage the actor's domain, either by being directly linked to it or being linked to no domain.
 
 In the request's body you specify the information of the new actor, of which the ``identifier``, ``name`` and ``specification`` are mandatory as defined
@@ -1552,7 +2297,7 @@ updateActor
 ~~~~~~~~~~~
 
 The **updateActor** operation is used to update an existing actor. To use it make an HTTP ``POST`` to path ``/api/rest/actor/{actor}``,
-setting ``{actor}`` to the target actor's API key. You also need to include in your request an HTTP header named ``ITB_API_KEY``
+setting ``{actor}`` to the target actor's API key. You also need to include in your request an HTTP header named ``ITB-API-KEY``
 set to a **community API key**. This API key identifies the community that is able to manage the actor's domain, either by being directly linked to it
 or being linked to no domain.
 
@@ -1595,11 +2340,122 @@ deleteActor
 
 The **deleteActor** operation is used to delete an existing actor. To use it make an HTTP ``DELETE`` to path ``/api/rest/actor/{actor}``,
 setting ``{actor}`` to the target actor's API key. In addition, you must include in your request an HTTP header named
-``ITB_API_KEY`` set to a **community API key**. This API key identifies the community that is able to manage the actor's domain, either by
+``ITB-API-KEY`` set to a **community API key**. This API key identifies the community that is able to manage the actor's domain, either by
 being directly linked to it or being linked to no domain.
 
 This operation takes no payload when making a request. If the target actor has been successfully deleted, it will respond with an
 empty body and a status of ``200`` (OK) to signal that the deletion was successful.
+
+.. _api__domain__getActor:
+
+getActor
+~~~~~~~~
+
+The **getActor** operation is used to retrieve a specific actor. To call it make an HTTP ``GET``
+to path ``/api/rest/actor/{actor}`` and including an HTTP header named ``ITB-API-KEY`` set with a **community API key**.
+This API key identifies the community that is able to manage the actor, either by being directly linked to
+its domain or being linked to no domain. The actor in question is identified by passing its API key as the value of the
+``actor`` path variable.
+
+This operation returns the information for the actor, specifically its **identifier**, **name**, **description**,
+**report metadata**, **default** and **hidden** status, **display order** and **API key**. The following is an example response received after
+calling the operation:
+
+.. code-block:: json
+
+  {
+    "identifier": "supplier",
+    "name": "Supplier",
+    "description": "Actor supplying goods and creating purchase orders.",
+    "default": false,
+    "hidden": false,
+    "displayOrder": 0,
+    "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+  }
+
+The returned name and description help to identify the actor in question, whereas the API key is used in other domain
+management operations.
+
+.. _api__domain__getActor__response:
+
+getActor - response schema
+++++++++++++++++++++++++++
+
+The payload of the **getActor** operation's response is defined by the following :download:`JSON Schema<resources/domain/getActor_response.schema.json>`:
+
+.. literalinclude:: resources/domain/getActor_response.schema.json
+   :language: json
+
+.. _api__domain__searchActors:
+
+searchActors
+~~~~~~~~~~~~
+
+The **searchActors** operation is used to search for actors under a given specification, possibly also filtering them by name.
+To call the operation make an HTTP ``GET`` to path ``/api/rest/specification/{specification}/actors``
+setting ``{specification}`` to the relevant specification's API key. In addition, you must include in your request an HTTP header named
+``ITB-API-KEY`` set to a **community API key**. This API key identifies the community that is able to manage the actors'
+domain, either by being directly linked to it or being linked to no domain.
+
+The operation returns an array of actor data, including for each actor its **identifier**, **name**, **description**,
+**report metadata**, **default** and **hidden** status, **display order** and **API key**. The following is an example response received after
+calling the operation:
+
+.. code-block:: json
+
+  [
+    {
+      "identifier": "supplier",
+      "name": "Supplier",
+      "description": "Actor supplying goods and creating purchase orders.",
+      "default": false,
+      "hidden": false,
+      "displayOrder": 0,
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    },
+    {
+      "identifier": "consumer",
+      "name": "Consumer",
+      "description": "Actor consuming goods.",
+      "default": false,
+      "hidden": false,
+      "displayOrder": 1,
+      "apiKey": "491235ECX4F64X4EBDX9392X7726BA2D1297"
+    }
+  ]
+
+The returned names and descriptions help to identify the actors, whereas the API keys are used in other domain
+management operations.
+
+When calling the operation using path ``/api/rest/specification/{specification}/actors`` it will return all the actors
+under the given specification. These can be filtered by passing also a query parameter named ``name``, in which case the
+actors returned will be those whose identifier or name match the provided value. Matching takes place in a case-insensitive
+manner and using wildcard matching. As an example, calling ``/api/rest/specification/SPECIFICATION_API_KEY/actors?name=supplier`` would return
+a matching actor as follows:
+
+.. code-block:: json
+
+  [
+    {
+      "identifier": "supplier",
+      "name": "Supplier",
+      "description": "Actor supplying goods and creating purchase orders.",
+      "default": false,
+      "hidden": false,
+      "displayOrder": 0,
+      "apiKey": "B277E210X2FB4X4BD7X88B6X951504F45F8F"
+    }
+  ]
+
+.. _api__domain__searchActors__response:
+
+searchActors - response schema
+++++++++++++++++++++++++++++++
+
+The payload of the **searchActors** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchActors_response.schema.json>`:
+
+.. literalinclude:: resources/domain/searchActors_response.schema.json
+   :language: json
 
 .. _api__test_sessions:
 
@@ -1633,7 +2489,7 @@ Three operations are made available that allow you to launch, monitor and manage
 
 All these operations are HTTP calls that include the following:
 
-* A HTTP header named ``ITB_API_KEY`` set with the **organisation API key**. This header is required to authenticate the request.
+* A HTTP header named ``ITB-API-KEY`` set with the **organisation API key**. This header is required to authenticate the request.
 * A **JSON payload** provided as the body of the request to determine the parameters of the requested action.
 
 Details on each operation, including sample requests and responses, are provided in the following sections.
@@ -1649,7 +2505,7 @@ launched, by specifying whether they should be parallelised or executed in seque
 that could serve to replace values that would be otherwise provided interactively (e.g. user inputs or uploaded files).
 
 To call the **start** operation make an HTTP ``POST`` to path ``/api/rest/tests/start``. As with all Test Bed REST operations for session
-management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+management you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **organisation API key**.
 
 In the request's payload you typically define at least the following properties:
 
@@ -1883,7 +2739,7 @@ The **status** operation is used to check the progress of one or more specific t
 sessions launched via the Test Bed's REST API, as long as you are authorised to view them.
 
 To call the **status** operation make an HTTP ``POST`` to path ``/api/rest/tests/status``. As with all Test Bed REST operations for session
-management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+management you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **organisation API key**.
 
 .. note::
   **Using GET:** Prior to release 1.17.0 the **status** operation was available through HTTP ``GET``. This remains possible as an alternative
@@ -1990,7 +2846,7 @@ The **stop** operation is used to forcibly terminate one or more specific test s
 sessions launched via the Test Bed's REST API, as long as you are authorised to view them.
 
 To call the **stop** operation make an HTTP ``POST`` to path ``/api/rest/tests/stop``. As with all Test Bed REST operations for session
-management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+management you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **organisation API key**.
 
 In the request's payload you are expected to provide an array named ``session``, including the session identifiers for one or more test sessions 
 you want to stop. In the following example, a request is being made to terminate two test sessions:
@@ -2022,7 +2878,7 @@ report
 The **report** operation is used to retrieve a test session's report. It can be used with any test session, not only sessions launched via the Test Bed's REST API, as long as you are authorised to view them.
 
 To call the **report** operation make an HTTP ``GET`` to path ``/api/rest/tests/report/{sessionId}``, where ``sessionId`` is replaced by the session's identifier.
-As with all Test Bed REST operations for session management you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **organisation API key**.
+As with all Test Bed REST operations for session management you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **organisation API key**.
 
 The format of the report is by default XML, using in particular the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__ syntax.
 You may also request the report in PDF, by setting the ``Accept`` HTTP header to ``application/pdf``.
@@ -2066,7 +2922,7 @@ The **deploy** operation is used to add a new or updated test suite to a specifi
 parameters allow you to specify how to handle validation issues and existing conformance tests.
 
 To call the **deploy** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/deploy``. To authorise the operation and identify the specification domain
-to be updated, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+to be updated, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's payload you will need to define at least the following information:
 
@@ -2209,7 +3065,7 @@ The **undeploy** operation is used to remove a test suite from a specification. 
 history being cleared.
 
 To call the **undeploy** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/undeploy``. To authorise the operation and identify the specification domain
-from which the test suite will be removed, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+from which the test suite will be removed, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's payload you will need to define the following two properties:
 
@@ -2247,7 +3103,7 @@ The **deployShared** operation is used to add a new or updated test suite to a d
 parameters allow you to specify how to handle validation issues and existing conformance tests.
 
 To call the **deployShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/deployShared``. To authorise the operation and identify the specification domain
-to be updated, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+to be updated, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's payload you will need to define at least the ``testSuite``, including the data of the test suite archive being deployed. 
 Apart from this, you may optionally specify additional properties as boolean flags to determine archive handling options. Specifically:
@@ -2382,7 +3238,7 @@ The **undeployShared** operation is used to remove a shared test suite from a do
 history being cleared.
 
 To call the **undeployShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/undeployShared``. To authorise the operation and identify the domain
-from which the test suite will be removed, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+from which the test suite will be removed, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's payload you will need to define the ``testSuite`` property, referring to the identifier of the test suite to be removed. 
 The following sample is a request to remove a test suite from a specification.
@@ -2414,7 +3270,7 @@ linkShared
 The **linkShared** operation is used to link a shared test suite to one or more specifications.
 
 To call the **linkShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/linkShared``. To authorise the operation and identify the specification domain
-to be updated, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+to be updated, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's payload you will need to define:
 
@@ -2491,7 +3347,7 @@ The **unlinkShared** operation is used to remove the link between a shared test 
 on existing test sessions but will remove the test suite from relevant conformance statements.
 
 To call the **unlinkShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/unlinkShared``. To authorise the operation and identify the domain that
-contains the test suite and specifications, you must include in your request an HTTP header named ``ITB_API_KEY`` set to your **community API key**.
+contains the test suite and specifications, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's payload you will need to define the following two properties:
 

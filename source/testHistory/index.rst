@@ -70,9 +70,9 @@ Test sessions are displayed one per table row, with each row including the follo
 * The session's **start** and **end time**.
 * The test **result**.
 
-Each row provides controls to **export** the relevant test case report and to view the test's steps. In addition, you can use the
+Each row provides a control with further options to **export** the relevant test case report and to view the test's steps. In addition, you can use the
 overall **Export CSV** button from the table's header to extract a CSV export of the currently displayed sessions (see :ref:`view_your_test_history__search__export_csv`).
-In addition, the header itself can also be clicked to **collapse** or **expand** its display.
+Finally, the header itself can also be clicked to **collapse** or **expand** its display.
 
 .. note::
     **Obsolete test sessions:** One or more test sessions may be rendered obsolete in case of a significant change in the test setup
@@ -119,14 +119,14 @@ the search results by clicking the **Refresh** button.
 Export a test case report
 -------------------------
 
-Exporting a test case's report is possible for completed test sessions, through one of the two file icon controls on the far right side of each test's row.
+Exporting a test case's report is possible for completed test sessions, by clicking the option button on the far right side of each test's row.
+The presented options allow you to download the test session report in PDF or XML format.
 
 .. figure:: ../screenshots/test_history_export_pdf.PNG
   :align: center
 
-The file icon on the left corresponds to the test case's **XML report**. The format of this report is defined by the 
-`GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
-and allows simpler machine-based processing. The following XML content is a sample of such a report:
+The format of the **XML report** is defined by the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
+and is meant for machine-based processing. The following XML content is a sample of such a report:
 
 .. literalinclude:: ../testHistory/resources/test_case_report.xml
    :language: xml
@@ -138,7 +138,7 @@ The report includes the following information:
 * The overall **result** as well as the **output message** that may have been produced.
 * The list of **step reports** that include each step's **identifier**, **description**, **timestamp**, **result** and **findings** (if validations were carried out).
 
-The file icon on the right of the test session row represents the test case's **PDF report**.
+The other available report option is the test session's **PDF report**.
 
 .. figure:: ../screenshots/test_history_export_pdf.PNG
   :align: center
@@ -217,8 +217,7 @@ Obsolete test sessions can be deleted by clicking the **Delete obsolete sessions
 .. figure:: ../screenshots/test_history_admin_header.PNG
   :align: center
 
-Doing so will first prompt you for confirmation and then, if confirmed, will proceed to delete the obsolete test results. Note that the results
-deleted are limited to those specific to the system that is currently selected.
+Doing so will first prompt you for confirmation and then, if confirmed, will proceed to delete the obsolete test results.
 
 .. _view_your_test_history__test_steps:
 

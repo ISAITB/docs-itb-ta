@@ -16,7 +16,7 @@ Clicking this link results in a popup where you can provide your message and con
 
 In this form you are asked to enter the following information:
 
-* A **contact email** as the address used to receive a response. If the Test Bed is integrated with EU Login this is pre-filled but you can
+* A **contact email** as the address used to receive a response. If the Test Bed is integrated with an external identity provider this is pre-filled but you can
   still change it to another preferred address.
 * The **feedback type** to specify the nature of the message. You can choose from a **technical issue**, **question on usage**, 
   **feature request** or **other**.

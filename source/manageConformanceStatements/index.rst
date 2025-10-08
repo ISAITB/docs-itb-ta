@@ -57,6 +57,96 @@ will present a **plus** button to expand their display allowing you to consult b
 Clicking any conformance statement row will take you to the :ref:`conformance statement's details <manage_your_conformance_statements__view_a_conformance_statements_details>`
 from where you can see further information on the statements' test cases and execute new test sessions.
 
+
+.. _manage_your_conformance_statements__list_view:
+
+List view
+---------
+
+You can switch to a **list view** presentation of the conformance statements at any time by toggling the **List view** control from the page's header.
+
+.. figure:: ../screenshots/conformance_statements_header.png
+  :align: center
+
+Doing so presents the conformance statements in a table, and enables advanced search filters allowing you to inspect specific
+statements of interest. The table listing statements is paged and includes one row per conformance statement.
+
+.. figure:: ../screenshots/conformance_statements_list_view.png
+  :align: center
+
+Statements are presented in a paged table sorted based on the **system's name**. Custom sorting
+can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
+controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
+corner the total and currently displayed test counts.
+
+The information displayed for each conformance statement is:
+
+* The **system** that is the focus of the testing activities.
+* The **specification** that the system is selected to conform to.
+* The **actor** of the specification the system is expected to act as.
+* The date and time when the conformance statement's status was  **last updated**.
+* The statement's **test results** showing how many configured tests are successful, failed, or incomplete. This can also be hovered over to view a text summary
+  of the displayed counts.
+* The statement's overall **status** (success, failure or incomplete).
+
+Clicking on a row from the table will take you to the :ref:`conformance statement detail screen <manage_your_conformance_statements__view_a_conformance_statements_details>`.
+
+.. _manage_your_conformance_statements__list_view__export:
+
+Export all conformance statements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is possible to generate a CSV export including all the conformance statements currently displayed. To do so click the **Export CSV** button
+from the conformance statements' header.
+
+.. figure:: ../screenshots/conformance_statements_list_view_header.png
+  :align: center
+
+Note that the CSV export will include the conformance statement information as well as the information on the individual related test cases.
+
+.. figure:: ../screenshots/conformance_statements_list_view_export_csv.png
+  :align: center
+
+.. _manage_your_conformance_statements__list_view__filters:
+
+Apply search filters
+~~~~~~~~~~~~~~~~~~~~
+
+When the conformance statements' list view is active, it offers also a set of filters that can be used to select the displayed conformance statements. These can be enabled
+by clicking the **Search filters** button from the table header.
+
+.. figure:: ../screenshots/conformance_statements_list_view_header.png
+  :align: center
+
+Doing so will expand the table header to present the available filter controls.
+
+.. figure:: ../screenshots/conformance_statements_list_view_filters_on.png
+  :align: center
+
+The controls that can be used for filtering are:
+
+* The relevant **system**.
+* The relevant **domain** (only in case your community is not linked to a specific domain).
+* The relevant **specification group**, **specification** and **actor**.
+* The conformance **status**.
+* The **last update time** for the conformance statement's status.
+
+Most filter controls are defined as selection choices. Multiple selected values across these controls are applied as follows:
+
+* Within a specific filter control using "OR" logic (e.g. selecting multiple specifications).
+* Across filter controls using "AND" logic (e.g. selecting a specification and an organisation).
+
+Note additionally that selecting dependent values serves to limit the filter options that are presented. For example if a given specification
+is selected, the actors available for filtering will be limited to that specification to already exclude impossible combinations.
+
+The presented conformance statements are automatically updated whenever your filter options are modified. The filter panel may also be **collapsed and expanded**
+by clicking again the **Search filters** button. In addition, you may click the caret to the right of the button to select from its options to
+either **refresh** the current results, or to **clear all applied filters**.
+
+.. figure:: ../screenshots/conformance_statements_list_view_filters_options.png
+  :align: center
+
 .. _manage_your_conformance_statements__create:
 
 Create a conformance statement
@@ -67,7 +157,7 @@ To create a new conformance statement for the selected system click the **Create
 .. figure:: ../screenshots/conformance_statement_create_button.png
   :align: center
 
-Doing so presents to you the available conformance statements that are available for the system.
+Doing so presents to you the available conformance statements that can be selected for the system.
 
 .. figure:: ../screenshots/conformance_statement_create.png
   :align: center
@@ -81,15 +171,18 @@ in expandable options. You may click each statement to collapse or expand it, re
 Above the available conformance statements you are also presented with controls to facilitate your selection.
 
 .. figure:: ../screenshots/conformance_statement_create_controls.png
-  :scale: 80%
   :align: center
 
 Using these controls you may:
 
-* **Search** for an available statement (the search text is looked up in names and descriptions in a case-insensitive manner). Note that if
-  statements are already selected these will always remain visible regardless of the search results.
-* **Select**, or unselect the statements currently displayed.
-* **View** all details by collapsing or expanding all statements.
+* **Search** for an available statement (the search text is looked up in names and descriptions in a case-insensitive manner).
+* Show the currently **selected** or **unselected** statements.
+* **Select** or **unselect** the currently displayed statements.
+* **Collapse** or **expand** the displayed statements.
+
+At the right of these controls you also see the **total selected statements**. When selecting statements you can make
+several searches and navigate between returned pages of results without losing your currently selected statements. This allows
+you to fine-tune the conformance statements you want to create for your system.
 
 Once you have selected one or more statements you may click on **Confirm** to proceed with their creation. Clicking on **Cancel** will return you back
 to the listing of the existing conformance statements.
@@ -149,8 +242,7 @@ and allows simpler machine-based processing. The following XML content is a samp
    :language: xml
 
 Producing a conformance overview report at the level of a specific **domain**, **specification group** or **specification**, is achieved
-using the report icon buttons presented at the right side of the statements' display. The first button is used to produce the report in XML
-and the second one in PDF.
+using the option button presented at the right side of the statements' display. Clicking this will present the report generation options.
 
 .. figure:: ../screenshots/conformance_statements_specific_report_control.png
   :align: center
@@ -271,7 +363,7 @@ execute rather than the statement's details.
 Beneath the statement details' panel you are presented with two tabs that allow you to interact and manage the conformance statement:
 
 * The :ref:`Conformance tests <manage_your_conformance_statements__view_a_conformance_statements_details__tests>` tab to view and launch the statement's tests.
-* The :ref:`Configuration parameters <manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>` tab to view and edit the statement's configuration parameters if needed.
+* The :ref:`Configuration parameters <manage_your_conformance_statements__view_a_conformance_statements_details__endpoints>` tab to view and edit the statement's configuration if needed.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__badge:
 
@@ -335,14 +427,14 @@ Each test suite includes within it the listing of its test cases. The informatio
 
 This information is complemented by the test case controls which depending on the status of the test case include:
 
-* A shortcut to **view** the latest test session executed for this test case in the :ref:`test session history<view_your_test_history__test_steps>` (if such a session exists).
+* An **option** button, if a test session has been executed, that allows you to **view** the latest executed session in the :ref:`test session history<view_your_test_history__test_steps>`, and to download its **test report** in PDF or XML format.
 * An **information** button to view the test case's extended documentation (if defined).
-* A **play** button to start a new test session for this test case (see :ref:`execute_tests`).
+* A **play** button to :ref:`start a new test session <execute_tests>` for this test case.
 
 At the level of the test suite you can also view the aggregated **status** of the test suite's test cases, as well as additional controls:
 
 * An **information** button to view the test suite's extended documentation (if defined).
-* A **play** button to launch test sessions for all listed test cases.
+* A **play** button to launch test sessions for all listed test cases. This will be missing if the test suite contains only a single test case.
 
 When test sessions are completed for the statement's different test cases, the displayed status will be adapted to present them as successful or failed.
 Moreover, in case a test session also produced a detailed output message, this can be viewed by clicking on the success or failure icon.
@@ -350,38 +442,47 @@ Moreover, in case a test session also produced a detailed output message, this c
 .. figure:: ../screenshots/conformance_statement_details_tests_output_message.PNG
   :align: center
 
-Above the display of test suites the **Conformance tests** tab also includes controls relevant to the displayed test cases.
+Above the display of test suites the **Conformance tests** tab includes controls relevant to test case selection and execution.
 
 .. figure:: ../screenshots/conformance_statement_details_tests_controls.png
   :align: center
 
-On the left side you are presented with controls to **search test cases**. You may use the provided **search box** to look for a specific test case, with the text
-you provide being used to match, in a case-insensitive way, test cases based on their name or description. Next to this you are provided with a **dropdown menu** that
+On the left side you are presented with controls to **filter the displayed test cases**. In case there are multiple test suites defined,
+the **show test suite** control allows you to lookup and select a specific one. Next to this you can find a **dropdown menu** that
 defines which tests are displayed based on their **status**. You may choose to show all tests (the default), or select successful tests, failed tests or incomplete tests.
-If there are also optional and disabled test cases you may also select (or deselect) their display from here as well.
+If there are also optional and disabled test cases you may also select (or deselect) their display from here as well. Finally,
+at the end of the filtering controls is also a **search box** that you can use to filter, in a case-insensitive manner, the displayed test cases based on
+their name or description.
+
 Any change to filtering options will update the display to list the matched test cases. It is important to note that when selecting to run test cases at the level of the displayed
-test suite, the test cases to be executed will be those currently displayed.
+test suite or the overall conformance statement, the test cases to be executed will be those that match the **current filtering options**.
 
 .. note::
 
   Disabled test cases can be reviewed in case they have previous test results, but they are hidden by default and cannot be executed.
 
-To the right side you may find a further **dropdown menu** that determines how test cases will be **executed**. The options presented here are the following:
+To the right side you may find a further **dropdown menu** that determines how test cases will be executed, as well as a button to
+**launch all tests** matching the current filtering criteria. This button will be missing in case only a single test suite
+is displayed.
+
+Regarding the **test execution approach**, the options available are the following:
 
 * **Interactive execution**, to launch tests in an interactive manner, presenting their test execution diagram and interacting with you for inputs.
 * **Parallel background execution**, to launch tests in the background executing them in parallel. Note that test cases that don't support parallel execution
   will be ran sequentially.
 * **Sequential background execution**, to launch tests in the background executing them one by one in sequence.
 
-Opting for background execution allows you to launch a potentially large number of test sessions without needing to oversee their progress. Care however needs
-to be taken here to ensure that all relevant test cases can be carried out without user interaction. If a test session running in the background defines user
-interaction steps, these are managed as follows:
+Opting for background execution allows you to launch a potentially large number of test sessions without needing to oversee their progress. Note however that
+test cases foreseeing user interactions will proceed depending on the test case definition. Specifically:
 
 * **Instructions** are simply skipped, assuming that these are purely of informational value.
-* **Input requests** are completed automatically without input. Doing so will most likely cause a test session to fail (e.g. if a user is expected to provide
-  the content of a message to send) but could still result in a successful completion if the test case has been designed to treat user input as optional.
+* **Inputs** may either cause the test session to pause for later completion, or be automatically handled. Automatic handling
+  involves either skipping the inputs, or delegating their collection to a supporting service (if one is configured in the test definition).
+  Note that skipping expected user inputs due to background test execution will most likely result in failed test sessions, unless the test cases
+  are designed to handle missing values.
 
-The status of test sessions launched in the background can be monitored by means of the :ref:`Test Sessions<view_your_test_history>` screen.
+The status of test sessions launched in the background can be monitored by means of the :ref:`test history<view_your_test_history>` screen. From here
+you may also complete pending user interactions if doing so is foreseen in the relevant test case definitions.
 
 Finally, recall that the listed test suites and test cases may include an **information** button in case they define extended documentation. This documentation
 complements the displayed description with further information such as diagrams and reference links.

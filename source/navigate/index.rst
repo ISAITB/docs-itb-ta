@@ -103,8 +103,7 @@ The following menu items are available to you:
     **Session dashboard** | Takes you to the monitoring page for all active and completed :ref:`test sessions <monitor_test_sessions>`.
     **Domain management** | Takes you to the management of your :ref:`specifications and test configuration <domains>`.
     **Community management** | Takes you to the management of your :ref:`community <community>`.
-    **Data export** | Takes you to the page managing :ref:`data exports <exportimport__export>`.
-    **Data import** | Takes you to the page managing :ref:`data imports <exportimport__import>`.
+    **Data management** | Takes you to the page managing :ref:`data imports and exports <exportimport>`.
     **System administration** | Takes you to the page managing the overall :ref:`Test Bed configuration<systemAdmin>`.
     **Service health** | Takes you to the monitoring page for the overall :ref:`service health <serviceHealth>`.
     **My conformance statements** | Takes you to your own organisation's :ref:`conformance statement overview <manage_your_conformance_statements>`.

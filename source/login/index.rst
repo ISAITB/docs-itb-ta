@@ -56,23 +56,24 @@ To trigger the login process click on **Click to log in** from the Test Bed's we
 
 What happens from here depends on the Test Bed's authentication approach:
 
-* EU Login (see :ref:`login__login__eulogin`).
-* Test Bed username and password based accounts (see :ref:`login__login__eulogin`).
+* Use of an external identity provider such as EU Login (see :ref:`login__login__eulogin`).
+* Test Bed username and password based accounts (see :ref:`login__login__legacy`).
 
 .. _login__login__eulogin:
 
-Logging in with EU Login
-~~~~~~~~~~~~~~~~~~~~~~~~
+Logging in with an identity provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If EU Login integration is enabled (most likely the case for European Commission Test Bed instances), you will be transferred
-to a sign-in page where you will be requested to authenticate using your EU Login account. If you already have an active
-session you will simply be displayed a confirmation message before proceeding to access the Test Bed.
+If the Test Bed uses an external identity provider you will be transferred to the provider's sign-in page to authenticate.
+For European Commission Test Bed instances this provider is typically EU Login, in which case you will need to authenticate
+using your EU Login account. If you already have an active session you will simply be displayed a confirmation message before
+proceeding to access the Test Bed.
 
 .. figure:: ../screenshots/eu_login.png
   :align: center
   :scale: 70%
 
-The Test Bed features a simplified `EU Login user guide`_ in case you are unfamiliar with it. This is also accessible through
+In the case of EU Login being used, the Test Bed also features a simplified `EU Login user guide`_ in case you are unfamiliar with it. This is also accessible through
 a link on the welcome page.
 
 .. figure:: ../screenshots/welcome_eu_login_tutorial.png
@@ -91,10 +92,10 @@ Once you have authenticated you will be transferred back to the Test Bed as foll
 
 .. _login__login__legacy:
 
-Logging in without EU Login
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Logging in without an identity provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In case EU Login is not enabled for your Test Bed you will be using username and password based accounts. The login screen
+In case an external identity provider such as EU Login is not enabled for your Test Bed, you will be using username and password based accounts. The login screen
 in this case requires you to provide:
 
 * Your account's **username**.
@@ -104,10 +105,7 @@ in this case requires you to provide:
   :align: center
 
 Your account credentials are those configured during installation or provided to you by another Test Bed administrator.
-
-On the login screen you also have the possibility to have the Test Bed keep your session open. To do this
-simply check the **Remember me** checkbox below the login form. Once you have entered your credentials click
-the **Log in** button.
+Once you have entered your credentials click the **Log in** button.
 
 .. _login__onetime_password:
 
@@ -149,17 +147,18 @@ To carry out the registration start by clicking the **Register in a public commu
   :align: center
 
 .. note::
-  In case the Test Bed uses EU Login you will be first prompted to authenticate and then transferred to a simplified
-  registration form described in :ref:`login__roles__register`.
+  In case the Test Bed uses an external identity provider such as EU Login, you will be first prompted to authenticate
+  using the provider's sign-in form. Once you authenticate, you will be transferred to a simplified registration form
+  described in :ref:`login__roles__register`.
 
-  The information that follows in this section covers the case of a Test Bed where EU Login is **not enabled**.
+  The information that follows in this section covers the case of a Test Bed where an external identity provider is **not enabled**.
 
-If you are using a Test Bed that is not integrated with EU Login you will be presented with a registration form in which
+If you are using a Test Bed that is not integrated with an external identity provider you will be presented with a registration form in which
 you are expected to:
 
 * Select the community you want to register for.
-* Provide the details for your new organisation.
-* Provide the details for the new organisation's initial administrator.
+* Provide the details for your new organisation or select an existing organisation.
+* Provide the details for your new administrator account.
 
 As a first step you are presented with the publicly available communities, displaying their name and description.
 
@@ -189,9 +188,17 @@ The password you provide must meet minimum expected complexity requirements. Spe
 * It must include at least one lowercase letter, uppercase letter, digit and symbol.
 * It must be at least 8 characters long.
 
-The **Organisation details** section may also include one or more additional properties that the community's administrator requires
-for completion during registration. These properties may be simple text values, values to select from preset lists, secret values or files for you to upload, and may be
-optional or required. Properties marked as required must be provided before you can start executing tests, but depending on the
+Depending on the community's configuration, you may also be provided the option to join an existing organisation as opposed
+to registering a new one. Moreover, joining an existing organisation may also be the only option available. If joining
+an existing organisation is enabled, you will be prompted to provide the organisation's **registration token**, serving
+to uniquely identify the organisation.
+
+.. figure:: ../screenshots/self_registration__existing_organisation.png
+  :align: center
+
+When registering a new organisation, the **organisation details** section may also include one or more additional properties that the community's administrator requires
+for completion during registration. These properties may be simple text values, values to select from preset lists, secret values or files for you to upload, and may be 
+optional or required. Properties marked as required must be provided before you can start executing tests, but depending on the 
 community's configuration, you may still be allowed to proceed with your registration without completing them.
 
 Once the information is provided click on **Register** to create your organisation and proceed to your landing page. Clicking
@@ -220,9 +227,9 @@ Manage your roles
 
 .. note::
 
-  This feature is applicable only if the Test Bed is integrated with EU Login. In this case you are
-  considered as having a single account (your EU Login account) and one or more roles in defined organisations (potentially in
-  different communities). If the Test Bed is not integrated with EU Login such roles are determined by separate username and password based accounts.
+  This feature is applicable only if the Test Bed is integrated with an external identity provider such as EU Login. In this case you are
+  considered as having a single account and one or more roles in defined organisations (potentially in
+  different communities). If the Test Bed is not integrated with an external identity provider such roles are determined by separate username and password based accounts.
 
 In this screen you can view and manage the roles assigned to you. You can reach this screen by multiple means, including shortcuts on
 the Test Bed's :ref:`welcome page<login__welcome>` and controls from your :ref:`profile management page<manage_your_profile>`.
@@ -305,7 +312,15 @@ To complete the registration form provide the following information:
   that will predefine your organisation's systems and conformance statements. This will not be displayed if no such
   templates are available.
 
-The **Organisation details** section may also include one or more additional properties that the community's administrator requires
+Depending on the community's configuration, you may also be provided the option to join an existing organisation as opposed
+to registering a new one. Moreover, joining an existing organisation may also be the only option available. If joining
+an existing organisation is enabled, you will be prompted to provide the organisation's **registration token**. This token
+acts as a key to uniquely identify the organisation and will need to be shared to you by an administrator.
+
+.. figure:: ../screenshots/self_registration__existing_organisation.png
+  :align: center
+
+When registering a new organisation, the **organisation details** section may also include one or more additional properties that the community's administrator requires
 for completion during registration. These properties may be simple text values, secret values or files for you to upload, and may be
 optional or required. Note that properties highlighted as required will not prevent you from completing the registration if you don't
 supply them. These will need to be provided however before you can execute any tests.
@@ -319,8 +334,8 @@ close the dialog.
 Migrate a legacy account
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the Test Bed has migrated from legacy username and password accounts to EU Login it will allow you to migrate such an account
-as a new role linked to your EU Login profile.
+If the Test Bed has migrated from legacy username and password accounts to using an identity provider service (for example EU Login),
+it will allow you to migrate your legacy account as a new role linked to your provider's account.
 
 To migrate a legacy account start by selecting the relevant option from the popup dialog. Note that this selection is already done
 for you in case you clicked the migration link from the Test Bed's :ref:`welcome page<login__welcome>`.
@@ -339,16 +354,14 @@ Complete this form by providing:
 * **Password:** The password for your legacy account.
 
 Once you have provided this information click on **Complete** to validate your legacy credentials. If the validation succeeds
-this account will be converted into a role and be linked to your EU Login profile. Once complete, the dialog will close and you
+this account will be converted into a role and be linked to your provider's account. Once complete, the dialog will close and you
 will see your migrated role displayed as an available connection option. Note that you can also click on **Cancel** to abort
 the process and close the dialog.
 
 .. note::
 
-  The Test Bed offers also a step-by-step migration guide to inform and guide you through the
+  The Test Bed offers also a `step-by-step migration guide <https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin>`__ to inform and guide you through the
   process of migrating your legacy account.
-
-  This is available at https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin.
 
 .. _DIGIT Test Bed instance: https://www.itb.ec.europa.eu/itb
 .. _EU Login user guide: https://www.itb.ec.europa.eu/docs/guides/latest/usingEULogin/
