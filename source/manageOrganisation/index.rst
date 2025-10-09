@@ -4,8 +4,8 @@ Manage your organisation
 ========================
 
 .. note::
-    **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation linked to your
-    community that is used for testing purposes. You would typically use it by configuring :ref:`conformance statements <manage_your_conformance_statements>`
+    **Editing your organisation details:** The "Admin Organisation" presented here is a special organisation
+    used for testing purposes. You would typically use it by configuring :ref:`conformance statements <manage_your_conformance_statements>`
     and :ref:`executing tests <execute_tests>` to :ref:`validate your testing setup <validate_test_setup>`.
 
 To view your organisation's information click the **My organisation** link from the side menu. The screen you
@@ -20,30 +20,9 @@ are presented with shows you the information relevant to your organisation, spli
 .. figure:: ../screenshots/organisation_manage_admin.PNG
   :align: center
 
-If you have defined additional properties for the community's organisations you will also see here an
-**Additional properties** section that you can click to display your organisation's additional information. 
-
-.. figure:: ../screenshots/organisation_manage_admin_properties.PNG
-  :align: center
-
-If this is expanded you will see a list of these additional properties along with their currently configured values.
-Such properties can be simple texts, secret values (e.g. passwords) or files and, if supplied by you, will display a
-help tooltip to understand their meaning.
-
-You can view and edit these properties, depending on their type:
-
-* For texts the current value is presented in an editable text field.
-* For files you can **upload** a new file, whereas if one is already set you can **download** or **delete** it.
-* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
-  check **Update**. When providing a new value you can also toggle the display of the typed characters.
-
-.. note::
-  Required properties are marked with an asterisk. It is is not mandatory to fill these in when editing the organisation's
-  information but as long as required properties are missing you will not be able to launch tests.
-
 Update any of the existing values and click on **Update** to persist your changes. From here you can also review your
 organisation's :ref:`systems <manage_organisation__systems>`
-and :ref:`REST API keys <manage_organisation__rest>` by clicking on their respective tabs. You may also click the **Manage tests** 
+and :ref:`REST API keys <manage_organisation__rest>` by clicking on their respective tabs. You may also click the **Manage tests**
 button to view your organisation's :ref:`conformance statements <manage_your_conformance_statements>`.
 
 .. _manage_organisation__systems:
@@ -98,24 +77,6 @@ Once another system is selected to copy from, you are also presented with additi
 * **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
   conformance statements.
 
-If your community foresees additional system properties, and as long as you are not copying the properties from another system,
-you will also see a **Additional properties** section. Clicking this expands the section so that you can manage your new system's properties.
-
-.. figure:: ../screenshots/systems_create_properties.PNG
-  :align: center
-
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
-administrator, you will also see a help tooltip to understand their meaning. Such properties can be edited as follows:
-
-* For texts through an editable text field or by selecting a preset value from a dropdown list.
-* For files you can **upload** a new file, whereas if one is already set you can **download** or **delete** it.
-* For secrets a read-only text field indicates whether a value is currently set. Provide a new value by checking
-  **Update** which makes the text field editable. While editing you can also toggle the display of typed characters.
-
-.. note::
-  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
-  information but as long as required properties are missing you will not be able to launch tests.
-
 Once you have entered the system's information click the **Save** button to record it. You can also click the **Cancel** button
 to return to the previous screen without making any changes.
 
@@ -148,26 +109,6 @@ Once another system is selected to copy from, you are also presented with additi
 * **Conformance statement configurations:** To also copy any of the source system's configuration parameters set on its
   conformance statements.
 
-If your community foresees additional system properties, and as long as you are not copying the properties from another system, you
-will also see an **Additional properties** section. You can click this to expand and manage the system's properties.
-
-.. figure:: ../screenshots/systems_update_properties.PNG
-  :align: center
-
-Configured properties can be simple texts, secret values (e.g. passwords) or files for which, if supplied by your community
-administrator, you will also see a help tooltip to understand their meaning. Such properties can be managed as follows:
-
-* For texts the current value is presented in an editable text field or dropdown menu (if the property has preset values).
-* For files you can **upload** a new file, whereas if one is already set you can **download** or **delete** it.
-* For secrets a read-only text field indicates whether a value is currently set, whereas to provide a new value you
-  check **Update**. When providing a new value you can also toggle the display of the typed characters.
-
-Certain properties may actually be non-editable. Such properties can only be managed by your community administrator.
-
-.. note::
-  Required properties are marked with an asterisk. It is is not mandatory to fill these in when providing the system's
-  information but as long as required properties are missing you will not be able to launch tests.
-
 Once ready click the **Update** button to finish. You may also click here the **Manage tests** button to view the system's :ref:`conformance statements <manage_your_conformance_statements>`,
 or the **Delete** button which, following confirmation, will proceed to
 completely delete the system. In case you choose to delete the system, the tests realised for it will still be searchable but will be presented
@@ -180,7 +121,7 @@ Manage your REST API keys
 -------------------------
 
 Selecting the **REST API keys** tab (if available) presents you the API keys to :ref:`launch and manage test sessions via REST API<execute_tests_rest>`. This tab
-may be missing if use of this REST API is not enabled by your administrator.
+may be missing if use of this REST API is not enabled.
 
 .. figure:: ../screenshots/organisation_manage__rest_admin.PNG
   :align: center

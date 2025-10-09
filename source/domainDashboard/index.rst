@@ -24,8 +24,9 @@ The presented table includes one row per domain for which the following informat
 * The **full name** for the domain, used in detail displays and reports.
 * A **description** for the domain to provide context over what the domain relates to.
 
-To proceed within a :ref:`domain's details<domains__domain_details>` click its relevant row from the table. To :ref:`create a new domain<domains__domain_create>` click the
-**Create domain** button.
+You can use the **search box** in the table's header to filter domains based on their name and description. To view
+a :ref:`domain's details<domains__domain_details>` click its relevant row from the table, whereas to :ref:`create a new domain<domains__domain_create>`
+click the **Create domain** button.
 
 .. note::
     **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification

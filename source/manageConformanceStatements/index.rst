@@ -127,7 +127,7 @@ Doing so will expand the table header to present the available filter controls.
 The controls that can be used for filtering are:
 
 * The relevant **system**.
-* The relevant **domain** (only in case your community is not linked to a specific domain).
+* The relevant **domain**.
 * The relevant **specification group**, **specification** and **actor**.
 * The conformance **status**.
 * The **last update time** for the conformance statement's status.
@@ -258,7 +258,7 @@ specific aggregation level (e.g. a specification group) will also list the relev
 Conformance overview certificate
 --------------------------------
 
-Depending on your community's configuration you may also produce a **conformance overview certificate**. This certificate is a report
+Depending on the community's configuration you may also produce a **conformance overview certificate**. This certificate is a report
 (in PDF format) that attests to the fact that your current system has successfully completed testing for all relevant conformance statements.
 Such certificates are available for you to download if enabled by the community administrator, and if you have succeeded all relevant testing.
 
@@ -370,7 +370,7 @@ Beneath the statement details' panel you are presented with two tabs that allow 
 Using conformance badges
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Conformance badges are an optional feature for specifications that may be :ref:`set up for your community<domains__specification>`. Badges are
+Conformance badges are an optional feature for specifications that may be :ref:`set up for the community<domains__specification>`. Badges are
 images that indicate a specific live status for a given organisation's system, with respect to a specific conformance statement. They are
 meant to be accessible publicly so that they can be embedded in displays such as online dashboards or GitHub README files.
 
@@ -396,7 +396,7 @@ added to the statement, accessing the same badge (displayed as a "success" badge
 .. note::
 
     By default conformance badges illustrate a "success" and "not success" state. It could be the case however that specific "failure" badges
-    are also configured depending on your community's setup.
+    are also configured depending on the community's setup.
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__tests:
 

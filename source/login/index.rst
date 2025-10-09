@@ -59,6 +59,10 @@ What happens from here depends on the Test Bed's authentication approach:
 * Use of an external identity provider such as EU Login (see :ref:`login__login__eulogin`).
 * Test Bed username and password based accounts (see :ref:`login__login__legacy`).
 
+.. note::
+  **Initial login following installation:** When you first install the Test Bed and log in for the first time, the
+  login process is slightly. Check the :ref:`specific section <login__initial>` on this first login for more details.
+
 .. _login__login__eulogin:
 
 Logging in with an identity provider
@@ -83,12 +87,6 @@ Once you have authenticated you will be transferred back to the Test Bed as foll
 
 * If you have a single role assigned to you you will be automatically transferred to the :ref:`Test Bed's landing page<navigate__landing_page>`.
 * If you don't have an assigned role or have multiple roles you will be transferred to a screen to select the one to proceed with. See :ref:`login__roles` for details.
-
-.. note::
-  **Initial login following installation:** A fresh Test Bed installation defines an initial administrator account
-  that can be used to make the first login, however this is a username and password based account. If your Test Bed
-  instance is to be integrated with EU Login it needs to first be configured as being in "migration mode" to
-  allow you to link your EU Login account to the default administrator.
 
 .. _login__login__legacy:
 
@@ -362,6 +360,144 @@ the process and close the dialog.
 
   The Test Bed offers also a `step-by-step migration guide <https://www.itb.ec.europa.eu/docs/guides/latest/migratingToEULogin>`__ to inform and guide you through the
   process of migrating your legacy account.
+
+.. _login__initial:
+
+Initial administrator login
+---------------------------
+
+When you log in for the first time on a new Test Bed instance you will need to make your initial connection using an
+**automatically generated administrator account**. The username for this account is ``admin@itb`` whereas the password
+is listed in the ``itb-ui`` application's logs as follows:
+
+.. code-block:: none
+
+  ...
+  ###############################################################################
+
+  The one-time password for the default administrator account [admin@itb] is:
+
+  b1afbc39-8ad7-49f4-a9d9-0bcec942aef4
+
+  ###############################################################################
+  ...
+
+This password is replaced at every startup, and will be included in the logs until a first connection has been made.
+How this connection takes place depends on the authentication approach configured for the Test Bed, and specifically
+whether or not you have an **external identity provider** such as EU Login configured:
+
+* **Without an identity provider:** :ref:`Log in as normal <login__login__legacy>` and provide the ``admin@itb`` account's
+  credentials. Upon doing so you are prompted to :ref:`replace the auto-generated password <login__onetime_password>`
+  before proceeding.
+* **Using an identity provider:** The Test Bed is automatically set in account migration mode. Choose to
+  :ref:`migrate your account <login__roles__migrate>`, for which you provide the ``admin@itb`` account's credentials
+  including the auto-generated password. Until you have migrated this account the Test Bed will remain in account migration
+  mode.
+
+Once you have completed your initial connection you will be taken to the Test Bed's :ref:`default landing page <navigate__landing_page>`,
+and the :ref:`startup configuration wizard <login__startup_wizard>` will be displayed.
+
+.. _login__startup_wizard:
+
+Startup configuration wizard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you connect to the Test Bed for the very first time as a Test Bed administrator, you will be presented with a
+**startup configuration wizard**. The purpose of this is to simplify the Test Bed's initial configuration depending on
+its intended use.
+
+.. note::
+  Once completed, the wizard can be re-enabled through the :ref:`system configuration dashboard <systemAdmin__config>`.
+
+The wizard initially displays a **welcome message** before proceeding with the configuration steps. Configuration changes
+will only be applied once the overall wizard is completed. Note that once you have made a choice for a given step you can
+move to the next one and return to previous ones.
+
+.. figure:: ../screenshots/start_wizard_step1.png
+  :align: center
+
+The first step covers the automatic setup of **samples**.
+
+.. figure:: ../screenshots/start_wizard_step2.png
+  :align: center
+
+Enabling the bundled samples is advised if you are going to use the Test Bed for experimentation or development, as they
+give you a ready-to-use test configuration covering a range of use cases. Choosing to do so will:
+
+1. Create an initial :ref:`domain <domains__domain_view>` and :ref:`specification <domains__domain__specification_list>`.
+2. Import the `GITB TDL example test suites <https://www.itb.ec.europa.eu/docs/tdl/latest/examples/>`__ to the specification.
+3. Create a :ref:`community <community_testbed_communities>` linked to the sample domain.
+4. Create an :ref:`organisation <community__organisations>` and the
+   :ref:`conformance statements <manage_your_conformance_statements>` to test for.
+
+To try out the sample tests you will need to access the created organisation's tests as follows:
+
+1. From the :ref:`Community management <community>` screen select the **Sample community**.
+2. From the community's :ref:`organisation tab <community__organisations>` select the **Sample organisation**.
+3. Click on **Manage tests** to view the organisation's :ref:`conformance statements <manage_your_conformance_statements>`.
+
+The resulting screen displays the sample specification's conformance statements.
+
+.. figure:: ../screenshots/start_wizard_sample_statements.png
+  :align: center
+
+From here you can select statements and execute their included tests. Note that sample tests have no
+external dependencies and include all necessary test data and usage instructions.
+
+The next wizard step covers the Test Bed's :ref:`REST API <api>`.
+
+.. figure:: ../screenshots/start_wizard_step3.png
+  :align: center
+
+The :ref:`REST API <api>` is disabled by default to avoid production Test Bed instances being used in automated test
+processes. You can enable it explicitly from the wizard, which is proposed here primarily because the REST API is a key tool
+for developers in streamlining test development. Otherwise you can still manage this from the
+:ref:`system configuration screen <systemAdmin__config>`.
+
+The next step concerns the automated checking for **software updates**.
+
+.. figure:: ../screenshots/start_wizard_step4.png
+  :align: center
+
+Enabling software update checks is advised in all cases as it allows you to easily check for new releases, and most
+importantly, be notified if the release you are currently using has known security issues. Such checks are made upon
+:ref:`administrator login <login__health_check>` and through the :ref:`service health dashboard <serviceHealth>`.
+
+The software update check is disabled by default as it involves calling (anonymously) an online check endpoint
+maintained by DIGIT. You may want to keep this disabled if your Test Bed instance has no internet access, or if you want
+to avoid any external calls.
+
+The final wizard step covers **feedback**.
+
+.. figure:: ../screenshots/start_wizard_step5.png
+  :align: center
+
+The Test Bed's `feedback survey <https://ec.europa.eu/eusurvey/runner/itb>`__ is entirely optional but goes a long
+way in giving an indication to the Test Bed team of the different projects using it. You complete this anonymously
+and can choose to either provide very limited information on your use case, or expand into more extended feedback.
+You may also choose to share your contact information if you would like to get in touch.
+
+To complete the wizard and apply the selected options, click on **Apply configuration**.
+
+.. _login__health_check:
+
+Service health check
+--------------------
+
+When a Test Bed administrator connects to the Test Bed, an **automated health check** is performed to ensure everything is
+running smoothly. In case of detected warnings or errors, you will be notified by a relevant popup:
+
+.. figure:: ../screenshots/login_health_issue_popup.png
+  :align: center
+
+This popup is persistent and needs to be clicked to be dismissed. In addition, the menu entry for the
+:ref:`service health dashboard <serviceHealth>` will be displayed with an error or warning bubble.
+
+.. figure:: ../screenshots/login_health_issue_bubble.png
+  :align: center
+
+In case you see such notifications, you should visit the :ref:`service health dashboard <serviceHealth>` as soon as
+possible to determine the underlying issue and see how to resolve it.
 
 .. _DIGIT Test Bed instance: https://www.itb.ec.europa.eu/itb
 .. _EU Login user guide: https://www.itb.ec.europa.eu/docs/guides/latest/usingEULogin/

@@ -48,6 +48,20 @@ Overview of monitored services
 
 The services that are monitored by the dashboard are summarised in the following sections.
 
+.. _serviceHealth_overview_software:
+
+Software version updates
+++++++++++++++++++++++++
+
+This check verifies whether there are any updates regarding the Test Bed's software. These can be notifications for new
+releases, or more importantly, alerts for known security issues affecting the release you are currently using.
+
+An information message here indicates that the software version check is disabled or that a new release is available.
+Warnings can be reported either because the software check is enabled but could not complete successfully, or because
+the check was made and known issues were reported. In the latter case, a description of the issues is listed along
+with any further considerations to take into account. Resolving reported issues is always done by upgrading to the
+mentioned release.
+
 .. _serviceHealth_overview_ui:
 
 User interface communications

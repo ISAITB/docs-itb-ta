@@ -54,12 +54,14 @@ environment variables (if applicable) if you prefer to have these configured `vi
     :header: "Setting", "Description", "Environment variable(s)", "Default"
     :delim: |
 
-    **Custom welcome page message** | A custom text to display on the Test Bed's :ref:`welcome page<login__welcome>`. | | Disabled
+    **Custom welcome page content** | A custom text and title to display on the Test Bed's :ref:`welcome page<login__welcome>`. | | Disabled
     **Demo account** | An optional, non-administrator account that users can use to connect with from the login screen to :ref:`execute demos<login__demos>`. | ``DEMOS_ENABLED``, ``DEMOS_ACCOUNT`` | Disabled
     **Email settings** | Settings related to allow the Test Bed to send emails when applicable. | ``EMAIL_*`` variables | Disabled
     **Inactive account retention period** | Whether inactive user accounts will be removed after a maximum retention period. | | Disabled
     **REST API** | Whether the Test Bed's :ref:`REST API<api>` is available. | ``AUTOMATION_API_ENABLED`` | Disabled
     **Self-registration** | Whether users are allows to self-register for communities :ref:`supporting self-registration<community_testbed_communities__manage>`. | ``REGISTRATION_ENABLED`` | Enabled
+    **Startup configuration wizard** | Whether the :ref:`startup configuration wizard <login__startup_wizard>` will trigger when the Test Bed administrator accesses the home page. | ``STARTUP_WIZARD_ENABLED`` | Enabled
+    **Software version check** | Settings related to including an online software version check as part of the :ref:`service health dashboard <serviceHealth>`. | ``SOFTWARE_VERSION_CHECK_ENABLED`` | Disabled
     **Test session timeout** | A duration in seconds after which an active test session will be terminated. | | None
 
 Updating each setting is done individually through its relevant controls. All such controls include a **Save** button that you may
@@ -93,22 +95,22 @@ To manage the system administrators, select the **Administrators** tab from bene
 .. figure:: ../screenshots/system_configuration_admins_tab.png
   :align: center
 
-Administrators are listed in a table with one row per user displaying the user's **name**, **email** address (or **username** if integrated with EU Login) and **status**.
+Administrators are listed in a table with one row per user displaying the user's **name**, **email** address (or **username** if integrated with an external identity provider) and **status**.
 
 .. note::
-  **User status:** A user's status is meaningful when the Test Bed is integrated with EU Login. A value of **Inactive** indicates
+  **User status:** A user's status is meaningful when the Test Bed is integrated with an external identity provider. A value of **Inactive** indicates
   a user that has not yet :ref:`confirmed a role assignment<login__roles__confirm>` whereas a value of **Not migrated** indicates
-  a legacy account that has not been :ref:`migrated to EU Login<login__roles__migrate>`. In all other cases the user will be
+  a legacy account that has not been :ref:`migrated<login__roles__migrate>`. In all other cases the user will be
   displayed as **Active**.
 
 To create a new Test Bed administrator click on the **Create system administrator** button. Clicking on an existing row from the
 table allows you to edit the relevant user's information.
 
 The displayed screens and required information, both when you edit or create a new administrator, depend on whether or not the Test Bed
-is integrated with EU Login.
+is integrated with an external identity provider.
 
-Case: EU Login
-~~~~~~~~~~~~~~
+Case: Using an identity provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -116,10 +118,9 @@ When creating an administrator you will be presented with a form to enter the us
   :align: center
 
 You are required to provide the **email** address of the user. This address needs to be the one that the user has linked to
-her EU Login account. Once you have created the user you will see that a new entry is added to the list of Test Bed administrators
+her identity provider's account. Once you have created the user you will see a new entry added to the list of Test Bed administrators
 but for which there is no displayed name and the displayed status is **Inactive**. The name and status will be
 updated once this user has :ref:`confirmed this role assignment<login__roles__confirm>`.
-
 To finish creating the user click **Save**, otherwise click **Cancel** to go back.
 
 Editing an administrator's details displays her information as readonly.
@@ -131,8 +132,8 @@ The information presented here is the user's **name**, **email**, **role**, and 
 by clicking on **Delete** unless this is your own account. Finally, clicking **Back**
 will return you to the previous screen.
 
-Case: No EU Login
-~~~~~~~~~~~~~~~~~
+Case: No identity provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating an administrator you will be presented with a form to enter the user's information.
 
@@ -516,8 +517,8 @@ or to resources defined internally within the Test Bed. The configuration and us
   These differ from system resources in that they are accessible only within their specific community.
 
 Configured resources are displayed in the **Resources** section. Each resource is presented as a row displaying its file **name**, its **reference to use** when 
-including it in rich content, and its **description**. For each resource you are provided with controls to **copy** the resource's reference to the clipboard, **delete**
-the resource, and **download** it.
+including it in rich content, and its **description**. For each resource you are provided with an **option** button with further controls
+to **copy** the resource's reference to the clipboard, **delete** the resource, and **download** it.
 
 .. figure:: ../screenshots/system_configuration_resources_tab.png
   :align: center

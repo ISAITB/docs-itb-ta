@@ -11,21 +11,21 @@ by clicking the relevant link from the menu, which presents you the screen :ref:
 Communities
 -----------
 
-The **Communities** section allows you to manage the Test Bed's communities. Existing communities are presented in a table with a row per
-community.
+The Test Bed's existing communities are presented in a table with a row per community.
 
 .. figure:: ../screenshots/admin_community_communities.PNG
   :align: center
 
-For each community the **short name** and **full name** is presented. From this section you can :ref:`add a new community<community_testbed_communities__create>`
-or :ref:`edit an existing one<community_testbed_communities__manage>`.
+For each community the **short name** and **full name** is presented, and you can use the **search box** in the table's header to filter
+the ones displayed based on their name. To view a :ref:`community's details <community_testbed_communities__manage>` click its
+relevant row from the table, whereas to :ref:`create a new community<community_testbed_communities__create>` click the **Create community** button.
 
 .. _community_testbed_communities__create:
 
 Create a community
 ~~~~~~~~~~~~~~~~~~
 
-Creating a new community is done by clicking the **Create community** button from the **Communities** section header.
+Creating a new community is done by clicking the **Create community** button from the **Communities** panel.
 
 .. figure:: ../screenshots/admin_community_communities_header.PNG
   :align: center
@@ -54,7 +54,7 @@ the previous screen.
 Manage community details
 ------------------------
 
-To manage a community's details click its corresponding row from the **Communities** section.
+To manage a community's details click its corresponding row from the **Communities** panel.
 
 .. figure:: ../screenshots/admin_community_communities.PNG
   :align: center
@@ -213,7 +213,7 @@ In terms of additional features available here:
 .. _community__recipes:
 
 Recipes for user management
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The combination of **self-registration options** and **user permissions** afford you great flexibility in defining how users
 would join the community and engage in testing. These approaches typically balance the effort and control administrators
@@ -222,7 +222,7 @@ put into the testing process, versus the steps needed by - but also the flexibil
 .. _community__recipes__1:
 
 Approach 1: Full preconfiguration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++
 
 The community administrator preconfigures everything for the community, including the organisations
 that will be testing, their users, and their conformance statements. This requires more effort on the side of the administrator
@@ -247,7 +247,7 @@ Member States that will be testing against a predetermined set of specifications
 .. _community__recipes__2:
 
 Approach 2: Preconfigured users with test flexibility
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The community administrator manually creates organisations without enabling self-registration. As part of creating a new
 organisation, an organisation administrator is also created so that organisations can manage their own selection
@@ -270,7 +270,7 @@ and conformance statements.
 .. _community__recipes__3:
 
 Approach 3: Self-service testing with limited flexibility
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The community administrator enables self-registration for the community but controls what can be tested by defining
 configuration templates. Moreover selection of a template, and optionally the input of configuration properties, during self-registration
@@ -293,7 +293,7 @@ make their own choices.
 .. _community__recipes__4:
 
 Approach 4: Full self-service testing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++
 
 The community administrator enables self-registration and delegates all user management and conformance statement creation
 to organisation users. Configuration templates could also optionally be used, but they need not be set as mandatory
