@@ -29,7 +29,7 @@ The latest Test Bed release is **1.28.0**.
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
 
-Release 1.28.0 - XX/XX/2025
+Release 1.28.0 - 10/10/2025
 ---------------------------
 
 This release brings a host of new features focusing on community management, integrations and test capabilities. Administrators
