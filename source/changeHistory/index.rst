@@ -136,6 +136,7 @@ constructs, and numerous new utilities to better manage JSON and YAML data, as w
   ITB-1949 | :ui:`UI` | Allow the downloading of test session reports directly from the conformance statement detail page
   ITB-1950 | :ui:`UI` | Include autocomplete metadata for secret inputs and credential forms
   ITB-1961 | :ui:`UI` | Remove test suite execution button on conformance statement screen if the test suite contains only one test case
+  ITB-1967 | :ui:`UI` | Tolerate invalid path separators when processing ZIP entry paths
 
 Release 1.27.4 - 27/08/2025
 ---------------------------
