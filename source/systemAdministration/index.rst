@@ -422,14 +422,14 @@ Manage themes
 -------------
 
 As Test Bed administrator you can adapt the Test Bed's look and feel to match your organisation's needs. Look and feel settings are grouped
-into **themes**, allowing you to define multiple themes from which one will be set as the active one. Managing the Test Bed's themes is done
+into **themes**, allowing you to define multiple themes from which one will be set as active. Managing the Test Bed's themes is done
 from the **Themes** tab.
 
 .. figure:: ../screenshots/system_configuration_themes_tab.png
   :align: center
 
-By default, the Test Bed comes with two built-in themes that can be deactivated but not removed: a European Commission theme and a GITB theme.
-The GITB theme (identified by the key "gitb") is the active one following a clean Test Bed installation. The active theme can be set through 
+By default, the Test Bed comes with two built-in themes that can be deactivated but not removed: a European Commission theme with a key of ``ec``
+and a GITB theme with a key of ``gitb``. The GITB theme is the active one following a clean Test Bed installation. The active theme can be set through
 the user interface when :ref:`editing a theme<systemAdmin__themes_edit>`, or by setting the ``THEME`` environment variable to match a theme's
 **key**.
 
