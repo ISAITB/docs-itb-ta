@@ -21,13 +21,37 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.28.1**.
+The latest Test Bed release is **1.28.2**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.28.2 - 10/11/2025
+---------------------------
+
+This is a patch release to correct minor issues reported by users, and to improve navigation between conformance statement list and detail screens.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1973 | :ui:`UI` | Test engine communication healthcheck may incorrectly report an error when using an external identity provider
+  ITB-1976 | :ui:`UI` | Open tab in community details screen reset after full page refresh
+  ITB-1978 | :tdl:`TESTS` | XmlValidator and SchematronValidator reports may fail to be produced when validating Schematron rules on empty XML
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1974 | :ui:`UI` | Retain search and paging status when visiting conformance statement detail pages
+  ITB-1979 | :ui:`UI` | Reduce logging noise from automated health checks
 
 Release 1.28.1 - 21/10/2025
 ---------------------------
