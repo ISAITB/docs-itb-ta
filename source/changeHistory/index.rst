@@ -21,13 +21,28 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.28.2**.
+The latest Test Bed release is **1.28.3**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.28.3 - 14/11/2025
+---------------------------
+
+This is a patch release to correct minor issues reported by users concerning navigation between screens, and to improve performance in test session history displays.
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1980 | :ui:`UI` | Retain search and paging status when using browser controls
+  ITB-1981 | :ui:`UI` | Retain search and paging status when navigating from the test session history screens
+  ITB-1982 | :ui:`UI` | Improve performance of test session history and dashboard screens
 
 Release 1.28.2 - 10/11/2025
 ---------------------------
