@@ -21,13 +21,31 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.28.3**.
+The latest Test Bed release is **1.28.4**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.28.4 - 26/11/2025
+---------------------------
+
+This is a patch release to correct minor issues reported by users concerning conformance certificate previews, form submissions, test suite validation edge cases, and test session searches.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1983 | :ui:`UI` | Unable to filter completed test sessions by specification group in session dashboard
+  ITB-1988 | :ui:`UI` | When validating a test suite, certain XML syntax errors may prevent the validation report from being produced
+  ITB-1990 | :ui:`UI` | When previewing a PDF conformance certificate, the message's source popup and other editor controls display behind the preview dialog
+  ITB-1992 | :ui:`UI` | Adapting a conformance certificate message while previewing, results in SVG conformance badges not being included
+  ITB-1993 | :ui:`UI` | Typing enter when editing a keystore's information triggers a download rather than a save
+  ITB-1994 | :ui:`UI` | Forms with custom configuration properties or secret inputs may not submit when typing enter
 
 Release 1.28.3 - 14/11/2025
 ---------------------------
