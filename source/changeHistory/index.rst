@@ -21,13 +21,27 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.28.4**.
+The latest Test Bed release is **1.28.5**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.28.5 - 27/02/2026
+---------------------------
+
+This is a patch release to correct minor issues reported by users concerning conformance snapshots and image processing in test sessions.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2042 | :ui:`UI` | Image uploads in interaction steps can take long to complete for large images
+  ITB-2068 | :ui:`UI` | Unable to create conformance snapshots
 
 Release 1.28.4 - 26/11/2025
 ---------------------------
