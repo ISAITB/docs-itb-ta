@@ -2559,6 +2559,18 @@ require sequential execution.
     "forceSequentialExecution": true
   }
 
+When multiple test sessions are to be launched you can also specify the ``executionDelay`` property, providing a number
+representing the delay in milliseconds to apply between each test execution. This delay applies regardless
+of whether execution is sequential or parallel. Providing a negative value or zero is equivalent to no delay being applied.
+
+.. code-block:: json
+
+  {
+    "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
+    "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
+    "executionDelay": 5000
+  }
+
 By default the ``start`` call  immediately returns after having launched its test sessions. In case you need to take certain actions only
 **once the launched test sessions are completed**, you can set the ``waitForCompletion`` flag to ``true``. Doing so the Test Bed will monitor the
 status of the launched sessions, and will produce a response only once all of them are completed. To avoid pending indefinitely for long-running

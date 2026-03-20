@@ -26,11 +26,12 @@ or sessions that are :ref:`interactively being executed<execute_tests_interactiv
 
 Tests are presented in a paged table sorted based on their **start time** in a ascending order (i.e. the oldest sessions are presented first). Custom sorting
 can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
-will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
-controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
-corner the total and currently displayed test counts.
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. As is the case
+with all table displays, you may use controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable),
+while showing in the bottom right corner the total and currently displayed test counts. You can also select the number of rows
+**displayed per page**, a setting that when changed will also be saved in your :ref:`user preferences <manage_your_profile__edit>`.
 
-Each session is presented on a separate table row, with the following information displayed per session:
+Each session is presented on a separate table row, displaying per session:
 
 * The **specification** and **actor** (defined as the test case’s SUT).
 * The relevant **test case**.
@@ -58,9 +59,10 @@ The history of all your completed test sessions is presented in the **Completed 
 
 Tests are presented in a paged table sorted based on their **end time** in a descending order (i.e. showing the latest tests at the top). Custom sorting
 can be applied by clicking the title of each column; clicking a column header for the first time will sort by it in ascending manner and clicking it again
-will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. The table offers
-controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable), while showing in the bottom right
-corner the total and currently displayed test counts.
+will switch to descending. The active sort column and type are indicated using an arrow next to the relevant column header. As is the case
+with all table displays, you may use controls to go to **specific pages** as well as the **first**, **previous**, **next** and **last** ones (as applicable),
+while showing in the bottom right corner the total and currently displayed test counts. You can also select the number of rows
+**displayed per page**, a setting that when changed will also be saved in your :ref:`user preferences <manage_your_profile__edit>`.
 
 Test sessions are displayed one per table row, with each row including the following information:
 
@@ -99,9 +101,14 @@ The available filters are:
 * The sessions' **result**, **start** and **end time**.
 * A specific **session ID**.
 
-All filter controls with the exception of the start time, end time and session ID are multiple selection choices. The start and end time controls are
-date pickers that allow selection of ranges of dates for both the start and end of the sessions. The session ID is a text field. Selecting multiple values across these
-controls are applied as follows:
+All filter controls with the exception of the start time, end time and session ID are multiple selection choices. The session ID is provided through
+a text field, whereas the start and end time controls are date pickers that allow selection of ranges of dates for both the start and end of the sessions.
+Shortcuts are also provided here allowing you to select predefined and common ranges.
+
+.. figure:: ../screenshots/date_picker.png
+  :align: center
+
+Selecting multiple values across these controls are applied as follows:
 
 * Within a specific filter control using "OR" logic (e.g. selecting multiple specifications).
 * Across filter controls using "AND" logic (e.g. selecting a specification and a test case).
@@ -134,7 +141,7 @@ and is meant for machine-based processing. The following XML content is a sample
 The report includes the following information:
 
 * The **identifier**, **name** and **description** of the test case.
-* The **start** and **end time**.
+* The **start**, **end time** and **session identifier**.
 * The overall **result** as well as the **output message** that may have been produced.
 * The list of **step reports** that include each step's **identifier**, **description**, **timestamp**, **result** and **findings** (if validations were carried out).
 
@@ -155,7 +162,7 @@ included here is:
 * The name of the **system** that was tested and the name of its related **organisation**.
 * The names of the **domain**, **specification** and **actor** of the relevant conformance statement.
 * The **test case's name** and **description**.
-* The session's **result**, **start** and **end time**.
+* The session's **result**, **start time**, **end time** and **identifier**.
 * The session's **output message** if one was produced.
 
 Below the overview information follow the test case's **references** where, as available, you are provided with links to additional
@@ -231,8 +238,8 @@ active (see :ref:`execute_tests_interactive_execution`).
 .. figure:: ../screenshots/test_history_test_result.PNG
   :align: center
 
-In terms of provided controls, a document icon is presented on steps that produced a report that can be clicked to review
-its details (see :ref:`view_your_test_history__test_steps__details`). In addition, the diagram's header presents the session's **test suite**,
+In terms of provided controls, each completed step is displayed with a status icon and a status-specific highlight when hovered, and
+can be clicked to review its details (see :ref:`view_your_test_history__test_steps__details`). In addition, the diagram's header presents the session's **test suite**,
 **test case** and **session identifier**. The session identifier may also be clicked to copy it to the clipboard, which could be useful if you would
 want to communicate it to others or to use it for search filtering. Furthermore, clicking elsewhere on the header of the diagram display will
 collapse (or expand) the diagram, which could be useful if you want to quickly view other information on the screen.
@@ -240,11 +247,12 @@ collapse (or expand) the diagram, which could be useful if you want to quickly v
 Above the diagram display you are presented with additional buttons linked to the test session. The purpose of these are as follows:
 
 * **View log** opens up the test session log for display, displaying its contents similarly to when the :ref:`session is executing<execute_tests__step3__view_log>`.
-* **Copy link** copies a shareable external link to focus on the current test session.
-* **View statement** takes you to the relevant :ref:`conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details>`.
-* **View system** allows you to navigate to the relevant :ref:`system <manage_organisation__systems>` or :ref:`organisation <manage_organisation>` details.
-* **View specification** allows you to navigate to the relevant :ref:`specification <domains__specification>`, :ref:`actor <domains__actor>` or :ref:`domain <domains__domain_details>` details.
-* **View test case** takes you to the relevant :ref:`test case <domains__test_case__details>` or :ref:`test suite <domains__test_suite_details>`.
+* **Copy link** copies a shareable external link to focus on the current test session. You also have here a **Copy link for administrator** option in case you 
+  want to share the link with an administrator.
+* **View statement** takes you to the relevant :ref:`conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details>`,
+  with additional options to :ref:`view the related system <manage_organisation__systems>`, :ref:`organisation <manage_organisation>`,
+  :ref:`specification <domains__specification>`, :ref:`actor <domains__actor>`, :ref:`domain <domains__domain_details>`, :ref:`test case <domains__test_case__details>` and :ref:`test suite <domains__test_suite_details>`.
+
 
 In the case of an active test session you are also provided with a button to **refresh** its display and **view pending interactions**
 (in case interactions are pending).
@@ -272,7 +280,6 @@ following example for a validation failure.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG
   :align: center
-  :scale: 70%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
 can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
@@ -281,7 +288,6 @@ is also highlighted for the recorded validation messages.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure_code.PNG
   :align: center
-  :scale: 70%
 
 The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will

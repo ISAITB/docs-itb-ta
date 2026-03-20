@@ -326,12 +326,12 @@ The **Conformance statement details** section provides you the context of what y
 .. figure:: ../screenshots/conformance_statement_details_overview_admin.PNG
   :align: center
 
-At the top of the detail panel you see the name of the **organisation** and **system** for which this conformance statement has
+The panel's header displays the **overall conformance status** based on the latest test results (success, failure or incomplete).
+Within the detail panel you see at the top the name of the **organisation** and **system** for which this conformance statement has
 been made. Following this you see the name and description of the **specification** you are claiming conformance for, including
-any options (e.g. specification versions, profiles or roles) that apply. Finally, at the bottom of the panel you see the current
-status of the statement, specifically:
+any options (e.g. specification versions, profiles or roles) that apply. Finally, at the bottom of the panel you see
+status information, specifically:
 
-* The **overall status** based on the latest test results (success, failure or incomplete).
 * The **last update time**, corresponding to the last time the status of the conformance statement was updated.
 * The **result counts**, showing the number of tests in the conformance statement that are completed, failed or incomplete.
 * The **result ratios**, illustrating the same results but as a percentage of the total tests in the statement.
@@ -357,8 +357,15 @@ At the bottom of the details' panel you are presented with buttons for further a
 * The **Back** button to return to the :ref:`conformance statement list <manage_your_conformance_statements__view_your_conformance_statements>`.
 * The **Delete statement** button to :ref:`delete the conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details__delete>`.
 
-In addition, the overall detail panel can also be **collapsed** and **expanded** by clicking its header. Collapsing its display could be useful if you would want to focus on the tests to
-execute rather than the statement's details.
+The overall detail panel can be **collapsed** and **expanded** by clicking its header. When collapsed, the panel's title
+is replaced by the specification's name, and controls are displayed next to the statement's status.
+
+.. figure:: ../screenshots/conformance_statement_details_collapsed_header.png
+  :align: center
+
+Collapsing the details could be useful if you would want to focus on the tests to execute rather than the statement's details.
+If you do so, this choice will be recorded as part of your :ref:`user preferences <manage_your_profile__edit>`, applying
+it automatically whenever you visit a statement's details.
 
 Beneath the statement details' panel you are presented with two tabs that allow you to interact and manage the conformance statement:
 
@@ -427,7 +434,7 @@ Each test suite includes within it the listing of its test cases. The informatio
 
 This information is complemented by the test case controls which depending on the status of the test case include:
 
-* An **option** button, if a test session has been executed, that allows you to **view** the latest executed session in the :ref:`test session history<view_your_test_history__test_steps>`, and to download its **test report** in PDF or XML format.
+* An **option** button, if a test session has been executed, that allows you to **view** the latest and prior executed sessions in the :ref:`test session history<view_your_test_history__test_steps>`, and to download its **test report** in PDF or XML format.
 * An **information** button to view the test case's extended documentation (if defined).
 * A **play** button to :ref:`start a new test session <execute_tests>` for this test case.
 

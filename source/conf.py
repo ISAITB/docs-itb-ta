@@ -24,9 +24,9 @@ copyright = '2026, European Commission, DIGIT'
 author = 'European Commission, DIGIT'
 
 # The short X.Y version
-version = 'ITB version 1.28.5'
+version = 'ITB version 1.29.0'
 # The full version, including alpha/beta/rc tags
-release = 'ITB version 1.28.5'
+release = 'ITB version 1.29.0'
 
 html_show_sourcelink = False
 html_show_sphinx = False
