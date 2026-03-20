@@ -28,6 +28,7 @@ Chapter overview
    :doc:`domainDashboard/index` | Managing your specifications and test suites.
    :doc:`communityDashboard/index` | Managing your community's configuration and members.
    :doc:`exportimport/index` | Exporting and importing data archives.
+   :doc:`serviceHealth/index` | Checking the extension services' health status.
    :doc:`validateTestSetup/index` | Validating your test setup.
    :doc:`profile/index` | Managing your user profile.
    :doc:`contactSupport/index` | Contacting support and providing feedback.
@@ -49,6 +50,7 @@ Chapter overview
    domainDashboard/index
    communityDashboard/index
    exportimport/index
+   serviceHealth/index
    validateTestSetup/index
    profile/index
    contactSupport/index

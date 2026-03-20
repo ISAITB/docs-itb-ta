@@ -25,7 +25,7 @@ The information grouped in the provided tabs include:
 * The **Landing pages** section listing the :ref:`landing pages<community__manage_landing_pages>` you can use for your organisations.
 * The **Legal notices** section listing the :ref:`legal notices<community__manage_legal_notices>` you can display for your organisations.
 * The **Error templates** section listing the :ref:`error message templates<community__manage_error_templates>` used to display unexpected errors to your organisations.
-* The **Triggers** section listing the :ref:`triggers<community__manage_triggers>` used to automate processes upon specific events.
+* The **Webhooks** section listing the :ref:`webhooks<community__manage_triggers>` used to automate processes upon specific events.
 * The **Resources** section listing the :ref:`resources<community__manage_resources>` referenced in documentation and other rich content.
 
 The **Community details** section allows you to view and edit your community's basic information.
@@ -37,15 +37,17 @@ The information you can edit in this form is:
 
 * Your community's **short** and **full name** (required). These are visible to the Test Bed administrator and in certain user reports.
 * Your community's **support email** address (optional) to receive contact form submissions.
+* A custom **tag** (optional) to visually distinguish the community.
 * Your preference on allowing **self-registration** for your community.
 * The **user permissions** you foresee for the community's members (initially collapsed).
+* The **default user preferences** for the community's members (initially collapsed).
 
 Here you can also view the community's **REST API key** that is used to identify the community when managing test suites via 
 the :ref:`Test Bed's REST API<domains__specification__test_suite_rest>` (if enabled by the Test Bed administrator). This is an
 automatically generated key that can be copied to your clipboard using the provided **copy** control.
 
 Regarding the **support email**, this is the address, typically a functional mailbox, where your community users' feedback is sent via 
-the Test Bed's contact form (see :ref:`contact_support`). If you configure this email address, it will be used as the recipient of 
+the :ref:`Test Bed's contact form <contact_support>`. If you configure this email address, it will be used as the recipient of
 submissions, with the Test Bed default functional mailbox added in CC. If not configured, submissions will only 
 be delivered to the Test Bed default functional mailbox. You can also check here the **Notify for pending interactions** option so
 that alerts are sent to the mailbox if test sessions are pending for administrator verification.
@@ -70,47 +72,70 @@ Received messages include the following information:
 * The **type** of the message and the **message** itself.
 * Any **attachments** that the user has included.
 
-The **self-registration method** is another point that merits further details. This setting determines whether users can themselves 
-:ref:`register new organisations<login__create_account>` in your community through the Test Bed's :ref:`welcome page<login__welcome>`.
-The possible values for this are as follows:
+The community's **tag** is an optional feature used to distinguish the community from others. Tags are displayed only to
+administrators, and are used to convey some additional information regarding the community. Typical use cases would be
+to provide a visual cue on the **setup's version** or to highlight that a specific setup is the **production configuration**
+that organisation users can access.
 
-* **Not supported:** Disables self-registration. By selecting this only you as community administrator will be able to register
-  organisations.
-* **Select from public communities:** This will allow self-registration to all, effectively making your community a public one.
-* **Select from public communities and provide token:** This will display your community as available for self-registration
-  but will require the provision of an additional text token as a "community password".
-
-.. figure:: ../screenshots/admin_community_details_token.PNG
+.. figure:: ../screenshots/admin_community_tag.png
   :align: center
 
-Selecting any value other than **Not supported** will expand the community details' form to provide further configuration options under section **Self-registration settings**. These
-are:
+If you select to add a tag you will be presented with a popup to provide its information. This includes the tag's **name**,
+a **description** presented as a tooltip, as well as **background** and **text** colours used to style it when displayed.
+Clicking on **Save** will record the tag, whereas **Cancel** will close the popup without making changes.
 
-* **Self-registration token:** This is displayed if the third option is selected that requires a token being provided to complete the self-registration.
-  The value you provide here is the "community password" that self-registration users will need to provide.
-* **Token help text:** In case token-based self-registration is selected you can also use this to specify a short help text that will be displayed to users next
-  to the token input. This can include simple formatting and hyperlinks to allow you to reference an email address or link to an online resource.
+.. figure:: ../screenshots/admin_community_tag_modal.png
+  :align: center
+
+When a tag has been added to the community, you will see it presented in the form, with controls to **remove** or **edit** it.
+You also have choices here on whether this tag will be presented to community and/or Test Bed administrators.
+
+.. figure:: ../screenshots/admin_community_tag_added.png
+  :align: center
+
+When a tag is present for a community, it will figure prominently in the **banner** of all screens that relate to the community's
+configuration, as well as in lists that include the community.
+
+.. figure:: ../screenshots/admin_community_tag_display.png
+  :align: center
+
+**Self-registration method** is another point that merits further details, determining whether and how users can themselves
+:ref:`register new organisations<login__create_account>` in your community through the Test Bed's :ref:`welcome page<login__welcome>`.
+When enabled, you are presented with an additional section of settings specific to self-registration.
+
+.. figure:: ../screenshots/admin_community_self_registration.png
+  :align: center
+
+The settings available to you to tune the self-registration process are as follows:
+
 * **Description:** This is a descriptive text for the community that will accompany its display in the self-registration form as one of the available
   communities. The purpose of this is to provide a short summary of what this community offers to potential users. If the community is linked to a **domain**
-  you have the option of replicating the description from the domain by checking the **Same as domain** checkbox. You may alternatively provide a different 
+  you have the option of replicating the description from the domain by checking the **Same as domain** checkbox. You may alternatively provide a different
   description if this is more suitable.
-* **Self-registration notifications:** This option is available if the Test Bed supports email notifications and if the community defines a **support email**.
-  Checking this will send a notification email to the configured support mailbox whenever there is a new registration.
-* **Self-registration restrictions:** This allows you to select a means of restricting self-registration to ensure people and/or organisations enroll only once.
+* **Restrictions:** This allows you to select a means of restricting self-registration to ensure people and/or organisations enroll only once.
   The restrictions you can set are to not allow multiple registrations from the same user (based on her email address) or from the same email domain. Note
   that such restrictions are only supported if the Test Bed is integrated with EU Login that allows the Test Bed to be aware of users' actual email addresses.
+* **Assigned user role:** Whether registering users will be created as organisation administrators or basic users.
+* **Instructions:** A optional short help text that will be displayed to users to provide assistance. This can include simple formatting and hyperlinks
+  to reference a support mailbox or link to online resources.
+* **Community token:** An optional token that will need to be provided to register to the community. This can be generated automatically
+  or set to a specific value. If missing, this means that the community in question can be registered to by anyone.
 * **Organisation tokens:** These are settings that define whether you allow self-registering users to join existing organisations
   after providing an organisation-specific token. You may also allow or not organisation administrators to manage such tokens.
-* **Require from users:** These are requirements that you want to enforce to users completing the self-registration process. The options available here, are
-  to force the selection of a :ref:`configuration template<community__create_organisation>`, to require the completion of
-  :ref:`custom properties<community__properties>` marked as required (otherwise displayed as required but not blocking), and
-  to require that users join existing organisations by means of organisation-specific tokens.
+* **Default organisation:** You can select one of your community's organisations as the organisation in which new registrants will
+  be added. This is a variant of providing an organisation token, whereby you allow users to join a specific organisation defined
+  by you without providing further information.
+* **Require from users:** These are requirements that you want to enforce to users completing the self-registration process. The options available here,
+  are to join an existing organisation (by token or the default), or otherwise when creating a new organisation, to force the selection of a :ref:`configuration template<community__create_organisation>`,
+  and to require the completion of :ref:`custom properties<community__properties>` marked as required (otherwise displayed as required but not blocking).
+* **Self-registration notifications:** This option is available if the Test Bed supports email notifications and if the community defines a **support email**.
+  Checking this will send a notification email to the configured support mailbox whenever there is a new registration.
 
 .. note::
   **Organisation templates:** If you choose to enable self-registration for your community you may also find interesting the 
   possibility to :ref:`define preconfigured templates for organisations<community__create_organisation>`.
 
-Finally, the **user permissions** section allows you to customise the permissions available to the community's members. To display (or collapse) this section click
+The **user permissions** section allows you to customise the permissions available to the community's members. To display (or collapse) this section click
 on the section's header. Doing so will present the available permission options
 
 .. figure:: ../screenshots/admin_community_details_permissions.PNG
@@ -119,6 +144,7 @@ on the section's header. Doing so will present the available permission options
 The available permission options are as follows:
 
 * **Download conformance certificates**. If not allowed, only community administrators may create such certificates from the :ref:`conformance dashboard<monitor_conformance_status__statements__export_statement>` or a :ref:`conformance statement detail page<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
+* **Download reports in XML format**. If not allowed, organisation users will see only download options for PDF reports.
 * **Manage organisation users**. If not allowed, only community administrators will be able to manage users.
 * **Create or delete systems**. Note that if this is not allowed, editing a system and its custom properties (if defined) will remain possible for organisation administrators.
 * **Create or delete conformance statements**. If not allowed, users will only be able to test for what you preconfigure for them, or what they select
@@ -139,12 +165,33 @@ and Test Bed administrators through the :ref:`session dashboard<monitor_test_ses
   if you want to ensure that once testing starts no data is changed. This also works well when you have enabled self-registration and require the selection of a :ref:`configuration template<community__create_organisation>`. This way you ensure
   only predefined and non-editable conformance testing setups for your users.
 
-To persist any changes you have made in the community detail form click the **Save changes** button. Navigating away from this page will discard any pending changes.
-In terms of additional features available here:
+Finally, the **default user preferences** section, allows you to set meaningful defaults for display settings applied to your community's users.
 
-* The **Edit report settings** button is addressed in section :ref:`community__report_settings`.
-* The **Edit custom member properties** button is addressed in section :ref:`community__properties`.
-* The **Edit labels** button is addressed in section :ref:`community__labels`.
+.. figure:: ../screenshots/admin_community_preferences.png
+  :align: center
+
+The preferences you can set include the following:
+
+* Whether the :ref:`left-side menu <navigate__menu>` will display as collapsed.
+* Whether :ref:`conformance statement details <manage_your_conformance_statements__view_a_conformance_statements_details>` will display by default as collapsed.
+* The **initial page** to view once users log in, selecting between the :ref:`community landing page <navigate__landing_page>` or the :ref:`list of conformance statements <manage_your_conformance_statements>`.
+* The **number of items** to display per page in paged displays.
+
+New users in your community will have their preferences initialised to match these defaults. They will nonetheless always
+be able to change them based on their actions and via their :ref:`profile page <manage_your_profile>`. Adapting the
+default preferences may be meaningful if doing so is expected to result in an improved experience for your users. For example, if
+you don't count on defining a landing page you can have it bypassed rather than display an empty page upon login.
+Similarly, if you have limited testing options, you may prefer to force a simplified presentation for conformance statements.
+
+If you modify the community's default user preferences, you will be presented with a choice on how to apply the change.
+The new preferences could apply only for new users, or also be forced for existing ones.
+
+.. figure:: ../screenshots/admin_community_preferences_choice.png
+  :align: center
+
+To persist any changes you have made in the community detail form click the **Save changes** button. Navigating away from this page will discard any pending changes.
+The additional controls presented here, allow you to manage the community's :ref:`report settings <community__report_settings>`,
+:ref:`custom configuration properties <community__properties>`, and :ref:`labels <community__labels>`.
 
 .. _community__recipes:
 
@@ -246,6 +293,28 @@ of the organisations that will be testing (e.g. software vendors).
 1. Enable self-registration.
 2. Optionally create configuration templates.
 3. Ensure all permissions are in place to allow users to manage their own configuration (systems, users, and conformance statements).
+
+.. _community__recipes__5:
+
+Approach 5: Controlled demo environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The community administrator defines a specific default organisation with test cases used for experimentation and demonstration
+purposes. Users joining this organisation can execute tests and view the testing history, but cannot make changes or see other
+users.
+
+**When to use?**
+
+You are using the Test Bed as a demonstration and experimentation environment, rather than for conformance testing and certification.
+In doing so you want to make it as simple as possible for users to join, but at the same time ensure that their permissions
+and access remain limited.
+
+**How to configure?**
+
+1. Enable self-registration.
+2. Define a default organisation for your community and force new users to join it.
+3. Do not require community or organisation tokens to register.
+4. Specify that self-registering users should be added with simple (non-administrator) accounts.
 
 .. _community__organisations:
 
@@ -1069,43 +1138,43 @@ for certain organisations.
 
 .. _community__manage_triggers:
 
-Manage triggers
+Manage webhooks
 ---------------
 
-A **trigger** is a means of carrying out automated processing when a given event occurs. Triggers can receive various types of inputs depending
+A **webhook** is a means of carrying out automated processing when a given event occurs. Webhooks can receive various types of inputs depending
 on their configured event, and can be used both to receive notifications and to modify the current test setup. They represent a powerful means of
 extending the Test Bed's processing in a decoupled way and can be used to complete advanced tasks that the Test Bed alone cannot handle 
 (e.g. preparing configuration packages for new community members).
 
-Trigger execution is always an asynchronous step, and a failed trigger call will never cause its root event to fail itself. Numerous triggers
+Webhook execution is always an asynchronous step, and a failed webhook call will never cause its root event to fail itself. Numerous webhooks
 may be configured for the same event types which, assuming they are set as active, will all be processed. There is however no guarantee on the
-execution order or chaining of triggers, so you need to take this into account in your trigger design. Finally, note that triggers are not 
+execution order or chaining of webhooks, so you need to take this into account in your webhook design. Finally, note that webhooks are not
 fired when bulk :ref:`import operations<exportimport__import>` take place (e.g. creating organisations through an import). 
 
-Configured triggers are displayed in the **Triggers** section. These are presented as a table with one row per trigger, displaying for each its
+Configured webhooks are displayed in the **Webhooks** section. These are presented as a table with one row per webhook, displaying for each its
 **name**, **description**, **event type**, **active** status and latest **result**.
 
 .. figure:: ../screenshots/admin_community_triggers.PNG
   :align: center
 
-Adding a new trigger is done by clicking the **Create trigger** button.
+Adding a new webhook is done by clicking the **Create webhook** button.
 
 .. _community__manage_triggers__create:
 
-Create trigger
+Create webhook
 ~~~~~~~~~~~~~~
 
-When creating a new trigger you are presented with a form to enter its information.
+When creating a new webhook you are presented with a form to enter its information.
 
 .. figure:: ../screenshots/admin_community_triggers_create.PNG
   :align: center
 
-The information requested from you in this form for the new trigger is:
+The information requested from you in this form for the new webhook is:
 
-* Its **name** (required), used for display purposes in the list of triggers.
-* Its **description** (optional), presented to community administrators to provide additional context on the purpose of the trigger.
-* The **event type** (required) for the occurrences of which the trigger will be fired.
-* The **active** flag (optional) that determines whether this trigger is currently enabled (default is false).
+* Its **name** (required), used for display purposes in the list of webhooks.
+* Its **description** (optional), presented to community administrators to provide additional context on the purpose of the webhook.
+* The **event type** (required) for the occurrences of which the webhook will be fired.
+* The **active** flag (optional) that determines whether this webhook is currently enabled (default is false).
 
 The event types that are available for configuration are listed in the following table:
 
@@ -1129,8 +1198,8 @@ Once an event type is selected you will also be presented with an optional **fir
 .. figure:: ../screenshots/admin_community_triggers_fire_condition.png
   :align: center
 
-A fire condition is a specific rule that governs whether the trigger will be activated. This means that besides the trigger
-event itself (e.g. starting a test session), you can specific for which cases the trigger should fire (e.g. specific test cases).
+A fire condition is a specific rule that governs whether the webhook will be activated. This means that besides the webhook
+event itself (e.g. starting a test session), you can specific for which cases the webhook should fire (e.g. specific test cases).
 Clicking the **Add condition clause** button prompts you to add a clause to your condition (you can have any number of such clauses).
 Doing so opens a popup to define the clause's parameters:
 
@@ -1138,11 +1207,11 @@ Doing so opens a popup to define the clause's parameters:
   :align: center
 
 Clauses are based on checking values against **regular expressions**. In this popup you can select the value to check based 
-on the trigger's event type, provide the expression to use, as well as whether the expression should
+on the webhook's event type, provide the expression to use, as well as whether the expression should
 result in a match or not (the latter used to invert the check). 
 
 Once you have selected the value type and provided an expression, you can also **test the expression** by checking the relevant
-checkbox and using a sample value. For example, we can consider a trigger when test sessions start, that should apply
+checkbox and using a sample value. For example, we can consider a webhook when test sessions start, that should apply
 only for specifications with *"Export"* in their name:
 
 .. figure:: ../screenshots/admin_community_triggers_fire_condition_popup_test.png
@@ -1156,10 +1225,10 @@ as you expect. To test it check the relevant checkbox, and try it out for a spec
 
 .. note::
 
-  Defining fire conditions is optional - triggers without conditions will always fire.
+  Defining fire conditions is optional - webhooks without conditions will always fire.
 
-The separate **Web service details** section includes the inputs concerning the trigger's web service. Consider that the trigger itself is a set of metadata
-that determines what fires and with what data, however the actual processing linked to the trigger is handled by the configured web service. This service
+The separate **Web service details** section includes the inputs concerning the webhook's web service. Consider that the webhook itself is a set of metadata
+that determines what fires and with what data, however the actual processing linked to the webhook is handled by the configured web service. This service
 needs to be accessible by the Test Bed and must be either:
 
 * A **SOAP service** implementing the `GITB processing service API`_, a simple API that expects an arbitrary set of inputs and can
@@ -1173,7 +1242,7 @@ The information required to configure this web service are:
   as it should be used by the Test Bed, meaning that it could also be an internal address.
 * An **operation** (optional), to signal an operation name to the service. Such operations are foreseen by the `GITB processing service API`_, although this can also be used for HTTP services as 
   extra metadata to distinguish calls.
-* The **input data** (optional) to provide as part of service's payload when the trigger fires.
+* The **input data** (optional) to provide as part of service's payload when the webhook fires.
 
 The provided **endpoint URL** can be tested to ensure it is responding as expected. To do this click the **Test** button at the right end of the URL's text field.
 If your service is set as a GITB processing service this will call the service's `getModuleDefinition operation`_, otherwise in case of an HTTP service, it will make an HTTP ``POST``
@@ -1193,8 +1262,8 @@ If the test fails, the popup will display the collected error messages from the 
 .. figure:: ../screenshots/admin_community_triggers_test_url_complex.PNG
   :align: center
 
-Regarding the trigger's **input data**, this represents the context needed by the trigger's web service to complete 
-its processing. The available inputs depend on the trigger's **event type** as follows:
+Regarding the webhook's **input data**, this represents the context needed by the webhook's web service to complete
+its processing. The available inputs depend on the webhook's **event type** as follows:
 
 .. csv-table::
     :header: "Input data", "Event types", "Details"
@@ -1213,14 +1282,12 @@ its processing. The available inputs depend on the trigger's **event type** as f
     Conformance statement properties | Statement created/updated/completed | The name and value of one or more custom system properties.
 
 To include one or more types of data in the service's calls check the relevant checkboxes. In the case of domain, organisation, system and statement properties, once the relevant
-option is checked, you will be presented with a table listing the properties defined for the community.
+option is checked, you will be presented with a multiple selection list with the properties defined for the community.
 
 .. figure:: ../screenshots/admin_community_triggers_org_properties.PNG
   :align: center
 
-Each row in this table corresponds to a property, displaying for each its **name** (for organisation, system and statement properties), **type** and **identifier**. The identifier will be used as the input's name,
-whereas the value to be passed will be determined by the property's type. Simple and secret values are provided as text, whereas binary values are provided as serialised Base64 strings.
-To add a property to the inputs click its row (clicking it again will remove it).
+You see here the **name** of each property as well as its **type**. Simple and secret values are included as text, whereas binary values are included as serialised Base64 strings.
 
 .. note::
   **Including secret properties:** Secret properties, if included as input, will be passed in the clear. Make sure that you are aware of this and only choose to include
@@ -1242,8 +1309,8 @@ Alternatively, if the service is set as an **HTTP service**, the payload will be
 .. figure:: ../screenshots/admin_community_triggers_preview_json.png
   :align: center
 
-From this preview popup you can click **Copy to clipboard** to copy all text or **Close** to hide the preview. Clicking on **Call service** will call the trigger's service
-using the presented payload, allowing you to test it directly from the trigger definition screen. Before making such a call you can also edit the payload to test different 
+From this preview popup you can click **Copy to clipboard** to copy all text or **Close** to hide the preview. Clicking on **Call service** will call the webhook's service
+using the presented payload, allowing you to test it directly from the webhook definition screen. Before making such a call you can also edit the payload to test different
 input values and potentially refer to actual information from your community.
 
 Once the service has been called you will see its result displayed in the popup or a detailed error trace. The
@@ -1253,58 +1320,58 @@ below example is a sample result after successfully calling a GITB processing se
   :align: center
 
 It is important to note that such test calls will never result in updating data on the side of the Test Bed.
-Normal trigger calls support :ref:`updating data based on returned outputs<community__manage_triggers__output>`
+Normal webhook calls support :ref:`updating data based on returned outputs<community__manage_triggers__output>`
 but this does not apply when testing. You do however have the opportunity to inspect returned outputs that would
 normally be used for updates, to ensure that everything is working as you expect. If you would like to make
 additional test calls you can click here the **Back** button to return to the previous preview screen 
 (maintaining any editing that you may have introduced manually).
 
-Once you have provided the required information and completed your tests, you can create the trigger by clicking the **Save** button. Clicking on the **Cancel** button will discard pending
+Once you have provided the required information and completed your tests, you can create the webhook by clicking the **Save** button. Clicking on the **Cancel** button will discard pending
 changes and return to the previous screen.
 
 .. _community__manage_triggers__edit:
 
-Edit trigger
+Edit webhook
 ~~~~~~~~~~~~
 
-To edit an existing trigger click its corresponding row from the **Triggers** table.
+To edit an existing webhook click its corresponding row from the **Webhooks** table.
 
 .. figure:: ../screenshots/admin_community_triggers.PNG
   :align: center
 
-Doing so will take you to a screen where the trigger's information is displayed in editable form fields.
+Doing so will take you to a screen where the webhook's information is displayed in editable form fields.
 
 .. figure:: ../screenshots/admin_community_triggers_edit.PNG
   :align: center
 
-In this screen you can change the trigger's information, web service details and included data. For a detailed description of each property and the available options check the
-:ref:`trigger creation<community__manage_triggers__create>` documentation. In this screen you can in addition see a section named **Trigger status** which
-indicates the result from the trigger's last execution. This status can be one of the following:
+In this screen you can change the webhook's information, web service details and included data. For a detailed description of each property and the available options check the
+:ref:`webhook creation<community__manage_triggers__create>` documentation. In this screen you can in addition see a section named **Webhook status** which
+indicates the result from the webhook's last execution. This status can be one of the following:
 
-* **None:** Highlighted in blue, this displays if the trigger has actually never fired up to now.
-* **Success:** Highlighted in green, this indicates the trigger succeeded in its last execution.
-* **Error:** Highlighted in red, this indicates the trigger failed in its last execution.
+* **None:** Highlighted in blue, this displays if the webhook has actually never fired up to now.
+* **Success:** Highlighted in green, this indicates the webhook succeeded in its last execution.
+* **Error:** Highlighted in red, this indicates the webhook failed in its last execution.
 
 .. figure:: ../screenshots/admin_community_triggers_edit_status.PNG
   :align: center
 
-For triggers having executed and resulting either in a success or failure, you are presented with a **Clear** button. You may click this to clear the latest status, resetting it to **None**,
+For webhooks having executed and resulting either in a success or failure, you are presented with a **Clear** button. You may click this to clear the latest status, resetting it to **None**,
 in case you want to ensure a subsequently displayed status corresponds to changes you have just introduced. In the case of a failed last call you also have the option to **View errors**. Clicking this
-will display the collected error messages returned from the last trigger's execution that you can **Copy to clipboard** or **Close**.
+will display the collected error messages returned from the last execution that you can **Copy to clipboard** or **Close**.
 
 .. figure:: ../screenshots/admin_community_triggers_status_error.PNG
   :align: center
 
-To persist any changes you have made in the trigger's definition click on **Save**. Clicking on **Delete** deletes, upon confirmation, the trigger, whereas clicking **Back** will cancel
+To persist any changes you have made in the webhook's definition click on **Save**. Clicking on **Delete** deletes, upon confirmation, the webhook, whereas clicking **Back** will cancel
 pending changes and return to the :ref:`community details page<community>`.
 
 .. _community__manage_triggers__output:
 
-Returning output from triggers
+Returning output from webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One of the powerful features of triggers is that they can also adapt the configuration in the Test Bed. A trigger can achieve this by having its web service return an output as per the 
-`GITB processing service API`_ specification that can modify, depending on the trigger's event type, the values for **organisation properties**, **system properties** or **conformance statement parameters**.
+One of the powerful features of webhooks is that they can also adapt the configuration in the Test Bed. A webhook can achieve this by having its web service return an output as per the
+`GITB processing service API`_ specification that can modify, depending on the webhook's event type, the values for **organisation properties**, **system properties** or **conformance statement parameters**.
 In case of a JSON HTTP service, the same possibility exists by returning JSON output using the same names and structures as the `GITB processing service API`_.
 
 Each type of output is grouped in a map (or JSON object for HTTP services) which defines output items as key-value pairs, the key being the property's key or identifier and the value being the value to set (provided as 
@@ -1315,10 +1382,10 @@ Base64 in the case of binary properties). Each value map is named as follows:
 * **statementProperties** for the properties of conformance statements (applicable and handled in events linked to conformance statements).
 
 Note that returned properties that don't apply (e.g. system properties when creating an organisation) are ignored. This is also the case for properties that cannot be matched with existing ones.
-In addition, any unexpected errors that may occur when calling triggers or processing their responses have no effect on the origin event of the trigger. For example
-a trigger fired for a newly created organisation that fails, will never prevent or affect the organisation's creation.
+In addition, any unexpected errors that may occur when calling webhooks or processing their responses have no effect on the origin event of the webhook. For example
+a webhook fired for a newly created organisation that fails, will never prevent or affect the organisation's creation.
 
-The following sample output illustrates a case where a trigger linked to the creation of a new conformance statement is returning values to set:
+The following sample output illustrates a case where a webhook linked to the creation of a new conformance statement is returning values to set:
  
 * For the organisation, setting its "identifier" property.
 * For two conformance statement properties named "client.flag" and "client.number".
@@ -1342,8 +1409,8 @@ The following sample output illustrates a case where a trigger linked to the cre
       </output>
   </ps:ProcessResponse>
 
-A use case for such a trigger could be to prepare the organisation's configuration linked to the new conformance statement so that it can begin testing. This trigger processing could
-also be defined as a mandatory prerequisite through the use of a hidden but required property that is used as a control flag and set through the trigger's output.
+A use case for such a webhook could be to prepare the organisation's configuration linked to the new conformance statement so that it can begin testing. This webhook processing could
+also be defined as a mandatory prerequisite through the use of a hidden but required property that is used as a control flag and set through the webhook's output.
 
 .. _community__manage_resources:
 
@@ -2083,7 +2150,7 @@ The additional properties that you define can be used in numerous ways:
 * As additional **quality control** by restricting certain properties as being editable only by community administrators. Such properties
   can be considered as flags that you need to set before an organisation can engage in testing.
 * For **data sharing**, allowing you to configure for your users certain information that they will subsequently be able to access.
-* To **facilitate automation** via :ref:`triggers<community__manage_triggers>` or external scripting, by allowing the management of certain properties by external processes that could be used to 
+* To **facilitate automation** via :ref:`webhooks<community__manage_triggers>` or external scripting, by allowing the management of certain properties by external processes that could be used to
   drive automation tasks linked to your conformance testing (e.g. automatically generate certificates for new organisations).
 
 To manage your community's custom properties you start by clicking the **Edit custom member properties** button from your community 
@@ -2113,7 +2180,7 @@ Regardless of the type of property, the information recorded and displayed is th
 * **In exports:** Whether the property will be included in the PDF reports and CSV exports generated from administration dashboards (the 
   :ref:`session dashboard<monitor_test_sessions>` and :ref:`conformance dashboard<monitor_conformance_status>`).
 * **Hidden:** Whether the property apart from being editable only by administrators is also hidden from organisation users. Such properties could be very
-  useful as control flags that are set by administrators, :ref:`triggers<community__manage_triggers>` or external scripts before testing starts.
+  useful as control flags that are set by administrators, :ref:`webhooks<community__manage_triggers>` or external scripts before testing starts.
 
 In the case of organisation-level properties there is an additional option **In registration** available. By checking this, the property
 will also appear as part of the self-registration form for the community. You may also set this for non-editable properties,
@@ -2155,7 +2222,7 @@ The **Depends on** field is optional and allows you to define a prerequisite con
 from the provided list and specify to its left in the provided text field (or dropdown selection if the property has preset values) the value that it needs to have for the
 current property to be enabled. A property that misses any of its prerequisite conditions (i.e. its direct prerequisite or a prerequisite's prerequisite) will
 be considered inactive, even if set as required, and will be excluded from input forms and test sessions. Using such dependencies is a powerful mechanism to define conditional
-inputs based on other properties or external processing (e.g. via :ref:`triggers<community__manage_triggers>`).
+inputs based on other properties or external processing (e.g. via :ref:`webhooks<community__manage_triggers>`).
 
 .. note::
   Parameters of **binary** or **secret** type cannot be used as prerequisites.

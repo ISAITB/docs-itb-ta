@@ -34,6 +34,9 @@ simple instructions to get started, references to online resources and support i
 The landing page is accessible at any time by clicking on the **Home** links, present at the top of the :ref:`menu <navigate__menu>`
 or at the beginning of the :ref:`breadcrumb trail <navigate__breadcrumbs>`.
 
+.. note::
+  The first page that is accessed by community users upon login can be changed as part of the :ref:`community's configuration <community>`.
+
 .. _navigate__banner:
 
 Using the banner
@@ -104,6 +107,7 @@ The following menu items are available to you:
     **Domain management** | Takes you to the management of your :ref:`specifications and test configuration <domains>`.
     **Community management** | Takes you to the management of your :ref:`community <community>`.
     **Data management** | Takes you to the page managing :ref:`data imports and exports <exportimport>`.
+    **Service health** | Takes you to the monitoring page for your :ref:`test services' health <serviceHealth>`.
     **My conformance statements** | Takes you to your own organisation's :ref:`conformance statement overview <manage_your_conformance_statements>`.
     **My test sessions** | Takes you to your own organisation's :ref:`test history <view_your_test_history>`.
     **My organisation** | Takes you to view your own :ref:`organisation's information <manage_organisation>`.

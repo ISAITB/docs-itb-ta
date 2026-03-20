@@ -421,6 +421,40 @@ long for elaborate test cases.
 .. note::
     The XML report for a given test session can also be obtained through the Test Bed's :ref:`REST API<api>` (if enabled for your Test Bed instance).
 
+.. _execute_tests__step3__view_data:
+
+Export test session data
+++++++++++++++++++++++++
+
+Besides :ref:`downloading the test session report <execute_tests__step3__view_report>`, completed sessions also provide the
+option of downloading their complete **test session data**.
+
+.. figure:: ../screenshots/test_execution_export.png
+  :align: center
+
+When selected, this downloads a ZIP archive for the test session that includes:
+
+* The **test case report in XML format**, extended to include the data of individual test steps.
+* A **data** folder including files, each named using a unique identifier.
+
+The files in the **data** folder correspond to step data that is binary or too large to include directly in the XML report.
+Where such files are present, their identifiers are referenced in the XML report in place of their value. In the following
+example, identifier ``c889a5ca-466d-4c3e-81b3-7f2174ef2d2e`` refers to the name of a large text file that can be found in
+the **data** folder.
+
+.. code-block:: xml
+
+    ...
+    <step id="1">
+        <context type="map">
+            ...
+            <ns2:item name="body" embeddingMethod="BASE64" type="binary" mimeType="text/plain">
+                <ns2:value>___[[c889a5ca-466d-4c3e-81b3-7f2174ef2d2e]]___</ns2:value>
+            </ns2:item>
+        </context>
+    <step>
+    ...
+
 .. _execute_tests_rest:
 
 Execution via REST API

@@ -284,6 +284,10 @@ the :ref:`normal overview report<manage_your_conformance_statements__export_over
 Select a conformance snapshot
 -----------------------------
 
+.. note::
+  Viewing and selecting a conformance snapshot is possible when viewing your community's organisations. Snapshots are not
+  applicable to your "Admin organisation" as it is never included in snapshots.
+
 A **conformance snapshot** represents a milestone in the conformance testing process that can be made by a community administrator. It is called a snapshot
 as it is a readonly copy of the conformance testing status at a given point in time, that captures the defined specifications, organisations and test results
 at that moment. If such snapshots are available you will see the header on this screen display an additional control to select which conformance testing status
@@ -352,7 +356,10 @@ At the bottom of the details' panel you are presented with buttons for further a
 * The **Download report** button to export your system's current :ref:`conformance statement report <manage_your_conformance_statements__view_a_conformance_statements_details__export>` in PDF or XML, or download a :ref:`conformance certificate<manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate>`.
 * The **Copy badge URL** and **Preview badge** buttons to copy (or preview) a conformance badge for your current status. This is available only
   if you have :ref:`configured such badges <domains__specification>`.
-* The **View system** button allows you to navigate to your :ref:`system <manage_organisation__systems>` or :ref:`organisation <manage_organisation>` details.
+* The **View system** button navigates to the statement's related :ref:`system <manage_organisation__systems>`. Through the
+  additional options you can also navigate to the related :ref:`organisation <manage_organisation>`, :ref:`community <community>`,
+  :ref:`actor <domains__specification__actor_list>`, :ref:`specification <domains__domain__specification_list>` and
+  :ref:`domain <domains__domain_details>`.
 * The **Refresh** button allows you to refresh the status of your conformance statement to view its latest results.
 * The **Back** button to return to the :ref:`conformance statement list <manage_your_conformance_statements__view_your_conformance_statements>`.
 * The **Delete statement** button to :ref:`delete the conformance statement <manage_your_conformance_statements__view_a_conformance_statements_details__delete>`.
@@ -434,9 +441,33 @@ Each test suite includes within it the listing of its test cases. The informatio
 
 This information is complemented by the test case controls which depending on the status of the test case include:
 
-* An **option** button, if a test session has been executed, that allows you to **view** the latest and prior executed sessions in the :ref:`test session history<view_your_test_history__test_steps>`, and to download its **test report** in PDF or XML format.
+* An **option** button, if a test session has been executed, that allows you to **view** the latest and prior executed sessions in the :ref:`test session history<view_your_test_history__test_steps>`,
+  download its **test report** in PDF or XML format, and download the **test session's data**.
 * An **information** button to view the test case's extended documentation (if defined).
 * A **play** button to :ref:`start a new test session <execute_tests>` for this test case.
+
+When selecting to **download the test session's data**, you will download a ZIP archive that includes:
+
+* The **test case report in XML format**, extended to include the data of individual test steps.
+* A **data** folder including files, each named using a unique identifier.
+
+The files in the **data** folder correspond to step data that is binary or too large to include directly in the XML report.
+Where such files are present, their identifiers are referenced in the XML report in place of their value. In the following
+example, identifier ``c889a5ca-466d-4c3e-81b3-7f2174ef2d2e`` refers to the name of a large text file that can be found in
+the **data** folder.
+
+.. code-block:: xml
+
+    ...
+    <step id="1">
+        <context type="map">
+            ...
+            <ns2:item name="body" embeddingMethod="BASE64" type="binary" mimeType="text/plain">
+                <ns2:value>___[[c889a5ca-466d-4c3e-81b3-7f2174ef2d2e]]___</ns2:value>
+            </ns2:item>
+        </context>
+    <step>
+    ...
 
 At the level of the test suite you can also view the aggregated **status** of the test suite's test cases, as well as additional controls:
 

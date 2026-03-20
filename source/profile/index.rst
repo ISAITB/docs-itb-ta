@@ -63,8 +63,12 @@ Besides viewing this information, you can modify here your account preferences. 
 
 * Whether the **navigation menu** presented on the left should be collapsed by default.
 * Whether :ref:`conformance statements <manage_your_conformance_statements__view_a_conformance_statements_details>` should be presented with **collapsed details** by default.
-* The **initial page** presented after you log in, set to either the :ref:`community landing page <navigate__landing_page>` or your :ref:`conformance statements <manage_your_conformance_statements>`.
+* The **initial page** presented after you log in, set to either the :ref:`community landing page <navigate__landing_page>` or the :ref:`conformance dashboard <monitor_conformance_status>`.
 * The **number of items** to present per page in table displays.
+
+The default values for such user preferences can also be managed as part of your :ref:`community's settings <community>`
+to apply to your community's members. Regardless of these defaults however, these preferences can always be changed by
+the users themselves.
 
 Clicking on **Save changes** saves the changes to your preferences, and will retain them across logins.
 
@@ -104,7 +108,7 @@ of your organisation.
 .. note::
   Each of these actions will also disconnect your current session. You will be prompted to confirm this before proceeding.
 
-  **Updating your role:** Modification of your role is reserved as an administrator-level feature.
+  **Updating your role:** Modification of your role can be done only by the Test Bed administrator.
 
 .. _manage_your_profile__noeulogin:
 
@@ -149,6 +153,10 @@ Below this information you see your account preferences that include:
 * Whether :ref:`conformance statements <manage_your_conformance_statements__view_a_conformance_statements_details>` should be presented with **collapsed details** by default.
 * The **initial page** presented after you log in, set to either the :ref:`community landing page <navigate__landing_page>` or your :ref:`conformance statements <manage_your_conformance_statements>`.
 * The **number of items** to present per page in table displays.
+
+The default values for such user preferences can also be managed as part of your :ref:`community's settings <community>`
+to apply to your community's members. Regardless of these defaults however, these preferences can always be changed by
+the users themselves.
 
 .. note::
   The preferences displayed also change per case depending on your actions. For example, expanding the menu or
