@@ -36,8 +36,8 @@ Each session is presented on a separate table row, with the following informatio
 
 * The **specification** and **actor** (defined as the test case's SUT).
 * The relevant **test case**.
-* The session **start time**.
 * The **organisation** and **system** this session is executed for.
+* The session **start time**.
 
 The set of currently displayed active sessions can be exported in CSV format by clicking the **Export CSV** button in the table header
 (see :ref:`monitor_test_sessions__export`). In addition, the **Terminate all** button can be used to terminate, upon confirmation, all currently active test 
@@ -63,8 +63,8 @@ Each session is presented in a separate row that displays the following informat
 
 * The session's relevant **specification** and **actor** (defined as the test case's SUT).
 * Its related **test case**.
-* Its **start** and **end time**.
 * The **organisation** and **system** this session was executed for.
+* Its **start** and **end time**.
 * Its **result**.
 
 Tests are presented in a paged table sorted based on their **end time** in a descending order (i.e. showing the latest tests at the top). Custom sorting
@@ -74,7 +74,8 @@ controls to go to **specific pages** as well as the **first**, **previous**, **n
 corner the total and currently displayed test counts.
 
 Viewing a test session's :ref:`further details and steps <session_dashboard__steps>` is done by clicking on the session's row, similar to the case of the :ref:`active test sessions<session_dashboard__active>`.
-Moreover, each row provides a button to access further options, notably to download the session's **test case report** in XML and PDF format.
+Moreover, each row provides a button to access further options, notably to download the session's **test case report** in XML and PDF format,
+and to download the test session's **full data**.
 
 The following is an example of such a report in **XML format**, the XML content being defined by the `GITB Test Reporting Language (GITB TRL) <https://www.itb.ec.europa.eu/docs/tdl/latest/introduction/index.html#specification-links>`_:
 
@@ -89,9 +90,35 @@ Besides the XML report, you may also produce the report in **PDF format**:
 .. figure:: ../screenshots/test_case_report.png
   :align: center
 
-Certain test results may appear greyed out in case they are to be considered as obsolete. These are tests for which linked information has significantly changed since their
+Regarding the option to **download the test data** for a session, this downloads a ZIP archive that includes:
+
+* The **test case report in XML format**, extended to include the data of individual test steps.
+* A **data** folder including files, each named using a unique identifier.
+
+The files in the **data** folder correspond to step data that is binary or too large to include directly in the XML report.
+Where such files are present, their identifiers are referenced in the XML report in place of their value. In the following
+example, identifier ``c889a5ca-466d-4c3e-81b3-7f2174ef2d2e`` refers to the name of a large text file that can be found in
+the **data** folder.
+
+.. code-block:: xml
+
+    ...
+    <step id="1">
+        <context type="map">
+            ...
+            <ns2:item name="body" embeddingMethod="BASE64" type="binary" mimeType="text/plain">
+                <ns2:value>___[[c889a5ca-466d-4c3e-81b3-7f2174ef2d2e]]___</ns2:value>
+            </ns2:item>
+        </context>
+    <step>
+    ...
+
+Certain test results may appear greyed out in case they are to be considered as **obsolete**. These are tests for which linked information has significantly changed since their
 execution (e.g. the related organisation having been deleted). Such obsolete results are maintained by default but can be purged at any time by clicking the 
 **Delete obsolete results** button.
+
+.. note::
+  Purging obsolete sessions runs in the background as it may take several seconds to complete.
 
 Specific test sessions can also be selectively deleted by means of the **Delete sessions...** button. Clicking this will disable other buttons and display a checkbox
 on each row in the table. To delete one or more test sessions you need to check their checkbox and click on the **Confirm** button. Once in selection mode you may also
@@ -138,10 +165,15 @@ Most filter controls are defined as multiple selection choices. Multiple selecte
 Note additionally that selecting dependent values serves to limit the filter options that are presented. For example if a given specification
 is selected, the test suites and test cases available for filtering will be limited to that specification to already exclude impossible combinations.
 
-The start and end time controls are date pickers that allow selection of ranges of dates for both the start and end of the sessions. The session
-identifier on the other hand is a text field that allows the lookup of a specific session. Finally, regarding organisation and system properties, these
-can be selected once a specific community has been selected. Once enabled, each property type presents
-an **Add** button that, once clicked, will display a list of the available properties, a field or selection list to provide the filter value, and
+The session identifier is a text field that allows the lookup of a specific session. The start and end time are date pickers
+that allow selection of ranges of dates for both the start and end of the sessions. Shortcuts are also provided here allowing you to select predefined and common ranges.
+
+.. figure:: ../screenshots/date_picker.png
+  :align: center
+
+Finally, regarding organisation and system properties, these can be selected once a specific community has been selected. Once enabled,
+each property type presents presents an **Add** button that, once clicked, will
+display a list of the available properties, a field or selection list to provide the filter value, and
 controls to confirm or cancel the filter. Multiple property filters can be added with the following semantics:
 
 * Values provided for the same property are applied using "OR" logic.
@@ -205,7 +237,6 @@ following example for a validation failure.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG
   :align: center
-  :scale: 70%
 
 In the test step result popup you are presented with the **result** and completion **time** as the step summary. In the sections that follow you 
 can inspect the output information from the step, presented either inline (for short values), as a file you can download, or through a further popup editor. In the latter case
@@ -214,7 +245,6 @@ is also highlighted for the recorded validation messages.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure_code.PNG
   :align: center
-  :scale: 70%
 
 The editor popup allows you to copy a specific part of the content or, by means of the **Copy to clipboard** button, copy its entire contents. The
 **Close** button closes this popup and returns you to the test step result display. Note that clicking on a specific error will 

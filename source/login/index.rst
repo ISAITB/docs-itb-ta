@@ -170,7 +170,7 @@ Select one of the available communities by clicking on its relevant row. Doing s
 
 The information needed to complete this form is as follows:
 
-* **Registration token:** A token value you are expected to provide to register for the community. The value for this token
+* **Community token:** A token value you are expected to provide to register for the community. The value for this token
   will be provided to you by the community's administrator. If a token is not required this input will not be displayed.
 * **Short name:** The name of your organisation in short form.
 * **Full name:** The name of your organisation in full form.
@@ -186,10 +186,10 @@ The password you provide must meet minimum expected complexity requirements. Spe
 * It must include at least one lowercase letter, uppercase letter, digit and symbol.
 * It must be at least 8 characters long.
 
-Depending on the community's configuration, you may also be provided the option to join an existing organisation as opposed
-to registering a new one. Moreover, joining an existing organisation may also be the only option available. If joining
-an existing organisation is enabled, you will be prompted to provide the organisation's **registration token**, serving
-to uniquely identify the organisation.
+Depending on the community's configuration, you may also be provided the option to join an **existing organisation**, or a
+**default organisation**, as opposed to registering a new one. Moreover, joining such an organisation may also be the only option available. If selecting
+to join an existing organisation, you will be prompted to provide the organisation's **token**, serving
+as a key to uniquely identify the organisation.
 
 .. figure:: ../screenshots/self_registration__existing_organisation.png
   :align: center
@@ -302,7 +302,7 @@ Select one of the available communities by clicking on its relevant row. Doing s
 
 To complete the registration form provide the following information:
 
-* **Registration token:** A token value you are expected to provide to register for the community. The value for this token
+* **Organisation token:** A token value you are expected to provide to register for the community. The value for this token
   will be provided to you by the community's administrator. If a token is not required this input will not be displayed.
 * **Short name:** The name of your organisation in short form.
 * **Full name:** The name of your organisation in full form.
@@ -310,8 +310,8 @@ To complete the registration form provide the following information:
   that will predefine your organisation's systems and conformance statements. This will not be displayed if no such
   templates are available.
 
-Depending on the community's configuration, you may also be provided the option to join an existing organisation as opposed
-to registering a new one. Moreover, joining an existing organisation may also be the only option available. If joining
+Depending on the community's configuration, you may also be provided the option to join an **existing organisation** or
+the community's **default organisation**, as opposed to registering a new one. Moreover, joining such options may also be the only option available. If joining
 an existing organisation is enabled, you will be prompted to provide the organisation's **registration token**. This token
 acts as a key to uniquely identify the organisation and will need to be shared to you by an administrator.
 

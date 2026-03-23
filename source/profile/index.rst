@@ -53,12 +53,30 @@ To edit your profile click on the **My profile** link from the header's profile 
 .. figure:: ../screenshots/profile_hover_eulogin.png
   :align: center
 
-The information you see here is taken from your identity provider's account and cannot be edited within the Test Bed.
+The information you see here includes your name and email address retrieved from your identity provider's account that
+cannot be edited within the Test Bed.
 
 .. figure:: ../screenshots/profile_edit_eulogin.png
   :align: center
 
-The options you have here relate to the Test Bed roles linked to your account, specifically:
+Besides viewing this information, you can modify here your account preferences. These include:
+
+* Whether the **navigation menu** presented on the left should be collapsed by default.
+* Whether :ref:`conformance statements <manage_your_conformance_statements__view_a_conformance_statements_details>` should be presented with **collapsed details** by default.
+* The **initial page** presented after you log in, set to either the :ref:`community landing page <navigate__landing_page>` or the :ref:`conformance dashboard <monitor_conformance_status>`.
+* The **number of items** to present per page in table displays.
+
+The default values for such user preferences can also be managed as part of your :ref:`community's settings <community>`
+to apply to your community's members. Regardless of these defaults however, these preferences can always be changed by
+the users themselves.
+
+Clicking on **Save changes** saves the changes to your preferences, and will retain them across logins.
+
+.. note::
+  The preferences displayed also change per case depending on your actions. For example, expanding the menu or
+  changing the number of displayed items a table will record this choice.
+
+The options in the panel's footer relate to the Test Bed roles linked to your account, specifically:
 
 * **Remove role from your account** is used to remove one or more roles from your account.
 * **Link another role to your account** will transfer you to the screen where you can :ref:`link additional roles to your account<login__roles>`.
@@ -86,6 +104,8 @@ Importantly, deactivating or deleting user roles never impacts a user's test ses
 
 .. note::
   Each of these actions will also disconnect your current session. You will be prompted to confirm this before proceeding.
+
+  **Updating your role:** Modification of your role can be done only by the Test Bed administrator.
 
 .. _manage_your_profile__noeulogin:
 
@@ -117,14 +137,30 @@ To edit your profile click on the **My profile** link from the header's profile 
 .. figure:: ../screenshots/profile_hover.png
   :align: center
 
-Doing so will take you to the profile editing screen where you are presented with your account's information.
+Doing so will take you to the profile editing screen where you are presented with your account's information and
+preferences.
 
 .. figure:: ../screenshots/profile_edit.png
   :align: center
 
-You see here your **username** and **role**, as well as your **name** which is the only editable (and required) field.
-To change your name enter a new value and click the **Save changes** button. You are also presented here with the option
-to **Register another organisation**. This is a shortcut allowing you to disconnect from your current session and register
+You see here your **username** and **role**, as well as your **name** which is the only required field.
+Below this information you see your account preferences that include:
+
+* Whether the **navigation menu** presented on the left should be collapsed by default.
+* Whether :ref:`conformance statements <manage_your_conformance_statements__view_a_conformance_statements_details>` should be presented with **collapsed details** by default.
+* The **initial page** presented after you log in, set to either the :ref:`community landing page <navigate__landing_page>` or your :ref:`conformance statements <manage_your_conformance_statements>`.
+* The **number of items** to present per page in table displays.
+
+The default values for such user preferences can also be managed as part of your :ref:`community's settings <community>`
+to apply to your community's members. Regardless of these defaults however, these preferences can always be changed by
+the users themselves.
+
+.. note::
+  The preferences displayed also change per case depending on your actions. For example, expanding the menu or
+  changing the number of displayed items a table will record this choice.
+
+To record any changes you make click the **Save changes** button, ensuring also like this that you defined preferences
+will be retained across logins. You are also presented here with the option to **Register another organisation**. This is a shortcut allowing you to disconnect from your current session and register
 another organisation in one of the Test Bed's communities (also not necessarily the current one). If you click this you will
 be presented with a confirmation message and then transferred to the :ref:`organisation self-registration page<login__create_account>`.
 Note that this button may not be available if :ref:`self-registration is disabled<systemAdmin__config>`.

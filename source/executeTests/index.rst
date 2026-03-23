@@ -125,7 +125,7 @@ Test execution goes through the steps defined in the test case's definition whic
 elements included in this diagram are:
 
 * A **lifeline per actor** defined in the test case. One of these will be marked as the "SUT" (the System Under Test), whereas the other
-  actor lifelines will be labelled as "SIMULATED". An additional **operator lifeline** may also be present in case user interaction is defined 
+  actor lifelines will be simulated. An additional **user lifeline** may also be present in case user interaction is defined
   in the test case.
 * Expected **messages** between actors represented as labelled arrows indicating the type and direction of the communication.
 * A **Test Engine lifeline** in case the test case includes validation or processing steps that are carried out by the test
@@ -237,8 +237,8 @@ and clicking their relevant row. Doing so will expand the clicked row to display
 .. figure:: ../screenshots/test_execution_execute_multiple_view_completed.PNG
   :align: center
 
-Regarding the test steps within a given test session, each completed step displays a clickable control in the form of a document with 
-a green tick or red cross (for success or failure respectively). This applies for validation, messaging, processing and interaction steps.
+Regarding the test steps within a given test session, each completed step is a displayed with a status icon that highlights
+on hover (green for success, orange for warning or red for failure). This applies for validation, messaging, processing and interaction steps.
 
 .. figure:: ../screenshots/test_execution_execute_step_result_controls.PNG
   :align: center
@@ -247,7 +247,8 @@ a green tick or red cross (for success or failure respectively). This applies fo
 Apart from serving as an additional indication on the success or failure of the test step, these controls provide further details on the step's
 results. Clicking them triggers a popup that shows the different information elements that can be viewed inline or opened in
 a separate popup editor. In the case of validation steps, this is extended to also provide the detailed validation results and an overview
-of the error, warning and information message counts, as illustrated in the following example.
+of the error, warning and information message counts, as illustrated in the following example. The different severity indicators
+can be toggled to show or hide the related items.
 
 .. figure:: ../screenshots/test_execution_execute_step_failure.PNG
   :align: center
@@ -334,9 +335,9 @@ The displayed log messages are highlighted with different colours depending on t
 * Orange for **warnings**.
 * Red for **errors**.
 
-Finally, the popup's header presents controls to manage the log display. Specifically you may:
+Finally, the popup's includes controls to manage the log display. Specifically you may:
 
-* Choose to automatically **scroll to the latest message** (i.e. tail) or maintain your scroll position (the default).
+* Choose to automatically **follow the latest messages** (i.e. tail) or maintain your scroll position.
 * Select the **minimum severity** to display (by default all messages are displayed).
 * **Copy** the log to your clipboard.
 * **Download** the log as a text file.
@@ -363,7 +364,7 @@ and is suitable for machine-based processing. The following XML content is a sam
 The report includes the following information:
 
 * The **identifier**, **name** and **description** of the test case.
-* The **start** and **end time**.
+* The **start**, **end time** and **identifier** for the session.
 * The overall **result** as well as the **output message** that may have been produced.
 * The list of **step reports** that include each step's **identifier**, **description**, **timestamp**, **result** and **findings** (if validations were carried out).
 
@@ -419,6 +420,40 @@ long for elaborate test cases.
 
 .. note::
     The XML report for a given test session can also be obtained through the Test Bed's :ref:`REST API<api>` (if enabled for your Test Bed instance).
+
+.. _execute_tests__step3__view_data:
+
+Export test session data
+++++++++++++++++++++++++
+
+Besides :ref:`downloading the test session report <execute_tests__step3__view_report>`, completed sessions also provide the
+option of downloading their complete **test session data**.
+
+.. figure:: ../screenshots/test_execution_export.png
+  :align: center
+
+When selected, this downloads a ZIP archive for the test session that includes:
+
+* The **test case report in XML format**, extended to include the data of individual test steps.
+* A **data** folder including files, each named using a unique identifier.
+
+The files in the **data** folder correspond to step data that is binary or too large to include directly in the XML report.
+Where such files are present, their identifiers are referenced in the XML report in place of their value. In the following
+example, identifier ``c889a5ca-466d-4c3e-81b3-7f2174ef2d2e`` refers to the name of a large text file that can be found in
+the **data** folder.
+
+.. code-block:: xml
+
+    ...
+    <step id="1">
+        <context type="map">
+            ...
+            <ns2:item name="body" embeddingMethod="BASE64" type="binary" mimeType="text/plain">
+                <ns2:value>___[[c889a5ca-466d-4c3e-81b3-7f2174ef2d2e]]___</ns2:value>
+            </ns2:item>
+        </context>
+    <step>
+    ...
 
 .. _execute_tests_rest:
 

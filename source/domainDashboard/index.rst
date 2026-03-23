@@ -81,6 +81,7 @@ The following information is presented in corresponding form controls:
 * Its **full name** (required), displayed in detail screens and reports.
 * Its **description** (optional), displayed in details screens and reports.
 * Its **report metadata** (optional), included in XML reports.
+* A custom **tag** (optional) to visually distinguish the domain.
 * The domain's **API key**, used to refer to it through the :ref:`REST API <api>` and in :ref:`data exports <exportimport>`.
 
 To edit the domain's information, enter the new values you require and click the **Save changes** button. Clicking the **Delete** button will,
@@ -91,6 +92,33 @@ following confirmation, delete the domain and all related information. The **Bac
     **Providing context to users:** The information you provide for the domain as well as further concepts such as the specification 
     and actor are important to provide context to your users. This information should summarise what they are testing for, whereas 
     the name, description and documentation of test cases and test suites should summarise how they are supposed to test.
+
+The domain's **tag** is an optional feature used to distinguish the domain from others. Tags are displayed only to
+administrators, and are used to convey some additional information regarding the domain. Typical use cases would be
+to provide a visual cue on the **setup's version** or to highlight that a specific setup is the **production configuration**
+that organisation users can access.
+
+.. figure:: ../screenshots/admin_community_tag.png
+  :align: center
+
+If you select to add a tag you will be presented with a popup to provide its information. This includes the tag's **name**,
+a **description** presented as a tooltip, as well as **background** and **text** colours used to style it when displayed.
+Clicking on **Save** will record the tag, whereas **Cancel** will close the popup without making changes.
+
+.. figure:: ../screenshots/admin_community_tag_modal.png
+  :align: center
+
+When a tag has been added to the domain, you will see it presented in the form, with controls to **remove** or **edit** it.
+You also have choices here on whether this tag will be presented to community and/or Test Bed administrators.
+
+.. figure:: ../screenshots/admin_community_tag_added.png
+  :align: center
+
+When a tag is present for a domain, it will figure prominently in the **header** of all screens' panels that relate to the domain's
+configuration, as well as in lists that include the domain.
+
+.. figure:: ../screenshots/admin_domain_tag_display.png
+  :align: center
 
 .. _domains__domain__specification_list:
 
@@ -404,7 +432,8 @@ The domain's parameters are presented in a table with one parameter per row. The
     A parameter that is not meant to be used in tests could be used ti record arbitrary data within the Test Bed or as
     :ref:`input to a trigger<community__manage_triggers>`.
 
-To :ref:`create a new parameter<domains__domain_create_parameter>` click the **Create parameter** button. To
+Parameters can be filtered using the provided **search box**, that will be applied against parameters' names
+in a case-insensitive manner and supporting partial matches. To :ref:`create a new parameter<domains__domain_create_parameter>` click the **Create parameter** button, whereas to
 :ref:`edit an existing one<domains__domain_edit_parameter>` click its corresponding table row.
 
 .. _domains__domain_create_parameter:
@@ -495,7 +524,7 @@ domain parameter is identical regarding its use from test cases, but brings impo
 * You can **configure in a single location** additional service settings such as authentication details.
 * Services can be listed and managed through the Test Bed's :ref:`REST API <api__configuration__searchTestServices>`.
 * Additional **metadata** can be recorded for services to enable referencing from test suites.
-* Services can be supported with **health monitoring** to ensure no disruptions to testing activities.
+* Services can be monitored in the :ref:`service health dashboard <serviceHealth>` to ensure no disruptions to testing activities.
 
 When a test service is defined it also defines a **linked domain parameter** with the same identifier. Test service definitions
 are passed to the test engine when tests are executed, and are referenced through the ``DOMAIN`` map, exactly as you would
@@ -541,6 +570,7 @@ The core information requested in this form is:
 * The **description** of the service (optional).
 * The **endpoint address** (required) that is called when the service is used in test cases.
 * The **service type**, identifying this service as a validation, messaging or processing service as per the `GITB test service APIs <https://www.itb.ec.europa.eu/docs/services/latest/>`__.
+* Whether the **service health** will be monitored through the :ref:`service health dashboard <serviceHealth>`.
 
 In case the service requires **authentication** to be used, you can specify here how to authenticate. You can
 configure HTTP basic authentication, the `WS-Security UsernameToken profile <https://www.oasis-open.org/committees/download.php/13392/wss-v1.1-spec-pr-UsernameTokenProfile-01.htm>`__,
@@ -906,6 +936,7 @@ Using the provided form you can edit the test suite's metadata, specifically:
 * Its **name** (required), a short text presented to users to identify the test suite.
 * Its **version** (required), a version identifier for the test suite presented only to administrators.
 * Its **description** (optional), a text providing context on the test suite and a brief overview of its purpose and contained test cases.
+* Its **relative order** (required), determining the test suite's display and execution order compared to other test suites.
 
 You can also include here an additional set of properties related to the test suite's normative **specification reference**. This information
 forms part of the test suite's metadata, that if completed will figure in the test suite's definition file, reports, and on-screen displays.

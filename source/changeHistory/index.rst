@@ -21,13 +21,138 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.28.5**.
+The latest Test Bed release is **1.29.0**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.29.0 - XX/03/2026
+---------------------------
+
+This release brings multiple new features focusing on improved user experience, test capabilities and community management.
+A series of user experience improvements have been made to all screens, supporting as well personalised user preferences
+covering presentation and user controls. Reporting features have also been extended, including further information in
+reports, and simplified access to a conformance statement's test history and specific test data. Administrators are
+provided with further options to customise self-registration and user permissions, configurable labels for domains and communities,
+as well as an extended health dashboard that now also includes custom test service extensions. In addition, the overall
+Test Bed configuration options are extended with support for Active Directory, unauthenticated demo access, configurable
+API usage rate limits, and a shutdown preparation mode. Finally, initial setup and experimentation with the Test Bed
+becomes a more guided experience, by means of usage tips explaining key concepts and features.
+
+Focusing on test capabilities, this release brings new built-in support for eDelivery exchanges and archive processing,
+further XML validation options, and the flexibility to aggregate step reports or create detailed reports from scratch.
+User interactions have also received several updates, with new presentation options for instructions, further
+customisations for input controls, and extended reporting. Finally, test developers are provided with new options to
+fine tune the display of test execution diagrams, and manage the display and execution order of test suites.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2004 | :ui:`UI` | Test step report items with values to display show an empty assertion ID if no assertion is defined
+  ITB-2008 | :ui:`UI` | Persistent popup notifications should close in an SSO-based ITB instance when switching roles
+  ITB-2018 | :ui:`UI` | Messaging steps set as replies are not styled correctly when the "from" and "to" actors are the same
+  ITB-2030 | :ui:`UI` | Clearing current test session filters does not refresh the results
+  ITB-2033 | :ui:`UI` | Accessing the welcome page invalidates the user's current session
+  ITB-2037 | :tdl:`TESTS` | Dynamically set information in scriptlets not getting set when called from other scriptlets using expressions as inputs
+  ITB-2058 | :ui:`UI` | Test Bed and community administrators should always be able to generate conformance certificates (even for incomplete or failed statements)
+  ITB-2061 | :ui:`UI` | Terminating test sessions does not clear pending test interactions
+  ITB-2070 | :ui:`UI` | When connected as the Test Bed administrator, switching between communities in the conformance dashboard should clear the selected conformance snapshot
+  ITB-2075 | :ui:`UI` | High CPU usage when there executing thousands of test sessions in parallel
+  ITB-2076 | :tdl:`TESTS` | Possible to complete only one receive step in parallel flow branches
+  ITB-2077 | :ui:`UI` | Special characters in files not rendered correctly when viewing them in test step report popups
+  ITB-2079 | :ui:`UI` | Memory leak in test engine (gitb-srv) leading to eventual degradation when launching test sessions
+  ITB-2080 | :ui:`UI` | Occasional errors when selecting to terminate all active sessions
+  ITB-2085 | :ui:`UI` | Test case output messages not included in conformance statement overview PDF report
+
+**New features**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-63 | :tdl:`TESTS` | Allow test steps to appear under any actor
+  ITB-1714 | :tdl:`TESTS` | Extend the DisplayProcessor and Simulated messaging handlers to display report messages as a validation report
+  ITB-1849 | :tdl:`TESTS` | Extend the DisplayProcessor and SimulatedMessaging handlers to support the display of other steps' reports
+  ITB-1906 | :ui:`UI` | Extend service health dashboard to include also community-defined test services
+  ITB-1945 | :ui:`UI` | Allow community administrators to view the service health dashboard
+  ITB-1956 | :tdl:`TESTS` | New ZipProcessor processing handler to manipulate ZIP archives
+  ITB-1957 | :tdl:`TESTS` | New DomibusMessaging messaging handler to send and receive messages via Domibus (eDelivery)
+  ITB-1965 | :tdl:`TESTS` | Support default values for interaction step requests
+  ITB-1968 | :ui:`UI` | Support Active Directory and LDAP for identity management
+  ITB-1986 | :tdl:`TESTS` | Allow the explicit ordering of the tester, administrator and test engine actors
+  ITB-1987 | :tdl:`TESTS` | Allow setting custom names for the tester, administrator and test engine actors
+  ITB-1991 | :ui:`UI` | Display usage tips for Test Bed administrators
+  ITB-1995 | :tdl:`TESTS` | Support specifying the number of rows to show for an interact step's MULTILINE_TEXT input
+  ITB-1997 | :tdl:`TESTS` | Extend the interact step's instructions to render messages with optional severity styling
+  ITB-1998 | :tdl:`TESTS` | Extend the interact step's instructions to allow hiding the copy and view controls
+  ITB-1999 | :tdl:`TESTS` | Support specifying the number of options to display for an interact step's SELECT_MULTIPLE input
+  ITB-2002 | :tdl:`TESTS` | Support specifying the editor height for an interact step's CODE input
+  ITB-2003 | :tdl:`TESTS` | Allow hiding report items by severity in a test step's report
+  ITB-2006 | :ui:`UI` | Configurable public REST API rate limits
+  ITB-2016 | :ui:`UI` | Support the configuration of a default organisation for self-registering users
+  ITB-2019 | :ui:`UI` | New self-registration option to determine whether registered users are created as administrators or basic users
+  ITB-2026 | :ui:`UI` | Support labels for communities and domains to better distinguish them for Test Bed and community administrators
+  ITB-2039 | :ui:`UI` | Support the configuration of the left-side menu as being open by default
+  ITB-2040 | :ui:`UI` | Support persisted user settings such as left-side menu visibility and collapsed conformance statements
+  ITB-2043 | :ui:`UI` | Extend the REST API start operation to support a delay when starting each test session
+  ITB-2046 | :tdl:`TESTS` | Allow setting a test suite's execution and display order via the test suite's definition file and the UI
+  ITB-2047 | :ui:`UI` | Allow the user to change how many items are presented per page in paged displays
+  ITB-2048 | :ui:`UI` | Support separate test session timeouts depending on whether test sessions are pending on user and/or administrator interactions
+  ITB-2050 | :ui:`UI` | Support filtering of domain parameters and test services
+  ITB-2054 | :ui:`UI` | Support a "prepare for shutdown" mode (set in the system settings) that prevents new test sessions from starting
+  ITB-2055 | :tdl:`TESTS` | Extend the XmlValidator and XsdValidator to support XML Schema 1.1
+  ITB-2057 | :ui:`UI` | Define a community-level user permission to allow or block XML report generation
+  ITB-2060 | :ui:`UI` | Provide an option to view all test sessions related to a test case in the conformance statement detail page
+  ITB-2064 | :tdl:`TESTS` | Extend interact steps to allow specifying the types of accepted files in UPLOAD inputs
+  ITB-2069 | :ui:`UI` | User preference option for the post-login home page to display between the configured landing page and the conformance overview screen
+  ITB-2074 | :ui:`UI` | Option to download all files related to a specific test session
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-1838 | :ui:`UI` | Increase the space between actors in the test execution diagram if more space is available
+  ITB-1856 | :ui:`UI` | Improve test execution diagram spacing when possible
+  ITB-1975 | :ui:`UI` | Improve the presentation of actors in the test execution diagram
+  ITB-1984 | :ui:`UI` | Display an information message for Test Bed administrators when creating conformance statements in the admin organisation
+  ITB-1989 | :ui:`UI` | Improve the labelling of custom member properties to reflect that they are configuration properties
+  ITB-2000 | :ui:`UI` | Support ctrl + enter to submit forms when entered on text areas and code editors
+  ITB-2001 | :ui:`UI` | Add select and cancel controls for color pickers
+  ITB-2005 | :ui:`UI` | Improve the presentation of test step report popups
+  ITB-2007 | :ui:`UI` | Improve the display of popup notifications
+  ITB-2009 | :ui:`UI` | Support displaying the conformance statement details panel as collapsed by default while still displaying results and controls
+  ITB-2011 | :ui:`UI` | In SSO-enabled instances make it possible to use the demos without being first authenticated
+  ITB-2012 | :ui:`UI` | For unexpected errors in test steps display the error message (if any) also in the step's report
+  ITB-2017 | :ui:`UI` | Add icons to all buttons
+  ITB-2020 | :ui:`UI` | Hide the organisation's users tab for basic organisation users
+  ITB-2021 | :ui:`UI` | Hide the organisation's users tab for organisation users, when user management by organisation users is disabled at the level of the community
+  ITB-2022 | :ui:`UI` | Repurpose the help text for the community self-registration token into a general purpose self-registration help message
+  ITB-2023 | :ui:`UI` | Support the automatic generation of community self-registration tokens
+  ITB-2024 | :ui:`UI` | Improve the display of static information messages
+  ITB-2025 | :tdl:`TESTS` | When referencing test suite resources (imports, documentation, scriptlets etc.) accept also paths relative to the test suite definition file
+  ITB-2031 | :ui:`UI` | Improve presentation of test session tables
+  ITB-2032 | :ui:`UI` | Simplify test session log display options
+  ITB-2034 | :ui:`UI` | Replace lodash utilities with native equivalents to reduce bundle size and unnecessary dependencies
+  ITB-2035 | :ui:`UI` | Migrate from ngx-bootstrap to ng-bootstrap to address lack of ngx-bootstrap updates
+  ITB-2038 | :ui:`UI` | Improve date pickers to propose predefined date ranges and simplify date range selections
+  ITB-2049 | :ui:`UI` | Support paging in all tabular displays
+  ITB-2051 | :ui:`UI` | Use consistent row heights for all tables
+  ITB-2052 | :ui:`UI` | Use a searchable multi-select when selecting configuration properties to include in trigger payloads
+  ITB-2056 | :ui:`UI` | Include the test session identifier in PDF and XML test case reports
+  ITB-2062 | :ui:`UI` | Remove access token cookie
+  ITB-2066 | :ui:`UI` | For steps lacking a description default to using the title displayed on the execution diagram (if present) when generating test reports
+  ITB-2067 | :ui:`UI` | Include instruct elements in the step report for interact steps
+  ITB-2072 | :ui:`UI` | Rename triggers to webhooks to make their purpose more apparent
+  ITB-2081 | :ui:`UI` | Make obsolete session deletion a background task rather than a synchronous operation
+  ITB-2082 | :tdl:`TESTS` | Consider REST API inputs when evaluating static test case expressions
 
 Release 1.28.5 - 27/02/2026
 ---------------------------

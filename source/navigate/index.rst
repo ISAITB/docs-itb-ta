@@ -34,6 +34,9 @@ simple instructions to get started, references to online resources and support i
 The landing page is accessible at any time by clicking on the **Home** links, present at the top of the :ref:`menu <navigate__menu>`
 or at the beginning of the :ref:`breadcrumb trail <navigate__breadcrumbs>`.
 
+.. note::
+  The first page that is accessed by community users upon login can be changed as part of the :ref:`community's configuration <community>`.
+
 .. _navigate__banner:
 
 Using the banner
