@@ -136,3 +136,20 @@ the first, left-most, breadcrumb, to take you back to your :ref:`landing page <n
 Using the breadcrumbs offers quick navigation from any screen but also helps contextualise the current screen you are on.
 This can be interesting if you are accessing a screen presenting detailed information, as it serves as a reminder of the
 exact information you are seeing and its hierarchical place compared to other information.
+
+.. _navigate__usage_tips:
+
+Usage tips
+----------
+
+Upon accessing specific pages, the Test Bed may display **usage tips** to help you getting started in using it. The purpose
+of these is to acquaint you with key concepts and guide you when creating your initial setup.
+
+.. figure:: ../screenshots/navigate_usage_tip.png
+  :align: center
+
+Such tips are only presented to the Test Bed administrator, not to other users, and are meant as a development aid. Whenever
+a tip is shown, you are presented with the option to **close** the tip, and while doing so, disable the specific tip,
+or all tips in the future. Where applicable, the tip will also include controls to access other referenced screens.
+
+Tips can be disabled and also re-enabled from the :ref:`system configuration screen <systemAdmin>`.

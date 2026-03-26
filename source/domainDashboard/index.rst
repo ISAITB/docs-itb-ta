@@ -23,6 +23,7 @@ The presented table includes one row per domain for which the following informat
 * The **short name** for the domain, used when the domain is mentioned in list displays.
 * The **full name** for the domain, used in detail displays and reports.
 * A **description** for the domain to provide context over what the domain relates to.
+* The domain's **tag** if one has been configured.
 
 You can use the **search box** in the table's header to filter domains based on their name and description. To view
 a :ref:`domain's details<domains__domain_details>` click its relevant row from the table, whereas to :ref:`create a new domain<domains__domain_create>`
@@ -53,6 +54,8 @@ The information expected is the following:
 * The domain's **short name** (required), displayed in lists.
 * Its **full name** (required), displayed in detail screens and reports.
 * Its **description** (optional), displayed in detail screens and reports.
+* Its **report metadata** (optional), included in XML reports.
+* A custom **tag** (optional) to visually distinguish the community (see :ref:`below <domains__domain_details>`).
 
 To complete the creation of the new domain, provide the required information and click on the **Save** button. Clicking on the **Cancel** button
 will discard pending changes and return you to the previous screen.

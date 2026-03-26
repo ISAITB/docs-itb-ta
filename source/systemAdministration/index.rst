@@ -58,11 +58,12 @@ environment variables (if applicable) if you prefer to have these configured `vi
     **Demo account** | An optional, non-administrator account that users can use to connect with from the login screen to :ref:`execute demos<login__demos>`. | ``DEMOS_ENABLED``, ``DEMOS_ACCOUNT`` | Disabled
     **Email settings** | Settings related to allow the Test Bed to send emails when applicable. | ``EMAIL_*`` variables | Disabled
     **Inactive account retention period** | Whether inactive user accounts will be removed after a maximum retention period. | | Disabled
-    **REST API** | Whether the Test Bed's :ref:`REST API<api>` is available. | ``AUTOMATION_API_ENABLED`` | Disabled
+    **REST API** | Whether the Test Bed's :ref:`REST API<api>` is available and API usage limits. | ``AUTOMATION_API_ENABLED`` | Disabled
     **Self-registration** | Whether users are allows to self-register for communities :ref:`supporting self-registration<community_testbed_communities__manage>`. | ``REGISTRATION_ENABLED`` | Enabled
     **Startup configuration wizard** | Whether the :ref:`startup configuration wizard <login__startup_wizard>` will trigger when the Test Bed administrator accesses the home page. | ``STARTUP_WIZARD_ENABLED`` | Enabled
     **Software version check** | Settings related to including an online software version check as part of the :ref:`service health dashboard <serviceHealth>`. | ``SOFTWARE_VERSION_CHECK_ENABLED`` | Disabled
-    **Test session timeout** | A duration in seconds after which an active test session will be terminated. | | None
+    **Test session timeout** | A duration in seconds after which an active test session will be terminated. This can also be set with specific values for sessions with pending user interactions. | | None
+    **Usage tips** | Whether usage tips will be displayed on selected screens for Test Bed administrators. Tips can be reset by disabling them and re-enabling them here. | | Enabled
 
 Updating each setting is done individually through its relevant controls. All such controls include a **Save** button that you may
 click to persist your choice. Note that the overall settings panel can also be **collapsed** and **expanded** by clicking on its header.
@@ -72,12 +73,13 @@ click to persist your choice. Note that the overall settings panel can also be *
 REST API configuration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-One configuration option of note is the **REST API**, which determines whether or not the Test Bed's :ref:`REST API <api>` will be enabled.
+One configuration option of note is the **REST API**, which determines whether or not the Test Bed's :ref:`REST API <api>` will be enabled
+and how it will be used.
 
 .. figure:: ../screenshots/system_configuration_rest_api.png
   :align: center
 
-Besides enabling or disabling the REST API, this section also allows you to manage the Test Bed's **Master API key**. This is used for
+When the REST API is enabled, this section will display the Test Bed's **Master API key** and enable its management. This is used for
 authorisation purposes in certain REST operations that require Test Bed administrator privileges, such as :ref:`creating a new community <community_testbed_communities__create>`.
 
 Regarding the value of the Master API key, this is randomly assigned to the Test Bed upon initial startup, thus ensuring that two instances will
@@ -85,12 +87,55 @@ never inadvertently share the same value. In case you need to foresee a predeter
 initial configuration via REST API calls, you may set its value by providing the ``AUTOMATION_API_MASTER_KEY`` environment variable to the gitb-ui
 application.
 
+The Test Bed's REST API is usually used in controlled situations, either as a development tool to speed up operations, or
+as part of internal automated testing processes. In case you plan to expose the REST API to external users, it is strongly
+advised to enable **API usage restrictions** to control how much it is used. Without such restrictions, you will have no
+control over traffic initiated by users with valid API keys.
+
+When you enable usage restrictions, the settings and thresholds you can tweak include:
+
+* Whether to **allow bulk tests**. This affects the :ref:`start operation <api__test_sessions__start>` used to trigger tests,
+  and when disabled will require that only individual test cases can be executed per call.
+* The **total API usage** threshold. This defines how many calls per minute can be made for a specific API key for the
+  entire REST API.
+* The threshold **per operation**. This defines the default calls per minute allowed per API key and each individual operation.
+
+In relation to this last setting, you may also fine-tune your limits by adding limits for **specific operations**. You can look up
+one or more operations by path and include them to specify their threshold. Added operations are presented with their path
+and HTTP method, as well as a tooltip with the operation's description. Finally, operation-specific thresholds can be removed
+either individually or in bulk.
+
+.. note::
+  API usage thresholds are defined using buckets of evenly-issued tokens. Simply put, a threshold of 120 calls per minute
+  means that each second you can make two additional calls, with a maximum of 120 per minute.
+
+.. _systemAdmin__config__prepareShutdown:
+
+Prepare for shutdown
+~~~~~~~~~~~~~~~~~~~~
+
+At the top of the system configuration panel you are provided with a **prepare for shutdown** toggle.
+
+.. figure:: ../screenshots/system_configuration_shutdown.png
+  :align: center
+
+Toggling this on will put the Test Bed in shutdown preparation mode. When this is active no new test sessions will
+be scheduled (although existing active ones are not impacted), and users will see a relevant persistent warning.
+The purpose of this mode is to alert users of an imminent restart, and also to avoid inconsistent active test sessions
+that appear frozen due to having not completed before the test engine was restarted.
+
+.. figure:: ../screenshots/system_configuration_shutdown_warning.png
+  :align: center
+  :scale: 50%
+
+The shutdown preparation mode can be deactivated at any time and will be automatically reset when the Test Bed restarts.
+
 .. _systemAdmin__admins:
 
 Manage system administrators
 ----------------------------
 
-To manage the system administrators, select the **Administrators** tab from beneath the settings panel.
+To manage the system administrators, select the **Administrators** tab beneath the settings panel.
 
 .. figure:: ../screenshots/system_configuration_admins_tab.png
   :align: center

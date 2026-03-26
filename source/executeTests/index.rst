@@ -13,6 +13,13 @@ This screen is the place where you input required configuration and are provided
 Provide your system's configuration
 -----------------------------------
 
+.. note::
+
+  **Testing as the Test Bed administrator:** Custom :ref:`organisation and system properties <community__properties>` are defined as part of a :ref:`community's settings <community_testbed_communities__manage>`.
+  If, as Test Bed administrator, you are viewing a conformance statement for your own experimentation organisation, such properties
+  will never apply. To use such properties either connect as a :ref:`community user <community__administrators>` or select to
+  :ref:`manage the tests <community__manage_organisation__tests>` of an organisation in the community.
+
 The testing configuration for your selected specification may require that you provide one or more 
 configuration parameters before executing tests. If for example test cases require that the Test Bed
 sends messages to your system, it is likely that you need to inform the Test Bed on how to do so.

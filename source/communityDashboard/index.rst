@@ -42,10 +42,12 @@ The information you are expected to provide is:
 * The **domain** it will be linked with (optional) defining the conformance statements its members can create. Having selected a domains
   you may also click on the **View** button to see its details.
 * A **support email** address (optional), used to deliver feedback provided by the community's users.
+* A custom **tag** (optional) to visually distinguish the community.
 * The preference on allowing **self-registration** for the community.
 * The **user permissions** to apply for the community's organisation users.
+* The **default user preferences** to apply for the community's organisation users.
 
-More information on the domain, support email, self-registration settings and user permissions is provided in the :ref:`community details section<community_testbed_communities__manage>`.
+More information on these settings is provided in the :ref:`community details section<community_testbed_communities__manage>`.
 Once the information is entered you complete the community creation by clicking **Save**. Clicking **Cancel** discards pending changes and returns you to
 the previous screen.
 
@@ -156,8 +158,13 @@ You also have choices here on whether this tag will be presented to community an
 .. figure:: ../screenshots/admin_community_tag_added.png
   :align: center
 
-When a tag is present for a community, it will figure prominently in the **banner** of all screens that relate to the community's
+When a tag is present for a community, it will figure prominently in the **header** of all screens' panels that relate to the community's
 configuration, as well as in lists that include the community.
+
+.. figure:: ../screenshots/admin_community_tag_display_ta.png
+  :align: center
+
+For community administrators, the tag display is even more prominent as it is shown persistently on all screens in the interface's banner.
 
 .. figure:: ../screenshots/admin_community_tag_display.png
   :align: center
@@ -185,7 +192,7 @@ The settings available to you to tune the self-registration process are as follo
   or set to a specific value. If missing, this means that the community in question can be registered to by anyone.
 * **Organisation tokens:** These are settings that define whether you allow self-registering users to join existing organisations
   after providing an organisation-specific token. You may also allow or not organisation administrators to manage such tokens.
-* **Default organisation:** You can select one of your community's organisations as the organisation in which new registrants will
+* **Default organisation:** You can select one of the community's organisations as the organisation in which new registrants will
   be added. This is a variant of providing an organisation token, whereby you allow users to join a specific organisation defined
   by you without providing further information.
 * **Require from users:** These are requirements that you want to enforce to users completing the self-registration process. The options available here,
@@ -376,7 +383,7 @@ and access remain limited.
 **How to configure?**
 
 1. Enable self-registration.
-2. Define a default organisation for your community and force new users to join it.
+2. Define a default organisation for the community and force new users to join it.
 3. Do not require community or organisation tokens to register.
 4. Specify that self-registering users should be added with simple (non-administrator) accounts.
 
@@ -1580,7 +1587,7 @@ The options you can provide to customise your issued certificates are as follows
 * Whether to include **page numbers** in the report's footer.
 
 By default the conformance certificate includes the same information as the :ref:`conformance statement report<manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
-You are however free to customise this as you see fit for your community.
+You are however free to customise this as you see fit for the community.
 
 If you select to add a **message**, the form will expand to allow you to define its content:
 
@@ -1725,7 +1732,7 @@ The options you can provide to customise your issued certificates are as follows
 * Whether to include **page numbers** in the report's footer.
 
 By default the conformance certificate includes the same information as the :ref:`conformance overview report<manage_your_conformance_statements__view_a_conformance_statements_details__export>`.
-You are however free to customise this as you see fit for your community.
+You are however free to customise this as you see fit for the community.
 
 If you select to add a **message**, the form will expand to allow you to define its content:
 
