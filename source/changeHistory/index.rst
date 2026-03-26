@@ -29,7 +29,7 @@ The latest Test Bed release is **1.29.0**.
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
 
-Release 1.29.0 - XX/03/2026
+Release 1.29.0 - 27/03/2026
 ---------------------------
 
 This release brings multiple new features focusing on improved user experience, test capabilities and community management.
@@ -69,6 +69,7 @@ fine tune the display of test execution diagrams, and manage the display and exe
   ITB-2079 | :ui:`UI` | Memory leak in test engine (gitb-srv) leading to eventual degradation when launching test sessions
   ITB-2080 | :ui:`UI` | Occasional errors when selecting to terminate all active sessions
   ITB-2085 | :ui:`UI` | Test case output messages not included in conformance statement overview PDF report
+  ITB-2088 | :ui:`UI` | Conformance statement creation may not take place although no errors are reported
 
 **New features**
 
