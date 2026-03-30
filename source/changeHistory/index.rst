@@ -21,13 +21,27 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.29.0**.
+The latest Test Bed release is **1.29.1**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.29.1 - 30/03/2026
+---------------------------
+
+This is a patch release to correct an issue concerning test suite resource loading when using a complex scriptlet call hierarchy.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2091 | :ui:`UI` | Clicking from the welcome page to access the demos should disconnect the user's current session (if present)
+  ITB-2092 | :tdl:`TESTS` | Scriptlets imported from other test suites cannot call other scriptlets in the same test suite unless defining the "from" attribute
 
 Release 1.29.0 - 27/03/2026
 ---------------------------
