@@ -21,13 +21,26 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.29.1**.
+The latest Test Bed release is **1.29.2**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.29.2 - 31/03/2026
+---------------------------
+
+This is a patch release to correct a reported issue regarding incorrect warnings listed in test session logs.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2093 | :tdl:`TESTS` | Warnings displayed in test session log in certain cases when loading a test case using scriptlets
 
 Release 1.29.1 - 30/03/2026
 ---------------------------
