@@ -21,13 +21,32 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.29.2**.
+The latest Test Bed release is **1.29.3**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.29.3 - 15/04/2026
+---------------------------
+
+This is a patch release to correct issues regarding conformance statement creation, the execution of recurring background tasks,
+and test presentation in test history screens.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2095 | :ui:`UI` | Conformance statement creation may still be unexpectedly skipped
+  ITB-2097 | :ui:`UI` | Idle test sessions not getting cleared up automatically (when configured)
+  ITB-2098 | :ui:`UI` | Inactive user accounts not being deleted automatically (when configured)
+  ITB-2099 | :ui:`UI` | Automatic notifications for pending test session interactions not being sent (when configured)
+  ITB-2100 | :ui:`UI` | Pending iteration steps displayed in the test session history show as skipped
+  ITB-2101 | :ui:`UI` | The shutdown preparation mode is ignored in batch test sessions launched via the REST API
 
 Release 1.29.2 - 31/03/2026
 ---------------------------
