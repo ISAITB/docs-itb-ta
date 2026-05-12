@@ -368,7 +368,7 @@ of the organisations that will be testing (e.g. software vendors).
 .. _community__recipes__5:
 
 Approach 5: Controlled demo environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++++
 
 The community administrator defines a specific default organisation with test cases used for experimentation and demonstration
 purposes. Users joining this organisation can execute tests and view the testing history, but cannot make changes or see other
