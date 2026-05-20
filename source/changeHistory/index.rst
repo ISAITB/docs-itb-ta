@@ -21,13 +21,43 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.29.3**.
+The latest Test Bed release is **1.29.4**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.29.4 - 21/05/2026
+---------------------------
+
+.. warning::
+  This patch contains security updates and upgrading from earlier versions is advised.
+
+This is a limited maintenance release to address bugs and improvements on the use of proxies, as well as a bug in interaction
+step rendering. In addition, it upgrades third-party libraries to correct CVE-2026-43512 and CVE-2026-41293, which although not
+linked to direct vulnerabilities, could be leveraged to induce unexpected test engine behaviours. Finally, several other
+third-party library security patches were also applied to squash non-exploitable vulnerabilities.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2104 | :tdl:`TESTS` | Interact step may not include in UI reports, files that are text-based and small enough to be displayed inline
+  ITB-2107 | :other:`OTHER` | Proxy settings not applied to all network traffic
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2109 | :other:`OTHER` | Support proxy settings for test engine (gitb-srv) originated network traffic
+  ITB-2121 | :other:`OTHER` | Allow the configuration of hosts to not pass through the configured HTTP/HTTPS proxy
+  ITB-2122 | :other:`OTHER` | Library updates to address CVE-2026-43512 and CVE-2026-41293, and other CVEs as a precaution
 
 Release 1.29.3 - 15/04/2026
 ---------------------------
