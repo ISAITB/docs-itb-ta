@@ -3,8 +3,8 @@
 REST API
 ========
 
-The Test Bed's REST API allows you to carry out most operations without connecting to its user interface. Its typical use case is to allow 
-integration with automated processes enabling use cases such as **automated testing** and **continuous integration**. For 
+The Test Bed's REST API allows you to carry out most operations without connecting to its user interface. Its typical use case is to allow
+integration with automated processes enabling use cases such as **automated testing** and **continuous integration**. For
 test developers certain API operations may also be interesting as it allows them to more easily validate changes while **developing test cases**.
 
 As a general note, identifying the operations' caller and referring to existing data in the Test Bed is done via **API keys**. For operations that would
