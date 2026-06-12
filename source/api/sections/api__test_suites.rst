@@ -3,8 +3,8 @@ to allow the deployment of test suites via automation processes.
 
 Test suite management operations make use of API keys to determine the information relevant to a specific call. These keys are:
 
-* The key to identify a **specification**, displayed when viewing a specification's details.
-* The identifier of a **test suite**, displayed when viewing a test suite's details.
+* The key to identify a **specification**, displayed when :ref:`viewing a specification's details<domains__specification>`.
+* The identifier of a **test suite**, displayed when :ref:`viewing a test suite's details<domains__test_suite_details>`.
 
 The API includes the following operations to manage test suites:
 
