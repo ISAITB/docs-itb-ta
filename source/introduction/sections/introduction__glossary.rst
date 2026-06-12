@@ -1,0 +1,215 @@
+The glossary provided here is meant to acquaint you to the concepts used within the Test Bed. The sequence in which each concept is
+defined is selected to gradually build up your understanding of the complete terminology. In addition, to simplify definitions, the
+perspective adopted is that of the Test Bed, i.e. technical and with focus on software components.
+
+.. _introduction__glossary__specification:
+
+Specification
+~~~~~~~~~~~~~
+
+A **specification** is a detailed set of requirements that aim to precisely define an aspect of a software component's operation. From the
+perspective of the Test Bed, this would typically either be a content specification, focusing on the data that it produces or processes,
+or a messaging specification, focusing on the rules and message exchange steps that it needs to follow when interacting with one or
+more other components.
+
+.. _introduction__glossary__specification_group:
+
+Specification group
+~~~~~~~~~~~~~~~~~~~
+
+A **specification group** is a set of :ref:`specifications<introduction__glossary__specification>` (termed "options" in this case) that
+share certain common traits, or that serve to specialise a base specification with different variants. Groups are used as a means of
+organising available specifications in a more structured and intuitive manner to facilitate testing and the monitoring of conformance.
+A typical example is versioning support where a core specification is defined as a group, with its included specifications mapping to
+its various releases.
+
+.. _introduction__glossary__conformance:
+
+Conformance
+~~~~~~~~~~~
+
+**Conformance** of a software component to a specification relates to whether or not it meets its defined requirements. The process of
+conformance testing focuses on a single software component and is the process of ensuring in a measurable, non-ambiguous and repeatable
+way that the specification's requirements are met.
+
+.. _introduction__glossary__interoperability:
+
+Interoperability
+~~~~~~~~~~~~~~~~
+
+**Interoperability** can be considered as the step that follows conformance and places the focus on two or more software components.
+Having established that each individual component conforms to one or more specifications, interoperability testing relates to the process
+or verifying that they can actually exchange information in a manner that is respected and understood by all.
+
+.. _introduction__glossary__domain:
+
+Domain
+~~~~~~
+
+A **domain** in the Test Bed is the means by which related specifications are grouped together. It allows projects to define multiple
+specifications as a cohesive whole that may each be tested for conformance individually. Conforming to all specifications within a domain
+may be mandatory but could also be optional, depending on the project's needs.
+
+.. _introduction__glossary__actor:
+
+Actor
+~~~~~
+
+An **actor** is the term used to identify one participating entity in a specification. This becomes important especially in the case of
+messaging specifications where multiple participants are typically defined; at least one to send messages and another to receive. When you
+want to ensure that your software component conforms to a specification you need to select your target actor. Actors in the Test Bed are
+key considering that they serve to organise tests and determine what is actually being tested. Each test focuses on a single actor that is
+identified as the **System Under Test (SUT)** which is the part your software component needs to play. Other specification actors that are
+relevant to the test in question are simulated by the Test Bed to automate and validate the information exchange.
+
+As an example of this consider a specification defining a message exchange between a "Sender" and a "Receiver". If your software component
+is to act as the Receiver then the Sender will be simulated by the Test Bed and will generate messages for you to receive and respond to,
+with your responses being automatically validated according to the specification. Even if your component is supposed to both send and receive
+(i.e. participate in the exchange as either actor), the distinction is important as a different set of tests would apply per case.
+
+.. _introduction__glossary__endpoint:
+
+Endpoint
+~~~~~~~~
+
+An **endpoint** is related to an actor and refers to a named set of configuration parameters. In order to test, these parameters need to be
+defined but how this happens depends on the role of each actor in the test in question. For a simulated actor the Test Bed will automatically
+define the required parameters and present these to you (if relevant) so that you can take any needed configuration actions on your
+software component before starting. On the other hand, when such configuration parameters are defined for an actor that you are testing as
+(i.e. your software component is the SUT), you will need to input the expected values before starting.
+
+Continuing the Sender and Receiver example, if the communication in question is SOAP web service calls we would expect that the address of
+each service endpoint would need to be configured. In case your system is acting as the Receiver you would need to provide to the Test Bed
+the address of your service endpoint. Similarly, if you are acting as the Sender, the Test Bed would need to provide you the address to make
+your calls on so that you can configure it in your software.
+
+.. _introduction__glossary__organisation:
+
+Organisation
+~~~~~~~~~~~~
+
+An **organisation** is the concept that maps to a member of the project who is using the Test Bed to test conformance. Each user belongs to
+an organisation and its via the organisation that a user can execute tests, inspect results and extract reports. An organisation can have
+two types of users:
+
+* A **user**, who is able to execute tests and inspect results.
+* An **administrator**, who is able to execute tests and inspect results, but is also able to manage configuration and the specifications
+  to conform to.
+
+.. _introduction__glossary__system:
+
+System
+~~~~~~
+
+A **system** is related to an organisation and represents the actual software component that will be tested. In simple cases an organisation
+will have a single system and the terms "organisation" and "system" may be conceptually interchangeable. It is often the case however that a single organisation defines
+multiple systems, each with its own specification conformance needs and testing history. The system in the Test Bed is actually the point
+where configuration for your software component is introduced and it is the system that is selected when defining the specifications you aim
+to test for.
+
+.. _introduction__glossary__conformance_statement:
+
+Conformance statement
+~~~~~~~~~~~~~~~~~~~~~
+
+A **conformance statement** is the concept that defines the statement (to be tested) that a given software component conforms to a given
+specification. From the perspective of the Test Bed this means more specifically that an organisation's system aims to conform to the
+requirements of a specific actor in the specification. Simply put, the conformance statement links a system to an actor. Conformance
+statements are important as they encapsulate the goal of the Test Bed, to allow systems to test for conformance.
+
+.. _introduction__glossary__community:
+
+Community
+~~~~~~~~~
+
+A **community** is an administrative concept to group together related organisations. A real-world project or user community maps in the test
+bed to a community, with the project leader acting as the community administrator. A community is the level where such administrators manage
+organisations and their users, define specifications and tests, and follow up on the overall conformance testing progress. A community is typically
+linked to a single domain, ensuring that community administrators have full access to manage their domain's specifications and tests,
+whereas organisation users are presented only with the specifications relevant to their needs.
+
+.. _introduction__glossary__test_case:
+
+Test case
+~~~~~~~~~
+
+A **test case** represents a set of steps and assertions that form a cohesive scenario for testing purposes. A specification's requirements
+are implemented as one or more test cases in which the specification's actors are defined either as the SUT (i.e. the actual software components being
+tested) or as being simulated by the Test Bed. In terms of implementation, a test case is an XML file authored using the `GITB Test Description Language
+(TDL)`_. A test case is linked to a system's conformance statement when it defines the relevant statement's actor as the test case actor with SUT role.
+
+.. _GITB Test Description Language (TDL): https://www.itb.ec.europa.eu/docs/tdl/latest
+
+.. _introduction__glossary__test_suite:
+
+Test suite
+~~~~~~~~~~
+
+A **test suite** is used to group together related test cases into a cohesive set. It provides context over the purpose of its contained test cases
+and also allows for their automatic execution. A test suite is expressed as an XML file authored in the `GITB Test
+Description Language (TDL)`_ and is bundled in a ZIP archive along with its contained test cases and the resources they use.
+
+.. _GITB Test Description Language (TDL): https://www.itb.ec.europa.eu/docs/tdl/latest
+
+.. _introduction__glossary__test_step:
+
+Test step
+~~~~~~~~~
+
+A **test step** is an individual action defined in a test case relevant to messaging, processing, control flow or validation. Steps
+can either succeed or fail, with the latter case resulting in an overall execution failure for the test case.
+
+.. _introduction__glossary__test_session:
+
+Test session
+~~~~~~~~~~~~
+
+A **test session** represents a single execution of a test case. It typically involves the provision of configuration before starting the test,
+goes through the steps the test case foresees and eventually completes providing the session’s overall result.
+
+.. _introduction__glossary__test_result:
+
+Test result
+~~~~~~~~~~~
+
+The **test result** is the outcome of a test session and can be one of the following:
+
+* **SUCCESS:** All the steps defined in the test case have completed successfully (potentially with certain steps skipped due to conditional logic).
+* **FAILURE:** At least one step defined in the test case has failed.
+* **UNDEFINED:** The test case has either not been executed or was forcibly terminated before completing.
+
+An overall conformance statement's result depends on the latest results of its related test sessions. To consider a conformance statement as being
+successfully tested, all test cases must be executed and have their latest result as "SUCCESS".
+
+.. _introduction__glossary__example_use_of_concepts:
+
+Example use of concepts
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The purpose of the following example is to help you understand how some of the key Test Bed concepts would map to the real world. Consider a solution
+named "EU message exchange" used within the EU whereby Member State endpoint systems exchange messages with a central EU portal. There are different
+message types ("Message1", "Message2" and "Message3") each with a specific syntax and content rules. Member States can optionally support each message type
+but if they do they need to ensure that they can successfully use them when interacting with the EU portal.
+
+.. figure:: example.png
+  :align: center
+
+In this case the previously discussed Test Bed concepts could be mapped as follows:
+
+* **Domain:** This a logical concept to group together specifications. It can be called "EU message exchange".
+* **Specifications:** Given that we have three message types that can be optionally supported, one way to map this
+  would be to define one specification per message, named using the message type ("Message1", "Message2" and "Message3").
+* **Actors:** The actors relevant to each specification are the same in all cases. We would have one actor for the EU
+  portal named "EU portal" and another for the Member State endpoint systems named "MS endpoint".
+* **Organisation:** The parties participating in the project are Member States. It thus makes sense to define an organisation
+  per Member State that will be testing.
+* **Community:** The community is the logical grouping of the solution's related organisations. It can be called "EU message exchange community".
+* **System:** Member States having only one connecting endpoint would only define one system. However, in cases where multiple endpoint systems
+  can operate, we would have multiple system entries, one per actual software system that will need to test.
+* **Conformance statements:** Conformance statements link a specification's actor to an organisation's system. In this case each Member State
+  organisation would create a conformance statement selecting the "MS endpoint" actor as the SUT. This would be done for each message type
+  (i.e. specification) that the Member State plans to support.
+* **Test suites and test cases:** The organisation and design of test cases relates to the assertions you want to test. Typically you could expect
+  test cases where the "MS endpoint" actor, as the SUT, sends/receives messages to/from the simulated "EU portal". Validations can
+  take place on the exchanged messages and also over entire message conversations to ensure e.g. that responses are not only valid but that they also
+  correctly reference the expected requests.
