@@ -54,7 +54,7 @@ evolutive maintenance of the GITB software and specifications based on the needs
 Glossary
 --------
 
-.. include:: /api/sections/introduction__glossary.rst
+.. include:: /introduction/sections/introduction__glossary.rst
 
 .. _introduction__role:
 
