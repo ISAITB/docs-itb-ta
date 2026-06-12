@@ -1,4 +1,4 @@
-The **createActor** operation is used to create a new actor. To use it make an HTTP ``PUT`` to path ``/api/rest/actor`` 
+The **createActor** operation is used to create a new actor. To use it make an HTTP ``PUT`` to path ``/api/rest/actor``
 and include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**. This API key identifies the community
 that is able to manage the actor's domain, either by being directly linked to it or being linked to no domain.
 

@@ -1,5 +1,5 @@
 The **start** operation is used to launch one or more test sessions. You may use the operation's parameters to specify exactly which test cases
-to execute, allowing for targetted choices or batch execution of complete sets of tests. You may also define how the selected test cases are 
+to execute, allowing for targetted choices or batch execution of complete sets of tests. You may also define how the selected test cases are
 launched, by specifying whether they should be parallelised or executed in sequence. In addition, you may provide inputs for the tests to execute
 that could serve to replace values that would be otherwise provided interactively (e.g. user inputs or uploaded files).
 
@@ -14,7 +14,7 @@ In the request's payload you typically define at least the following properties:
 
 The operation supports properties ``testSuite`` and ``testCase``, both provided as arrays including the API keys for specific test suites
 and test cases. These properties, in combination with the ``actor``, define which test cases shall be executed.
-For example the following request defines only the ``actor``, thus launching all test cases defined in the system's 
+For example the following request defines only the ``actor``, thus launching all test cases defined in the system's
 :ref:`conformance statement<manage_your_conformance_statements__view_a_conformance_statements_details__tests>`:
 
 .. code-block:: json
@@ -112,20 +112,20 @@ only applies to two specific ones:
     "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
     "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
     "inputMapping": [
-      { 
-        "input": { 
+      {
+        "input": {
           "name": "countryCode",
-          "value": "BE" 
-        } 
+          "value": "BE"
+        }
       },
-      { 
-        "testCase": ["TS1_TC1", "TS1_TC2"], 
+      {
+        "testCase": ["TS1_TC1", "TS1_TC2"],
         "input": {
           "name": "partyId",
           "value": "ID12345"
         }
       }
-    ]    
+    ]
   }
 
 The definition of each ``input`` property is quite flexible, allowing you to define complete files as well as complex structures such as maps.
@@ -140,14 +140,14 @@ on its relevant input:
     "inputMapping": [
       {
         "testCase": ["TS1_TC1"],
-        "input": { 
+        "input": {
           "name": "aFile",
           "embeddingMethod": "BASE64",
           "type": "binary",
           "value": "ZGY6TEtNZmRzYSdrZ2ptZmdobDthZyBcb2VrZ2hhc......"
-        } 
+        }
       }
-    ]    
+    ]
   }
 
 When providing a map as an input you do so by including its entries within the top-level map input, in its ``item`` property:
@@ -159,26 +159,26 @@ When providing a map as an input you do so by including its entries within the t
     "system": "B277E210X2FB4X4BD7X88B6X951504F45F8F",
     "actor": "28E6E6C9X80BDX40C9XB54DX102800BC32D7",
     "inputMapping": [
-      { 
+      {
         "testCase": ["TS1_TC1"],
-        "input": { 
+        "input": {
           "name": "countryInfo",
           "type": "map",
           "item": [
             { "name": "countryCode", "value": "BE" },
             { "name": "countryName", "value": "Belgium" }
           ]
-        } 
+        }
       }
-    ]    
+    ]
   }
 
 For the full specification of the **start** operation's request payload you may check its :ref:`JSON schema definition<api__test_sessions__start__request>`.
 
 The response you receive from the **start** operation, includes a confirmation of the test sessions that have been started or planned for execution
 (if execution was requested to be sequential). The information for each scheduled session is returned in the ``createdSessions`` array, of which
-each item corresponds to one session. For each session you are informed of its relevant ``testSuite`` and ``testCase``, as well as its assigned 
-``session`` identifier with which you can follow its progress. 
+each item corresponds to one session. For each session you are informed of its relevant ``testSuite`` and ``testCase``, as well as its assigned
+``session`` identifier with which you can follow its progress.
 
 .. code-block:: json
 
@@ -198,7 +198,7 @@ each item corresponds to one session. For each session you are informed of its r
   }
 
 You may use the reported session identifiers to check the sessions' :ref:`status<api__test_sessions__status>` and, if needed, forcibly :ref:`stop<api__test_sessions__stop>` them.
-In case your ``start`` call specified ``waitForCompletion`` as ``true`` with a 
+In case your ``start`` call specified ``waitForCompletion`` as ``true`` with a
 ``maximumWaitTime``, each returned test session information will include a ``completed`` flag to inform you whether it was known to have completed
 within the specified delay.
 

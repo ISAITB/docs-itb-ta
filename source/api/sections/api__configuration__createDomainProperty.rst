@@ -1,4 +1,4 @@
-The **createDomainProperty** operation is used to define a new domain property. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/domain`` 
+The **createDomainProperty** operation is used to define a new domain property. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/domain``
 and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies a community
 that has access to manage the domain in question, either by being directly linked to it or by being linked to no domain.
 

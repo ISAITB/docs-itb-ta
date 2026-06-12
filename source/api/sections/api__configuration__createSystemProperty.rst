@@ -1,4 +1,4 @@
-The **createSystemProperty** operation is used to define a new system property for a community. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/system`` 
+The **createSystemProperty** operation is used to define a new system property for a community. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/system``
 and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's body you specify the information of the system property, of which the ``key`` is mandatory. The full set of information you can set for the property is defined

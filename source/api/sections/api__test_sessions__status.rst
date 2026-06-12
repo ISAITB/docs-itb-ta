@@ -39,7 +39,7 @@ following properties:
 * ``endTime``, containing a timestamp of the session's completion time.
 * ``message``, optionally included if an overall output message was produced by the test session.
 
-In case detailed log traces were requested (i.e. property ``withLogs`` was included and set to ``true``), each test session will 
+In case detailed log traces were requested (i.e. property ``withLogs`` was included and set to ``true``), each test session will
 also include a property named ``logs``. This is a string array containing one item per reported log message. Similarly, if
 test session reports were requested (i.e. property ``withReports`` was included and set to ``true``), a further property named
 ``report`` will be included. This is a string value that includes the complete XML content of the report as a JSON-escaped string

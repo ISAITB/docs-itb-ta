@@ -1,4 +1,4 @@
-The **createOrganisationProperty** operation is used to define a new organisation property for a community. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/organisation`` 
+The **createOrganisationProperty** operation is used to define a new organisation property for a community. To use it make an HTTP ``PUT`` to path ``/api/rest/configure/organisation``
 and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
 In the request's body you specify the information of the organisation property, of which the ``key`` is mandatory. The full set of information you can set for the property is defined

@@ -23,7 +23,7 @@ In case you want to altogether remove a property, such as the the specification'
   }
 
 You can also use this operation to manage the specification's grouping. Setting the ``group`` property to a specification group's API key
-will place it within the target group, removing it from its previous group (if defined). If you simply want to remove the specification 
+will place it within the target group, removing it from its previous group (if defined). If you simply want to remove the specification
 from its current group you can specify the ``group`` property as an empty string:
 
 .. code-block:: json

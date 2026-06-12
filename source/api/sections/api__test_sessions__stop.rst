@@ -4,7 +4,7 @@ sessions launched via the Test Bed's REST API, as long as you are authorised to 
 To call the **stop** operation make an HTTP ``POST`` to path ``/api/rest/tests/stop``. As with all Test Bed REST operations for session
 management you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **organisation API key**.
 
-In the request's payload you are expected to provide an array named ``session``, including the session identifiers for one or more test sessions 
+In the request's payload you are expected to provide an array named ``session``, including the session identifiers for one or more test sessions
 you want to stop. In the following example, a request is being made to terminate two test sessions:
 
 .. code-block:: json

@@ -1,4 +1,4 @@
-The Test Bed foresees API operations to **deploy** and **undeploy** test suites. Managing test suites in this way is primarily used during **test suite development**, 
+The Test Bed foresees API operations to **deploy** and **undeploy** test suites. Managing test suites in this way is primarily used during **test suite development**,
 to allow the deployment of test suites via automation processes.
 
 Test suite management operations make use of API keys to determine the information relevant to a specific call. These keys are:

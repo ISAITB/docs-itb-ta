@@ -1,5 +1,5 @@
 The **createCommunity** operation is used to create a new community. To use it make an HTTP ``PUT`` to path ``/api/rest/community``
-and include in your request an HTTP header named ``ITB-API-KEY`` set to your **master API key**.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 In the request's body you specify the information of the new community, of which the ``shortName`` and ``fullName`` are mandatory. Other information you
 would typically be providing, although not mandatory, would be the community's ``description`` and the ``domain`` it relates to, the latter identified through

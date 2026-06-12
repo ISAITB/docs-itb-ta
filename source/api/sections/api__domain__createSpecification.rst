@@ -1,4 +1,4 @@
-The **createSpecification** operation is used to create a new specification. To use it make an HTTP ``PUT`` to path ``/api/rest/specification`` 
+The **createSpecification** operation is used to create a new specification. To use it make an HTTP ``PUT`` to path ``/api/rest/specification``
 and include in your request an HTTP header named ``ITB-API-KEY`` set to a **community API key**. This API key identifies the community
 that is able to manage the specification's domain, either by being directly linked to it or being linked to no domain.
 

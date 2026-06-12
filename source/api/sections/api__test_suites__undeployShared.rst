@@ -4,7 +4,7 @@ history being cleared.
 To call the **undeployShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/undeployShared``. To authorise the operation and identify the domain
 from which the test suite will be removed, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
-In the request's payload you will need to define the ``testSuite`` property, referring to the identifier of the test suite to be removed. 
+In the request's payload you will need to define the ``testSuite`` property, referring to the identifier of the test suite to be removed.
 The following sample is a request to remove a test suite from a specification.
 
 .. code-block:: json

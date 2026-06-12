@@ -1,4 +1,4 @@
-The **createSystem** operation is used to create a new system. To use it make an HTTP ``PUT`` to path ``/api/rest/system`` 
+The **createSystem** operation is used to create a new system. To use it make an HTTP ``PUT`` to path ``/api/rest/system``
 and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies the community
 within which the system will be created.
 

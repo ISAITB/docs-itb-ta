@@ -1,4 +1,4 @@
-The **createOrganisation** operation is used to create a new organisation. To use it make an HTTP ``PUT`` to path ``/api/rest/organisation`` 
+The **createOrganisation** operation is used to create a new organisation. To use it make an HTTP ``PUT`` to path ``/api/rest/organisation``
 and include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**. This API key identifies the community
 within which the organisation will be created.
 

@@ -9,6 +9,6 @@ All community management operations use API keys to authorise calls and determin
 on the operation:
 
 * The key identifying a **community**, for all operations that a community administrator can do through the user interface.
-* The **master API key**, for selected top-level operations that are normally reserved for the overall Test Bed administrator.
+* The :ref:`master API key <systemAdmin__config__restApi>`, for selected top-level operations that are normally reserved for the overall Test Bed administrator.
 
 The sections that follow provide instructions and examples for each operation.

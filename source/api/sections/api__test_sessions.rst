@@ -1,4 +1,4 @@
-Apart from launching tests through the user interface you may also launch, manage and report on test sessions using REST API calls. A typical scenario would 
+Apart from launching tests through the user interface you may also launch, manage and report on test sessions using REST API calls. A typical scenario would
 be to do so as part of a development or quality assurance workflow that would involve the following steps:
 
 1. Upon changes to your system, or at given intervals, deploy and initialise the latest version of your system.

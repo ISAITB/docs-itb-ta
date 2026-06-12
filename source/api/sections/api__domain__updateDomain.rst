@@ -1,4 +1,4 @@
-The **updateDomain** operation is used to update an existing domain. It exists in two variants which differ in how the target domain is 
+The **updateDomain** operation is used to update an existing domain. It exists in two variants which differ in how the target domain is
 identified, the updates that you can do, and the API key you will use for authorisation.
 
 The first variant assumes that you are performing an update as a community administrator would. In this case you can update the domain linked
@@ -6,9 +6,9 @@ to the community or any domain, in case the community is not linked to a specifi
 path ``/api/rest/domain`` and setting an HTTP header named ``ITB-API-KEY`` to your **community API key**.
 
 The second variant allows you to perform tasks reserved for the Test Bed administrator. This means that you can manage any domain within the
-Test Bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path 
+Test Bed regardless of the communities linked to it. In this case you call the operation by making an HTTP ``POST`` to path
 ``/api/rest/domain/{domain}``, setting ``{domain}`` to the target domain's API key. The ``ITB-API-KEY`` HTTP header needs to be set
-with the **master API key**.
+with the :ref:`master API key <systemAdmin__config__restApi>`.
 
 When calling this operation, regardless of the specific variant, all input properties are optional. You specify the properties that you want to
 update, and for the ones that are to be left unchanged you don't include them. In case you want to remove a value you would specify the property

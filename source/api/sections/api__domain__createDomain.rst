@@ -1,8 +1,8 @@
 The **createDomain** operation is used to create a new domain. To use it make an HTTP ``PUT`` to path ``/api/rest/domain``
-and include in your request an HTTP header named ``ITB-API-KEY`` set to your **master API key**.
+and include in your request an HTTP header named ``ITB-API-KEY`` set to your :ref:`master API key <systemAdmin__config__restApi>`.
 
 In the request's body you specify the information of the new domain, of which the ``shortName`` and ``fullName`` are mandatory. Other information you
-could provide, although not mandatory, would be the domain's ``description`` and custom ``reportMetadata`` for XML reports. 
+could provide, although not mandatory, would be the domain's ``description`` and custom ``reportMetadata`` for XML reports.
 For the full set of information you can manage check the payload's :ref:`schema <api__domain__createDomain__request>`.
 
 The following example shows how you can create a domain with the provided data:

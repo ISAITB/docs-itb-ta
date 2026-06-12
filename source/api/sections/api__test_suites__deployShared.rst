@@ -4,7 +4,7 @@ parameters allow you to specify how to handle validation issues and existing con
 To call the **deployShared** operation make an HTTP ``POST`` to path ``/api/rest/testsuite/deployShared``. To authorise the operation and identify the specification domain
 to be updated, you must include in your request an HTTP header named ``ITB-API-KEY`` set to your **community API key**.
 
-In the request's payload you will need to define at least the ``testSuite``, including the data of the test suite archive being deployed. 
+In the request's payload you will need to define at least the ``testSuite``, including the data of the test suite archive being deployed.
 Apart from this, you may optionally specify additional properties as boolean flags to determine archive handling options. Specifically:
 
 * Set ``ignoreWarnings`` to ``true`` to allow the test suite's deployment even in case of validation warnings. By default validation warnings will prevent the deployment
@@ -26,7 +26,7 @@ approach is determined by you by setting the request's ``Content-Type`` header t
 
 * Setting ``Content-Type`` to ``application/json`` will consider that the request's body is JSON that includes the test suite archive as a **BASE64 encoded string**.
   The request's inputs in this case are added as JSON properties with the BASE64 encoded string added as property ``testSuite``.
-* Setting ``Content-Type`` to ``multipart/form-data`` will consider the request as a **multipart form submission**. The request's inputs in this case will be 
+* Setting ``Content-Type`` to ``multipart/form-data`` will consider the request as a **multipart form submission**. The request's inputs in this case will be
   request parameters with the test suite archive named ``testSuite`` (the request's file part). In addition, the ``testCases`` array is replaced in this case
   by four repeatable parameters named ``testCaseWithSpecificationUpdate``, ``testCaseWithoutSpecificationUpdate``, ``testCaseWithTestHistoryReplacement``
   and ``testCaseWithoutTestHistoryReplacement``, each set with the relevant test case identifier.
@@ -58,13 +58,13 @@ As discussed earlier you may also include additional flags to determine how the 
 
 For the full specification of the **deployShared** operation's request payload, when this is provided as JSON, you may check its :ref:`JSON schema definition<api__test_suites__deployShared__request>`.
 
-Once the **deployShared** operation has completed you receive a JSON response to notify you of the deployment's result. This response will always include 
+Once the **deployShared** operation has completed you receive a JSON response to notify you of the deployment's result. This response will always include
 a boolean ``completed`` flag to inform you whether the deployment was actually carried out. Alongside this you may optionally receive report items
 produced by the test suite's validation in three arrays named ``errors``, ``warnings`` and ``messages``. Each item of these arrays includes the finding's ``description``
 and ``location``, the latter being the path of the test suite's resource (e.g. a test case file) that resulted in it being reported. A test suite's
 deployment may not be completed in case it's validation produced errors or warnings (that were not set to be ignored via the request's ``ignoreWarnings`` flag).
 
-Besides the overall status and validation summary, the response will also include the **API keys** of all data created, or affects by the test suite. These keys allow 
+Besides the overall status and validation summary, the response will also include the **API keys** of all data created, or affects by the test suite. These keys allow
 you to automate other operations related to this test suite through the REST API, such as :ref:`running test sessions <api__test_sessions__start>` or
 :ref:`managing conformance statements <api__conformance_statements>`. The returned API keys include:
 
@@ -92,11 +92,11 @@ The following example presents a response that produced a validation warning but
             "name": "Specification 1",
             "identifier": "77040396X168EX40CDXBD3FX62347E1A09E6",
             "actors": [
-              { 
+              {
                 "name": "Actor 1",
                 "identifier": "28E6E6C9X80BDX40C9XB54DX102800BC32D7"
               },
-              { 
+              {
                 "name": "Actor 2",
                 "identifier": "4F5E9DEBX1F5DX4ECBX92DBXC5DEF1035643"
               }
