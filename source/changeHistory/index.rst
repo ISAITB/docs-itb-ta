@@ -21,13 +21,44 @@ the following information is provided:
   :tdl:`TESTS` | The test engine capabilities, including the `GITB TDL <https://www.itb.ec.europa.eu/docs/tdl/latest/>`_ and `GITB test services <https://www.itb.ec.europa.eu/docs/services/latest/>`_
   :other:`OTHER` | Other aspects, such as internal components and configurations
 
-The latest Test Bed release is **1.29.4**.
+The latest Test Bed release is **1.29.5**.
 
 .. note::
     
     **GitHub repository:** The Test Bed's source code is `published on GitHub <https://github.com/ISAITB/gitb>`_. Although development is not driven through
     its GitHub repository, it remains an excellent notification channel for `new releases <https://github.com/ISAITB/gitb/releases>`_ and 
     `development updates <https://github.com/ISAITB/gitb/commits/development>`_.
+
+Release 1.29.5 - 19/06/2026
+---------------------------
+
+.. warning::
+  This patch contains security updates and upgrading from earlier versions is advised.
+
+This is a limited maintenance release to address minor bugs related to test sessions and test suite metadata updates, while
+resolving also a long standing issue that could cause conformance statements to not always be created. In addition, this
+patch upgrades third-party libraries to correct CVE-2026-49875 which could be exploitable for Test Bed instances using
+remote test service extensions, and to squash other non-exploitable vulnerabilities.
+
+**Bug fixes**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2129 | :ui:`UI` | When creating conformance statements, using the checkbox for selection does not create the expected statements
+  ITB-2131 | :ui:`UI` | Unable to update test suite metadata through the UI if a version is not set
+  ITB-2132 | :tdl:`TESTS` | When large files are used in interact step instructions the popup fails to display
+  ITB-2135 | :tdl:`TESTS` | The receiving endpoint for the HttpMessagingV2 and SoapMessagingV2 handlers shows as lowercased in the session log
+
+**Improvements**
+
+.. csv-table::
+  :class: changelog-table
+  :delim: |
+
+  ITB-2128 | :other:`OTHER` | Move development-time secret placeholders outside configuration files to avoid being flagged in scans
+  ITB-2136 | :other:`OTHER` | Library updates to address CVE-2026-49875 and other CVEs as a precaution
 
 Release 1.29.4 - 21/05/2026
 ---------------------------
