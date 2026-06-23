@@ -44,7 +44,55 @@ As an example, calling ``/api/rest/domain/DOMAIN_API_KEY/groups?name=specificati
 searchSpecificationGroups - response schema
 +++++++++++++++++++++++++++++++++++++++++++
 
-The payload of the **searchSpecificationGroups** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchSpecificationGroups_response.schema.json>`:
+The payload of the **searchSpecificationGroups** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/searchSpecificationGroups_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-searchSpecificationGroups_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/searchSpecificationGroups_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the searchSpecificationGroups operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/SpecificationGroup"
+     },
+     "definitions": {
+       "SpecificationGroup": {
+         "description": "A specification group.",
+         "type": "object",
+         "properties": {
+           "shortName": {
+             "description": "The group's short name.",
+             "type": "string"
+           },
+           "fullName": {
+             "description": "The group's full name.",
+             "type": "string"
+           },
+           "description": {
+             "description": "The group's description.",
+             "type": "string"
+           },
+           "reportMetadata": {
+             "description": "The group's additional metadata for XML reports.",
+             "type": "string"
+           },
+           "displayOrder": {
+             "description": "The group's display order relative to other groups and specifications.",
+             "type": "number"
+           },
+           "apiKey": {
+             "description": "The group's API key.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "shortName",
+           "fullName",
+           "apiKey"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }

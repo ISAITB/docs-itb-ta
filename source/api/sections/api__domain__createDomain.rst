@@ -43,17 +43,68 @@ the operation will still report the API key that was assigned.
 createDomain - request schema
 +++++++++++++++++++++++++++++
 
-The payload of the **createDomain** operation's request is defined by the following :download:`JSON Schema<resources/domain/createDomain_request.schema.json>`:
+The payload of the **createDomain** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/createDomain_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createDomain_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/createDomain_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createDomain operation request payload",
+       "type": "object",
+       "properties": {
+           "shortName": {
+               "description": "The domain's short name.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The domain's full name.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The domain's description.",
+               "type": "string"
+           },
+           "reportMetadata": {
+               "description": "The domain's additional metadata for XML reports.",
+               "type": "string"
+           },
+           "apiKey": {
+               "description": "The API key to set for the domain. If this key is already assigned, a new one will be generated.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "shortName",
+           "fullName"
+       ],
+       "additionalProperties": false
+     }
 
 .. _api__domain__createDomain__response:
 
 createDomain - response schema
 ++++++++++++++++++++++++++++++
 
-The payload of the **createDomain** operation's response is defined by the following :download:`JSON Schema<resources/common/apiKey_response.schema.json>`:
+The payload of the **createDomain** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/common/apiKey_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-apiKey_response.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/apiKey_response",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema to signal an assigned API key response",
+       "type": "object",
+       "properties": {
+           "apiKey": {
+             "description": "The API key value.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "apiKey"
+         ],
+         "additionalProperties": false
+     }

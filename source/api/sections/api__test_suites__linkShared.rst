@@ -54,17 +54,122 @@ For the full specification of the **linkShared** operation's response payload yo
 linkShared - request schema
 +++++++++++++++++++++++++++
 
-The payload of the **linkShared** operation's request is defined by the following :download:`JSON Schema<resources/suites/linkShared_request.schema.json>`:
+The payload of the **linkShared** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/suites/linkShared_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-linkShared_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/linkShared_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the test suites' linkShared operation request payload",
+     "type": "object",
+     "properties": {
+       "testSuite": {
+         "description": "The identifier of the shared test suite.",
+         "type": "string"
+       },
+       "specifications": {
+         "description": "The list of specifications to link the test suite to.",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/testSuiteLinkRequestSpecification"
+         }
+       }
+     },
+     "required": [
+       "testSuite",
+       "specifications"
+     ],
+     "additionalProperties": false,
+     "definitions": {
+       "testSuiteLinkRequestSpecification": {
+         "description": "Information on how to link a shared test suite to a given specification.",
+         "type": "object",
+         "properties": {
+           "specification": {
+             "description": "The API key identifying the specification to link the test suite to.",
+             "type": "string"
+           },
+           "update": {
+             "description": "Whether or not to update the specification's actor metadata based on the test suite.",
+             "type": "boolean"
+           }
+         },
+         "required": [
+           "specification"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }
 
 .. _api__test_suites__linkShared__response:
 
 linkShared - response schema
 ++++++++++++++++++++++++++++
 
-The payload of the **linkShared** operation's response is defined by the following :download:`JSON Schema<resources/suites/linkShared_response.schema.json>`:
+The payload of the **linkShared** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/suites/linkShared_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-linkShared_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/linkShared_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the test suites' linkShared operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/testSuiteLinkResponseSpecification"
+     },
+     "definitions": {
+       "testSuiteLinkResponseSpecification": {
+         "description": "The result from linking a shared test suite to a given specification.",
+         "type": "object",
+         "properties": {
+           "specification": {
+             "description": "The API key identifying the specification.",
+             "type": "string"
+           },
+           "linked": {
+             "description": "Whether or not the test suite was linked to the specification.",
+             "type": "boolean"
+           },
+           "message": {
+             "description": "A message detailing why the specification was not linked (if linking didn't take place).",
+             "type": "string"
+           },
+           "actors": {
+             "description": "The information for the actors linked to the specification.",
+             "type": "array",
+             "items": {
+               "$ref": "#/definitions/testSuiteUploadActorKeys"
+             }
+           }
+         },
+         "required": [
+           "specification",
+           "linked"
+         ],
+         "additionalProperties": false
+       },
+       "testSuiteUploadActorKeys": {
+         "description": "The API keys for the actors related to the test suite.",
+         "type": "object",
+         "required": [
+           "name",
+           "identifier"
+         ],
+         "properties": {
+           "name": {
+             "description": "The name of the actor.",
+             "type": "string"
+           },
+           "identifier": {
+             "description": "The API key of the actor.",
+             "type": "string"
+           }
+         }
+       }
+     }
+   }

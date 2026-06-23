@@ -46,7 +46,106 @@ Calling this operation, the Test Bed will create the property and respond with a
 createOrganisationProperty - request schema
 +++++++++++++++++++++++++++++++++++++++++++
 
-The payload of the **createOrganisationProperty** operation's request is defined by the following :download:`JSON Schema<resources/configuration/organisationPropertyInfo_request.schema.json>`:
+The payload of the **createOrganisationProperty** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/configuration/organisationPropertyInfo_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-organisationPropertyInfo_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/organisationPropertyInfo_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createOrganisationProperty and updateOrganisationProperty operation request payloads",
+       "type": "object",
+       "properties": {
+           "key": {
+               "description": "The unique key used to identify the property.",
+               "type": "string"
+           },
+           "name": {
+               "description": "The property's name. If not set this will be the same as the property's key.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The property's description.",
+               "type": "string"
+           },
+           "required": {
+               "description": "Whether the property must be set before executing test sessions.",
+               "type": "boolean",
+               "default": true
+           },
+           "editableByUsers": {
+               "description": "Whether the property can be set by organisation users.",
+               "type": "boolean",
+               "default": true
+           },
+           "inTests": {
+               "description": "Whether the property should be exposed to test sessions.",
+               "type": "boolean",
+               "default": false
+           },
+           "inExports": {
+               "description": "Whether the property should be included in exports.",
+               "type": "boolean",
+               "default": false
+           },
+           "inSelfRegistration": {
+               "description": "Whether the property should be requested during self-registration.",
+               "type": "boolean",
+               "default": false
+           },
+           "hidden": {
+               "description": "Whether the property should be hidden from organisation users.",
+               "type": "boolean",
+               "default": false
+           },
+           "allowedValues": {
+               "description": "The list of allowed values for the property.",
+               "type": "array",
+               "items": {
+                   "$ref": "#/definitions/allowedPropertyValue"
+               }
+           },
+           "displayOrder": {
+               "description": "The display order of the property when presented to users.",
+               "type": "number"
+           },
+           "dependsOn": {
+               "description": "The key of another property upon which this property's applicability depends on (see also dependsOnValue).",
+               "type": "string"
+           },
+           "dependsOnValue": {
+               "description": "If the dependsOn property is set, this is the value that the referred-to property needs to have for this property to be considered applicable.",
+               "type": "string"
+           },
+           "defaultValue": {
+               "description": "The default value of the property when a new organisation is created.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "key"
+       ],
+       "additionalProperties": false,
+       "definitions": {
+           "allowedPropertyValue": {
+               "description": "An entry for a configuration property representing an allowed value and its display label.",
+               "type": "object",
+               "properties": {
+                   "value": {
+                       "description": "The property value.",
+                       "type": "string"
+                   },
+                   "label": {
+                       "description": "The property's display label.",
+                       "type": "string"
+                   }
+               },
+               "required": [
+                   "value",
+                   "label"
+               ],
+               "additionalProperties": false
+           }
+       }
+   }

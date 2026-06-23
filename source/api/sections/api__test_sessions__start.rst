@@ -226,17 +226,203 @@ within the specified delay.
 start - request schema
 ++++++++++++++++++++++
 
-The payload of the **start** operation's request is defined by the following :download:`JSON Schema<resources/sessions/start_request.schema.json>`:
+The payload of the **start** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/sessions/start_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-start_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/start_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the tests' start operation request payload",
+     "type": "object",
+     "properties": {
+       "system": {
+         "description": "The API KEY identifying the target system. This can be skipped in case the target organisation defines a single system.",
+         "type": "string"
+       },
+       "actor": {
+         "description": "The API KEY identifying the target actor. This can be skipped in case you prefer providing test suite and/or test case identifiers to match the target actor. In any case a single conformance statement must be matched based on the provided inputs.",
+         "type": "string"
+       },
+       "forceSequentialExecution": {
+         "description": "Whether the test sessions should be forced to execute sequentially.",
+         "type": "boolean",
+         "default": false
+       },
+       "waitForCompletion": {
+         "description": "Whether the call should only return once the started test sessions have completed (or until a maximum wait time has elapsed).",
+         "type": "boolean",
+         "default": false
+       },
+       "maximumWaitTime": {
+         "description": "In case the call should wait for the test sessions to complete, this is the maximum time (in milliseconds) to wait before returning.",
+         "type": "number"
+       },
+       "executionDelay": {
+         "description": "An optional delay (in milliseconds) before executing tests. This delay is applied between each test execution regardless of whether execution is sequential or parallel. Providing a negative value or zero is equivalent to no delay being applied.",
+         "type": "number"
+       },
+       "testSuite": {
+         "description": "The identifier(s) of the test suites to execute.",
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       },
+       "testCase": {
+         "description": "The identifier(s) of the test cases to execute.",
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       },
+       "inputMapping": {
+         "description": "Inputs to provide to test sessions. These can be applied to all test sessions, or certain test sessions identified by their relevant test case or test suite identifiers.",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/inputMapping"
+         }
+       }
+     },
+     "additionalProperties": false,
+     "definitions": {
+       "inputMapping": {
+         "description": "Data relevant to an input provided to create one or more test sessions.",
+         "type": "object",
+         "properties": {
+           "testSuite": {
+             "description": "The identifiers of the test suite for which this input is to be provided.",
+             "type": "array",
+             "items": {
+               "type": "string"
+             }
+           },
+           "testCase": {
+             "description": "The identifiers of the test case for which this input is to be provided.",
+             "type": "array",
+             "items": {
+               "type": "string"
+             }
+           },
+           "input": {
+             "$ref": "#/definitions/anyContent"
+           }
+         },
+         "required": [
+           "input"
+         ],
+         "additionalProperties": false
+       },
+       "anyContent": {
+         "description": "The data and metadata relevant to a given test session input.",
+         "type": "object",
+         "properties": {
+           "name": {
+             "description": "The name of the input through which it is referenced in test cases.",
+             "type": "string"
+           },
+           "embeddingMethod": {
+             "description": "The way in which the value of the input is to be interpreted (as the actual string value, as a Base64-encoded string or as a remote URI location).",
+             "type": "string",
+             "enum": [
+               "STRING",
+               "BASE64",
+               "URI"
+             ],
+             "default": "STRING"
+           },
+           "value": {
+             "description": "The value of the input provided as a string, to be interpreted based on the embeddingMethod input. This may be missing in case of a complex type (list or map).",
+             "type": "string"
+           },
+           "type": {
+             "description": "The data type of this input.",
+             "type": "string",
+             "enum": [
+               "string",
+               "number",
+               "boolean",
+               "binary",
+               "object",
+               "schema",
+               "map",
+               "list"
+             ],
+             "default": "string"
+           },
+           "encoding": {
+             "type": "string"
+           },
+           "item": {
+             "description": "In case this is a complex data type (list or map) this is the array of child (contained) types.",
+             "type": "array",
+             "items": {
+               "$ref": "#/definitions/anyContent"
+             }
+           }
+         },
+         "additionalProperties": false
+       }
+     }
+   }
 
 .. _api__test_sessions__start__response:
 
 start - response schema
 +++++++++++++++++++++++
 
-The payload of the **start** operation's response is defined by the following :download:`JSON Schema<resources/sessions/start_response.schema.json>`:
+The payload of the **start** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/sessions/start_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-start_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/start_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the tests' start operation response payload",
+     "type": "object",
+     "properties": {
+       "createdSessions": {
+         "description": "Information on the created test session(s).",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/sessionCreationInformation"
+         }
+       }
+     },
+     "required": [
+       "createdSessions"
+     ],
+     "additionalProperties": false,
+     "definitions": {
+       "sessionCreationInformation": {
+         "description": "The metadata for a created test session.",
+         "type": "object",
+         "properties": {
+           "testSuite": {
+             "description": "The identifier of the test session's relevant test suite.",
+             "type": "string"
+           },
+           "testCase": {
+             "description": "The identifier of the test session's relevant test case.",
+             "type": "string"
+           },
+           "session": {
+             "description": "The identifier assigned to the test session.",
+             "type": "string"
+           },
+           "completed": {
+             "description": "If the call waited until test sessions were completed, this flag specifies whether the given test session is known to be completed. This may be false if the session did not complete within the maximum wait time, or altogether missing if the call was not set to wait for test session completion.",
+             "type": "boolean"
+           }
+         },
+         "required": [
+           "testSuite",
+           "testCase",
+           "session"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }

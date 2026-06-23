@@ -56,7 +56,60 @@ a matching specification as follows:
 searchSpecificationsInGroup - response schema
 +++++++++++++++++++++++++++++++++++++++++++++
 
-The payload of the **searchSpecificationsInGroup** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchSpecificationsInGroup_response.schema.json>`:
+The payload of the **searchSpecificationsInGroup** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/searchSpecificationsInGroup_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-searchSpecificationsInGroup_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/searchSpecificationsInGroup_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the searchSpecificationsInGroup operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/Specification"
+     },
+     "definitions": {
+       "Specification": {
+         "description": "A specification.",
+         "type": "object",
+         "properties": {
+           "shortName": {
+             "description": "The specification's short name.",
+             "type": "string"
+           },
+           "fullName": {
+             "description": "The specification's full name.",
+             "type": "string"
+           },
+           "description": {
+             "description": "The specification's description.",
+             "type": "string"
+           },
+           "reportMetadata": {
+             "description": "The specification's additional metadata for XML reports.",
+             "type": "string"
+           },
+           "hidden": {
+             "description": "Whether the specification should be hidden.",
+             "type": "boolean",
+             "default": false
+           },
+           "displayOrder": {
+             "description": "The specification's display order relative to other groups and specifications.",
+             "type": "number"
+           },
+           "apiKey": {
+             "description": "The specification's API key.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "shortName",
+           "fullName",
+           "apiKey"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }

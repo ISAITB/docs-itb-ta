@@ -24,7 +24,82 @@ Calling this operation, the Test Bed will create the property and respond with a
 createTestService - request schema
 ++++++++++++++++++++++++++++++++++
 
-The payload of the **createTestService** operation's request is defined by the following :download:`JSON Schema<resources/configuration/createTestService_request.schema.json>`:
+The payload of the **createTestService** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/configuration/createTestService_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createTestService_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/createTestService_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createTestService operation request payload",
+       "type": "object",
+     "properties": {
+       "key": {
+         "description": "The unique key used to identify the service and its underlying domain parameter.",
+         "type": "string"
+       },
+       "address": {
+         "description": "The service's address as an absolute HTTP URL.",
+         "type": "string"
+       },
+       "description": {
+         "description": "The service's description.",
+         "type": "string"
+       },
+       "serviceType": {
+         "description": "The type of the service.",
+         "type": "string",
+         "enum": ["messaging", "validation", "processing"]
+       },
+       "apiType": {
+         "description": "The API type of the service.",
+         "type": "string",
+         "enum": ["soap", "rest"],
+         "default": "soap"
+       },
+       "authBasicUsername": {
+         "description": "When HTTP basic authentication is used, this is the username to use.",
+         "type": "string"
+       },
+       "authBasicPassword": {
+         "description": "When HTTP basic authentication is used, this is the password to use.",
+         "type": "string"
+       },
+       "authTokenUsername": {
+         "description": "When the WS-Security UsernameToken profile is used, this is the username to use.",
+         "type": "string"
+       },
+       "authTokenPassword": {
+         "description": "When the WS-Security UsernameToken profile is used, this is the password to use.",
+         "type": "string"
+       },
+       "authTokenPasswordType": {
+         "description": "When the WS-Security UsernameToken profile is used, this is the type of password provision to use.",
+         "type": "string",
+         "enum": ["digest", "text"]
+       },
+       "identifier": {
+         "description": "The service's reference identifier.",
+         "type": "string"
+       },
+       "version": {
+         "description": "The service's version.",
+         "type": "string"
+       },
+       "domain": {
+         "description": "The API key identifying the domain of the service. This is required if the community API key used for authentication refers to a community that is not linked to a specific domain.",
+         "type": "string"
+       },
+       "replaceExisting": {
+         "description": "In case the service information matches an existing domain parameter, this flag can be used to link the parameter with the service's definition.",
+         "type": "boolean"
+       }
+     },
+     "required": [
+       "key",
+       "address",
+       "serviceType"
+     ],
+     "additionalProperties": false
+   }

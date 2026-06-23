@@ -40,7 +40,51 @@ As an example, calling ``/api/rest/domains?name=order`` would return a matching 
 searchDomains - response schema
 +++++++++++++++++++++++++++++++
 
-The payload of the **searchDomains** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchDomains_response.schema.json>`:
+The payload of the **searchDomains** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/searchDomains_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-searchDomains_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/searchDomains_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the searchDomains operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/Domain"
+     },
+     "definitions": {
+       "Domain": {
+         "description": "A domain.",
+         "type": "object",
+         "properties": {
+           "shortName": {
+             "description": "The domain's short name.",
+             "type": "string"
+           },
+           "fullName": {
+             "description": "The domain's full name.",
+             "type": "string"
+           },
+           "description": {
+             "description": "The domain's description.",
+             "type": "string"
+           },
+           "reportMetadata": {
+             "description": "The domain's additional metadata for XML reports.",
+             "type": "string"
+           },
+           "apiKey": {
+             "description": "The domain's API key.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "shortName",
+           "fullName",
+           "apiKey"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }

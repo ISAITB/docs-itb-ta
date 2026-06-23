@@ -59,7 +59,65 @@ a matching actor as follows:
 searchActors - response schema
 ++++++++++++++++++++++++++++++
 
-The payload of the **searchActors** operation's response is defined by the following :download:`JSON Schema<resources/domain/searchActors_response.schema.json>`:
+The payload of the **searchActors** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/searchActors_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-searchActors_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/searchActors_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the searchActors operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/Actor"
+     },
+     "definitions": {
+       "Actor": {
+         "description": "An actor.",
+         "type": "object",
+         "properties": {
+           "identifier": {
+             "description": "The actor's unique identifier in the specification, used to refer to it from test cases.",
+             "type": "string"
+           },
+           "name": {
+             "description": "The actor's display name.",
+             "type": "string"
+           },
+           "description": {
+             "description": "The actor's description.",
+             "type": "string"
+           },
+           "reportMetadata": {
+             "description": "The actor's additional metadata for XML reports.",
+             "type": "string"
+           },
+           "default": {
+             "description": "Whether the actor should be considered as the default choice for new conformance statements within its specification.",
+             "type": "boolean",
+             "default": false
+           },
+           "hidden": {
+             "description": "Whether the actor should be hidden.",
+             "type": "boolean",
+             "default": false
+           },
+           "displayOrder": {
+             "description": "The actor's display order relative to other actors when presented in test execution diagrams.",
+             "type": "number"
+           },
+           "apiKey": {
+             "description": "The actor's API key.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "identifier",
+           "name",
+           "apiKey"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }

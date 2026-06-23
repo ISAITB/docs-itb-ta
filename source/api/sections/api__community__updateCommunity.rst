@@ -38,7 +38,39 @@ The operation's response is empty, signalling through a status ``200`` (OK) that
 updateCommunity - request schema
 ++++++++++++++++++++++++++++++++
 
-The payload of the **updateCommunity** operation's request is defined by the following :download:`JSON Schema<resources/community/updateCommunity_request.schema.json>`:
+The payload of the **updateCommunity** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/updateCommunity_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-updateCommunity_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/updateCommunity_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the updateCommunity operation request payload",
+       "properties": {
+           "shortName": {
+               "description": "The community's short name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The community's full name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The community's description. Skip this if no update should be made or set to an empty string to remove the current value.",
+               "type": "string"
+           },
+           "supportEmail": {
+               "description": "A support email address to receive community-specific notifications at. Skip this if no update should be made or set to an empty string to remove the current value.",
+               "type": "string"
+           },
+           "interactionNotifications": {
+               "description": "Whether to receive notifications for pending interactions by email at the support mailbox (see supportEmail). Skip this if no update should be made.",
+               "type": "boolean"
+           },
+           "domain": {
+               "description": "The API key identifying a domain that should be linked to the community. Skip this if no update should be made or set to an empty string to unlink the community from its existing domain (without deleting the domain).",
+               "type": "string"
+           }
+       }
+   }

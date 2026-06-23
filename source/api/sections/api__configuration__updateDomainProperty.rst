@@ -35,7 +35,40 @@ The operation's response is empty, signalling through a status ``200`` (OK) that
 updateDomainProperty - request schema
 +++++++++++++++++++++++++++++++++++++
 
-The payload of the **updateDomainProperty** operation's request is defined by the following :download:`JSON Schema<resources/configuration/updateDomainProperty_request.schema.json>`:
+The payload of the **updateDomainProperty** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/configuration/updateDomainProperty_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-updateDomainProperty_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/updateDomainProperty_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the updateDomainProperty operation request payload",
+       "type": "object",
+       "properties": {
+           "key": {
+               "description": "The unique key used to identify the parameter.",
+               "type": "string"
+           },
+           "value": {
+               "description": "The new value to apply for the parameter. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The parameter's description. Skip this if no update should be made or set with an empty string to delete the current value.",
+               "type": "string"
+           },
+           "inTests": {
+               "description": "Whether the parameter should be exposed to test sessions. Skip this if no update should be made.",
+               "type": "boolean"
+           },
+           "domain": {
+               "description": "The API key identifying the domain of the parameter. This is required if the community API key used for authentication refers to a community that is not linked to a specific domain.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "key"
+       ],
+       "additionalProperties": false
+     }

@@ -25,7 +25,32 @@ Once this call is made, the Test Bed will unlink the specified test suite from t
 unlinkShared - request schema
 +++++++++++++++++++++++++++++
 
-The payload of the **unlinkShared** operation's request is defined by the following :download:`JSON Schema<resources/suites/unlinkShared_request.schema.json>`:
+The payload of the **unlinkShared** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/suites/unlinkShared_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-unlinkShared_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/unlinkShared_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the test suites' unlinkShared operation request payload",
+     "type": "object",
+     "properties": {
+       "testSuite": {
+         "description": "The identifier of the shared test suite.",
+         "type": "string"
+       },
+       "specifications": {
+         "description": "The list of specifications to unlink from the test suite (identified via their API keys).",
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       }
+     },
+     "required": [
+       "testSuite",
+       "specifications"
+     ],
+     "additionalProperties": false
+   }

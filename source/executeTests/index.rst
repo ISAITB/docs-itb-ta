@@ -306,8 +306,28 @@ When selecting to **download the report as XML**, you receive similar informatio
 The structure of the report is defined by the `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
 with the following being a simple sample:
 
-.. literalinclude:: ../executeTests/resources/test_step_report.xml
-   :language: xml
+.. code-block:: xml
+
+   <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+   <TestStepReport xmlns="http://www.gitb.com/tr/v1/" xmlns:ns2="http://www.gitb.com/core/v1/" xmlns:ns3="http://www.gitb.com/tbs/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TAR" name="Schematron Validation" id="4">
+       <date>2022-10-14T15:21:30.250+02:00</date>
+       <result>FAILURE</result>
+       <counters>
+           <nrOfAssertions>0</nrOfAssertions>
+           <nrOfErrors>2</nrOfErrors>
+           <nrOfWarnings>0</nrOfWarnings>
+       </counters>
+       <reports>
+           <error xsi:type="BAR">
+               <description>[BII2-T10-R051]-Sum of line amounts MUST equal the invoice line net amounts</description>
+               <location>xml:172:0</location>
+           </error>
+           <error xsi:type="BAR">
+               <description>[BII2-T10-R052]-An invoice total without VAT MUST equal the sum of line amounts plus the sum of charges on document level minus the sum of allowances on document level</description>
+               <location>xml:172:0</location>
+           </error>
+       </reports>
+   </TestStepReport>
 
 Finally, it is important to point out that the examination of a test session's result, both in terms of steps and message exchanges, as well as 
 detailed test step results, is possible at any time through your test session history (see :ref:`view_your_test_history`).
@@ -365,8 +385,82 @@ The XML export format of this report is defined by the
 `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
 and is suitable for machine-based processing. The following XML content is a sample of such a report:
 
-.. literalinclude:: ../testHistory/resources/test_case_report.xml
-   :language: xml
+.. code-block:: xml
+
+   <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+   <TestCaseOverviewReport xmlns="http://www.gitb.com/tr/v1/" xmlns:ns2="http://www.gitb.com/core/v1/" xmlns:ns3="http://www.gitb.com/tbs/v1/" id="UBL_invoice_validation_test_3">
+       <metadata>
+           <ns2:name>TC3: Upload minimal invoice</ns2:name>
+           <ns2:description>Test case to verify the correctness of a minimal UBL invoice. The invoice is provided manually through user upload.</ns2:description>
+       </metadata>
+       <sessionId>6f7df938-8478-49ea-9626-97ba5d611f0e</sessionId>
+       <startTime>2022-10-14T15:21:14.000+02:00</startTime>
+       <endTime>2022-10-14T15:21:31.000+02:00</endTime>
+       <result>FAILURE</result>
+       <message>The provided invoice failed validation. Check the failed validation step(s) for further details.</message>
+       <steps>
+           <step id="1">
+               <description>Step 1: UBL invoice upload</description>
+               <report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TAR" id="1">
+                   <date>2022-10-14T15:21:25.767+02:00</date>
+                   <result>SUCCESS</result>
+               </report>
+           </step>
+           <step id="2">
+               <description>Step 2: Validate invoice against UBL 2.1 Invoice Schema</description>
+               <report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TAR" name="XML Schema Validation" id="2">
+                   <date>2022-10-14T15:21:25.853+02:00</date>
+                   <result>SUCCESS</result>
+                   <counters>
+                       <nrOfAssertions>0</nrOfAssertions>
+                       <nrOfErrors>0</nrOfErrors>
+                       <nrOfWarnings>0</nrOfWarnings>
+                   </counters>
+                   <reports/>
+               </report>
+           </step>
+           <step id="3">
+               <description>Step 3: Validate invoice against BII2 CORE restrictions for Invoice Transaction</description>
+               <report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TAR" name="Schematron Validation" id="3">
+                   <date>2022-10-14T15:21:29.756+02:00</date>
+                   <result>SUCCESS</result>
+                   <counters>
+                       <nrOfAssertions>0</nrOfAssertions>
+                       <nrOfErrors>0</nrOfErrors>
+                       <nrOfWarnings>1</nrOfWarnings>
+                   </counters>
+                   <reports>
+                       <warning xsi:type="BAR">
+                           <description>Attribute '@listID' marked as not used in the given context.</description>
+                           <location>xml:12:0</location>
+                       </warning>
+                   </reports>
+               </report>
+           </step>
+           <step id="4">
+               <description>Step 4: Validate invoice against BII RULES</description>
+               <report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TAR" name="Schematron Validation" id="4">
+                   <date>2022-10-14T15:21:30.250+02:00</date>
+                   <result>FAILURE</result>
+                   <counters>
+                       <nrOfAssertions>0</nrOfAssertions>
+                       <nrOfErrors>2</nrOfErrors>
+                       <nrOfWarnings>0</nrOfWarnings>
+                   </counters>
+                   <reports>
+                       <error xsi:type="BAR">
+                           <description>[BII2-T10-R051]-Sum of line amounts MUST equal the invoice line net amounts</description>
+                           <location>xml:172:0</location>
+                       </error>
+                       <error xsi:type="BAR">
+                           <description>[BII2-T10-R052]-An invoice total without VAT MUST equal the sum of line amounts plus the sum of charges on document level minus the sum of allowances on document level</description>
+                           <location>xml:172:0</location>
+                       </error>
+                   </reports>
+               </report>
+           </step>
+       </steps>
+   </TestCaseOverviewReport>
 
 The report includes the following information:
 

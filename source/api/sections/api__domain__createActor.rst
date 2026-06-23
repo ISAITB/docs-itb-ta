@@ -44,17 +44,87 @@ the operation will still report the API key that was assigned.
 createActor - request schema
 ++++++++++++++++++++++++++++
 
-The payload of the **createActor** operation's request is defined by the following :download:`JSON Schema<resources/domain/createActor_request.schema.json>`:
+The payload of the **createActor** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/createActor_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createActor_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/createActor_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createActor operation request payload",
+       "type": "object",
+       "properties": {
+           "identifier": {
+               "description": "The actor's unique identifier in the specification, used to refer to it from test cases.",
+               "type": "string"
+           },
+           "name": {
+               "description": "The actor's display name.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The actor's description.",
+               "type": "string"
+           },
+           "reportMetadata": {
+               "description": "The actor's additional metadata for XML reports.",
+               "type": "string"
+           },
+           "default": {
+               "description": "Whether the actor should be considered as the default choice for new conformance statements within its specification.",
+               "type": "boolean",
+               "default": false
+           },
+           "hidden": {
+               "description": "Whether the actor should be hidden.",
+               "type": "boolean",
+               "default": false
+           },
+           "displayOrder": {
+               "description": "The actor's display order relative to other actors when presented in test execution diagrams.",
+               "type": "number"
+           },
+           "apiKey": {
+               "description": "The API key to set for the actor. If this key is already assigned, a new one will be generated.",
+               "type": "string"
+           },
+           "specification": {
+               "description": "The API key of the specification within which to create the actor.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "identifier",
+           "name",
+           "specification"
+       ],
+       "additionalProperties": false
+   }
 
 .. _api__domain__createActor__response:
 
 createActor - response schema
 +++++++++++++++++++++++++++++
 
-The payload of the **createActor** operation's response is defined by the following :download:`JSON Schema<resources/common/apiKey_response.schema.json>`:
+The payload of the **createActor** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/common/apiKey_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-apiKey_response.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/apiKey_response",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema to signal an assigned API key response",
+       "type": "object",
+       "properties": {
+           "apiKey": {
+             "description": "The API key value.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "apiKey"
+         ],
+         "additionalProperties": false
+     }

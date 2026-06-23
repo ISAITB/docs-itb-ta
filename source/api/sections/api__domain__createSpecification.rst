@@ -53,17 +53,85 @@ the operation will still report the API key that was assigned.
 createSpecification - request schema
 ++++++++++++++++++++++++++++++++++++
 
-The payload of the **createSpecification** operation's request is defined by the following :download:`JSON Schema<resources/domain/createSpecification_request.schema.json>`:
+The payload of the **createSpecification** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/createSpecification_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createSpecification_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/createSpecification_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createSpecification operation request payload",
+       "type": "object",
+       "properties": {
+           "shortName": {
+               "description": "The specification's short name.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The specification's full name.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The specification's description.",
+               "type": "string"
+           },
+           "reportMetadata": {
+               "description": "The specification's additional metadata for XML reports.",
+               "type": "string"
+           },
+           "hidden": {
+               "description": "Whether the specification should be hidden.",
+               "type": "boolean",
+               "default": false
+           },
+           "displayOrder": {
+               "description": "The specification's display order relative to other groups and specifications.",
+               "type": "number"
+           },
+           "apiKey": {
+               "description": "The API key to set for the specification. If this key is already assigned, a new one will be generated.",
+               "type": "string"
+           },
+           "group": {
+               "description": "The API key of the specification group within which to create the specification. If not provided the specification will be created directly under the domain.",
+               "type": "string"
+           },
+           "domain": {
+               "description": "The API key of the domain within which to create the specification. This can be omitted if the community identified by the community API key used for authorisation is linked to a specific domain.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "shortName",
+           "fullName"
+       ],
+       "additionalProperties": false
+   }
 
 .. _api__domain__createSpecification__response:
 
 createSpecification - response schema
 +++++++++++++++++++++++++++++++++++++
 
-The payload of the **createSpecification** operation's response is defined by the following :download:`JSON Schema<resources/common/apiKey_response.schema.json>`:
+The payload of the **createSpecification** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/common/apiKey_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-apiKey_response.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/apiKey_response",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema to signal an assigned API key response",
+       "type": "object",
+       "properties": {
+           "apiKey": {
+             "description": "The API key value.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "apiKey"
+         ],
+         "additionalProperties": false
+     }

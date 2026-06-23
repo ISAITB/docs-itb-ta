@@ -21,7 +21,28 @@ empty body and is returned with a ``200`` (OK) status code.
 stop - request schema
 +++++++++++++++++++++
 
-The payload of the **stop** operation's request is defined by the following :download:`JSON Schema<resources/sessions/stop_request.schema.json>`:
+The payload of the **stop** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/sessions/stop_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-stop_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/stop_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the tests' stop operation request payload",
+     "type": "object",
+     "properties": {
+       "session": {
+         "description": "The identifier(s) of the test session(s) to stop.",
+         "type": "array",
+         "items": {
+           "description": "Test session identifier.",
+           "type": "string"
+         }
+       }
+     },
+     "required": [
+       "session"
+     ],
+     "additionalProperties": false
+   }

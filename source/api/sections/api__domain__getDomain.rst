@@ -22,7 +22,42 @@ management operations.
 getDomain - response schema
 +++++++++++++++++++++++++++
 
-The payload of the **getDomain** operation's response is defined by the following :download:`JSON Schema<resources/domain/getDomain_response.schema.json>`:
+The payload of the **getDomain** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/getDomain_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-getDomain_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/getDomain_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the getDomain operation response payload",
+     "type": "object",
+     "properties": {
+       "shortName": {
+         "description": "The domain's short name.",
+         "type": "string"
+       },
+       "fullName": {
+         "description": "The domain's full name.",
+         "type": "string"
+       },
+       "description": {
+         "description": "The domain's description.",
+         "type": "string"
+       },
+       "reportMetadata": {
+         "description": "The domain's additional metadata for XML reports.",
+         "type": "string"
+       },
+       "apiKey": {
+         "description": "The domain's API key.",
+         "type": "string"
+       }
+     },
+     "required": [
+       "shortName",
+       "fullName",
+       "apiKey"
+     ],
+     "additionalProperties": false
+   }

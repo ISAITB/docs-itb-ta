@@ -23,7 +23,42 @@ Calling this operation, the Test Bed will create the property and respond with a
 createDomainProperty - request schema
 +++++++++++++++++++++++++++++++++++++
 
-The payload of the **createDomainProperty** operation's request is defined by the following :download:`JSON Schema<resources/configuration/createDomainProperty_request.schema.json>`:
+The payload of the **createDomainProperty** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/configuration/createDomainProperty_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createDomainProperty_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/createDomainProperty_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createDomainProperty operation request payload",
+       "type": "object",
+       "properties": {
+           "key": {
+               "description": "The unique key used to identify the parameter.",
+               "type": "string"
+           },
+           "value": {
+               "description": "The value to apply for the parameter.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The parameter's description.",
+               "type": "string"
+           },
+           "inTests": {
+               "description": "Whether the parameter should be exposed to test sessions.",
+               "type": "boolean",
+               "default": true
+           },
+           "domain": {
+               "description": "The API key identifying the domain of the parameter. This is required if the community API key used for authentication refers to a community that is not linked to a specific domain.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "key",
+           "value"
+       ],
+       "additionalProperties": false
+     }

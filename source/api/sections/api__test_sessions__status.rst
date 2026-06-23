@@ -43,7 +43,7 @@ In case detailed log traces were requested (i.e. property ``withLogs`` was inclu
 also include a property named ``logs``. This is a string array containing one item per reported log message. Similarly, if
 test session reports were requested (i.e. property ``withReports`` was included and set to ``true``), a further property named
 ``report`` will be included. This is a string value that includes the complete XML content of the report as a JSON-escaped string
-(click :download:`here<../testHistory/resources/test_case_report.xml>` for a complete XML report sample).
+.
 
 The following example illustrates the status information returned for a single completed test session with logs and reports included:
 
@@ -85,17 +85,119 @@ The following example illustrates the status information returned for a single c
 status - request schema
 +++++++++++++++++++++++
 
-The payload of the **status** operation's request is defined by the following :download:`JSON Schema<resources/sessions/status_request.schema.json>`:
+The payload of the **status** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/sessions/status_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-status_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/status_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the tests' status operation request payload",
+     "type": "object",
+     "properties": {
+       "session": {
+         "description": "The session identifier(s) to look up.",
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       },
+       "withLogs": {
+         "description": "Whether or not the log output for each session should be returned.",
+         "type": "boolean",
+         "default": false
+       },
+       "withReports": {
+         "description": "Whether or not the XML test case report should be returned.",
+         "type": "boolean",
+         "default": false
+       }
+     },
+     "additionalProperties": false,
+     "required": [
+       "session"
+     ]
+   }
 
 .. _api__test_sessions__status__response:
 
 status - response schema
 ++++++++++++++++++++++++
 
-The payload of the **status** operation's response is defined by the following :download:`JSON Schema<resources/sessions/status_response.schema.json>`:
+The payload of the **status** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/sessions/status_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-status_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/status_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the tests' status operation response payload",
+     "type": "object",
+     "properties": {
+       "sessions": {
+         "description": "The list of status information for retrieved test sessions.",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/sessionStatus"
+         }
+       }
+     },
+     "required": [
+       "sessions"
+     ],
+     "additionalProperties": false,
+     "definitions": {
+       "sessionStatus": {
+         "description": "Status information for a test session.",
+         "type": "object",
+         "properties": {
+           "session": {
+             "description": "The session's unique identifier.",
+             "type": "string"
+           },
+           "result": {
+             "description": "The session's result.",
+             "type": "string",
+             "enum": [
+               "SUCCESS",
+               "FAILURE",
+               "UNDEFINED"
+             ]
+           },
+           "startTime": {
+             "description": "The session start time.",
+             "type": "string",
+             "format": "yyyy-MM-ddTHH:mm:ssZ"
+           },
+           "endTime": {
+             "description": "The session end time (if the session is completed).",
+             "type": "string",
+             "format": "yyyy-MM-ddTHH:mm:ssZ"
+           },
+           "message": {
+             "description": "The resulting output message of the session.",
+             "type": "string"
+           },
+           "logs": {
+             "description": "The list of log entries produced by the session.",
+             "type": "array",
+             "items": {
+               "type": "string"
+             }
+           },
+           "report": {
+             "description": "The test session's XML report.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "session",
+           "result",
+           "startTime"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }
