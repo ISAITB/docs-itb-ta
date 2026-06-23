@@ -238,8 +238,127 @@ An alternative to producing the report in PDF is to select the **Download report
 `GITB Test Reporting Language (GITB TRL) <https://github.com/ISAITB/gitb-types/blob/master/gitb-types-specs/src/main/resources/schema/gitb_tr.xsd>`__,
 and allows simpler machine-based processing. The following XML content is a sample of such a report:
 
-.. literalinclude:: ../manageConformanceStatements/resources/conformance_overview_xml.xml
-   :language: xml
+.. code-block:: xml
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <ConformanceOverviewReport xmlns="http://www.gitb.com/tr/v1/"
+                               xmlns:ns2="http://www.gitb.com/core/v1/"
+                               xmlns:ns3="http://www.gitb.com/tbs/v1/">
+      <metadata>
+         <reportTime>2024-04-02T11:53:07.170+02:00</reportTime>
+      </metadata>
+      <overview>
+         <definition>
+            <party>
+               <organisation>
+                  <name>ACME</name>
+               </organisation>
+               <system>
+                  <name>Test system</name>
+                  <version>v1.0</version>
+                  <description>A system for test purposes.</description>
+               </system>
+            </party>
+         </definition>
+         <summary>
+            <status>FAILURE</status>
+            <succeeded>1</succeeded>
+            <failed>1</failed>
+            <incomplete>1</incomplete>
+         </summary>
+         <statementOverview>
+            <domain>
+               <name>Docs domain</name>
+               <description>A demo domain for documentation purposes.</description>
+               <result>FAILURE</result>
+               <specificationGroup>
+                  <name>EU Purchase Order Import Format</name>
+                  <description>Specification to define the data export format for EU Purchase Order Imports.</description>
+                  <result>SUCCESS</result>
+                  <specification>
+                     <name>Version 2.00</name>
+                     <description>Version 2.00 of the EU Purchase Order Import Format.</description>
+                     <result>SUCCESS</result>
+                     <actor statement="1">
+                        <name>Actor</name>
+                        <description>Order supplier.</description>
+                        <result>SUCCESS</result>
+                     </actor>
+                  </specification>
+               </specificationGroup>
+            </domain>
+         </statementOverview>
+         <statementDetails>
+            <statement id="1">
+               <definition>
+                  <party>
+                     <organisation>
+                        <name>ACME</name>
+                     </organisation>
+                     <system>
+                        <name>Test system</name>
+                        <version>v1.0</version>
+                        <description>A system for test purposes.</description>
+                     </system>
+                  </party>
+                  <domain>
+                     <name>Docs domain</name>
+                     <description>A demo domain for documentation purposes.</description>
+                  </domain>
+                  <specificationGroup>
+                     <name>EU Purchase Order Import Format</name>
+                     <description>Specification to define the data export format for EU Purchase Order Imports.</description>
+                  </specificationGroup>
+                  <specification>
+                     <name>Version 2.00</name>
+                     <description>Version 2.00 of the EU Purchase Order Import Format.</description>
+                  </specification>
+                  <actor>
+                     <name>Actor</name>
+                     <description>Order supplier.</description>
+                  </actor>
+               </definition>
+               <summary>
+                  <status>SUCCESS</status>
+                  <succeeded>1</succeeded>
+                  <failed>0</failed>
+                  <incomplete>0</incomplete>
+               </summary>
+               <lastUpdate>2023-09-28T15:52:16.000+02:00</lastUpdate>
+               <testOverview>
+                  <testSuite>
+                     <metadata>
+                        <ns2:name>Simple test suite</ns2:name>
+                        <ns2:version>1.0</ns2:version>
+                        <ns2:description>A simple test suite.</ns2:description>
+                     </metadata>
+                     <result>SUCCESS</result>
+                     <testCases>
+                        <testCase>
+                           <metadata>
+                              <ns2:name>Test case 1</ns2:name>
+                              <ns2:version>1.0</ns2:version>
+                              <ns2:description>A simple test case.</ns2:description>
+                           </metadata>
+                           <result>SUCCESS</result>
+                           <lastUpdate>2023-09-28T15:52:14.000+02:00</lastUpdate>
+                        </testCase>
+                        <testCase optional="true">
+                           <metadata>
+                              <ns2:name>Test case 2</ns2:name>
+                              <ns2:version>1.0</ns2:version>
+                              <ns2:description>Description for the second simple test case.</ns2:description>
+                           </metadata>
+                           <result>SUCCESS</result>
+                           <lastUpdate>2023-09-28T15:52:16.000+02:00</lastUpdate>
+                        </testCase>
+                     </testCases>
+                  </testSuite>
+               </testOverview>
+            </statement>
+         </statementDetails>
+      </overview>
+   </ConformanceOverviewReport>
 
 Producing a conformance overview report at the level of a specific **domain**, **specification group** or **specification**, is achieved
 using the option button presented at the right side of the statements' display. Clicking this will present the report generation options.
@@ -608,8 +727,115 @@ button's options. The format of this report is defined by the `GITB Test Reporti
 and allows simpler machine-based processing. As in the case of the PDF report, you are prompted whether or not to include detailed test step
 results before proceeding with the download. The following XML content is a sample of such a report:
 
-.. literalinclude:: ../manageConformanceStatements/resources/conformance_statement_xml.xml
-   :language: xml
+.. code-block:: xml
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <ConformanceStatementReport xmlns="http://www.gitb.com/tr/v1/"
+                                xmlns:ns2="http://www.gitb.com/core/v1/"
+                                xmlns:ns3="http://www.gitb.com/tbs/v1/">
+      <metadata>
+         <reportTime>2024-04-02T14:13:18.267+02:00</reportTime>
+      </metadata>
+      <statement>
+         <definition>
+            <party>
+               <organisation>
+                  <name>ACME</name>
+               </organisation>
+               <system>
+                  <name>Test system</name>
+                  <version>v1.0</version>
+                  <description>A system for test purposes.</description>
+               </system>
+            </party>
+            <domain>
+               <name>Docs domain</name>
+               <description>A demo domain for documentation purposes.</description>
+            </domain>
+            <specificationGroup>
+               <name>EU Purchase Order Export Format</name>
+               <description>Specification to define the data export format for EU Purchase Order Exports.</description>
+            </specificationGroup>
+            <specification>
+               <name>Version 1.02</name>
+               <description>Version 1.02 of the EU Purchase Order Export Format.</description>
+            </specification>
+            <actor>
+               <name>Actor</name>
+               <description>Order supplier.</description>
+            </actor>
+         </definition>
+         <summary>
+            <status>FAILURE</status>
+            <succeeded>2</succeeded>
+            <failed>1</failed>
+            <incomplete>0</incomplete>
+         </summary>
+         <lastUpdate>2023-09-29T19:00:01.000+02:00</lastUpdate>
+         <testOverview>
+            <testSuite>
+               <metadata>
+                  <ns2:name>Simple TS</ns2:name>
+                  <ns2:version>0.1</ns2:version>
+                  <ns2:description>Simple test suite.</ns2:description>
+               </metadata>
+               <result>FAILURE</result>
+               <testCases>
+                  <testCase>
+                     <metadata>
+                        <ns2:name>Simple TC</ns2:name>
+                        <ns2:version>1.0</ns2:version>
+                        <ns2:description>A simple test case.</ns2:description>
+                        <ns2:tags>
+                           <ns2:tag name="security" foreground="#ffffff" background="#d20000">Test cases linked to security issues.</ns2:tag>
+                           <ns2:tag name="version 1.0" foreground="#ffffff" background="#000000">Test cases introduced in version 1.02.</ns2:tag>
+                        </ns2:tags>
+                     </metadata>
+                     <result>SUCCESS</result>
+                     <lastUpdate>2023-09-29T19:00:01.000+02:00</lastUpdate>
+                  </testCase>
+                  <testCase>
+                     <metadata>
+                        <ns2:name>Simple TC2</ns2:name>
+                        <ns2:version>1.0</ns2:version>
+                        <ns2:description>A second simple test case.</ns2:description>
+                     </metadata>
+                     <result>FAILURE</result>
+                     <lastUpdate>2023-10-02T17:09:32.000+02:00</lastUpdate>
+                  </testCase>
+               </testCases>
+            </testSuite>
+            <testSuite>
+               <metadata>
+                  <ns2:name>Simple test suite</ns2:name>
+                  <ns2:version>1.0</ns2:version>
+                  <ns2:description>A simple test suite.</ns2:description>
+               </metadata>
+               <result>SUCCESS</result>
+               <testCases>
+                  <testCase>
+                     <metadata>
+                        <ns2:name>Test case 1</ns2:name>
+                        <ns2:version>1.0</ns2:version>
+                        <ns2:description>A simple test case.</ns2:description>
+                     </metadata>
+                     <result>SUCCESS</result>
+                     <lastUpdate>2023-09-28T15:52:14.000+02:00</lastUpdate>
+                  </testCase>
+                  <testCase optional="true">
+                     <metadata>
+                        <ns2:name>Test case 2</ns2:name>
+                        <ns2:version>1.0</ns2:version>
+                        <ns2:description>Description for the second simple test case.</ns2:description>
+                     </metadata>
+                     <result>SUCCESS</result>
+                     <lastUpdate>2023-09-28T15:52:16.000+02:00</lastUpdate>
+                  </testCase>
+               </testCases>
+            </testSuite>
+         </testOverview>
+      </statement>
+   </ConformanceStatementReport>
 
 
 .. _manage_your_conformance_statements__view_a_conformance_statements_details__export_certificate:

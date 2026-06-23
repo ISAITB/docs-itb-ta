@@ -28,7 +28,43 @@ use in most other organisation-specific API operations.
 getOrganisations - response schema
 ++++++++++++++++++++++++++++++++++
 
-The payload of the **getOrganisations** operation's response is defined by the following :download:`JSON Schema<resources/community/getOrganisations_response.schema.json>`:
+The payload of the **getOrganisations** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/getOrganisations_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-getOrganisations_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/getOrganisations_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the getOrganisations operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/Organisation"
+     },
+     "definitions": {
+       "Organisation": {
+         "description": "An organisation.",
+         "type": "object",
+         "properties": {
+           "apiKey": {
+             "description": "The organisation's API key.",
+             "type": "string"
+           },
+           "shortName": {
+             "description": "The organisation's short name.",
+             "type": "string"
+           },
+           "fullName": {
+             "description": "The organisation's full name.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "apiKey",
+           "shortName",
+           "fullName"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }

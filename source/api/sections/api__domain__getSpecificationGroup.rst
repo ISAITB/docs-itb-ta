@@ -25,7 +25,46 @@ management operations.
 getSpecificationGroup - response schema
 +++++++++++++++++++++++++++++++++++++++
 
-The payload of the **getSpecificationGroup** operation's response is defined by the following :download:`JSON Schema<resources/domain/getSpecificationGroup_response.schema.json>`:
+The payload of the **getSpecificationGroup** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/getSpecificationGroup_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-getSpecificationGroup_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/getSpecificationGroup_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the getSpecificationGroup operation response payload",
+     "type": "object",
+     "properties": {
+       "shortName": {
+         "description": "The group's short name.",
+         "type": "string"
+       },
+       "fullName": {
+         "description": "The group's full name.",
+         "type": "string"
+       },
+       "description": {
+         "description": "The group's description.",
+         "type": "string"
+       },
+       "reportMetadata": {
+         "description": "The group's additional metadata for XML reports.",
+         "type": "string"
+       },
+       "displayOrder": {
+         "description": "The group's display order relative to other groups and specifications.",
+         "type": "number"
+       },
+       "apiKey": {
+         "description": "The group's API key.",
+         "type": "string"
+       }
+     },
+     "required": [
+       "shortName",
+       "fullName",
+       "apiKey"
+     ],
+     "additionalProperties": false
+   }

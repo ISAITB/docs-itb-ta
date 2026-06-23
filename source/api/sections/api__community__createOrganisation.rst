@@ -41,17 +41,60 @@ the operation will still report the API key that was assigned.
 createOrganisation - request schema
 +++++++++++++++++++++++++++++++++++
 
-The payload of the **createOrganisation** operation's request is defined by the following :download:`JSON Schema<resources/community/createOrganisation_request.schema.json>`:
+The payload of the **createOrganisation** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/createOrganisation_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createOrganisation_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/createOrganisation_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createOrganisation operation request payload",
+       "type": "object",
+       "properties": {
+           "shortName": {
+               "description": "The organisation's short name.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The organisation's full name.",
+               "type": "string"
+           },
+           "apiKey": {
+               "description": "The API key to set for the organisation. If this key is already assigned, a new one will be generated.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "shortName",
+           "fullName"
+       ],
+       "additionalProperties": false
+     }
 
 .. _api__community__createOrganisation__response:
 
 createOrganisation - response schema
 ++++++++++++++++++++++++++++++++++++
 
-The payload of the **createOrganisation** operation's response is defined by the following :download:`JSON Schema<resources/common/apiKey_response.schema.json>`:
+The payload of the **createOrganisation** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/common/apiKey_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-apiKey_response.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/apiKey_response",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema to signal an assigned API key response",
+       "type": "object",
+       "properties": {
+           "apiKey": {
+             "description": "The API key value.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "apiKey"
+         ],
+         "additionalProperties": false
+     }

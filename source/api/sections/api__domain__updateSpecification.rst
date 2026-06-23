@@ -23,7 +23,7 @@ In case you want to altogether remove a property, such as the the specification'
   }
 
 You can also use this operation to manage the specification's grouping. Setting the ``group`` property to a specification group's API key
-will place it within the target group, removing it from its previous group (if defined). If you simply want to remove the specification 
+will place it within the target group, removing it from its previous group (if defined). If you simply want to remove the specification
 from its current group you can specify the ``group`` property as an empty string:
 
 .. code-block:: json
@@ -40,7 +40,45 @@ The operation's response is empty, signalling through a status ``200`` (OK) that
 updateSpecification - request schema
 ++++++++++++++++++++++++++++++++++++
 
-The payload of the **updateSpecification** operation's request is defined by the following :download:`JSON Schema<resources/domain/updateSpecification_request.schema.json>`:
+The payload of the **updateSpecification** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/updateSpecification_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-updateSpecification_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/updateSpecification_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the updateSpecification operation request payload",
+       "type": "object",
+       "properties": {
+           "shortName": {
+               "description": "The specification's short name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The specification's full name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The specification's description. Skip this if no update should be made or provide as an empty string to remove the current value.",
+               "type": "string"
+           },
+           "reportMetadata": {
+               "description": "The specification's additional metadata for XML reports.",
+               "type": "string"
+           },
+           "hidden": {
+               "description": "Whether the specification should be hidden. Skip this if no update should be made.",
+               "type": "boolean"
+           },
+           "displayOrder": {
+               "description": "The specification's display order relative to other groups and specifications. Skip this if no update should be made or set to a negative value to remove the ordering altogether.",
+               "type": "number"
+           },
+           "group": {
+               "description": "The API key of the specification group within which to move the specification. Skip this if no update should be made or provide as an empty string to remove the specification from its current group.",
+               "type": "string"
+           }
+       },
+       "additionalProperties": false
+     }

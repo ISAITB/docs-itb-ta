@@ -45,17 +45,73 @@ the operation will still report the API key that was assigned.
 createSystem - request schema
 +++++++++++++++++++++++++++++
 
-The payload of the **createSystem** operation's request is defined by the following :download:`JSON Schema<resources/community/createSystem_request.schema.json>`:
+The payload of the **createSystem** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/createSystem_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createSystem_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/createSystem_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the createSystem operation request payload",
+       "type": "object",
+       "properties": {
+           "shortName": {
+               "description": "The system's short name.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The system's full name.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The system's description.",
+               "type": "string"
+           },
+           "version": {
+               "description": "The system's version information.",
+               "type": "string"
+           },
+           "apiKey": {
+               "description": "The API key to set for the system. If this key is already assigned, a new one will be generated.",
+               "type": "string"
+           },
+           "organisation": {
+               "description": "The API key identifying the organisation in which to create the system.",
+               "type": "string"
+           }
+       },
+       "required": [
+           "shortName",
+           "fullName",
+           "organisation"
+       ],
+       "additionalProperties": false
+   }
 
 .. _api__community__createSystem__response:
 
 createSystem - response schema
 ++++++++++++++++++++++++++++++
 
-The payload of the **createSystem** operation's response is defined by the following :download:`JSON Schema<resources/common/apiKey_response.schema.json>`:
+The payload of the **createSystem** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/common/apiKey_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-apiKey_response.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/apiKey_response",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema to signal an assigned API key response",
+       "type": "object",
+       "properties": {
+           "apiKey": {
+             "description": "The API key value.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "apiKey"
+         ],
+         "additionalProperties": false
+     }

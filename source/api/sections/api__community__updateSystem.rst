@@ -29,7 +29,32 @@ The operation's response is empty, signalling through a status ``200`` (OK) that
 updateSystem - request schema
 +++++++++++++++++++++++++++++
 
-The payload of the **updateSystem** operation's request is defined by the following :download:`JSON Schema<resources/community/updateSystem_request.schema.json>`:
+The payload of the **updateSystem** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/updateSystem_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-updateSystem_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/updateSystem_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the updateSystem operation request payload",
+       "properties": {
+           "shortName": {
+               "description": "The system's short name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The system's full name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The system's description. Skip this if no update should be made or provide as an empty string to remove the current value.",
+               "type": "string"
+           },
+           "version": {
+               "description": "The system's version information. Skip this if no update should be made or provide as an empty string to remove the current value.",
+               "type": "string"
+           }
+       },
+       "additionalProperties": false
+   }

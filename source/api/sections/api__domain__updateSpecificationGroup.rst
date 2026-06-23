@@ -30,7 +30,33 @@ The operation's response is empty, signalling through a status ``200`` (OK) that
 updateSpecificationGroup - request schema
 +++++++++++++++++++++++++++++++++++++++++
 
-The payload of the **updateSpecificationGroup** operation's request is defined by the following :download:`JSON Schema<resources/domain/updateSpecificationGroup_request.schema.json>`:
+The payload of the **updateSpecificationGroup** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/updateSpecificationGroup_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-updateSpecificationGroup_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/updateSpecificationGroup_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the updateSpecificationGroup operation request payload",
+       "type": "object",
+       "properties": {
+           "shortName": {
+               "description": "The group's short name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The group's full name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The group's description. Skip this if no update should be made or provide as an empty string to remove the current value.",
+               "type": "string"
+           },
+           "reportMetadata": {
+               "description": "The group's additional metadata for XML reports.",
+               "type": "string"
+           }
+       },
+       "additionalProperties": false
+     }

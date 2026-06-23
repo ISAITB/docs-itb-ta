@@ -32,7 +32,34 @@ needed for subsequent calls such as :ref:`producing a report <api__conformance_s
 get - response schema
 +++++++++++++++++++++
 
-The payload of the **get** operation's response is defined by the following :download:`JSON Schema<resources/conformance/get_response.schema.json>`:
+The payload of the **get** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/conformance/get_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-get_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/getStatements_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the get statements operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/ConformanceStatementKeys"
+     },
+     "definitions": {
+       "ConformanceStatementKeys": {
+         "description": "The API keys needed to identify a specific conformance statement.",
+         "type": "object",
+         "properties": {
+           "system": {
+             "description": "The API key of the statement's related system.",
+             "type": "string"
+           },
+           "actor": {
+             "description": "The API key of the statement's related actor.",
+             "type": "string"
+           }
+         },
+         "additionalProperties": false
+       }
+     }
+   }

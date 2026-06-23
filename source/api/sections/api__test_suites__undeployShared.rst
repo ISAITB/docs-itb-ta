@@ -21,7 +21,24 @@ empty body and is returned with a ``200`` (OK) status code.
 undeployShared - request schema
 +++++++++++++++++++++++++++++++
 
-The payload of the **undeployShared** operation's request is defined by the following :download:`JSON Schema<resources/suites/undeployShared_request.schema.json>`:
+The payload of the **undeployShared** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/suites/undeployShared_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-undeployShared_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/undeployShared_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the test suites' undeployShared operation request payload",
+     "type": "object",
+     "properties": {
+       "testSuite": {
+         "description": "The identifier of the test suite that will be undeployed.",
+         "type": "string"
+       }
+     },
+     "required": [
+       "testSuite"
+     ],
+     "additionalProperties": false
+   }

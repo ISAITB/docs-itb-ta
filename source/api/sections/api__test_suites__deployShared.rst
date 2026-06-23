@@ -113,17 +113,201 @@ For the full specification of the **deployShared** operation's response payload 
 deployShared - request schema (JSON case)
 +++++++++++++++++++++++++++++++++++++++++
 
-The payload of the **deployShared** operation's request (in the case it submitted as JSON content) is defined by the following :download:`JSON Schema<resources/suites/deployShared_request.schema.json>`:
+The payload of the **deployShared** operation's request (in the case it submitted as JSON content) is defined by the following JSON Schema:
 
-.. literalinclude:: resources/suites/deployShared_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-deployShared_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/deployShared_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the test suites' deployShared operation request payload",
+     "type": "object",
+     "properties": {
+       "testSuite": {
+         "description": "The shared test suite archive to deploy provided as a Base64-encoded string.",
+         "type": "string",
+         "format": "base64"
+       },
+       "testCases": {
+         "description": "Update choices for specific test cases.",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/testCaseDeploymentAction"
+         }
+       },
+       "ignoreWarnings": {
+         "description": "Whether test suite validation warnings should be ignored.",
+         "type": "boolean",
+         "default": false
+       },
+       "replaceTestHistory": {
+         "description": "Whether the test history linked to the test suite's test cases should be reset. This is the default setting to consider if no test case specific options are defined.",
+         "type": "boolean",
+         "default": false
+       },
+       "updateSpecification": {
+         "description": "Whether the test suite's metadata should be updated using the provided test suite's content.",
+         "type": "boolean",
+         "default": false
+       }
+     },
+     "required": [ "testSuite" ],
+     "additionalProperties": false,
+     "definitions": {
+       "testCaseDeploymentAction": {
+         "description": "Deployment choices for a given test case.",
+         "type": "object",
+         "properties": {
+           "identifier": {
+             "description": "The test case identifier.",
+             "type": "string"
+           },
+           "updateSpecification": {
+             "description": "Whether the metadata for this test case should be updated.",
+             "type": "boolean",
+             "default": false
+           },
+           "replaceTestHistory": {
+             "description": "Whether the testing history for this test case should be reset.",
+             "type": "boolean",
+             "default": false
+           }
+         }
+       }
+     }
+   }
 
 .. _api__test_suites__deployShared__response:
 
 deployShared - response schema
 ++++++++++++++++++++++++++++++
 
-The payload of the **deployShared** operation's response is defined by the following :download:`JSON Schema<resources/suites/deploy_response.schema.json>`:
+The payload of the **deployShared** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/suites/deploy_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-deploy_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/deploy_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the test suites' deploy operation response payload",
+     "type": "object",
+     "properties": {
+       "completed": {
+         "description": "Whether or not the deployment was completed.",
+         "type": "boolean"
+       },
+       "errors": {
+         "description": "The list of errors resulting from the test suite's validation.",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/testSuiteValidationReportItem"
+         }
+       },
+       "warnings": {
+         "description": "The list of warnings resulting from the test suite's validation.",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/testSuiteValidationReportItem"
+         }
+       },
+       "messages": {
+         "description": "The list of information messages resulting from the test suite's validation.",
+         "type": "array",
+         "items": {
+           "$ref": "#/definitions/testSuiteValidationReportItem"
+         }
+       },
+       "identifiers": {
+         "description": "The API key identifiers linked to the test suite.",
+         "type": "object",
+         "required": [
+           "testSuite"
+         ],
+         "properties": {
+           "testSuite": {
+             "description": "The test suite identifier.",
+             "type": "string"
+           },
+           "testCases": {
+             "description": "The identifiers of the test suite's test cases.",
+             "type": "array",
+             "items": {
+               "type": "string"
+             }
+           },
+           "specifications": {
+             "description": "The identifiers linked to the test suite's linked specification(s).",
+             "type": "array",
+             "items": {
+               "type": "object",
+               "required": [
+                 "name",
+                 "identifier"
+               ],
+               "properties": {
+                 "name": {
+                   "description": "The specification's name.",
+                   "type": "string"
+                 },
+                 "identifier": {
+                   "description": "The specification's API key.",
+                   "type": "string"
+                 },
+                 "actors": {
+                   "description": "The information for the actors linked to the specification.",
+                   "type": "array",
+                   "items": {
+                     "$ref": "#/definitions/testSuiteUploadActorKeys"
+                   }
+                 }
+               }
+             }
+           }
+         }
+       }
+     },
+     "required": [
+       "completed"
+     ],
+     "additionalProperties": false,
+     "definitions": {
+       "testSuiteValidationReportItem": {
+         "description": "A test suite validation report finding.",
+         "type": "object",
+         "properties": {
+           "description": {
+             "description": "The finding's description.",
+             "type": "string"
+           },
+           "location": {
+             "description": "The path of the resource within the test suite that resulted in this finding.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "description"
+         ],
+         "additionalProperties": false
+       },
+       "testSuiteUploadActorKeys": {
+         "description": "The API keys for the actors related to the test suite.",
+         "type": "object",
+         "required": [
+           "name",
+           "identifier"
+         ],
+         "properties": {
+           "name": {
+             "description": "The name of the actor.",
+             "type": "string"
+           },
+           "identifier": {
+             "description": "The API key of the actor.",
+             "type": "string"
+           }
+         }
+       }
+     }
+   }

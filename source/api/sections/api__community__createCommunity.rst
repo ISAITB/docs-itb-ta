@@ -50,17 +50,77 @@ the operation will still report the API key that was assigned.
 createCommunity - request schema
 ++++++++++++++++++++++++++++++++
 
-The payload of the **createCommunity** operation's request is defined by the following :download:`JSON Schema<resources/community/createCommunity_request.schema.json>`:
+The payload of the **createCommunity** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/createCommunity_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-createCommunity_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/createCommunity_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the createCommunity operation request payload",
+     "type": "object",
+     "properties": {
+       "shortName": {
+         "description": "The community's short name.",
+         "type": "string"
+       },
+       "fullName": {
+         "description": "The community's full name.",
+         "type": "string"
+       },
+       "description": {
+         "description": "The community's description.",
+         "type": "string"
+       },
+       "supportEmail": {
+         "description": "A support email address to receive community-specific notifications at.",
+         "type": "string"
+       },
+       "interactionNotifications": {
+         "description": "Whether to receive notifications for pending interactions by email at the support mailbox (see supportEmail).",
+         "type": "boolean",
+         "default": false
+       },
+       "apiKey": {
+         "description": "The API key to set for the community. If this key is already assigned, a new one will be generated.",
+         "type": "string"
+       },
+       "domain": {
+         "description": "The API key identifying a domain that should be linked to the community.",
+         "type": "string"
+       }
+     },
+     "required": [
+       "shortName",
+       "fullName"
+     ],
+     "additionalProperties": false
+   }
 
 .. _api__community__createCommunity__response:
 
 createCommunity - response schema
 +++++++++++++++++++++++++++++++++
 
-The payload of the **createCommunity** operation's response is defined by the following :download:`JSON Schema<resources/common/apiKey_response.schema.json>`:
+The payload of the **createCommunity** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/common/apiKey_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-apiKey_response.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/apiKey_response",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema to signal an assigned API key response",
+       "type": "object",
+       "properties": {
+           "apiKey": {
+             "description": "The API key value.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "apiKey"
+         ],
+         "additionalProperties": false
+     }

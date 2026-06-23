@@ -22,7 +22,34 @@ other organisation-specific API operations.
 getOrganisation - response schema
 +++++++++++++++++++++++++++++++++
 
-The payload of the **getOrganisation** operation's response is defined by the following :download:`JSON Schema<resources/community/getOrganisation_response.schema.json>`:
+The payload of the **getOrganisation** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/getOrganisation_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-getOrganisation_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/getOrganisation_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the getOrganisation operation response payload",
+     "type": "object",
+     "properties": {
+       "apiKey": {
+         "description": "The organisation's API key.",
+         "type": "string"
+       },
+       "shortName": {
+         "description": "The organisation's short name.",
+         "type": "string"
+       },
+       "fullName": {
+         "description": "The organisation's full name.",
+         "type": "string"
+       }
+     },
+     "required": [
+       "apiKey",
+       "shortName",
+       "fullName"
+     ],
+     "additionalProperties": false
+   }

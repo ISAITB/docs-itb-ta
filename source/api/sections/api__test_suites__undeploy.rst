@@ -26,7 +26,29 @@ empty body and is returned with a ``200`` (OK) status code.
 undeploy - request schema
 +++++++++++++++++++++++++
 
-The payload of the **undeploy** operation's request is defined by the following :download:`JSON Schema<resources/suites/undeploy_request.schema.json>`:
+The payload of the **undeploy** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/suites/undeploy_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-undeploy_request.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/undeploy_request",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the test suites' undeploy operation request payload",
+     "type": "object",
+     "properties": {
+       "specification": {
+         "description": "The API key value to uniquely identify the specification from which the test suite will be undeployed from.",
+         "type": "string"
+       },
+       "testSuite": {
+         "description": "The identifier of the test suite that will be undeployed.",
+         "type": "string"
+       }
+     },
+     "required": [
+       "specification",
+       "testSuite"
+     ],
+     "additionalProperties": false
+   }

@@ -21,7 +21,24 @@ The operation's response is empty, signalling through a status ``200`` (OK) that
 updateOrganisation - request schema
 +++++++++++++++++++++++++++++++++++
 
-The payload of the **updateOrganisation** operation's request is defined by the following :download:`JSON Schema<resources/community/updateOrganisation_request.schema.json>`:
+The payload of the **updateOrganisation** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/community/updateOrganisation_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-updateOrganisation_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/updateOrganisation_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the updateOrganisation operation request payload",
+       "properties": {
+           "shortName": {
+               "description": "The organisation's short name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "fullName": {
+               "description": "The organisation's full name. Skip this if no update should be made.",
+               "type": "string"
+           }
+       },
+       "additionalProperties": false
+   }

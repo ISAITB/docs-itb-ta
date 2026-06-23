@@ -49,7 +49,68 @@ More details on the information returned on test services can be found in the op
 searchTestServices - response schema
 ++++++++++++++++++++++++++++++++++++
 
-The payload of the **searchTestServices** operation's response is defined by the following :download:`JSON Schema<resources/configuration/searchTestServices_response.schema.json>`:
+The payload of the **searchTestServices** operation's response is defined by the following JSON Schema:
 
-.. literalinclude:: resources/configuration/searchTestServices_response.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-searchTestServices_response.schema.json
+
+   {
+     "$id": "https://www.itb.ec.europa.eu/api/searchTestServices_response",
+     "$schema": "http://json-schema.org/draft-07/schema#",
+     "description": "JSON schema for the searchTestServices operation response payload",
+     "type": "array",
+     "items": {
+       "$ref": "#/definitions/TestService"
+     },
+     "definitions": {
+       "TestService": {
+         "description": "A test service definition.",
+         "type": "object",
+         "properties": {
+           "key": {
+             "description": "The unique key used to identify the service and its underlying domain parameter.",
+             "type": "string"
+           },
+           "domain": {
+             "description": "The API key identifying the domain of the service.",
+             "type": "string"
+           },
+           "address": {
+             "description": "The service's address.",
+             "type": "string"
+           },
+           "serviceType": {
+             "description": "The type of the service.",
+             "type": "string",
+             "enum": ["messaging", "validation", "processing"]
+           },
+           "apiType": {
+             "description": "The API type of the service.",
+             "type": "string",
+             "enum": ["soap", "rest"],
+             "default": "soap"
+           },
+           "description": {
+             "description": "The service's description.",
+             "type": "string"
+           },
+           "identifier": {
+             "description": "The service's reference identifier.",
+             "type": "string"
+           },
+           "version": {
+             "description": "The service's version.",
+             "type": "string"
+           }
+         },
+         "required": [
+           "key",
+           "domain",
+           "address",
+           "serviceType",
+           "apiType"
+         ],
+         "additionalProperties": false
+       }
+     }
+   }

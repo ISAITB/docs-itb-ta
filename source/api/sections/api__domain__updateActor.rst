@@ -30,7 +30,45 @@ The operation's response is empty, signalling through a status ``200`` (OK) that
 updateActor - request schema
 ++++++++++++++++++++++++++++
 
-The payload of the **updateActor** operation's request is defined by the following :download:`JSON Schema<resources/domain/updateActor_request.schema.json>`:
+The payload of the **updateActor** operation's request is defined by the following JSON Schema:
 
-.. literalinclude:: resources/domain/updateActor_request.schema.json
-   :language: json
+.. code-block:: json
+   :class: itb-download-updateActor_request.schema.json
+
+   {
+       "$id": "https://www.itb.ec.europa.eu/api/updateActor_request",
+       "$schema": "http://json-schema.org/draft-07/schema#",
+       "description": "JSON schema for the updateActor operation request payload",
+       "type": "object",
+       "properties": {
+           "identifier": {
+               "description": "The actor's unique identifier in the specification, used to refer to it from test cases. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "name": {
+               "description": "The actor's display name. Skip this if no update should be made.",
+               "type": "string"
+           },
+           "description": {
+               "description": "The actor's description. Skip this if no update should be made or provide as an empty string to remove the current value.",
+               "type": "string"
+           },
+           "reportMetadata": {
+               "description": "The actor's additional metadata for XML reports.",
+               "type": "string"
+           },
+           "default": {
+               "description": "Whether the actor should be considered as the default choice for new conformance statements within its specification. Skip this if no update should be made.",
+               "type": "boolean"
+           },
+           "hidden": {
+               "description": "Whether the actor should be hidden. Skip this if no update should be made.",
+               "type": "boolean"
+           },
+           "displayOrder": {
+               "description": "The actor's display order relative to other actors when presented in test execution diagrams. Skip this if no update should be made or set to a negative value to remove the ordering altogether.",
+               "type": "number"
+           }
+       },
+       "additionalProperties": false
+   }
